@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programme — Fire Festival</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<input type="file" id="logoInput" accept="image/*">
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
+      <img id="logoImg" src="" alt="Logo" style="display:none">
+      <span class="logo-placeholder" id="logoPlaceholder">FEST</span>
+      <div class="logo-upload-hint">LOGO</div>
+    </div>
+    <span class="nav-site-name">MON <span>FESTIVAL</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="">Accueil</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">
+        Programme
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="programme.html"><span class="di">🎸</span>Line-up &amp; Horaires</a>
+        <a href="infos.html"><span class="di">🎪</span>Scènes &amp; Accès</a>
+        <a href="index.html#contact"><span class="di">🎟️</span>Billetterie</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">
+        Fonctionnement
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="financements.html"><span class="di">💰</span>Financements</a>
+        <a href="charte.html"><span class="di">📜</span>Charte</a>
+        <a href="benevoles.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">
+        Infos &amp; Galerie
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="galerie.html"><span class="di">📸</span>Galerie photos</a>
+        <a href="infos.html"><span class="di">📍</span>Infos pratiques</a>
+        <a href="infos.html#camping"><span class="di">🏕️</span>Camping</a>
+      </div>
+    </li>
+    <li><a href="index.html#contact" class="nav-cta">Billetterie →</a></li>
+  </ul>
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ Programme</p>
+  <h1 class="page-hero-title">Line-up 2025</h1>
+  <p class="page-hero-sub">Retrouvez tous les artistes, horaires et scènes du festival.</p>
+</div>
+
+<div class="page-content">
+  <div class="reveal">
+    <h2>Line-up 2025</h2>
+    <p>Découvrez les artistes qui enflamment les scènes du festival cette année. Programme complet ci-dessous.</p>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin:24px 0;">
+      <span class="badge">🎸 Rock</span>
+      <span class="badge">🎵 Électro</span>
+      <span class="badge">🎷 Jazz</span>
+      <span class="badge">🔥 Metal</span>
+      <span class="badge">🌍 World</span>
+    </div>
+  </div>
+
+  <div class="reveal" style="margin-top:40px;">
+    <div style="display:flex; gap:4px; margin-bottom:32px; flex-wrap:wrap;" id="dayTabs">
+      <button class="day-tab active" onclick="switchDay(0,this)">Vendredi 14</button>
+      <button class="day-tab" onclick="switchDay(1,this)">Samedi 15</button>
+      <button class="day-tab" onclick="switchDay(2,this)">Dimanche 16</button>
+    </div>
+    <div id="dayContent" class="artists-list"></div>
+  </div>
+
+  <hr class="divider">
+  <div class="reveal">
+    <h2>Les scènes</h2>
+    <div class="cards-grid">
+      <div class="card"><span class="card-icon">🔥</span><h3 class="card-title">Grande Scène</h3><p class="card-text">La scène principale avec les têtes d'affiche. Capacité 15 000 personnes.</p></div>
+      <div class="card"><span class="card-icon">❤️</span><h3 class="card-title">Scène Rouge</h3><p class="card-text">Ambiance club en plein air, électro et sets DJ. Capacité 5 000 personnes.</p></div>
+      <div class="card"><span class="card-icon">🌲</span><h3 class="card-title">Scène Forêt</h3><p class="card-text">Découvertes et concerts acoustiques dans un cadre naturel intimiste.</p></div>
+    </div>
+  </div>
+</div>
+<style>
+.day-tab { padding:10px 24px; font-family:'Bebas Neue'; font-size:1rem; letter-spacing:.12em; background:transparent; border:1px solid rgba(212,43,43,.3); border-radius:4px; color:rgba(240,236,230,.5); cursor:pointer; transition:.2s; }
+.day-tab.active { background:var(--red); border-color:var(--red); color:white; }
+.day-tab:hover:not(.active) { border-color:var(--red); color:var(--white); }
+.artists-list { display:flex; flex-direction:column; gap:2px; }
+.artist-row { display:grid; grid-template-columns:80px 1fr auto; align-items:center; gap:24px; padding:18px 24px; background:var(--black2); border-radius:4px; border-left:3px solid transparent; transition:border-color .2s, background .2s; }
+.artist-row:hover { border-left-color:var(--red); background:rgba(212,43,43,.06); }
+.artist-time { font-family:'Bebas Neue'; font-size:1.1rem; color:var(--red); letter-spacing:.08em; }
+.artist-name { font-weight:600; font-size:1rem; }
+.artist-stage { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--grey); }
+</style>
+<script>
+const prog=[
+  [{time:'18:00',name:'Ouverture — DJ Set',stage:'Scène Rouge'},{time:'19:30',name:'Les Fantômes',stage:'Grande Scène'},{time:'21:00',name:'Révolution Sonore',stage:'Grande Scène'},{time:'23:00',name:'Headliner Vendredi',stage:'Grande Scène'}],
+  [{time:'16:00',name:'Acoustic Sessions',stage:'Scène Forêt'},{time:'18:30',name:'Dark Waves',stage:'Scène Rouge'},{time:'20:30',name:'Nuit Électrique',stage:'Grande Scène'},{time:'23:00',name:'Headliner Samedi',stage:'Grande Scène'}],
+  [{time:'15:00',name:'Les Inédits',stage:'Scène Forêt'},{time:'17:00',name:'Rouge & Noir',stage:'Scène Rouge'},{time:'19:30',name:'Closing Act',stage:'Grande Scène'},{time:'22:00',name:'Grande Finale',stage:'Grande Scène'}]
+];
+function switchDay(i,btn){ document.querySelectorAll('.day-tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active'); renderDay(i); }
+function renderDay(i){ document.getElementById('dayContent').innerHTML=prog[i].map(a=>`<div class="artist-row"><span class="artist-time">${a.time}</span><span class="artist-name">${a.name}</span><span class="artist-stage">${a.stage}</span></div>`).join(''); }
+renderDay(0);
+</script>
+
+
+<footer>
+  <div>
+    <div class="footer-logo">FIRE <span>FEST</span></div>
+    <p class="footer-tagline">Le festival qui enflamme chaque été. Musique, émotion, communauté.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="programme.html">Programme</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="infos.html">Infos pratiques</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Fonctionnement</h4>
+    <ul>
+      <li><a href="financements.html">Financements</a></li>
+      <li><a href="charte.html">Charte</a></li>
+      <li><a href="benevoles.html">Inscriptions bénévoles</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Réseaux</h4>
+    <ul>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">TikTok</a></li>
+      <li><a href="#">YouTube</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Fire Festival — Tous droits réservés</span>
+    <span>Made with ♥ — Déployé sur Vercel</span>
+  </div>
+</footer>
+
+
+<script>
+function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+document.getElementById('logoInput').addEventListener('change', function() {
+  const file = this.files[0]; if (!file) return;
+  const img = document.getElementById('logoImg');
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
+});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
