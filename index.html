@@ -3,374 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Camp</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --black:   #080808;
-      --black2:  #111111;
-      --black3:  #1a1a1a;
-      --red:     #d42b2b;
-      --red-hot: #ff3333;
-      --red-dim: #7a1515;
-      --white:   #f0ece6;
-      --grey:    #555;
-      --nav-h:   76px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--black);
-      color: var(--white);
-      overflow-x: hidden;
-    }
-
-    body::after {
-      content:''; position:fixed; inset:0; pointer-events:none; z-index:9998;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-      opacity:.6;
-    }
-
-    /* NAVBAR */
-    nav {
-      position: sticky; top:0; z-index:200;
-      height: var(--nav-h);
-      background: rgba(8,8,8,.97);
-      border-bottom: 2px solid var(--red);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 52px;
-      backdrop-filter: blur(12px);
-    }
-
-    .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-
-    .logo-img-wrap {
-      width: 48px; height: 48px; border-radius: 6px; overflow: hidden;
-      border: 1.5px solid var(--red); display: flex; align-items: center; justify-content: center;
-      background: var(--black2); cursor: pointer; position: relative; transition: border-color .2s;
-    }
-    .logo-img-wrap:hover { border-color: var(--red-hot); }
-    .logo-img-wrap img { width:100%; height:100%; object-fit:cover; }
-    .logo-placeholder { font-family:'Anton'; font-size:1.1rem; color:var(--red); letter-spacing:.05em; }
-    .logo-upload-hint {
-      position:absolute; inset:0; background:rgba(212,43,43,.85);
-      display:flex; align-items:center; justify-content:center;
-      font-size:.55rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:white;
-      opacity:0; transition:opacity .2s;
-    }
-    .logo-img-wrap:hover .logo-upload-hint { opacity:1; }
-
-    .nav-site-name { font-family:'Bebas Neue'; font-size:1.6rem; color:var(--white); letter-spacing:.12em; }
-    .nav-site-name span { color:var(--red); }
-
-    .nav-links { display:flex; align-items:center; gap:2px; list-style:none; }
-    .nav-links > li { position:relative; }
-
-    .nav-links > li > a,
-    .nav-links > li > button {
-      display:flex; align-items:center; gap:6px;
-      padding:10px 16px; font-size:.78rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
-      color:var(--white); text-decoration:none; background:none; border:none; cursor:pointer;
-      border-radius:4px; transition:color .2s, background .2s;
-    }
-    .nav-links > li > a:hover,
-    .nav-links > li > button:hover,
-    .nav-links > li.open > button { color:var(--red-hot); background:rgba(212,43,43,.1); }
-
-    .chevron { width:11px; height:11px; fill:none; stroke:currentColor; stroke-width:2.5; transition:transform .25s; }
-    .nav-links > li.open .chevron { transform:rotate(180deg); }
-
-    .dropdown {
-      position:absolute; top:calc(100% + 10px); left:50%;
-      transform:translateX(-50%) translateY(-6px);
-      min-width:210px; background:var(--black2);
-      border:1px solid var(--red-dim); border-top:2px solid var(--red);
-      border-radius:0 0 8px 8px; overflow:hidden;
-      opacity:0; visibility:hidden;
-      transition:opacity .22s, transform .22s, visibility .22s;
-      box-shadow:0 24px 60px rgba(0,0,0,.7), 0 0 30px rgba(212,43,43,.08);
-    }
-    .nav-links > li.open .dropdown { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
-
-    .dropdown a {
-      display:flex; align-items:center; gap:10px;
-      padding:12px 18px; font-size:.85rem; color:rgba(240,236,230,.75); text-decoration:none;
-      border-bottom:1px solid rgba(212,43,43,.12);
-      transition:background .18s, color .18s, padding-left .18s;
-    }
-    .dropdown a:last-child { border-bottom:none; }
-    .dropdown a:hover { background:rgba(212,43,43,.12); color:var(--white); padding-left:26px; }
-    .dropdown a .di { font-size:.95rem; }
-
-    .nav-cta {
-      background:var(--red) !important; color:white !important;
-      border-radius:5px !important; font-weight:700 !important; letter-spacing:.12em !important;
-      margin-left:8px; transition:background .2s, transform .15s !important;
-    }
-    .nav-cta:hover { background:var(--red-hot) !important; transform:translateY(-1px); }
-
-    /* HERO */
-    .hero {
-      min-height: calc(100vh - var(--nav-h));
-      position:relative; display:flex; align-items:center; overflow:hidden;
-    }
-    .hero-bg { position:absolute; inset:0; background:var(--black); overflow:hidden; }
-    .hero-bg img { width:100%; height:100%; object-fit:cover; opacity:.38; transition:opacity .4s; }
-    .hero-bg-overlay {
-      position:absolute; inset:0;
-      background: linear-gradient(105deg, rgba(8,8,8,.96) 38%, rgba(8,8,8,.5) 100%),
-                  linear-gradient(to top, rgba(8,8,8,.85) 0%, transparent 50%);
-    }
-
-    .hero-content {
-      position:relative; z-index:2;
-      padding:80px 80px; max-width:780px;
-      animation:fadeUp .9s ease both;
-    }
-    .hero-eyebrow {
-      display:inline-flex; align-items:center; gap:10px;
-      font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
-      color:var(--red); margin-bottom:24px;
-    }
-    .hero-title {
-      font-family:'Anton'; font-size:clamp(4rem, 9vw, 8rem);
-      line-height:.95; letter-spacing:.02em; margin-bottom:32px; text-transform:uppercase;
-    }
-    .hero-title .red { color:var(--red); display:block; }
-
-    .hero-meta { display:flex; gap:40px; margin-bottom:48px; flex-wrap:wrap; }
-    .meta-item { display:flex; flex-direction:column; gap:4px; }
-    .meta-label { font-size:.68rem; letter-spacing:.15em; text-transform:uppercase; color:var(--grey); }
-    .meta-value { font-family:'Bebas Neue'; font-size:1.4rem; letter-spacing:.1em; }
-
-    .hero-actions { display:flex; gap:16px; flex-wrap:wrap; }
-    .btn {
-      display:inline-flex; align-items:center; gap:8px;
-      padding:15px 34px; font-size:.82rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
-      text-decoration:none; border-radius:4px; cursor:pointer; border:none;
-      transition:transform .18s, box-shadow .18s, background .18s;
-    }
-    .btn:hover { transform:translateY(-2px); }
-    .btn-red { background:var(--red); color:white; box-shadow:0 4px 20px rgba(212,43,43,.4); }
-    .btn-red:hover { background:var(--red-hot); box-shadow:0 8px 30px rgba(255,51,51,.5); }
-    .btn-outline { background:transparent; color:var(--white); border:2px solid rgba(240,236,230,.3); }
-    .btn-outline:hover { border-color:var(--white); }
-
-    /* UPLOAD BAR */
-    .upload-bar {
-      background:var(--black2); border-top:1px solid rgba(212,43,43,.2);
-      border-bottom:1px solid rgba(212,43,43,.2);
-      padding:18px 80px; display:flex; align-items:center; gap:24px; flex-wrap:wrap;
-    }
-    .upload-bar-label { font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--grey); white-space:nowrap; }
-    .upload-bar-label span { color:var(--red); }
-    .upload-btn-group { display:flex; gap:12px; flex-wrap:wrap; }
-    .upload-pill {
-      display:inline-flex; align-items:center; gap:8px; padding:9px 18px;
-      background:var(--black3); border:1px solid rgba(212,43,43,.35); border-radius:30px;
-      font-size:.8rem; font-weight:600; letter-spacing:.07em; color:var(--white);
-      cursor:pointer; transition:border-color .2s, background .2s; user-select:none;
-    }
-    .upload-pill:hover { border-color:var(--red); background:rgba(212,43,43,.08); }
-    .upload-pill svg { width:14px; height:14px; fill:none; stroke:var(--red); stroke-width:2; flex-shrink:0; }
-
-    /* SECTIONS */
-    .section-eyebrow { font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:8px; }
-    .section-header {
-      display:flex; align-items:baseline; justify-content:space-between;
-      margin-bottom:40px; border-bottom:1px solid rgba(212,43,43,.2); padding-bottom:20px;
-      flex-wrap:wrap; gap:16px;
-    }
-    .section-title { font-family:'Anton'; font-size:clamp(1.8rem, 3.5vw, 2.8rem); letter-spacing:.05em; text-transform:uppercase; }
-
-    /* PROGRAMME */
-    .programme-section { padding:80px 80px; background:var(--black2); }
-    .day-tabs { display:flex; gap:4px; flex-wrap:wrap; }
-    .day-tab {
-      padding:10px 24px; font-family:'Bebas Neue'; font-size:1rem; letter-spacing:.12em;
-      background:transparent; border:1px solid rgba(212,43,43,.3); border-radius:4px;
-      color:rgba(240,236,230,.5); cursor:pointer; transition:.2s;
-    }
-    .day-tab.active { background:var(--red); border-color:var(--red); color:white; }
-    .day-tab:hover:not(.active) { border-color:var(--red); color:var(--white); }
-
-    .artists-list { display:flex; flex-direction:column; gap:2px; }
-    .artist-row {
-      display:grid; grid-template-columns:80px 1fr auto;
-      align-items:center; gap:24px; padding:18px 24px;
-      background:var(--black3); border-radius:4px; border-left:3px solid transparent;
-      transition:border-color .2s, background .2s;
-    }
-    .artist-row:hover { border-left-color:var(--red); background:rgba(212,43,43,.06); }
-    .artist-time { font-family:'Bebas Neue'; font-size:1.1rem; color:var(--red); letter-spacing:.08em; }
-    .artist-name { font-weight:600; font-size:1rem; }
-    .artist-stage { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--grey); }
-
-    /* GALLERY */
-    .gallery-section { padding:80px 80px; }
-    .gallery-section.drag-over .gallery-grid {
-      outline:3px dashed var(--red); outline-offset:8px; border-radius:8px;
-      background:rgba(212,43,43,.04);
-    }
-    .gallery-grid {
-      display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:12px;
-    }
-    .gallery-item {
-      aspect-ratio:3/4; background:var(--black2); border:1px solid var(--black3);
-      border-radius:6px; overflow:hidden; position:relative; cursor:pointer;
-      transition:transform .25s, border-color .25s;
-    }
-    .gallery-item:hover { transform:scale(1.02); border-color:var(--red-dim); }
-    .gallery-item img { width:100%; height:100%; object-fit:cover; display:block; }
-    .remove-btn {
-      position:absolute; top:8px; right:8px; width:28px; height:28px;
-      background:rgba(8,8,8,.8); border:1px solid var(--red-dim); border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      color:var(--white); font-size:.8rem; opacity:0; transition:opacity .2s; cursor:pointer;
-    }
-    .gallery-item:hover .remove-btn { opacity:1; }
-    .remove-btn:hover { background:var(--red) !important; border-color:var(--red) !important; }
-    .gallery-empty {
-      grid-column:1/-1; padding:60px 0; text-align:center;
-      border:2px dashed rgba(212,43,43,.25); border-radius:8px; color:var(--grey);
-    }
-    .gallery-empty p { font-size:.9rem; margin-top:12px; }
-
-    /* INFO */
-    .info-section {
-      display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;
-      background:rgba(212,43,43,.1);
-    }
-    .info-card { background:var(--black); padding:52px 44px; text-align:center; }
-    .info-icon { font-size:2.4rem; margin-bottom:20px; display:block; }
-    .info-title { font-family:'Bebas Neue'; font-size:1.5rem; letter-spacing:.1em; margin-bottom:12px; }
-    .info-text { font-size:.9rem; line-height:1.7; color:rgba(240,236,230,.55); }
-
-    /* FOOTER */
-    footer {
-      background:#040404; border-top:2px solid var(--red);
-      padding:56px 80px 28px;
-      display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px;
-    }
-    .footer-logo { font-family:'Anton'; font-size:2rem; letter-spacing:.08em; }
-    .footer-logo span { color:var(--red); }
-    .footer-tagline { font-size:.85rem; color:var(--grey); margin-top:12px; line-height:1.6; max-width:240px; }
-    .footer-col h4 { font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:18px; }
-    .footer-col ul { list-style:none; }
-    .footer-col ul li { margin-bottom:10px; }
-    .footer-col ul li a { font-size:.86rem; color:var(--grey); text-decoration:none; transition:color .18s; }
-    .footer-col ul li a:hover { color:var(--white); }
-    .footer-bottom {
-      grid-column:1/-1; border-top:1px solid rgba(212,43,43,.15);
-      padding-top:20px; display:flex; justify-content:space-between;
-      font-size:.76rem; color:var(--grey);
-    }
-
-    /* LIGHTBOX */
-    .lightbox {
-      display:none; position:fixed; inset:0; z-index:500;
-      background:rgba(0,0,0,.92); align-items:center; justify-content:center;
-    }
-    .lightbox.open { display:flex; }
-    .lightbox img { max-width:90vw; max-height:90vh; border-radius:4px; box-shadow:0 0 80px rgba(212,43,43,.25); }
-    .lightbox-close {
-      position:fixed; top:24px; right:32px; font-size:2rem; color:var(--white);
-      cursor:pointer; background:none; border:none; line-height:1;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
-    .reveal { opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
-    .reveal.visible { opacity:1; transform:translateY(0); }
-
-    /* RESPONSIVE */
-    @media(max-width:900px){
-      nav, .upload-bar { padding-left:20px; padding-right:20px; }
-      .hero-content, .gallery-section, .programme-section { padding-left:20px; padding-right:20px; }
-      footer { grid-template-columns:1fr 1fr; padding:40px 20px 20px; }
-      .info-section { grid-template-columns:1fr; }
-      .nav-links { display:none; flex-direction:column; position:fixed; top:var(--nav-h); left:0; right:0; background:var(--black2); border-bottom:1px solid var(--red); padding:16px; z-index:199; }
-      .nav-links.open { display:flex; }
-      .burger { display:flex; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
-      .burger span { width:22px; height:2px; background:var(--white); display:block; }
-    }
-    @media(min-width:901px){ .burger{display:none;} }
-    input[type=file] { display:none; }
-  </style>
+  <title>Fire Festival 2025</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- HIDDEN INPUTS -->
 <input type="file" id="logoInput" accept="image/*">
-<input type="file" id="heroInput" accept="image/*">
-<input type="file" id="galleryInput" accept="image/*" multiple>
-
-<!-- NAVBAR -->
 <nav>
-  <a href="#" class="nav-logo" onclick="return false">
-    <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click()">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
       <img id="logoImg" src="" alt="Logo" style="display:none">
-      <span class="logo-placeholder" id="logoPlaceholder">BAF</span>
+      <span class="logo-placeholder" id="logoPlaceholder">FEST</span>
       <div class="logo-upload-hint">LOGO</div>
     </div>
-    <span class="nav-site-name"> CAMP</span></span>
+    <span class="nav-site-name">MON <span>FESTIVAL</span></span>
   </a>
-
   <ul class="nav-links" id="navLinks">
-    <li><a href="#">Accueil</a></li>
-
+    <li><a href="index.html" class="active">Accueil</a></li>
     <li>
       <button onclick="toggleDD(this.parentElement)">
         Programme
         <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="dropdown">
-        <a href="#programme"><span class="di">🎸</span>Musique</a>
-        <a href="#programme"><span class="di">📅</span>Tables rondes</a>
-        <a href="#programme"><span class="di">🎪</span>Ateliers</a>
-        <a href="#programme"><span class="di">🎟️</span>Billetterie</a>
+        <a href="programme.html"><span class="di">🎸</span>Line-up &amp; Horaires</a>
+        <a href="infos.html"><span class="di">🎪</span>Scènes &amp; Accès</a>
+        <a href="index.html#contact"><span class="di">🎟️</span>Billetterie</a>
       </div>
     </li>
-
-    <li>
-      <button onclick="toggleDD(this.parentElement)">
-        Infos pratiques
-        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dropdown">
-        <a href="#infos"><span class="di">🔒</span>Nous</a>
-        <a href="#infos"><span class="di">📍</span>Accès &amp; Parking</a>
-        <a href="#infos"><span class="di">🏕️</span>Camping</a>
-        <a href="#infos"><span class="di">🎪</span>Plan du lieu</a>
-        
-      </div>
-    </li>
-
     <li>
       <button onclick="toggleDD(this.parentElement)">
         Fonctionnement
         <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="dropdown">
-        <a href="#galerie"><span class="di"></span>Financements</a>
-        <a href="#galerie"><span class="di"></span>Charte</a>
-        <a href="#galerie"><span class="di">✨</span>inscriptions bénévoles</a>
+        <a href="financements.html"><span class="di">💰</span>Financements</a>
+        <a href="charte.html"><span class="di">📜</span>Charte</a>
+        <a href="benevoles.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
       </div>
     </li>
-
-    <li><a href="#contact" class="nav-cta">Billetterie →</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">
+        Infos &amp; Galerie
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="galerie.html"><span class="di">📸</span>Galerie photos</a>
+        <a href="infos.html"><span class="di">📍</span>Infos pratiques</a>
+        <a href="infos.html#camping"><span class="di">🏕️</span>Camping</a>
+      </div>
+    </li>
+    <li><a href="index.html#contact" class="nav-cta">Billetterie →</a></li>
   </ul>
-
   <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- HERO -->
+
+<input type="file" id="heroInput" accept="image/*">
+<input type="file" id="galleryInput" accept="image/*" multiple>
+
 <section class="hero">
   <div class="hero-bg" id="heroBg">
     <img id="heroImg" src="" alt="">
@@ -378,139 +71,74 @@
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow">✦ Édition 2025 ✦</div>
-    <h1 class="hero-title">
-      BAF<br><span class="red">Camp</span>
-    </h1>
+    <h1 class="hero-title">FIRE<br><span class="red">FESTIVAL</span></h1>
     <div class="hero-meta">
-      <div class="meta-item">
-        <span class="meta-label">Date</span>
-        <span class="meta-value">14–16 Août</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Lieu</span>
-        <span class="meta-value">Votre Ville</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Artistes</span>
-        <span class="meta-value">40+</span>
-      </div>
+      <div class="meta-item"><span class="meta-label">Date</span><span class="meta-value">14–16 Août</span></div>
+      <div class="meta-item"><span class="meta-label">Lieu</span><span class="meta-value">Votre Ville</span></div>
+      <div class="meta-item"><span class="meta-label">Artistes</span><span class="meta-value">40+</span></div>
     </div>
     <div class="hero-actions">
-      <a href="#" class="btn btn-red">Prendre mes billets</a>
-      <a href="#programme" class="btn btn-outline">Voir le programme</a>
+      <a href="#contact" class="btn btn-red">Prendre mes billets</a>
+      <a href="programme.html" class="btn btn-outline">Voir le programme</a>
     </div>
   </div>
 </section>
 
-<!-- UPLOAD BAR -->
 <div class="upload-bar">
   <span class="upload-bar-label">🛠 <span>Personnaliser</span> :</span>
   <div class="upload-btn-group">
     <label class="upload-pill" for="logoInput">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      Logo
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Logo
     </label>
     <label class="upload-pill" for="heroInput">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      Photo bannière
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Photo bannière
     </label>
     <label class="upload-pill" for="galleryInput">
-      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-      Ajouter à la galerie
+      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Ajouter à la galerie
     </label>
   </div>
 </div>
 
-<!-- PROGRAMME -->
-<section class="programme-section" id="programme">
-  <div class="reveal">
-    <p class="section-eyebrow">✦ Line-up</p>
-    <div class="section-header">
-      <h2 class="section-title">Programme</h2>
-      <div class="day-tabs">
-        <button class="day-tab active" onclick="switchDay(0,this)">Vendredi</button>
-        <button class="day-tab" onclick="switchDay(1,this)">Samedi</button>
-        <button class="day-tab" onclick="switchDay(2,this)">Dimanche</button>
-      </div>
-    </div>
+<section style="padding:80px 80px; background:var(--black2);" class="reveal">
+  <p class="section-eyebrow">✦ Le festival</p>
+  <div class="section-header" style="border-bottom:1px solid rgba(212,43,43,.2); padding-bottom:20px; margin-bottom:40px;">
+    <h2 class="section-title" style="font-family:Anton; font-size:clamp(1.8rem,3.5vw,2.8rem); letter-spacing:.05em; text-transform:uppercase;">En bref</h2>
   </div>
-  <div id="dayContent" class="artists-list reveal"></div>
-</section>
-
-<!-- GALLERY -->
-<section class="gallery-section" id="galerie"
-  ondragover="handleDragOver(event)"
-  ondragleave="handleDragLeave(event)"
-  ondrop="handleDrop(event)">
-  <div class="reveal">
-    <p class="section-eyebrow">✦ Médias</p>
-    <div class="section-header">
-      <h2 class="section-title">Galerie Photos</h2>
-      <label class="upload-pill" for="galleryInput">
-        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        Ajouter des photos
-      </label>
-    </div>
-  </div>
-  <div class="gallery-grid" id="galleryGrid">
-    <div class="gallery-empty">
-      <div style="font-size:2.5rem">📸</div>
-      <p>Glissez-déposez des images ici<br>ou utilisez les boutons upload</p>
-    </div>
+  <div class="cards-grid">
+    <div class="card"><span class="card-icon">🎸</span><h3 class="card-title">Line-up</h3><p class="card-text">40+ artistes sur 3 scènes pendant 3 jours de fête inoubliables.</p></div>
+    <div class="card"><span class="card-icon">🏕️</span><h3 class="card-title">Camping</h3><p class="card-text">Camping ouvert dès le jeudi soir avec toutes les commodités sur place.</p></div>
+    <div class="card"><span class="card-icon">🤝</span><h3 class="card-title">Bénévolat</h3><p class="card-text">Rejoins notre équipe de bénévoles passionnés pour vivre le festival de l'intérieur.</p></div>
   </div>
 </section>
 
-<!-- INFOS -->
-<section class="info-section" id="infos">
-  <div class="info-card reveal">
-    <span class="info-icon">📍</span>
-    <h3 class="info-title">Accès</h3>
-    <p class="info-text">Votre Ville, France<br>Parking gratuit sur place<br>Navettes depuis le centre-ville</p>
-  </div>
-  <div class="info-card reveal" style="transition-delay:.1s">
-    <span class="info-icon">🏕️</span>
-    <h3 class="info-title">Camping</h3>
-    <p class="info-text">Ouverture du camping le jeudi soir<br>Emplacements tente &amp; van<br>Douches &amp; sanitaires inclus</p>
-  </div>
-  <div class="info-card reveal" style="transition-delay:.2s">
-    <span class="info-icon">🎟️</span>
-    <h3 class="info-title">Billetterie</h3>
-    <p class="info-text">Pass 3 jours disponible<br>Tarif réduit moins de 18 ans<br>Vente sur place à l'entrée</p>
-  </div>
-</section>
-
-<!-- CONTACT -->
 <section style="padding:80px 80px; text-align:center;" id="contact">
   <p class="section-eyebrow reveal" style="text-align:center">✦ Restons en contact</p>
-  <h2 class="section-title reveal" style="margin:0 auto 20px; text-align:center">Une question ?</h2>
-  <p class="reveal" style="color:var(--grey); max-width:420px; margin:0 auto 40px; line-height:1.7; font-size:.95rem">
-    Nos bénévoles sont disponibles pour répondre à toutes vos questions sur l'événement.
-  </p>
-  <a href="bafcampcom@proton.me" class="btn btn-red reveal">✉️ &nbsp;Nous écrire</a>
+  <h2 style="font-family:Anton; font-size:clamp(1.8rem,3.5vw,2.8rem); letter-spacing:.05em; text-transform:uppercase; margin:0 auto 20px; text-align:center;" class="reveal">Une question ?</h2>
+  <p class="reveal" style="color:var(--grey); max-width:420px; margin:0 auto 40px; line-height:1.7; font-size:.95rem;">Notre équipe est disponible pour répondre à toutes vos questions.</p>
+  <a href="mailto:contact@monfestival.fr" class="btn btn-red reveal">✉️ &nbsp;Nous écrire</a>
 </section>
 
-<!-- FOOTER -->
+
 <footer>
   <div>
-    <div class="footer-logo">BAF <span>Camp</span></div>
-    <p class="footer-tagline"> Un camp pour un monde différent. Rencontre, soutien et partage des luttes.</p>
+    <div class="footer-logo">FIRE <span>FEST</span></div>
+    <p class="footer-tagline">Le festival qui enflamme chaque été. Musique, émotion, communauté.</p>
   </div>
   <div class="footer-col">
     <h4>Navigation</h4>
     <ul>
-      <li><a href="#">Accueil</a></li>
-      <li><a href="#programme">Programme</a></li>
-      <li><a href="#galerie">Galerie</a></li>
-      <li><a href="#infos">Infos</a></li>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="programme.html">Programme</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="infos.html">Infos pratiques</a></li>
     </ul>
   </div>
   <div class="footer-col">
-    <h4>Pratique</h4>
+    <h4>Fonctionnement</h4>
     <ul>
-      <li><a href="#">Camping</a></li>
-      <li><a href="#">Accès &amp; Plan</a></li>
-      <li><a href="#">FAQ</a></li>
-      <li><a href="#">Presse</a></li>
+      <li><a href="financements.html">Financements</a></li>
+      <li><a href="charte.html">Charte</a></li>
+      <li><a href="benevoles.html">Inscriptions bénévoles</a></li>
     </ul>
   </div>
   <div class="footer-col">
@@ -523,19 +151,13 @@
     </ul>
   </div>
   <div class="footer-bottom">
-    <span>2026 BAF Camp</span>
-    <span>Fait avec rage, coeur et ✨ paillettes ✨ </span>
+    <span>© 2025 Fire Festival — Tous droits réservés</span>
+    <span>Made with ♥ — Déployé sur Vercel</span>
   </div>
 </footer>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close">✕</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
 
 <script>
-/* DROPDOWN */
 function toggleDD(li) {
   const was = li.classList.contains('open');
   document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
@@ -545,8 +167,6 @@ document.addEventListener('click', e => {
   if (!e.target.closest('.nav-links > li'))
     document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
 });
-
-/* LOGO */
 document.getElementById('logoInput').addEventListener('change', function() {
   const file = this.files[0]; if (!file) return;
   const img = document.getElementById('logoImg');
@@ -554,85 +174,46 @@ document.getElementById('logoInput').addEventListener('change', function() {
   img.style.display = 'block';
   document.getElementById('logoPlaceholder').style.display = 'none';
 });
-
-/* HERO BANNER */
-document.getElementById('heroInput').addEventListener('change', function() {
-  const file = this.files[0]; if (!file) return;
-  const img = document.getElementById('heroImg');
-  img.src = URL.createObjectURL(file);
-});
-
-/* GALLERY */
-let gallery = [];
-
-document.getElementById('galleryInput').addEventListener('change', function() {
-  addImages([...this.files]); this.value = '';
-});
-
-function addImages(files) {
-  files.filter(f => f.type.startsWith('image/')).forEach(f => {
-    gallery.push(URL.createObjectURL(f));
-  });
-  renderGallery();
-}
-
-function renderGallery() {
-  const grid = document.getElementById('galleryGrid');
-  if (!gallery.length) {
-    grid.innerHTML = `<div class="gallery-empty"><div style="font-size:2.5rem">📸</div><p>Glissez-déposez des images ici<br>ou utilisez les boutons upload</p></div>`;
-    return;
-  }
-  grid.innerHTML = gallery.map((url, i) => `
-    <div class="gallery-item" onclick="openLightbox('${url}')">
-      <img src="${url}" alt="Photo ${i+1}" loading="lazy">
-      <button class="remove-btn" onclick="removeImg(event,${i})">✕</button>
-    </div>`).join('');
-}
-
-function removeImg(e, i) {
-  e.stopPropagation(); gallery.splice(i, 1); renderGallery();
-}
-
-/* DRAG & DROP */
-function handleDragOver(e) { e.preventDefault(); e.currentTarget.classList.add('drag-over'); }
-function handleDragLeave(e) { e.currentTarget.classList.remove('drag-over'); }
-function handleDrop(e) {
-  e.preventDefault(); e.currentTarget.classList.remove('drag-over');
-  addImages([...e.dataTransfer.files]);
-}
-
-/* LIGHTBOX */
-function openLightbox(src) {
-  document.getElementById('lightboxImg').src = src;
-  document.getElementById('lightbox').classList.add('open');
-}
-function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-
-/* PROGRAMME */
-const prog = [
-  [{time:'18:00',name:'Ouverture — DJ Set',stage:'Scène Rouge'},{time:'19:30',name:'Les Fantômes',stage:'Grande Scène'},{time:'21:00',name:'Révolution Sonore',stage:'Grande Scène'},{time:'23:00',name:'Headliner Vendredi',stage:'Grande Scène'}],
-  [{time:'16:00',name:'Acoustic Sessions',stage:'Scène Forêt'},{time:'18:30',name:'Dark Waves',stage:'Scène Rouge'},{time:'20:30',name:'Nuit Électrique',stage:'Grande Scène'},{time:'23:00',name:'Headliner Samedi',stage:'Grande Scène'}],
-  [{time:'15:00',name:'Les Inédits',stage:'Scène Forêt'},{time:'17:00',name:'Rouge & Noir',stage:'Scène Rouge'},{time:'19:30',name:'Closing Act',stage:'Grande Scène'},{time:'22:00',name:'Grande Finale',stage:'Grande Scène'}]
-];
-
-function switchDay(i, btn) {
-  document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active'); renderDay(i);
-}
-function renderDay(i) {
-  document.getElementById('dayContent').innerHTML = prog[i].map(a =>
-    `<div class="artist-row"><span class="artist-time">${a.time}</span><span class="artist-name">${a.name}</span><span class="artist-stage">${a.stage}</span></div>`
-  ).join('');
-}
-renderDay(0);
-
-/* SCROLL REVEAL */
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
+
+
+<style>
+.hero { min-height:calc(100vh - var(--nav-h)); position:relative; display:flex; align-items:center; overflow:hidden; }
+.hero-bg { position:absolute; inset:0; background:var(--black); overflow:hidden; }
+.hero-bg img { width:100%; height:100%; object-fit:cover; opacity:.38; }
+.hero-bg-overlay { position:absolute; inset:0; background:linear-gradient(105deg,rgba(8,8,8,.96) 38%,rgba(8,8,8,.5) 100%),linear-gradient(to top,rgba(8,8,8,.85) 0%,transparent 50%); }
+.hero-content { position:relative; z-index:2; padding:80px; max-width:780px; animation:fadeUp .9s ease both; }
+.hero-eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--red); margin-bottom:24px; }
+.hero-title { font-family:'Anton'; font-size:clamp(4rem,9vw,8rem); line-height:.95; letter-spacing:.02em; margin-bottom:32px; text-transform:uppercase; }
+.hero-title .red { color:var(--red); display:block; }
+.hero-meta { display:flex; gap:40px; margin-bottom:48px; flex-wrap:wrap; }
+.meta-item { display:flex; flex-direction:column; gap:4px; }
+.meta-label { font-size:.68rem; letter-spacing:.15em; text-transform:uppercase; color:var(--grey); }
+.meta-value { font-family:'Bebas Neue'; font-size:1.4rem; letter-spacing:.1em; }
+.hero-actions { display:flex; gap:16px; flex-wrap:wrap; }
+.upload-bar { background:var(--black2); border-top:1px solid rgba(212,43,43,.2); border-bottom:1px solid rgba(212,43,43,.2); padding:18px 80px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+.upload-bar-label { font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--grey); }
+.upload-bar-label span { color:var(--red); }
+.upload-btn-group { display:flex; gap:12px; flex-wrap:wrap; }
+.upload-pill { display:inline-flex; align-items:center; gap:8px; padding:9px 18px; background:var(--black3); border:1px solid rgba(212,43,43,.35); border-radius:30px; font-size:.8rem; font-weight:600; color:var(--white); cursor:pointer; transition:border-color .2s, background .2s; }
+.upload-pill:hover { border-color:var(--red); background:rgba(212,43,43,.08); }
+.upload-pill svg { width:14px; height:14px; fill:none; stroke:var(--red); stroke-width:2; }
+.section-eyebrow { font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:8px; }
+.section-title { font-family:'Anton'; font-size:clamp(1.8rem,3.5vw,2.8rem); letter-spacing:.05em; text-transform:uppercase; }
+.section-header { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+@media(max-width:900px){ .hero-content,.upload-bar{padding-left:20px;padding-right:20px;} }
+</style>
+<script>
+document.getElementById('heroInput').addEventListener('change', function() {
+  const file = this.files[0]; if (!file) return;
+  const img = document.getElementById('heroImg');
+  img.src = URL.createObjectURL(file); img.style.display='block';
+});
+</script>
+
 </body>
 </html>
