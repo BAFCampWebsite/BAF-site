@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscriptions bénévoles — Fire Festival</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<input type="file" id="logoInput" accept="image/*">
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
+      <img id="logoImg" src="" alt="Logo" style="display:none">
+      <span class="logo-placeholder" id="logoPlaceholder">FEST</span>
+      <div class="logo-upload-hint">LOGO</div>
+    </div>
+    <span class="nav-site-name">MON <span>FESTIVAL</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="">Accueil</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">
+        Programme
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="programme.html"><span class="di">🎸</span>Line-up &amp; Horaires</a>
+        <a href="infos.html"><span class="di">🎪</span>Scènes &amp; Accès</a>
+        <a href="index.html#contact"><span class="di">🎟️</span>Billetterie</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">
+        Fonctionnement
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="financements.html"><span class="di">💰</span>Financements</a>
+        <a href="charte.html"><span class="di">📜</span>Charte</a>
+        <a href="benevoles.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">
+        Infos &amp; Galerie
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="galerie.html"><span class="di">📸</span>Galerie photos</a>
+        <a href="infos.html"><span class="di">📍</span>Infos pratiques</a>
+        <a href="infos.html#camping"><span class="di">🏕️</span>Camping</a>
+      </div>
+    </li>
+    <li><a href="index.html#contact" class="nav-cta">Billetterie →</a></li>
+  </ul>
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ Bénévolat</p>
+  <h1 class="page-hero-title">Rejoins l'aventure</h1>
+  <p class="page-hero-sub">Deviens bénévole et vis le festival de l'intérieur. Inscription gratuite.</p>
+</div>
+
+<div class="page-content">
+  <div class="reveal">
+    <h2>Pourquoi devenir bénévole ?</h2>
+    <p>Rejoindre l'équipe bénévole, c'est vivre le festival de l'intérieur, rencontrer des gens passionnés et contribuer à un projet culturel unique. En échange de ton engagement, on prend soin de toi.</p>
+    <div class="cards-grid">
+      <div class="card"><span class="card-icon">🎟️</span><h3 class="card-title">Entrée gratuite</h3><p class="card-text">Accès libre au festival sur les jours non travaillés, pass complet pour les missions longues.</p></div>
+      <div class="card"><span class="card-icon">🍽️</span><h3 class="card-title">Repas fournis</h3><p class="card-text">Tous les repas sont pris en charge pendant tes shifts. Espace bénévoles dédié et confortable.</p></div>
+      <div class="card"><span class="card-icon">🏕️</span><h3 class="card-title">Camping offert</h3><p class="card-text">Emplacement camping réservé aux bénévoles, avec douches et sanitaires privatifs.</p></div>
+      <div class="card"><span class="card-icon">👕</span><h3 class="card-title">T-shirt bénévole</h3><p class="card-text">Un t-shirt officiel du festival offert à chaque bénévole en souvenir de l'aventure.</p></div>
+    </div>
+  </div>
+  <hr class="divider">
+  <div class="reveal">
+    <h2>Missions disponibles</h2>
+    <ul>
+      <li>Accueil &amp; orientation du public</li>
+      <li>Billetterie et contrôle d'accès</li>
+      <li>Logistique et installation du site</li>
+      <li>Restauration et buvettes</li>
+      <li>Communication et réseaux sociaux</li>
+      <li>Navettes et mobilité</li>
+      <li>Environnement et éco-gestes</li>
+      <li>Sécurité et premiers secours (formations requises)</li>
+    </ul>
+  </div>
+  <hr class="divider">
+  <div class="reveal">
+    <h2>Formulaire d'inscription</h2>
+    <p style="margin-bottom:32px;">Tu as envie de rejoindre l'aventure ? Remplis le formulaire ci-dessous, on te recontacte sous 48h.</p>
+    <div class="form-row">
+      <div class="form-group"><label>Prénom *</label><input type="text" placeholder="Ton prénom"></div>
+      <div class="form-group"><label>Nom *</label><input type="text" placeholder="Ton nom"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Email *</label><input type="email" placeholder="ton@email.fr"></div>
+      <div class="form-group"><label>Téléphone</label><input type="tel" placeholder="06 00 00 00 00"></div>
+    </div>
+    <div class="form-group">
+      <label>Mission souhaitée</label>
+      <select>
+        <option value="">— Choisir une mission —</option>
+        <option>Accueil &amp; orientation</option>
+        <option>Billetterie</option>
+        <option>Logistique</option>
+        <option>Restauration</option>
+        <option>Communication</option>
+        <option>Environnement</option>
+        <option>Autre / Flexible</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Disponibilités</label>
+      <select>
+        <option>Les 3 jours (14, 15, 16 août)</option>
+        <option>Vendredi 14 août</option>
+        <option>Samedi 15 août</option>
+        <option>Dimanche 16 août</option>
+        <option>Week-end (sam + dim)</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Message / Expériences</label><textarea placeholder="Parle-nous un peu de toi et de tes expériences bénévoles ou associatives..."></textarea></div>
+    <button class="btn btn-red" onclick="alert('Merci pour ta candidature ! On te recontacte très vite 🎉')">🙌 &nbsp;Envoyer ma candidature</button>
+  </div>
+</div>
+
+
+<footer>
+  <div>
+    <div class="footer-logo">FIRE <span>FEST</span></div>
+    <p class="footer-tagline">Le festival qui enflamme chaque été. Musique, émotion, communauté.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="programme.html">Programme</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="infos.html">Infos pratiques</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Fonctionnement</h4>
+    <ul>
+      <li><a href="financements.html">Financements</a></li>
+      <li><a href="charte.html">Charte</a></li>
+      <li><a href="benevoles.html">Inscriptions bénévoles</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Réseaux</h4>
+    <ul>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">TikTok</a></li>
+      <li><a href="#">YouTube</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Fire Festival — Tous droits réservés</span>
+    <span>Made with ♥ — Déployé sur Vercel</span>
+  </div>
+</footer>
+
+
+<script>
+function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+document.getElementById('logoInput').addEventListener('change', function() {
+  const file = this.files[0]; if (!file) return;
+  const img = document.getElementById('logoImg');
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
+});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
