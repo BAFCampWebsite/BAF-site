@@ -14,52 +14,63 @@
     <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
       <img id="logoImg" src="" alt="Logo" style="display:none">
       <span class="logo-placeholder" id="logoPlaceholder">FEST</span>
-      <div class="logo-upload-hint">LOGO</div>
+      <div class="logo-upload-hint">BAF</div>
     </div>
-    <span class="nav-site-name">BAF <span>CAMP</span></span>
+    <span class="nav-site-name">CAMP</span>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" class="">Accueil</a></li>
+    <li><a href="index.html" class="active">Accueil</a></li>
     <li>
       <button onclick="toggleDD(this.parentElement)">
         Programme
         <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="dropdown">
-        <a href="programme.html"><span class="di">🎸</span>Line-up &amp; Horaires</a>
+        <a href="index.html#contact"><span class="di">🎸</span>Line-up &amp; Horaires</a>
         <a href="infos.html"><span class="di">🎪</span>Scènes &amp; Accès</a>
-        <a href="index.html#contact"><span class="di">🎟️</span>Billetterie</a>
+        <a href="programme.html"><span class="di">🎟️</span>Programme complet</a>
       </div>
     </li>
     <li>
       <button onclick="toggleDD(this.parentElement)">
-        Fonctionnement
+        Fonctionnement interne
         <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="dropdown">
-        <a href="financements.html"><span class="di">💰</span>Financements</a>
-        <a href="charte.html"><span class="di">📜</span>Charte</a>
+        <a href="financements.html"><span class="di">💰</span>Financements du festi-camp</a>
+        <a href="charte.html"><span class="di">📜</span>Notre charte</a>
         <a href="benevoles.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
       </div>
     </li>
     <li>
       <button onclick="toggleDD(this.parentElement)">
-        Infos &amp; Galerie
+        Informations
         <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="dropdown">
-        <a href="galerie.html"><span class="di">📸</span>Galerie photos</a>
-        <a href="infos.html"><span class="di">📍</span>Infos pratiques</a>
-        <a href="infos.html#camping"><span class="di">🏕️</span>Camping</a>
+        <a href="infos.html"><span class="di">Venir sur place</a>
+        <a href="infos.html"><span class="di">Se nourrir</a>
+        <a href="infos.html#camping"><span class="di">Le camping</a>
       </div>
     </li>
-    <li><a href="index.html#contact" class="nav-cta">Billetterie →</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">
+        Nous aider
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="galerie.html"><span class="di"/span>Faire un don</a>
+        <a href="infos.html"><span class="di"/span>Bénévolat</a>
+        <a href="infos.html#camping"><span class="di"/span>Partager</a>
+        <a href="infos.html#camping"><span class="di"/span>Prêter du matériel</a>
+      </div>
+    </li>
+    <li><a href="index.html#contact" class="nav-cta">Billetterie prix libre→</a></li>
   </ul>
   <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-
 <div class="page-hero anim">
   <p class="page-hero-eyebrow">✦ Bénévolat</p>
   <h1 class="page-hero-title">Rejoins l'aventure</h1>
