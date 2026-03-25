@@ -4,9 +4,9 @@
 
 :root {
   /* ── PALETTE CULOTTÉES INTÉGRALE ── */
-  --rose:        #E87DE5;   /* rose vif couverture */
-  --rose-hot:    #E87DE5;
-  --rose-dark:   #E87DE5;
+  --rose:        #E8549A;   /* rose vif couverture */
+  --rose-hot:    #F066AA;
+  --rose-dark:   #B03878;
   --vert:        #4A8C5C;   /* vert sauge/émeraude */
   --vert-light:  #5DA672;
   --vert-dark:   #2E6040;
@@ -176,22 +176,16 @@ nav {
   position: relative; overflow: hidden;
 }
 
-/* Fleurs décoratives en arrière-plan style Culottées */
-.page-hero::before {
-  content: '✿';
-  position: absolute; bottom: -30px; right: 40px;
-  font-size: 18rem; line-height: 1;
-  color: rgba(255,255,255,.08);
+/* ══ BULLE BAF DÉCORATIVE ══ */
+.baf-burst {
+  position: absolute;
   pointer-events: none;
+  z-index: 0;
+  opacity: .13;
 }
-.page-hero::after {
-  content: '✿';
-  position: absolute; top: -40px; left: 20px;
-  font-size: 10rem; line-height: 1;
-  color: rgba(255,255,255,.06);
-  pointer-events: none;
-  transform: rotate(25deg);
-}
+.baf-burst svg { display: block; }
+
+/* Bulles injectées en JS */
 
 .page-hero-eyebrow {
   display: inline-block;
@@ -277,14 +271,7 @@ nav {
   transition: transform .15s, box-shadow .15s;
   position: relative; overflow: hidden;
 }
-/* Coin coloré arrondi */
-.card::after {
-  content: '✿';
-  position: absolute; top: 10px; right: 14px;
-  font-size: 1.4rem; color: var(--rose); opacity: .35;
-  pointer-events: none;
-}
-.card:nth-child(2n)::after { color: var(--vert); }
+.card:nth-child(2n) { background: var(--creme); }
 .card:hover { transform: translate(-3px, -3px); box-shadow: 7px 7px 0 var(--encre); }
 
 .card-icon { font-size: 1.8rem; margin-bottom: 14px; display: block; }
@@ -414,14 +401,7 @@ footer {
   display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
   position: relative; overflow: hidden;
 }
-/* Fleur déco footer */
-footer::before {
-  content: '✿';
-  position: absolute; bottom: -20px; right: 40px;
-  font-size: 14rem; line-height: 1;
-  color: rgba(255,255,255,.05);
-  pointer-events: none;
-}
+/* bulle BAF injectée en JS */
 
 .footer-logo {
   font-family: 'Boogaloo', cursive;
