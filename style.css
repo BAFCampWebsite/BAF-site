@@ -215,3 +215,50 @@ nav {
 .btn:hover {
   transform: translate(-3px,-3px);
 }
+/* ═════════ NAV FIX (à ajouter tout en bas) ═════════ */
+
+.nav-item {
+  color: white;
+  cursor: pointer;
+  font-family: 'Space Mono';
+}
+
+.has-dropdown {
+  position: relative;
+}
+
+/* dropdown */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: var(--contour);
+  box-shadow: var(--ombre);
+  min-width: 200px;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown a {
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background: var(--creme);
+}
+
+/* show dropdown */
+.has-dropdown.open .dropdown {
+  display: flex;
+}
+
+/* desktop hover */
+@media(min-width:901px){
+  .has-dropdown:hover .dropdown {
+    display: flex;
+  }
+}
