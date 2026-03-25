@@ -6,16 +6,12 @@
   <title>BAF Camp 2026</title>
   <link rel="stylesheet" href="style.css">
   <style>
-
     /* ══ HERO ══ */
     .hero {
       min-height: calc(100vh - var(--nav-h));
-      position: relative;
-      display: flex; align-items: center;
-      overflow: hidden;
-      background: var(--rose);
+      position: relative; display: flex; align-items: center;
+      overflow: hidden; background: var(--rose);
     }
-
     .hero-bg { position: absolute; inset: 0; overflow: hidden; }
     .hero-bg img { width: 100%; height: 100%; object-fit: cover; transition: opacity .4s; }
     .hero-bg-overlay {
@@ -24,8 +20,7 @@
         linear-gradient(105deg, rgba(232,84,154,.9) 40%, rgba(232,84,154,.55) 100%),
         linear-gradient(to top, rgba(28,18,8,.3) 0%, transparent 40%);
     }
-
-    /* Halftone points BD sur le hero */
+    /* Halftone points BD */
     .hero::before {
       content: '';
       position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -34,103 +29,59 @@
       mask-image: linear-gradient(to right, transparent 35%, black 100%);
       -webkit-mask-image: linear-gradient(to right, transparent 35%, black 100%);
     }
-
-    /* Fleurs décoratives */
-    .hero::after {
-      content: '✿';
-      position: absolute; bottom: -30px; right: 60px; z-index: 1;
-      font-size: 22rem; line-height: 1;
-      color: rgba(255,255,255,.07);
-      pointer-events: none;
-    }
-
     .hero-inner {
       display: flex; align-items: center; justify-content: space-between;
       width: 100%; position: relative; z-index: 2;
     }
-
-    .hero-content {
-      padding: 80px;
-      max-width: 680px;
-      animation: fadeUp .85s ease both;
-      flex-shrink: 0;
-    }
-
-    /* Cartouche étiquette vert */
+    .hero-content { padding: 80px; max-width: 680px; animation: fadeUp .85s ease both; flex-shrink: 0; }
     .hero-eyebrow {
       display: inline-block;
       font-family: 'Space Mono', monospace;
       font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
       background: var(--vert); color: var(--creme);
-      padding: 5px 14px;
-      border: 2px solid var(--encre);
-      box-shadow: var(--ombre);
-      margin-bottom: 24px;
-      border-radius: 4px;
+      padding: 5px 14px; border: 2px solid var(--encre);
+      box-shadow: var(--ombre); margin-bottom: 24px; border-radius: 4px;
     }
-
-    /* Titre BD — Boogaloo + contour */
     .hero-title {
       font-family: 'Boogaloo', cursive;
       font-size: clamp(5.5rem, 12vw, 10.5rem);
-      line-height: .88;
-      letter-spacing: .02em;
-      color: var(--creme);
+      line-height: .88; letter-spacing: .02em; color: var(--creme);
       margin-bottom: 32px; margin-top: 8px;
       text-shadow:
-        4px 4px 0 var(--encre),
-        -2px -2px 0 var(--encre),
-        2px -2px 0 var(--encre),
-        -2px 2px 0 var(--encre),
+        4px 4px 0 var(--encre), -2px -2px 0 var(--encre),
+        2px -2px 0 var(--encre), -2px 2px 0 var(--encre),
         5px 5px 0 rgba(28,18,8,.2);
     }
     .hero-title .accent { color: var(--vert); display: block; }
-
-    /* Meta infos */
-    .hero-meta {
-      display: flex; gap: 12px;
-      margin-bottom: 48px; flex-wrap: wrap;
-    }
+    .hero-meta { display: flex; gap: 12px; margin-bottom: 48px; flex-wrap: wrap; }
     .meta-item {
       display: flex; flex-direction: column; gap: 3px;
-      background: rgba(255,255,255,.18);
-      border: 2px solid rgba(28,18,8,.2);
-      border-radius: 10px;
-      padding: 10px 16px;
-      backdrop-filter: blur(2px);
+      background: rgba(255,255,255,.18); border: 2px solid rgba(28,18,8,.2);
+      border-radius: 10px; padding: 10px 16px; backdrop-filter: blur(2px);
     }
     .meta-label {
       font-family: 'Space Mono', monospace;
-      font-size: .6rem; letter-spacing: .2em; text-transform: uppercase;
-      color: var(--vert);
+      font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--vert);
     }
     .meta-value {
       font-family: 'Boogaloo', cursive;
-      font-size: 1.15rem; letter-spacing: .04em;
-      color: var(--creme);
+      font-size: 1.15rem; letter-spacing: .04em; color: var(--creme);
       text-shadow: 1px 1px 0 var(--encre);
     }
-
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-
-    /* Bouton outline sur fond rose */
     .btn-outline-hero {
       background: transparent; color: var(--creme);
       border: 2px solid rgba(249,242,236,.5);
     }
     .btn-outline-hero:hover { background: rgba(255,255,255,.12); border-color: var(--creme); }
-
-    /* Logo côté droit */
     .hero-logo-wrap {
       padding: 60px 80px 60px 0;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
     #heroLogoImg {
       max-width: 250px; max-height: 250px; object-fit: contain;
       filter: drop-shadow(4px 4px 0 rgba(28,18,8,.5));
-      cursor: pointer;
-      animation: fadeUp .85s ease .15s both;
+      cursor: pointer; animation: fadeUp .85s ease .15s both;
     }
     .hero-logo-placeholder {
       width: 190px; height: 190px;
@@ -142,12 +93,7 @@
     }
     .hero-logo-placeholder:hover { border-color: var(--creme); color: var(--creme); }
     .hero-logo-placeholder svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 1.5; }
-    .hero-logo-placeholder span {
-      font-family: 'Space Mono', monospace; font-size: .65rem;
-      letter-spacing: .15em; text-transform: uppercase; text-align: center;
-    }
-
-    /* Slider opacité */
+    .hero-logo-placeholder span { font-family: 'Space Mono', monospace; font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; text-align: center; }
     .opacity-control {
       position: absolute; bottom: 20px; right: 20px; z-index: 10;
       display: flex; align-items: center; gap: 10px;
@@ -156,40 +102,22 @@
       opacity: 0; pointer-events: none; transition: opacity .25s;
     }
     .hero:hover .opacity-control { opacity: 1; pointer-events: all; }
-    .opacity-control label {
-      font-family: 'Space Mono', monospace; font-size: .6rem;
-      letter-spacing: .12em; text-transform: uppercase; color: var(--sable); white-space: nowrap;
-    }
-    .opacity-control input[type=range] {
-      -webkit-appearance: none; width: 110px; height: 3px;
-      background: rgba(232,84,154,.4); border-radius: 2px; outline: none; cursor: pointer;
-    }
-    .opacity-control input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none; width: 14px; height: 14px;
-      background: var(--rose); border: 2px solid var(--encre); border-radius: 50%;
-    }
+    .opacity-control label { font-family: 'Space Mono', monospace; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sable); white-space: nowrap; }
+    .opacity-control input[type=range] { -webkit-appearance: none; width: 110px; height: 3px; background: rgba(232,84,154,.4); border-radius: 2px; outline: none; cursor: pointer; }
+    .opacity-control input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; background: var(--rose); border: 2px solid var(--encre); border-radius: 50%; }
     .opacity-val { font-family: 'Space Mono', monospace; font-size: .65rem; color: var(--rose); font-weight: 700; min-width: 28px; }
 
     /* ══ BARRE UPLOAD ══ */
     .upload-bar {
-      background: var(--vert-dark);
-      border-top: 2px solid var(--encre);
-      border-bottom: 3px solid var(--encre);
-      padding: 14px 80px;
-      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      background: var(--vert-dark); border-top: 2px solid var(--encre); border-bottom: 3px solid var(--encre);
+      padding: 14px 80px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
     }
-    .upload-bar-label {
-      font-family: 'Space Mono', monospace;
-      font-size: .65rem; letter-spacing: .18em; text-transform: uppercase;
-      color: rgba(249,242,236,.5); white-space: nowrap;
-    }
+    .upload-bar-label { font-family: 'Space Mono', monospace; font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(249,242,236,.5); white-space: nowrap; }
     .upload-bar-label span { color: var(--rose); }
     .upload-btn-group { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
     .upload-pill {
-      display: inline-flex; align-items: center; gap: 7px;
-      padding: 7px 14px;
-      background: rgba(249,242,236,.07);
-      border: 1px solid rgba(232,84,154,.3); border-radius: 20px;
+      display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px;
+      background: rgba(249,242,236,.07); border: 1px solid rgba(232,84,154,.3); border-radius: 20px;
       font-family: 'Space Mono', monospace; font-size: .65rem; color: var(--creme-fonce);
       cursor: pointer; transition: background .15s, border-color .15s; user-select: none;
     }
@@ -200,90 +128,44 @@
     .upload-pill.danger:hover { border-color: #c84040; color: var(--creme-fonce); }
 
     /* ══ EN BREF ══ */
-    .section-en-bref {
-      padding: 80px 80px;
-      background: var(--creme);
-      border-bottom: 3px solid var(--encre);
-      position: relative;
-    }
-    .section-en-bref::after {
-      content: '✿';
-      position: absolute; right: 30px; bottom: -40px;
-      font-size: 20rem; line-height: 1;
-      color: rgba(232,84,154,.05);
-      pointer-events: none; z-index: 0;
-    }
-
+    .section-en-bref { padding: 80px 80px; background: var(--creme); border-bottom: 3px solid var(--encre); position: relative; }
     .section-eyebrow {
-      display: inline-block;
-      font-family: 'Space Mono', monospace;
+      display: inline-block; font-family: 'Space Mono', monospace;
       font-size: .65rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
       background: var(--vert); color: var(--creme);
-      padding: 4px 12px; border-radius: 4px;
-      border: 1px solid var(--encre);
-      box-shadow: 2px 2px 0 var(--encre);
-      margin-bottom: 14px;
+      padding: 4px 12px; border-radius: 4px; border: 1px solid var(--encre);
+      box-shadow: 2px 2px 0 var(--encre); margin-bottom: 14px;
     }
-
     .section-title {
-      font-family: 'Boogaloo', cursive;
-      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
-      letter-spacing: .04em;
-      color: var(--encre);
-      text-shadow: 2px 2px 0 rgba(28,18,8,.12);
+      font-family: 'Boogaloo', cursive; font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      letter-spacing: .04em; color: var(--encre); text-shadow: 2px 2px 0 rgba(28,18,8,.12);
     }
-
     .section-header {
       display: flex; align-items: flex-end; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
-      border-bottom: 3px solid var(--encre);
-      padding-bottom: 20px; margin-bottom: 40px;
-      position: relative; z-index: 1;
+      flex-wrap: wrap; gap: 16px; border-bottom: 3px solid var(--encre);
+      padding-bottom: 20px; margin-bottom: 40px; position: relative; z-index: 1;
     }
 
     /* ══ CONTACT ══ */
     .section-contact {
-      padding: 80px 80px;
-      text-align: center;
-      background: var(--rose);
-      border-top: 3px solid var(--encre);
-      position: relative; overflow: hidden;
+      padding: 80px 80px; text-align: center; background: var(--rose);
+      border-top: 3px solid var(--encre); position: relative; overflow: hidden;
     }
     .section-contact::before {
-      content: '';
-      position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background-image: radial-gradient(circle, rgba(255,255,255,.1) 1px, transparent 1px);
       background-size: 14px 14px; pointer-events: none;
     }
-    .section-contact::after {
-      content: '✿';
-      position: absolute; bottom: -20px; left: 40px;
-      font-size: 12rem; line-height: 1;
-      color: rgba(255,255,255,.06);
-      pointer-events: none;
-    }
     .section-contact .section-eyebrow { background: var(--encre); color: var(--rose); }
     .section-contact .section-title { color: var(--creme); text-shadow: 2px 2px 0 rgba(28,18,8,.3); }
-    .contact-sub {
-      font-family: 'Libre Baskerville', serif; font-style: italic;
-      color: rgba(249,242,236,.7);
-      max-width: 400px; margin: 0 auto 40px;
-      line-height: 1.75; font-size: .93rem;
-    }
+    .contact-sub { font-family: 'Libre Baskerville', serif; font-style: italic; color: rgba(249,242,236,.7); max-width: 400px; margin: 0 auto 40px; line-height: 1.75; font-size: .93rem; }
 
-    /* Footer logo placeholder */
-    #footerLogoImg {
-      max-width: 110px; max-height: 70px; object-fit: contain;
-      display: block; margin-bottom: 14px; cursor: pointer;
-    }
+    #footerLogoImg { max-width: 110px; max-height: 70px; object-fit: contain; display: block; margin-bottom: 14px; cursor: pointer; }
     .footer-logo-ph {
-      display: inline-flex; align-items: center; gap: 7px;
-      padding: 6px 12px; border-radius: 4px;
-      border: 1px dashed rgba(232,84,154,.35);
-      color: rgba(232,84,154,.45);
+      display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 4px;
+      border: 1px dashed rgba(232,84,154,.35); color: rgba(232,84,154,.45);
       font-family: 'Space Mono', monospace; font-size: .65rem; letter-spacing: .1em;
-      cursor: pointer; margin-bottom: 14px;
-      transition: border-color .2s, color .2s;
+      cursor: pointer; margin-bottom: 14px; transition: border-color .2s, color .2s;
     }
     .footer-logo-ph:hover { border-color: var(--rose); color: var(--rose); }
 
@@ -313,7 +195,6 @@
     </div>
     <span class="nav-site-name">BAF <span>CAMP</span></span>
   </a>
-
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html" class="active">Accueil</a></li>
     <li>
@@ -358,25 +239,22 @@
     </li>
     <li><a href="#contact" class="btn nav-cta">Billetterie prix libre →</a></li>
   </ul>
-
   <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- ══ HERO ══ -->
-<section class="hero">
+<section class="hero" id="hero-section">
   <div class="hero-bg">
     <img id="heroImg" src="" alt="" style="opacity:.28">
     <div class="hero-bg-overlay"></div>
   </div>
-
   <div class="opacity-control">
     <label for="opacitySlider">Opacité</label>
     <input type="range" id="opacitySlider" min="5" max="75" value="28" oninput="setOpacity(this.value)">
     <span class="opacity-val" id="opacityVal">28%</span>
   </div>
-
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-eyebrow">✿ Édition 2026 ✿</div>
@@ -401,7 +279,6 @@
         <a href="programme.html" class="btn btn-outline-hero">Voir le programme →</a>
       </div>
     </div>
-
     <div class="hero-logo-wrap">
       <img id="heroLogoImg" src="" alt="Logo BAF Camp" style="display:none"
         onclick="document.getElementById('heroLogoInput').click()" title="Changer le logo">
@@ -437,7 +314,7 @@
 </div>
 
 <!-- ══ EN BREF ══ -->
-<section class="section-en-bref reveal">
+<section class="section-en-bref reveal" id="en-bref-section">
   <div class="section-header">
     <div>
       <p class="section-eyebrow">Le festi-camp</p>
@@ -474,7 +351,7 @@
 </section>
 
 <!-- ══ FOOTER ══ -->
-<footer>
+<footer id="footer-section">
   <div style="position:relative; z-index:1;">
     <img id="footerLogoImg" src="" alt="" style="display:none"
       onclick="document.getElementById('heroLogoInput').click()">
@@ -518,6 +395,7 @@
 </footer>
 
 <script>
+/* ── NAV ── */
 function toggleDD(li) {
   const was = li.classList.contains('open');
   document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
@@ -527,11 +405,123 @@ document.addEventListener('click', e => {
   if (!e.target.closest('.nav-links > li'))
     document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
 });
+
+/* ── REVEAL ── */
 const obs = new IntersectionObserver(entries =>
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
   { threshold: .1 }
 );
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ══════════════════════════════════════════
+   BULLE BAF — SVG généré en JS
+   Paramètres : size (px), opacity, rotation
+══════════════════════════════════════════ */
+function makeBafBurst(size, opacity, rotation, text) {
+  const t = text || 'BAF';
+  const s = size || 280;
+  const o = opacity !== undefined ? opacity : 0.13;
+  const r = rotation || 0;
+
+  const div = document.createElement('div');
+  div.className = 'baf-burst';
+  div.style.opacity = o;
+  div.style.transform = `rotate(${r}deg)`;
+  div.style.width = s + 'px';
+  div.style.height = s + 'px';
+
+  // Bulle explosion BD : étoile irrégulière + fond jaune + contour + texte
+  div.innerHTML = `
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}">
+    <defs>
+      <!-- Halftone sur le fond de la bulle -->
+      <pattern id="ht${Math.random().toString(36).slice(2,6)}" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+        <circle cx="3" cy="3" r="1.2" fill="rgba(28,18,8,.18)"/>
+      </pattern>
+    </defs>
+    <!-- Rayons de fond style BD -->
+    <g transform="translate(100,100)">
+      ${Array.from({length:16}, (_,i) => {
+        const a = (i / 16) * Math.PI * 2;
+        const x2 = Math.cos(a) * 105;
+        const y2 = Math.sin(a) * 105;
+        return `<line x1="0" y1="0" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="rgba(28,18,8,.12)" stroke-width="2"/>`;
+      }).join('')}
+    </g>
+    <!-- Forme explosion : étoile à pointes irrégulières -->
+    <path d="
+      M100,8 L112,42 L148,22 L132,56 L168,52 L146,80
+      L182,88 L156,108 L178,130 L148,132 L152,168
+      L124,152 L112,188 L96,158 L76,186 L68,150
+      L38,162 L48,128 L14,126 L42,106 L16,82
+      L54,84 L40,50 L74,62 L72,24 L100,44 Z"
+      fill="#F5C842" stroke="#1C1208" stroke-width="4" stroke-linejoin="round"
+    />
+    <!-- Fond halftone -->
+    <path d="
+      M100,8 L112,42 L148,22 L132,56 L168,52 L146,80
+      L182,88 L156,108 L178,130 L148,132 L152,168
+      L124,152 L112,188 L96,158 L76,186 L68,150
+      L38,162 L48,128 L14,126 L42,106 L16,82
+      L54,84 L40,50 L74,62 L72,24 L100,44 Z"
+      fill="rgba(28,18,8,.06)"
+    />
+    <!-- Texte BAF -->
+    <text
+      x="100" y="115"
+      text-anchor="middle"
+      font-family="'Boogaloo', cursive"
+      font-size="52"
+      font-weight="400"
+      letter-spacing="2"
+      fill="#E8549A"
+      stroke="#1C1208"
+      stroke-width="3"
+      paint-order="stroke"
+    >${t}</text>
+  </svg>`;
+  return div;
+}
+
+/* ── Injection dans les sections ── */
+function injectBursts() {
+  // Hero — grande bulle en bas à droite
+  const hero = document.getElementById('hero-section');
+  if (hero) {
+    const b = makeBafBurst(340, 0.11, -8, 'BAF');
+    b.style.position = 'absolute';
+    b.style.bottom = '-60px';
+    b.style.right = '30px';
+    b.style.zIndex = '1';
+    hero.appendChild(b);
+  }
+
+  // En bref — bulle moyenne en coin bas droit
+  const brief = document.getElementById('en-bref-section');
+  if (brief) {
+    const b = makeBafBurst(260, 0.07, 12, 'BAF');
+    b.style.position = 'absolute';
+    b.style.bottom = '-50px';
+    b.style.right = '20px';
+    b.style.zIndex = '0';
+    brief.appendChild(b);
+  }
+
+  // Footer — bulle dans le coin
+  const footer = document.getElementById('footer-section');
+  if (footer) {
+    const b = makeBafBurst(220, 0.08, -15, 'BAF');
+    b.style.position = 'absolute';
+    b.style.bottom = '-30px';
+    b.style.right = '40px';
+    b.style.zIndex = '0';
+    footer.appendChild(b);
+  }
+}
+
+injectBursts();
+
+/* ── IMAGES ── */
 function fileToBase64(file) {
   return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); });
 }
@@ -577,12 +567,12 @@ document.getElementById('heroInput').addEventListener('change', async function()
   this.value = '';
 });
 (function() {
-  const n = localStorage.getItem('baf_logo_nav');
-  const h = localStorage.getItem('baf_logo_hero');
+  const n  = localStorage.getItem('baf_logo_nav');
+  const h  = localStorage.getItem('baf_logo_hero');
   const bg = localStorage.getItem('baf_hero_bg');
   const op = localStorage.getItem('baf_hero_opacity') || 28;
-  if (n) applyNavLogo(n);
-  if (h) applyHeroLogo(h);
+  if (n)  applyNavLogo(n);
+  if (h)  applyHeroLogo(h);
   if (bg) applyHeroBg(bg, Number(op));
 })();
 </script>
