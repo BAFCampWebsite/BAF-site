@@ -1,718 +1,565 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Comic+Neue:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAF Camp 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ══ HERO ══ */
+    .hero {
+      min-height: calc(100vh - var(--nav-h));
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+      background: var(--encre);
+    }
 
-:root {
-  --orange:      #F07A2A;
-  --orange-hot:  #FF9140;
-  --orange-dim:  #9E4E15;
-  --navy:        #1B2A4A;
-  --navy-light:  #263D6B;
-  --navy-dark:   #0F1A2E;
-  --white:       #FAF6F0;
-  --cream:       #F5EDD8;
-  --black:       #0F0F0F;
-  --ink:         #1A1008;
-  --grey:        #7A6E62;
-  --nav-h:       76px;
+    /* Image de fond avec overlay opaque warm */
+    .hero-bg { position: absolute; inset: 0; overflow: hidden; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; transition: opacity .4s; }
+    .hero-bg-overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(105deg, rgba(28,18,8,.92) 42%, rgba(28,18,8,.55) 100%),
+        linear-gradient(to top, rgba(28,18,8,.8) 0%, transparent 45%);
+    }
 
-  /* BD effet : contour épais partout */
-  --outline: 3px solid var(--black);
-  --shadow-bd: 4px 4px 0px var(--black);
-  --shadow-bd-lg: 6px 6px 0px var(--black);
-  --shadow-orange: 4px 4px 0px var(--orange-dim);
-}
+    /* Trait diagonal activiste en arrière-plan */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          -55deg,
+          transparent 0px, transparent 80px,
+          rgba(232,100,42,.025) 80px, rgba(232,100,42,.025) 82px
+        );
+    }
 
-html { scroll-behavior: smooth; }
+    .hero-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; position: relative; z-index: 2;
+    }
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
-  color: var(--ink);
-  overflow-x: hidden;
-}
+    .hero-content {
+      padding: 80px;
+      max-width: 700px;
+      animation: fadeUp .85s ease both;
+      flex-shrink: 0;
+    }
 
-/* ── HALFTONE BACKGROUND TEXTURE ── */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image: radial-gradient(circle, rgba(240,122,42,.12) 1px, transparent 1px);
-  background-size: 18px 18px;
-  opacity: 1;
-}
+    /* Cartouche étiquette militant */
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Space Mono', monospace;
+      font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+      background: var(--orange); color: var(--encre);
+      padding: 5px 14px;
+      border: 2px solid var(--encre);
+      box-shadow: var(--ombre);
+      margin-bottom: 24px;
+      transform: rotate(-.4deg);
+      display: inline-block;
+    }
 
-/* ── GRAIN OVERLAY ── */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9998;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-  opacity: .5;
-}
+    .hero-title {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(5rem, 11vw, 10rem);
+      line-height: .88;
+      letter-spacing: -.02em;
+      text-transform: uppercase;
+      color: var(--creme);
+      margin-bottom: 32px; margin-top: 12px;
+      /* Impression légèrement désaxée — effet riso */
+      text-shadow:
+        3px 3px 0 rgba(28,18,8,.6),
+        -2px 0 0 rgba(232,100,42,.25);
+    }
+    .hero-title .accent { color: var(--orange); display: block; }
 
-/* ── NAVBAR ── */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  height: var(--nav-h);
-  background: var(--navy);
-  border-bottom: 4px solid var(--black);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 52px;
-  /* Ligne de case BD */
-  box-shadow: 0 4px 0 var(--black);
-}
+    /* Meta infos — cases de tract */
+    .hero-meta {
+      display: flex; gap: 12px;
+      margin-bottom: 48px; flex-wrap: wrap;
+    }
+    .meta-item {
+      display: flex; flex-direction: column; gap: 3px;
+      background: transparent;
+      border: 2px solid rgba(232,100,42,.45);
+      border-left: 4px solid var(--orange);
+      padding: 10px 16px;
+    }
+    .meta-label {
+      font-family: 'Space Mono', monospace;
+      font-size: .6rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--orange);
+    }
+    .meta-value {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.1rem; letter-spacing: .04em; text-transform: uppercase;
+      color: var(--creme);
+    }
 
-/* Bande décorative orange en haut du nav */
-nav::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 5px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--orange) 0px,
-    var(--orange) 24px,
-    var(--navy) 24px,
-    var(--navy) 30px
-  );
-}
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
-.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    /* Logo côté droit */
+    .hero-logo-wrap {
+      padding: 60px 80px 60px 0;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    #heroLogoImg {
+      max-width: 240px; max-height: 240px; object-fit: contain;
+      filter: drop-shadow(4px 4px 0 rgba(28,18,8,.7));
+      cursor: pointer;
+      animation: fadeUp .85s ease .15s both;
+    }
+    .hero-logo-placeholder {
+      width: 190px; height: 190px;
+      border: 2px dashed rgba(232,100,42,.35);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; color: rgba(232,100,42,.4);
+      cursor: pointer; animation: fadeUp .85s ease .15s both;
+      transition: border-color .2s, color .2s;
+    }
+    .hero-logo-placeholder:hover { border-color: var(--orange); color: var(--orange); }
+    .hero-logo-placeholder svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+    .hero-logo-placeholder span { font-family: 'Space Mono', monospace; font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; text-align: center; }
 
-.logo-img-wrap {
-  width: 48px;
-  height: 48px;
-  border-radius: 4px;
-  overflow: hidden;
-  border: 3px solid var(--black);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--orange);
-  cursor: pointer;
-  position: relative;
-  transition: transform .15s;
-  box-shadow: var(--shadow-bd);
-}
-.logo-img-wrap:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-bd-lg); }
-.logo-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-.logo-placeholder { font-family: 'Bangers'; font-size: 1.3rem; color: var(--white); letter-spacing: .1em; }
-.logo-upload-hint {
-  position: absolute;
-  inset: 0;
-  background: rgba(240,122,42,.92);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: .5rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: white;
-  opacity: 0;
-  transition: opacity .2s;
-}
-.logo-img-wrap:hover .logo-upload-hint { opacity: 1; }
+    /* Slider opacité */
+    .opacity-control {
+      position: absolute; bottom: 20px; right: 20px; z-index: 10;
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(28,18,8,.85); border: 2px solid rgba(232,100,42,.35);
+      padding: 8px 18px; opacity: 0; pointer-events: none; transition: opacity .25s;
+    }
+    .hero:hover .opacity-control { opacity: 1; pointer-events: all; }
+    .opacity-control label { font-family: 'Space Mono', monospace; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sable); white-space: nowrap; }
+    .opacity-control input[type=range] { -webkit-appearance: none; width: 110px; height: 2px; background: rgba(232,100,42,.35); outline: none; cursor: pointer; }
+    .opacity-control input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; background: var(--orange); border: 2px solid var(--encre); border-radius: 50%; }
+    .opacity-val { font-family: 'Space Mono', monospace; font-size: .65rem; color: var(--orange); font-weight: 700; min-width: 28px; }
 
-.nav-site-name {
-  font-family: 'Bangers';
-  font-size: 1.9rem;
-  color: var(--white);
-  letter-spacing: .18em;
-  /* Effet texte BD avec contour */
-  text-shadow: 2px 2px 0 var(--black), -1px -1px 0 var(--black), 1px -1px 0 var(--black), -1px 1px 0 var(--black);
-}
-.nav-site-name span { color: var(--orange); }
+    /* ══ BARRE UPLOAD ══ */
+    .upload-bar {
+      background: var(--terre);
+      border-top: 2px solid var(--encre);
+      border-bottom: 3px solid var(--encre);
+      padding: 16px 80px;
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    }
+    .upload-bar-label {
+      font-family: 'Space Mono', monospace;
+      font-size: .65rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--sable); white-space: nowrap;
+    }
+    .upload-bar-label span { color: var(--orange); }
+    .upload-btn-group { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .upload-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 7px 14px;
+      background: rgba(242,232,208,.06);
+      border: 1px solid rgba(232,100,42,.3);
+      font-family: 'Space Mono', monospace;
+      font-size: .68rem; color: var(--creme-fonce);
+      cursor: pointer;
+      transition: background .15s, border-color .15s;
+      user-select: none;
+    }
+    .upload-pill:hover { border-color: var(--orange); background: rgba(232,100,42,.12); }
+    .upload-pill svg { width: 13px; height: 13px; fill: none; stroke: var(--orange); stroke-width: 2; flex-shrink: 0; }
+    .upload-pill.danger { border-color: rgba(194,59,34,.35); color: rgba(242,232,208,.45); }
+    .upload-pill.danger svg { stroke: rgba(194,59,34,.6); }
+    .upload-pill.danger:hover { border-color: var(--rouge); color: var(--creme-fonce); background: rgba(194,59,34,.12); }
 
-.nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
-.nav-links > li { position: relative; }
+    /* ══ EN BREF ══ */
+    .section-en-bref {
+      padding: 80px 80px;
+      background: var(--creme);
+      border-bottom: 3px solid var(--encre);
+      position: relative;
+    }
+    /* Grande lettre décorative derrière */
+    .section-en-bref::after {
+      content: '&';
+      position: absolute; right: 40px; bottom: -20px;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 18rem; line-height: 1;
+      color: rgba(28,18,8,.03);
+      pointer-events: none; z-index: 0;
+    }
 
-.nav-links > li > a,
-.nav-links > li > button {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 16px;
-  font-family: 'Comic Neue';
-  font-size: .82rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--white);
-  text-decoration: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: color .2s, background .2s;
-}
-.nav-links > li > a:hover,
-.nav-links > li > button:hover,
-.nav-links > li.open > button {
-  color: var(--orange);
-  background: rgba(240,122,42,.15);
-}
-.nav-links > li > a.active { color: var(--orange); }
+    .section-eyebrow {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: .65rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+      background: var(--encre); color: var(--orange);
+      padding: 4px 12px;
+      margin-bottom: 14px;
+    }
 
-.chevron { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-width: 2.5; transition: transform .25s; }
-.nav-links > li.open .chevron { transform: rotate(180deg); }
+    .section-title {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: .02em; text-transform: uppercase;
+      color: var(--encre);
+      position: relative;
+    }
 
-.dropdown {
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%) translateY(-6px);
-  min-width: 220px;
-  background: var(--white);
-  border: 3px solid var(--black);
-  border-radius: 0 0 8px 8px;
-  overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .22s, transform .22s, visibility .22s;
-  box-shadow: var(--shadow-bd-lg);
-}
-.nav-links > li.open .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-.dropdown a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 18px;
-  font-family: 'Comic Neue';
-  font-size: .87rem;
-  font-weight: 700;
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 2px solid rgba(27,42,74,.12);
-  transition: background .18s, color .18s, padding-left .18s;
-}
-.dropdown a:last-child { border-bottom: none; }
-.dropdown a:hover { background: var(--orange); color: var(--white); padding-left: 26px; }
-.dropdown a .di { font-size: .95rem; }
+    .section-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+      border-bottom: 3px solid var(--encre);
+      padding-bottom: 20px; margin-bottom: 40px;
+      position: relative; z-index: 1;
+    }
 
-.nav-cta {
-  background: var(--orange) !important;
-  color: var(--black) !important;
-  border-radius: 4px !important;
-  font-weight: 700 !important;
-  letter-spacing: .1em !important;
-  margin-left: 8px;
-  border: 3px solid var(--black) !important;
-  box-shadow: var(--shadow-bd) !important;
-  transition: transform .15s, box-shadow .15s !important;
-}
-.nav-cta:hover {
-  background: var(--orange-hot) !important;
-  transform: translate(-2px, -2px) !important;
-  box-shadow: var(--shadow-bd-lg) !important;
-}
+    /* ══ CONTACT ══ */
+    .section-contact {
+      padding: 80px 80px;
+      text-align: center;
+      background: var(--rouge);
+      border-top: 3px solid var(--encre);
+      position: relative; overflow: hidden;
+    }
+    .section-contact::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(28,18,8,.1) 1px, transparent 1px);
+      background-size: 14px 14px; pointer-events: none;
+    }
+    /* Bande hachurée en bas de section */
+    .section-contact::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
+      background: repeating-linear-gradient(-45deg, var(--orange) 0px, var(--orange) 6px, var(--rouge-dark) 6px, var(--rouge-dark) 12px);
+    }
+    .section-contact .section-eyebrow { background: var(--encre); color: var(--orange); }
+    .section-contact .section-title { color: var(--creme); }
+    .contact-sub {
+      font-family: 'Libre Baskerville', serif; font-style: italic;
+      color: rgba(242,232,208,.65);
+      max-width: 400px; margin: 0 auto 40px;
+      line-height: 1.75; font-size: .93rem;
+    }
 
-/* ── PAGE HERO ── */
-.page-hero {
-  padding: 80px 80px 60px;
-  background: var(--navy);
-  border-bottom: 4px solid var(--black);
-  position: relative;
-  overflow: hidden;
-}
+    /* Footer logo placeholder */
+    #footerLogoImg {
+      max-width: 110px; max-height: 70px; object-fit: contain;
+      display: block; margin-bottom: 14px; cursor: pointer;
+    }
+    .footer-logo-ph {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 6px 12px;
+      border: 1px dashed rgba(232,100,42,.28);
+      color: rgba(232,100,42,.35);
+      font-family: 'Space Mono', monospace; font-size: .65rem; letter-spacing: .1em;
+      cursor: pointer; margin-bottom: 14px;
+      transition: border-color .2s, color .2s;
+    }
+    .footer-logo-ph:hover { border-color: var(--orange); color: var(--orange); }
 
-/* Halftone décoratif sur le hero */
-.page-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(240,122,42,.18) 1px, transparent 1px);
-  background-size: 14px 14px;
-  pointer-events: none;
-  mask-image: radial-gradient(ellipse 60% 100% at 100% 50%, black 0%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 60% 100% at 100% 50%, black 0%, transparent 70%);
-}
+    @media(max-width: 900px) {
+      .hero-inner { flex-direction: column-reverse; }
+      .hero-content { padding: 40px 20px; }
+      .hero-logo-wrap { padding: 40px 0 0; }
+      .upload-bar { padding: 16px 20px; }
+      .section-en-bref, .section-contact { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
 
-/* Bulle BD décorative */
-.page-hero::after {
-  content: 'POW!';
-  position: absolute;
-  top: 24px;
-  right: 80px;
-  font-family: 'Bangers';
-  font-size: 3.5rem;
-  letter-spacing: .1em;
-  color: var(--orange);
-  text-shadow: 3px 3px 0 var(--black), -1px -1px 0 var(--black), 1px -1px 0 var(--black), -1px 1px 0 var(--black);
-  transform: rotate(8deg);
-  opacity: .25;
-  pointer-events: none;
-}
+<input type="file" id="logoInput"     accept="image/*">
+<input type="file" id="heroLogoInput" accept="image/*">
+<input type="file" id="heroInput"     accept="image/*">
+<input type="file" id="galleryInput"  accept="image/*" multiple>
 
-.page-hero-eyebrow {
-  font-family: 'Comic Neue';
-  font-size: .78rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 16px;
-  /* Style cartouche BD */
-  display: inline-block;
-  background: var(--orange);
-  color: var(--black);
-  padding: 4px 14px;
-  border: 2px solid var(--black);
-  border-radius: 3px;
-  box-shadow: 2px 2px 0 var(--black);
-  font-weight: 700;
-}
+<!-- ══ NAVBAR ══ -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
+      <img id="logoImg" src="" alt="Logo" style="display:none">
+      <span class="logo-placeholder" id="logoPlaceholder">BAF</span>
+      <div class="logo-upload-hint">logo</div>
+    </div>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
+  </a>
 
-.page-hero-title {
-  font-family: 'Bangers';
-  font-size: clamp(3rem, 7vw, 6rem);
-  line-height: .95;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--white);
-  margin-bottom: 20px;
-  margin-top: 16px;
-  /* Contour BD */
-  text-shadow:
-    3px 3px 0 var(--black),
-    -2px -2px 0 var(--black),
-    2px -2px 0 var(--black),
-    -2px 2px 0 var(--black),
-    4px 4px 0 var(--orange-dim);
-}
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Accueil</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Programme
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="infos.html"><span class="di">🎪</span>Scènes &amp; Accès</a>
+        <a href="programme.html"><span class="di">🎟</span>Programme complet</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Fonctionnement
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="financements.html"><span class="di">💰</span>Financements</a>
+        <a href="charte.html"><span class="di">📜</span>Notre charte</a>
+        <a href="benevoles.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Informations
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="infos.html#acces"><span class="di">📍</span>Venir sur place</a>
+        <a href="infos.html#restauration"><span class="di">🍔</span>Se nourrir</a>
+        <a href="infos.html#camping"><span class="di">⛺</span>Le camping</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Nous aider
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="nous-aider.html"><span class="di">❤️</span>Faire un don</a>
+        <a href="benevoles.html"><span class="di">🙌</span>Bénévolat</a>
+        <a href="nous-aider.html#partager"><span class="di">📢</span>Partager</a>
+        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Prêter du matériel</a>
+      </div>
+    </li>
+    <li><a href="#contact" class="btn nav-cta">Billetterie prix libre →</a></li>
+  </ul>
 
-.page-hero-sub {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: rgba(250,246,240,.65);
-  max-width: 560px;
-  font-family: 'Comic Neue';
-}
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-/* ── CONTENU ── */
-.page-content { padding: 72px 80px; }
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg">
+    <img id="heroImg" src="" alt="" style="opacity:.32">
+    <div class="hero-bg-overlay"></div>
+  </div>
 
-.page-content h2 {
-  font-family: 'Bangers';
-  font-size: 2rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--navy);
-  margin-bottom: 20px;
-  margin-top: 52px;
-  /* Style titre de chapitre BD */
-  display: inline-block;
-  position: relative;
-  padding-bottom: 6px;
-}
-.page-content h2::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 4px;
-  background: var(--orange);
-  border-radius: 2px;
-}
-.page-content h2:first-child { margin-top: 0; }
+  <div class="opacity-control">
+    <label for="opacitySlider">Opacité</label>
+    <input type="range" id="opacitySlider" min="5" max="75" value="32" oninput="setOpacity(this.value)">
+    <span class="opacity-val" id="opacityVal">32%</span>
+  </div>
 
-.page-content p {
-  font-size: .95rem;
-  line-height: 1.8;
-  color: rgba(26,16,8,.72);
-  margin-bottom: 16px;
-  font-family: 'Comic Neue';
-}
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">✦ Édition 2026 ✦</div>
+      <h1 class="hero-title">BAF<br><span class="accent">CAMP</span></h1>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">Date</span>
+          <span class="meta-value">20–23 Août</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Lieu</span>
+          <span class="meta-value">L'arbre qui pousse</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Au programme</span>
+          <span class="meta-value">5 artistes</span>
+          <span class="meta-value" style="font-size:.9rem; opacity:.75">10 tables rondes · 5 ateliers</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-red">Prendre mes billets</a>
+        <a href="programme.html" class="btn btn-outline" style="color:var(--creme); border-color:rgba(242,232,208,.3);">Voir le programme →</a>
+      </div>
+    </div>
 
-.page-content ul { list-style: none; margin-bottom: 20px; }
-.page-content ul li {
-  padding: 10px 14px;
-  margin-bottom: 8px;
-  border: 2px solid var(--black);
-  border-radius: 4px;
-  background: var(--white);
-  font-size: .92rem;
-  color: var(--ink);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-family: 'Comic Neue';
-  font-weight: 700;
-  box-shadow: var(--shadow-bd);
-  transition: transform .15s, box-shadow .15s;
-}
-.page-content ul li:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-bd-lg);
-}
-.page-content ul li::before {
-  content: '▸';
-  color: var(--orange);
-  flex-shrink: 0;
-  margin-top: 1px;
-}
+    <div class="hero-logo-wrap">
+      <img id="heroLogoImg" src="" alt="Logo BAF Camp" style="display:none"
+        onclick="document.getElementById('heroLogoInput').click()" title="Changer le logo">
+      <div class="hero-logo-placeholder" id="heroLogoPlaceholder"
+        onclick="document.getElementById('heroLogoInput').click()">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Ajouter<br>le logo ici</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* ── CARDS ── */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-top: 16px;
-  margin-bottom: 40px;
-}
+<!-- ══ BARRE UPLOAD ══ -->
+<div class="upload-bar">
+  <span class="upload-bar-label">🛠 <span>Personnaliser</span></span>
+  <div class="upload-btn-group">
+    <label class="upload-pill" for="logoInput">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Logo navbar
+    </label>
+    <label class="upload-pill" for="heroLogoInput">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Logo hero &amp; footer
+    </label>
+    <label class="upload-pill" for="heroInput">
+      <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>Photo de fond
+    </label>
+    <label class="upload-pill" for="galleryInput">
+      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Galerie
+    </label>
+    <button class="upload-pill danger" onclick="clearAll()">
+      <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>Réinitialiser
+    </button>
+  </div>
+</div>
 
-.card {
-  background: var(--white);
-  border: 3px solid var(--black);
-  border-radius: 6px;
-  padding: 32px 28px;
-  box-shadow: var(--shadow-bd-lg);
-  transition: transform .2s, box-shadow .2s;
-  position: relative;
-  overflow: hidden;
-}
+<!-- ══ EN BREF ══ -->
+<section class="section-en-bref reveal">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">Le festi-camp</p>
+      <h2 class="section-title">En bref</h2>
+    </div>
+  </div>
+  <div class="cards-grid" style="position:relative; z-index:1;">
+    <div class="card">
+      <span class="card-icon">🎸</span>
+      <h3 class="card-title">Line-up</h3>
+      <p class="card-text">10+ artistes sur 3 scènes pendant 4 jours de fête et de lutte.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🏕️</span>
+      <h3 class="card-title">Camping</h3>
+      <p class="card-text">Camping ouvert dès le jeudi soir avec toutes les commodités sur place.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🤝</span>
+      <h3 class="card-title">Bénévolat</h3>
+      <p class="card-text">Rejoins notre équipe pour participer à l'organisation en amont et sur place.</p>
+    </div>
+  </div>
+</section>
 
-/* Coin coloré style BD */
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0; right: 0;
-  width: 0; height: 0;
-  border-style: solid;
-  border-width: 0 40px 40px 0;
-  border-color: transparent var(--orange) transparent transparent;
-}
+<!-- ══ CONTACT ══ -->
+<section class="section-contact" id="contact">
+  <div style="position:relative; z-index:1;">
+    <p class="section-eyebrow reveal" style="display:inline-block; margin-bottom:16px;">Restons en contact</p>
+    <h2 class="section-title reveal" style="margin-bottom:20px;">Une question ?</h2>
+    <p class="contact-sub reveal">Nos bénévoles sont disponibles pour répondre à toutes vos questions.</p>
+    <a href="mailto:contact@monfestival.fr" class="btn btn-red reveal">✉ &nbsp;Nous écrire</a>
+  </div>
+</section>
 
-.card:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: var(--shadow-bd-lg);
-}
-.card:nth-child(2n) { background: var(--cream); }
-.card:nth-child(3n) .card::before { border-color: transparent var(--navy) transparent transparent; }
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div style="position:relative; z-index:1;">
+    <img id="footerLogoImg" src="" alt="" style="display:none"
+      onclick="document.getElementById('heroLogoInput').click()">
+    <div class="footer-logo-ph" id="footerLogoPh"
+      onclick="document.getElementById('heroLogoInput').click()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Ajouter le logo
+    </div>
+    <div class="footer-logo">BAF <span>CAMP</span></div>
+    <p class="footer-tagline">Le festival qui enflamme chaque été. Musique, rencontre, soutien et partage des luttes.</p>
+  </div>
+  <div class="footer-col" style="position:relative; z-index:1;">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="programme.html">Programme</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="infos.html">Infos pratiques</a></li>
+    </ul>
+  </div>
+  <div class="footer-col" style="position:relative; z-index:1;">
+    <h4>Fonctionnement</h4>
+    <ul>
+      <li><a href="financements.html">Financements</a></li>
+      <li><a href="charte.html">Charte</a></li>
+      <li><a href="benevoles.html">Bénévoles</a></li>
+    </ul>
+  </div>
+  <div class="footer-col" style="position:relative; z-index:1;">
+    <h4>Réseaux</h4>
+    <ul>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Stuut</a></li>
+      <li><a href="#">Signal</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BAF Camp — par et pour toustes</span>
+    <span>Fait avec cœur, rage et ✨ paillettes ✨</span>
+  </div>
+</footer>
 
-.card-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
-.card-title {
-  font-family: 'Bangers';
-  font-size: 1.4rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  color: var(--navy);
+<script>
+function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
 }
-.card-text {
-  font-size: .88rem;
-  line-height: 1.7;
-  color: rgba(26,16,8,.6);
-  font-family: 'Comic Neue';
-}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
 
-/* ── FORMULAIRE ── */
-.form-group { margin-bottom: 20px; }
+const obs = new IntersectionObserver(entries =>
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: .1 }
+);
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-.form-group label {
-  display: block;
-  font-family: 'Comic Neue';
-  font-size: .78rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--grey);
-  margin-bottom: 8px;
+function fileToBase64(file) {
+  return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); });
 }
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  background: var(--white);
-  border: 3px solid var(--black);
-  border-radius: 4px;
-  padding: 13px 16px;
-  color: var(--ink);
-  font-family: 'Comic Neue';
-  font-weight: 700;
-  font-size: .95rem;
-  transition: border-color .2s, box-shadow .2s;
-  outline: none;
-  box-shadow: var(--shadow-bd);
+function applyNavLogo(src) {
+  document.getElementById('logoImg').src = src;
+  document.getElementById('logoImg').style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
 }
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--orange);
-  box-shadow: var(--shadow-orange);
+function applyHeroLogo(src) {
+  ['heroLogoImg','footerLogoImg'].forEach(id => { document.getElementById(id).src = src; document.getElementById(id).style.display = 'block'; });
+  document.getElementById('heroLogoPlaceholder').style.display = 'none';
+  document.getElementById('footerLogoPh').style.display = 'none';
 }
-.form-group textarea { resize: vertical; min-height: 120px; }
-.form-group select option { background: var(--white); }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-/* ── BOUTONS ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 32px;
-  font-family: 'Bangers';
-  font-size: 1rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 4px;
-  cursor: pointer;
-  border: 3px solid var(--black);
-  transition: transform .15s, box-shadow .15s;
-  box-shadow: var(--shadow-bd);
+function applyHeroBg(src, op) {
+  const img = document.getElementById('heroImg');
+  img.src = src; img.style.opacity = (op ?? 32) / 100;
+  document.getElementById('opacitySlider').value = op ?? 32;
+  document.getElementById('opacityVal').textContent = (op ?? 32) + '%';
 }
-.btn:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: var(--shadow-bd-lg);
+function setOpacity(v) {
+  document.getElementById('heroImg').style.opacity = v / 100;
+  document.getElementById('opacityVal').textContent = v + '%';
+  localStorage.setItem('baf_hero_opacity', v);
 }
-
-.btn-red {
-  /* Rebaptisé btn-primary mais garde la classe pour compatibilité */
-  background: var(--orange);
-  color: var(--black);
+function clearAll() {
+  if (!confirm('Supprimer toutes les images ?')) return;
+  ['baf_logo_nav','baf_logo_hero','baf_hero_bg','baf_hero_opacity'].forEach(k => localStorage.removeItem(k));
+  location.reload();
 }
-.btn-red:hover { background: var(--orange-hot); }
-
-.btn-outline {
-  background: transparent;
-  color: var(--ink);
-  border: 3px solid var(--black);
-}
-.btn-outline:hover { background: var(--cream); }
-
-/* Bouton style BD avec effet "action" */
-.btn-primary {
-  background: var(--orange);
-  color: var(--black);
-  font-weight: 900;
-}
-.btn-navy {
-  background: var(--navy);
-  color: var(--white);
-}
-.btn-navy:hover { background: var(--navy-light); }
-
-/* ── DIVIDER ── */
-.divider {
-  border: none;
-  border-top: 3px solid var(--black);
-  margin: 48px 0;
-  position: relative;
-}
-.divider::after {
-  content: '✦';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--cream);
-  padding: 0 12px;
-  color: var(--orange);
-  font-size: 1rem;
-}
-
-/* ── BADGE ── */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 14px;
-  background: var(--orange);
-  border: 2px solid var(--black);
-  border-radius: 20px;
-  font-family: 'Comic Neue';
-  font-size: .75rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  color: var(--black);
-  margin-bottom: 8px;
-  margin-right: 8px;
-  box-shadow: 2px 2px 0 var(--black);
-}
-
-/* ── BULLES BD DÉCORATIVES ── */
-/* Classe utilitaire pour ajouter une bulle de dialogue */
-.speech-bubble {
-  position: relative;
-  background: var(--white);
-  border: 3px solid var(--black);
-  border-radius: 12px;
-  padding: 20px 24px;
-  font-family: 'Comic Neue';
-  font-weight: 700;
-  box-shadow: var(--shadow-bd);
-  margin-bottom: 32px;
-}
-.speech-bubble::after {
-  content: '';
-  position: absolute;
-  bottom: -18px;
-  left: 32px;
-  border-width: 18px 12px 0;
-  border-style: solid;
-  border-color: var(--black) transparent transparent;
-}
-.speech-bubble::before {
-  content: '';
-  position: absolute;
-  bottom: -13px;
-  left: 34px;
-  border-width: 16px 10px 0;
-  border-style: solid;
-  border-color: var(--white) transparent transparent;
-  z-index: 1;
-}
-
-/* ── CAPTION BD ── */
-.bd-caption {
-  display: inline-block;
-  background: var(--navy);
-  color: var(--white);
-  font-family: 'Comic Neue';
-  font-size: .8rem;
-  font-weight: 700;
-  padding: 6px 16px;
-  border: 2px solid var(--black);
-  box-shadow: var(--shadow-bd);
-  letter-spacing: .06em;
-}
-
-/* ── ONOMATOPÉES ── */
-.sfx {
-  font-family: 'Bangers';
-  font-size: 4rem;
-  letter-spacing: .12em;
-  color: var(--orange);
-  text-shadow:
-    3px 3px 0 var(--black),
-    -2px -2px 0 var(--black),
-    2px -2px 0 var(--black),
-    -2px 2px 0 var(--black);
-  display: inline-block;
-  transform: rotate(-4deg);
-  line-height: 1;
-}
-
-/* ── FOOTER ── */
-footer {
-  background: var(--navy-dark);
-  border-top: 4px solid var(--black);
-  padding: 56px 80px 28px;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  position: relative;
-}
-
-/* Bande décorative top footer */
-footer::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 6px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--orange) 0px,
-    var(--orange) 20px,
-    var(--navy) 20px,
-    var(--navy) 26px
-  );
-}
-
-.footer-logo {
-  font-family: 'Bangers';
-  font-size: 2.2rem;
-  letter-spacing: .12em;
-  color: var(--white);
-  text-shadow: 2px 2px 0 var(--black);
-}
-.footer-logo span { color: var(--orange); }
-.footer-tagline {
-  font-size: .85rem;
-  color: var(--grey);
-  margin-top: 12px;
-  line-height: 1.6;
-  max-width: 240px;
-  font-family: 'Comic Neue';
-}
-
-.footer-col h4 {
-  font-family: 'Bangers';
-  font-size: .9rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 18px;
-  border-bottom: 2px solid var(--orange-dim);
-  padding-bottom: 8px;
-}
-.footer-col ul { list-style: none; }
-.footer-col ul li { margin-bottom: 10px; }
-.footer-col ul li a {
-  font-size: .86rem;
-  color: var(--grey);
-  text-decoration: none;
-  font-family: 'Comic Neue';
-  transition: color .18s;
-}
-.footer-col ul li a:hover { color: var(--white); }
-
-.footer-bottom {
-  grid-column: 1/-1;
-  border-top: 2px solid rgba(240,122,42,.2);
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  font-size: .76rem;
-  color: var(--grey);
-  font-family: 'Comic Neue';
-}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes popIn { from { opacity: 0; transform: scale(.85) rotate(-3deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
-@keyframes wiggle { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
-
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.anim { animation: fadeUp .7s ease both; }
-.anim-pop { animation: popIn .5s cubic-bezier(.34,1.56,.64,1) both; }
-
-/* ── RESPONSIVE ── */
-@media(max-width: 900px) {
-  nav { padding: 0 20px; }
-  .page-hero, .page-content { padding-left: 20px; padding-right: 20px; }
-  footer { grid-template-columns: 1fr 1fr; padding: 40px 20px 20px; }
-  .form-row { grid-template-columns: 1fr; }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: var(--nav-h);
-    left: 0; right: 0;
-    background: var(--navy);
-    border-bottom: 3px solid var(--black);
-    padding: 16px;
-    z-index: 199;
-    box-shadow: 0 8px 0 var(--black);
-  }
-  .nav-links.open { display: flex; }
-  .burger { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-  .burger span { width: 22px; height: 3px; background: var(--white); display: block; border-radius: 2px; }
-  .page-hero::after { display: none; }
-}
-@media(min-width: 901px) { .burger { display: none; } }
-input[type=file] { display: none; }
+document.getElementById('logoInput').addEventListener('change', async function() {
+  const f = this.files[0]; if (!f) return;
+  try { const b = await fileToBase64(f); localStorage.setItem('baf_logo_nav', b); applyNavLogo(b); } catch { alert('Fichier trop lourd.'); }
+  this.value = '';
+});
+document.getElementById('heroLogoInput').addEventListener('change', async function() {
+  const f = this.files[0]; if (!f) return;
+  try { const b = await fileToBase64(f); localStorage.setItem('baf_logo_hero', b); applyHeroLogo(b); } catch { alert('Fichier trop lourd.'); }
+  this.value = '';
+});
+document.getElementById('heroInput').addEventListener('change', async function() {
+  const f = this.files[0]; if (!f) return;
+  try { const b = await fileToBase64(f); const op = document.getElementById('opacitySlider').value; localStorage.setItem('baf_hero_bg', b); localStorage.setItem('baf_hero_opacity', op); applyHeroBg(b, op); } catch { alert('Photo trop lourde.'); }
+  this.value = '';
+});
+(function() {
+  const n = localStorage.getItem('baf_logo_nav');
+  const h = localStorage.getItem('baf_logo_hero');
+  const bg = localStorage.getItem('baf_hero_bg');
+  const op = localStorage.getItem('baf_hero_opacity') || 32;
+  if (n) applyNavLogo(n);
+  if (h) applyHeroLogo(h);
+  if (bg) applyHeroBg(bg, Number(op));
+})();
+</script>
+</body>
+</html>
