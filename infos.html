@@ -6,186 +6,98 @@
   <title>Infos pratiques — BAF Camp</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<input type="file" id="logoInput" accept="image/*">
+<!-- ═════════ NAVBAR ═════════ -->
 <nav>
-  <a href="index.html" class="nav-logo">
-    <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
-      <img id="logoImg" src="" alt="Logo" style="display:none">
-      <span class="logo-placeholder" id="logoPlaceholder">FEST</span>
-      <div class="logo-upload-hint">BAF</div>
-    </div>
-    <span class="nav-site-name">CAMP</span>
-  </a>
+  <div class="nav-site-name">BAF CAMP</div>
+
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Accueil</a></li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">
-        Programme
-        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
+
+    <li class="has-dropdown">
+      <span class="nav-item">Programme ▾</span>
       <div class="dropdown">
-        <a href="infos.html"><span class="di">🎪</span>Scènes &amp; Accès</a>
-        <a href="programme.html"><span class="di">🎟️</span>Programme complet</a>
+        <a href="infos.html">🎪 Scènes & accès</a>
+        <a href="programme.html">🎟️ Programme complet</a>
       </div>
     </li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">
-        Fonctionnement interne
-        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
+
+    <li class="has-dropdown">
+      <span class="nav-item">Fonctionnement ▾</span>
       <div class="dropdown">
-        <a href="financements.html"><span class="di">💰</span>Financements du festi-camp</a>
-        <a href="charte.html"><span class="di">📜</span>Notre charte</a>
-        <a href="benevoles.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
+        <a href="financements.html">💰 Financements</a>
+        <a href="charte.html">📜 Charte</a>
+        <a href="benevoles.html">🙌 Bénévoles</a>
       </div>
     </li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">
-        Informations
-        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
+
+    <li class="has-dropdown">
+      <span class="nav-item">Infos ▾</span>
       <div class="dropdown">
-        <a href="infos.html#acces"><span class="di">📍</span>Venir sur place</a>
-        <a href="infos.html#restauration"><span class="di">🍔</span>Se nourrir</a>
-        <a href="infos.html#camping"><span class="di">⛺</span>Le camping</a>
+        <a href="#acces">📍 Accès</a>
+        <a href="#restauration">🍔 Restauration</a>
+        <a href="#camping">⛺ Camping</a>
       </div>
     </li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">
-        Nous aider
-        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dropdown">
-        <a href="nous-aider.html" class="active"><span class="di">❤️</span>Faire un don</a>
-        <a href="benevoles.html"><span class="di">🙌</span>Bénévolat</a>
-        <a href="nous-aider.html#partager"><span class="di">📢</span>Partager</a>
-        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Prêter du matériel</a>
-      </div>
-    </li>
-    <li><a href="index.html#contact" class="nav-cta">Billetterie prix libre→</a></li>
+
+    <li><a href="#contact" class="nav-cta">Billetterie →</a></li>
   </ul>
-  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+
+  <button class="burger" onclick="toggleMenu()">☰</button>
 </nav>
-<div class="page-hero anim">
-  <p class="page-hero-eyebrow">✦ Infos Pratiques</p>
+
+<!-- ═════════ HERO ═════════ -->
+<section class="page-hero">
   <h1 class="page-hero-title">Tout savoir</h1>
-  <p class="page-hero-sub">Accès, camping, restauration et tout ce qu'il faut savoir avant de venir.</p>
-</div>
+</section>
 
+<!-- ═════════ CONTENU ═════════ -->
 <div class="page-content">
-  <div class="reveal" id="acces">
+
+  <section id="acces">
     <h2>Accès au festival</h2>
-    <div class="cards-grid">
-      <div class="card"><span class="card-icon">🚗</span><h3 class="card-title">En voiture</h3><p class="card-text">Trajet à venir.</p></div>
-      <div class="card"><span class="card-icon">🚌</span><h3 class="card-title">Navettes</h3><p class="card-text">Trajet à venir.</p></div>
-      <div class="card"><span class="card-icon">🚆</span><h3 class="card-title">En train</h3><p class="card-text">Trajet à venir.</p></div>
-      <div class="card"><span class="card-icon">🚆</span><h3 class="card-title">En vélo ou à pied</h3><p class="card-text">Trajet à venir.</p></div>
+    <div class="comic-grid">
+      <div class="card"><h3 class="card-title">🚗 Voiture</h3></div>
+      <div class="card"><h3 class="card-title">🚌 Navettes</h3></div>
+      <div class="card"><h3 class="card-title">🚆 Train</h3></div>
     </div>
-  </div>
+  </section>
 
-  <hr class="divider">
-  <div class="reveal" id="camping">
+  <section id="camping">
     <h2>Camping</h2>
-    <p>Le camping du festival ouvre ses portes le <strong>Lundi 17 août à 14h</strong> et ferme le <strong>Mercredi 26 août à 12h</strong>.</p>
-    <ul>
-      <li>Accès camping inclus dans n'importe quel billet festival</li>
-      <li>Emplacements tente, van &amp; camping-car disponibles</li>
-      <li>Douches et sanitaires sur place</li>
-      <li>Espaces de rechargement pour appareils électroniques</li>
-      <li>Pas de magasin accessible à pied. Faites vos courses en amont.</li>
-    </ul>
-  </div>
+    <p>Ouvert du 17 au 26 août.</p>
+  </section>
 
-  <hr class="divider">
-  <div class="reveal" id="restauration"> 
+  <section id="restauration">
     <h2>Restauration</h2>
-    <p>Merci à la cantine (insérer le nom) qui s'occupe de fournir le camp en nourriture locale et en partie bio. L'inégralité sera vegan, des shifts de bénévolats son nécessaires pour les préparations.</p>
-    <div class="cards-grid">
-      <div class="card"><span class="card-icon">🍔</span><h3 class="card-title">Street food</h3><p class="card-text">Burgers, tacos, pizza, kebab... De quoi satisfaire toutes les envies.</p></div>
-      <div class="card"><span class="card-icon">🥗</span><h3 class="card-title">Bio &amp; local</h3><p class="card-text">Producteurs locaux sélectionnés. Végétarien, vegan, sans gluten disponibles.</p></div>
-      <div class="card"><span class="card-icon">🍺</span><h3 class="card-title">Buvettes</h3><p class="card-text">Bières locales, vins naturels, cocktails et boissons sans alcool. Gobelets réutilisables obligatoires.</p></div>
+    <div class="comic-grid">
+      <div class="card"><h3 class="card-title">🍔 Street food</h3></div>
+      <div class="card"><h3 class="card-title">🥗 Bio</h3></div>
+      <div class="card"><h3 class="card-title">🍺 Buvette</h3></div>
     </div>
-  </div>
+  </section>
 
-  <hr class="divider">
-  <div class="reveal" id="question">
-    <h2>Infos pratiques</h2>
-    <ul>
-      <li>Vous pouvez apporter vos propres boissons ou votre nourriture au sein du camp</li>
-      <li>Animaux adutorisés</li>
-      <li>Objets interdits : armes, feux d'artifice, lasers, drones</li>
-      <li>Accès PMR garanti sur l'ensemble du site — espace dédié en fosse</li>
-      <li>Point de premiers secours ouvert 24h/24 pendant le festival</li>
-      <li>Bambinerie organisée pour les enfants et adolescents</li>
-    </ul>
-    <a href="mailto:contact@monfestival.fr" class="btn btn-red" style="margin-top:16px;">❓ &nbsp;Une question ?</a>
-  </div>
 </div>
 
-
-<footer>
-  <div>
-    <div class="footer-logo">BAF <span>Camp</span></div>
-    <p class="footer-tagline">Par et pour toustes. Fait avec rage, coeur et ✨ paillettes ✨</p>
-  </div>
-  <div class="footer-col">
-    <h4>Navigation</h4>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="programme.html">Programme</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="infos.html">Infos pratiques</a></li>
-    </ul>
-  </div>
-  <div class="footer-col">
-    <h4>Fonctionnement</h4>
-    <ul>
-      <li><a href="financements.html">Financements</a></li>
-      <li><a href="charte.html">Charte</a></li>
-      <li><a href="benevoles.html">Inscriptions bénévoles</a></li>
-    </ul>
-  </div>
-  <div class="footer-col">
-    <h4>Réseaux</h4>
-    <ul>
-      <li><a href="#">Instagram</a></li>
-      <li><a href="#">Facebook</a></li>
-      <li><a href="#">Stuut</a></li>
-      <li><a href="#">Signal</a></li>
-    </ul>
-  </div>
-  <div class="footer-bottom">
-    <span>2026 BAF Camp — par et pour toustes</span>
-    <span>Fait avec cœur, rage et ✨ paillettes ✨ !</span>
-  </div>
+<!-- ═════════ FOOTER ═════════ -->
+<footer style="padding:40px; text-align:center;">
+  BAF Camp 2026
 </footer>
 
-
+<!-- ═════════ SCRIPT ═════════ -->
 <script>
-function toggleDD(li) {
-  const was = li.classList.contains('open');
-  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
-  if (!was) li.classList.add('open');
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
 }
-document.addEventListener('click', e => {
-  if (!e.target.closest('.nav-links > li'))
-    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+
+// dropdown hover desktop + click mobile
+document.querySelectorAll('.has-dropdown').forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('open');
+  });
 });
-document.getElementById('logoInput').addEventListener('change', function() {
-  const file = this.files[0]; if (!file) return;
-  const img = document.getElementById('logoImg');
-  img.src = URL.createObjectURL(file);
-  img.style.display = 'block';
-  document.getElementById('logoPlaceholder').style.display = 'none';
-});
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold:.12});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 
 </body>
