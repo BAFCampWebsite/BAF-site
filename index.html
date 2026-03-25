@@ -13,29 +13,35 @@
       position: relative;
       display: flex; align-items: center;
       overflow: hidden;
-      background: var(--encre);
+      background: var(--rose);
     }
 
-    /* Image de fond avec overlay opaque warm */
     .hero-bg { position: absolute; inset: 0; overflow: hidden; }
     .hero-bg img { width: 100%; height: 100%; object-fit: cover; transition: opacity .4s; }
     .hero-bg-overlay {
       position: absolute; inset: 0;
       background:
-        linear-gradient(105deg, rgba(28,18,8,.92) 42%, rgba(28,18,8,.55) 100%),
-        linear-gradient(to top, rgba(28,18,8,.8) 0%, transparent 45%);
+        linear-gradient(105deg, rgba(232,84,154,.9) 40%, rgba(232,84,154,.55) 100%),
+        linear-gradient(to top, rgba(28,18,8,.3) 0%, transparent 40%);
     }
 
-    /* Trait diagonal activiste en arrière-plan */
+    /* Halftone points BD sur le hero */
     .hero::before {
       content: '';
       position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      background:
-        repeating-linear-gradient(
-          -55deg,
-          transparent 0px, transparent 80px,
-          rgba(232,100,42,.025) 80px, rgba(232,100,42,.025) 82px
-        );
+      background-image: radial-gradient(circle, rgba(255,255,255,.12) 1px, transparent 1px);
+      background-size: 14px 14px;
+      mask-image: linear-gradient(to right, transparent 35%, black 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 35%, black 100%);
+    }
+
+    /* Fleurs décoratives */
+    .hero::after {
+      content: '✿';
+      position: absolute; bottom: -30px; right: 60px; z-index: 1;
+      font-size: 22rem; line-height: 1;
+      color: rgba(255,255,255,.07);
+      pointer-events: none;
     }
 
     .hero-inner {
@@ -45,64 +51,74 @@
 
     .hero-content {
       padding: 80px;
-      max-width: 700px;
+      max-width: 680px;
       animation: fadeUp .85s ease both;
       flex-shrink: 0;
     }
 
-    /* Cartouche étiquette militant */
+    /* Cartouche étiquette vert */
     .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 10px;
+      display: inline-block;
       font-family: 'Space Mono', monospace;
       font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
-      background: var(--orange); color: var(--encre);
+      background: var(--vert); color: var(--creme);
       padding: 5px 14px;
       border: 2px solid var(--encre);
       box-shadow: var(--ombre);
       margin-bottom: 24px;
-      transform: rotate(-.4deg);
-      display: inline-block;
+      border-radius: 4px;
     }
 
+    /* Titre BD — Boogaloo + contour */
     .hero-title {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: clamp(5rem, 11vw, 10rem);
+      font-family: 'Boogaloo', cursive;
+      font-size: clamp(5.5rem, 12vw, 10.5rem);
       line-height: .88;
-      letter-spacing: -.02em;
-      text-transform: uppercase;
+      letter-spacing: .02em;
       color: var(--creme);
-      margin-bottom: 32px; margin-top: 12px;
-      /* Impression légèrement désaxée — effet riso */
+      margin-bottom: 32px; margin-top: 8px;
       text-shadow:
-        3px 3px 0 rgba(28,18,8,.6),
-        -2px 0 0 rgba(232,100,42,.25);
+        4px 4px 0 var(--encre),
+        -2px -2px 0 var(--encre),
+        2px -2px 0 var(--encre),
+        -2px 2px 0 var(--encre),
+        5px 5px 0 rgba(28,18,8,.2);
     }
-    .hero-title .accent { color: var(--orange); display: block; }
+    .hero-title .accent { color: var(--vert); display: block; }
 
-    /* Meta infos — cases de tract */
+    /* Meta infos */
     .hero-meta {
       display: flex; gap: 12px;
       margin-bottom: 48px; flex-wrap: wrap;
     }
     .meta-item {
       display: flex; flex-direction: column; gap: 3px;
-      background: transparent;
-      border: 2px solid rgba(232,100,42,.45);
-      border-left: 4px solid var(--orange);
+      background: rgba(255,255,255,.18);
+      border: 2px solid rgba(28,18,8,.2);
+      border-radius: 10px;
       padding: 10px 16px;
+      backdrop-filter: blur(2px);
     }
     .meta-label {
       font-family: 'Space Mono', monospace;
       font-size: .6rem; letter-spacing: .2em; text-transform: uppercase;
-      color: var(--orange);
+      color: var(--vert);
     }
     .meta-value {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 1.1rem; letter-spacing: .04em; text-transform: uppercase;
+      font-family: 'Boogaloo', cursive;
+      font-size: 1.15rem; letter-spacing: .04em;
       color: var(--creme);
+      text-shadow: 1px 1px 0 var(--encre);
     }
 
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* Bouton outline sur fond rose */
+    .btn-outline-hero {
+      background: transparent; color: var(--creme);
+      border: 2px solid rgba(249,242,236,.5);
+    }
+    .btn-outline-hero:hover { background: rgba(255,255,255,.12); border-color: var(--creme); }
 
     /* Logo côté droit */
     .hero-logo-wrap {
@@ -111,67 +127,77 @@
       flex-shrink: 0;
     }
     #heroLogoImg {
-      max-width: 240px; max-height: 240px; object-fit: contain;
-      filter: drop-shadow(4px 4px 0 rgba(28,18,8,.7));
+      max-width: 250px; max-height: 250px; object-fit: contain;
+      filter: drop-shadow(4px 4px 0 rgba(28,18,8,.5));
       cursor: pointer;
       animation: fadeUp .85s ease .15s both;
     }
     .hero-logo-placeholder {
       width: 190px; height: 190px;
-      border: 2px dashed rgba(232,100,42,.35);
+      border: 2px dashed rgba(255,255,255,.35); border-radius: 16px;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 12px; color: rgba(232,100,42,.4);
+      gap: 12px; color: rgba(255,255,255,.5);
       cursor: pointer; animation: fadeUp .85s ease .15s both;
       transition: border-color .2s, color .2s;
     }
-    .hero-logo-placeholder:hover { border-color: var(--orange); color: var(--orange); }
+    .hero-logo-placeholder:hover { border-color: var(--creme); color: var(--creme); }
     .hero-logo-placeholder svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 1.5; }
-    .hero-logo-placeholder span { font-family: 'Space Mono', monospace; font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; text-align: center; }
+    .hero-logo-placeholder span {
+      font-family: 'Space Mono', monospace; font-size: .65rem;
+      letter-spacing: .15em; text-transform: uppercase; text-align: center;
+    }
 
     /* Slider opacité */
     .opacity-control {
       position: absolute; bottom: 20px; right: 20px; z-index: 10;
       display: flex; align-items: center; gap: 10px;
-      background: rgba(28,18,8,.85); border: 2px solid rgba(232,100,42,.35);
-      padding: 8px 18px; opacity: 0; pointer-events: none; transition: opacity .25s;
+      background: rgba(28,18,8,.7); border: 2px solid rgba(232,84,154,.4);
+      border-radius: 24px; padding: 8px 18px;
+      opacity: 0; pointer-events: none; transition: opacity .25s;
     }
     .hero:hover .opacity-control { opacity: 1; pointer-events: all; }
-    .opacity-control label { font-family: 'Space Mono', monospace; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sable); white-space: nowrap; }
-    .opacity-control input[type=range] { -webkit-appearance: none; width: 110px; height: 2px; background: rgba(232,100,42,.35); outline: none; cursor: pointer; }
-    .opacity-control input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; background: var(--orange); border: 2px solid var(--encre); border-radius: 50%; }
-    .opacity-val { font-family: 'Space Mono', monospace; font-size: .65rem; color: var(--orange); font-weight: 700; min-width: 28px; }
+    .opacity-control label {
+      font-family: 'Space Mono', monospace; font-size: .6rem;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--sable); white-space: nowrap;
+    }
+    .opacity-control input[type=range] {
+      -webkit-appearance: none; width: 110px; height: 3px;
+      background: rgba(232,84,154,.4); border-radius: 2px; outline: none; cursor: pointer;
+    }
+    .opacity-control input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 14px; height: 14px;
+      background: var(--rose); border: 2px solid var(--encre); border-radius: 50%;
+    }
+    .opacity-val { font-family: 'Space Mono', monospace; font-size: .65rem; color: var(--rose); font-weight: 700; min-width: 28px; }
 
     /* ══ BARRE UPLOAD ══ */
     .upload-bar {
-      background: var(--terre);
+      background: var(--vert-dark);
       border-top: 2px solid var(--encre);
       border-bottom: 3px solid var(--encre);
-      padding: 16px 80px;
+      padding: 14px 80px;
       display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
     }
     .upload-bar-label {
       font-family: 'Space Mono', monospace;
       font-size: .65rem; letter-spacing: .18em; text-transform: uppercase;
-      color: var(--sable); white-space: nowrap;
+      color: rgba(249,242,236,.5); white-space: nowrap;
     }
-    .upload-bar-label span { color: var(--orange); }
+    .upload-bar-label span { color: var(--rose); }
     .upload-btn-group { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
     .upload-pill {
       display: inline-flex; align-items: center; gap: 7px;
       padding: 7px 14px;
-      background: rgba(242,232,208,.06);
-      border: 1px solid rgba(232,100,42,.3);
-      font-family: 'Space Mono', monospace;
-      font-size: .68rem; color: var(--creme-fonce);
-      cursor: pointer;
-      transition: background .15s, border-color .15s;
-      user-select: none;
+      background: rgba(249,242,236,.07);
+      border: 1px solid rgba(232,84,154,.3); border-radius: 20px;
+      font-family: 'Space Mono', monospace; font-size: .65rem; color: var(--creme-fonce);
+      cursor: pointer; transition: background .15s, border-color .15s; user-select: none;
     }
-    .upload-pill:hover { border-color: var(--orange); background: rgba(232,100,42,.12); }
-    .upload-pill svg { width: 13px; height: 13px; fill: none; stroke: var(--orange); stroke-width: 2; flex-shrink: 0; }
-    .upload-pill.danger { border-color: rgba(194,59,34,.35); color: rgba(242,232,208,.45); }
-    .upload-pill.danger svg { stroke: rgba(194,59,34,.6); }
-    .upload-pill.danger:hover { border-color: var(--rouge); color: var(--creme-fonce); background: rgba(194,59,34,.12); }
+    .upload-pill:hover { border-color: var(--rose); background: rgba(232,84,154,.15); }
+    .upload-pill svg { width: 13px; height: 13px; fill: none; stroke: var(--rose); stroke-width: 2; flex-shrink: 0; }
+    .upload-pill.danger { border-color: rgba(200,80,80,.3); color: rgba(249,242,236,.4); }
+    .upload-pill.danger svg { stroke: rgba(200,80,80,.6); }
+    .upload-pill.danger:hover { border-color: #c84040; color: var(--creme-fonce); }
 
     /* ══ EN BREF ══ */
     .section-en-bref {
@@ -180,13 +206,11 @@
       border-bottom: 3px solid var(--encre);
       position: relative;
     }
-    /* Grande lettre décorative derrière */
     .section-en-bref::after {
-      content: '&';
-      position: absolute; right: 40px; bottom: -20px;
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 18rem; line-height: 1;
-      color: rgba(28,18,8,.03);
+      content: '✿';
+      position: absolute; right: 30px; bottom: -40px;
+      font-size: 20rem; line-height: 1;
+      color: rgba(232,84,154,.05);
       pointer-events: none; z-index: 0;
     }
 
@@ -194,17 +218,19 @@
       display: inline-block;
       font-family: 'Space Mono', monospace;
       font-size: .65rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
-      background: var(--encre); color: var(--orange);
-      padding: 4px 12px;
+      background: var(--vert); color: var(--creme);
+      padding: 4px 12px; border-radius: 4px;
+      border: 1px solid var(--encre);
+      box-shadow: 2px 2px 0 var(--encre);
       margin-bottom: 14px;
     }
 
     .section-title {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      letter-spacing: .02em; text-transform: uppercase;
+      font-family: 'Boogaloo', cursive;
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      letter-spacing: .04em;
       color: var(--encre);
-      position: relative;
+      text-shadow: 2px 2px 0 rgba(28,18,8,.12);
     }
 
     .section-header {
@@ -219,27 +245,28 @@
     .section-contact {
       padding: 80px 80px;
       text-align: center;
-      background: var(--rouge);
+      background: var(--rose);
       border-top: 3px solid var(--encre);
       position: relative; overflow: hidden;
     }
     .section-contact::before {
       content: '';
       position: absolute; inset: 0;
-      background-image: radial-gradient(circle, rgba(28,18,8,.1) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(255,255,255,.1) 1px, transparent 1px);
       background-size: 14px 14px; pointer-events: none;
     }
-    /* Bande hachurée en bas de section */
     .section-contact::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
-      background: repeating-linear-gradient(-45deg, var(--orange) 0px, var(--orange) 6px, var(--rouge-dark) 6px, var(--rouge-dark) 12px);
+      content: '✿';
+      position: absolute; bottom: -20px; left: 40px;
+      font-size: 12rem; line-height: 1;
+      color: rgba(255,255,255,.06);
+      pointer-events: none;
     }
-    .section-contact .section-eyebrow { background: var(--encre); color: var(--orange); }
-    .section-contact .section-title { color: var(--creme); }
+    .section-contact .section-eyebrow { background: var(--encre); color: var(--rose); }
+    .section-contact .section-title { color: var(--creme); text-shadow: 2px 2px 0 rgba(28,18,8,.3); }
     .contact-sub {
       font-family: 'Libre Baskerville', serif; font-style: italic;
-      color: rgba(242,232,208,.65);
+      color: rgba(249,242,236,.7);
       max-width: 400px; margin: 0 auto 40px;
       line-height: 1.75; font-size: .93rem;
     }
@@ -251,20 +278,20 @@
     }
     .footer-logo-ph {
       display: inline-flex; align-items: center; gap: 7px;
-      padding: 6px 12px;
-      border: 1px dashed rgba(232,100,42,.28);
-      color: rgba(232,100,42,.35);
+      padding: 6px 12px; border-radius: 4px;
+      border: 1px dashed rgba(232,84,154,.35);
+      color: rgba(232,84,154,.45);
       font-family: 'Space Mono', monospace; font-size: .65rem; letter-spacing: .1em;
       cursor: pointer; margin-bottom: 14px;
       transition: border-color .2s, color .2s;
     }
-    .footer-logo-ph:hover { border-color: var(--orange); color: var(--orange); }
+    .footer-logo-ph:hover { border-color: var(--rose); color: var(--rose); }
 
     @media(max-width: 900px) {
       .hero-inner { flex-direction: column-reverse; }
       .hero-content { padding: 40px 20px; }
       .hero-logo-wrap { padding: 40px 0 0; }
-      .upload-bar { padding: 16px 20px; }
+      .upload-bar { padding: 14px 20px; }
       .section-en-bref, .section-contact { padding: 48px 20px; }
     }
   </style>
@@ -340,19 +367,19 @@
 <!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hero-bg">
-    <img id="heroImg" src="" alt="" style="opacity:.32">
+    <img id="heroImg" src="" alt="" style="opacity:.28">
     <div class="hero-bg-overlay"></div>
   </div>
 
   <div class="opacity-control">
     <label for="opacitySlider">Opacité</label>
-    <input type="range" id="opacitySlider" min="5" max="75" value="32" oninput="setOpacity(this.value)">
-    <span class="opacity-val" id="opacityVal">32%</span>
+    <input type="range" id="opacitySlider" min="5" max="75" value="28" oninput="setOpacity(this.value)">
+    <span class="opacity-val" id="opacityVal">28%</span>
   </div>
 
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-eyebrow">✦ Édition 2026 ✦</div>
+      <div class="hero-eyebrow">✿ Édition 2026 ✿</div>
       <h1 class="hero-title">BAF<br><span class="accent">CAMP</span></h1>
       <div class="hero-meta">
         <div class="meta-item">
@@ -366,12 +393,12 @@
         <div class="meta-item">
           <span class="meta-label">Au programme</span>
           <span class="meta-value">5 artistes</span>
-          <span class="meta-value" style="font-size:.9rem; opacity:.75">10 tables rondes · 5 ateliers</span>
+          <span class="meta-value" style="font-size:.9rem; opacity:.8">10 tables rondes · 5 ateliers</span>
         </div>
       </div>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-red">Prendre mes billets</a>
-        <a href="programme.html" class="btn btn-outline" style="color:var(--creme); border-color:rgba(242,232,208,.3);">Voir le programme →</a>
+        <a href="#contact" class="btn btn-primary">Prendre mes billets</a>
+        <a href="programme.html" class="btn btn-outline-hero">Voir le programme →</a>
       </div>
     </div>
 
@@ -442,7 +469,7 @@
     <p class="section-eyebrow reveal" style="display:inline-block; margin-bottom:16px;">Restons en contact</p>
     <h2 class="section-title reveal" style="margin-bottom:20px;">Une question ?</h2>
     <p class="contact-sub reveal">Nos bénévoles sont disponibles pour répondre à toutes vos questions.</p>
-    <a href="mailto:contact@monfestival.fr" class="btn btn-red reveal">✉ &nbsp;Nous écrire</a>
+    <a href="mailto:contact@monfestival.fr" class="btn btn-primary reveal" style="margin:0 auto;">✉ &nbsp;Nous écrire</a>
   </div>
 </section>
 
@@ -486,7 +513,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 BAF Camp — par et pour toustes</span>
-    <span>Fait avec cœur, rage et ✨ paillettes ✨</span>
+    <span>Fait avec cœur, rage et ✿ paillettes ✿</span>
   </div>
 </footer>
 
@@ -500,13 +527,11 @@ document.addEventListener('click', e => {
   if (!e.target.closest('.nav-links > li'))
     document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
 });
-
 const obs = new IntersectionObserver(entries =>
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
   { threshold: .1 }
 );
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
 function fileToBase64(file) {
   return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); });
 }
@@ -522,9 +547,9 @@ function applyHeroLogo(src) {
 }
 function applyHeroBg(src, op) {
   const img = document.getElementById('heroImg');
-  img.src = src; img.style.opacity = (op ?? 32) / 100;
-  document.getElementById('opacitySlider').value = op ?? 32;
-  document.getElementById('opacityVal').textContent = (op ?? 32) + '%';
+  img.src = src; img.style.opacity = (op ?? 28) / 100;
+  document.getElementById('opacitySlider').value = op ?? 28;
+  document.getElementById('opacityVal').textContent = (op ?? 28) + '%';
 }
 function setOpacity(v) {
   document.getElementById('heroImg').style.opacity = v / 100;
@@ -555,7 +580,7 @@ document.getElementById('heroInput').addEventListener('change', async function()
   const n = localStorage.getItem('baf_logo_nav');
   const h = localStorage.getItem('baf_logo_hero');
   const bg = localStorage.getItem('baf_hero_bg');
-  const op = localStorage.getItem('baf_hero_opacity') || 32;
+  const op = localStorage.getItem('baf_hero_opacity') || 28;
   if (n) applyNavLogo(n);
   if (h) applyHeroLogo(h);
   if (bg) applyHeroBg(bg, Number(op));
