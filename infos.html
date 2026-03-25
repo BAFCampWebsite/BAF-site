@@ -3,102 +3,563 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infos pratiques — BAF Camp</title>
+  <title>BAF Camp 2026</title>
   <link rel="stylesheet" href="style.css">
-</head>
+  <style>
 
+    /* ══ HERO ══ */
+    .hero {
+      min-height: calc(100vh - var(--nav-h));
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+      background: var(--encre);
+    }
+
+    /* Image de fond avec overlay opaque warm */
+    .hero-bg { position: absolute; inset: 0; overflow: hidden; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; transition: opacity .4s; }
+    .hero-bg-overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(105deg, rgba(28,18,8,.92) 42%, rgba(28,18,8,.55) 100%),
+        linear-gradient(to top, rgba(28,18,8,.8) 0%, transparent 45%);
+    }
+
+    /* Trait diagonal activiste en arrière-plan */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          -55deg,
+          transparent 0px, transparent 80px,
+          rgba(232,100,42,.025) 80px, rgba(232,100,42,.025) 82px
+        );
+    }
+
+    .hero-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; position: relative; z-index: 2;
+    }
+
+    .hero-content {
+      padding: 80px;
+      max-width: 700px;
+      animation: fadeUp .85s ease both;
+      flex-shrink: 0;
+    }
+
+    /* Cartouche étiquette militant */
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Space Mono', monospace;
+      font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+      background: var(--orange); color: var(--encre);
+      padding: 5px 14px;
+      border: 2px solid var(--encre);
+      box-shadow: var(--ombre);
+      margin-bottom: 24px;
+      transform: rotate(-.4deg);
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(5rem, 11vw, 10rem);
+      line-height: .88;
+      letter-spacing: -.02em;
+      text-transform: uppercase;
+      color: var(--creme);
+      margin-bottom: 32px; margin-top: 12px;
+      /* Impression légèrement désaxée — effet riso */
+      text-shadow:
+        3px 3px 0 rgba(28,18,8,.6),
+        -2px 0 0 rgba(232,100,42,.25);
+    }
+    .hero-title .accent { color: var(--orange); display: block; }
+
+    /* Meta infos — cases de tract */
+    .hero-meta {
+      display: flex; gap: 12px;
+      margin-bottom: 48px; flex-wrap: wrap;
+    }
+    .meta-item {
+      display: flex; flex-direction: column; gap: 3px;
+      background: transparent;
+      border: 2px solid rgba(232,100,42,.45);
+      border-left: 4px solid var(--orange);
+      padding: 10px 16px;
+    }
+    .meta-label {
+      font-family: 'Space Mono', monospace;
+      font-size: .6rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--orange);
+    }
+    .meta-value {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.1rem; letter-spacing: .04em; text-transform: uppercase;
+      color: var(--creme);
+    }
+
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* Logo côté droit */
+    .hero-logo-wrap {
+      padding: 60px 80px 60px 0;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    #heroLogoImg {
+      max-width: 240px; max-height: 240px; object-fit: contain;
+      filter: drop-shadow(4px 4px 0 rgba(28,18,8,.7));
+      cursor: pointer;
+      animation: fadeUp .85s ease .15s both;
+    }
+    .hero-logo-placeholder {
+      width: 190px; height: 190px;
+      border: 2px dashed rgba(232,100,42,.35);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; color: rgba(232,100,42,.4);
+      cursor: pointer; animation: fadeUp .85s ease .15s both;
+      transition: border-color .2s, color .2s;
+    }
+    .hero-logo-placeholder:hover { border-color: var(--orange); color: var(--orange); }
+    .hero-logo-placeholder svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+    .hero-logo-placeholder span { font-family: 'Space Mono', monospace; font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; text-align: center; }
+
+    /* Slider opacité */
+    .opacity-control {
+      position: absolute; bottom: 20px; right: 20px; z-index: 10;
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(28,18,8,.85); border: 2px solid rgba(232,100,42,.35);
+      padding: 8px 18px; opacity: 0; pointer-events: none; transition: opacity .25s;
+    }
+    .hero:hover .opacity-control { opacity: 1; pointer-events: all; }
+    .opacity-control label { font-family: 'Space Mono', monospace; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sable); white-space: nowrap; }
+    .opacity-control input[type=range] { -webkit-appearance: none; width: 110px; height: 2px; background: rgba(232,100,42,.35); outline: none; cursor: pointer; }
+    .opacity-control input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; background: var(--orange); border: 2px solid var(--encre); border-radius: 50%; }
+    .opacity-val { font-family: 'Space Mono', monospace; font-size: .65rem; color: var(--orange); font-weight: 700; min-width: 28px; }
+
+    /* ══ BARRE UPLOAD ══ */
+    .upload-bar {
+      background: var(--terre);
+      border-top: 2px solid var(--encre);
+      border-bottom: 3px solid var(--encre);
+      padding: 16px 80px;
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    }
+    .upload-bar-label {
+      font-family: 'Space Mono', monospace;
+      font-size: .65rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--sable); white-space: nowrap;
+    }
+    .upload-bar-label span { color: var(--orange); }
+    .upload-btn-group { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .upload-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 7px 14px;
+      background: rgba(242,232,208,.06);
+      border: 1px solid rgba(232,100,42,.3);
+      font-family: 'Space Mono', monospace;
+      font-size: .68rem; color: var(--creme-fonce);
+      cursor: pointer;
+      transition: background .15s, border-color .15s;
+      user-select: none;
+    }
+    .upload-pill:hover { border-color: var(--orange); background: rgba(232,100,42,.12); }
+    .upload-pill svg { width: 13px; height: 13px; fill: none; stroke: var(--orange); stroke-width: 2; flex-shrink: 0; }
+    .upload-pill.danger { border-color: rgba(194,59,34,.35); color: rgba(242,232,208,.45); }
+    .upload-pill.danger svg { stroke: rgba(194,59,34,.6); }
+    .upload-pill.danger:hover { border-color: var(--rouge); color: var(--creme-fonce); background: rgba(194,59,34,.12); }
+
+    /* ══ EN BREF ══ */
+    .section-en-bref {
+      padding: 80px 80px;
+      background: var(--creme);
+      border-bottom: 3px solid var(--encre);
+      position: relative;
+    }
+    /* Grande lettre décorative derrière */
+    .section-en-bref::after {
+      content: '&';
+      position: absolute; right: 40px; bottom: -20px;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 18rem; line-height: 1;
+      color: rgba(28,18,8,.03);
+      pointer-events: none; z-index: 0;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: .65rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+      background: var(--encre); color: var(--orange);
+      padding: 4px 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: .02em; text-transform: uppercase;
+      color: var(--encre);
+      position: relative;
+    }
+
+    .section-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+      border-bottom: 3px solid var(--encre);
+      padding-bottom: 20px; margin-bottom: 40px;
+      position: relative; z-index: 1;
+    }
+
+    /* ══ CONTACT ══ */
+    .section-contact {
+      padding: 80px 80px;
+      text-align: center;
+      background: var(--rouge);
+      border-top: 3px solid var(--encre);
+      position: relative; overflow: hidden;
+    }
+    .section-contact::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(28,18,8,.1) 1px, transparent 1px);
+      background-size: 14px 14px; pointer-events: none;
+    }
+    /* Bande hachurée en bas de section */
+    .section-contact::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
+      background: repeating-linear-gradient(-45deg, var(--orange) 0px, var(--orange) 6px, var(--rouge-dark) 6px, var(--rouge-dark) 12px);
+    }
+    .section-contact .section-eyebrow { background: var(--encre); color: var(--orange); }
+    .section-contact .section-title { color: var(--creme); }
+    .contact-sub {
+      font-family: 'Libre Baskerville', serif; font-style: italic;
+      color: rgba(242,232,208,.65);
+      max-width: 400px; margin: 0 auto 40px;
+      line-height: 1.75; font-size: .93rem;
+    }
+
+    /* Footer logo placeholder */
+    #footerLogoImg {
+      max-width: 110px; max-height: 70px; object-fit: contain;
+      display: block; margin-bottom: 14px; cursor: pointer;
+    }
+    .footer-logo-ph {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 6px 12px;
+      border: 1px dashed rgba(232,100,42,.28);
+      color: rgba(232,100,42,.35);
+      font-family: 'Space Mono', monospace; font-size: .65rem; letter-spacing: .1em;
+      cursor: pointer; margin-bottom: 14px;
+      transition: border-color .2s, color .2s;
+    }
+    .footer-logo-ph:hover { border-color: var(--orange); color: var(--orange); }
+
+    @media(max-width: 900px) {
+      .hero-inner { flex-direction: column-reverse; }
+      .hero-content { padding: 40px 20px; }
+      .hero-logo-wrap { padding: 40px 0 0; }
+      .upload-bar { padding: 16px 20px; }
+      .section-en-bref, .section-contact { padding: 48px 20px; }
+    }
+  </style>
+</head>
 <body>
 
-<!-- ═════════ NAVBAR ═════════ -->
+<input type="file" id="logoInput"     accept="image/*">
+<input type="file" id="heroLogoInput" accept="image/*">
+<input type="file" id="heroInput"     accept="image/*">
+<input type="file" id="galleryInput"  accept="image/*" multiple>
+
+<!-- ══ NAVBAR ══ -->
 <nav>
-  <div class="nav-site-name">BAF CAMP</div>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
+      <img id="logoImg" src="" alt="Logo" style="display:none">
+      <span class="logo-placeholder" id="logoPlaceholder">BAF</span>
+      <div class="logo-upload-hint">logo</div>
+    </div>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
+  </a>
 
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Accueil</a></li>
-
-    <li class="has-dropdown">
-      <span class="nav-item">Programme ▾</span>
+    <li><a href="index.html" class="active">Accueil</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Programme
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
       <div class="dropdown">
-        <a href="infos.html">🎪 Scènes & accès</a>
-        <a href="programme.html">🎟️ Programme complet</a>
+        <a href="infos.html"><span class="di">🎪</span>Scènes &amp; Accès</a>
+        <a href="programme.html"><span class="di">🎟</span>Programme complet</a>
       </div>
     </li>
-
-    <li class="has-dropdown">
-      <span class="nav-item">Fonctionnement ▾</span>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Fonctionnement
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
       <div class="dropdown">
-        <a href="financements.html">💰 Financements</a>
-        <a href="charte.html">📜 Charte</a>
-        <a href="benevoles.html">🙌 Bénévoles</a>
+        <a href="financements.html"><span class="di">💰</span>Financements</a>
+        <a href="charte.html"><span class="di">📜</span>Notre charte</a>
+        <a href="benevoles.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
       </div>
     </li>
-
-    <li class="has-dropdown">
-      <span class="nav-item">Infos ▾</span>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Informations
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
       <div class="dropdown">
-        <a href="#acces">📍 Accès</a>
-        <a href="#restauration">🍔 Restauration</a>
-        <a href="#camping">⛺ Camping</a>
+        <a href="infos.html#acces"><span class="di">📍</span>Venir sur place</a>
+        <a href="infos.html#restauration"><span class="di">🍔</span>Se nourrir</a>
+        <a href="infos.html#camping"><span class="di">⛺</span>Le camping</a>
       </div>
     </li>
-
-    <li><a href="#contact" class="nav-cta">Billetterie →</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Nous aider
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="nous-aider.html"><span class="di">❤️</span>Faire un don</a>
+        <a href="benevoles.html"><span class="di">🙌</span>Bénévolat</a>
+        <a href="nous-aider.html#partager"><span class="di">📢</span>Partager</a>
+        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Prêter du matériel</a>
+      </div>
+    </li>
+    <li><a href="#contact" class="btn nav-cta">Billetterie prix libre →</a></li>
   </ul>
 
-  <button class="burger" onclick="toggleMenu()">☰</button>
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- ═════════ HERO ═════════ -->
-<section class="page-hero">
-  <h1 class="page-hero-title">Tout savoir</h1>
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg">
+    <img id="heroImg" src="" alt="" style="opacity:.32">
+    <div class="hero-bg-overlay"></div>
+  </div>
+
+  <div class="opacity-control">
+    <label for="opacitySlider">Opacité</label>
+    <input type="range" id="opacitySlider" min="5" max="75" value="32" oninput="setOpacity(this.value)">
+    <span class="opacity-val" id="opacityVal">32%</span>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">✦ Édition 2026 ✦</div>
+      <h1 class="hero-title">BAF<br><span class="accent">CAMP</span></h1>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">Date</span>
+          <span class="meta-value">20–23 Août</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Lieu</span>
+          <span class="meta-value">L'arbre qui pousse</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Au programme</span>
+          <span class="meta-value">5 artistes</span>
+          <span class="meta-value" style="font-size:.9rem; opacity:.75">10 tables rondes · 5 ateliers</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-red">Prendre mes billets</a>
+        <a href="programme.html" class="btn btn-outline" style="color:var(--creme); border-color:rgba(242,232,208,.3);">Voir le programme →</a>
+      </div>
+    </div>
+
+    <div class="hero-logo-wrap">
+      <img id="heroLogoImg" src="" alt="Logo BAF Camp" style="display:none"
+        onclick="document.getElementById('heroLogoInput').click()" title="Changer le logo">
+      <div class="hero-logo-placeholder" id="heroLogoPlaceholder"
+        onclick="document.getElementById('heroLogoInput').click()">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Ajouter<br>le logo ici</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ═════════ CONTENU ═════════ -->
-<div class="page-content">
-
-  <section id="acces">
-    <h2>Accès au festival</h2>
-    <div class="comic-grid">
-      <div class="card"><h3 class="card-title">🚗 Voiture</h3></div>
-      <div class="card"><h3 class="card-title">🚌 Navettes</h3></div>
-      <div class="card"><h3 class="card-title">🚆 Train</h3></div>
-    </div>
-  </section>
-
-  <section id="camping">
-    <h2>Camping</h2>
-    <p>Ouvert du 17 au 26 août.</p>
-  </section>
-
-  <section id="restauration">
-    <h2>Restauration</h2>
-    <div class="comic-grid">
-      <div class="card"><h3 class="card-title">🍔 Street food</h3></div>
-      <div class="card"><h3 class="card-title">🥗 Bio</h3></div>
-      <div class="card"><h3 class="card-title">🍺 Buvette</h3></div>
-    </div>
-  </section>
-
+<!-- ══ BARRE UPLOAD ══ -->
+<div class="upload-bar">
+  <span class="upload-bar-label">🛠 <span>Personnaliser</span></span>
+  <div class="upload-btn-group">
+    <label class="upload-pill" for="logoInput">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Logo navbar
+    </label>
+    <label class="upload-pill" for="heroLogoInput">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Logo hero &amp; footer
+    </label>
+    <label class="upload-pill" for="heroInput">
+      <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>Photo de fond
+    </label>
+    <label class="upload-pill" for="galleryInput">
+      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Galerie
+    </label>
+    <button class="upload-pill danger" onclick="clearAll()">
+      <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>Réinitialiser
+    </button>
+  </div>
 </div>
 
-<!-- ═════════ FOOTER ═════════ -->
-<footer style="padding:40px; text-align:center;">
-  BAF Camp 2026
+<!-- ══ EN BREF ══ -->
+<section class="section-en-bref reveal">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">Le festi-camp</p>
+      <h2 class="section-title">En bref</h2>
+    </div>
+  </div>
+  <div class="cards-grid" style="position:relative; z-index:1;">
+    <div class="card">
+      <span class="card-icon">🎸</span>
+      <h3 class="card-title">Line-up</h3>
+      <p class="card-text">10+ artistes sur 3 scènes pendant 4 jours de fête et de lutte.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🏕️</span>
+      <h3 class="card-title">Camping</h3>
+      <p class="card-text">Camping ouvert dès le jeudi soir avec toutes les commodités sur place.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🤝</span>
+      <h3 class="card-title">Bénévolat</h3>
+      <p class="card-text">Rejoins notre équipe pour participer à l'organisation en amont et sur place.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="section-contact" id="contact">
+  <div style="position:relative; z-index:1;">
+    <p class="section-eyebrow reveal" style="display:inline-block; margin-bottom:16px;">Restons en contact</p>
+    <h2 class="section-title reveal" style="margin-bottom:20px;">Une question ?</h2>
+    <p class="contact-sub reveal">Nos bénévoles sont disponibles pour répondre à toutes vos questions.</p>
+    <a href="mailto:contact@monfestival.fr" class="btn btn-red reveal">✉ &nbsp;Nous écrire</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div style="position:relative; z-index:1;">
+    <img id="footerLogoImg" src="" alt="" style="display:none"
+      onclick="document.getElementById('heroLogoInput').click()">
+    <div class="footer-logo-ph" id="footerLogoPh"
+      onclick="document.getElementById('heroLogoInput').click()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Ajouter le logo
+    </div>
+    <div class="footer-logo">BAF <span>CAMP</span></div>
+    <p class="footer-tagline">Le festival qui enflamme chaque été. Musique, rencontre, soutien et partage des luttes.</p>
+  </div>
+  <div class="footer-col" style="position:relative; z-index:1;">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="programme.html">Programme</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="infos.html">Infos pratiques</a></li>
+    </ul>
+  </div>
+  <div class="footer-col" style="position:relative; z-index:1;">
+    <h4>Fonctionnement</h4>
+    <ul>
+      <li><a href="financements.html">Financements</a></li>
+      <li><a href="charte.html">Charte</a></li>
+      <li><a href="benevoles.html">Bénévoles</a></li>
+    </ul>
+  </div>
+  <div class="footer-col" style="position:relative; z-index:1;">
+    <h4>Réseaux</h4>
+    <ul>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Stuut</a></li>
+      <li><a href="#">Signal</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BAF Camp — par et pour toustes</span>
+    <span>Fait avec cœur, rage et ✨ paillettes ✨</span>
+  </div>
 </footer>
 
-<!-- ═════════ SCRIPT ═════════ -->
 <script>
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('open');
+function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
 }
-
-// dropdown hover desktop + click mobile
-document.querySelectorAll('.has-dropdown').forEach(item => {
-  item.addEventListener('click', () => {
-    item.classList.toggle('open');
-  });
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
 });
-</script>
 
+const obs = new IntersectionObserver(entries =>
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: .1 }
+);
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+function fileToBase64(file) {
+  return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); });
+}
+function applyNavLogo(src) {
+  document.getElementById('logoImg').src = src;
+  document.getElementById('logoImg').style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
+}
+function applyHeroLogo(src) {
+  ['heroLogoImg','footerLogoImg'].forEach(id => { document.getElementById(id).src = src; document.getElementById(id).style.display = 'block'; });
+  document.getElementById('heroLogoPlaceholder').style.display = 'none';
+  document.getElementById('footerLogoPh').style.display = 'none';
+}
+function applyHeroBg(src, op) {
+  const img = document.getElementById('heroImg');
+  img.src = src; img.style.opacity = (op ?? 32) / 100;
+  document.getElementById('opacitySlider').value = op ?? 32;
+  document.getElementById('opacityVal').textContent = (op ?? 32) + '%';
+}
+function setOpacity(v) {
+  document.getElementById('heroImg').style.opacity = v / 100;
+  document.getElementById('opacityVal').textContent = v + '%';
+  localStorage.setItem('baf_hero_opacity', v);
+}
+function clearAll() {
+  if (!confirm('Supprimer toutes les images ?')) return;
+  ['baf_logo_nav','baf_logo_hero','baf_hero_bg','baf_hero_opacity'].forEach(k => localStorage.removeItem(k));
+  location.reload();
+}
+document.getElementById('logoInput').addEventListener('change', async function() {
+  const f = this.files[0]; if (!f) return;
+  try { const b = await fileToBase64(f); localStorage.setItem('baf_logo_nav', b); applyNavLogo(b); } catch { alert('Fichier trop lourd.'); }
+  this.value = '';
+});
+document.getElementById('heroLogoInput').addEventListener('change', async function() {
+  const f = this.files[0]; if (!f) return;
+  try { const b = await fileToBase64(f); localStorage.setItem('baf_logo_hero', b); applyHeroLogo(b); } catch { alert('Fichier trop lourd.'); }
+  this.value = '';
+});
+document.getElementById('heroInput').addEventListener('change', async function() {
+  const f = this.files[0]; if (!f) return;
+  try { const b = await fileToBase64(f); const op = document.getElementById('opacitySlider').value; localStorage.setItem('baf_hero_bg', b); localStorage.setItem('baf_hero_opacity', op); applyHeroBg(b, op); } catch { alert('Photo trop lourde.'); }
+  this.value = '';
+});
+(function() {
+  const n = localStorage.getItem('baf_logo_nav');
+  const h = localStorage.getItem('baf_logo_hero');
+  const bg = localStorage.getItem('baf_hero_bg');
+  const op = localStorage.getItem('baf_hero_opacity') || 32;
+  if (n) applyNavLogo(n);
+  if (h) applyHeroLogo(h);
+  if (bg) applyHeroBg(bg, Number(op));
+})();
+</script>
 </body>
 </html>
