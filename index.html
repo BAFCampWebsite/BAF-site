@@ -7,105 +7,310 @@
   <link rel="stylesheet" href="style.css">
   <style>
     /* ── HERO ── */
-    .hero { min-height:calc(100vh - var(--nav-h)); position:relative; display:flex; align-items:center; overflow:hidden; }
-    .hero-bg { position:absolute; inset:0; background:var(--black); overflow:hidden; }
-    .hero-bg img { width:100%; height:100%; object-fit:cover; transition:opacity .4s; }
-    .hero-bg-overlay { position:absolute; inset:0; background:linear-gradient(105deg,rgba(8,8,8,.96) 38%,rgba(8,8,8,.5) 100%),linear-gradient(to top,rgba(8,8,8,.85) 0%,transparent 50%); }
+    .hero {
+      min-height: calc(100vh - var(--nav-h));
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .hero-bg { position: absolute; inset: 0; overflow: hidden; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; transition: opacity .4s; }
+    /* Overlay léger — laisse voir la couleur navy + l'image */
+    .hero-bg-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(105deg, rgba(27,42,74,.85) 40%, rgba(27,42,74,.35) 100%),
+                  linear-gradient(to top, rgba(27,42,74,.7) 0%, transparent 50%);
+    }
 
-    .hero-inner { display:flex; align-items:center; justify-content:space-between; width:100%; position:relative; z-index:2; }
-    .hero-content { padding:80px; max-width:680px; animation:fadeUp .9s ease both; flex-shrink:0; }
-    .hero-eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--red); margin-bottom:24px; }
-    .hero-title { font-family:'Anton'; font-size:clamp(4rem,9vw,8rem); line-height:.95; letter-spacing:.02em; margin-bottom:32px; text-transform:uppercase; }
-    .hero-title .red { color:var(--red); display:block; }
-    .hero-meta { display:flex; gap:40px; margin-bottom:48px; flex-wrap:wrap; }
-    .meta-item { display:flex; flex-direction:column; gap:4px; }
-    .meta-label { font-size:.68rem; letter-spacing:.15em; text-transform:uppercase; color:var(--grey); }
-    .meta-value { font-family:'Bebas Neue'; font-size:1.4rem; letter-spacing:.1em; }
-    .hero-actions { display:flex; gap:16px; flex-wrap:wrap; }
+    /* Halftone hero */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(240,122,42,.2) 1px, transparent 1px);
+      background-size: 16px 16px;
+      pointer-events: none;
+      z-index: 1;
+      mask-image: linear-gradient(to right, transparent 30%, rgba(0,0,0,.6) 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 30%, rgba(0,0,0,.6) 100%);
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      padding: 80px;
+      max-width: 680px;
+      animation: fadeUp .9s ease both;
+      flex-shrink: 0;
+    }
+
+    /* Cartouche eyebrow style BD */
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Comic Neue', cursive;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      background: var(--orange);
+      color: var(--black);
+      padding: 5px 16px;
+      border: 2px solid var(--black);
+      border-radius: 3px;
+      box-shadow: 3px 3px 0 var(--black);
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(4.5rem, 10vw, 9rem);
+      line-height: .92;
+      letter-spacing: .06em;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+      color: var(--white);
+      /* Contour BD épais */
+      text-shadow:
+        4px 4px 0 var(--black),
+        -2px -2px 0 var(--black),
+        2px -2px 0 var(--black),
+        -2px 2px 0 var(--black),
+        6px 6px 0 rgba(0,0,0,.3);
+    }
+    .hero-title .orange { color: var(--orange); display: block; }
+
+    /* Infos meta dans des petites cases BD */
+    .hero-meta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background: rgba(250,246,240,.08);
+      border: 2px solid rgba(240,122,42,.5);
+      border-radius: 4px;
+      padding: 10px 16px;
+      box-shadow: 3px 3px 0 rgba(0,0,0,.4);
+    }
+    .meta-label {
+      font-family: 'Comic Neue', cursive;
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 700;
+    }
+    .meta-value {
+      font-family: 'Bangers', cursive;
+      font-size: 1.3rem;
+      letter-spacing: .1em;
+      color: var(--white);
+    }
+
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
     /* ── LOGO HERO (droite) ── */
     .hero-logo-wrap {
-      padding:60px 80px 60px 0;
-      display:flex; align-items:center; justify-content:center;
-      flex-shrink:0;
+      padding: 60px 80px 60px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
     #heroLogoImg {
-      max-width:260px; max-height:260px; object-fit:contain;
-      filter:drop-shadow(0 0 40px rgba(212,43,43,.45));
-      cursor:pointer;
-      animation:fadeUp .9s ease .15s both;
-      border-radius:8px;
+      max-width: 260px; max-height: 260px;
+      object-fit: contain;
+      filter: drop-shadow(4px 4px 0 rgba(0,0,0,.6)) drop-shadow(0 0 30px rgba(240,122,42,.3));
+      cursor: pointer;
+      animation: fadeUp .9s ease .15s both;
+      border-radius: 8px;
     }
     .hero-logo-placeholder {
-      width:200px; height:200px;
-      border:2px dashed rgba(212,43,43,.3); border-radius:12px;
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      gap:12px; color:rgba(212,43,43,.35); cursor:pointer;
-      transition:border-color .2s, color .2s;
-      animation:fadeUp .9s ease .15s both;
+      width: 200px; height: 200px;
+      border: 3px dashed rgba(240,122,42,.4);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: rgba(240,122,42,.5);
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+      animation: fadeUp .9s ease .15s both;
     }
-    .hero-logo-placeholder:hover { border-color:var(--red); color:var(--red); }
-    .hero-logo-placeholder svg { width:36px; height:36px; fill:none; stroke:currentColor; stroke-width:1.5; }
-    .hero-logo-placeholder span { font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; text-align:center; }
+    .hero-logo-placeholder:hover { border-color: var(--orange); color: var(--orange); }
+    .hero-logo-placeholder svg { width: 36px; height: 36px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+    .hero-logo-placeholder span { font-family: 'Comic Neue', cursive; font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; text-align: center; font-weight: 700; }
 
-    /* ── OPACITY SLIDER (apparaît au survol du hero) ── */
+    /* ── SLIDER OPACITÉ ── */
     .opacity-control {
-      position:absolute; bottom:20px; right:20px; z-index:10;
-      display:flex; align-items:center; gap:10px;
-      background:rgba(8,8,8,.75); border:1px solid rgba(212,43,43,.3);
-      border-radius:30px; padding:8px 18px;
-      opacity:0; pointer-events:none;
-      transition:opacity .25s;
+      position: absolute; bottom: 20px; right: 20px; z-index: 10;
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(27,42,74,.85);
+      border: 2px solid rgba(240,122,42,.4);
+      border-radius: 30px;
+      padding: 8px 18px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .25s;
     }
-    .hero:hover .opacity-control { opacity:1; pointer-events:all; }
-    .opacity-control label { font-size:.65rem; letter-spacing:.12em; text-transform:uppercase; color:var(--grey); white-space:nowrap; }
+    .hero:hover .opacity-control { opacity: 1; pointer-events: all; }
+    .opacity-control label {
+      font-family: 'Comic Neue', cursive;
+      font-size: .65rem; letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(250,246,240,.6); white-space: nowrap;
+    }
     .opacity-control input[type=range] {
-      -webkit-appearance:none; width:110px; height:3px;
-      background:rgba(212,43,43,.35); border-radius:2px; outline:none; cursor:pointer;
+      -webkit-appearance: none; width: 110px; height: 3px;
+      background: rgba(240,122,42,.35); border-radius: 2px; outline: none; cursor: pointer;
     }
     .opacity-control input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance:none; width:15px; height:15px;
-      background:var(--red); border-radius:50%;
+      -webkit-appearance: none; width: 15px; height: 15px;
+      background: var(--orange); border: 2px solid var(--black); border-radius: 50%;
     }
-    .opacity-val { font-size:.7rem; color:var(--red); font-weight:700; min-width:28px; }
+    .opacity-val { font-size: .7rem; color: var(--orange); font-weight: 700; min-width: 28px; font-family: 'Comic Neue', cursive; }
 
-    /* ── UPLOAD BAR ── */
-    .upload-bar { background:var(--black2); border-top:1px solid rgba(212,43,43,.2); border-bottom:1px solid rgba(212,43,43,.2); padding:18px 80px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
-    .upload-bar-label { font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--grey); white-space:nowrap; }
-    .upload-bar-label span { color:var(--red); }
-    .upload-btn-group { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
-    .upload-pill { display:inline-flex; align-items:center; gap:8px; padding:9px 18px; background:var(--black3); border:1px solid rgba(212,43,43,.35); border-radius:30px; font-size:.8rem; font-weight:600; color:var(--white); cursor:pointer; transition:border-color .2s, background .2s; user-select:none; }
-    .upload-pill:hover { border-color:var(--red); background:rgba(212,43,43,.08); }
-    .upload-pill svg { width:14px; height:14px; fill:none; stroke:var(--red); stroke-width:2; flex-shrink:0; }
-    .upload-pill.danger { border-color:rgba(255,80,80,.25); color:rgba(255,120,120,.6); }
-    .upload-pill.danger svg { stroke:rgba(255,80,80,.6); }
-    .upload-pill.danger:hover { border-color:#ff5050; background:rgba(255,80,80,.07); color:#ff8080; }
+    /* ── BARRE UPLOAD ── */
+    .upload-bar {
+      background: var(--navy-dark);
+      border-top: 3px solid var(--black);
+      border-bottom: 3px solid var(--black);
+      padding: 18px 80px;
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+    }
+    .upload-bar-label {
+      font-family: 'Comic Neue', cursive;
+      font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(250,246,240,.5); white-space: nowrap; font-weight: 700;
+    }
+    .upload-bar-label span { color: var(--orange); }
+    .upload-btn-group { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .upload-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 18px;
+      background: var(--navy-light);
+      border: 2px solid var(--black);
+      border-radius: 4px;
+      font-family: 'Comic Neue', cursive;
+      font-size: .8rem; font-weight: 700;
+      color: var(--white);
+      cursor: pointer;
+      box-shadow: 3px 3px 0 var(--black);
+      transition: transform .15s, box-shadow .15s;
+      user-select: none;
+    }
+    .upload-pill:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--black); }
+    .upload-pill svg { width: 14px; height: 14px; fill: none; stroke: var(--orange); stroke-width: 2; flex-shrink: 0; }
+    .upload-pill.danger { background: transparent; border-color: rgba(255,80,80,.4); color: rgba(255,120,120,.7); }
+    .upload-pill.danger svg { stroke: rgba(255,80,80,.7); }
+    .upload-pill.danger:hover { border-color: #ff5050; color: #ff8080; background: rgba(255,80,80,.1); }
 
     /* ── FOOTER LOGO ── */
     #footerLogoImg {
-      max-width:110px; max-height:70px; object-fit:contain;
-      display:block; margin-bottom:14px; cursor:pointer;
-      filter:drop-shadow(0 0 10px rgba(212,43,43,.3));
+      max-width: 110px; max-height: 70px; object-fit: contain;
+      display: block; margin-bottom: 14px; cursor: pointer;
     }
     .footer-logo-ph {
-      display:inline-flex; align-items:center; gap:7px;
-      padding:7px 13px; border:1px dashed rgba(212,43,43,.22); border-radius:5px;
-      color:rgba(212,43,43,.3); font-size:.72rem; letter-spacing:.1em;
-      cursor:pointer; margin-bottom:14px;
-      transition:border-color .2s, color .2s;
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 7px 13px;
+      border: 2px dashed rgba(240,122,42,.3);
+      border-radius: 4px;
+      color: rgba(240,122,42,.4);
+      font-family: 'Comic Neue', cursive;
+      font-size: .72rem; letter-spacing: .1em;
+      cursor: pointer; margin-bottom: 14px;
+      transition: border-color .2s, color .2s;
     }
-    .footer-logo-ph:hover { border-color:var(--red); color:var(--red); }
+    .footer-logo-ph:hover { border-color: var(--orange); color: var(--orange); }
 
-    /* ── MISC ── */
-    .section-eyebrow { font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:8px; }
-    .section-title { font-family:'Anton'; font-size:clamp(1.8rem,3.5vw,2.8rem); letter-spacing:.05em; text-transform:uppercase; }
-    .section-header { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+    /* ── SECTION EN BREF ── */
+    .section-en-bref {
+      padding: 80px 80px;
+      background: var(--cream);
+      border-bottom: 3px solid var(--black);
+    }
+    .section-eyebrow {
+      font-family: 'Comic Neue', cursive;
+      font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+      font-weight: 700;
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      padding: 4px 14px;
+      border: 2px solid var(--black);
+      border-radius: 3px;
+      box-shadow: 2px 2px 0 var(--black);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-shadow: 2px 2px 0 rgba(0,0,0,.08);
+    }
+    .section-header {
+      display: flex; align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+      border-bottom: 3px solid var(--black);
+      padding-bottom: 20px; margin-bottom: 40px;
+    }
 
-    @media(max-width:900px){
-      .hero-inner { flex-direction:column-reverse; }
-      .hero-content { padding:40px 20px; }
-      .hero-logo-wrap { padding:40px 0 0; }
-      .upload-bar { padding-left:20px; padding-right:20px; }
+    /* ── SECTION CONTACT ── */
+    .section-contact {
+      padding: 80px 80px;
+      text-align: center;
+      background: var(--navy);
+      border-top: 3px solid var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Halftone déco */
+    .section-contact::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(240,122,42,.15) 1px, transparent 1px);
+      background-size: 18px 18px;
+      pointer-events: none;
+    }
+    .section-contact .section-eyebrow {
+      background: var(--orange);
+      color: var(--black);
+    }
+    .section-contact .section-title { color: var(--white); }
+    .contact-sub {
+      font-family: 'Comic Neue', cursive;
+      color: rgba(250,246,240,.6);
+      max-width: 420px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+      font-size: .95rem;
+      font-weight: 700;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width: 900px) {
+      .hero-inner { flex-direction: column-reverse; }
+      .hero-content { padding: 40px 20px; }
+      .hero-logo-wrap { padding: 40px 0 0; }
+      .upload-bar { padding-left: 20px; padding-right: 20px; }
+      .section-en-bref, .section-contact { padding: 48px 20px; }
     }
   </style>
 </head>
@@ -125,7 +330,7 @@
       <span class="logo-placeholder" id="logoPlaceholder">FEST</span>
       <div class="logo-upload-hint">BAF</div>
     </div>
-    <span class="nav-site-name">CAMP</span>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Accueil</a></li>
@@ -167,13 +372,13 @@
         <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="dropdown">
-        <a href="nous-aider.html" class="active"><span class="di">❤️</span>Faire un don</a>
+        <a href="nous-aider.html"><span class="di">❤️</span>Faire un don</a>
         <a href="benevoles.html"><span class="di">🙌</span>Bénévolat</a>
         <a href="nous-aider.html#partager"><span class="di">📢</span>Partager</a>
         <a href="nous-aider.html#materiel"><span class="di">🔌</span>Prêter du matériel</a>
       </div>
     </li>
-    <li><a href="index.html#contact" class="nav-cta">Billetterie prix libre→</a></li>
+    <li><a href="index.html#contact" class="nav-cta btn btn-red">Billetterie prix libre →</a></li>
   </ul>
   <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -182,48 +387,46 @@
 
 <!-- ══ HERO ══ -->
 <section class="hero">
-  <!-- fond semi-transparent -->
   <div class="hero-bg">
-    <img id="heroImg" src="" alt="" style="opacity:.38">
+    <img id="heroImg" src="" alt="" style="opacity:.35">
     <div class="hero-bg-overlay"></div>
   </div>
 
-  <!-- slider opacité (survol) -->
   <div class="opacity-control">
     <label for="opacitySlider">Opacité</label>
-    <input type="range" id="opacitySlider" min="5" max="80" value="38"
+    <input type="range" id="opacitySlider" min="5" max="80" value="35"
       oninput="setOpacity(this.value)">
-    <span class="opacity-val" id="opacityVal">38%</span>
+    <span class="opacity-val" id="opacityVal">35%</span>
   </div>
 
   <div class="hero-inner">
-    <!-- texte gauche -->
+    <!-- Texte gauche -->
     <div class="hero-content">
       <div class="hero-eyebrow">✦ Édition 2026 ✦</div>
-      <h1 class="hero-title">BAF<br><span class="red">CAMP</span></h1>
+      <h1 class="hero-title">BAF<br><span class="orange">CAMP</span></h1>
       <div class="hero-meta">
         <div class="meta-item">
-          <span class="meta-label">Date</span>
+          <span class="meta-label">📅 Date</span>
           <span class="meta-value">20–23 Août</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">Lieu</span>
+          <span class="meta-label">📍 Lieu</span>
           <span class="meta-value">L'arbre qui pousse</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">Programmation</span>
+          <span class="meta-label">🎭 Au programme</span>
           <span class="meta-value">5 artistes</span>
           <span class="meta-value">10 tables rondes</span>
           <span class="meta-value">5 ateliers</span>
         </div>
       </div>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-red">Prendre mes billets</a>
-        <a href="programme.html" class="btn btn-outline">Voir le programme</a>
+        <a href="#contact" class="btn btn-red">🎟 Prendre mes billets</a>
+        <a href="programme.html" class="btn btn-outline">Voir le programme →</a>
       </div>
     </div>
 
-    <!-- logo droite -->
+    <!-- Logo droite -->
     <div class="hero-logo-wrap">
       <img id="heroLogoImg" src="" alt="Logo BAF Camp" style="display:none"
         onclick="document.getElementById('heroLogoInput').click()" title="Cliquer pour changer">
@@ -264,24 +467,40 @@
 </div>
 
 <!-- ══ EN BREF ══ -->
-<section style="padding:80px 80px; background:var(--black2);" class="reveal">
-  <p class="section-eyebrow">✦ Le festi-camp</p>
-  <div class="section-header" style="border-bottom:1px solid rgba(212,43,43,.2); padding-bottom:20px; margin-bottom:40px;">
-    <h2 class="section-title">En bref</h2>
+<section class="section-en-bref reveal">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">✦ Le festi-camp</p>
+      <h2 class="section-title">En bref</h2>
+    </div>
   </div>
   <div class="cards-grid">
-    <div class="card"><span class="card-icon">🎸</span><h3 class="card-title">Line-up</h3><p class="card-text">10+ artistes sur 3 scènes pendant 4 jours de fête.</p></div>
-    <div class="card"><span class="card-icon">🏕️</span><h3 class="card-title">Camping</h3><p class="card-text">Camping ouvert dès le jeudi soir avec toutes les commodités sur place.</p></div>
-    <div class="card"><span class="card-icon">🤝</span><h3 class="card-title">Bénévolat</h3><p class="card-text">Rejoins notre équipe de bénévoles pour participer à l'organisation en amont, et sur place.</p></div>
+    <div class="card">
+      <span class="card-icon">🎸</span>
+      <h3 class="card-title">Line-up</h3>
+      <p class="card-text">10+ artistes sur 3 scènes pendant 4 jours de fête.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🏕️</span>
+      <h3 class="card-title">Camping</h3>
+      <p class="card-text">Camping ouvert dès le jeudi soir avec toutes les commodités sur place.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🤝</span>
+      <h3 class="card-title">Bénévolat</h3>
+      <p class="card-text">Rejoins notre équipe de bénévoles pour participer à l'organisation en amont, et sur place.</p>
+    </div>
   </div>
 </section>
 
 <!-- ══ CONTACT ══ -->
-<section style="padding:80px 80px; text-align:center;" id="contact">
-  <p class="section-eyebrow reveal" style="text-align:center">✦ Restons en contact</p>
-  <h2 style="font-family:Anton; font-size:clamp(1.8rem,3.5vw,2.8rem); letter-spacing:.05em; text-transform:uppercase; margin:0 auto 20px; text-align:center;" class="reveal">Une question ?</h2>
-  <p class="reveal" style="color:var(--grey); max-width:420px; margin:0 auto 40px; line-height:1.7; font-size:.95rem;">Nos bénévoles sont disponibles pour répondre à toutes vos questions.</p>
-  <a href="mailto:contact@monfestival.fr" class="btn btn-red reveal">✉️ &nbsp;Nous écrire</a>
+<section class="section-contact" id="contact">
+  <div style="position:relative; z-index:1;">
+    <p class="section-eyebrow reveal" style="display:inline-block; margin-bottom:16px;">✦ Restons en contact</p>
+    <h2 class="section-title reveal" style="margin-bottom:20px;">Une question ?</h2>
+    <p class="contact-sub reveal">Nos bénévoles sont disponibles pour répondre à toutes vos questions.</p>
+    <a href="mailto:contact@monfestival.fr" class="btn btn-red reveal" style="margin: 0 auto;">✉️ &nbsp;Nous écrire</a>
+  </div>
 </section>
 
 <!-- ══ FOOTER ══ -->
@@ -294,6 +513,7 @@
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
       Ajouter le logo
     </div>
+    <div class="footer-logo">BAF <span>CAMP</span></div>
     <p class="footer-tagline">Le festival qui enflamme chaque été. Musique, rencontre, soutien et partage des luttes.</p>
   </div>
   <div class="footer-col">
@@ -323,7 +543,7 @@
     </ul>
   </div>
   <div class="footer-bottom">
-    <span>2026 BAF Camp — par et pour toustes</span>
+    <span>© 2026 BAF Camp — par et pour toustes</span>
     <span>Fait avec cœur, rage et ✨ paillettes ✨ !</span>
   </div>
 </footer>
@@ -344,14 +564,11 @@ document.addEventListener('click', e => {
 /* ── Scroll reveal ── */
 const obs = new IntersectionObserver(entries =>
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-  {threshold:.12}
+  { threshold: .12 }
 );
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-/* ════════════════════════════════════════════
-   PERSISTANCE DES IMAGES (localStorage base64)
-════════════════════════════════════════════ */
-
+/* ── Utilitaires ── */
 function fileToBase64(file) {
   return new Promise((res, rej) => {
     const r = new FileReader();
@@ -361,41 +578,35 @@ function fileToBase64(file) {
   });
 }
 
-/* -- Appliquer logo navbar -- */
 function applyNavLogo(src) {
   const img = document.getElementById('logoImg');
   const ph  = document.getElementById('logoPlaceholder');
   img.src = src; img.style.display = 'block'; ph.style.display = 'none';
 }
 
-/* -- Appliquer logo hero + footer -- */
 function applyHeroLogo(src) {
   const hImg = document.getElementById('heroLogoImg');
   const hPh  = document.getElementById('heroLogoPlaceholder');
   hImg.src = src; hImg.style.display = 'block'; hPh.style.display = 'none';
-
   const fImg = document.getElementById('footerLogoImg');
   const fPh  = document.getElementById('footerLogoPh');
   fImg.src = src; fImg.style.display = 'block'; fPh.style.display = 'none';
 }
 
-/* -- Appliquer image de fond hero -- */
 function applyHeroBg(src, opacity) {
   const img = document.getElementById('heroImg');
   img.src = src;
-  img.style.opacity = (opacity ?? 38) / 100;
-  document.getElementById('opacitySlider').value = opacity ?? 38;
-  document.getElementById('opacityVal').textContent = (opacity ?? 38) + '%';
+  img.style.opacity = (opacity ?? 35) / 100;
+  document.getElementById('opacitySlider').value = opacity ?? 35;
+  document.getElementById('opacityVal').textContent = (opacity ?? 35) + '%';
 }
 
-/* -- Slider opacité -- */
 function setOpacity(val) {
   document.getElementById('heroImg').style.opacity = val / 100;
   document.getElementById('opacityVal').textContent = val + '%';
   localStorage.setItem('baf_hero_opacity', val);
 }
 
-/* -- Réinitialiser -- */
 function clearAll() {
   if (!confirm('Supprimer toutes les images sauvegardées ?')) return;
   ['baf_logo_nav','baf_logo_hero','baf_hero_bg','baf_hero_opacity']
@@ -403,33 +614,20 @@ function clearAll() {
   location.reload();
 }
 
-/* -- Upload logo navbar -- */
 document.getElementById('logoInput').addEventListener('change', async function() {
   const file = this.files[0]; if (!file) return;
-  try {
-    const b64 = await fileToBase64(file);
-    localStorage.setItem('baf_logo_nav', b64);
-    applyNavLogo(b64);
-  } catch(e) {
-    alert('Image trop lourde. Essaie un fichier plus petit (< 500 ko).');
-  }
+  try { const b64 = await fileToBase64(file); localStorage.setItem('baf_logo_nav', b64); applyNavLogo(b64); }
+  catch(e) { alert('Image trop lourde. Essaie un fichier plus petit (< 500 ko).'); }
   this.value = '';
 });
 
-/* -- Upload logo hero + footer -- */
 document.getElementById('heroLogoInput').addEventListener('change', async function() {
   const file = this.files[0]; if (!file) return;
-  try {
-    const b64 = await fileToBase64(file);
-    localStorage.setItem('baf_logo_hero', b64);
-    applyHeroLogo(b64);
-  } catch(e) {
-    alert('Image trop lourde. Essaie un PNG compressé (< 500 ko).');
-  }
+  try { const b64 = await fileToBase64(file); localStorage.setItem('baf_logo_hero', b64); applyHeroLogo(b64); }
+  catch(e) { alert('Image trop lourde. Essaie un PNG compressé (< 500 ko).'); }
   this.value = '';
 });
 
-/* -- Upload photo de fond hero -- */
 document.getElementById('heroInput').addEventListener('change', async function() {
   const file = this.files[0]; if (!file) return;
   try {
@@ -438,19 +636,15 @@ document.getElementById('heroInput').addEventListener('change', async function()
     localStorage.setItem('baf_hero_bg', b64);
     localStorage.setItem('baf_hero_opacity', opacity);
     applyHeroBg(b64, opacity);
-  } catch(e) {
-    alert('Photo trop lourde pour être sauvegardée (localStorage limité à ~5 Mo). Essaie une image compressée.');
-  }
+  } catch(e) { alert('Photo trop lourde. Essaie une image compressée.'); }
   this.value = '';
 });
 
-/* ════ RESTAURATION AU CHARGEMENT ════ */
 (function restore() {
   const navLogo  = localStorage.getItem('baf_logo_nav');
   const heroLogo = localStorage.getItem('baf_logo_hero');
   const heroBg   = localStorage.getItem('baf_hero_bg');
-  const opacity  = localStorage.getItem('baf_hero_opacity') || 38;
-
+  const opacity  = localStorage.getItem('baf_hero_opacity') || 35;
   if (navLogo)  applyNavLogo(navLogo);
   if (heroLogo) applyHeroLogo(heroLogo);
   if (heroBg)   applyHeroBg(heroBg, Number(opacity));
