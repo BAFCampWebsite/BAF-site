@@ -355,10 +355,10 @@ nav {
 }
 
 .day-tab.active {
-  background: var(--rose);
-  color: var(--creme);
+  background: var(--blanc-sale); /* fond beige normal */
+  color: var(--rose);            /* texte rose */
+  border-color: var(--rose);     /* bordure rose pour marquer l'actif */
 }
-
 .day-tab.active:hover {
   background: var(--rose-hot);
 }
