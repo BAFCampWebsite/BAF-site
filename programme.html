@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+function switchDay(index, el) {
+  document.querySelectorAll('.day-tab').forEach(btn => btn.classList.remove('active'));
+  el.classList.add('active');
+  // ... reste de ta logique
+}<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -92,9 +96,11 @@
 
   <div class="reveal" style="margin-top:40px;">
     <div style="display:flex; gap:4px; margin-bottom:32px; flex-wrap:wrap;" id="dayTabs">
-      <button class="day-tab active" onclick="switchDay(0,this)">Vendredi 14</button>
-      <button class="day-tab" onclick="switchDay(1,this)">Samedi 15</button>
-      <button class="day-tab" onclick="switchDay(2,this)">Dimanche 16</button>
+      <button class="day-tab" onclick="switchDay(0,this)">Jeudi 20</button>
+      <button class="day-tab active" onclick="switchDay(1,this)">Vendredi 21</button>
+      <button class="day-tab" onclick="switchDay(2,this)">Samedi 22</button>
+      <button class="day-tab" onclick="switchDay(3,this)">Dimanche 23</button>
+      
     </div>
     <div id="dayContent" class="artists-list"></div>
   </div>
