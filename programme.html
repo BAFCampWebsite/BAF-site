@@ -87,8 +87,8 @@
   </div>
 
   <div class="reveal">
-    <h2>Line-up 2025</h2>
-    <p>Découvrez les intervenant·es qui animeront le camp cette année. Programme complet ci-dessous.</p>
+    <h2>Fil rouge de la programmation</h2>
+    <p>Découvrez les idées qui animeront le camp cette année. fil rouge du programme ci-dessous.</p>
   </div>
 
   <div class="reveal" style="margin-top:40px;">
@@ -193,7 +193,12 @@
 
 <script>
 const jours = ['Jeudi 20', 'Vendredi 21', 'Samedi 22', 'Dimanche 23'];
-const contenu = ['', '', '', ''];
+const contenu = [
+  `Jeudi : texte de ton choix ici.`,
+  `Vendredi : texte de ton choix ici.`,
+  `Samedi : texte de ton choix ici.`,
+  `Dimanche : texte de ton choix ici.`
+];
 
 function switchDay(i, btn) {
   // Sauvegarde le texte du jour actuel
@@ -212,7 +217,7 @@ function renderDay(i) {
   document.getElementById('dayContent').innerHTML = `
     <div class="day-editor">
       <span class="day-editor-label">Programme — ${jours[i]}</span>
-      <textarea placeholder="Décrivez le programme de ce jour : intervenant·es, ateliers, temps forts…">${contenu[i]}</textarea>
+      <p style="font-family:'Libre Baskerville',serif; font-size:.92rem; line-height:1.8; color:var(--encre);">${contenu[i]}</p>
     </div>
   `;
 }
