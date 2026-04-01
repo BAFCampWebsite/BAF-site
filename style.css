@@ -54,7 +54,15 @@ body::after {
   opacity: .8;
   mix-blend-mode: multiply;
 }
-
+.lieu-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+.lieu-link:hover {
+  color: var(--rose);
+}
 /* ══ NAVBAR ══ */
 nav {
   position: sticky; top: 0; z-index: 200;
