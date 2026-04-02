@@ -183,7 +183,25 @@ nav {
   border-bottom: var(--contour-lg);
   position: relative; overflow: hidden;
 }
+.hero {
+  position: relative;
+  background-image: url('moulin-de-grupont.jpg');
+  background-size: cover;
+  background-position: center;
+}
 
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(249, 242, 236, 0.65); /* --creme à 65% */
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
 /* ══ BULLE BAF DÉCORATIVE ══ */
 .baf-burst {
   position: absolute;
