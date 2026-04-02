@@ -179,26 +179,26 @@ nav {
 /* ══ PAGE HERO (pages internes) ══ */
 .page-hero {
   padding: 72px 80px 56px;
-  background: var(--rose);
-  border-bottom: var(--contour-lg);
-  position: relative; overflow: hidden;
-}
-.hero {
-  position: relative;
   background-image: url('moulin-de-grupont.jpg');
   background-size: cover;
   background-position: center;
+  border-bottom: var(--contour-lg);
+  position: relative;
+  overflow: hidden;
 }
 
-.hero::before {
+.page-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(249, 242, 236, 0.65); /* --creme à 65% */
+  background: rgba(249, 242, 236, 0.65);
   z-index: 0;
 }
 
-.hero-inner {
+.page-hero-eyebrow,
+.page-hero-title,
+.page-hero-sub,
+.hero-meta {
   position: relative;
   z-index: 1;
 }
