@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infos en vrac — BAF Camp</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .info-block {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 20px; background: var(--blanc-sale);
+      border: var(--contour); border-radius: 10px;
+      box-shadow: var(--ombre); margin-bottom: 16px;
+      transition: transform .15s;
+    }
+    .info-block:hover { transform: translate(-2px, -2px); }
+    .info-block-icon { font-size: 1.8rem; flex-shrink: 0; line-height: 1; }
+    .info-block-title {
+      font-family: 'Boogaloo', cursive; font-size: 1.1rem; color: var(--vert); margin-bottom: 6px;
+      text-shadow: 1px 1px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);
+    }
+    .info-block p { font-family: 'Libre Baskerville', serif; font-size: .84rem; line-height: 1.7; color: var(--gris-encre); margin-bottom: 0; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Space Mono', monospace; font-size: .65rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+      background: var(--vert); color: var(--creme);
+      padding: 4px 12px; border-radius: 4px; border: 1px solid var(--encre); box-shadow: 2px 2px 0 var(--encre); margin-bottom: 14px;
+    }
+    .checklist { list-style: none; padding: 0; margin: 16px 0 0 0; }
+    .checklist li {
+      font-family: 'Libre Baskerville', serif; font-size: .88rem; line-height: 1.7; color: var(--gris-encre);
+      padding: 10px 0 10px 40px; border-bottom: 1px dashed var(--sable); position: relative;
+    }
+    .checklist li::before { content: attr(data-icon); position: absolute; left: 4px; top: 10px; font-size: 1.1rem; }
+    .checklist li:last-child { border-bottom: none; }
+    .nav-sub { display: flex; flex-wrap: wrap; gap: 12px; margin: 36px 0; }
+    .nav-sub a {
+      font-family: 'Space Mono', monospace; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      background: var(--blanc-sale); color: var(--encre); border: var(--contour); border-radius: 8px;
+      padding: 10px 18px; text-decoration: none; box-shadow: var(--ombre); transition: transform .12s, box-shadow .12s;
+    }
+    .nav-sub a:hover { transform: translate(-2px, -2px); box-shadow: var(--ombre-lg); }
+    .warning-block {
+      background: var(--rose); border: 3px solid var(--encre); border-radius: 12px;
+      padding: 24px 28px; margin: 24px 0; position: relative; overflow: hidden;
+    }
+    .warning-block::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 14px 14px; pointer-events: none;
+    }
+    .warning-block h3 {
+      font-family: 'Boogaloo', cursive; font-size: 1.25rem; color: var(--creme);
+      text-shadow: 1px 1px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);
+      margin: 0 0 10px 0; position: relative; z-index: 1;
+    }
+    .warning-block p { font-family: 'Libre Baskerville', serif; font-size: .88rem; line-height: 1.7; color: rgba(249,242,236,.9); position: relative; z-index: 1; margin: 0; }
+  </style>
+</head>
+<body>
+<input type="file" id="logoInput" accept="image/*">
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
+      <img id="logoImg" src="" alt="Logo" style="display:none">
+      <span class="logo-placeholder" id="logoPlaceholder">BAF</span>
+      <div class="logo-upload-hint">logo</div>
+    </div>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="programme.html">Programme</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Fonctionnement
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="financements.html"><span class="di">💰</span>Financements</a>
+        <a href="charte.html"><span class="di">📜</span>Notre charte</a>
+        <a href="benevoles.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Informations
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="infos.html"><span class="di">🎪</span>Scènes &amp; Accès</a>
+        <a href="infos-en-vrac.html"><span class="di">📋</span>Infos en vrac</a>
+        <a href="venir.html"><span class="di">📍</span>Venir sur place</a>
+        <a href="repas.html"><span class="di">🍴</span>Les repas</a>
+        <a href="accessibilite.html"><span class="di">♿</span>Accessibilité</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Nous aider
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="nous-aider.html"><span class="di">❤️</span>Faire un don</a>
+        <a href="benevoles.html"><span class="di">🙌</span>Bénévolat</a>
+        <a href="nous-aider.html#partager"><span class="di">📢</span>Partager</a>
+        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Prêter du matériel</a>
+      </div>
+    </li>
+    <li><a href="index.html#contact" class="btn nav-cta">Billetterie prix libre →</a></li>
+  </ul>
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-eyebrow">Pratique</div>
+  <h1 class="page-hero-title">Infos en vrac</h1>
+  <p class="page-hero-sub">Tout ce qu'il faut savoir avant d'arriver au BAF Camp 2026.</p>
+</section>
+
+<div class="page-content">
+
+  <nav class="nav-sub">
+    <a href="venir.html">📍 Venir sur place</a>
+    <a href="repas.html">🍴 Les repas</a>
+    <a href="accessibilite.html">♿ Accessibilité</a>
+  </nav>
+
+  <section>
+    <p class="section-label">⏰ L'essentiel</p>
+    <h2>Les grandes lignes</h2>
+
+    <div class="info-block">
+      <span class="info-block-icon">⏰</span>
+      <div class="info-block-body">
+        <div class="info-block-title">Dates</div>
+        <p>Le BAF Camp débute le <strong>jeudi 17 août à partir de 14h</strong> et se clôture le <strong>mardi 26 août à 12h</strong>.</p>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <span class="info-block-icon">🏕️</span>
+      <div class="info-block-body">
+        <div class="info-block-title">Camping &amp; sommeil</div>
+        <p>Un camping mixte et un camping exclusivement en mixité choisie MINT (Meuf, Intersexe, Non-binaire et Trans). Il y aura aussi un camping pour les camions, voitures et vans aménagés. Douches, toilettes sèches et points d'eau sur place. <strong>Les réchauds et appareils de cuisson sont interdits</strong> sur le site pour des raisons de sécurité.</p>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <span class="info-block-icon">😴</span>
+      <div class="info-block-body">
+        <div class="info-block-title">Espaces de ressourcement</div>
+        <p>Un espace chill avec sollicitations sensitives limitées (bruits, lumière…), une bibliothèque, un infokiosque, des espaces de paroles, des espaces de soins et des espaces en mixité choisie.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <p class="section-label">🎒 À emporter</p>
+    <h2>Dans ton trousseau</h2>
+    <ul class="checklist">
+      <li data-icon="🧢">Équipements pour le chaud, le froid et la pluie — chapeau, crème solaire, mais aussi pull, écharpe, pyjama…</li>
+      <li data-icon="💦">Une gourde — de l'eau est en libre accès sur tout le camp.</li>
+      <li data-icon="⛺">Tente, hamac, tapis de sol, duvet — des emplacements de camping sont prévus pour tou·tes les participant·es.</li>
+      <li data-icon="💸">De l'argent liquide (les distributeurs sont loin) pour la nourriture et le bar. Des terminaux de paiement seront disponibles, mais peu — mieux vaut venir avec du liquide.</li>
+      <li data-icon="📱">Ton téléphone chargé — un espace de recharge est disponible sur le camp.</li>
+    </ul>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <p class="section-label">🐕 Animaux</p>
+    <h2>Côté chiens</h2>
+
+    <div class="warning-block">
+      <h3>⚠️ Chiens fortement déconseillés</h3>
+      <p>Le festival n'est pas pensé pour accueillir dans de bonnes conditions les animaux. Certaines zones sont absolument interdites aux chiens. Certaines personnes peuvent être mal à l'aise, voire avoir peur. Il n'y a pas d'infrastructures adaptées, leur bien-être ne peut donc être assuré.</p>
+    </div>
+
+    <p style="font-family:'Libre Baskerville',serif; font-size:.9rem; line-height:1.8; color:var(--gris-encre); margin-bottom:16px;">Si vous ne pouvez pas faire autrement, les chiens sont admis sous conditions strictes :</p>
+
+    <div class="info-block">
+      <span class="info-block-icon">📋</span>
+      <div class="info-block-body">
+        <div class="info-block-title">Conditions d'admission</div>
+        <p>Uniquement entre 8h et 20h. Chien calme et sociable obligatoire. Laisse et harnais obligatoires. Zones interdites : concerts, bambinerie, cantine, conférences, chapiteaux. Informer l'organisation à l'avance. Venir avec des sacs pour les déjections.</p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="nav-sub" style="margin-bottom:40px;">
+    <a href="venir.html">📍 Venir sur place →</a>
+    <a href="repas.html">🍴 Les repas →</a>
+    <a href="accessibilite.html">♿ Accessibilité →</a>
+  </nav>
+
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">BAF <span>CAMP</span></div>
+    <p class="footer-tagline">Fait avec cœur, rage et ✨ paillettes ✨ !</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="programme.html">Programme</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="infos.html">Infos pratiques</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Fonctionnement</h4>
+    <ul>
+      <li><a href="financements.html">Financements</a></li>
+      <li><a href="charte.html">Charte</a></li>
+      <li><a href="benevoles.html">Inscriptions bénévoles</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Réseaux</h4>
+    <ul>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Stuut</a></li>
+      <li><a href="#">Signal</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 BAF Camp — par et pour toustes</span>
+    <span>Fait avec cœur, rage et ✨ paillettes ✨ !</span>
+  </div>
+</footer>
+
+<script>
+function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+const obs = new IntersectionObserver(entries =>
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: .1 }
+);
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+(function() {
+  const n = localStorage.getItem('baf_logo_nav');
+  if (n) {
+    document.getElementById('logoImg').src = n;
+    document.getElementById('logoImg').style.display = 'block';
+    document.getElementById('logoPlaceholder').style.display = 'none';
+  }
+})();
+document.getElementById('logoInput').addEventListener('change', async function() {
+  const f = this.files[0]; if (!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try { localStorage.setItem('baf_logo_nav', r.result); } catch {}
+    document.getElementById('logoImg').src = r.result;
+    document.getElementById('logoImg').style.display = 'block';
+    document.getElementById('logoPlaceholder').style.display = 'none';
+  };
+  r.readAsDataURL(f);
+  this.value = '';
+});
+</script>
+</body>
+</html>
