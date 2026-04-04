@@ -123,15 +123,7 @@
 
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Accueil</a></li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">Programme
-        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dropdown">
-        <a href="infos.html"><span class="di">🎪</span>Scènes &amp; Accès</a>
-        <a href="programme.html"><span class="di">🎟</span>Programme complet</a>
-      </div>
-    </li>
+    <li><a href="programme.html">Programme</a></li>
     <li>
       <button onclick="toggleDD(this.parentElement)">Fonctionnement
         <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
@@ -147,9 +139,10 @@
         <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="dropdown">
-        <a href="#acces"><span class="di">📍</span>Venir sur place</a>
-        <a href="#restauration"><span class="di">🍔</span>Se nourrir</a>
-        <a href="#camping"><span class="di">⛺</span>Le camping</a>
+        <a href="infos.html"><span class="di">🎪</span>Scènes &amp; Accès</a>
+        <a href="infos.html#acces"><span class="di">📍</span>Venir sur place</a>
+        <a href="infos.html#restauration"><span class="di">🍔</span>Se nourrir</a>
+        <a href="infos.html#camping"><span class="di">⛺</span>Le camping</a>
       </div>
     </li>
     <li>
@@ -277,11 +270,11 @@
 
 <!-- ══ FOOTER ══ -->
 <footer>
-  <div style="position:relative; z-index:1;">
+  <div>
     <div class="footer-logo">BAF <span>CAMP</span></div>
-    <p class="footer-tagline">Le festival qui enflamme chaque été. Musique, rencontre, soutien et partage des luttes.</p>
+    <p class="footer-tagline">Fait avec cœur, rage et ✨ paillettes ✨ !</p>
   </div>
-  <div class="footer-col" style="position:relative; z-index:1;">
+  <div class="footer-col">
     <h4>Navigation</h4>
     <ul>
       <li><a href="index.html">Accueil</a></li>
@@ -290,27 +283,28 @@
       <li><a href="infos.html">Infos pratiques</a></li>
     </ul>
   </div>
-  <div class="footer-col" style="position:relative; z-index:1;">
+  <div class="footer-col">
     <h4>Fonctionnement</h4>
     <ul>
       <li><a href="financements.html">Financements</a></li>
       <li><a href="charte.html">Charte</a></li>
-      <li><a href="benevoles.html">Bénévoles</a></li>
+      <li><a href="benevoles.html">Inscriptions bénévoles</a></li>
     </ul>
   </div>
-  <div class="footer-col" style="position:relative; z-index:1;">
+  <div class="footer-col">
     <h4>Réseaux</h4>
     <ul>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Facebook</a></li>
       <li><a href="#">Stuut</a></li>
       <li><a href="#">Signal</a></li>
-      <li><a href="#">Proton mail</a></li>
     </ul>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 BAF Camp — par et pour toutes</span>
-    <span>Fait avec cœur, rage et ✨ paillettes ✨</span>
+    <span>2026 BAF Camp — par et pour toustes</span>
+    <span>Fait avec cœur, rage et ✨ paillettes ✨ !</span>
   </div>
-</footer>
+</footer>>
 
 <script>
 function toggleDD(li) {
