@@ -100,6 +100,18 @@ nav {
 }
 .logo-img-wrap:hover .logo-upload-hint { opacity: 1; }
 
+.construction-banner {
+  font-family: 'Space Mono', monospace;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  background: var(--creme-fonce);
+  border: 2px dashed var(--rose);
+  border-radius: 8px;
+  padding: 14px 20px;
+  color: var(--rose-dark);
+  text-align: center;
+}
 .nav-site-name {
   font-family: 'Boogaloo', cursive;
   font-size: 1.8rem; color: var(--creme);
