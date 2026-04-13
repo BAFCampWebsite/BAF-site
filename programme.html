@@ -80,29 +80,20 @@
   <p>Les deux journées au coeur de notre camp ont pour ambition de créer des espaces de partage, de discussion et des ateliers autour de la problématique "Comment lutter ensemble?" <br>
     Cette programmation sera réalisée par tou.te.s pour tou.te.s ! <br>
     Si tu as un atelier ou stand à animer, un projet à lancer ou une thématique pour une conférence à proposer - N'hésite pas à remplir <a href="framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054"> notre appel à contributions </a> 👊</p>
-</div>
-  <div class="reveal">
-  <svg width="100%" height="120" viewBox="0 0 600 120">
-    
-    <!-- Le chemin (le "fil") -->
-    <path id="filPath"
-          d="M10,60 Q150,10 300,60 T590,60"
-          fill="none"
-          stroke="#c40000"
-          stroke-width="2"/>
+</div><style>
+  .fil-rouge {
+    color: #c40000;            /* rouge */
+    font-size: 1.2rem;         /* plus petit */
+    font-family: "Brush Script MT", "Comic Sans MS", cursive;
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+</style>
 
-    <!-- Le texte qui suit le fil -->
-    <text fill="#c40000" font-size="18" font-family="cursive">
-      <textPath href="#filPath" startOffset="5%">
-        Fil rouge de la programmation
-      </textPath>
-    </text>
-
-  </svg>
-
+<div class="reveal">
+  <h2 class="fil-rouge">Fil rouge de la programmation</h2>
   <p>Découvrez les idées qui animeront le camp cette année. fil rouge du programme ci-dessous.</p>
 </div>
-
   <div class="reveal" style="margin-top:40px;">
     <div style="display:flex; gap:4px; margin-bottom:32px; flex-wrap:wrap;" id="dayTabs">
       <button class="day-tab active" onclick="switchDay(0,this)">Jeudi 20</button>
