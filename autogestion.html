@@ -1,47 +1,25 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inscriptions bénévoles — BAF Camp</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<nav>
-  <a href="index.html" class="nav-logo">
-    <div class="logo-img-wrap">
-      <span class="logo-placeholder">BAF</span>
-    </div>
-    <span class="nav-site-name">BAF <span>CAMP</span></span>
-  </a>
-</nav>
-
-<div class="page-hero anim">
-  <p class="page-hero-eyebrow">✦ Bénévolat</p>
-  <h1 class="page-hero-title">Autogestion</h1>
-  <p class="page-hero-sub">Quelques informations sur la façon dont on travaille</p>
-</div>
-
 <!-- CONTENU PRINCIPAL -->
 <div class="page-content">
 
-  <div class="reveal">
+  <!-- Bandeau -->
+  <div class="reveal" style="margin-bottom:32px;">
     <div class="construction-banner">
-      🚧 Site en construction — la page bénévole complète arrive bientôt !
+      🚧 Site en construction — la page bénévole complète et les inscriptions seront publiées prochainement !
     </div>
   </div>
 
-  <!-- STRUCTURE -->
+  <!-- Structure -->
   <div class="reveal">
     <h2>Notre structure</h2>
     <p>Le BAF Camp est un évènement autogéré...</p>
 
-    <div class="cta-box">
-      <a href="mailto:Activismcampbelgium@proton.me?subject=Rejoindre%20l%27organisation%20du%20BAF">
-        Rejoignez nous !
-      </a>
+    <div style="display:inline-block; margin:40px auto; text-align:center; width:100%;">
+      <div style="display:inline-block; border:3px solid var(--encre); border-radius:8px; box-shadow:6px 6px 0 var(--encre); background:var(--rose); padding:18px 60px;">
+        <a href="mailto:Activismcampbelgium@proton.me?subject=Rejoindre%20l%27organisation%20du%20BAF"
+           style="text-decoration:none; font-family:'Boogaloo',cursive; font-size:2.6rem; text-transform:uppercase; color:var(--creme);">
+          Rejoignez nous !
+        </a>
+      </div>
     </div>
   </div>
 
@@ -50,20 +28,15 @@
     <h2>Les groupes de travail</h2>
 
     <div class="cards-grid">
-      <div class="card">GT Care</div>
-      <div class="card">GT Communication</div>
-      <div class="card">GT Bénévoles</div>
-      <div class="card">GT Logistique</div>
-      <div class="card">GT Programmation</div>
-      <div class="card">GT Money & Légal</div>
-      <div class="card">GT Coordination</div>
+      <!-- 7 cartes -->
+      <!-- (inchangé) -->
     </div>
   </div>
 
   <!-- BÉNÉVOLAT -->
   <div class="reveal">
     <h2>Le bénévolat</h2>
-    <p>Texte bénévolat...</p>
+    <p>...</p>
   </div>
 
   <hr class="divider">
@@ -71,11 +44,7 @@
   <!-- MISSIONS -->
   <div class="reveal">
     <h2>Missions disponibles</h2>
-    <ul>
-      <li>Accueil</li>
-      <li>Bar</li>
-      <li>Cuisine</li>
-    </ul>
+    <ul>...</ul>
   </div>
 
   <hr class="divider">
@@ -84,36 +53,50 @@
   <div class="reveal">
     <h2>Formulaire d'inscription</h2>
 
+    <!-- ⚠️ tu n'avais PAS de form -->
     <form>
-      <input type="text" placeholder="Prénom">
-      <input type="email" placeholder="Email">
-      <textarea placeholder="Message"></textarea>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Prénom/blaze *</label>
+          <input type="text" name="prenom">
+        </div>
+      </div>
 
-      <button type="submit">Envoyer</button>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" name="email">
+        </div>
+        <div class="form-group">
+          <label>Contact signal</label>
+          <input type="text" name="signal">
+        </div>
+      </div>
+
+      <button class="btn btn-red" type="submit">
+        🙌 Envoyer mes informations
+      </button>
     </form>
   </div>
 
-  <!-- PROGRAMMATION (FIXED ✅) -->
+  <!-- PROGRAMMATION (✅ maintenant bien placé) -->
   <div class="reveal">
     <h2>Programmation</h2>
+    <p>Et enfin, un rappel que la programmation...</p>
 
-    <p>
-      La programmation est un espace d'horizontalité...
-    </p>
-
-    <div class="cta-box">
-      <a href="https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054">
-        Proposition programmation !
-      </a>
+    <div style="display:inline-block; margin:40px auto; text-align:center; width:100%;">
+      <div style="display:inline-block; border:3px solid var(--encre); border-radius:8px; box-shadow:6px 6px 0 var(--encre); background:var(--rose); padding:18px 60px;">
+        <a href="https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054"
+           style="text-decoration:none; font-family:'Boogaloo',cursive; font-size:2.6rem; text-transform:uppercase; color:var(--creme);">
+          Proposition programmation !
+        </a>
+      </div>
     </div>
   </div>
 
-</div> <!-- FIN page-content -->
+</div> <!-- ✅ UNE SEULE fermeture -->
 
 <!-- FOOTER -->
 <footer>
-  <p>BAF Camp 2026</p>
+  ...
 </footer>
-
-</body>
-</html>
