@@ -105,22 +105,16 @@ nav {
   gap: 20px;
 }
 
-/* ligne du bas centrée */
 .gt-section .cards-grid .card:nth-child(5) {
-  grid-column: 2 / span 1;
-}
-.gt-section .cards-grid .card:nth-child(6) {
-  grid-column: 3 / span 1;
-}
-.gt-section .cards-grid .card:nth-child(7) {
-  grid-column: 4 / span 1;
+  grid-column: 2;
 }
 
-/* IMPORTANT */
-.gt-section .cards-grid {
-  justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto;
+.gt-section .cards-grid .card:nth-child(6) {
+  grid-column: 3;
+}
+
+.gt-section .cards-grid .card:nth-child(7) {
+  grid-column: 4;
 }
 .construction-banner {
   font-family: 'Space Mono', monospace;
