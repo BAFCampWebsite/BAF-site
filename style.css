@@ -99,7 +99,23 @@ nav {
   border-radius: 50%;
 }
 .logo-img-wrap:hover .logo-upload-hint { opacity: 1; }
+.gt-section .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
 
+.gt-section .cards-grid .card:nth-child(5) {
+  grid-column: 2;
+}
+
+.gt-section .cards-grid .card:nth-child(6) {
+  grid-column: 3;
+}
+
+.gt-section .cards-grid .card:nth-child(7) {
+  grid-column: 4;
+}
 .construction-banner {
   font-family: 'Space Mono', monospace;
   font-size: .78rem;
