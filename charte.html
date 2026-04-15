@@ -1,152 +1,103 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Billetterie — BAF Camp</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ Fonctionnement</p>
+  <h1 class="page-hero-title">Charte</h1>
+  <p class="page-hero-sub">Les bases politiques et collectives du BAF Camp</p>
+</div>
 
-<input type="file" id="logoInput" accept="image/*">
-  <nav>
-  <a href="index.html" class="nav-logo">
-    <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
-      <img id="logoImg" src="" alt="Logo" style="display:none">
-      <span class="logo-placeholder" id="logoPlaceholder">BAF</span>
-      <div class="logo-upload-hint">logo</div>
-    </div>
-    <span class="nav-site-name">BAF <span>CAMP</span></span>
-  </a>
-
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="programme.html">Programme</a></li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">Fonctionnement
-        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dropdown">
-        <a href="financements.html"><span class="di">💰</span>Financements</a>
-        <a href="charte.html"><span class="di">📜</span>Notre charte</a>
-        <a href="autogestion.html"><span class="di">🙌</span>Autogestion</a>
-      </div>
-    </li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">Informations
-        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dropdown">
-        <a href="infos.html#acces"><span class="di">📍</span>Venir sur place</a>
-        <a href="infos.html#restauration"><span class="di">🍔</span>Se nourrir</a>
-        <a href="infos.html#camping"><span class="di">⛺</span>Le camping</a>
-      </div>
-    </li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">Nous aider
-        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dropdown">
-        <a href="nous-aider.html"><span class="di">❤️</span>Faire un don</a>
-        <a href="autogestion.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
-        <a href="nous-aider.html#partager"><span class="di">📢</span>Partager</a>
-        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Prêter du matériel</a>
-      </div>
-    </li>
-    <li><a href="billetterie.html" class="btn nav-cta">Billetterie prix libre →</a></li>
-  </ul>
-
-  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
 <div class="page-content">
 
   <div class="reveal">
-    <h2>Objectifs</h2>
-    <p>BAF Camp est un espace de rencontre et d’organisation pour les luttes sociales en Belgique.</p>
+    <h2>Pourquoi ce camp</h2>
+    <p>
+      Le BAF Camp est un espace pour se rencontrer, s’organiser et renforcer des luttes. 
+      Il part d’un constat simple : les droits reculent, la répression augmente et les mouvements sont fragmentés.
+    </p>
+    <p>
+      L’objectif est de créer des liens entre collectifs, partager des pratiques et construire des alliances durables, 
+      tout en maintenant des espaces vivants et accessibles.
+    </p>
+  </div>
 
+  <div class="reveal">
+    <h2>Ce qu’on cherche à faire</h2>
     <div class="cards-grid">
       <div class="card">
         <span class="card-icon">🤝</span>
-        <h3 class="card-title">Rassembler</h3>
-        <p class="card-text">Créer des liens entre collectifs et individus engagés (Bruxelles, Wallonie, Flandre).</p>
+        <h3 class="card-title">Relier</h3>
+        <p class="card-text">Créer des ponts entre luttes et territoires (Bruxelles, Wallonie, Flandre).</p>
       </div>
 
       <div class="card">
         <span class="card-icon">📢</span>
-        <h3 class="card-title">Visibiliser</h3>
-        <p class="card-text">Mettre en avant les luttes locales et internationales.</p>
+        <h3 class="card-title">Rendre visible</h3>
+        <p class="card-text">Mettre en avant des luttes locales et internationales.</p>
       </div>
 
       <div class="card">
         <span class="card-icon">🧠</span>
         <h3 class="card-title">S’organiser</h3>
-        <p class="card-text">Créer des espaces de débat, de stratégie et d’apprentissage collectif.</p>
+        <p class="card-text">Partager des stratégies, débattre et construire du commun.</p>
       </div>
     </div>
   </div>
 
-  <hr class="divider">
-
   <div class="reveal">
-    <h2>Organisation</h2>
-    <p>Le camp est <strong>autogéré</strong> et structuré en groupes de travail.</p>
+    <h2>Positionnement</h2>
+    <p>
+      Le camp s’inscrit dans des luttes sociales, écologiques, féministes, antiracistes, queer et syndicales.
+      Il repose sur une approche anti-autoritaire et cherche à limiter les rapports de domination, y compris en interne.
+    </p>
+
     <ul>
-      <li>Décisions prises collectivement (logique de consentement)</li>
-      <li>Participation active attendue (shifts bénévoles)</li>
-      <li>Organisation ouverte à de nouveaux collectifs</li>
+      <li>Refus des oppressions (racisme, sexisme, validisme, classisme, LGBTQIA+phobies…)</li>
+      <li>Attention aux rapports de pouvoir dans les discussions</li>
+      <li>Place centrale donnée aux personnes concernées</li>
+      <li>Pas de mise en avant dominante d’une organisation ou idéologie</li>
     </ul>
   </div>
 
-  <hr class="divider">
-
   <div class="reveal">
-    <h2>Valeurs</h2>
+    <h2>Fonctionnement collectif</h2>
+    <p>
+      Le camp est autogéré et repose sur une participation active. Il fonctionne via des groupes de travail et des décisions prises collectivement.
+    </p>
 
-    <div class="cards-grid">
-      <div class="card">
-        <span class="card-icon">⚖️</span>
-        <h3 class="card-title">Anti-oppressions</h3>
-        <p class="card-text">Refus du racisme, sexisme, classisme, validisme et LGBTQIA+phobies.</p>
-      </div>
-
-      <div class="card">
-        <span class="card-icon">🪶</span>
-        <h3 class="card-title">Horizontalité</h3>
-        <p class="card-text">Positionnement anti-autoritaire, sans hiérarchie dominante.</p>
-      </div>
-
-      <div class="card">
-        <span class="card-icon">🧩</span>
-        <h3 class="card-title">Pluralité</h3>
-        <p class="card-text">Coexistence de pratiques et analyses différentes, sans hégémonie.</p>
-      </div>
-    </div>
+    <ul>
+      <li>Organisation horizontale (logique de consentement)</li>
+      <li>Participation de toustes (shifts bénévoles pendant le camp)</li>
+      <li>Ouverture à de nouvelles personnes et collectifs</li>
+    </ul>
   </div>
 
-  <hr class="divider">
-
   <div class="reveal">
-    <h2>Cadre collectif</h2>
+    <h2>Cadre de base</h2>
+    <p>
+      Le camp n’est pas un espace “safe” garanti, mais un espace où l’on essaie de construire des conditions de respect et d’écoute.
+    </p>
+
     <ul>
       <li>Respect des vécus et des prises de parole</li>
-      <li>Attention aux rapports de pouvoir dans les discussions</li>
       <li>Consentement (interactions, photos, contact physique)</li>
-      <li>Refus des comportements violents ou oppressifs</li>
+      <li>Refus des comportements violents ou manipulateurs</li>
+      <li>Responsabilité individuelle en cas de conflit</li>
     </ul>
-    <p>Une équipe dédiée au <strong>care et à la gestion des conflits</strong> est présente pendant le camp.</p>
+
+    <p>
+      Une équipe dédiée au care et à la gestion des conflits sera présente pendant le camp.
+    </p>
   </div>
 
-  <hr class="divider">
-
   <div class="reveal">
-    <h2>Inclusion</h2>
+    <h2>Accessibilité & inclusion</h2>
+    <p>
+      Un travail est mené pour rendre le camp accessible au plus grand nombre, même si tout ne pourra pas être parfait.
+    </p>
+
     <ul>
       <li>Traductions FR / NL / EN</li>
-      <li>Prise en compte des besoins spécifiques (accessibilité, alimentation…)</li>
-      <li>Espaces en mixité choisie et espaces ouverts</li>
-      <li>Travail avec des collectifs concernés</li>
+      <li>Attention aux besoins spécifiques (alimentation, accessibilité…)</li>
+      <li>Espaces en mixité choisie</li>
+      <li>Travail avec des collectifs concernés en amont</li>
     </ul>
   </div>
 
@@ -154,11 +105,20 @@
 
   <div class="reveal">
     <h2>Charte complète</h2>
-    <p>Ce résumé ne remplace pas la charte intégrale. Sa lecture est attendue pour participer au camp.</p>
+    <p>
+      Cette page est un résumé. La charte complète détaille les règles, définitions et processus.
+      Sa lecture est fortement recommandée pour participer au camp.
+    </p>
 
-    <a href="Charte-BAF-Camp-2026.pdf" download class="btn btn-red">
-      📄 Télécharger la charte complète
-    </a>
+    <div style="display: inline-block; margin: 40px auto 48px auto; text-align: center; width: 100%;">
+      <div style="display: inline-block; border: 3px solid var(--encre); border-radius: 8px; box-shadow: 6px 6px 0 var(--encre); background: var(--rose); padding: 18px 60px; position: relative;">
+        <a href="Charte-BAF-Camp-2026.pdf" download
+          style="font-family: 'Boogaloo', cursive; font-size: 2.2rem; letter-spacing: .08em; text-transform: uppercase; color: var(--creme); text-shadow: 3px 3px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);">
+          Télécharger la charte
+        </a>
+      </div>
+    </div>
+
   </div>
 
 </div>
