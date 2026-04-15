@@ -1,172 +1,83 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Charte — BAF Camp</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<input type="file" id="logoInput" accept="image/*">
-  <nav>
-  <a href="index.html" class="nav-logo">
-    <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
-      <img id="logoImg" src="" alt="Logo" style="display:none">
-      <span class="logo-placeholder" id="logoPlaceholder">BAF</span>
-      <div class="logo-upload-hint">logo</div>
-    </div>
-    <span class="nav-site-name">BAF <span>CAMP</span></span>
-  </a>
-
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="programme.html">Programme</a></li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">Fonctionnement
-        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dropdown">
-        <a href="financements.html"><span class="di">💰</span>Financements</a>
-        <a href="charte.html"><span class="di">📜</span>Notre charte</a>
-        <a href="autogestion.html"><span class="di">🙌</span>Autogestion</a>
-      </div>
-    </li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">Informations
-        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dropdown">
-        <a href="infos.html#acces"><span class="di">📍</span>Venir sur place</a>
-        <a href="infos.html#restauration"><span class="di">🍔</span>Se nourrir</a>
-        <a href="infos.html#camping"><span class="di">⛺</span>Le camping</a>
-      </div>
-    </li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">Nous aider
-        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dropdown">
-        <a href="nous-aider.html"><span class="di">❤️</span>Faire un don</a>
-        <a href="autogestion.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
-        <a href="nous-aider.html#partager"><span class="di">📢</span>Partager</a>
-        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Prêter du matériel</a>
-      </div>
-    </li>
-    <li><a href="billetterie.html" class="btn nav-cta">Billetterie prix libre →</a></li>
-  </ul>
-
-  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="page-hero anim">
-  <p class="page-hero-eyebrow">✦ Notre Charte</p>
-  <h1 class="page-hero-title">Charte &amp; Valeurs</h1>
-  <p class="page-hero-sub">Les principes et engagements qui guident notre organisation au quotidien.</p>
-</div>
-
 <div class="page-content">
+
   <div class="reveal">
-    <h2>Nos valeurs fondamentales</h2>
-    <p>La charte du festival définit les principes qui guident notre organisation et nos relations avec le public, les artistes, les bénévoles et les partenaires.</p>
-    <div class="cards-grid">
-      <div class="card"><span class="card-icon">🌍</span><h3 class="card-title">Respect &amp; Inclusion</h3><p class="card-text">Le festival est un espace ouvert à toutes et tous, sans discrimination de genre, d'origine, d'orientation sexuelle ou de handicap.</p></div>
-      <div class="card"><span class="card-icon">🌱</span><h3 class="card-title">Éco-responsabilité</h3><p class="card-text">Réduction des déchets, tri sélectif, gobelets réutilisables, partenariats avec des producteurs locaux.</p></div>
-      <div class="card"><span class="card-icon">🔊</span><h3 class="card-title">Liberté artistique</h3><p class="card-text">Nous défendons la diversité des expressions musicales et culturelles, sans censure ni compromis commercial.</p></div>
-    </div>
-  </div>
-  <hr class="divider">
-  <div class="reveal">
-    <h2>Engagements envers le public</h2>
+    <h2>Objectifs du camp</h2>
     <ul>
-      <li>Tarifs accessibles et politique de réduction pour les publics fragilisés</li>
-      <li>Sécurité et bienveillance assurées sur l'ensemble du site</li>
-      <li>Dispositif d'accueil et d'écoute disponible 24h/24 pendant le festival</li>
-      <li>Tolérance zéro envers tout comportement discriminatoire ou violent</li>
-      <li>Accessibilité PMR sur l'ensemble des espaces</li>
+      <li>Rassembler des personnes engagées dans les luttes sociales, écologiques, antiracistes, féministes et syndicales</li>
+      <li>Renforcer les alliances entre collectifs de Bruxelles, Wallonie et Flandre</li>
+      <li>Visibiliser les luttes locales et internationales</li>
+      <li>Créer un espace pour débattre, s’organiser et partager des stratégies</li>
+      <li>Maintenir des espaces joyeux pour soutenir les dynamiques de lutte</li>
     </ul>
   </div>
+
   <hr class="divider">
+
   <div class="reveal">
-    <h2>Engagements environnementaux</h2>
+    <h2>Organisation</h2>
+    <p>
+      Le camp est <strong>autogéré</strong> et organisé en groupes de travail (logistique, programmation, cuisine, soin, communication, etc.).
+    </p>
     <ul>
-      <li>Objectif zéro plastique à usage unique d'ici 2026</li>
-      <li>Bilan carbone réalisé chaque année et plan de compensation</li>
-      <li>Partenariat avec des agriculteurs locaux pour la restauration</li>
-      <li>Navettes collectives depuis les villes voisines</li>
-      <li>Tri sélectif généralisé sur l'ensemble du site</li>
+      <li>Décisions prises collectivement (logique de consentement)</li>
+      <li>Participation active attendue (shifts bénévoles pendant le camp)</li>
+      <li>Ouverture à de nouveaux collectifs et individus</li>
     </ul>
   </div>
+
   <hr class="divider">
+
   <div class="reveal">
-    <h2>Code de conduite</h2>
-    <p>Tout participant, artiste, bénévole ou prestataire s'engage à respecter la charte du festival. Tout manquement grave peut entraîner l'exclusion du site sans remboursement.</p>
-    <a href="Charte-BAF-Camp-2026.pdf" download="Charte-BAF-Camp-2026.pdf" class="btn btn-red">📄 &nbsp;Télécharger la charte complète</a>
+    <h2>Valeurs politiques</h2>
+    <ul>
+      <li>Positionnement anti-autoritaire et horizontal</li>
+      <li>Lutte contre toutes les formes d’oppression (racisme, sexisme, validisme, classisme, LGBTQIA+phobies…)</li>
+      <li>Importance donnée aux personnes directement concernées</li>
+      <li>Pluralité des approches politiques, sans domination d’un groupe</li>
+      <li>Refus de l’instrumentalisation du camp à des fins partisanes</li>
+    </ul>
   </div>
+
+  <hr class="divider">
+
+  <div class="reveal">
+    <h2>Cadre collectif</h2>
+    <ul>
+      <li>Respect des prises de parole et des vécus</li>
+      <li>Attention aux dynamiques de pouvoir dans les discussions</li>
+      <li>Consentement (interactions, photos, contact physique)</li>
+      <li>Refus des comportements violents, oppressifs ou manipulateurs</li>
+      <li>Responsabilité individuelle et collective en cas de conflit</li>
+    </ul>
+    <p>
+      Une équipe dédiée au <strong>care et à la gestion des conflits</strong> sera présente pendant le camp.
+    </p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="reveal">
+    <h2>Inclusion</h2>
+    <ul>
+      <li>Traduction FR / NL / EN</li>
+      <li>Attention aux besoins spécifiques (alimentation, accessibilité…)</li>
+      <li>Espaces en mixité choisie et espaces de discussion ouverts</li>
+      <li>Travail avec des collectifs concernés en amont</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <div class="reveal">
+    <h2>Lire la charte complète</h2>
+    <p>
+      Ce résumé ne remplace pas la lecture complète de la charte.  
+      Nous demandons à chaque participant·e d’en prendre connaissance.
+    </p>
+
+    <a href="Charte-BAF-Camp-2026.pdf" download class="btn btn-red">
+      📄 Télécharger la charte complète
+    </a>
+  </div>
+
 </div>
-
-
-<footer>
-  <div>
-    <div class="footer-logo">BAF <span>CAMP</span></div>
-    <p class="footer-tagline"> Vient prendre une claque !</p>
-  </div>
-  <div class="footer-col">
-    <h4>Navigation</h4>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="programme.html">Programme</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="infos.html">Infos pratiques</a></li>
-    </ul>
-  </div>
-  <div class="footer-col">
-    <h4>Fonctionnement</h4>
-    <ul>
-      <li><a href="financements.html">Financements</a></li>
-      <li><a href="charte.html">Charte</a></li>
-      <li><a href="autogestion.html">Autogestion</a></li>
-    </ul>
-  </div>
-  <div class="footer-col">
-    <h4>Réseaux</h4>
-    <ul>
-      <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
-      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Rejoins la boucle Signal</a></li>
-      <li><a href="mailto:activismcampbelgium@proton.me">Proton mail</a></li>
-    </ul>
-  </div>
-  <div class="footer-bottom">
-    <span>2026 BAF Camp — par et pour toustes</span>
-    <span>Vient prendre une claque !</span>
-  </div>
-</footer>
-
-
-<script>
-function toggleDD(li) {
-  const was = li.classList.contains('open');
-  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
-  if (!was) li.classList.add('open');
-}
-document.addEventListener('click', e => {
-  if (!e.target.closest('.nav-links > li'))
-    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
-});
-document.getElementById('logoInput').addEventListener('change', function() {
-  const file = this.files[0]; if (!file) return;
-  const img = document.getElementById('logoImg');
-  img.src = URL.createObjectURL(file);
-  img.style.display = 'block';
-  document.getElementById('logoPlaceholder').style.display = 'none';
-});
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold:.12});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
-
-</body>
-</html>
