@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nous aider — BAF Camp</title>
-  <!-- On réutilise exactement la même feuille de style -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Input pour le logo (identique à infos.html) -->
+<!-- Input pour le logo -->
 <input type="file" id="logoInput" accept="image/*">
 
-<!-- NAVIGATION IDENTIQUE -->
-  <nav>
+<!-- NAVIGATION -->
+<nav>
   <a href="index.html" class="nav-logo">
     <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
       <img id="logoImg" src="" alt="Logo" style="display:none">
@@ -65,52 +64,52 @@
   </button>
 </nav>
 
-<!-- HERO HEADER (Style identique à infos.html) -->
+<!-- HERO HEADER -->
 <div class="page-hero anim">
   <p class="page-hero-eyebrow">✦ Soutien &amp; Engagement</p>
   <h1 class="page-hero-title">Nous aider</h1>
   <p class="page-hero-sub">Faire un don, partager l'événement ou prêter du matériel pour réussir ensemble.</p>
-<br>
+</div>
 
 <div class="page-content">
+
   <!-- SECTION 0 : NOUS REJOINDRE -->
-  <div class="reveal" id="partager">
+  <div class="reveal" id="rejoindre">
     <h2>Rejoins nous !</h2>
     <p>Ce camp sera la somme (voire plus !) des personnes qui le composeront. Vient ajouter ton poids dans la balance.<br>
-      Aucune compétence ou légitimité initiale n'est requise pour pouvoir aider. Des aménagements seront faits en fonction des demandes Voici les 3 degrés d'investissement possibles : </p>
-    <div>
-    <!-- Grille de cartes identique à infos.html -->
+      Aucune compétence ou légitimité initiale n'est requise pour pouvoir aider. Des aménagements seront faits en fonction des demandes. Voici les 3 degrés d'investissement possibles :</p>
+
     <div class="cards-grid">
-      <!-- Fichier 1 -->
+      <!-- Carte 1 -->
       <div class="card">
-  <span class="card-icon">🤩</span>
-  <h3 class="card-title">Devenir bénévole</h3>
-  <p class="card-text">Prends du temps sur ton camp pour aider au bon déroulement de la vie sur place. Si chacun.e donne 2 h / jour tous les shifts seront complets !</p>
-      <a href="autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">
-        🫶 &nbsp; Je m'inscris
-      </a>
-</div>
-      
-      <!-- Fichier 2 -->
+        <span class="card-icon">🤩</span>
+        <h3 class="card-title">Devenir bénévole</h3>
+        <p class="card-text">Prends du temps sur ton camp pour aider au bon déroulement de la vie sur place. Si chacun.e donne 2 h / jour tous les shifts seront complets !</p>
+        <a href="autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">
+          🫶 &nbsp; Je m'inscris
+        </a>
+      </div>
+
+      <!-- Carte 2 -->
       <div class="card">
         <span class="card-icon">⚒️</span>
         <h3 class="card-title">Aider au montage et démontage du camp</h3>
         <p class="card-text">Eh oui ! Le camp sera en fait un peu plus long qu'annoncé : le montage commence à partir du 16 août et le démontage se poursuit jusqu'au 26 août.</p>
         <a href="autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">
-        🎪 &nbsp; Je serai là !
-      </a>     
+          🎪 &nbsp; Je serai là !
+        </a>
       </div>
-      
-      <!-- Fichier 3 -->
+
+      <!-- Carte 3 -->
       <div class="card">
         <span class="card-icon">👋</span>
         <h3 class="card-title">Rejoindre un GT</h3>
-        <p class="card-text">Rejoint l'organisation en intègrant un groupe de travail dès maintenant pour aider à préparer et façonner le du camp en amont.</p>
+        <p class="card-text">Rejoint l'organisation en intègrant un groupe de travail dès maintenant pour aider à préparer et façonner le camp en amont.</p>
         <a href="autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">
-        ❤️ &nbsp; Découvrir les GT
-      </a>     
+          ❤️ &nbsp; Découvrir les GT
+        </a>
+      </div>
     </div>
-
   </div>
 
   <hr class="divider">
@@ -119,12 +118,10 @@
   <div class="reveal" id="don">
     <h2>Faire un don</h2>
     <p class="intro-text" style="font-size: 1.1em; line-height: 1.6; margin-bottom: 30px;">
-      Parceque nous voulons créer un espace accessible, il n’y aura pas de restriction d’accès autre que celle de la place disponible sur le lieu du camp.<br>
-      Cependant, malgré le travail de centaines de bénévoles, certaines dépenses persistent et sont incompressibles. <br>
+      Parceque nous voulons créer un espace accessible, il n'y aura pas de restriction d'accès autre que celle de la place disponible sur le lieu du camp.<br>
+      Cependant, malgré le travail de centaines de bénévoles, certaines dépenses persistent et sont incompressibles.<br>
       Votre don, aussi modeste soit-il, nous permet de rester indépendants et fidèles à nos valeurs.
     </p>
-    
-    <!-- Bouton rouge style "btn btn-red" comme dans infos.html -->
     <div style="text-align: center; margin-top: 30px;">
       <a href="infos.html#question" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">
         ❤️ &nbsp; Je fais un don
@@ -138,8 +135,7 @@
   <div class="reveal" id="partager">
     <h2>Partager l'événement</h2>
     <p>Aidez-nous à faire du bruit ! Téléchargez, imprimez et distribuez nos supports de communication dans vos quartiers, écoles et lieux préférés.</p>
-    
-    <!-- Grille de cartes identique à infos.html -->
+
     <div class="cards-grid">
       <!-- Fichier 1 -->
       <div class="card">
@@ -148,7 +144,7 @@
         <p class="card-text">À imprimer et coller dans vos lieux favoris.</p>
         <p style="font-size: 0.9em; color: #888; font-style: italic;">Lien à venir</p>
       </div>
-      
+
       <!-- Fichier 2 -->
       <div class="card">
         <span class="card-icon">📄</span>
@@ -156,7 +152,7 @@
         <p class="card-text">Format pratique pour la distribution de main à main.</p>
         <p style="font-size: 0.9em; color: #888; font-style: italic;">Lien à venir</p>
       </div>
-      
+
       <!-- Fichier 3 -->
       <div class="card">
         <span class="card-icon">🏷️</span>
@@ -173,26 +169,24 @@
   <div class="reveal" id="materiel">
     <h2>Prêt de matériel</h2>
     <p>Vous disposez de matériel (sono, éclairage, tente, barrières, etc.) et souhaitez nous le prêter pour la durée du festival ? Nous sommes preneurs !</p>
-    
+
     <div style="background-color: #f9f9f9; padding: 30px; border-radius: 8px; text-align: center; margin-top: 20px;">
       <p style="color: black;">Contactez-nous à l'adresse suivante :</p>
-      
       <a href="mailto:bafcampcom@proton.me" class="btn btn-red" style="display: inline-block; margin-bottom: 20px;">
         ✉️ &nbsp; bafcampcom@proton.me
       </a>
-      
       <p style="background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; display: inline-block; font-weight: bold; border: 1px solid #ffeeba;">
         ⚠️ Important : Merci de mettre <strong>"Prêt de matériel"</strong> dans l'objet de votre email.
       </p>
     </div>
   </div>
 
-</div>
+</div><!-- fin .page-content -->
 
 <footer>
   <div>
     <div class="footer-logo">BAF <span>CAMP</span></div>
-    <p class="footer-tagline"> Vient prendre une claque !</p>
+    <p class="footer-tagline">Vient prendre une claque !</p>
   </div>
   <div class="footer-col">
     <h4>Navigation</h4>
@@ -225,8 +219,7 @@
   </div>
 </footer>
 
-
-<!-- SCRIPTS IDENTIQUES -->
+<!-- SCRIPTS -->
 <script>
 function toggleDD(li) {
   const was = li.classList.contains('open');
