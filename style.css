@@ -123,28 +123,28 @@ nav {
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 
 .logo-img-wrap {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: var(--contour);
-  display: flex; align-items: center; justify-content: center;
-  background: var(--rose);
-  cursor: pointer; position: relative;
-  box-shadow: var(--ombre);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  height: auto;
+
+  border-radius: 0;
+  overflow: visible;
+  border: none;
+  background: none;
+
+  cursor: pointer;
+  position: relative;
+  box-shadow: none;
   transition: transform .12s;
 }
-.logo-img-wrap:hover { transform: translate(-2px, -2px); box-shadow: var(--ombre-lg); }
-.logo-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-.logo-placeholder { font-family: var(--font-display); font-size: 1.1rem; color: var(--creme); letter-spacing: .04em; }
-.logo-upload-hint {
-  position: absolute; inset: 0;
-  background: var(--rose-a90);
-  display: flex; align-items: center; justify-content: center;
-  font-size: .5rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--creme); opacity: 0; transition: opacity .2s;
-  border-radius: 50%;
+
+.logo-img-wrap:hover {
+  transform: none;
+  box-shadow: none;
 }
-.logo-img-wrap:hover .logo-upload-hint { opacity: 1; }
 
 .nav-site-name {
   font-family: var(--font-display);
