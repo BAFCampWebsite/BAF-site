@@ -20,6 +20,15 @@
         linear-gradient(105deg, rgba(232,84,154,.9) 40%, rgba(232,84,154,.55) 100%),
         linear-gradient(to top, rgba(28,18,8,.3) 0%, transparent 40%);
     }
+    #logoImg {
+  max-height: 40px;
+  width: auto;
+}
+    .footer-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
     .hero::before {
       content: '';
       position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -139,7 +148,7 @@
     .section-contact .section-title { color: var(--creme); text-shadow: 2px 2px 0 rgba(28,18,8,.3); }
     .contact-sub { font-family: 'Libre Baskerville', serif; font-style: italic; color: rgba(249,242,236,.7); max-width: 400px; margin: 0 auto 40px; line-height: 1.75; font-size: .93rem; }
 
-    #footerLogoImg { max-width: 2500px; max-height: 200px; object-fit: contain; display: block; margin-bottom: 14px; cursor: pointer; }
+    #footerLogoImg { max-width: 250px; height: auto; object-fit: contain; display: block; margin-bottom: 14px; cursor: pointer; }
     .footer-logo-ph {
       display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 4px;
       border: 1px dashed rgba(232,84,154,.35); color: rgba(232,84,154,.45);
@@ -158,17 +167,13 @@
 </head>
 <body>
 
-<input type="file" id="logoInput"     accept="image/*">
-<input type="file" id="heroLogoInput" accept="image/*">
-<input type="file" id="heroInput"     accept="image/*">
-<input type="file" id="galleryInput"  accept="image/*" multiple>
 
 <!-- ══ NAVBAR ══ -->
 <nav>
   <a href="index.html" class="nav-logo">
     <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
-      <img id="logoImg" src="" alt="Logo" style="display:none">
-      <span class="logo-placeholder" id="logoPlaceholder">BAF</span>
+      <img id="logoImg" src="BAF Logo.png" alt="Logo BAF Camp">
+      <span class="logo-placeholder" id="logoPlaceholder" style="display:none;"></span>
       <div class="logo-upload-hint">logo</div>
     </div>
     <span class="nav-site-name">BAF <span>CAMP</span></span>
@@ -222,11 +227,7 @@
     <img id="heroImg" src="" alt="" style="opacity:.28">
     <div class="hero-bg-overlay"></div>
   </div>
-  <div class="opacity-control">
-    <label for="opacitySlider">Opacité</label>
-    <input type="range" id="opacitySlider" min="5" max="75" value="28" oninput="setOpacity(this.value)">
-    <span class="opacity-val" id="opacityVal">28%</span>
-  </div>
+
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-eyebrow">✮ Édition 2026 ✮</div>
@@ -363,52 +364,6 @@ const obs = new IntersectionObserver(entries =>
 );
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-/* ══ BULLE BAF ══ */
-function makeBafBurst(size, opacity, rotation, text) {
-  const t = text || 'BAF';
-  const s = size || 280;
-  const o = opacity !== undefined ? opacity : 0.13;
-  const r = rotation || 0;
-  const div = document.createElement('div');
-  div.className = 'baf-burst';
-  div.style.opacity = o;
-  div.style.transform = `rotate(${r}deg)`;
-  div.style.width = s + 'px';
-  div.style.height = s + 'px';
-  div.innerHTML = `
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}">
-    <g transform="translate(100,100)">
-      ${Array.from({length:16}, (_,i) => {
-        const a = (i / 16) * Math.PI * 2;
-        const x2 = Math.cos(a) * 105;
-        const y2 = Math.sin(a) * 105;
-        return `<line x1="0" y1="0" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="rgba(28,18,8,.12)" stroke-width="2"/>`;
-      }).join('')}
-    </g>
-    <path d="M100,8 L112,42 L148,22 L132,56 L168,52 L146,80 L182,88 L156,108 L178,130 L148,132 L152,168 L124,152 L112,188 L96,158 L76,186 L68,150 L38,162 L48,128 L14,126 L42,106 L16,82 L54,84 L40,50 L74,62 L72,24 L100,44 Z"
-      fill="#F5C842" stroke="#1C1208" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M100,8 L112,42 L148,22 L132,56 L168,52 L146,80 L182,88 L156,108 L178,130 L148,132 L152,168 L124,152 L112,188 L96,158 L76,186 L68,150 L38,162 L48,128 L14,126 L42,106 L16,82 L54,84 L40,50 L74,62 L72,24 L100,44 Z"
-      fill="rgba(28,18,8,.06)"/>
-    <text x="100" y="115" text-anchor="middle" font-family="'Boogaloo', cursive" font-size="52" font-weight="400" letter-spacing="2" fill="#E8549A" stroke="#1C1208" stroke-width="3" paint-order="stroke">${t}</text>
-  </svg>`;
-  return div;
-}
-
-function injectBursts() {
-  const hero = document.getElementById('hero-section');
-  if (hero) {
-    const b = makeBafBurst(340, 0.11, -8, 'BAF');
-    b.style.position = 'absolute'; b.style.bottom = '-60px'; b.style.right = '30px'; b.style.zIndex = '1';
-    hero.appendChild(b);
-  }
-  const brief = document.getElementById('en-bref-section');
-  if (brief) {
-    const b = makeBafBurst(260, 0.07, 12, 'BAF');
-    b.style.position = 'absolute'; b.style.bottom = '-50px'; b.style.right = '20px'; b.style.zIndex = '0';
-    brief.appendChild(b);
-  }
-}
-injectBursts();
 
 /* ── IMAGES ── */
 const BAF_DEFAULT_LOGO = 'logo.PNG';
