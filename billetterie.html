@@ -86,14 +86,53 @@
     </p>
 
     <!-- Formulaire notif -->
-    <div class="notif-form">
-      <input type="email" id="emailInput" placeholder="ton@email.fr" class="notif-input">
-      <button class="btn btn-primary notif-btn" onclick="handleNotif()">Me prévenir ✉</button>
-    </div>
-    <p class="notif-confirm" id="notifConfirm" style="display:none;">
-      ✅ Super ! On te préviendra dès que la billetterie ouvre. À bientôt !
-    </p>
-  </div>
+    <form action="https://formspree.io/f/xojynzep" method="POST" class="notif-form">
+  
+  <input 
+    type="email" 
+    name="email" 
+    placeholder="ton@email.fr" 
+    required
+    class="notif-input"
+  >
+
+  <!-- anti-spam (invisible) -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <button type="submit" class="btn btn-primary notif-btn">
+    Me prévenir ✉
+  </button>
+
+</form>
+
+<p class="notif-confirm" id="notifConfirm" style="display:none;">
+  ✅ Super ! On te préviendra dès que la billetterie ouvre. À bientôt !
+</p>
+<script>
+const form = document.querySelector(".notif-form");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  const res = await fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (res.ok) {
+    document.getElementById("notifConfirm").style.display = "block";
+    form.reset();
+  } else {
+    alert("Erreur 😬");
+  }
+});
+</script>
+    <input type="hidden" name="source" value="footer">
 
   <hr class="divider">
 
