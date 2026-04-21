@@ -5,7 +5,7 @@
 :root {
   /* ── PALETTE ── */
   --rose:        #C466D2;
-  --rose-hot:    #F066AA;
+  --rose-hot:    #C466D2/*F066AA;*/
   --rose-dark:   #B03878;
   --vert:        #4A8C5C;
   --vert-light:  #5DA672;
