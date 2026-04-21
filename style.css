@@ -533,7 +533,7 @@ footer {
 .footer-logo {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 #footerLogoImg {
   max-width: 220px;
