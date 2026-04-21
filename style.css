@@ -533,7 +533,7 @@ footer {
 .footer-logo {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 .footer-tagline {
   text-align: center;
