@@ -133,8 +133,10 @@
       <p>Sur place, nous avons comme objectif que cet évènement se déroule de la manière la plus horizontale et autogérée possible. C'est pourquoi, afin de gommer au max la frontière entre volontaires &amp; « consommateurices » du festival, idéalement, toustes les participant.e.s donnent un peu de leur temps pour faire tourner ce festival. Toute tâche peut être adaptée si tu as un handicap quel qu'il soit. N'hésite pas à déjà te signaler comme volontaire en remplissant le form ci-dessous. Sinon, tu pourras trouver des tâches à faire en temps réel sur le site !
         <br>
       <br>
+        Le camp sera monté en commun. <strong>Nous aurons besoin d'aide !</strong>. Il faudra monter des châpiteaux et des scènes, mais aussi créer la déco, imaginer des espaces et construire des infrastructures en paletes... En fonction de nos envies ! Plein de choses resterons à inventer alros venez prendre part à la création de cet espace dès le 16 août ! Inscriptions dans le formulaire en dessous 👇.
+        <br>
       Mais avant toute chose, n’oublie pas de... 
-        div style="display: inline-block; margin: 40px auto 48px auto; text-align: center; width: 100%;">
+        <div style="display: inline-block; margin: 40px auto 48px auto; text-align: center; width: 100%;">
         <div style="display: inline-block; border: 3px solid var(--encre); border-radius: 8px; box-shadow: 6px 6px 0 var(--encre); background: var(--rose); padding: 18px 60px; position: relative;">
           <a href="billetterie.html" style="font-family: 'Boogaloo', cursive; font-size: 2.6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--creme); text-shadow: 3px 3px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);">Prendre ta place à l’événement !</a></p>
     </div>
@@ -144,7 +146,7 @@
     <div class="reveal">
       <h2>Missions disponibles</h2>
       <ul>
-        <li>Je suis disponible dès le 18 août pour venir aider à monter le camp</li>
+        <li>Venir dès le 18 août pour venir aider à monter le camp</li>
         <li>Accueil &amp; inscription des volontaires</li>
         <li>Tenir le bar</li>
         <li>Cuisiner pour 600 personnes</li>
@@ -162,60 +164,84 @@
     <div class="reveal">
       <h2>Formulaire d'inscription</h2>
       <p style="margin-bottom: 32px;">Tu as envie de rejoindre l'aventure ? Remplis le formulaire ci-dessous, on te recontacte sous peu.</p>
+      
+<form class="reveal" action="https://formspree.io/f/mgordedb" method="POST">
+  <h2>Formulaire d'inscription</h2>
+  <p style="margin-bottom: 32px;">Tu as envie de rejoindre l'aventure ? Remplis le formulaire ci-dessous, on te recontacte sous peu.</p>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label>Prénom/Blaze *</label>
-          <input type="text" placeholder="Ton prénom/blaze">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Email *</label>
-          <input type="email" placeholder="ton@email.me">
-        </div>
-        <div class="form-group">
-          <label>Contact Signal</label>
-          <input type="text" placeholder="contact.xx">
-        </div>
-      </div>
-
-      <div class="form-group">
-  <label>Mission souhaitée</label>
-  <div class="checkboxes">
-    <label><input type="checkbox" name="mission" value="accueil"> Accueil &amp; inscriptions</label>
-    <label><input type="checkbox" name="mission" value="bar"> Bar</label>
-    <label><input type="checkbox" name="mission" value="cuisine"> Cuisine</label>
-    <label><input type="checkbox" name="mission" value="prise-image"> Prise d'image</label>
-    <label><input type="checkbox" name="mission" value="care"> Care et écoute</label>
-    <label><input type="checkbox" name="mission" value="hygiene"> Hygiène</label>
-    <label><input type="checkbox" name="mission" value="parking"> Parking</label>
-    <label><input type="checkbox" name="mission" value="parking"> Medic</label>
-    <label><input type="checkbox" name="mission" value="flexible"> Flexible</label>
-  </div>
-</div>
-      <div class="form-group">
-        <label>Disponibilités</label>
-        <select>
-          <option>Les 4 jours (20, 21, 22, 23 août)</option>
-          <option>Jeudi 20 août</option>
-          <option>Vendredi 21 août</option>
-          <option>Samedi 22 août</option>
-          <option>Dimanche 23 août</option>
-          <option>Week-end (sam + dim)</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Un message à nous laisser ?</label>
-        <textarea placeholder="Tu as des questions ? Des remarques à nous faire parvenir ou des aménagements dont tu aurais besoin ?"></textarea>
-      </div>
-
-      <button class="btn btn-red" onclick="alert('Merci pour ta disponibilité ! On te recontacte en août 🎉')">
-        🙌 &nbsp; Envoyer mes informations
-      </button>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Prénom/Blaze *</label>
+      <input type="text" name="prenom" placeholder="Ton prénom/blaze" required>
     </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label>Email *</label>
+      <input type="email" name="email" placeholder="ton@email.me" required>
+    </div>
+    <div class="form-group">
+      <label>Contact Signal</label>
+      <input type="text" name="signal" placeholder="contact.xx">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Mission souhaitée</label>
+    <div class="checkboxes">
+      <label><input type="checkbox" name="mission" value="montage-camp"> Venir monter le camp dès le 16 août</label>
+      <label><input type="checkbox" name="mission" value="accueil"> Accueil &amp; inscriptions</label>
+      <label><input type="checkbox" name="mission" value="bar"> Bar</label>
+      <label><input type="checkbox" name="mission" value="cuisine"> Cuisine</label>
+      <label><input type="checkbox" name="mission" value="prise-image"> Prise d'image</label>
+      <label><input type="checkbox" name="mission" value="care"> Care et écoute</label>
+      <label><input type="checkbox" name="mission" value="hygiene"> Hygiène</label>
+      <label><input type="checkbox" name="mission" value="parking"> Parking</label>
+      <label><input type="checkbox" name="mission" value="medic"> Medic</label>
+      <label><input type="checkbox" name="mission" value="flexible"> Flexible</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Disponibilités</label>
+    <select name="disponibilites">
+      <option>Les 4 jours (20, 21, 22, 23 août)</option>
+      <option>Jeudi 20 août</option>
+      <option>Vendredi 21 août</option>
+      <option>Samedi 22 août</option>
+      <option>Dimanche 23 août</option>
+      <option>Week-end (sam + dim)</option>
+      <option>Vendredi &amp; Samedi</option>
+      <option>Jeudi &amp; Vendredi</option>
+      <option>Du Jeudi au Samedi</option>
+      <option>Du Vendredi au Dimanche</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Je suis disponible pour venir aider à monter le camp ?</label>
+    <select name="montage">
+      <option>Non</option>
+      <option>A partir du 16 août</option>
+      <option>A partir du 17 août</option>
+      <option>A partir du 18 août</option>
+      <option>A partir du 19 août</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Un message à nous laisser ?</label>
+    <textarea name="message" placeholder="Tu as des questions ? Des remarques à nous faire parvenir ou des aménagements dont tu aurais besoin ?"></textarea>
+  </div>
+
+  <!-- Optionnel : redirection après envoi -->
+  
+
+  <button type="submit" class="btn btn-red">
+    🙌 &nbsp; Envoyer mes informations
+  </button>
+</form>
 
     <div class="reveal">
       <h2>Programmation</h2>
