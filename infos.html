@@ -191,17 +191,34 @@
       <div class="info-card">
         <span class="info-card-icon">🚆</span>
         <h3 class="info-card-title">Train</h3>
-        <p>Le site sera accessible depuis une gare</p>
+        <p>Le site est à 300 m à pied de la gare de Grupont </p>
       </div>
       <div class="info-card">
         <span class="info-card-icon">🚲</span>
         <h3 class="info-card-title">Vélo</h3>
-        <p>Possible de rejoindre le lieu à vélo. Parking sécurisé et matériel de réparation sur place.</p>
+        <p>Possible de rejoindre le lieu à vélo. Parking et matériel de réparation sur place.</p>
       </div><div class="info-card">
         <span class="info-card-icon">🚗</span>
         <h3 class="info-card-title">Voiture</h3>
-        <p>Accès direct au site en voiture possible. Parking gratuit sur place, covoiturage encouragé.</p>
+        <p>Accès direct au site en voiture possible à l'adresse : 1 chemin de lavaux
+6927 Bure. Parking gratuit sur place, covoiturage encouragé.</p>
       </div>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<div id="map" style="width:100%; height:420px; border-radius:8px; border:2px solid var(--encre); box-shadow:6px 6px 0 var(--encre);"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map', { scrollWheelZoom: false }).setView([49.9072, 5.2697], 15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 19
+  }).addTo(map);
+  L.marker([49.9072, 5.2697])
+    .addTo(map)
+    .bindPopup('<strong>BAF Camp</strong><br>1 chemin de Lavaux<br>6927 Bure')
+    .openPopup();
+</script>
     </div>
   </section>
 
