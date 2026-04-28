@@ -31,7 +31,7 @@
   --creme-a45:   color-mix(in srgb, var(--creme) 45%, transparent);
 
   /* ── LAYOUT ── */
-  --nav-h: 85px;
+  --nav-h: 72px;
 
   /* ── BORDURES ── */
   --contour:    2px solid var(--encre);
