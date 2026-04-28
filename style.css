@@ -301,7 +301,28 @@ nav {
   gap: 12px;
   width: 100%;
 }
+.section-plan {
+  background: var(--creme-fonce);
+  border-bottom: 3px solid var(--encre);
+  padding: 56px 80px;
+}
 
+.plan-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.plan-img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border: var(--contour-lg);
+  box-shadow: var(--ombre-xl);
+  border-radius: 8px;
+  display: block;
+}
 .hero-actions {
   display: flex;
   gap: 16px;
