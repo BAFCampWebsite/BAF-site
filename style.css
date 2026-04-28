@@ -288,12 +288,12 @@ nav {
   padding: 60px 0 60px 0;  /* supprime le padding-right de 80px */
   display: flex; align-items: center; justify-content: flex-start; /* plus center */
   flex-shrink: 0;
-  margin-left: -80px; /* compense le padding-left du hero-content */
+  margin-left: -120px; /* compense le padding-left du hero-content */
 }
 #heroLogoImg {
-  max-width: 650px;  /* était 480px, augmente selon goût */
-  max-height: 650px;
-  width: 650px;      /* force la largeur */
+  max-width: 700px;  /* était 480px, augmente selon goût */
+  max-height: 700px;
+  width: 700px;      /* force la largeur */
   object-fit: contain;
   filter: drop-shadow(4px 4px 0 rgba(28,18,8,.5));
   cursor: pointer; animation: fadeUp .85s ease .15s both;
