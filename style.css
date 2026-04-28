@@ -645,7 +645,7 @@ footer {
   .form-row { grid-template-columns: 1fr; }
   .nav-links {
     display: none; flex-direction: column;
-    position: fixed; top: var(--nav-h); left: 0; right: 0;
+    position: static; top: var(--nav-h); left: 0; right: 0;
     background: var(--vert); border-bottom: var(--contour-lg);
     padding: 16px; z-index: 199; box-shadow: 0 6px 0 var(--encre);
   }
