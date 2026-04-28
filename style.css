@@ -120,11 +120,11 @@ nav {
   box-shadow: 0 3px 0 var(--encre);
 }
 .hero-logo img {
-  width: 420px;
-  max-width: 90vw;
+  width: 620px;
+  max-width: 120vw;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0 ;
 }
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 
