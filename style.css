@@ -293,6 +293,7 @@ nav {
 .hero-logo-wrap {
   padding: 60px 80px 60px 0;
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  margin-left: -40px; /* ajuste cette valeur */
 }
 #heroLogoImg {
   max-width: 480px; max-height: 480px; object-fit: contain;
