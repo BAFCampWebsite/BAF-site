@@ -119,7 +119,13 @@ nav {
   padding: 0 48px;
   box-shadow: 0 3px 0 var(--encre);
 }
-
+.hero-logo img {
+  width: 420px;
+  max-width: 90vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 
 /* ── Logo image dans la navbar ── */
