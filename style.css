@@ -685,6 +685,23 @@ footer {
   .section-plan { padding: 40px 20px; }
 }
 
+  /* Hero logo mobile */
+  #heroLogoImg {
+    max-width: 260px;
+    max-height: 260px;
+  }
+
+  .hero-eyebrow {
+    font-size: .6rem;
+    padding: 4px 10px;
+    margin-bottom: 16px;
+  }
+
+  .hero-content {
+    padding: 30px 20px 16px;
+  }
+}
+
 @media(min-width: 901px) { .burger { display: none; } }
 
 input[type=file] { display: none; }
