@@ -240,10 +240,27 @@ nav {
   -webkit-mask-image: linear-gradient(to right, transparent 35%, black 100%);
 }
 .hero-inner {
-  display: flex; align-items: center; justify-content: space-between;
-  width: 100%; position: relative; z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  gap: 40px;
 }
-.hero-content { padding: 80px; max-width: 680px; animation: fadeUp .85s ease both; flex-shrink: 0; }
+.hero-content {
+  padding: 80px;
+  flex-shrink: 0;
+  animation: fadeUp .85s ease both;
+}
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 60px 80px 60px 0;
+}
 .hero-eyebrow {
   display: inline-block;
   font-family: var(--font-mono);
@@ -278,7 +295,19 @@ nav {
   font-size: 1.15rem; letter-spacing: .04em; color: var(--creme);
   text-shadow: 1px 1px 0 var(--encre);
 }
-.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .btn-outline-hero {
   background: transparent; color: var(--creme);
   border: 2px solid rgba(249,242,236,.5);
