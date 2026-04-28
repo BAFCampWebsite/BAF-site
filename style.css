@@ -594,7 +594,7 @@ footer {
   text-align: center;
 }
 #footerLogoImg {
-  max-width: 400px;
+  max-width: 300px;
   height: auto;
   object-fit: contain;
   display: block;
