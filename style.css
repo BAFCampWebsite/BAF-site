@@ -31,7 +31,7 @@
   --creme-a45:   color-mix(in srgb, var(--creme) 45%, transparent);
 
   /* ── LAYOUT ── */
-  --nav-h: 72px;
+  --nav-h: 85px;
 
   /* ── BORDURES ── */
   --contour:    2px solid var(--encre);
@@ -141,7 +141,7 @@ nav {
 .logo-img-wrap:hover { transform: none; box-shadow: none; }
 
 #logoImg {
-  max-height: 75px;
+  max-height: 80px;
   width: auto;
   display: block;
 }
