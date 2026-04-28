@@ -700,15 +700,15 @@ footer {
   .hero-content {
     padding: 30px 20px 16px;
   }
-.cards-grid {
-    grid-template-columns: 1fr;
+  .cards-grid,
+  .gt-section .cards-grid {
+    grid-template-columns: 1fr !important;
   }
 
-  /* Annule le positionnement spécial du gt-section */
   .gt-section .cards-grid .card:nth-child(5),
   .gt-section .cards-grid .card:nth-child(6),
   .gt-section .cards-grid .card:nth-child(7) {
-    grid-column: auto;
+    grid-column: auto !important;
   }
 }
 }
