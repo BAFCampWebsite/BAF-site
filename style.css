@@ -141,7 +141,7 @@ nav {
 .logo-img-wrap:hover { transform: none; box-shadow: none; }
 
 #logoImg {
-  max-height: 80px;
+  max-height: 85px;
   width: auto;
   display: block;
 }
