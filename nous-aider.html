@@ -113,7 +113,7 @@
   <hr class="divider">
 
   <!-- SECTION 1 : FAIRE UN DON -->
-  <div id="don"class="reveal" id="don">
+  <div id="don" class="reveal">
     <h2>Faire un don</h2>
     <p class="intro-text" style="font-size: 1.1em; line-height: 1.6; margin-bottom: 30px;">
       Parceque nous voulons créer un espace accessible, il n'y aura pas de restriction d'accès autre que celle de la place disponible sur le lieu du camp.<br>
@@ -121,13 +121,25 @@
       Votre don, aussi modeste soit-il, nous permet de rester indépendants et fidèles à nos valeurs.
     </p>
     <div style="text-align: center; margin-top: 30px;">
-      <a href="infos.html#question" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">
+      <button onclick="document.getElementById('modalDon').style.display='flex'" class="btn btn-red" style="padding: 15px 40px; font-size: 1.2em; cursor: pointer; border: none;">
         ❤️ &nbsp; Je fais un don
-      </a>
+      </button>
     </div>
   </div>
-
-  <hr class="divider">
+  
+  <!-- MODAL DON -->
+  <div id="modalDon" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; padding:40px 36px; max-width:420px; width:90%; text-align:center; box-shadow:0 8px 40px rgba(0,0,0,0.18); position:relative;">
+      <span style="font-size:2.5em;">🕐</span>
+      <h3 style="margin:16px 0 10px; font-size:1.3em;">Dons momentanément indisponibles</h3>
+      <p style="color:#555; line-height:1.6; margin-bottom:28px;">
+        Il n'est pas possible de faire un don momentanément, mais revenez vite, ça va être vite réglé !
+      </p>
+      <button onclick="document.getElementById('modalDon').style.display='none'" class="btn btn-red" style="padding:12px 32px; font-size:1em; cursor:pointer; border:none;">
+        Fermer
+      </button>
+    </div>
+  </div>
 
   <!-- SECTION 2 : PARTAGER L'ÉVÉNEMENT -->
   <div class="reveal" id="partager">
@@ -242,6 +254,10 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+document.getElementById('modalDon').addEventListener('click', function(e) {
+  if (e.target === this) this.style.display = 'none';
+});
 </script>
 
 </body>
