@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - run: pip install deepl
+      - run: pip install deep-translator
 
       - name: Run translation script
         env:
