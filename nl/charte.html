@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handvest — BAF Camp</title>
+  <link rel="stylesheet" href="/nl/style.css">
+</head>
+<body>
+
+<input type="file" id="logoInput" accept="image/*">
+
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap" >
+      <img id="logoImg" src="BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/nl/index.html">Home</a></li>
+    <li><a href="/nl/programme.html">Programma</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Werking
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/nl/financements.html"><span class="di">💰</span> Financiering</a>
+        
+        <a href="/nl/charte.html"><span class="di">📜Ons</span> handvest</a>
+        
+        <a href="/nl/autogestion.html"><span class="di">🙌Zelfbeheer</span></a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Informatie
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/nl/infos.html#acces"><span class="di">📍</span> Routebeschrijving</a>
+        
+        <a href="/nl/infos.html#restauration"><span class="di">🍔</span>Eten</a>
+        
+        <a href="/nl/infos.html#camping"><span class="di">⛺De</span> camping</a>
+        
+        <a href="/nl/infos.html#bambinerie"><span class="di">🧸</span>De Bambinerie</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Help ons
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/nl/nous-aider.html"><span class="di">❤️</span> Doneer</a>
+        
+        <a href="/nl/autogestion.html">🙌Vrijwilligers <span class="di">aan</span>melden</a>
+        
+        <a href="/nl/nous-aider.html#partager"><span class="di">📢Delen</span></a>
+        
+        <a href="/nl/nous-aider.html#materiel">🔌Materiaal uitlenen</a>
+      </div>
+    </li>
+    <li><a href="/nl/billetterie.html" class="btn nav-cta">Kaartverkoop vrije prijs →</a></li>
+  </ul>
+
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ Werking</p>
+  <h1 class="page-hero-title">Ons handvest</h1>
+  <p class="page-hero-sub">De politieke en strategische grondslagen van het BAF Camp</p>
+</div>
+
+<div class="page-content">
+
+  <div class="reveal">
+    <h2>Waarom dit kamp</h2>
+    <p>
+      Het BAF Camp is een plek om elkaar te ontmoeten, ons te organiseren en onze strijd te versterken.
+      Het gaat uit van een constatering: rechten gaan achteruit, de repressie neemt toe en de bewegingen zijn versnipperd.
+    </p>
+    <p>
+      Het doel is om banden te smeden tussen collectieven, werkwijzen te delen en sterke, duurzame allianties op te bouwen,
+      terwijl we levendige en toegankelijke ruimtes in stand houden.
+    </p>
+  </div>
+
+  <div class="reveal">
+    <h2>Wat we willen bereiken</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-icon">🤝</span>
+        <h3 class="card-title">Verbinden</h3>
+        <p class="card-text">Bruggen slaan tussen strijdpunten en regio&#x27;s (Brussel, Wallonië, Vlaanderen).</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📢</span>
+        <h3 class="card-title">Zichtbaar maken</h3>
+        <p class="card-text">Lokale en internationale strijd onder de aandacht brengen.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🧠</span>
+        <h3 class="card-title">Organiseren</h3>
+        <p class="card-text">Strategieën delen, debatteren en een gemeenschappelijke basis opbouwen.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <h2>Positionering</h2>
+    <p>
+      Het kamp sluit aan bij sociale, antifascistische, ecologische, boeren-, feministische, antiracistische, anti-imperialistische, dekoloniale, anti-validistische en queer-strijd.
+      Het is gebaseerd op een anti-autoritaire benadering en streeft ernaar machtsverhoudingen te beperken, ook intern.
+    </p>
+    <ul>
+      <li>Afwijzing van onderdrukking (racisme, seksisme, validisme, klassisme, LGBTQIA+-fobieën…)</li>
+      <li>Aandacht voor machtsverhoudingen in discussies</li>
+      <li>Centrale plaats voor de betrokkenen</li>
+      <li>Geen dominante nadruk op één organisatie of ideologie</li>
+    </ul>
+  </div>
+
+  <div class="reveal">
+    <h2>Collectieve werking</h2>
+    <p>
+      Het kamp is zelfbeheerd en draait op actieve deelname. Het werkt via werkgroepen en gezamenlijk genomen beslissingen.
+    </p>
+    <ul>
+      <li>Horizontale organisatie (consensus)</li>
+      <li>Deelname van iedereen (vrijwillige diensten tijdens het kamp)</li>
+      <li>Openheid voor nieuwe mensen en collectieven</li>
+    </ul>
+  </div>
+
+  <div class="reveal">
+    <h2>Basisraamwerk</h2>
+    <p>
+      Het kamp is geen gegarandeerde &quot;veilige&quot; ruimte, maar een ruimte waar we proberen een klimaat van respect en luisteren te creëren.
+    </p>
+    <ul>
+      <li>Respect voor ervaringen en uitingen</li>
+      <li>Toestemming (interacties, foto&#x27;s, lichamelijk contact)</li>
+      <li>Afwijzing van gewelddadig of manipulatief gedrag</li>
+      <li>Je verantwoordelijkheid nemen bij conflicten</li>
+    </ul>
+    <p>
+      Tijdens het kamp is er een team aanwezig dat zich bezighoudt met zorg en conflictbeheersing.
+    </p>
+  </div>
+
+  <div class="reveal">
+    <h2>Toegankelijkheid &amp; inclusie</h2>
+    <p>
+      Er wordt gewerkt om het kamp voor zoveel mogelijk mensen toegankelijk te maken, ook al zal niet alles perfect zijn.
+    </p>
+    <ul>
+      <li>Vertalingen FR / NL / EN</li>
+      <li>Aandacht voor specifieke behoeften (voeding, toegankelijkheid…)</li>
+      <li>Ruimtes met een bewuste mix</li>
+      <li>Samenwerking met betrokken groepen in een vroeg stadium</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <div class="reveal">
+    <h2>Volledig handvest</h2>
+    <p>
+      Deze pagina is een samenvatting. Het volledige handvest beschrijft de regels, definities en processen.
+      Het wordt sterk aangeraden om dit door te lezen om deel te nemen aan het kamp.
+    </p>
+
+    <div style="display: inline-block; margin: 40px auto 48px auto; text-align: center; width: 100%;">
+      <div style="display: inline-block; border: 3px solid var(--encre); border-radius: 8px; box-shadow: 6px 6px 0 var(--encre); background: var(--rose); padding: 18px 60px; position: relative;">
+        <a href="/nl/Charte-BAF-Camp-2026.pdf" download
+          style="font-family: var(--font-display); font-size: 2.2rem; letter-spacing: .08em; text-transform: uppercase; color: var(--creme); text-shadow: var(--contour-bd-md); text-decoration: none;">
+          Het handvest downloaden
+        </a>
+      </div>
+    </div>
+  </div><!-- fin .reveal -->
+
+</div><!-- fin .page-content -->
+
+<footer>
+
+  <div>
+    <div class="footer-logo">
+      <img src="BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+    </div>
+    <p class="footer-tagline">Kom een klap incasseren!</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigatie</h4>
+    <ul>
+      <li><a href="/nl/index.html">Home</a></li>
+      <li><a href="/nl/programme.html">Programma</a></li>
+      <li><a href="/nl/nous-aider.html">Help ons</a></li>
+      <li><a href="/nl/infos.html">Praktische info</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Werking</h4>
+    <ul>
+      <li><a href="/nl/financements.html">Financiering</a></li>
+      <li><a href="/nl/charte.html">Handvest</a></li>
+      <li><a href="/nl/autogestion.html">Zelfbeheer</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Netwerken</h4>
+    <ul>
+      <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Word lid van de Signal-groep</a></li>
+      <li><a href="mailto:activismcampbelgium@proton.me">Ons Proton-e-mailadres</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 BAF Camp — door en voor iedereen Kom een klap incasseren!</span>
+  </div>
+</footer>
+
+<script>
+function toggleDD(li) {
+  const was = li.classList.contains(&#x27;open&#x27;);
+  document.querySelectorAll(&#x27;.nav-links &gt; li&#x27;).forEach(l =&gt; l.classList.remove(&#x27;open&#x27;));
+  if (!was) li.classList.add(&#x27;open&#x27;);
+}
+document.addEventListener(&#x27;click&#x27;, e =&gt; {
+  if (!e.target.closest(&#x27;.nav-links &gt; li&#x27;))
+    document.querySelectorAll(&#x27;.nav-links &gt; li&#x27;).forEach(l =&gt; l.classList.remove(&#x27;open&#x27;));
+});
+document.getElementById(&#x27;logoInput&#x27;).addEventListener(&#x27;change&#x27;, function() {
+  const file = this.files[0]; if (!file) return;
+  const img = document.getElementById(&#x27;logoImg&#x27;);
+  img.src = URL.createObjectURL(file);
+  img.style.display = &#x27;block&#x27;;
+  document.getElementById(&#x27;logoPlaceholder&#x27;).style.display = &#x27;none&#x27;;
+});
+const obs = new IntersectionObserver(entries =&gt; {
+  entries.forEach(e =&gt; { if (e.isIntersecting) e.target.classList.add(&#x27;visible&#x27;); });
+}, {threshold:.12});
+document.querySelectorAll(&#x27;.reveal&#x27;).forEach(el =&gt; obs.observe(el));
+</script>
+
+</body>
+</html>
