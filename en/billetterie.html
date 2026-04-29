@@ -383,6 +383,13 @@ function handleNotif() {
   document.querySelector(&#x27;.notif-form&#x27;).style.display = &#x27;none&#x27;;
   document.getElementById(&#x27;notifConfirm&#x27;).style.display = &#x27;block&#x27;;
 }
+  // Met en gras la langue active selon l&#x27;URL
+document.querySelectorAll(&#x27;.lang-switcher a&#x27;).forEach(a =&gt; {
+  if (window.location.pathname.startsWith(&#x27;/nl&#x27;) &amp;&amp; a.href.includes(&#x27;/nl/&#x27;)) a.classList.add(&#x27;active&#x27;);
+  else if (window.location.pathname.startsWith(&#x27;/en&#x27;) &amp;&amp; a.href.includes(&#x27;/en/&#x27;)) a.classList.add(&#x27;active&#x27;);
+  else if (!window.location.pathname.startsWith(&#x27;/en&#x27;) &amp;&amp; !window.location.pathname.startsWith(&#x27;/nl&#x27;) &amp;&amp; a.href.endsWith(&#x27;/index.html&#x27;) &amp;&amp; !a.href.includes(&#x27;/en/&#x27;) &amp;&amp; !a.href.includes(&#x27;/nl/&#x27;)) a.classList.add(&#x27;active&#x27;);
+});
+  
 </script>
 
 </body>
