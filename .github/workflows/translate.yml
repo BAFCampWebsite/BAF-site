@@ -5,7 +5,10 @@ on:
     branches: [main]
     paths:
       - "**.html"   # se déclenche seulement si tu modifies un HTML
-
+      
+permissions:
+  contents: write
+  
 jobs:
   translate:
     runs-on: ubuntu-latest
