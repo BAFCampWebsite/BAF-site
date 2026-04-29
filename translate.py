@@ -21,7 +21,8 @@ def translate_html(html: str, target_lang: str) -> str:
             translated_parts.append(part)
         else:
             try:
-                translated_parts.append(translator.translate(part))
+                result = translator.translate(part)
+                translated_parts.append(result if result is not None else part)
             except Exception:
                 translated_parts.append(part)
     return ''.join(translated_parts)
