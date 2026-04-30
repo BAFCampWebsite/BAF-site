@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help us — BAF Camp</title>
+  <link rel="stylesheet" href="/en/style.css">
+</head>
+  
+<body>
+<!-- Input pour le logo -->
+<input type="file" id="logoInput" accept="image/*">
+
+<!-- NAVIGATION -->
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap" >
+      <img id="logoImg" src="../BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF<span>CAMP</span></span>
+  </a>
+
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/en/index.html">Welcome</a></li>
+    <li><a href="/en/programme.html">Program</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Functioning<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/en/financements.html"><span class="di">💰</span>Financing</a>
+        <a href="/en/charte.html"><span class="di">📜</span>Our charter</a>
+        <a href="/en/autogestion.html"><span class="di">🙌</span>Self-management</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Information<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/en/infos.html#acces"><span class="di">📍</span>Come there</a>
+        <a href="/en/infos.html#restauration"><span class="di">🍔</span>Feed yourself</a>
+        <a href="/en/infos.html#camping"><span class="di">⛺</span>The campsite</a>
+        <a href="/en/infos.html#bambinerie"><span class="di">🧸</span>The Baby Room</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Help us<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/en/nous-aider.html"><span class="di">❤️</span>Make a donation</a>
+        <a href="/en/autogestion.html"><span class="di">🙌</span>Volunteer registrations</a>
+        <a href="/en/nous-aider.html#partager"><span class="di">📢</span>Share</a>
+        <a href="/en/nous-aider.html#materiel"><span class="di">🔌</span>Lend equipment</a>
+      </div>
+    </li>
+    <li><a href="/en/billetterie.html" class="btn nav-cta">Free price ticketing →</a></li>
+  </ul>
+
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="lang-switcher">
+    <a href="/index.html">EN</a>
+    <span>|</span>
+    <a href="/nl/index.html">NL</a>
+    <span>|</span>
+    <a href="/en/index.html">IN</a>
+  </div>
+  
+</nav>
+
+<!-- HERO HEADER -->
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ Support &amp; Commitment</p>
+  <h1 class="page-hero-title">Help us</h1>
+  <p class="page-hero-sub">Make a donation, share the event or lend equipment to succeed together.</p>
+</div>
+
+<div class="page-content">
+
+  <!-- SECTION 0 : NOUS REJOINDRE -->
+  <div class="reveal" id="rejoindre">
+    <h2>Join us!</h2>
+    <p>This camp will be the sum (or more!) of the people who compose it. Come and add your weight to the scales.<br>No initial skill or legitimacy is required to help. Accommodations will be made based on requests. Here are the 3 possible degrees of investment:</p>
+
+    <div class="cards-grid">
+      <!-- Carte 1 -->
+      <div class="card">
+        <span class="card-icon">🤩</span>
+        <h3 class="card-title">Become a volunteer</h3>
+        <p class="card-text">Take time at your camp to help life run smoothly there. If everyone gives 2 hours / day all shifts will be full!</p>
+        <a href="/en/autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">🫶 &nbsp; I register</a>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="card">
+        <span class="card-icon">⚒️</span>
+        <h3 class="card-title">Help set up and dismantle the camp</h3>
+        <p class="card-text">Yes! The camp will actually be a little longer than announced: assembly begins on August 16 and dismantling continues until August 26.</p>
+        <a href="/en/autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">🎪 &nbsp; I'll be there!</a>
+      </div>
+
+      <!-- Carte 3 -->
+      <div class="card">
+        <span class="card-icon">👋</span>
+        <h3 class="card-title">Join a GT</h3>
+        <p class="card-text">Join the organization by joining a working group now to help prepare and shape the camp in advance.</p>
+        <a href="/en/autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">❤️ &nbsp; Discover the GTs</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 1 : FAIRE UN DON -->
+  <div id="don" class="reveal">
+    <h2>Make a donation</h2>
+    <p class="intro-text" style="font-size: 1.1em; line-height: 1.6; margin-bottom: 30px;">Because we want to create an accessible space, there will be no access restrictions other than the space available at the camp site.<br>However, despite the work of hundreds of volunteers, certain expenses persist and cannot be reduced.<br>Your donation, however modest, allows us to remain independent and true to our values.</p>
+    <div style="text-align: center; margin-top: 30px;">
+      <button onclick="document.getElementById('modalDon').style.display='flex'" class="btn btn-red" style="padding: 15px 40px; font-size: 1.2em; cursor: pointer; border: none;">❤️ &nbsp; I make a donation</button>
+    </div>
+  </div>
+  
+  <!-- MODAL DON -->
+  <div id="modalDon" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; padding:40px 36px; max-width:420px; width:90%; text-align:center; box-shadow:0 8px 40px rgba(0,0,0,0.18); position:relative;">
+      <span style="font-size:2.5em;">🕐</span>
+      <h3 style="margin:16px 0 10px; font-size:1.3em;">Donations temporarily unavailable</h3>
+      <p style="color:#555; line-height:1.6; margin-bottom:28px;">It is not possible to make a donation at the moment, in the meantime, you can contact us by<a href="mailto:activismcampbelgium@proton.be" style="color:#e63946; font-weight:bold;">email</a>.
+      </p>
+      <button onclick="document.getElementById('modalDon').style.display='none'" class="btn btn-red" style="padding:12px 32px; font-size:1em; cursor:pointer; border:none;">Close</button>
+    </div>
+  </div>
+
+  <!-- SECTION 2 : PARTAGER L'ÉVÉNEMENT -->
+  <div class="reveal" id="partager">
+    <h2>Share event</h2>
+    <p>Help us make some noise! Download, print and distribute our communication materials in your neighborhoods, schools and favorite places.</p>
+
+    <div class="cards-grid">
+      <!-- Fichier 1 -->
+      <div class="card">
+        <span class="card-icon">📄</span>
+        <h3 class="card-title">A3 poster</h3>
+        <p class="card-text">To print and stick in your favorite places.</p>
+        <p style="font-size: 0.9em; color: #888; font-style: italic;">Link to come</p>
+      </div>
+
+      <!-- Fichier 2 -->
+      <div class="card">
+        <span class="card-icon">📄</span>
+        <h3 class="card-title">A5 Flyer</h3>
+        <p class="card-text">Convenient format for hand-to-hand distribution.</p>
+        <p style="font-size: 0.9em; color: #888; font-style: italic;">Link to come</p>
+      </div>
+
+      <!-- Fichier 3 -->
+      <div class="card">
+        <span class="card-icon">🏷️</span>
+        <h3 class="card-title">Stickers</h3>
+        <p class="card-text">To make an impression wherever you go.</p>
+        <p style="font-size: 0.9em; color: #888; font-style: italic;">Link to come</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 3 : PRÊT DE MATÉRIEL -->
+  <div class="reveal" id="materiel">
+    <h2>Equipment loan</h2>
+    <p>Do you have equipment (sound system, lighting, tent, barriers, etc.) and would like to lend it to us for the duration of the festival? We are takers!</p>
+
+    <div style="background-color: #f9f9f9; padding: 30px; border-radius: 8px; text-align: center; margin-top: 20px;">
+      <p style="color: black;">Contact us at the following address:</p>
+      <a href="mailto:activismcampbelgium@proton.me" class="btn btn-red" style="display: inline-block; margin-bottom: 20px;">✉️ &nbsp; bafcampcom@proton.me</a>
+      <p style="background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; display: inline-block; font-weight: bold; border: 1px solid #ffeeba;">⚠️ Important: Please put<strong>“Equipment loan”</strong>in the subject of your email.</p>
+    </div>
+  </div>
+
+</div><!-- fin .page-content -->
+
+<footer>
+  <div>
+    <div class="footer-logo">
+      <img src="../BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+    </div>
+    <p class="footer-tagline">Come take a slap!</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="/en/index.html">Welcome</a></li>
+      <li><a href="/en/programme.html">Program</a></li>
+      <li><a href="/en/nous-aider.html">Help us</a></li>
+      <li><a href="/en/infos.html">Practical information</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Functioning</h4>
+    <ul>
+      <li><a href="/en/financements.html">Financing</a></li>
+      <li><a href="/en/charte.html">Charter</a></li>
+      <li><a href="/en/autogestion.html">Self-management</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Networks</h4>
+    <ul>
+      <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Join the Signal Loop</a></li>
+      <li><a href="mailto:activismcampbelgium@proton.me">Our proton mail</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 BAF Camp — by and for everyone</span>
+    <span>Come take a slap!</span>
+  </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+<script>function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+document.getElementById('logoInput').addEventListener('change', function() {
+  const file = this.files[0]; if (!file) return;
+  const img = document.getElementById('logoImg');
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
+});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+document.getElementById('modalDon').addEventListener('click', function(e) {
+  if (e.target === this) this.style.display = 'none';
+});
+
+  // Bold the active language according to the URL
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});</script>
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help ons — BAF Kamp</title>
+  <link rel="stylesheet" href="/nl/style.css">
+</head>
+  
+<body>
+<!-- Input pour le logo -->
+<input type="file" id="logoInput" accept="image/*">
+
+<!-- NAVIGATION -->
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap" >
+      <img id="logoImg" src="../BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF<span>KAMP</span></span>
+  </a>
+
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/nl/index.html">Welkom</a></li>
+    <li><a href="/nl/programme.html">Programma</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Functioneren<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/nl/financements.html"><span class="di">💰</span>Financiering</a>
+        <a href="/nl/charte.html"><span class="di">📜</span>Ons handvest</a>
+        <a href="/nl/autogestion.html"><span class="di">🙌</span>Zelfbeheer</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Informatie<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/nl/infos.html#acces"><span class="di">📍</span>Kom daar</a>
+        <a href="/nl/infos.html#restauration"><span class="di">🍔</span>Voed jezelf</a>
+        <a href="/nl/infos.html#camping"><span class="di">⛺</span>De camping</a>
+        <a href="/nl/infos.html#bambinerie"><span class="di">🧸</span>De Babykamer</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Help ons<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/nl/nous-aider.html"><span class="di">❤️</span>Doe een donatie</a>
+        <a href="/nl/autogestion.html"><span class="di">🙌</span>Inschrijvingen van vrijwilligers</a>
+        <a href="/nl/nous-aider.html#partager"><span class="di">📢</span>Deel</a>
+        <a href="/nl/nous-aider.html#materiel"><span class="di">🔌</span>Apparatuur lenen</a>
+      </div>
+    </li>
+    <li><a href="/nl/billetterie.html" class="btn nav-cta">Gratis prijskaartje →</a></li>
+  </ul>
+
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="lang-switcher">
+    <a href="/index.html">NL</a>
+    <span>|</span>
+    <a href="/nl/index.html">NL</a>
+    <span>|</span>
+    <a href="/en/index.html">IN</a>
+  </div>
+  
+</nav>
+
+<!-- HERO HEADER -->
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ Ondersteuning &amp; Inzet</p>
+  <h1 class="page-hero-title">Help ons</h1>
+  <p class="page-hero-sub">Doe een donatie, deel het evenement of leen apparatuur uit om samen te slagen.</p>
+</div>
+
+<div class="page-content">
+
+  <!-- SECTION 0 : NOUS REJOINDRE -->
+  <div class="reveal" id="rejoindre">
+    <h2>Sluit je bij ons aan!</h2>
+    <p>Dit kamp zal de som (of meer!) zijn van de mensen die het samenstellen. Kom en voeg uw gewicht toe aan de weegschaal.<br>Er is geen initiële vaardigheid of legitimiteit vereist om te helpen. Accommodaties worden gemaakt op basis van verzoeken. Dit zijn de 3 mogelijke investeringsgraden:</p>
+
+    <div class="cards-grid">
+      <!-- Carte 1 -->
+      <div class="card">
+        <span class="card-icon">🤩</span>
+        <h3 class="card-title">Word vrijwilliger</h3>
+        <p class="card-text">Neem de tijd in je kamp om het leven daar soepel te laten verlopen. Als iedereen 2 uur per dag geeft, zijn alle diensten vol!</p>
+        <a href="/nl/autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">🫶 Ik registreer</a>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="card">
+        <span class="card-icon">⚒️</span>
+        <h3 class="card-title">Help mee met het opzetten en afbreken van het kamp</h3>
+        <p class="card-text">Ja! Het kamp zal eigenlijk iets langer duren dan aangekondigd: de montage begint op 16 augustus en de afbraak gaat door tot 26 augustus.</p>
+        <a href="/nl/autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">🎪 Ik zal er zijn!</a>
+      </div>
+
+      <!-- Carte 3 -->
+      <div class="card">
+        <span class="card-icon">👋</span>
+        <h3 class="card-title">Sluit je aan bij een GT</h3>
+        <p class="card-text">Sluit je aan bij de organisatie door je nu aan te sluiten bij een werkgroep om het kamp vooraf te helpen voorbereiden en vorm te geven.</p>
+        <a href="/nl/autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">❤️ Ontdek de GT's</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 1 : FAIRE UN DON -->
+  <div id="don" class="reveal">
+    <h2>Doe een donatie</h2>
+    <p class="intro-text" style="font-size: 1.1em; line-height: 1.6; margin-bottom: 30px;">Omdat wij een toegankelijke ruimte willen creëren, gelden er geen andere toegangsbeperkingen dan de beschikbare ruimte op de camping.<br>Ondanks het werk van honderden vrijwilligers blijven bepaalde uitgaven echter bestaan ​​en kunnen niet worden verminderd.<br>Uw donatie, hoe bescheiden ook, stelt ons in staat onafhankelijk en trouw aan onze waarden te blijven.</p>
+    <div style="text-align: center; margin-top: 30px;">
+      <button onclick="document.getElementById('modalDon').style.display='flex'" class="btn btn-red" style="padding: 15px 40px; font-size: 1.2em; cursor: pointer; border: none;">❤️ Ik doe een donatie</button>
+    </div>
+  </div>
+  
+  <!-- MODAL DON -->
+  <div id="modalDon" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; padding:40px 36px; max-width:420px; width:90%; text-align:center; box-shadow:0 8px 40px rgba(0,0,0,0.18); position:relative;">
+      <span style="font-size:2.5em;">🕐</span>
+      <h3 style="margin:16px 0 10px; font-size:1.3em;">Donaties tijdelijk niet beschikbaar</h3>
+      <p style="color:#555; line-height:1.6; margin-bottom:28px;">Het is momenteel niet mogelijk om een ​​donatie te doen, in de tussentijd kunt u contact met ons opnemen via<a href="mailto:activismcampbelgium@proton.be" style="color:#e63946; font-weight:bold;">e-mail</a>.
+      </p>
+      <button onclick="document.getElementById('modalDon').style.display='none'" class="btn btn-red" style="padding:12px 32px; font-size:1em; cursor:pointer; border:none;">Dichtbij</button>
+    </div>
+  </div>
+
+  <!-- SECTION 2 : PARTAGER L'ÉVÉNEMENT -->
+  <div class="reveal" id="partager">
+    <h2>Deel evenement</h2>
+    <p>Help ons wat lawaai maken! Download, print en verspreid ons communicatiemateriaal in uw buurt, school en favoriete plekken.</p>
+
+    <div class="cards-grid">
+      <!-- Fichier 1 -->
+      <div class="card">
+        <span class="card-icon">📄</span>
+        <h3 class="card-title">A3-poster</h3>
+        <p class="card-text">Om af te drukken en op je favoriete plekken te plakken.</p>
+        <p style="font-size: 0.9em; color: #888; font-style: italic;">Linkje komt</p>
+      </div>
+
+      <!-- Fichier 2 -->
+      <div class="card">
+        <span class="card-icon">📄</span>
+        <h3 class="card-title">A5-vlieger</h3>
+        <p class="card-text">Handig formaat voor hand-tot-hand distributie.</p>
+        <p style="font-size: 0.9em; color: #888; font-style: italic;">Linkje komt</p>
+      </div>
+
+      <!-- Fichier 3 -->
+      <div class="card">
+        <span class="card-icon">🏷️</span>
+        <h3 class="card-title">Stickers</h3>
+        <p class="card-text">Om indruk te maken, waar je ook gaat.</p>
+        <p style="font-size: 0.9em; color: #888; font-style: italic;">Linkje komt</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 3 : PRÊT DE MATÉRIEL -->
+  <div class="reveal" id="materiel">
+    <h2>Uitleen van apparatuur</h2>
+    <p>Heeft u apparatuur (geluidsinstallatie, verlichting, tent, slagbomen etc.) en wilt u deze aan ons lenen voor de duur van het festival? Wij zijn nemers!</p>
+
+    <div style="background-color: #f9f9f9; padding: 30px; border-radius: 8px; text-align: center; margin-top: 20px;">
+      <p style="color: black;">Neem contact met ons op op het volgende adres:</p>
+      <a href="mailto:activismcampbelgium@proton.me" class="btn btn-red" style="display: inline-block; margin-bottom: 20px;">✉️ bafcampcom@proton.me</a>
+      <p style="background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; display: inline-block; font-weight: bold; border: 1px solid #ffeeba;">⚠️Belangrijk: Graag plaatsen<strong>“Uitleen van apparatuur”</strong>in het onderwerp van uw e-mail.</p>
+    </div>
+  </div>
+
+</div><!-- fin .page-content -->
+
+<footer>
+  <div>
+    <div class="footer-logo">
+      <img src="../BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+    </div>
+    <p class="footer-tagline">Kom eens een klapje geven!</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigatie</h4>
+    <ul>
+      <li><a href="/nl/index.html">Welkom</a></li>
+      <li><a href="/nl/programme.html">Programma</a></li>
+      <li><a href="/nl/nous-aider.html">Help ons</a></li>
+      <li><a href="/nl/infos.html">Praktische informatie</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Functioneren</h4>
+    <ul>
+      <li><a href="/nl/financements.html">Financiering</a></li>
+      <li><a href="/nl/charte.html">Charter</a></li>
+      <li><a href="/nl/autogestion.html">Zelfbeheer</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Netwerken</h4>
+    <ul>
+      <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Sluit je aan bij de signaallus</a></li>
+      <li><a href="mailto:activismcampbelgium@proton.me">Onze protonenpost</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>BAF Camp 2026 — door en voor iedereen</span>
+    <span>Kom eens een klapje geven!</span>
+  </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+<script>functie toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('klik', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+document.getElementById('logoInput').addEventListener('change', function() {
+  const bestand = dit.bestanden[0]; if (!bestand) retourneert;
+  const img = document.getElementById('logoImg');
+  img.src = URL.createObjectURL(bestand);
+  img.style.display = 'blok';
+  document.getElementById('logoPlaceholder').style.display = 'geen';
+});
+const obs = nieuwe IntersectionObserver(entries => {
+  entrys.forEach(e => { if (e.isIntersecting) e.target.classList.add('zichtbaar'); });
+}, {drempel:.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+document.getElementById('modalDon').addEventListener('klik', function(e) {
+  if (e.target === this) this.style.display = 'geen';
+});
+
+  // Maak de actieve taal vetgedrukt volgens de URL
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});</script>
+
+</body>
+</html>
