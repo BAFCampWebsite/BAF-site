@@ -51,7 +51,7 @@
       </div>
     </li>
     <li><a href="/en/billetterie.html" class="btn nav-cta">Free price ticketing →</a></li>
-  </ul>
+  </ul> 
 
   <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -108,7 +108,8 @@
 </form>
 
 <p class="notif-confirm" id="notifConfirm" style="display:none;">✅ Great! We will notify you as soon as the ticket office opens.<br>Don't forget to sign up for<a href="/en/autogestion.html#volontariat">volunteer shifts</a>, and join us before the start of the camp from August 16 to lend a hand with the construction!<br>See you soon !</p>
-<script>const form = document.querySelector(".notif-form");
+<script>
+const form = document.querySelector(".notif-form");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -117,7 +118,7 @@ form.addEventListener("submit", async (e) => {
 
   const res = await fetch(form.action, {
     method: "POST",
-    body:data,
+    body: data,
     headers: {
       'Accept': 'application/json'
     }
@@ -127,9 +128,10 @@ form.addEventListener("submit", async (e) => {
     document.getElementById("notifConfirm").style.display = "block";
     form.reset();
   } else {
-    alert("Error 😬");
+    alert("Erreur 😬");
   }
-});</script>
+});
+</script>
     <input type="hidden" name="source" value="footer">
 
   <hr class="divider">
@@ -295,7 +297,7 @@ form.addEventListener("submit", async (e) => {
     <h4>Networks</h4>
     <ul>
       <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
-      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Join the Signal loop</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Join the Signal Loop</a></li>
       <li><a href="mailto:activismcampbelgium@proton.me">Our proton mail</a></li>
     </ul>
   </div>
@@ -307,7 +309,8 @@ form.addEventListener("submit", async (e) => {
 
 
 
-<script>function toggleDD(li) {
+<script>
+function toggleDD(li) {
   const was = li.classList.contains('open');
   document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
   if (!was) li.classList.add('open');
@@ -330,7 +333,7 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: .12 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// Notification form
+// Formulaire notification
 function handleNotif() {
   const val = document.getElementById('emailInput').value.trim();
   if (!val || !val.includes('@')) {
@@ -341,12 +344,14 @@ function handleNotif() {
   document.querySelector('.notif-form').style.display = 'none';
   document.getElementById('notifConfirm').style.display = 'block';
 }
-  // Bold the active language according to the URL
+  // Met en gras la langue active selon l'URL
 document.querySelectorAll('.lang-switcher a').forEach(a => {
   if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
   else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
   else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
-});</script>
+});
+  
+</script>
 
 </body>
 </html>

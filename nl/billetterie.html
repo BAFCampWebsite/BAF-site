@@ -51,13 +51,19 @@
       </div>
     </li>
     <li><a href="/nl/billetterie.html" class="btn nav-cta">Gratis prijskaartje →</a></li>
-  </ul>
+  </ul> 
 
   <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 
-  <!--LANG_SWITCHER_PLACEHOLDER-->
+  <div class="lang-switcher">
+     <a href="/index.html">FR</a>
+     <span>|</span>
+     <a href="/nl/index.html">NL</a>
+     <span>|</span>
+     <a href="/en/index.html">EN</a>
+  </div>
   
 </nav>
 <!-- Hero -->
@@ -85,7 +91,7 @@
     <a href="https://cryptpad.fr/form/#/2/form/view/wkumlpjd0eYCbC2RM72EHKIA2dZ7QlJiOAOgQ6vnlcQ/">Breng mij op de hoogte ✉</a>
   </button>
 
-  <p class="notif-confirm" id="notifConfirm" style="display:none;">✅ Geweldig! Zodra de ticketbalie opengaat, brengen wij u hiervan op de hoogte.<br>Vergeet je niet aan te melden<a href="/nl/autogestion.html#volontariat">vrijwilligersdiensten</a>, en kom vóór de start van het kamp vanaf 16 augustus een handje helpen bij de opbouw!<br>Tot snel !</p>
+  <p class="notif-confirm" id="notifConfirm" style="display:none;">✅ Geweldig! Zodra de ticketbalie opengaat, brengen wij u hiervan op de hoogte.<br>Vergeet je niet aan te melden<a href="/nl/autogestion.html#volontariat">vrijwilligersdiensten</a>, en kom vóór de start van het kamp vanaf 16 augustus meehelpen met de opbouw!<br>Tot snel !</p>
 
   <input type="hidden" name="source" value="footer">
 </div>
@@ -101,29 +107,31 @@
 
 </form>
 
-<p class="notif-confirm" id="notifConfirm" style="display:none;">✅ Geweldig! Zodra de ticketbalie opengaat, brengen wij u hiervan op de hoogte.<br>Vergeet je niet aan te melden<a href="/nl/autogestion.html#volontariat">vrijwilligersdiensten</a>, en kom vóór de start van het kamp vanaf 16 augustus een handje helpen bij de opbouw!<br>Tot snel !</p>
-<script>const formulier = document.querySelector(".notif-form");
+<p class="notif-confirm" id="notifConfirm" style="display:none;">✅ Geweldig! Zodra de ticketbalie opengaat, brengen wij u hiervan op de hoogte.<br>Vergeet je niet aan te melden<a href="/nl/autogestion.html#volontariat">vrijwilligersdiensten</a>, en kom vóór de start van het kamp vanaf 16 augustus meehelpen met de opbouw!<br>Tot snel !</p>
+<script>
+const form = document.querySelector(".notif-form");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const data = nieuwe FormData(formulier);
+  const data = new FormData(form);
 
-  const res = wachten op ophalen (form.action, {
-    methode: "POST",
-    lichaam:gegevens,
-    kopteksten: {
-      'Accepteren': 'applicatie/json'
+  const res = await fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: {
+      'Accept': 'application/json'
     }
   });
 
-  als (res.ok) {
-    document.getElementById("notifConfirm").style.display = "blok";
-    formulier.reset();
-  } anders {
-    alert("Fout 😬");
+  if (res.ok) {
+    document.getElementById("notifConfirm").style.display = "block";
+    form.reset();
+  } else {
+    alert("Erreur 😬");
   }
-});</script>
+});
+</script>
     <input type="hidden" name="source" value="footer">
 
   <hr class="divider">
@@ -243,7 +251,7 @@ form.addEventListener("submit", async (e) => {
   box-shadow: var(--roze-schaduw);
 }
 
-.notif-invoer::placeholder {
+.notif-input::placeholder {
   kleur: var(--zand);
   lettertype: cursief;
 }
@@ -301,46 +309,49 @@ form.addEventListener("submit", async (e) => {
 
 
 
-<script>functie toggleDD(li) {
+<script>
+function toggleDD(li) {
   const was = li.classList.contains('open');
   document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
   if (!was) li.classList.add('open');
 }
-document.addEventListener('klik', e => {
+document.addEventListener('click', e => {
   if (!e.target.closest('.nav-links > li'))
     document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
 });
 document.getElementById('logoInput').addEventListener('change', function() {
-  const bestand = dit.bestanden[0]; if (!bestand) retourneert;
+  const file = this.files[0]; if (!file) return;
   const img = document.getElementById('logoImg');
-  img.src = URL.createObjectURL(bestand);
-  img.style.display = 'blok';
-  document.getElementById('logoPlaceholder').style.display = 'geen';
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
 });
 
-// Animatie onthullen
-const obs = nieuwe IntersectionObserver(entries => {
-  entrys.forEach(e => { if (e.isIntersecting) e.target.classList.add('zichtbaar'); });
-}, {drempel: .12 });
+// Animation reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .12 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// Meldingsformulier
-functie handleNotif() {
+// Formulaire notification
+function handleNotif() {
   const val = document.getElementById('emailInput').value.trim();
-  als (!val || !val.includes('@')) {
+  if (!val || !val.includes('@')) {
     document.getElementById('emailInput').style.borderColor = 'var(--rose)';
     document.getElementById('emailInput').focus();
-    opbrengst;
+    return;
   }
-  document.querySelector('.notif-form').style.display = 'geen';
-  document.getElementById('notifConfirm').style.display = 'blok';
+  document.querySelector('.notif-form').style.display = 'none';
+  document.getElementById('notifConfirm').style.display = 'block';
 }
-  // Maak de actieve taal vetgedrukt volgens de URL
+  // Met en gras la langue active selon l'URL
 document.querySelectorAll('.lang-switcher a').forEach(a => {
   if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
   else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
   else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
-});</script>
+});
+  
+</script>
 
 </body>
 </html>
