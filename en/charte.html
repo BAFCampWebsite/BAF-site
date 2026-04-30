@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charter — BAF Camp</title>
+  <link rel="stylesheet" href="/en/style.css">
+</head>
+  
+<body>
+<input type="file" id="logoInput" accept="image/*">
+
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap" >
+      <img id="logoImg" src="../BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF<span>CAMP</span></span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/en/index.html">Welcome</a></li>
+    <li><a href="/en/programme.html">Program</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Functioning<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/en/financements.html"><span class="di">💰</span>Financing</a>
+        <a href="/en/charte.html"><span class="di">📜</span>Our charter</a>
+        <a href="/en/autogestion.html"><span class="di">🙌</span>Self-management</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Information<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/en/infos.html#acces"><span class="di">📍</span>Come there</a>
+        <a href="/en/infos.html#restauration"><span class="di">🍔</span>Feed yourself</a>
+        <a href="/en/infos.html#camping"><span class="di">⛺</span>The campsite</a>
+        <a href="/en/infos.html#bambinerie"><span class="di">🧸</span>The Baby Room</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Help us<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/en/nous-aider.html"><span class="di">❤️</span>Make a donation</a>
+        <a href="/en/autogestion.html"><span class="di">🙌</span>Volunteer registrations</a>
+        <a href="/en/nous-aider.html#partager"><span class="di">📢</span>Share</a>
+        <a href="/en/nous-aider.html#materiel"><span class="di">🔌</span>Lend equipment</a>
+      </div>
+    </li>
+    <li><a href="/en/billetterie.html" class="btn nav-cta">Free price ticketing →</a></li>
+  </ul>
+
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="lang-switcher">
+    <a href="/index.html">EN</a>
+    <span>|</span>
+    <a href="/nl/index.html">NL</a>
+    <span>|</span>
+    <a href="/en/index.html">IN</a>
+  </div>
+  
+</nav>
+
+<!-- HERO -->
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ Operation</p>
+  <h1 class="page-hero-title">Our charter</h1>
+  <p class="page-hero-sub">The political and strategic bases of the BAF Camp</p>
+</div>
+
+<div class="page-content">
+
+  <div class="reveal">
+    <h2>Why this camp</h2>
+    <p>The BAF Camp is a space to meet, organize and strengthen struggles.
+      It starts from an observation: rights are declining, repression is increasing and movements are fragmented.</p>
+    <p>The objective is to create links between collectives, share practices and build strong and lasting alliances,
+      while maintaining lively and accessible spaces.</p>
+  </div>
+
+  <div class="reveal">
+    <h2>What we are trying to do</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-icon">🤝</span>
+        <h3 class="card-title">Relate</h3>
+        <p class="card-text">Create bridges between struggles and territories (Brussels, Wallonia, Flanders).</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📢</span>
+        <h3 class="card-title">Make visible</h3>
+        <p class="card-text">Highlight local and international struggles.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🧠</span>
+        <h3 class="card-title">Get organized</h3>
+        <p class="card-text">Share strategies, debate and build commonality.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <h2>Positioning</h2>
+    <p>The camp is part of social, anti-fascist, ecological, peasant, feminist, anti-racist, anti-imperialism, decolonial, anti-validist and queer struggles.
+      It is based on an anti-authoritarian approach and seeks to limit relationships of domination, including internally.</p>
+    <ul>
+      <li>Refusal of oppression (racism, sexism, validism, classism, LGBTQIA+phobias, etc.)</li>
+      <li>Pay attention to power relations in discussions</li>
+      <li>Central place given to the people concerned</li>
+      <li>No dominant emphasis on an organization or ideology</li>
+    </ul>
+  </div>
+
+  <div class="reveal">
+    <h2>Collective operation</h2>
+    <p>The camp is self-managed and based on active participation. It operates through working groups and decisions taken collectively.</p>
+    <ul>
+      <li>Horizontal organization (consent logic)</li>
+      <li>Participation of all (volunteer shifts during the camp)</li>
+      <li>Openness to new people and groups</li>
+    </ul>
+  </div>
+
+  <div class="reveal">
+    <h2>Basic framework</h2>
+    <p>The camp is not a guaranteed “safe” space, but a space where we try to build conditions of respect and listening.</p>
+    <ul>
+      <li>Respect for experiences and speeches</li>
+      <li>Consent (interactions, photos, physical contact)</li>
+      <li>Refusal of violent or manipulative behavior</li>
+      <li>Take your share of responsibility in the event of conflict</li>
+    </ul>
+    <p>A team dedicated to care and conflict management will be present during the camp.</p>
+  </div>
+
+  <div class="reveal">
+    <h2>Accessibility &amp; inclusion</h2>
+    <p>Work is being carried out to make the camp accessible to as many people as possible, even if everything cannot be perfect.</p>
+    <ul>
+      <li>FR / NL / EN translations</li>
+      <li>Pay attention to specific needs (food, accessibility, etc.)</li>
+      <li>Selected mixed spaces</li>
+      <li>Working with relevant groups upstream</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <div class="reveal">
+    <h2>Complete charter</h2>
+    <p>This page is a summary. The complete charter details the rules, definitions and processes.
+      Its reading is strongly recommended for participating in the camp.</p>
+
+    <div style="display: inline-block; margin: 40px auto 48px auto; text-align: center; width: 100%;">
+      <div style="display: inline-block; border: 3px solid var(--encre); border-radius: 8px; box-shadow: 6px 6px 0 var(--encre); background: var(--rose); padding: 18px 60px; position: relative;">
+        <a href="/en/Charte-BAF-Camp-2026.pdf" download
+          style="font-family: var(--font-display); font-size: 2.2rem; letter-spacing: .08em; text-transform: uppercase; color: var(--creme); text-shadow: var(--contour-bd-md); text-decoration: none;">Download the charter</a>
+      </div>
+    </div>
+  </div><!-- fin .reveal -->
+
+</div><!-- fin .page-content -->
+
+<footer>
+
+  <div>
+    <div class="footer-logo">
+      <img src="../BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+    </div>
+    <p class="footer-tagline">Come take a slap!</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="/en/index.html">Welcome</a></li>
+      <li><a href="/en/programme.html">Program</a></li>
+      <li><a href="/en/nous-aider.html">Help us</a></li>
+      <li><a href="/en/infos.html">Practical information</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Functioning</h4>
+    <ul>
+      <li><a href="/en/financements.html">Financing</a></li>
+      <li><a href="/en/charte.html">Charter</a></li>
+      <li><a href="/en/autogestion.html">Self-management</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Networks</h4>
+    <ul>
+      <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Join the Signal loop</a></li>
+      <li><a href="mailto:activismcampbelgium@proton.me">Our proton mail</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 BAF Camp — by and for everyone</span>
+    <span>Come take a slap!</span>
+  </div>
+</footer>
+
+<script>function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+document.getElementById('logoInput').addEventListener('change', function() {
+  const file = this.files[0]; if (!file) return;
+  const img = document.getElementById('logoImg');
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
+});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  
+  // Bold the active language according to the URL
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});</script>
+
+</body>
+</html>
