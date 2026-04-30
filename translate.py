@@ -79,6 +79,19 @@ def restore_lang_switcher(html: str, original: str) -> str:
     if original:
         html = html.replace('<!--LANG_SWITCHER_PLACEHOLDER-->', original)
     return html
+    
+def protect_scripts(html: str):
+    scripts = []
+    def replace(m):
+        scripts.append(m.group(0))
+        return f'<!--SCRIPT_{len(scripts)-1}-->'
+    html = re.sub(r'<script[\s\S]*?</script>', replace, html)
+    return html, scripts
+
+def restore_scripts(html: str, scripts: list) -> str:
+    for i, script in enumerate(scripts):
+        html = html.replace(f'<!--SCRIPT_{i}-->', script)
+    return html
 
 files_to_translate = sys.argv[1:] if len(sys.argv) > 1 else ALL_HTML_FILES
 
@@ -89,17 +102,28 @@ for filename in files_to_translate:
         continue
     src = path.read_text(encoding="utf-8")
     for lang in LANGUAGES:
-        out = pathlib.Path(lang) / filename
-        print(f"Translating {filename} → {lang}...")
-        src, lang_switcher = protect_lang_switcher(src)
-        translated = translate_html(src, lang)
-        translated = restore_lang_switcher(translated, lang_switcher)
-        translated = fix_links(translated, lang)
-        translated = fix_lang_attr(translated, lang)
-        translated = fix_css_path(translated)
-        translated = fix_asset_paths(translated)
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(translated, encoding="utf-8")
-        print(f"  ✓ {out}")
+    out = pathlib.Path(lang) / filename
+    print(f"Translating {filename} → {lang}...")
+    
+    # Protège les scripts et le lang-switcher avant traduction
+    protected, scripts = protect_scripts(src)
+    protected, lang_switcher = protect_lang_switcher(protected)
+    
+    # Traduit
+    translated = translate_html(protected, lang)
+    
+    # Restore les éléments protégés
+    translated = restore_scripts(translated, scripts)
+    translated = restore_lang_switcher(translated, lang_switcher)
+    
+    # Fix les chemins
+    translated = fix_links(translated, lang)
+    translated = fix_lang_attr(translated, lang)
+    translated = fix_css_path(translated)
+    translated = fix_asset_paths(translated)
+    
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(translated, encoding="utf-8")
+    print(f"  ✓ {out}")
 
 print("Done.")
