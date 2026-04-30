@@ -26,29 +26,20 @@ def translate_html(html: str, target_lang: str) -> str:
 
     print(f"    → {len(texts_to_translate)} fragments à traduire")
 
-    # Envoie par chunks de 50 fragments max pour éviter les limites Google
-    CHUNK_SIZE = 50
-    all_translated = []
-
-    for chunk_start in range(0, len(texts_to_translate), CHUNK_SIZE):
-        chunk = texts_to_translate[chunk_start:chunk_start + CHUNK_SIZE]
-        combined = SEPARATOR.join(chunk)
+    try:
         translator = GoogleTranslator(source='fr', target=target_lang)
+        translated_texts = translator.translate_batch(texts_to_translate)
+        
+        # Fallback si un fragment revient None
+        translated_texts = [
+            t if t is not None else original
+            for t, original in zip(translated_texts, texts_to_translate)
+        ]
+    except Exception as e:
+        print(f"    ⚠ Erreur: {e}, fichier gardé en français")
+        return html
 
-        try:
-            translated_combined = translator.translate(combined)
-            translated_chunk = translated_combined.split(SEPARATOR)
-
-            if len(translated_chunk) != len(chunk):
-                print(f"    ⚠ Mismatch chunk ({len(translated_chunk)} vs {len(chunk)}), fallback chunk original")
-                translated_chunk = chunk  # garde l'original pour ce chunk
-
-            all_translated.extend(translated_chunk)
-        except Exception as e:
-            print(f"    ⚠ Erreur: {e}, fallback chunk original")
-            all_translated.extend(chunk)
-
-    for idx, translated_text in zip(indices, all_translated):
+    for idx, translated_text in zip(indices, translated_texts):
         parts[idx] = translated_text
 
     return ''.join(parts)
