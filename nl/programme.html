@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl"> 
-  
+   
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +57,13 @@
     <span></span><span></span><span></span>
   </button>
 
-  <!--LANG_SWITCHER_PLACEHOLDER-->
+  <div class="lang-switcher">
+  <a href="/index.html">FR</a>
+  <span>|</span>
+  <a href="/nl/index.html">NL</a>
+  <span>|</span>
+  <a href="/en/index.html">EN</a>
+  </div>
   
 </nav>
 
@@ -244,41 +250,45 @@
   lettertype: cursief;
 }</style>
 
-<script>const dagen = ['Donderdag 20', 'Vrijdag 21', 'Zaterdag 22', 'Zondag 23'];
-const inhoud = [
-  `Na een week van collectieve bijeenkomst gaat het kamp rond het middaguur open.`,
-  `De twee dagen in het hart van ons kamp zijn ruimtes voor uitwisseling, discussie en workshops rond de vraag: "Hoe kunnen we samen vechten?" door iedereen voor iedereen!
-Of u nu een workshop of stand wilt aanbieden, een project wilt lanceren of een thema voor een conferentie wilt voorstellen
-- Aarzel niet om in te vullen<a href="https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054">onze oproep tot bijdragen</a> 👊. <br>
-<strong>Laten we samen het programma bouwen!</strong>`,
-  `De twee dagen in het hart van ons kamp zijn ruimtes voor uitwisseling, discussie en workshops rond de vraag: "Hoe kunnen we samen vechten?" door iedereen voor iedereen!
-Of u nu een workshop of stand wilt aanbieden, een project wilt lanceren of een thema voor een conferentie wilt voorstellen 
-- Aarzel niet om in te vullen<a href="https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054">onze oproep tot bijdragen</a> 👊.<br>
-<strong>Laten we samen het programma bouwen!</strong>`,
-  `Beoordeling van het festival en voorstellen voor toekomstige edities. Met wat vertrekken we? Wat is er nog over? Einde van het festival rond de middag! Tijd voor 3 dagen collectieve demontage en opslag!
+<script>
+const jours = ['Jeudi 20', 'Vendredi 21', 'Samedi 22', 'Dimanche 23'];
+const contenu = [
+  `Après une semaine de montage collectif, ouverture du camp autour de midi.`,
+  `Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : "Comment lutter ensemble ?" par tou.te.s pour tou.te.s!
+Si tu as un atelier ou un stand à proposer, un projet à lancer ou une thématique pour une conférence à proposer
+- N'hésite pas à remplir <a href="https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054"> notre appel à contributions </a> 👊. <br>
+<strong>Construisons le programme ensemble !</strong>`,
+  `Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : "Comment lutter ensemble ?" par tou.te.s pour tou.te.s!
+Si tu as un atelier ou un stand à proposer, un projet à lancer ou une thématique pour une conférence à proposer 
+- N'hésite pas à remplir <a href="https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054"> notre appel à contributions </a> 👊.<br>
+<strong>Construisons le programme ensemble !</strong>`,
+  `Critique du festival et propositions pour les prochaines éditions. Avec quoi on repart ? Qu'est-ce qui reste ? Fin du festival autour de midi ! Place à 3 jours de démontage et rangement collectif !`
 ];
 
-functie schakelDag(i, btn) {
-  // Bewaar de tekst van de huidige dag
-  const actief = document.querySelector('.dag-tab.actief');
-  als (actief) {
-    const idx = [...document.querySelectorAll('.day-tab')].indexOf(actief);
-    const ta = document.querySelector('.dag-editor tekstgebied');
-    if (ta) inhoud[idx] = ta.waarde;
+function switchDay(i, btn) {
+  // Sauvegarde le texte du jour actuel
+  const active = document.querySelector('.day-tab.active');
+  if (active) {
+    const idx = [...document.querySelectorAll('.day-tab')].indexOf(active);
+    const ta = document.querySelector('.day-editor textarea');
+    if (ta) contenu[idx] = ta.value;
   }
-  document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('actief'));
-  btn.classList.add('actief');
+  document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
   renderDay(i);
 }
 
-functie renderDay(i) {
-  document.getElementById('dayContent').innerHTML = `<div class="day-editor">
-      <span class="day-editor-label">Programma — ${dagen[i]}</span>
-      <p style="font-family:'Libre Baskerville',serif; font-size:.92rem; line-height:1.8; color:var(--encre);">${inhoud[i]}</p>
-    </div>`;
+function renderDay(i) {
+  document.getElementById('dayContent').innerHTML = `
+    <div class="day-editor">
+      <span class="day-editor-label">Programme — ${jours[i]}</span>
+      <p style="font-family:'Libre Baskerville',serif; font-size:.92rem; line-height:1.8; color:var(--encre);">${contenu[i]}</p>
+    </div>
+  `;
 }
 
-renderDay(0);</script>
+renderDay(0);
+</script>
 
 <footer>
   <div>
@@ -318,33 +328,37 @@ renderDay(0);</script>
   </div>
 </footer>
 
-<script>functie toggleDD(li) {
+<script>
+function toggleDD(li) {
   const was = li.classList.contains('open');
   document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
   if (!was) li.classList.add('open');
 }
-document.addEventListener('klik', e => {
+document.addEventListener('click', e => {
   if (!e.target.closest('.nav-links > li'))
     document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
 });
 document.getElementById('logoInput').addEventListener('change', function() {
-  const bestand = dit.bestanden[0]; if (!bestand) retourneert;
+  const file = this.files[0]; if (!file) return;
   const img = document.getElementById('logoImg');
-  img.src = URL.createObjectURL(bestand);
-  img.style.display = 'blok';
-  document.getElementById('logoPlaceholder').style.display = 'geen';
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
 });
-const obs = nieuwe IntersectionObserver(entries => {
-  entrys.forEach(e => { if (e.isIntersecting) e.target.classList.add('zichtbaar'); });
-}, {drempel:.12});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Maak de actieve taal vetgedrukt volgens de URL
+  // Met en gras la langue active selon l'URL
 document.querySelectorAll('.lang-switcher a').forEach(a => {
   if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
   else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
   else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
-});</script>
+});
+
+
+</script>
 
 </body>
 </html>
