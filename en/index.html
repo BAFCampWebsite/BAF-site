@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"> 
-  
+   
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -198,7 +198,8 @@
   </div>
 </footer>
 
-<script>/* ── NAV ── */
+<script>
+/* ── NAV ── */
 function toggleDD(li) {
   const was = li.classList.contains('open');
   document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
@@ -240,16 +241,16 @@ function applyHeroBg(src, op) {
   img.style.opacity = (op ?? 28) / 100;
 }
 
-/* Load from localStorage on startup */
-(function() {
-  const n = localStorage.getItem('baf_logo_nav');
+/* Charger depuis localStorage au démarrage */
+(function () {
+  const n  = localStorage.getItem('baf_logo_nav');
   const bg = localStorage.getItem('baf_hero_bg');
   const op = localStorage.getItem('baf_hero_opacity') || 28;
-  if (n) { applyNavLogo(n); applyFooterLogo(n); }
+  if (n)  { applyNavLogo(n); applyFooterLogo(n); }
   if (bg) applyHeroBg(bg, Number(op));
 })();
 
-/* Logo (navbar + footer share the same image) */
+/* Logo (navbar + footer partagent la même image) */
 document.getElementById('logoInput').addEventListener('change', async function () {
   const f = this.files[0]; if (!f) return;
   try {
@@ -257,11 +258,11 @@ document.getElementById('logoInput').addEventListener('change', async function (
     localStorage.setItem('baf_logo_nav', b);
     applyNavLogo(b);
     applyFooterLogo(b);
-  } catch { alert('File too large.'); }
+  } catch { alert('Fichier trop lourd.'); }
   this.value = '';
 });
 
-/* Background image of the hero */
+/* Image de fond du hero */
 document.getElementById('heroInput').addEventListener('change', async function () {
   const f = this.files[0]; if (!f) return;
   try {
@@ -269,16 +270,18 @@ document.getElementById('heroInput').addEventListener('change', async function (
     localStorage.setItem('baf_hero_bg', b);
     localStorage.setItem('baf_hero_opacity', 28);
     applyHeroBg(b, 28);
-  } catch { alert('Photo too heavy.'); }
+  } catch { alert('Photo trop lourde.'); }
   this.value = '';
 });
 
-  // Bold the active language according to the URL
+  // Met en gras la langue active selon l'URL
 document.querySelectorAll('.lang-switcher a').forEach(a => {
   if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
   else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
   else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
-});</script>
+});
+  
+</script>
 
 </body>
 </html>
