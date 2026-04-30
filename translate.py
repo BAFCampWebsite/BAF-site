@@ -8,29 +8,20 @@ ALL_HTML_FILES = [
     "financements.html", "nous-aider.html", "galerie.html",
 ]
 
-# Séparateur très improbable à traduire
-SEPARATOR = "XSEPX42XSEPX"
-
 def translate_html(html: str, target_lang: str) -> str:
     parts = re.split(r'(<[^>]+>)', html)
-
     texts_to_translate = []
     indices = []
     for i, part in enumerate(parts):
         if not part.startswith('<') and part.strip() != '':
             texts_to_translate.append(part)
             indices.append(i)
-
     if not texts_to_translate:
         return html
-
     print(f"    → {len(texts_to_translate)} fragments à traduire")
-
     try:
         translator = GoogleTranslator(source='fr', target=target_lang)
         translated_texts = translator.translate_batch(texts_to_translate)
-        
-        # Fallback si un fragment revient None
         translated_texts = [
             t if t is not None else original
             for t, original in zip(translated_texts, texts_to_translate)
@@ -38,11 +29,36 @@ def translate_html(html: str, target_lang: str) -> str:
     except Exception as e:
         print(f"    ⚠ Erreur: {e}, fichier gardé en français")
         return html
-
     for idx, translated_text in zip(indices, translated_texts):
         parts[idx] = translated_text
-
     return ''.join(parts)
+
+def protect_scripts(html: str):
+    scripts = []
+    def replace(m):
+        scripts.append(m.group(0))
+        return f'<!--SCRIPT_{len(scripts)-1}-->'
+    html = re.sub(r'<script[\s\S]*?</script>', replace, html)
+    return html, scripts
+
+def restore_scripts(html: str, scripts: list) -> str:
+    for i, script in enumerate(scripts):
+        html = html.replace(f'<!--SCRIPT_{i}-->', script)
+    return html
+
+def protect_lang_switcher(html: str):
+    pattern = r'(<div class="lang-switcher">.*?</div>)'
+    match = re.search(pattern, html, re.DOTALL)
+    if match:
+        original = match.group(1)
+        html = html.replace(original, '<!--LANG_SWITCHER_PLACEHOLDER-->')
+        return html, original
+    return html, None
+
+def restore_lang_switcher(html: str, original) -> str:
+    if original:
+        html = html.replace('<!--LANG_SWITCHER_PLACEHOLDER-->', original)
+    return html
 
 def fix_links(html: str, lang: str) -> str:
     def replace(m):
@@ -66,32 +82,6 @@ def fix_asset_paths(html: str) -> str:
         return f'src="../{src}"'
     return re.sub(r'src="([^"]+)"', replace, html)
 
-def protect_lang_switcher(html: str) -> str:
-    """Remplace le lang-switcher par un placeholder avant traduction"""
-    pattern = r'(<div class="lang-switcher">.*?</div>)'
-    match = re.search(pattern, html, re.DOTALL)
-    if match:
-        original = match.group(1)
-        html = html.replace(original, '<!--LANG_SWITCHER_PLACEHOLDER-->')
-    return html, original if match else None
-
-def restore_lang_switcher(html: str, original: str) -> str:
-    if original:
-        html = html.replace('<!--LANG_SWITCHER_PLACEHOLDER-->', original)
-    return html
-    
-def protect_scripts(html: str):
-    scripts = []
-    def replace(m):
-        scripts.append(m.group(0))
-        return f'<!--SCRIPT_{len(scripts)-1}-->'
-    html = re.sub(r'<script[\s\S]*?</script>', replace, html)
-    return html, scripts
-
-def restore_scripts(html: str, scripts: list) -> str:
-    for i, script in enumerate(scripts):
-        html = html.replace(f'<!--SCRIPT_{i}-->', script)
-    return html
 
 files_to_translate = sys.argv[1:] if len(sys.argv) > 1 else ALL_HTML_FILES
 
@@ -100,30 +90,32 @@ for filename in files_to_translate:
     if not path.exists():
         print(f"  ⚠ {filename} introuvable, skip")
         continue
+
     src = path.read_text(encoding="utf-8")
+
     for lang in LANGUAGES:
-    out = pathlib.Path(lang) / filename
-    print(f"Translating {filename} → {lang}...")
-    
-    # Protège les scripts et le lang-switcher avant traduction
-    protected, scripts = protect_scripts(src)
-    protected, lang_switcher = protect_lang_switcher(protected)
-    
-    # Traduit
-    translated = translate_html(protected, lang)
-    
-    # Restore les éléments protégés
-    translated = restore_scripts(translated, scripts)
-    translated = restore_lang_switcher(translated, lang_switcher)
-    
-    # Fix les chemins
-    translated = fix_links(translated, lang)
-    translated = fix_lang_attr(translated, lang)
-    translated = fix_css_path(translated)
-    translated = fix_asset_paths(translated)
-    
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(translated, encoding="utf-8")
-    print(f"  ✓ {out}")
+        out = pathlib.Path(lang) / filename
+        print(f"Translating {filename} → {lang}...")
+
+        # Protège les scripts et le lang-switcher avant traduction
+        protected, scripts = protect_scripts(src)
+        protected, lang_switcher = protect_lang_switcher(protected)
+
+        # Traduit
+        translated = translate_html(protected, lang)
+
+        # Restore les éléments protégés
+        translated = restore_scripts(translated, scripts)
+        translated = restore_lang_switcher(translated, lang_switcher)
+
+        # Fix les chemins
+        translated = fix_links(translated, lang)
+        translated = fix_lang_attr(translated, lang)
+        translated = fix_css_path(translated)
+        translated = fix_asset_paths(translated)
+
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(translated, encoding="utf-8")
+        print(f"  ✓ {out}")
 
 print("Done.")
