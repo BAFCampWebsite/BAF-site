@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl"> 
+<html lang="nl">  
   
 <head>
   <meta charset="UTF-8">
@@ -59,7 +59,13 @@
     <span></span><span></span><span></span>
   </button>
 
-  <!--LANG_SWITCHER_PLACEHOLDER-->
+  <div class="lang-switcher">
+    <a href="/index.html">FR</a>
+    <span>|</span>
+    <a href="/nl/index.html">NL</a>
+    <span>|</span>
+    <a href="/en/index.html">EN</a>
+  </div>
     
 </nav>
 
@@ -75,7 +81,7 @@
 <div class="page-content">
   <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:40px;">
     <div>
-      <h2 style="margin-top:0">Foto's van het festival</h2>
+      <h2 style="margin-top:0">Festivalfoto's</h2>
       <p>Sleep uw foto's en zet ze neer of gebruik de knop om ze toe te voegen.</p>
     </div>
     <label class="btn btn-red" for="galleryInput" style="cursor:pointer">📸 Voeg foto's toe</label>
@@ -109,22 +115,24 @@
 .lightbox.open {display:flex; }
 .lightbox img {max-breedte:90vw; maximale hoogte: 90vh; grensradius: 4px; box-shadow:0 0 80px rgba(212,43,43,.25); }
 .lightbox-close { positie: vast; boven:24px; rechts:32px; lettergrootte: 2rem; kleur:var(--wit); cursor:aanwijzer; achtergrond: geen; rand: geen; }</style>
-<script>laat galerij=[];
+<script>
+let gallery=[];
 document.getElementById('galleryInput').addEventListener('change',function(){ addImages([...this.files]); this.value=''; });
 function addImages(files){ files.filter(f=>f.type.startsWith('image/')).forEach(f=>{ gallery.push(URL.createObjectURL(f)); }); renderGallery(); }
-functie renderGallery(){
+function renderGallery(){
   const grid=document.getElementById('galleryGrid');
-  if(!gallery.length){ grid.innerHTML='<div class="gallery-empty"><div style="font-size:3rem">📸</div><p>Sleep afbeeldingen hierheen<br>of klik op "Foto's toevoegen"</p></div>'; opbrengst; }
+  if(!gallery.length){ grid.innerHTML='<div class="gallery-empty"><div style="font-size:3rem">📸</div><p>Glissez-déposez des images ici<br>ou cliquez sur "Ajouter des photos"</p></div>'; return; }
   grid.innerHTML=gallery.map((url,i)=>`<div class="gallery-item" onclick="openLightbox('${url}')"><img src="../${url}" alt="" loading="lazy"><button class="remove-btn" onclick="removeImg(event,${i})">✕</button></div>`).join('');
 }
-functie removeImg(e,i){ e.stopPropagation(); galerij.splice(i,1); renderGallery(); }
-functie handleDragOver(e){ e.preventDefault(); e.currentTarget.classList.add('drag-over'); }
-functie handleDragLeave(e){ e.currentTarget.classList.remove('drag-over'); }
-functie handleDrop(e){ e.preventDefault(); e.currentTarget.classList.remove('slepen'); addImages([...e.dataTransfer.files]); }
-functie openLightbox(src){ document.getElementById('lightboxImg').src=src; document.getElementById('lightbox').classList.add('open'); }
+function removeImg(e,i){ e.stopPropagation(); gallery.splice(i,1); renderGallery(); }
+function handleDragOver(e){ e.preventDefault(); e.currentTarget.classList.add('drag-over'); }
+function handleDragLeave(e){ e.currentTarget.classList.remove('drag-over'); }
+function handleDrop(e){ e.preventDefault(); e.currentTarget.classList.remove('drag-over'); addImages([...e.dataTransfer.files]); }
+function openLightbox(src){ document.getElementById('lightboxImg').src=src; document.getElementById('lightbox').classList.add('open'); }
 function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLightbox(); });
-document.querySelector('.lightbox-close').addEventListener('klik',closeLightbox);</script>
+document.querySelector('.lightbox-close').addEventListener('click',closeLightbox);
+</script>
 
 
 <footer>
@@ -165,33 +173,36 @@ document.querySelector('.lightbox-close').addEventListener('klik',closeLightbox)
 </footer>
 
 
-<script>functie toggleDD(li) {
+<script>
+function toggleDD(li) {
   const was = li.classList.contains('open');
   document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
   if (!was) li.classList.add('open');
 }
-document.addEventListener('klik', e => {
+document.addEventListener('click', e => {
   if (!e.target.closest('.nav-links > li'))
     document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
 });
 document.getElementById('logoInput').addEventListener('change', function() {
-  const bestand = dit.bestanden[0]; if (!bestand) retourneert;
+  const file = this.files[0]; if (!file) return;
   const img = document.getElementById('logoImg');
-  img.src = URL.createObjectURL(bestand);
-  img.style.display = 'blok';
-  document.getElementById('logoPlaceholder').style.display = 'geen';
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
 });
-const obs = nieuwe IntersectionObserver(entries => {
-  entrys.forEach(e => { if (e.isIntersecting) e.target.classList.add('zichtbaar'); });
-}, {drempel:.12});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Maak de actieve taal vetgedrukt volgens de URL
+  // Met en gras la langue active selon l'URL
 document.querySelectorAll('.lang-switcher a').forEach(a => {
   if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
   else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
   else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
-});</script>
+});
+  
+</script>
 
 </body>
 </html>

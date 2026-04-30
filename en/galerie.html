@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">  
   
 <head>
   <meta charset="UTF-8">
@@ -81,7 +81,7 @@
 <div class="page-content">
   <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:40px;">
     <div>
-      <h2 style="margin-top:0">Photos from the festival</h2>
+      <h2 style="margin-top:0">Festival photos</h2>
       <p>Drag and drop your photos or use the button to add them.</p>
     </div>
     <label class="btn btn-red" for="galleryInput" style="cursor:pointer">📸 Add photos</label>
@@ -115,12 +115,13 @@
 .lightbox.open { display:flex; }
 .lightbox img { max-width:90vw; max-height:90vh; border-radius:4px; box-shadow:0 0 80px rgba(212,43,43,.25); }
 .lightbox-close { position:fixed; top:24px; right:32px; font-size:2rem; color:var(--white); cursor:pointer; background:none; border:none; }</style>
-<script>let gallery=[];
+<script>
+let gallery=[];
 document.getElementById('galleryInput').addEventListener('change',function(){ addImages([...this.files]); this.value=''; });
 function addImages(files){ files.filter(f=>f.type.startsWith('image/')).forEach(f=>{ gallery.push(URL.createObjectURL(f)); }); renderGallery(); }
 function renderGallery(){
   const grid=document.getElementById('galleryGrid');
-  if(!gallery.length){ grid.innerHTML='<div class="gallery-empty"><div style="font-size:3rem">📸</div><p>Drag and drop images here<br>or click "Add photos"</p></div>'; return; }
+  if(!gallery.length){ grid.innerHTML='<div class="gallery-empty"><div style="font-size:3rem">📸</div><p>Glissez-déposez des images ici<br>ou cliquez sur "Ajouter des photos"</p></div>'; return; }
   grid.innerHTML=gallery.map((url,i)=>`<div class="gallery-item" onclick="openLightbox('${url}')"><img src="../${url}" alt="" loading="lazy"><button class="remove-btn" onclick="removeImg(event,${i})">✕</button></div>`).join('');
 }
 function removeImg(e,i){ e.stopPropagation(); gallery.splice(i,1); renderGallery(); }
@@ -130,7 +131,8 @@ function handleDrop(e){ e.preventDefault(); e.currentTarget.classList.remove('dr
 function openLightbox(src){ document.getElementById('lightboxImg').src=src; document.getElementById('lightbox').classList.add('open'); }
 function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLightbox(); });
-document.querySelector('.lightbox-close').addEventListener('click',closeLightbox);</script>
+document.querySelector('.lightbox-close').addEventListener('click',closeLightbox);
+</script>
 
 
 <footer>
@@ -171,7 +173,8 @@ document.querySelector('.lightbox-close').addEventListener('click',closeLightbox
 </footer>
 
 
-<script>function toggleDD(li) {
+<script>
+function toggleDD(li) {
   const was = li.classList.contains('open');
   document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
   if (!was) li.classList.add('open');
@@ -192,12 +195,14 @@ const obs = new IntersectionObserver(entries => {
 }, {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Bold the active language according to the URL
+  // Met en gras la langue active selon l'URL
 document.querySelectorAll('.lang-switcher a').forEach(a => {
   if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
   else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
   else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
-});</script>
+});
+  
+</script>
 
 </body>
 </html>
