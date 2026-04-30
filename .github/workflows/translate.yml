@@ -22,8 +22,6 @@ jobs:
       - run: pip install deep-translator
 
       - name: Run translation script
-        env:
-          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: python translate.py
 
       - name: Commit translated files
