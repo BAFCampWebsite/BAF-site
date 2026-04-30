@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"> 
+   
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -211,7 +212,8 @@
     </div>
   </footer>
 
-  <script>function toggleDD(li) {
+  <script>
+    function toggleDD(li) {
       const was = li.classList.contains('open');
       document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
       if (!was) li.classList.add('open');
@@ -240,12 +242,14 @@
 
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    // Bold the active language according to the URL
+    // Met en gras la langue active selon l'URL
 document.querySelectorAll('.lang-switcher a').forEach(a => {
   if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
   else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
   else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
-});</script>
+});
+    
+  </script>
 
 </body>
 </html>
