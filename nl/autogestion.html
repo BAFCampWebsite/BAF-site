@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vrijwilligersregistraties — BAF Camp</title>
+  <link rel="stylesheet" href="/nl/style.css">
+</head>
+  
+<body>
+  <input type="file" id="logoInput" accept="image/*">
+ 
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap" >
+      <img id="logoImg" src="../BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF<span>KAMP</span></span>
+  </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/nl/index.html">Welkom</a></li>
+      <li><a href="/nl/programme.html">Programma</a></li>
+      <li>
+        <button onclick="toggleDD(this.parentElement)">Functioneren<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown">
+          <a href="/nl/financements.html"><span class="di">💰</span>Financiering</a>
+          <a href="/nl/charte.html"><span class="di">📜</span>Ons handvest</a>
+          <a href="/nl/autogestion.html"><span class="di">🙌</span>Zelfbeheer</a>
+        </div>
+      </li>
+      <li>
+        <button onclick="toggleDD(this.parentElement)">Informatie<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown">
+          <a href="/nl/infos.html#acces"><span class="di">📍</span>Kom daar</a>
+          <a href="/nl/infos.html#restauration"><span class="di">🍔</span>Voed jezelf</a>
+          <a href="/nl/infos.html#camping"><span class="di">⛺</span>De camping</a>
+          <a href="/nl/infos.html#bambinerie"><span class="di">🧸</span>De Babykamer</a>
+        </div>
+      </li>
+      <li>
+        <button onclick="toggleDD(this.parentElement)">Help ons<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown">
+          <a href="/nl/nous-aider.html"><span class="di">❤️</span>Doe een donatie</a>
+          <a href="/nl/autogestion.html"><span class="di">🙌</span>Inschrijvingen van vrijwilligers</a>
+          <a href="/nl/nous-aider.html#partager"><span class="di">📢</span>Deel</a>
+          <a href="/nl/nous-aider.html#materiel"><span class="di">🔌</span>Apparatuur lenen</a>
+        </div>
+      </li>
+      <li><a href="/nl/billetterie.html" class="btn nav-cta">Gratis prijskaartje →</a></li>
+    </ul>
+
+    <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  <div class="lang-switcher">
+  <a href="/index.html">NL</a>
+  <span>|</span>
+  <a href="/nl/index.html">NL</a>
+  <span>|</span>
+  <a href="/en/index.html">IN</a>
+  </div>
+  
+  </nav>
+
+  <div class="page-hero anim">
+    <p class="page-hero-eyebrow">✦ Vrijwilligerswerk</p>
+    <h1 class="page-hero-title">Zelfbeheer</h1>
+    <p class="page-hero-sub">Enige informatie over hoe wij werken</p>
+  </div>
+
+  <div class="page-content">
+
+    <div class="reveal">
+      <h2>Onze structuur</h2>
+      <p>Het BAF Camp is een zelfbeheerd evenement. De organisatiewijze is gebaseerd op een algemene coördinatie, bestaande uit verschillende werkgroepen, die zich bezighouden met de verschillende aspecten die nodig zijn voor het succes ervan. De organisatie van dit kamp gebeurt in een poging tot horizontaalheid. Beslissingen worden genomen met instemming en wij pleiten voor een anti-autoritaire houding. De organiserende groep bestaat uit mensen die samen leren dit soort evenementen te creëren, dus staat open voor iedereen. Er zijn geen vaardigheden vereist.</p>
+      <div style="display: inline-block; margin: 40px auto 48px auto; text-align: center; width: 100%;">
+        <div style="display: inline-block; border: 3px solid var(--encre); border-radius: 8px; box-shadow: 6px 6px 0 var(--encre); background: var(--rose); padding: 18px 60px; position: relative;">
+          <a href="mailto:Activismcampbelgium@proton.me?subject=Rejoindre%20l%27organisation%20du%20BAF" style="font-family: 'Boogaloo', cursive; font-size: 2.6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--creme); text-shadow: 3px 3px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);">Sluit je bij ons aan!</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal gt-section">
+      <h2>Werkgroepen</h2>
+      <p>Hier is de lijst met de verschillende GT's. Stuur een e-mail door op de knop hierboven te klikken als u zich bij een van hen wilt aansluiten.</p>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-icon">💚</span>
+          <h3 class="card-title">GT-zorg</h3>
+          <p class="card-text">Denk na over de processen die praktisch en theoretisch moeten worden ingevoerd, zodat de onderdrukking niet opnieuw optreedt tijdens de organisatie van het festival, maar ook tijdens de voortgang ervan.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🗣️</span>
+          <h3 class="card-title">GT-communicatie</h3>
+          <p class="card-text">Beheer sociale netwerken, website, externe communicatie van het evenement.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🫶</span>
+          <h3 class="card-title">GT-vrijwilligers</h3>
+          <p class="card-text">Zorg voor de logistiek van het vrijwilligerswerk op de kamplocatie.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">⚒️</span>
+          <h3 class="card-title">GT Logistiek</h3>
+          <p class="card-text">Plan de benodigde uitrusting voor het festival, evenals de logistiek van de site (locaties van de verschillende festivalcentra, aankomst- en vertrekbeheer, enz.)</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🎤</span>
+          <h3 class="card-title">GT-programmering</h3>
+          <p class="card-text">Stel workshopthema’s voor voor de festivalprogrammering en neem contact op met deze collectieven/personen.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">💰</span>
+          <h3 class="card-title">GT Geld &amp; Legaal</h3>
+          <p class="card-text">Bepaal een budget voor het festival, neem contact op met donateurs, denk na over de juridische bescherming van het festival en vraag de benodigde vergunningen aan.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🔄</span>
+          <h3 class="card-title">GT-coördinatie</h3>
+          <p class="card-text">Ondersteunt andere groepen en zorgt voor een vloeiende communicatie tussen de verschillende GT’s.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h2>Vrijwilligerswerk</h2>
+      <p>Het is ons doel om dit evenement ter plaatse op een zo horizontaal en zelfsturend mogelijke manier te laten plaatsvinden. Dit is de reden waarom, om de grens tussen vrijwilligers en vrijwilligers zoveel mogelijk uit te wissen. ‘consumenten’ van het festival, idealiter besteden alle deelnemers een beetje van hun tijd om dit festival mogelijk te maken. Dat hebben we berekend als alle vrijwilligers werken<strong>2 uur per dag</strong>, dan moet het festival in eigen beheer kunnen opereren. Bovendien kan elke taak worden aangepast als u een handicap heeft. Aarzel niet om jezelf aan te melden als vrijwilliger door onderstaand formulier in te vullen. Anders kunt u op de site taken vinden die u in realtime kunt uitvoeren!<br>
+        <br>Het kamp wordt samen opgezet.<strong>We hebben hulp nodig!</strong>We zullen feesttenten en podia moeten opzetten, maar ook het decor moeten creëren, ruimtes moeten bedenken en infrastructuur moeten bouwen met behulp van pallets volgens onze wensen! Er moeten nog veel dingen worden uitgevonden, dus kom vanaf 16 augustus meewerken aan de creatie van deze ruimte! Inschrijvingen in onderstaand formulier 👇.<br>Maar vergeet het vooral niet<strong href="/nl/billeterie.html">neem uw plaats in op het evenement</strong>
+      </p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="reveal">
+      <h2>Missies beschikbaar</h2>
+      <ul>
+        <li>Kom vanaf 16 augustus helpen met het opzetten van het kamp</li>
+        <li>Thuis &amp; vrijwilligersregistratie</li>
+        <li>de bar verzorgen</li>
+        <li>Koken voor 600 personen</li>
+        <li>Beeldregistratie en communicatie</li>
+        <li>Zorg en actief luisteren (er wordt training gegeven)</li>
+        <li>Hygiëne</li>
+        <li>Parkeren</li>
+        <li>Medic (ervaring vereist)</li>
+      </ul>
+    </div>
+
+    <div class="reveal">
+      <h2>Registratieformulier</h2>
+      <p>Wil jij al betrokken raken bij het kamp en meehelpen dit evenement te laten plaatsvinden? Het zou voor ons super waardevol zijn als u onderstaand formulier invult, zodat wij alvast op onze sterke punten kunnen rekenen. Wij nemen in augustus contact met u op zodra uw bericht is ontvangen.</p>
+
+      <div style="display: inline-block; margin: 40px auto 48px auto; text-align: center; width: 100%;">
+        <div style="display: inline-block; border: 3px solid var(--encre); border-radius: 8px; box-shadow: 6px 6px 0 var(--encre); background: var(--rose); padding: 18px 60px; position: relative;">
+          <a href="https://cryptpad.fr/form/#/2/form/view/w2COCpy87tL9ppr7daj-8W09S1JIWaiXw4cKyBCqdeE/" style="font-family: 'Boogaloo', cursive; font-size: 2.6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--creme); text-shadow: 3px 3px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);">Registratieformulier</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h2>Programmering</h2>
+      <p>En tot slot: een herinnering dat programmeren ook een ruimte is voor horizontaalheid en samenwerking. Wilt u een thema, een activiteit uitdragen of voorstellen doen voor een stand die u graag wilt organiseren, dan kunt u hier terecht:</p>
+      <div style="display: inline-block; margin: 40px auto 48px auto; text-align: center; width: 100%;">
+        <div style="display: inline-block; border: 3px solid var(--encre); border-radius: 8px; box-shadow: 6px 6px 0 var(--encre); background: var(--rose); padding: 18px 60px; position: relative;">
+          <a href="https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054" style="font-family: 'Boogaloo', cursive; font-size: 2.6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--creme); text-shadow: 3px 3px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);">Programmeervoorstel!</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.page-content -->
+
+  <footer>
+    <div>
+      <div class="footer-logo">
+        <img src="../BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+      </div>
+      <p class="footer-tagline">Kom eens een klapje geven!</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigatie</h4>
+      <ul>
+        <li><a href="/nl/index.html">Welkom</a></li>
+        <li><a href="/nl/programme.html">Programma</a></li>
+        <li><a href="/nl/nous-aider.html">Help ons</a></li>
+        <li><a href="/nl/infos.html">Praktische informatie</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Functioneren</h4>
+      <ul>
+        <li><a href="/nl/financements.html">Financiering</a></li>
+        <li><a href="/nl/charte.html">Charter</a></li>
+        <li><a href="/nl/autogestion.html">Zelfbeheer</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Netwerken</h4>
+      <ul>
+        <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+        <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Sluit je aan bij de signaallus</a></li>
+        <li><a href="mailto:activismcampbelgium@proton.me">Onze protonenpost</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>BAF Camp 2026 — door en voor iedereen</span>
+      <span>Kom eens een klapje geven!</span>
+    </div>
+  </footer>
+
+  <script>functie toggleDD(li) {
+      const was = li.classList.contains('open');
+      document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+      if (!was) li.classList.add('open');
+    }
+
+    document.addEventListener('klik', e => {
+      if (!e.target.closest('.nav-links > li')) {
+        document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+      }
+    });
+
+    document.getElementById('logoInput').addEventListener('wijzigen', functie () {
+      const bestand = dit.bestanden[0];
+      if (!bestand) retourneert;
+      const img = document.getElementById('logoImg');
+      img.src = URL.createObjectURL(bestand);
+      img.style.display = 'blok';
+      document.getElementById('logoPlaceholder').style.display = 'geen';
+    });
+
+    const obs = nieuwe IntersectionObserver(entries => {
+      entry.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('zichtbaar');
+      });
+    }, {drempel: 0,12 });
+
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Maak de actieve taal vetgedrukt volgens de URL
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});</script>
+
+</body>
+</html>
