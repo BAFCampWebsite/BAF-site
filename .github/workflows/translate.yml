@@ -1,19 +1,20 @@
 name: Translate site
-
 on:
   push:
     branches: [main]
     paths:
-      - "**.html"   # se déclenche seulement si tu modifies un HTML
-      
+      - "**.html"
+
 permissions:
   contents: write
-  
+
 jobs:
   translate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - uses: actions/setup-python@v5
         with:
@@ -21,8 +22,15 @@ jobs:
 
       - run: pip install deep-translator
 
+      - name: Get changed HTML files
+        id: changed
+        run: |
+          FILES=$(git diff --name-only HEAD~1 HEAD | grep '\.html' | grep -v '^en/' | grep -v '^nl/' | tr '\n' ' ')
+          echo "files=$FILES" >> $GITHUB_OUTPUT
+          echo "Fichiers modifiés : $FILES"
+
       - name: Run translation script
-        run: python translate.py
+        run: python translate.py ${{ steps.changed.outputs.files }}
 
       - name: Commit translated files
         run: |
