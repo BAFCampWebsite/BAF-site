@@ -8,41 +8,49 @@ ALL_HTML_FILES = [
     "financements.html", "nous-aider.html", "galerie.html",
 ]
 
-SEPARATOR = "\n|||SEP|||\n"
+# Séparateur très improbable à traduire
+SEPARATOR = "XSEPX42XSEPX"
 
 def translate_html(html: str, target_lang: str) -> str:
     parts = re.split(r'(<[^>]+>)', html)
-    
-    # Sépare les textes à traduire des balises
+
     texts_to_translate = []
     indices = []
     for i, part in enumerate(parts):
         if not part.startswith('<') and part.strip() != '':
             texts_to_translate.append(part)
             indices.append(i)
-    
+
     if not texts_to_translate:
         return html
-    
-    # Un seul appel API avec tout le texte séparé par un marqueur
-    combined = SEPARATOR.join(texts_to_translate)
-    translator = GoogleTranslator(source='fr', target=target_lang)
-    
-    try:
-        translated_combined = translator.translate(combined)
-        translated_texts = translated_combined.split(SEPARATOR)
-    except Exception as e:
-        print(f"  ⚠ Erreur traduction ({target_lang}): {e}")
-        return html
-    
-    # Si Google a bouffé des séparateurs, on remet les textes originaux
-    if len(translated_texts) != len(texts_to_translate):
-        print(f"  ⚠ Mismatch séparateurs ({len(translated_texts)} vs {len(texts_to_translate)}), fallback texte original")
-        return html
-    
-    for idx, translated_text in zip(indices, translated_texts):
+
+    print(f"    → {len(texts_to_translate)} fragments à traduire")
+
+    # Envoie par chunks de 50 fragments max pour éviter les limites Google
+    CHUNK_SIZE = 50
+    all_translated = []
+
+    for chunk_start in range(0, len(texts_to_translate), CHUNK_SIZE):
+        chunk = texts_to_translate[chunk_start:chunk_start + CHUNK_SIZE]
+        combined = SEPARATOR.join(chunk)
+        translator = GoogleTranslator(source='fr', target=target_lang)
+
+        try:
+            translated_combined = translator.translate(combined)
+            translated_chunk = translated_combined.split(SEPARATOR)
+
+            if len(translated_chunk) != len(chunk):
+                print(f"    ⚠ Mismatch chunk ({len(translated_chunk)} vs {len(chunk)}), fallback chunk original")
+                translated_chunk = chunk  # garde l'original pour ce chunk
+
+            all_translated.extend(translated_chunk)
+        except Exception as e:
+            print(f"    ⚠ Erreur: {e}, fallback chunk original")
+            all_translated.extend(chunk)
+
+    for idx, translated_text in zip(indices, all_translated):
         parts[idx] = translated_text
-    
+
     return ''.join(parts)
 
 def fix_links(html: str, lang: str) -> str:
@@ -57,7 +65,8 @@ def fix_lang_attr(html: str, lang: str) -> str:
     return html.replace('<html lang="fr">', f'<html lang="{lang}">', 1)
 
 def fix_css_path(html: str) -> str:
-    return re.sub(r'href="(?:\.\/)?style\.css"', 'href="../style.css"', html)
+    # Remplace style.css par ../style.css (chemin relatif correct)
+    return re.sub(r'href="(?:[./]*/)*style\.css"', 'href="../style.css"', html)
 
 def fix_asset_paths(html: str) -> str:
     def replace(m):
@@ -67,7 +76,6 @@ def fix_asset_paths(html: str) -> str:
         return f'src="../{src}"'
     return re.sub(r'src="([^"]+)"', replace, html)
 
-# Prend les fichiers en argument (si passés depuis le workflow), sinon tous
 files_to_translate = sys.argv[1:] if len(sys.argv) > 1 else ALL_HTML_FILES
 
 for filename in files_to_translate:
