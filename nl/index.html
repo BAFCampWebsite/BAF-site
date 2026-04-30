@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="nl">
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BAF-kamp 2026</title>
-  <link rel="stylesheet" href="/nl/style.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
   
 <body>
@@ -208,7 +209,7 @@ document.addEventListener('klik', e => {
     document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
 });
 
-/* ── ONTHULLEN ── */
+/* ── ONTHULLING ── */
 const obs = nieuwe IntersectionObserver(entries =>
   entry.forEach(e => { if (e.isIntersecting) e.target.classList.add('zichtbaar'); }),
   { drempel: .1 }
