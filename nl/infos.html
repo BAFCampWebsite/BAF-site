@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktische informatie — BAF Camp</title>
+  <link rel="stylesheet" href="/nl/style.css">
+  <style>.info-raster {
+      weergave: raster;
+      grid-template-kolommen: repeat(auto-fit, minmax(260px, 1fr));
+      opening: 20px;
+      marge-onder: 48px;
+    }
+    .info-kaart {
+      achtergrond: var(--wit-vuil);
+      rand: var(--contour-lg);
+      randradius: 12px;
+      opvulling: 28px 24px;
+      box-shadow: var(--lg-shadow);
+      overgang: transformatie .15s;
+      positie: relatief; overloop: verborgen;
+    }
+    .info-kaart::na {
+      inhoud: '';
+      positie: absoluut; bovenaan: 0; links: 0; rechts: 0; hoogte: 5px;
+      achtergrond: var(--roos);
+      randradius: 12px 12px 0 0;
+    }
+    .info-card:nth-child(2n)::after { achtergrond: var(--vert); }
+    .info-card:hover { transform: vertalen(-3px, -3px); }
+    .info-kaart-icon {lettergrootte: 2rem; marge-onder: 12px; weergave:blok; }
+    .info-kaart-titel {
+      lettertypefamilie: 'Boogaloo', cursief;
+      lettergrootte: 1.3rem; letterafstand: .04em;
+      kleur: var(--groen);
+      marge-onder: 10px;
+      tekstschaduw: 1px 1px 0 var(--inkt), -1px -1px 0 var(--inkt), 1px -1px 0 var(--inkt), -1px 1px 0 var(--inkt);
+    }
+    .info-kaart p {
+      lettertypefamilie: 'Libre Baskerville', serif;
+      lettergrootte: .84rem; lijnhoogte: 1,7; kleur: var(--grijze inkt);
+      marge-onder: 0;
+    }
+
+    /* Sectie met afwisselende achtergrond */
+    .sectie-alt {
+      achtergrond: var(--roos);
+      marge: 0 -80px;
+      opvulling: 48px 80px;
+      rand bovenaan: 3px effen var(--inkt);
+      rand-onder: 3px effen var(--inkt);
+      positie: relatief; overloop: verborgen;
+    }
+    .section-alt::before {
+      inhoud: '';
+      positie: absoluut; inzet: 0;
+      achtergrondafbeelding: radiaal verloop (cirkel, rgba (255,255,255,.08) 1px, transparant 1px);
+      achtergrondgrootte: 14px 14px; pointer-gebeurtenissen: geen;
+    }
+    .sectie-alt h2 {
+      kleur: var(--crème) !belangrijk;
+      tekstschaduw: 2px 2px 0 var(--inkt), -1px -1px 0 var(--inkt), 1px -1px 0 var(--inkt), -1px 1px 0 var(--inkt) !belangrijk;
+    }
+    .section-alt .info-card-title { kleur: var(--roze); }
+    .section-alt .info-card::after { achtergrond: var(--vert); }
+    .section-alt .info-card:nth-child(2n)::after { achtergrond: var(--rose-dark); }
+
+    /* Tekstinfoblok + pictogram */
+    .info-blok {
+      weergave:flexibel; opening: 20px; align-items: flex-start;
+      opvulling: 20px;
+      achtergrond: var(--wit-vuil);
+      rand: var(--omtrek);
+      grensradius: 10px;
+      vakschaduw: var(--schaduw);
+      marge-onder: 16px;
+      overgang: transformatie .15s;
+    }
+    .info-block:hover { transform: vertalen(-2px, -2px); }
+    .info-block-icon {lettergrootte: 1.8rem; flex-krimpen: 0; lijnhoogte: 1; }
+    .info-blok-body {}
+    .info-bloktitel {
+      lettertypefamilie: 'Boogaloo', cursief;
+      lettergrootte: 1.1rem; kleur: var(--groen); marge-onder: 6px;
+      tekstschaduw: 1px 1px 0 var(--inkt), -1px -1px 0 var(--inkt), 1px -1px 0 var(--inkt), -1px 1px 0 var(--inkt);
+    }
+    .info-blok p {
+      lettertypefamilie: 'Libre Baskerville', serif;
+      lettergrootte: .84rem; lijnhoogte: 1,7; kleur: var(--grijze inkt); marge-onder: 0;
+    }
+
+    /* Profielstrook */
+    .sectielabel {
+      display: inline-flex; items uitlijnen: centreren; opening: 8px;
+      lettertypefamilie: 'Space Mono', monospace;
+      lettergrootte: .65rem; lettertypegewicht: 700; letterafstand: .22em; teksttransformatie: hoofdletters;
+      achtergrond: var(--groen); kleur: var(--crème);
+      opvulling: 4px 12px; randradius: 4px;
+      rand: 1px effen var(--inkt); vakschaduw: 2px 2px 0 var(--inkt);
+      marge-onder: 14px;
+    }
+
+    @media(max. breedte: 900px) {
+      .section-alt {marge: 0 -20px; opvulling: 40px 20px; }
+    }</style>
+</head>
+<body>
+
+<input type="file" id="logoInput" accept="image/*">
+
+<!-- ══ NAVBAR ══ -->
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap" >
+      <img id="logoImg" src="../BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF<span>KAMP</span></span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/nl/index.html">Welkom</a></li>
+    <li><a href="/nl/programme.html">Programma</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Functioneren<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/nl/financements.html"><span class="di">💰</span>Financiering</a>
+        <a href="/nl/charte.html"><span class="di">📜</span>Ons handvest</a>
+        <a href="/nl/autogestion.html"><span class="di">🙌</span>Zelfbeheer</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Informatie<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/nl/infos.html#acces"><span class="di">📍</span>Kom daar</a>
+        <a href="/nl/infos.html#restauration"><span class="di">🍔</span>Voed jezelf</a>
+        <a href="/nl/infos.html#camping"><span class="di">⛺</span>De camping</a>
+        <a href="/nl/infos.html#bambinerie"><span class="di">🧸</span>De Babykamer</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Help ons<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/nl/nous-aider.html"><span class="di">❤️</span>Doe een donatie</a>
+        <a href="/nl/autogestion.html"><span class="di">🙌</span>Inschrijvingen van vrijwilligers</a>
+        <a href="/nl/nous-aider.html#partager"><span class="di">📢</span>Deel</a>
+        <a href="/nl/nous-aider.html#materiel"><span class="di">🔌</span>Apparatuur lenen</a>
+      </div>
+    </li>
+    <li><a href="/nl/billetterie.html" class="btn nav-cta">Gratis prijskaartje →</a></li>
+  </ul>
+
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="lang-switcher">
+  <a href="/index.html">NL</a>
+  <span>|</span>
+  <a href="/nl/index.html">NL</a>
+  <span>|</span>
+  <a href="/en/index.html">IN</a>
+  </div>
+  
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="page-hero">
+  <div class="page-hero-eyebrow">Praktisch</div>
+  <h1 class="page-hero-title">Weet alles</h1>
+  <p class="page-hero-sub">Kom naar de plek, slaap daar en eet daar - alles wat je nodig hebt om te komen logeren in BAF Camp 2026.</p>
+</section>
+  </div>
+
+<div class="page-content">
+
+
+  <!-- Bandeau site en construction -->
+  <div class="reveal" style="margin-bottom:32px;">
+    <div class="construction-banner">🚧 Site in aanbouw — volledige en definitieve informatie wordt binnenkort bekend gemaakt!</div>
+  </div>
+<!-- ══ CONTENU ══ -->
+<div class="page-content">
+
+  <!-- ACCÈS -->
+  <section id="acces">
+    <p class="section-label">📍 Hoe kom je er?</p>
+    <h2>Toegang tot het festival</h2>
+
+    <div class="info-grid">
+      
+      <div class="info-card">
+        <span class="info-card-icon">🚆</span>
+        <h3 class="info-card-title">Trein</h3>
+        <p>De site ligt op 300 meter lopen van het Grupont-station</p>
+      </div>
+      <div class="info-card">
+        <span class="info-card-icon">🚲</span>
+        <h3 class="info-card-title">Fiets</h3>
+        <p>Mogelijkheid om de plaats per fiets te bereiken. Parkeren en reparatie van apparatuur op het terrein.</p>
+      </div><div class="info-card">
+        <span class="info-card-icon">🚗</span>
+        <h3 class="info-card-title">Auto</h3>
+        <p>Directe toegang tot de camping met de auto mogelijk op het adres: Chem. de Lavaux 1, 6927 Tellin, België. Gratis parkeren op het terrein, carpoolen wordt aangemoedigd.</p>
+      </div>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<div id="map" style="width:100%; height:420px; border-radius:8px; border:2px solid var(--encre); box-shadow:6px 6px 0 var(--encre);"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>const map = L.map('kaart', scrollWheelZoom: false }).setView([49.9072, 5.2697], 15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    toeschrijving: '© OpenStreetMap-bijdragers',
+    maxZoom: 19
+  }).addTo(kaart);
+  L.markering([50.0923867580313, 5.277445980713076])
+    .addTo(kaart)
+    .bindPopup('<strong>BAF-kamp</strong><br>1 Chemin de Lavaux<br>6927 Tellin, België')
+    .openPopup();</script>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+<!-- RESTAURATION (section fond rose) -->
+<section id="restauration" style="position:relative;">
+  <div class="page-content">
+    <div class="section-alt">
+      <p class="section-label" style="background:var(--encre); color:var(--rose);">🍴Eet &amp; drankje</p>
+      <h2 style="margin-top:0;">Restauratie</h2>
+      <p style="font-family:'Libre Baskerville',serif; font-size:.93rem; line-height:1.8; color:rgba(249,242,236,.8); margin-bottom:32px; position:relative; z-index:1;">De kantineregeling is nog niet vastgelegd. Als je deel uitmaakt van een collectief dat kan helpen met apparatuur en kennis.<a href="https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054">Neem contact met ons op!</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- fin page-content -->
+<!-- CAMPING -->
+  <section id="camping">
+    <p class="section-label">⛺ Slaap ter plaatse</p>
+    <h2>Camping</h2>
+    <p>De camping is geopend van<strong>17 tot 26 augustus</strong>, op een grasveld op steenworp afstand van de camping.</p> 
+    <p>Er zal een camping exclusief voor een gekozen MINT-mix (Girl, Intersex, Non-binary en Trans) worden opgezet.</p>
+
+    <div class="info-block">
+      <span class="info-block-icon">🗓️</span>
+      <div class="info-block-body">
+        <div class="info-block-title">Openingsdata</div>
+        <p>Aankomst mogelijk vanaf zondag 16 augustus vanaf 14.00 uur. Vertrek uiterlijk dinsdag 26 augustus om 12.00 uur.</p>
+      </div>
+    </div>
+
+
+  <hr class="divider">
+
+<!-- BAMBINERIE -->
+<section id="bambinerie">
+  <p class="section-label">🧒 Kleine activisten</p>
+  <h2>De Babykamer</h2>
+  <p style="font-family:'Libre Baskerville',serif; font-size:.93rem; line-height:1.8;">BAF Camp is ook voor gezinnen! Een speciale ruimte<strong>voor kinderen tussen 4 en 16 jaar</strong>wordt op de site gepland, zodat ouders met een gerust hart kunnen genieten van de conferenties en workshops.</p>
+
+  <div class="info-block">
+    <span class="info-block-icon">🌅</span>
+    <div class="info-block-body">
+      <div class="info-block-title">Ochtendslot</div>
+      <p>Een niche van<strong>2 uur in de ochtend</strong>Het is de bedoeling dat de kinderen bij de Bambinerie worden afgezet, terwijl zij de conferenties en workshops van het programma bijwonen.</p>
+    </div>
+  </div>
+
+  <div class="info-block">
+    <span class="info-block-icon">🌤️</span>
+    <div class="info-block-body">
+      <div class="info-block-title">Middag slot</div>
+      <p>Een tweede slot van<strong>2 uur in de middag</strong>wordt aangeboden zodat ouders ten volle van de dag kunnen genieten.</p>
+    </div>
+  </div>
+
+  <div class="info-block">
+    <span class="info-block-icon">🎨</span>
+    <div class="info-block-body">
+      <div class="info-block-title">Activiteiten voor peuters</div>
+      <p>Buiten de kinderopvangplaatsen kunnen bepaalde georganiseerde activiteiten worden aangepast voor peuters: spelletjes, creaties, ontdekkingen... BAF Camp is voor iedereen!</p>
+    </div>
+  </div>
+
+  <div class="info-block">
+    <span class="info-block-icon">💬</span>
+    <div class="info-block-body">
+      <div class="info-block-title">Vragen over de Bambinerie?</div>
+      <p>Aarzel niet om contact met ons op te nemen via<a href="mailto:activismcampbelgium@proton.me" style="color:var(--rose); font-weight:bold;">activismecampbelgium@proton.me</a>voor al uw vragen over kinderopvang.</p>
+    </div>
+  </div>
+
+</section>
+    
+</div>
+
+  
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div>
+    <div class="footer-logo">
+      <img src="../BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+    </div>
+    <p class="footer-tagline">Kom eens een klapje geven!</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigatie</h4>
+    <ul>
+      <li><a href="/nl/index.html">Welkom</a></li>
+      <li><a href="/nl/programme.html">Programma</a></li>
+      <li><a href="/nl/nous-aider.html">Help ons</a></li>
+      <li><a href="/nl/infos.html">Praktische informatie</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Functioneren</h4>
+    <ul>
+      <li><a href="/nl/financements.html">Financiering</a></li>
+      <li><a href="/nl/charte.html">Charter</a></li>
+      <li><a href="/nl/autogestion.html">Zelfbeheer</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Netwerken</h4>
+    <ul>
+      <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Sluit je aan bij de signaallus</a></li>
+      <li><a href="mailto:activismcampbelgium@proton.me">Onze protonenpost</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>BAF Camp 2026 — door en voor iedereen</span>
+    <span>Kom eens een klapje geven!</span>
+  </div>
+</footer>
+
+
+
+<script>functie toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('klik', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+
+const obs = nieuwe IntersectionObserver(entries =>
+  entry.forEach(e => { if (e.isIntersecting) e.target.classList.add('zichtbaar'); }),
+  { drempel: .1 }
+);
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Logoherstel vanuit localStorage
+(functie() {
+  const n = localStorage.getItem('baf_logo_nav');
+  als (n) {
+    document.getElementById('logoImg').src = n;
+    document.getElementById('logoImg').style.display = 'blok';
+    document.getElementById('logoPlaceholder').style.display = 'geen';
+  }
+})();
+document.getElementById('logoInput').addEventListener('change', asynchrone functie() {
+  const f = deze.bestanden[0]; als (!f) terugkeer;
+  const r = nieuwe FileReader();
+  r.onload = () => {
+    probeer { localStorage.setItem('baf_logo_nav', r.result); } vangst {}
+    document.getElementById('logoImg').src = r.resultaat;
+    document.getElementById('logoImg').style.display = 'blok';
+    document.getElementById('logoPlaceholder').style.display = 'geen';
+  };
+  r.readAsDataURL(f);
+  deze.waarde = '';
+});
+
+  // Maak de actieve taal vetgedrukt volgens de URL
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});</script>
+</body>
+</html>
