@@ -209,7 +209,7 @@ document.addEventListener('klik', e => {
     document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
 });
 
-/* ── ONTHULLING ── */
+/* ── ONTHULLEN ── */
 const obs = nieuwe IntersectionObserver(entries =>
   entry.forEach(e => { if (e.isIntersecting) e.target.classList.add('zichtbaar'); }),
   { drempel: .1 }
