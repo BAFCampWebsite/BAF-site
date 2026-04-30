@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotogalerij — Vuurfestival</title>
+  <link rel="stylesheet" href="/nl/style.css">
+</head>
+  
+<body>
+<input type="file" id="logoInput" accept="image/*">
+  <nav>
+  <a href="/nl/index.html" class="nav-logo">
+    <div class="logo-img-wrap" onclick="document.getElementById('logoInput').click();event.preventDefault()">
+      <img id="logoImg" src="" alt="Logo" style="display:none">
+      <span class="logo-placeholder" id="logoPlaceholder">BAF</span>
+      <div class="logo-upload-hint">logo</div>
+    </div>
+    <span class="nav-site-name">BAF<span>KAMP</span></span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/nl/index.html">Welkom</a></li>
+    <li><a href="/nl/programme.html">Programma</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Functioneren<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/nl/financements.html"><span class="di">💰</span>Financiering</a>
+        <a href="/nl/charte.html"><span class="di">📜</span>Ons handvest</a>
+        <a href="/nl/benevoles.html"><span class="di">🙌</span>Inschrijvingen van vrijwilligers</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Informatie<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/nl/infos.html#acces"><span class="di">📍</span>Kom daar</a>
+        <a href="/nl/infos.html#restauration"><span class="di">🍔</span>Voed jezelf</a>
+        <a href="/nl/infos.html#camping"><span class="di">⛺</span>De camping</a>
+        <a href="/nl/infos.html#bambinerie"><span class="di">🧸</span>De Babykamer</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Help ons<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/nl/nous-aider.html"><span class="di">❤️</span>Doe een donatie</a>
+        <a href="/nl/benevoles.html"><span class="di">🙌</span>Vrijwilligerswerk</a>
+        <a href="/nl/nous-aider.html#partager"><span class="di">📢</span>Deel</a>
+        <a href="/nl/nous-aider.html#materiel"><span class="di">🔌</span>Apparatuur lenen</a>
+      </div>
+    </li>
+    <li><a href="/nl/index.html#contact" class="btn nav-cta">Gratis prijskaartje →</a></li>
+  </ul>
+
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="lang-switcher">
+    <a href="/index.html">NL</a>
+    <span>|</span>
+    <a href="/nl/index.html">NL</a>
+    <span>|</span>
+    <a href="/en/index.html">IN</a>
+  </div>
+    
+</nav>
+
+  
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ Galerij</p>
+  <h1 class="page-hero-title">Foto's</h1>
+  <p class="page-hero-sub">Herbeleef de beste momenten van het festival in foto's.</p>
+</div>
+
+<input type="file" id="galleryInput" accept="image/*" multiple>
+
+<div class="page-content">
+  <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:40px;">
+    <div>
+      <h2 style="margin-top:0">Festivalfoto's</h2>
+      <p>Sleep uw foto's en zet ze neer of gebruik de knop om ze toe te voegen.</p>
+    </div>
+    <label class="btn btn-red" for="galleryInput" style="cursor:pointer">📸 Voeg foto's toe</label>
+  </div>
+
+  <div class="gallery-grid reveal" id="galleryGrid"
+    ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+    <div class="gallery-empty">
+      <div style="font-size:3rem">📸</div>
+      <p>Sleep afbeeldingen hierheen<br>of klik op "Foto's toevoegen"</p>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<style>.gallery-grid {weergave:grid; grid-template-kolommen: repeat(auto-fill,minmax(220px,1fr)); kloof:12px; min-hoogte: 200px; grensradius:8px; overgang: overzicht .2s; }
+.gallery-grid.drag-over {overzicht:3px onderbroken var(--red); omtrek-offset:8px; achtergrond:rgba(212,43,43,.04); }
+.gallery-item { beeldverhouding:3/4; achtergrond:var(--zwart2); rand:1px effen var(--black3); grensradius:6px; overloop: verborgen; positie:relatief; cursor:aanwijzer; overgang: transformatie .25s, randkleur .25s; }
+.gallery-item:hover { transform:scale(1.02); randkleur:var(--rood-dim); }
+.gallery-item img { breedte:100%; hoogte:100%; passend bij object: deksel; weergave:blok; }
+.verwijder-btn {positie:absoluut; boven:8px; rechts:8px; breedte: 28px; hoogte: 28px; achtergrond:rgba(8,8,8,.8); rand:1px effen var(--rood-dim); grensradius: 50%; weergave:flexibel; uitlijnen-items: centreren; rechtvaardigen-inhoud: midden; kleur:var(--wit); lettergrootte:.8rem; dekking:0; overgang: dekking .2s; cursor:aanwijzer; }
+.gallery-item: hover .remove-btn { dekking: 1; }
+.remove-btn:hover { achtergrond:var(--red)!belangrijk; randkleur:var(--rood)!belangrijk; }
+.gallery-empty { grid-kolom:1/-1; opvulling: 80px 0; tekst uitlijnen: centreren; rand: 2px onderbroken rgba (212,43,43,.25); grensradius:8px; kleur:var(--grijs); }
+.gallery-empty p { lettertypegrootte:.9rem; marge-boven:12px; }
+.lightbox {weergave: geen; positie:vast; inzet:0; z-index:500; achtergrond:rgba(0,0,0,.92); uitlijnen-items: centreren; rechtvaardigen-inhoud: midden; }
+.lightbox.open {display:flex; }
+.lightbox img {max-breedte:90vw; maximale hoogte: 90vh; grensradius: 4px; box-shadow:0 0 80px rgba(212,43,43,.25); }
+.lightbox-close { positie: vast; boven:24px; rechts:32px; lettergrootte: 2rem; kleur:var(--wit); cursor:aanwijzer; achtergrond: geen; rand: geen; }</style>
+<script>laat galerij=[];
+document.getElementById('galleryInput').addEventListener('change',function(){ addImages([...this.files]); this.value=''; });
+function addImages(files){ files.filter(f=>f.type.startsWith('image/')).forEach(f=>{ gallery.push(URL.createObjectURL(f)); }); renderGallery(); }
+functie renderGallery(){
+  const grid=document.getElementById('galleryGrid');
+  if(!gallery.length){ grid.innerHTML='<div class="gallery-empty"><div style="font-size:3rem">📸</div><p>Sleep afbeeldingen hierheen<br>of klik op "Foto's toevoegen"</p></div>'; opbrengst; }
+  grid.innerHTML=gallery.map((url,i)=>`<div class="gallery-item" onclick="openLightbox('${url}')"><img src="../${url}" alt="" loading="lazy"><button class="remove-btn" onclick="removeImg(event,${i})">✕</button></div>`).join('');
+}
+functie removeImg(e,i){ e.stopPropagation(); galerij.splice(i,1); renderGallery(); }
+functie handleDragOver(e){ e.preventDefault(); e.currentTarget.classList.add('drag-over'); }
+functie handleDragLeave(e){ e.currentTarget.classList.remove('drag-over'); }
+functie handleDrop(e){ e.preventDefault(); e.currentTarget.classList.remove('slepen'); addImages([...e.dataTransfer.files]); }
+functie openLightbox(src){ document.getElementById('lightboxImg').src=src; document.getElementById('lightbox').classList.add('open'); }
+function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLightbox(); });
+document.querySelector('.lightbox-close').addEventListener('klik',closeLightbox);</script>
+
+
+<footer>
+  <div>
+    <div class="footer-logo">VUUR<span>FEEST</span></div>
+    <p class="footer-tagline">Het festival dat elke zomer ontbrandt. Muziek, emotie, gemeenschap.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigatie</h4>
+    <ul>
+      <li><a href="/nl/index.html">Welkom</a></li>
+      <li><a href="/nl/programme.html">Programma</a></li>
+      <li><a href="/nl/galerie.html">Galerij</a></li>
+      <li><a href="/nl/infos.html">Praktische informatie</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Functioneren</h4>
+    <ul>
+      <li><a href="/nl/financements.html">Financiering</a></li>
+      <li><a href="/nl/charte.html">Charter</a></li>
+      <li><a href="/nl/benevoles.html">Inschrijvingen van vrijwilligers</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Netwerken</h4>
+    <ul>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">TikTok</a></li>
+      <li><a href="#">YouTube</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Vuurfestival — Alle rechten voorbehouden</span>
+    <span>Gemaakt met ♥ — Geïmplementeerd op Vercel</span>
+  </div>
+</footer>
+
+
+<script>functie toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('klik', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+document.getElementById('logoInput').addEventListener('change', function() {
+  const bestand = dit.bestanden[0]; if (!bestand) retourneert;
+  const img = document.getElementById('logoImg');
+  img.src = URL.createObjectURL(bestand);
+  img.style.display = 'blok';
+  document.getElementById('logoPlaceholder').style.display = 'geen';
+});
+const obs = nieuwe IntersectionObserver(entries => {
+  entrys.forEach(e => { if (e.isIntersecting) e.target.classList.add('zichtbaar'); });
+}, {drempel:.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Maak de actieve taal vetgedrukt volgens de URL
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});</script>
+
+</body>
+</html>
