@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="nl"> 
-  
+   
 <head>
   <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Financiering — BAF Camp</title>
+  <title>Financiering — BAF-kamp</title>
   <link rel="stylesheet" href="../style.css">
 </head>
   
@@ -57,7 +57,13 @@
     <span></span><span></span><span></span>
   </button>
 
-  <!--LANG_SWITCHER_PLACEHOLDER-->
+  <div class="lang-switcher">
+  <a href="/index.html">FR</a>
+  <span>|</span>
+  <a href="/nl/index.html">NL</a>
+  <span>|</span>
+  <a href="/en/index.html">EN</a>
+</div>
   
 </nav>
 
@@ -183,33 +189,36 @@
 
 
 
-<script>functie toggleDD(li) {
+<script>
+function toggleDD(li) {
   const was = li.classList.contains('open');
   document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
   if (!was) li.classList.add('open');
 }
-document.addEventListener('klik', e => {
+document.addEventListener('click', e => {
   if (!e.target.closest('.nav-links > li'))
     document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
 });
 document.getElementById('logoInput').addEventListener('change', function() {
-  const bestand = dit.bestanden[0]; if (!bestand) retourneert;
+  const file = this.files[0]; if (!file) return;
   const img = document.getElementById('logoImg');
-  img.src = URL.createObjectURL(bestand);
-  img.style.display = 'blok';
-  document.getElementById('logoPlaceholder').style.display = 'geen';
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
 });
-const obs = nieuwe IntersectionObserver(entries => {
-  entrys.forEach(e => { if (e.isIntersecting) e.target.classList.add('zichtbaar'); });
-}, {drempel:.12});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Maak de actieve taal vetgedrukt volgens de URL
+  // Met en gras la langue active selon l'URL
 document.querySelectorAll('.lang-switcher a').forEach(a => {
   if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
   else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
   else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
-});</script>
+});
+  
+</script>
 
 </body>
 </html>
