@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
-  
+   
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -157,7 +157,13 @@
     <span></span><span></span><span></span>
   </button>
 
-  <!--LANG_SWITCHER_PLACEHOLDER-->
+  <div class="lang-switcher">
+  <a href="/index.html">FR</a>
+  <span>|</span>
+  <a href="/nl/index.html">NL</a>
+  <span>|</span>
+  <a href="/en/index.html">EN</a>
+  </div>
   
 </nav>
 
@@ -205,15 +211,17 @@
 <div id="map" style="width:100%; height:420px; border-radius:8px; border:2px solid var(--encre); box-shadow:6px 6px 0 var(--encre);"></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>const map = L.map('kaart', scrollWheelZoom: false }).setView([49.9072, 5.2697], 15);
+<script>
+  const map = L.map('map', { scrollWheelZoom: false }).setView([49.9072, 5.2697], 15);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    toeschrijving: '© OpenStreetMap-bijdragers',
+    attribution: '© OpenStreetMap contributors',
     maxZoom: 19
-  }).addTo(kaart);
-  L.markering([50.0923867580313, 5.277445980713076])
-    .addTo(kaart)
-    .bindPopup('<strong>BAF-kamp</strong><br>1 Chemin de Lavaux<br>6927 Tellin, België')
-    .openPopup();</script>
+  }).addTo(map);
+  L.marker([50.0923867580313, 5.277445980713076])
+    .addTo(map)
+    .bindPopup('<strong>BAF Camp</strong><br>1 chemin de Lavaux<br>6927 Tellin, Belgique')
+    .openPopup();
+</script>
     </div>
   </section>
 
@@ -334,49 +342,52 @@
 
 
 
-<script>functie toggleDD(li) {
+<script>
+function toggleDD(li) {
   const was = li.classList.contains('open');
   document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
   if (!was) li.classList.add('open');
 }
-document.addEventListener('klik', e => {
+document.addEventListener('click', e => {
   if (!e.target.closest('.nav-links > li'))
     document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
 });
 
-const obs = nieuwe IntersectionObserver(entries =>
-  entry.forEach(e => { if (e.isIntersecting) e.target.classList.add('zichtbaar'); }),
-  { drempel: .1 }
+const obs = new IntersectionObserver(entries =>
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: .1 }
 );
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// Logoherstel vanuit localStorage
-(functie() {
+// Restauration logo depuis localStorage
+(function() {
   const n = localStorage.getItem('baf_logo_nav');
-  als (n) {
+  if (n) {
     document.getElementById('logoImg').src = n;
-    document.getElementById('logoImg').style.display = 'blok';
-    document.getElementById('logoPlaceholder').style.display = 'geen';
+    document.getElementById('logoImg').style.display = 'block';
+    document.getElementById('logoPlaceholder').style.display = 'none';
   }
 })();
-document.getElementById('logoInput').addEventListener('change', asynchrone functie() {
-  const f = deze.bestanden[0]; als (!f) terugkeer;
-  const r = nieuwe FileReader();
+document.getElementById('logoInput').addEventListener('change', async function() {
+  const f = this.files[0]; if (!f) return;
+  const r = new FileReader();
   r.onload = () => {
-    probeer { localStorage.setItem('baf_logo_nav', r.result); } vangst {}
-    document.getElementById('logoImg').src = r.resultaat;
-    document.getElementById('logoImg').style.display = 'blok';
-    document.getElementById('logoPlaceholder').style.display = 'geen';
+    try { localStorage.setItem('baf_logo_nav', r.result); } catch {}
+    document.getElementById('logoImg').src = r.result;
+    document.getElementById('logoImg').style.display = 'block';
+    document.getElementById('logoPlaceholder').style.display = 'none';
   };
   r.readAsDataURL(f);
-  deze.waarde = '';
+  this.value = '';
 });
 
-  // Maak de actieve taal vetgedrukt volgens de URL
+  // Met en gras la langue active selon l'URL
 document.querySelectorAll('.lang-switcher a').forEach(a => {
   if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
   else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
   else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
-});</script>
+});
+  
+</script>
 </body>
 </html>
