@@ -36,6 +36,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
+          git pull --rebase origin main
           git add en/ nl/
           git diff --staged --quiet || git commit -m "chore: auto-translate [skip ci]"
           git push
