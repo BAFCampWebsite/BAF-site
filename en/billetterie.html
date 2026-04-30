@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticketing — BAF Camp</title>
+  <link rel="stylesheet" href="/en/style.css">
+</head>
+  
+<body>
+<input type="file" id="logoInput" accept="image/*">
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap" >
+      <img id="logoImg" src="../BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF<span>CAMP</span></span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/en/index.html">Welcome</a></li>
+    <li><a href="/en/programme.html">Program</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Functioning<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/en/financements.html"><span class="di">💰</span>Financing</a>
+        <a href="/en/charte.html"><span class="di">📜</span>Our charter</a>
+        <a href="/en/autogestion.html"><span class="di">🙌</span>Self-management</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Information<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/en/infos.html#acces"><span class="di">📍</span>Come there</a>
+        <a href="/en/infos.html#restauration"><span class="di">🍔</span>Feed yourself</a>
+        <a href="/en/infos.html#camping"><span class="di">⛺</span>The campsite</a>
+        <a href="/en/infos.html#bambinerie"><span class="di">🧸</span>The Baby Room</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Help us<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="/en/nous-aider.html"><span class="di">❤️</span>Make a donation</a>
+        <a href="/en/autogestion.html"><span class="di">🙌</span>Voluntary registrations</a>
+        <a href="/en/nous-aider.html#partager"><span class="di">📢</span>Share</a>
+        <a href="/en/nous-aider.html#materiel"><span class="di">🔌</span>Lend equipment</a>
+      </div>
+    </li>
+    <li><a href="/en/billetterie.html" class="btn nav-cta">Free price ticketing →</a></li>
+  </ul>
+
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="lang-switcher">
+     <a href="/index.html">EN</a>
+     <span>|</span>
+     <a href="/nl/index.html">NL</a>
+     <span>|</span>
+     <a href="/en/index.html">IN</a>
+  </div>
+  
+</nav>
+<!-- Hero -->
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">🎟️ Ticketing</p>
+  <h1 class="page-hero-title">Free & conscious pricing</h1>
+  <p class="page-hero-sub">So that you contribute according to your means.</p>
+</div>
+
+<div class="page-content">
+
+  <!-- Bannière construction -->
+  <div class="reveal" style="margin-bottom: 40px;">
+    <div class="construction-banner">🚧 Ticket office under construction — opening soon, come back soon!</div>
+  </div>
+
+<!-- Bloc principal -->
+<div class="reveal billet-hero-block">
+  <div class="billet-lock-icon">🔒</div>
+  <h2 class="billet-title">The ticket office is not yet open</h2>
+  <p class="billet-desc">We are preparing the opening of the ticket office carefully. The BAF Camp operates on a model of<strong>free and conscious pricing</strong>: everyone contributes according to their means. If you put more money than recommended, it allows other people to come.</p>
+  <p class="billet-desc">In the meantime, you can leave us your email to be notified when it opens! 👇</p>
+
+  <button type="button" class="btn btn-primary notif-btn">
+    <a href="https://cryptpad.fr/form/#/2/form/view/wkumlpjd0eYCbC2RM72EHKIA2dZ7QlJiOAOgQ6vnlcQ/">Notify me ✉</a>
+  </button>
+
+  <p class="notif-confirm" id="notifConfirm" style="display:none;">✅ Great! We will notify you as soon as the ticket office opens.<br>Don't forget to sign up for<a href="/en/autogestion.html#volontariat">volunteer shifts</a>, and join us before the start of the camp from August 16 to lend a hand with the construction!<br>See you soon !</p>
+
+  <input type="hidden" name="source" value="footer">
+</div>
+
+  
+
+  <!-- anti-spam (invisible) -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <button type="submit" class="btn btn-primary notif-btn">
+   <a href="https://cryptpad.fr/form/#/2/form/view/wkumlpjd0eYCbC2RM72EHKIA2dZ7QlJiOAOgQ6vnlcQ/">Notify me ✉</a>
+  </button>
+
+</form>
+
+<p class="notif-confirm" id="notifConfirm" style="display:none;">✅ Great! We will notify you as soon as the ticket office opens.<br>Don't forget to sign up for<a href="/en/autogestion.html#volontariat">volunteer shifts</a>, and join us before the start of the camp from August 16 to lend a hand with the construction!<br>See you soon !</p>
+<script>const form = document.querySelector(".notif-form");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  const res = await fetch(form.action, {
+    method: "POST",
+    body:data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (res.ok) {
+    document.getElementById("notifConfirm").style.display = "block";
+    form.reset();
+  } else {
+    alert("Error 😬");
+  }
+});</script>
+    <input type="hidden" name="source" value="footer">
+
+  <hr class="divider">
+
+  <!-- Infos prix libre -->
+  <div class="reveal">
+    <h2>How does the free price work?</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-icon">💚</span>
+        <h3 class="card-title">Solidarity rate</h3>
+        <p class="card-text">Are you going through a difficult time or are you a student, unemployed, without income? You are welcome for little or no contribution.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">⚖️</span>
+        <h3 class="card-title">Fair price</h3>
+        <p class="card-text">You can contribute up to what the camp actually costs you: accommodation, meals, activities. We publish our accounts transparently.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🌟</span>
+        <h3 class="card-title">Support rate</h3>
+        <p class="card-text">Do you have the means to contribute beyond the actual rate? Your generosity allows others to come. Thank you, really!</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📖</span>
+        <h3 class="card-title">Open accounts</h3>
+        <p class="card-text">All camp budget details will be published transparently on the page<a href="/en/financements.html">Financing</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Questions -->
+  <div class="reveal">
+    <h2>A question?</h2>
+    <p style="font-family:'Libre Baskerville',serif; font-size:.95rem; line-height:1.8; color:var(--encre); max-width:600px;">For any questions about ticketing, free pricing or financial accessibility, write to us directly:</p>
+    <a href="mailto:activismcampbelgium@proton.me?subject=Question billetterie" class="btn btn-primary reveal" style="margin-top:16px; display:inline-block;">✉ Write to us</a>
+  </div>
+
+</div>
+
+<!-- Styles spécifiques billetterie -->
+<style>.construction-banner {
+  font-family: 'Space Mono', monospace;
+  font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+  background: var(--dark-cream);
+  border: 2px dashed var(--pink);
+  border-radius: 8px;
+  padding: 14px 20px;
+  color: var(--rose-dark);
+  text-align: center;
+}
+
+.ticket-hero-block {
+  background: var(--white-dirty);
+  border: var(--contour-lg);
+  border-radius: 16px;
+  padding: 48px 40px;
+  box-shadow: var(--lg-shadow);
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+.billet-lock-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display:block;
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
+
+@keyframes gentle-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.ticket-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.ticket-desc {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .95rem;
+  line-height: 1.8;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.notif-form {
+  display:flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap:wrap;
+  margin-top: 28px;
+}
+
+.notif-input {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .92rem;
+  padding: 12px 18px;
+  border: var(--outline);
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--ink);
+  outline:none;
+  width: 260px;
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.notif-input:focus {
+  border-color: var(--pink);
+  box-shadow: var(--pink-shadow);
+}
+
+.notif-input::placeholder {
+  color: var(--sand);
+  font-style: italic;
+}
+
+.notif-btn {
+  white-space: nowrap;
+}
+
+.notif-confirm {
+  font-family: 'Space Mono', monospace;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--pink);
+  margin-top: 18px;
+  letter-spacing: .04em;
+}</style>
+<footer>
+
+  <div>
+    <div class="footer-logo">
+      <img src="../BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+    </div>
+    <p class="footer-tagline">Come take a slap!</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="/en/index.html">Welcome</a></li>
+      <li><a href="/en/programme.html">Program</a></li>
+      <li><a href="/en/nous-aider.html">Help us</a></li>
+      <li><a href="/en/infos.html">Practical information</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Functioning</h4>
+    <ul>
+      <li><a href="/en/financements.html">Financing</a></li>
+      <li><a href="/en/charte.html">Charter</a></li>
+      <li><a href="/en/autogestion.html">Self-management</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Networks</h4>
+    <ul>
+      <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Join the Signal Loop</a></li>
+      <li><a href="mailto:activismcampbelgium@proton.me">Our proton mail</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 BAF Camp — by and for everyone</span>
+    <span>Come take a slap!</span>
+  </div>
+</footer>
+
+
+
+<script>function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+document.getElementById('logoInput').addEventListener('change', function() {
+  const file = this.files[0]; if (!file) return;
+  const img = document.getElementById('logoImg');
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
+});
+
+// Animation reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Notification form
+function handleNotif() {
+  const val = document.getElementById('emailInput').value.trim();
+  if (!val || !val.includes('@')) {
+    document.getElementById('emailInput').style.borderColor = 'var(--rose)';
+    document.getElementById('emailInput').focus();
+    return;
+  }
+  document.querySelector('.notif-form').style.display = 'none';
+  document.getElementById('notifConfirm').style.display = 'block';
+}
+  // Bold the active language according to the URL
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});</script>
+
+</body>
+</html>
