@@ -82,6 +82,19 @@ def fix_asset_paths(html: str) -> str:
         return f'src="../{src}"'
     return re.sub(r'src="([^"]+)"', replace, html)
 
+def protect_styles(html: str):
+    styles = []
+    def replace(m):
+        styles.append(m.group(0))
+        return f'<!--STYLE_{len(styles)-1}-->'
+    html = re.sub(r'<style[\s\S]*?</style>', replace, html)
+    return html, styles
+
+def restore_styles(html: str, styles: list) -> str:
+    for i, style in enumerate(styles):
+        html = html.replace(f'<!--STYLE_{i}-->', style)
+    return html
+
 
 files_to_translate = sys.argv[1:] if len(sys.argv) > 1 else ALL_HTML_FILES
 
@@ -99,6 +112,7 @@ for filename in files_to_translate:
 
         # Protège les scripts et le lang-switcher avant traduction
         protected, scripts = protect_scripts(src)
+        protected, styles = protect_styles(protected)
         protected, lang_switcher = protect_lang_switcher(protected)
 
         # Traduit
@@ -106,6 +120,7 @@ for filename in files_to_translate:
 
         # Restore les éléments protégés
         translated = restore_scripts(translated, scripts)
+        translated = restore_styles(translated, styles)
         translated = restore_lang_switcher(translated, lang_switcher)
 
         # Fix les chemins
