@@ -66,6 +66,20 @@ def fix_asset_paths(html: str) -> str:
         return f'src="../{src}"'
     return re.sub(r'src="([^"]+)"', replace, html)
 
+def protect_lang_switcher(html: str) -> str:
+    """Remplace le lang-switcher par un placeholder avant traduction"""
+    pattern = r'(<div class="lang-switcher">.*?</div>)'
+    match = re.search(pattern, html, re.DOTALL)
+    if match:
+        original = match.group(1)
+        html = html.replace(original, '<!--LANG_SWITCHER_PLACEHOLDER-->')
+    return html, original if match else None
+
+def restore_lang_switcher(html: str, original: str) -> str:
+    if original:
+        html = html.replace('<!--LANG_SWITCHER_PLACEHOLDER-->', original)
+    return html
+
 files_to_translate = sys.argv[1:] if len(sys.argv) > 1 else ALL_HTML_FILES
 
 for filename in files_to_translate:
@@ -77,7 +91,9 @@ for filename in files_to_translate:
     for lang in LANGUAGES:
         out = pathlib.Path(lang) / filename
         print(f"Translating {filename} → {lang}...")
+        src, lang_switcher = protect_lang_switcher(src)
         translated = translate_html(src, lang)
+        translated = restore_lang_switcher(translated, lang_switcher)
         translated = fix_links(translated, lang)
         translated = fix_lang_attr(translated, lang)
         translated = fix_css_path(translated)
