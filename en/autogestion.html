@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscriptions bénévoles — BAF Camp</title>
+  <link rel="stylesheet" href="/en/style.css">
+</head>
+  
+<body>
+  <input type="file" id="logoInput" accept="image/*">
+
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap" >
+      <img id="logoImg" src="../BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
+  </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/en/index.html">Accueil</a></li>
+      <li><a href="/en/programme.html">Programme</a></li>
+      <li>
+        <button onclick="toggleDD(this.parentElement)">
+          Fonctionnement
+          <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown">
+          <a href="/en/financements.html"><span class="di">💰</span>Financements</a>
+          <a href="/en/charte.html"><span class="di">📜</span>Notre charte</a>
+          <a href="/en/autogestion.html"><span class="di">🙌</span>Autogestion</a>
+        </div>
+      </li>
+      <li>
+        <button onclick="toggleDD(this.parentElement)">
+          Informations
+          <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown">
+          <a href="/en/infos.html#acces"><span class="di">📍</span>Venir sur place</a>
+          <a href="/en/infos.html#restauration"><span class="di">🍔</span>Se nourrir</a>
+          <a href="/en/infos.html#camping"><span class="di">⛺</span>Le camping</a>
+          <a href="/en/infos.html#bambinerie"><span class="di">🧸</span>La Bambinerie</a>
+        </div>
+      </li>
+      <li>
+        <button onclick="toggleDD(this.parentElement)">
+          Nous aider
+          <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown">
+          <a href="/en/nous-aider.html"><span class="di">❤️</span>Faire un don</a>
+          <a href="/en/autogestion.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
+          <a href="/en/nous-aider.html#partager"><span class="di">📢</span>Partager</a>
+          <a href="/en/nous-aider.html#materiel"><span class="di">🔌</span>Prêter du matériel</a>
+        </div>
+      </li>
+      <li><a href="/en/billetterie.html" class="btn nav-cta">Billetterie prix libre →</a></li>
+    </ul>
+
+    <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  <div class="lang-switcher">
+  <a href="/index.html">FR</a>
+  <span>|</span>
+  <a href="/nl/index.html">NL</a>
+  <span>|</span>
+  <a href="/en/index.html">EN</a>
+</div>
+  
+  </nav>
+
+  <div class="page-hero anim">
+    <p class="page-hero-eyebrow">✦ Bénévolat</p>
+    <h1 class="page-hero-title">Autogestion</h1>
+    <p class="page-hero-sub">Quelques informations sur la façon dont on travaille</p>
+  </div>
+
+  <div class="page-content">
+
+    <div class="reveal">
+      <h2>Notre structure</h2>
+      <p>Le BAF Camp est un évènement autogéré. Son mode d'organisation repose sur une coordination générale constituée de plusieurs groupes de travail sur les différents aspects nécessaires à sa réussite. L'organisation de ce camp se fait dans un essai d'horizontalité. Les décisions sont prises par consentement et nous prônons une attitude anti-autoritaire. Le groupe d'organisation est constitué de personnes apprenant ensemble à créer ce genre d'évènements, aussi il est ouvert à toute personne. Aucune compétence n'est requise.</p>
+      <div style="display: inline-block; margin: 40px auto 48px auto; text-align: center; width: 100%;">
+        <div style="display: inline-block; border: 3px solid var(--encre); border-radius: 8px; box-shadow: 6px 6px 0 var(--encre); background: var(--rose); padding: 18px 60px; position: relative;">
+          <a href="mailto:Activismcampbelgium@proton.me?subject=Rejoindre%20l%27organisation%20du%20BAF" style="font-family: 'Boogaloo', cursive; font-size: 2.6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--creme); text-shadow: 3px 3px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);">Rejoignez nous !</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal gt-section">
+      <h2>Les groupes de travail</h2>
+      <p>Voici la liste des différents GT, envoie un mail en cliquant sur le bouton ci-dessus si tu souhaites te joindre à l'un d'entre eux.</p>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-icon">💚</span>
+          <h3 class="card-title">GT Care</h3>
+          <p class="card-text">Réfléchir aux processus à mettre en place pratique et théorique pour que des oppressions ne se reproduisent pas durant l'organisation du festival ainsi que durant son déroulement.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🗣️</span>
+          <h3 class="card-title">GT Communication</h3>
+          <p class="card-text">Gérer les réseaux sociaux, le site web, la communication externe de l'évènement.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🫶</span>
+          <h3 class="card-title">GT Bénévoles</h3>
+          <p class="card-text">S'occuper de la logistique du bénévolat sur le lieu du camp.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">⚒️</span>
+          <h3 class="card-title">GT Logistique</h3>
+          <p class="card-text">Prévoir les équipements nécessaires pour le festival ainsi que la logistique du site (emplacements des différents pôles du festival, gestion arrivée et départs, etc.)</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🎤</span>
+          <h3 class="card-title">GT Programmation</h3>
+          <p class="card-text">Proposer des thèmes d'ateliers pour la programmation du festival et contacter ces collectifs / personnes.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">💰</span>
+          <h3 class="card-title">GT Money &amp; Légal</h3>
+          <p class="card-text">Définir un budget pour le festival, contacter des donateurs, réfléchir à la protection juridique du festival et demander les autorisations nécessaires.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🔄</span>
+          <h3 class="card-title">GT Coordination</h3>
+          <p class="card-text">Soutient les autres groupes et s'assure de la communication fluide entre les différents GT.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h2>Le bénévolat</h2>
+      <p>Sur place, nous avons comme objectif que cet évènement se déroule de la manière la plus horizontale et autogérée possible. C'est pourquoi, afin de gommer au max la frontière entre bénévoles &amp; « consommateurices » du festival, idéalement, toustes les participant.e.s donnent un peu de leur temps pour faire tourner ce festival. Nous avons calculé que si tous les bénévoles travaillent <strong>2 heures par jour</strong>, alors le festival devrait pouvoir fonctionner de manière autogérée. Par ailleurs, toute tâche peut être adaptée si tu as un handicap quel qu'il soit. N'hésite pas à déjà te signaler comme bénévole en remplissant le form ci-dessous. Sinon, tu pourras trouver des tâches à faire en temps réel sur le site !
+        <br>
+        <br>
+        Le camp sera monté en commun. <strong>Nous aurons besoin d'aide !</strong> Il faudra monter des châpiteaux et des scènes, mais aussi créer la déco, imaginer des espaces et construire des infrastructures en palettes en fonction de nos envies ! Plein de choses resterons à inventer alors venez prendre part à la création de cet espace dès le 16 août ! Inscriptions dans le formulaire en dessous 👇.
+        <br>
+        Mais avant toute chose, n'oublie pas de <strong href="/en/billeterie.html"> prendre ta place pour l'évènement</strong>
+      </p>
+
+      </div>
+
+    <hr class="divider">
+
+    <div class="reveal">
+      <h2>Missions disponibles</h2>
+      <ul>
+        <li>Venir dès le 16 août pour venir aider à monter le camp</li>
+        <li>Accueil &amp; inscription des bénévoles</li>
+        <li>Tenir le bar</li>
+        <li>Cuisiner pour 600 personnes</li>
+        <li>Prise d'image et communication</li>
+        <li>Care et écoute active (une formation sera donnée)</li>
+        <li>Hygiène</li>
+        <li>Parking</li>
+        <li>Médic (expérience requise)</li>
+      </ul>
+    </div>
+
+    <div class="reveal">
+      <h2>Formulaire d'incription</h2>
+      <p>Tu as déjà envie de t'engager pour le camp et d'aider à ce que cet évènement ait lieu ? Ce serait super précieux pour nous que tu remplisse le formulaire ci-dessouspour qu'on puisse déjà compter nos forces. On te recontactera en août une fois ton message reçu.</p>
+
+      <div style="display: inline-block; margin: 40px auto 48px auto; text-align: center; width: 100%;">
+        <div style="display: inline-block; border: 3px solid var(--encre); border-radius: 8px; box-shadow: 6px 6px 0 var(--encre); background: var(--rose); padding: 18px 60px; position: relative;">
+          <a href="https://cryptpad.fr/form/#/2/form/view/w2COCpy87tL9ppr7daj-8W09S1JIWaiXw4cKyBCqdeE/" style="font-family: 'Boogaloo', cursive; font-size: 2.6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--creme); text-shadow: 3px 3px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);">Formulaire d'inscription</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h2>Programmation</h2>
+      <p>Et enfin, un rappel que la programmation est aussi un espace d'horizontalité et de collaboration. Si tu as envie de porter un thème, une activité ou bien faire des propositions pour un stand que tu voudrais organiser, c'est là que ça se passe :</p>
+      <div style="display: inline-block; margin: 40px auto 48px auto; text-align: center; width: 100%;">
+        <div style="display: inline-block; border: 3px solid var(--encre); border-radius: 8px; box-shadow: 6px 6px 0 var(--encre); background: var(--rose); padding: 18px 60px; position: relative;">
+          <a href="https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054" style="font-family: 'Boogaloo', cursive; font-size: 2.6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--creme); text-shadow: 3px 3px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);">Proposition programmation !</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.page-content -->
+
+  <footer>
+    <div>
+      <div class="footer-logo">
+        <img src="../BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+      </div>
+      <p class="footer-tagline">Vient prendre une claque !</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="/en/index.html">Accueil</a></li>
+        <li><a href="/en/programme.html">Programme</a></li>
+        <li><a href="/en/nous-aider.html">Nous aider</a></li>
+        <li><a href="/en/infos.html">Infos pratiques</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Fonctionnement</h4>
+      <ul>
+        <li><a href="/en/financements.html">Financements</a></li>
+        <li><a href="/en/charte.html">Charte</a></li>
+        <li><a href="/en/autogestion.html">Autogestion</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Réseaux</h4>
+      <ul>
+        <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+        <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Rejoins la boucle Signal</a></li>
+        <li><a href="mailto:activismcampbelgium@proton.me">Notre mail proton</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>2026 BAF Camp — par et pour toustes</span>
+      <span>Vient prendre une claque !</span>
+    </div>
+  </footer>
+
+  <script>
+    function toggleDD(li) {
+      const was = li.classList.contains('open');
+      document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+      if (!was) li.classList.add('open');
+    }
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.nav-links > li')) {
+        document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+      }
+    });
+
+    document.getElementById('logoInput').addEventListener('change', function () {
+      const file = this.files[0];
+      if (!file) return;
+      const img = document.getElementById('logoImg');
+      img.src = URL.createObjectURL(file);
+      img.style.display = 'block';
+      document.getElementById('logoPlaceholder').style.display = 'none';
+    });
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Met en gras la langue active selon l'URL
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});
+    
+  </script>
+
+</body>
+</html>
