@@ -56,8 +56,7 @@ def fix_lang_attr(html: str, lang: str) -> str:
     return html.replace('<html lang="fr">', f'<html lang="{lang}">', 1)
 
 def fix_css_path(html: str) -> str:
-    # Remplace style.css par ../style.css (chemin relatif correct)
-    return re.sub(r'href="(?:[./]*/)*style\.css"', 'href="../style.css"', html)
+    return re.sub(r'href="[^"]*style\.css"', 'href="../style.css"', html)
 
 def fix_asset_paths(html: str) -> str:
     def replace(m):
