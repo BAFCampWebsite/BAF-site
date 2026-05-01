@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl"> 
   
 <head>
   <meta charset="UTF-8">
@@ -91,7 +91,7 @@
     <a href="https://cryptpad.fr/form/#/2/form/view/wkumlpjd0eYCbC2RM72EHKIA2dZ7QlJiOAOgQ6vnlcQ/">Breng mij op de hoogte ✉</a>
   </button>
 
-  <p class="notif-confirm" id="notifConfirm" style="display:none;">✅ Geweldig! Zodra de ticketbalie opengaat, brengen wij u hiervan op de hoogte.<br>Vergeet je niet aan te melden<a href="/nl/autogestion.html#volontariat">vrijwilligersdiensten</a>, en kom vóór de start van het kamp vanaf 16 augustus meehelpen met de opbouw!<br>Tot snel !</p>
+  <p class="notif-confirm" id="notifConfirm" style="display:none;">✅ Geweldig! Zodra de ticketbalie opengaat, brengen wij u hiervan op de hoogte.<br>Vergeet je niet aan te melden<a href="/nl/autogestion.html#volontariat">vrijwilligersdiensten</a>, en kom vóór de start van het kamp vanaf 16 augustus een handje helpen met de opbouw!<br>Tot snel !</p>
 
   <input type="hidden" name="source" value="footer">
 </div>
@@ -107,7 +107,7 @@
 
 </form>
 
-<p class="notif-confirm" id="notifConfirm" style="display:none;">✅ Geweldig! Zodra de ticketbalie opengaat, brengen wij u hiervan op de hoogte.<br>Vergeet je niet aan te melden<a href="/nl/autogestion.html#volontariat">vrijwilligersdiensten</a>, en kom vóór de start van het kamp vanaf 16 augustus meehelpen met de opbouw!<br>Tot snel !</p>
+<p class="notif-confirm" id="notifConfirm" style="display:none;">✅ Geweldig! Zodra de ticketbalie opengaat, brengen wij u hiervan op de hoogte.<br>Vergeet je niet aan te melden<a href="/nl/autogestion.html#volontariat">vrijwilligersdiensten</a>, en kom vóór de start van het kamp vanaf 16 augustus een handje helpen met de opbouw!<br>Tot snel !</p>
 <script>
 const form = document.querySelector(".notif-form");
 
@@ -175,99 +175,101 @@ form.addEventListener("submit", async (e) => {
 </div>
 
 <!-- Styles spécifiques billetterie -->
-<style>.bouwbanner {
-  lettertypefamilie: 'Space Mono', monospace;
-  lettergrootte: .78rem; lettertypegewicht: 700; letterafstand: .08em;
-  achtergrond: var(--donker-crème);
-  rand: 2px gestippelde var(--roze);
-  grensradius: 8px;
-  opvulling: 14px 20px;
-  kleur: var(--roze-donker);
-  tekst uitlijnen: centreren;
+<style>
+.construction-banner {
+  font-family: 'Space Mono', monospace;
+  font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+  background: var(--creme-fonce);
+  border: 2px dashed var(--rose);
+  border-radius: 8px;
+  padding: 14px 20px;
+  color: var(--rose-dark);
+  text-align: center;
 }
 
-.ticket-hero-blok {
-  achtergrond: var(--wit-vuil);
-  rand: var(--contour-lg);
-  randradius: 16px;
-  opvulling: 48px 40px;
-  box-shadow: var(--lg-shadow);
-  tekst uitlijnen: centreren;
-  maximale breedte: 680px;
-  marge: 0 automatisch 40px;
+.billet-hero-block {
+  background: var(--blanc-sale);
+  border: var(--contour-lg);
+  border-radius: 16px;
+  padding: 48px 40px;
+  box-shadow: var(--ombre-lg);
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
 }
 
-.billet-slotpictogram {
-  lettergrootte: 3rem;
-  marge-onder: 16px;
-  weergave:blok;
-  animatie: zachte pulse 3s gemak-in-uit oneindig;
+.billet-lock-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+  animation: gentle-pulse 3s ease-in-out infinite;
 }
 
-@keyframes zachte puls {
-  0%, 100% { transformatie: schaal(1); }
-  50% {transformatie: schaal(1,08); }
+@keyframes gentle-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
-.tickettitel {
-  lettertypefamilie: 'Space Mono', monospace;
-  lettergrootte: 1.4rem;
-  lettertypegewicht: 700;
-  kleur: var(--inkt);
-  marge-onder: 20px;
+.billet-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--encre);
+  margin-bottom: 20px;
 }
 
-.ticket-desc {
-  lettertypefamilie: 'Libre Baskerville', serif;
-  lettergrootte: .95rem;
-  lijnhoogte: 1,8;
-  kleur: var(--inkt);
-  marge-onder: 14px;
+.billet-desc {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .95rem;
+  line-height: 1.8;
+  color: var(--encre);
+  margin-bottom: 14px;
 }
 
-.notif-formulier {
-  weergave:flexibel;
-  opening: 10px;
-  rechtvaardigen-inhoud: centrum;
-  flex-wikkel:wikkel;
-  marge bovenaan: 28px;
+.notif-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
 }
 
-.notif-invoer {
-  lettertypefamilie: 'Libre Baskerville', serif;
-  lettergrootte: .92rem;
-  opvulling: 12px 18px;
-  rand: var(--omtrek);
-  grensradius: 8px;
-  achtergrond: var(--crème);
-  kleur: var(--inkt);
-  overzicht: geen;
-  breedte: 260px;
-  overgang: randkleur .15s, vakschaduw .15s;
+.notif-input {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .92rem;
+  padding: 12px 18px;
+  border: var(--contour);
+  border-radius: 8px;
+  background: var(--creme);
+  color: var(--encre);
+  outline: none;
+  width: 260px;
+  transition: border-color .15s, box-shadow .15s;
 }
 
-.notif-invoer:focus {
-  randkleur: var(--roze);
-  box-shadow: var(--roze-schaduw);
+.notif-input:focus {
+  border-color: var(--rose);
+  box-shadow: var(--ombre-rose);
 }
 
 .notif-input::placeholder {
-  kleur: var(--zand);
-  lettertype: cursief;
+  color: var(--sable);
+  font-style: italic;
 }
 
 .notif-btn {
-  witruimte: nowrap;
+  white-space: nowrap;
 }
 
-.notif-bevestig {
-  lettertypefamilie: 'Space Mono', monospace;
-  lettergrootte: .8rem;
-  lettertypegewicht: 700;
-  kleur: var(--roze);
-  marge bovenaan: 18px;
-  letterafstand: .04em;
-}</style>
+.notif-confirm {
+  font-family: 'Space Mono', monospace;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--rose);
+  margin-top: 18px;
+  letter-spacing: .04em;
+}
+</style>
 <footer>
 
   <div>
