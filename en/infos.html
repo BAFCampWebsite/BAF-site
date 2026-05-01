@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
    
 <head>
@@ -6,20 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Practical information — BAF Camp</title>
   <link rel="stylesheet" href="../style.css"> 
-  <style>.info-grid {
-      display:grid;
+  <style>
+    .info-grid {
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       margin-bottom: 48px;
     }
     .info-card {
-      background: var(--white-dirty);
+      background: var(--blanc-sale);
       border: var(--contour-lg);
       border-radius: 12px;
       padding: 28px 24px;
-      box-shadow: var(--lg-shadow);
+      box-shadow: var(--ombre-lg);
       transition: transform .15s;
-      position: relative; overflow:hidden;
+      position: relative; overflow: hidden;
     }
     .info-card::after {
       content: '';
@@ -29,28 +30,28 @@
     }
     .info-card:nth-child(2n)::after { background: var(--vert); }
     .info-card:hover { transform: translate(-3px, -3px); }
-    .info-card-icon { font-size: 2rem; margin-bottom: 12px; display:block; }
+    .info-card-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
     .info-card-title {
       font-family: 'Boogaloo', cursive;
       font-size: 1.3rem; letter-spacing: .04em;
-      color: var(--green);
+      color: var(--vert);
       margin-bottom: 10px;
-      text-shadow: 1px 1px 0 var(--ink), -1px -1px 0 var(--ink), 1px -1px 0 var(--ink), -1px 1px 0 var(--ink);
+      text-shadow: 1px 1px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);
     }
     .info-card p {
       font-family: 'Libre Baskerville', serif;
-      font-size: .84rem; line-height: 1.7; color: var(--grey-ink);
+      font-size: .84rem; line-height: 1.7; color: var(--gris-encre);
       margin-bottom: 0;
     }
 
-    /* Section with alternating background */
+    /* Section avec fond alterné */
     .section-alt {
       background: var(--rose);
       margin: 0 -80px;
       padding: 48px 80px;
-      border-top: 3px solid var(--ink);
-      border-bottom: 3px solid var(--ink);
-      position: relative; overflow:hidden;
+      border-top: 3px solid var(--encre);
+      border-bottom: 3px solid var(--encre);
+      position: relative; overflow: hidden;
     }
     .section-alt::before {
       content: '';
@@ -59,21 +60,21 @@
       background-size: 14px 14px; pointer-events: none;
     }
     .section-alt h2 {
-      color: var(--cream) !important;
-      text-shadow: 2px 2px 0 var(--ink), -1px -1px 0 var(--ink), 1px -1px 0 var(--ink), -1px 1px 0 var(--ink) !important;
+      color: var(--creme) !important;
+      text-shadow: 2px 2px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre) !important;
     }
-    .section-alt .info-card-title { color: var(--pink); }
+    .section-alt .info-card-title { color: var(--rose); }
     .section-alt .info-card::after { background: var(--vert); }
     .section-alt .info-card:nth-child(2n)::after { background: var(--rose-dark); }
 
-    /* Text info block + icon */
+    /* Bloc info texte + icône */
     .info-block {
-      display:flex; gap: 20px; align-items: flex-start;
+      display: flex; gap: 20px; align-items: flex-start;
       padding: 20px;
-      background: var(--white-dirty);
-      border: var(--outline);
+      background: var(--blanc-sale);
+      border: var(--contour);
       border-radius: 10px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--ombre);
       margin-bottom: 16px;
       transition: transform .15s;
     }
@@ -82,28 +83,29 @@
     .info-block-body {}
     .info-block-title {
       font-family: 'Boogaloo', cursive;
-      font-size: 1.1rem; color: var(--green); margin-bottom: 6px;
-      text-shadow: 1px 1px 0 var(--ink), -1px -1px 0 var(--ink), 1px -1px 0 var(--ink), -1px 1px 0 var(--ink);
+      font-size: 1.1rem; color: var(--vert); margin-bottom: 6px;
+      text-shadow: 1px 1px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);
     }
     .info-block p {
       font-family: 'Libre Baskerville', serif;
-      font-size: .84rem; line-height: 1.7; color: var(--grey-ink); margin-bottom: 0;
+      font-size: .84rem; line-height: 1.7; color: var(--gris-encre); margin-bottom: 0;
     }
 
-    /* Section strip */
+    /* Bande de section */
     .section-label {
       display: inline-flex; align-items: center; gap: 8px;
       font-family: 'Space Mono', monospace;
       font-size: .65rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
-      background: var(--green); color: var(--cream);
+      background: var(--vert); color: var(--creme);
       padding: 4px 12px; border-radius: 4px;
-      border: 1px solid var(--ink); box-shadow: 2px 2px 0 var(--ink);
+      border: 1px solid var(--encre); box-shadow: 2px 2px 0 var(--encre);
       margin-bottom: 14px;
     }
 
     @media(max-width: 900px) {
       .section-alt { margin: 0 -20px; padding: 40px 20px; }
-    }</style>
+    }
+  </style>
 </head>
 <body>
 
