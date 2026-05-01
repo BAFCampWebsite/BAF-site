@@ -95,6 +95,14 @@ def restore_styles(html: str, styles: list) -> str:
         html = html.replace(f'<!--STYLE_{i}-->', style)
     return html
 
+def protect_brand(html: str):
+    placeholder = '<!--BRAND_NAME-->'
+    html = html.replace('BAF Camp', placeholder).replace('BAF camp', placeholder)
+    return html, placeholder
+
+def restore_brand(html: str) -> str:
+    return html.replace('<!--BRAND_NAME-->', 'BAF Camp')
+    
 
 files_to_translate = sys.argv[1:] if len(sys.argv) > 1 else ALL_HTML_FILES
 
@@ -114,6 +122,7 @@ for filename in files_to_translate:
         protected, scripts = protect_scripts(src)
         protected, styles = protect_styles(protected)
         protected, lang_switcher = protect_lang_switcher(protected)
+        protected, _ = protect_brand(protected)
 
         # Traduit
         translated = translate_html(protected, lang)
@@ -122,6 +131,7 @@ for filename in files_to_translate:
         translated = restore_scripts(translated, scripts)
         translated = restore_styles(translated, styles)
         translated = restore_lang_switcher(translated, lang_switcher)
+        translated = restore_brand(translated)
 
         # Fix les chemins
         translated = fix_links(translated, lang)
