@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photo gallery — Fire Festival</title>
+  <title>Photo gallery — Fire Festival</title> 
   <link rel="stylesheet" href="../style.css">
 </head>
   
@@ -81,7 +81,7 @@
 <div class="page-content">
   <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:40px;">
     <div>
-      <h2 style="margin-top:0">Festival photos</h2>
+      <h2 style="margin-top:0">Photos from the festival</h2>
       <p>Drag and drop your photos or use the button to add them.</p>
     </div>
     <label class="btn btn-red" for="galleryInput" style="cursor:pointer">📸 Add photos</label>
@@ -101,7 +101,8 @@
   <img id="lightboxImg" src="" alt="">
 </div>
 
-<style>.gallery-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; min-height:200px; border-radius:8px; transition:outline .2s; }
+<style>
+.gallery-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; min-height:200px; border-radius:8px; transition:outline .2s; }
 .gallery-grid.drag-over { outline:3px dashed var(--red); outline-offset:8px; background:rgba(212,43,43,.04); }
 .gallery-item { aspect-ratio:3/4; background:var(--black2); border:1px solid var(--black3); border-radius:6px; overflow:hidden; position:relative; cursor:pointer; transition:transform .25s, border-color .25s; }
 .gallery-item:hover { transform:scale(1.02); border-color:var(--red-dim); }
@@ -114,7 +115,8 @@
 .lightbox { display:none; position:fixed; inset:0; z-index:500; background:rgba(0,0,0,.92); align-items:center; justify-content:center; }
 .lightbox.open { display:flex; }
 .lightbox img { max-width:90vw; max-height:90vh; border-radius:4px; box-shadow:0 0 80px rgba(212,43,43,.25); }
-.lightbox-close { position:fixed; top:24px; right:32px; font-size:2rem; color:var(--white); cursor:pointer; background:none; border:none; }</style>
+.lightbox-close { position:fixed; top:24px; right:32px; font-size:2rem; color:var(--white); cursor:pointer; background:none; border:none; }
+</style>
 <script>
 let gallery=[];
 document.getElementById('galleryInput').addEventListener('change',function(){ addImages([...this.files]); this.value=''; });

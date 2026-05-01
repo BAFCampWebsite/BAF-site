@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fotogalerij — Vuurfestival</title>
+  <title>Fotogalerij — Vuurfestival</title> 
   <link rel="stylesheet" href="../style.css">
 </head>
   
@@ -81,7 +81,7 @@
 <div class="page-content">
   <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:40px;">
     <div>
-      <h2 style="margin-top:0">Festivalfoto's</h2>
+      <h2 style="margin-top:0">Foto's van het festival</h2>
       <p>Sleep uw foto's en zet ze neer of gebruik de knop om ze toe te voegen.</p>
     </div>
     <label class="btn btn-red" for="galleryInput" style="cursor:pointer">📸 Voeg foto's toe</label>
@@ -101,20 +101,22 @@
   <img id="lightboxImg" src="" alt="">
 </div>
 
-<style>.gallery-grid {weergave:grid; grid-template-kolommen: repeat(auto-fill,minmax(220px,1fr)); kloof:12px; min-hoogte: 200px; grensradius:8px; overgang: overzicht .2s; }
-.gallery-grid.drag-over {overzicht:3px onderbroken var(--red); omtrek-offset:8px; achtergrond:rgba(212,43,43,.04); }
-.gallery-item { beeldverhouding:3/4; achtergrond:var(--zwart2); rand:1px effen var(--black3); grensradius:6px; overloop: verborgen; positie:relatief; cursor:aanwijzer; overgang: transformatie .25s, randkleur .25s; }
-.gallery-item:hover { transform:scale(1.02); randkleur:var(--rood-dim); }
-.gallery-item img { breedte:100%; hoogte:100%; passend bij object: deksel; weergave:blok; }
-.verwijder-btn {positie:absoluut; boven:8px; rechts:8px; breedte: 28px; hoogte: 28px; achtergrond:rgba(8,8,8,.8); rand:1px effen var(--rood-dim); grensradius: 50%; weergave:flexibel; uitlijnen-items: centreren; rechtvaardigen-inhoud: midden; kleur:var(--wit); lettergrootte:.8rem; dekking:0; overgang: dekking .2s; cursor:aanwijzer; }
-.gallery-item: hover .remove-btn { dekking: 1; }
-.remove-btn:hover { achtergrond:var(--red)!belangrijk; randkleur:var(--rood)!belangrijk; }
-.gallery-empty { grid-kolom:1/-1; opvulling: 80px 0; tekst uitlijnen: centreren; rand: 2px onderbroken rgba (212,43,43,.25); grensradius:8px; kleur:var(--grijs); }
-.gallery-empty p { lettertypegrootte:.9rem; marge-boven:12px; }
-.lightbox {weergave: geen; positie:vast; inzet:0; z-index:500; achtergrond:rgba(0,0,0,.92); uitlijnen-items: centreren; rechtvaardigen-inhoud: midden; }
-.lightbox.open {display:flex; }
-.lightbox img {max-breedte:90vw; maximale hoogte: 90vh; grensradius: 4px; box-shadow:0 0 80px rgba(212,43,43,.25); }
-.lightbox-close { positie: vast; boven:24px; rechts:32px; lettergrootte: 2rem; kleur:var(--wit); cursor:aanwijzer; achtergrond: geen; rand: geen; }</style>
+<style>
+.gallery-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; min-height:200px; border-radius:8px; transition:outline .2s; }
+.gallery-grid.drag-over { outline:3px dashed var(--red); outline-offset:8px; background:rgba(212,43,43,.04); }
+.gallery-item { aspect-ratio:3/4; background:var(--black2); border:1px solid var(--black3); border-radius:6px; overflow:hidden; position:relative; cursor:pointer; transition:transform .25s, border-color .25s; }
+.gallery-item:hover { transform:scale(1.02); border-color:var(--red-dim); }
+.gallery-item img { width:100%; height:100%; object-fit:cover; display:block; }
+.remove-btn { position:absolute; top:8px; right:8px; width:28px; height:28px; background:rgba(8,8,8,.8); border:1px solid var(--red-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--white); font-size:.8rem; opacity:0; transition:opacity .2s; cursor:pointer; }
+.gallery-item:hover .remove-btn { opacity:1; }
+.remove-btn:hover { background:var(--red)!important; border-color:var(--red)!important; }
+.gallery-empty { grid-column:1/-1; padding:80px 0; text-align:center; border:2px dashed rgba(212,43,43,.25); border-radius:8px; color:var(--grey); }
+.gallery-empty p { font-size:.9rem; margin-top:12px; }
+.lightbox { display:none; position:fixed; inset:0; z-index:500; background:rgba(0,0,0,.92); align-items:center; justify-content:center; }
+.lightbox.open { display:flex; }
+.lightbox img { max-width:90vw; max-height:90vh; border-radius:4px; box-shadow:0 0 80px rgba(212,43,43,.25); }
+.lightbox-close { position:fixed; top:24px; right:32px; font-size:2rem; color:var(--white); cursor:pointer; background:none; border:none; }
+</style>
 <script>
 let gallery=[];
 document.getElementById('galleryInput').addEventListener('change',function(){ addImages([...this.files]); this.value=''; });
