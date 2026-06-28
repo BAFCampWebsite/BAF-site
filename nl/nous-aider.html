@@ -141,7 +141,7 @@
              <h4>QR-code (overschrijving)</h4>
              <p>Scan de QR-code met je bankapp:</p>
              <div class="qr-wrap">
-               <img src="../QR_CODE_BAF_Camp.png"> alt="QR-code voor overschrijving BAF Camp" class="qr-img">
+               <img src="../QR_CODE_BAF_Camp.png" alt="QR-code voor overschrijving BAF Camp" class="qr-img">
              </div>
              <p class="paiement-note">Compatibel met alle Belgische bankapps. Vergeet niet <strong>Donatie BAF</strong> als mededeling te vermelden.</p>
            </div>
@@ -326,17 +326,10 @@
 }
 .copy-btn:hover { background: var(--creme-fonce); }
 
-.qr-img {
-  width: 160px;
-  max-width: 160px;
-  height: 160px;
-  max-height: 160px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  border: 3px solid var(--rose);
-  border-radius: 12px;
-  background: white;
+.qr-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0;
 }
 
 .qr-img {
