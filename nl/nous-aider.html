@@ -117,22 +117,37 @@
   <!-- SECTION 1 : FAIRE UN DON -->
   <div id="don" class="reveal">
     <h2>Doe een donatie</h2>
-    <p class="intro-text" style="font-size: 1.1em; line-height: 1.6; margin-bottom: 30px;"> Wij willen een toegankelijke plek ruimte creëren. Hierbij vormt de beschikbare ruimte op de camping de limiet van het aantal deelnemers.<br>Ondanks dat wij allemaal als vrijwilliger werken, blijven bepaalde kosten bestaan.<br>Jouw donatie, hoe klein ook, stelt ons in staat om onafhankelijk en trouw aan onze waarden te blijven.</p>
-    <div style="text-align: center; margin-top: 30px;">
-      <button onclick="document.getElementById('modalDon').style.display='flex'" class="btn btn-red" style="padding: 15px 40px; font-size: 1.2em; cursor: pointer; border: none;">❤️ Ik doe een donatie</button>
-    </div>
-  </div>
-  
-  <!-- MODAL DON -->
-  <div id="modalDon" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:9999; align-items:center; justify-content:center;">
-    <div style="background:#fff; border-radius:12px; padding:40px 36px; max-width:420px; width:90%; text-align:center; box-shadow:0 8px 40px rgba(0,0,0,0.18); position:relative;">
-      <span style="font-size:2.5em;">🕐</span>
-      <h3 style="margin:16px 0 10px; font-size:1.3em;">Donaties tijdelijk niet beschikbaar</h3>
-      <p style="color:#555; line-height:1.6; margin-bottom:28px;">Het is momenteel nog niet mogelijk om een ​​donatie te doen, in de tussentijd kunt u contact met ons opnemen via<a href="mailto:activismcampbelgium@proton.be" style="color:#e63946; font-weight:bold;"> e-mail</a>.
+      <p class="section-lead" style="font-size: 1.1em; line-height: 1.6; margin-bottom: 30px;">
+        Omdat we een toegankelijke ruimte willen creëren, is er geen andere toegangsbeperking dan de beschikbare plaatsen op de kampplaats.<br>
+        Toch blijven er, ondanks het werk van honderden vrijwilligers, bepaalde onvermijdelijke kosten bestaan.<br>
+        Jouw gift, hoe bescheiden ook, helpt ons onafhankelijk te blijven en trouw te blijven aan onze waarden.
       </p>
-      <button onclick="document.getElementById('modalDon').style.display='none'" class="btn btn-red" style="padding:12px 32px; font-size:1em; cursor:pointer; border:none;">Dichtbij</button>
-    </div>
+      
+      <div class="paiement-options">
+      
+           <div class="paiement-card">
+             <span class="paiement-icon">🏦</span>
+             <h4>Bankoverschrijving</h4>
+             <p>Doe een overschrijving naar de rekening van "Stichting Marius Jacob":</p>
+             <div class="iban-block">
+               <code id="ibanCode"><strong>BE65 5230 8110 3896</strong></code>
+               <button class="copy-btn" onclick="copyIban()" title="IBAN kopiëren">📋</button>
+             </div>
+             <p class="paiement-note">Vermeld <strong>Donatie BAF</strong> als mededeling.</p>
+           </div>
+         
+           <div class="paiement-card">
+             <span class="paiement-icon">📱</span>
+             <h4>QR-code (overschrijving)</h4>
+             <p>Scan de QR-code met je bankapp:</p>
+             <div class="qr-wrap">
+               <img src="QR_CODE_BAF_Camp.png" alt="QR-code voor overschrijving BAF Camp" class="qr-img">
+             </div>
+             <p class="paiement-note">Compatibel met alle Belgische bankapps. Vergeet niet <strong>Donatie BAF</strong> als mededeling te vermelden.</p>
+           </div>
+      </div>
   </div>
+
 
   <!-- SECTION 2 : PARTAGER L'ÉVÉNEMENT -->
   <div class="reveal" id="partager">
