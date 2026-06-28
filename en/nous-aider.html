@@ -115,24 +115,50 @@
   <hr class="divider">
 
   <!-- SECTION 1 : FAIRE UN DON -->
-  <div id="don" class="reveal">
-    <h2>Make a donation</h2>
-    <p class="intro-text" style="font-size: 1.1em; line-height: 1.6; margin-bottom: 30px;">Because we want to create an accessible space, there will be no access restrictions other than the space available at the camp site.<br>However, despite the work of hundreds of volunteers, certain expenses persist and cannot be reduced.<br>Your donation, however modest, allows us to remain independent and true to our values.</p>
-    <div style="text-align: center; margin-top: 30px;">
-      <button onclick="document.getElementById('modalDon').style.display='flex'" class="btn btn-red" style="padding: 15px 40px; font-size: 1.2em; cursor: pointer; border: none;">❤️ &nbsp; I make a donation</button>
-    </div>
-  </div>
   
-  <!-- MODAL DON -->
-  <div id="modalDon" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:9999; align-items:center; justify-content:center;">
-    <div style="background:#fff; border-radius:12px; padding:40px 36px; max-width:420px; width:90%; text-align:center; box-shadow:0 8px 40px rgba(0,0,0,0.18); position:relative;">
-      <span style="font-size:2.5em;">🕐</span>
-      <h3 style="margin:16px 0 10px; font-size:1.3em;">Donations temporarily unavailable</h3>
-      <p style="color:#555; line-height:1.6; margin-bottom:28px;">It is not possible to make a donation at the moment, in the meantime, you can contact us by<a href="mailto:activismcampbelgium@proton.be" style="color:#e63946; font-weight:bold;"> email</a>.
-      </p>
-      <button onclick="document.getElementById('modalDon').style.display='none'" class="btn btn-red" style="padding:12px 32px; font-size:1em; cursor:pointer; border:none;">Close</button>
+<div id="don" class="reveal">
+  <h2>Make a donation</h2>
+
+  <p class="section-lead" style="font-size: 1.1em; line-height: 1.6; margin-bottom: 30px;">
+    Because we want to create an accessible space, there will be no restrictions on access other than the number of places available at the camp.<br>
+    However, despite the work of hundreds of volunteers, some expenses remain unavoidable.<br>
+    Your donation, no matter how small, helps us remain independent and stay true to our values.
+  </p>
+
+  <div class="paiement-options">
+
+    <div class="paiement-card">
+      <span class="paiement-icon">🏦</span>
+      <h4>Bank transfer</h4>
+      <p>Make a bank transfer to the account of the "Marius Jacob Foundation":</p>
+
+      <div class="iban-block">
+        <code id="ibanCode"><strong>BE65 5230 8110 3896</strong></code>
+        <button class="copy-btn" onclick="copyIban()" title="Copy IBAN">📋</button>
+      </div>
+
+      <p class="paiement-note">Please use <strong>BAF Donation</strong> as the payment reference.</p>
     </div>
+
+    <div class="paiement-card">
+      <span class="paiement-icon">📱</span>
+      <h4>QR Code (bank transfer)</h4>
+      <p>Scan the QR code with your banking app:</p>
+
+      <div class="qr-wrap">
+        <img src="../QR_CODE_BAF_Camp.png"
+             alt="BAF Camp bank transfer QR code"
+             class="qr-img">
+      </div>
+
+      <p class="paiement-note">
+        Compatible with all Belgian banking apps. Please use <strong>BAF Donation</strong> as the payment reference.
+      </p>
+    </div>
+
   </div>
+</div>
+
 
   <!-- SECTION 2 : PARTAGER L'ÉVÉNEMENT -->
   <div class="reveal" id="partager">
@@ -219,7 +245,122 @@
   </div>
 </footer>
 
+<!-- STYLES SPÉCIFIQUES -->
+<style>
+.section-lead {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .97rem;
+  line-height: 1.85;
+  color: var(--encre);
+  margin-bottom: 14px;
+  max-width: 720px;
+}
 
+.paiement-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+  max-width: 560px;
+}
+
+.paiement-card {
+  background: var(--blanc-sale);
+  border: var(--contour);
+  border-radius: 14px;
+  padding: 22px 18px;
+  transition: box-shadow .2s, transform .2s;
+}
+
+.paiement-card:hover {
+  box-shadow: var(--ombre-lg);
+  transform: translateY(-2px);
+}
+
+.paiement-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.paiement-card h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--encre);
+  margin-bottom: 8px;
+}
+
+.paiement-card p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .85rem;
+  line-height: 1.6;
+  color: var(--encre);
+  margin-bottom: 8px;
+}
+
+.paiement-note {
+  font-size: .78rem !important;
+  color: var(--sable) !important;
+  font-style: italic;
+}
+
+.iban-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--creme);
+  border: var(--contour);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.iban-block code {
+  font-family: 'Space Mono', monospace;
+  font-size: .82rem;
+  color: var(--encre);
+  flex: 1;
+  word-break: break-all;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 2px 6px;
+  border-radius: 6px;
+  transition: background .15s;
+  flex-shrink: 0;
+}
+.copy-btn:hover { background: var(--creme-fonce); }
+
+.qr-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.qr-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  border: 3px solid var(--rose);
+  object-fit: contain;
+  background: #fff;
+}
+
+@media (max-width: 600px) {
+  .paiement-options { grid-template-columns: 1fr; }
+  .iban-block { flex-direction: column; align-items: flex-start; }
+  .qr-img { width: 140px; height: 140px; }
+}
+</style>
+
+<!-- SCRIPTS -->
 <!-- SCRIPTS -->
 <script>
 function toggleDD(li) {
@@ -236,24 +377,26 @@ document.getElementById('logoInput').addEventListener('change', function() {
   const img = document.getElementById('logoImg');
   img.src = URL.createObjectURL(file);
   img.style.display = 'block';
-  document.getElementById('logoPlaceholder').style.display = 'none';
 });
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-document.getElementById('modalDon').addEventListener('click', function(e) {
-  if (e.target === this) this.style.display = 'none';
-});
-
-  // Met en gras la langue active selon l'URL
 document.querySelectorAll('.lang-switcher a').forEach(a => {
   if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
   else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
   else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
 });
-  
+
+function copyIban() {
+  const iban = 'BE65 5230 8110 3896';
+  navigator.clipboard.writeText(iban).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = '✅';
+    setTimeout(() => btn.textContent = '📋', 2000);
+  });
+}
 </script>
 
 </body>
