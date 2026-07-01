@@ -86,16 +86,16 @@
   <div class="reveal section-intro">
     <h2>What is pay-what-you-can?</h2>
     <p class="section-lead">
-      BAF Camp does not have a fixed price. Everyone contributes according to their <strong>real means</strong> — not just their salary, but their assets, privileges and safety nets. Those who are more financially comfortable pay more, which allows others to come.
+      Tickets for the BAF Camp do not have a fixed price. Everyone contributes according to their <strong>real means</strong> — not just their salary, but their assets, privileges and safety nets. Those who are more financially comfortable pay more to allow those less privileged to attend.
     </p>
     <p class="section-lead">
       Pay-what-you-can doesn't always work well — people with more means tend to underpay. That's why we invite you to <strong>reflect honestly</strong> on your situation before choosing your amount.
     </p>
     <p class="section-lead">
-      Of course, every situation is different: if you regularly send money to loved ones or have significant healthcare expenses, take that into account — but here is a gauge to help you situate yourself.
+      Of course, every situation is different: if you regularly send money to loved ones or have significant healthcare expenses, take that into account. Our Privilege-o-meter below can help you calculate a price that is fair to your situation.
     </p>
     <p class="section-lead">
-      This festival is a first edition. If we don't cover costs, the project will go into debt and the future will be at risk. We really count on your generosity and honesty for this project to be a success, especially financially. Any surplus will be redistributed to various struggles (local, sustaining the festival for BAF 2, and redistribution via the Fondation Marius Jacob<sup>*</sup> and Mycélium<sup>**</sup>).
+      This festival is a first edition. If we don't cover costs, the project will go into debt and undermine the possibility of future editions. We really count on your generosity and honesty for this project to be a success, especially financially. Any surplus will be redistributed to various (local) struggles, redistributed via the Fondation Marius Jacob<sup>*</sup> and Mycélium<sup>**</sup>) or used to finance next year's edition.
     </p>
     <p class="section-lead" style="font-size:.8rem; color:var(--sable); margin-top:8px; font-style:italic;">
       <sup>*</sup> <a href="https://www.fondationmariusjacob.org/#about-7" target="_blank" rel="noopener" style="color:var(--sable);">The Fondation Marius Jacob</a> is a collective, self-managed financial tool that redistributes grants to activists, collectives and social movements in Belgium — and hosts our bank account.<br>
@@ -180,7 +180,7 @@
         <span class="tarif-letter">A</span>
         <div>
           <strong>Solidarity rate: from €29 / day <span class="tarif-total">— or €87 for 3 days</span></strong>
-          <p>You live comfortably: regular leisure, holidays, salary above €1,800, or a prospect of home ownership. You are well supported financially and can afford to contribute more for those who cannot.</p>
+          <p>You live comfortably: regular leisure, holidays, salary above €1,800 per month, or a prospect of home ownership. You are well supported financially and can afford to contribute more for those who cannot.</p>
         </div>
       </div>
       <div class="tarif-band tarif-reel">
@@ -238,7 +238,7 @@
           <div class="paiement-card">
             <span class="paiement-icon">🏦</span>
             <h4>Bank transfer</h4>
-            <p>Transfer to the "Fondation Marius Jacob" account:</p>
+            <p>Transfer to the Fondation Marius Jacob account:</p>
             <div class="iban-block">
               <code id="ibanCode"><strong>BE65 5230 8110 3896</strong></code>
               <button class="copy-btn" onclick="copyIban()" title="Copy IBAN">📋</button>
@@ -275,7 +275,7 @@
       <div class="step-body">
         <h3>Fill in the registration form</h3>
         <p>
-          After paying (or deciding to pay on-site), <strong>fill in the registration form</strong>. It allows us to keep track of the amount you have paid or planned.
+          After paying (or deciding to pay on-site), <strong>fill in the registration form</strong>. It allows us to keep track of the amount you have paid or plan to pay.
         </p>
         <p>
           At the festival entrance, we will check registrations:
@@ -813,10 +813,10 @@ function calculerThuno() {
 
   if (score >= 8) {
     high.classList.add('active');
-    reco.innerHTML = '🌟 <strong>Solidarity rate.</strong> You live comfortably: regular leisure, holidays, salary above €1,800, or a prospect of home ownership. You can contribute more for those who cannot.';
+    reco.innerHTML = '🌟 <strong>Solidarity rate.</strong> You live comfortably: regular leisure, holidays, salary above €1,800 per month, or a prospect of home ownership. You can contribute more for those who cannot.';
   } else if (score >= 4) {
     mid.classList.add('active');
-    reco.innerHTML = '⚖️ <strong>Cost price.</strong> You have a stable income and make ends meet without too much stress. Your salary is around €1,200–1,600 (with no dependants). You might have a small savings cushion, or parents to fall back on if truly needed.';
+    reco.innerHTML = '⚖️ <strong>Cost price.</strong> You have a stable income and make ends meet without too much stress. Your salary is around €1,200–1,600 (with no dependants). You might have a bit of savings, or parents to fall back on if truly needed.';
   } else {
     low.classList.add('active');
     reco.innerHTML = '💚 <strong>Reduced rate.</strong> You have no assets and no fixed income that allows for a stable daily life. You regularly rely on the solidarity of those around you.';
