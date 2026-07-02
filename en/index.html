@@ -9,63 +9,65 @@
 </head>
   
 <body>
-<!-- ══ NAVBAR ══ -->
+<input type="file" id="logoInput" accept="image/*" style="display:none">
 <nav>
  <a class="nav-logo">
-    <div class="logo-img-wrap" >
-      <img id="logoImg" src="../BAF icône.png" alt="Logo BAF Camp">
+    <div class="logo-img-wrap">
+      <img id="logoImg" src="../BAF icône.png" alt="BAF Camp Logo">
     </div>
-    <span class="nav-site-name">BAF<span> CAMP</span></span>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
   </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="/en/index.html">Welcome</a></li>
-    <li><a href="/en/programme.html">Program</a></li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">Functioning<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dropdown">
-        <a href="/en/financements.html"><span class="di">💰</span>Financing</a>
-        <a href="/en/charte.html"><span class="di">📜</span>Our charter</a>
-        <a href="/en/autogestion.html"><span class="di">🙌</span>Self-management</a>
-      </div>
-    </li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">Information<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dropdown">
-        <a href="/en/infos.html#acces"><span class="di">📍</span>Getting here</a>
-        <a href="/en/infos.html#restauration"><span class="di">🍔</span>Food</a>
-        <a href="/en/infos.html#camping"><span class="di">⛺</span>The campsite</a>
-        <a href="/en/infos.html#bambinerie"><span class="di">🧸</span>Childcare</a>
-      </div>
-    </li>
-    <li>
-      <button onclick="toggleDD(this.parentElement)">Help us<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="dropdown">
-        <a href="/en/nous-aider.html"><span class="di">❤️</span>Make a donation</a>
-        <a href="/en/autogestion.html"><span class="di">🙌</span>Volunteer registrations</a>
-        <a href="/en/nous-aider.html#partager"><span class="di">📢</span>Share</a>
-        <a href="/en/nous-aider.html#materiel"><span class="di">🔌</span>Lend equipment</a>
-      </div>
-    </li>
-    <li><a href="/en/billetterie.html" class="btn nav-cta">Ticket office: Pay what you can →</a></li>
-  </ul>
 
-  <div class="lang-switcher">
-    <a href="/index.html">FR</a>
-    <span>|</span>
-    <a href="/nl/index.html">NL</a>
-    <span>|</span>
-    <a href="/en/index.html">EN</a>
-  </div>
-  
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="programme.html">Programme</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">How it works
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="financements.html"><span class="di">💰</span>Funding</a>
+        <a href="charte.html"><span class="di">📜</span>Our charter</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Self-management</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Information
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="infos.html#acces"><span class="di">📍</span>Getting there</a>
+        <a href="infos.html#restauration"><span class="di">🍔</span>Food</a>
+        <a href="infos.html#camping"><span class="di">⛺</span>Camping</a>
+        <a href="infos.html#bambinerie"><span class="di">🧸</span>The Bambinerie</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Support us
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="nous-aider.html"><span class="di">❤️</span>Donate</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Volunteer sign-up</a>
+        <a href="nous-aider.html#partager"><span class="di">📢</span>Share</a>
+        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Lend equipment</a>
+      </div>
+    </li>
+    <li><a href="billetterie.html" class="btn nav-cta">Pay-what-you-can tickets →</a></li>
+  </ul> 
+
   <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
-  
-</nav>
 
+  <div class="lang-switcher">
+     <a href="/index.html">FR</a>
+     <span>|</span>
+     <a href="/nl/index.html">NL</a>
+     <span>|</span>
+     <a href="/en/index.html">EN</a>
+  </div>
+</nav>
 <!-- Input fichiers cachés -->
 <input type="file" id="logoInput" accept="image/*">
 <input type="file" id="heroInput" accept="image/*">
