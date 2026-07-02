@@ -7,64 +7,66 @@
   <title>Programma - BAF Camp</title>
   <link rel="stylesheet" href="../style.css">
 </head>
-<body>
 
-<input type="file" id="logoInput" accept="image/*">
+  <body>
+<input type="file" id="logoInput" accept="image/*" style="display:none">
 <nav>
  <a class="nav-logo">
-    <div class="logo-img-wrap" >
+    <div class="logo-img-wrap">
       <img id="logoImg" src="../BAF icône.png" alt="Logo BAF Camp">
     </div>
-    <span class="nav-site-name">BAF<span> CAMP</span></span>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
   </a>
 
   <ul class="nav-links" id="navLinks">
-    <li><a href="/nl/index.html">Welkom</a></li>
-    <li><a href="/nl/programme.html">Programma</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="programme.html">Programma</a></li>
     <li>
-      <button onclick="toggleDD(this.parentElement)">Organisatie<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      <button onclick="toggleDD(this.parentElement)">Werking
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="dropdown">
-        <a href="/nl/financements.html"><span class="di">💰</span>Financiering</a>
-        <a href="/nl/charte.html"><span class="di">📜</span>Ons handvest</a>
-        <a href="/nl/autogestion.html"><span class="di">🙌</span>Zelfbeheer</a>
+        <a href="financements.html"><span class="di">💰</span>Financiering</a>
+        <a href="charte.html"><span class="di">📜</span>Ons charter</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Zelfbeheer</a>
       </div>
     </li>
     <li>
-      <button onclick="toggleDD(this.parentElement)">Informatie<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      <button onclick="toggleDD(this.parentElement)">Informatie
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="dropdown">
-        <a href="/nl/infos.html#acces"><span class="di">📍</span>Ter plaatse komen</a>
-        <a href="/nl/infos.html#restauration"><span class="di">🍔</span>Voed jezelf</a>
-        <a href="/nl/infos.html#camping"><span class="di">⛺</span>De camping</a>
-        <a href="/nl/infos.html#bambinerie"><span class="di">🧸</span>De Babykamer</a>
+        <a href="infos.html#acces"><span class="di">📍</span>Hoe geraken</a>
+        <a href="infos.html#restauration"><span class="di">🍔</span>Eten</a>
+        <a href="infos.html#camping"><span class="di">⛺</span>Camping</a>
+        <a href="infos.html#bambinerie"><span class="di">🧸</span>De Bambinerie</a>
       </div>
     </li>
     <li>
-      <button onclick="toggleDD(this.parentElement)">Help ons<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      <button onclick="toggleDD(this.parentElement)">Ons helpen
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="dropdown">
-        <a href="/nl/nous-aider.html"><span class="di">❤️</span>Doe een donatie</a>
-        <a href="/nl/autogestion.html"><span class="di">🙌</span>Vrijwilligersregistratie</a>
-        <a href="/nl/nous-aider.html#partager"><span class="di">📢</span>Delen</a>
-        <a href="/nl/nous-aider.html#materiel"><span class="di">🔌</span>Materiaal uitlenen</a>
+        <a href="nous-aider.html"><span class="di">❤️</span>Doneren</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Vrijwilligers inschrijving</a>
+        <a href="nous-aider.html#partager"><span class="di">📢</span>Delen</a>
+        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Materiaal uitlenen</a>
       </div>
     </li>
-    <li><a href="/nl/billetterie.html" class="btn nav-cta">Ticketverkoop : vrije bijdrage →</a></li>
-  </ul>
+    <li><a href="billetterie.html" class="btn nav-cta">Ticketing vrije prijs →</a></li>
+  </ul> 
 
   <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 
   <div class="lang-switcher">
-  <a href="/index.html">FR</a>
-  <span>|</span>
-  <a href="/nl/index.html">NL</a>
-  <span>|</span>
-  <a href="/en/index.html">EN</a>
+     <a href="/index.html">FR</a>
+     <span>|</span>
+     <a href="/nl/index.html">NL</a>
+     <span>|</span>
+     <a href="/en/index.html">EN</a>
   </div>
-  
 </nav>
 
 <div class="page-hero anim">
