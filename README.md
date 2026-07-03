@@ -1,2 +1,2 @@
 # BAF-site
-This GitHub repository is about pushin the HTML code into Vercel to host a website for free for the BAF Camp
+This GitHub repository pushes HTML code to Vercel (an AI based cloud development application) to host a website for free for the BAF Camp.
