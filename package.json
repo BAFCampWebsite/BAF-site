@@ -1,0 +1,13 @@
+{
+  "name": "baf-site",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run validate:i18n && astro build",
+    "preview": "astro preview",
+    "validate:i18n": "node scripts/validate-translations.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}
