@@ -1,0 +1,182 @@
+{
+  "site": {
+    "title": "BAF Camp 2026 – Belgian Activism Festi-Camp | Grupont, 20-23 augustus",
+    "description": "Het BAF Camp is een Belgisch militant festival van 4 dagen in Grupont: workshops, concerten, zelfbeheer en activisme. Editie 2026 van 20 tot 23 augustus.",
+    "keywords": "BAF Camp, BAF, Belgian Activism Festi-Camp, activistisch festival België, activisme kamp, Grupont 2026",
+    "locale": "nl_BE"
+  },
+  "nav": {
+    "home": "Home",
+    "programme": "Programma",
+    "fonctionnement": "Werking",
+    "informations": "Informatie",
+    "nousAider": "Ons helpen",
+    "tickets": "Ticketing vrije prijs →",
+    "drodownFonctionnement": {
+      "financements": "Financiering",
+      "charte": "Ons charter",
+      "autogestion": "Zelfbeheer"
+    },
+    "dropdownInformations": {
+      "venir": "Hoe geraken",
+      "nourrir": "Eten",
+      "camping": "Camping",
+      "bambinerie": "De Bambinerie"
+    },
+    "dropdownAider": {
+      "faireDon": "Doneren",
+      "inscriptions": "Vrijwilligers inschrijving",
+      "partager": "Delen",
+      "materiel": "Materiaal uitlenen"
+    }
+  },
+  "hero": {
+    "eyebrow": "✮ Editie 2026 ✮",
+    "dateLabel": "Datum",
+    "dateValue": "20–23 augustus 2026",
+    "lieuLabel": "Plaats",
+    "lieuValue": "De Moulin-tuinen in Grupont",
+    "programmeLabel": "Op het programma",
+    "programmeValue": "Workshops, rondetafelgesprekken, concerten, optredens &amp; en activiteiten",
+    "objectifLabel": "Doel",
+    "objectifValue": "Alle vrijwilligers helpen mee om het kamp draaiende te houden",
+    "btnBillets": "Tickets kopen",
+    "btnProgramme": "Bekijk het programma →",
+    "btnBenevolat": "Word vrijwilliger"
+  },
+  "enBref": {
+    "eyebrow": "Het BAF Camp",
+    "title": "In het kort",
+    "card1Title": "Programma",
+    "card1Text": "Sprekers en artiesten op verschillende podia tijdens vier dagen vol strijd en feest. Het programma wordt samen vormgegeven:",
+    "card1Link": "Framaform-pagina",
+    "card1LinkUrl": "https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054",
+    "card1LinkSuffix": "!",
+    "card2Title": "Camping",
+    "card2Text": "De camping is vanaf maandagavond 17 augustus open voor ieder die wil helpen met het opbouwen en afbreken van het kamp, tot en met 26 augustus (einde van de afbouw).",
+    "card3Title": "Zelfbeheer",
+    "card3Text": "Wie je ook bent, sluit je aan bij ons team door ons ",
+    "card3Link": "een e-mail te sturen",
+    "card3LinkUrl": "mailto:Activismcampbelgium@proton.me?subject=Rejoindre%20l%27organisation%20du%20BAF",
+    "card3LinkSuffix": " om mee te helpen, zowel vooraf als ter plaatse."
+  },
+  "contact": {
+    "eyebrow": "Contact houden",
+    "title": "Een vraag?",
+    "text": "Wij staan klaar om op je vragen te antwoorden.",
+    "btnText": "✉ Schrijf ons"
+  },
+  "footer": {
+    "tagline": "Vient prendre une claque !",
+    "navTitle": "Navigatie",
+    "navHome": "Home",
+    "navProgramme": "Programma",
+    "navAider": "Help ons",
+    "navInfos": "Praktische info",
+    "fonctionnementTitle": "Hoe het werkt",
+    "footerFinancements": "Financiering",
+    "footerCharte": "Ons charter",
+    "footerAutogestion": "Zelfbeheer",
+    "reseauTitle": "Netwerken",
+    "signalLabel": "Sluit je aan bij de Signal-groep",
+    "emailLabel": "Email",
+    "copy": "2026 BAF Camp — door en voor iedereen",
+    "copyTagline": "Vient prendre une claque !"
+  },
+  "billetterie": {
+    "hero": {
+      "eyebrow": "🎟️ Ticketing",
+      "title": "Vrije & bewuste prijs",
+      "subtitle": "Zodat je bijdraagt naar jouw mogelijkheden."
+    },
+    "intro": {
+      "title": "Wat is de vrije en bewuste prijs?",
+      "p1": "Het BAF Camp werkt niet met een vaste prijs. Iedereen draagt bij volgens zijn of haar <strong>werkelijke middelen</strong> — niet alleen het loon, maar ook vermogen, privileges en vangnet. Wie het financieel beter heeft, betaalt meer, zodat anderen ook kunnen komen.",
+      "p2": "Vrije prijzen werken niet altijd goed — mensen met meer middelen hebben de neiging te weinig te betalen. Daarom nodigen we je uit om <strong>eerlijk na te denken</strong> over jouw situatie voor je een bedrag kiest.",
+      "p3": "Uiteraard is elke situatie anders: als je structureel geld stuurt naar naasten of hoge gezondheidsuitgaven hebt, houd je daar rekening mee — maar hier is een meter om je te helpen situeren.",
+      "p4": "Dit festival is een eerste editie. Als we de kosten niet dekken, raakt het project in de schulden en staat de toekomst op het spel. We rekenen echt op jullie vrijgevigheid en eerlijkheid opdat dit project ook financieel een succes wordt. De winsten worden trouwens herverdeeld naar diverse strijd (lokaal, duurzaamheid van het festival voor BAF 2, en herverdeling via de Fondation Marius Jacob<sup>*</sup> en Mycélium<sup>**</sup>).",
+      "footnote1": "De Marius Jacob Foundation",
+      "footnote1Url": "https://www.fondationmariusjacob.org/#about-7",
+      "footnote1Text": "is een collectief en zelfbeheerd financieel instrument dat beurzen herverdeelt aan activisten, collectieven en sociale bewegingen in België — en dat onze bankrekening beheert.",
+      "footnote2": "De Mycelium Foundation",
+      "footnote2Url": "https://fondation.mycelium.cc",
+      "footnote2Text": "is een participatieve private stichting die financieel militante en alternatieve initiatieven in België ondersteunt via haar netwerk van mecenassen."
+    },
+    "privilegeMeter": {
+      "title": "🌡️ De Privilègemeter — bereken jouw eerlijke bijdrage",
+      "description": "Beantwoord de onderstaande vragen om in te schatten waar je economisch staat. Dit is geen oordeel — het is een hulpmiddel om eerlijk bij te dragen.",
+      "introLabel": "📊 Vink aan wat op jou van toepassing is:",
+      "btnCalculate": "Bereken mijn score →",
+      "btnReset": "↩ Reset",
+      "scoreLabel": "Jouw score",
+      "tierHigh": "💰 Solidariteitstarief",
+      "tierMid": "⚖️ Kostprijs",
+      "tierLow": "🌱 Verminderd tarief",
+      "plusGroupTitle": "➕ Voeg 1 punt toe als…",
+      "minusGroupTitle": "➖ Trek 1 punt af als…",
+      "plusItems": [
+        "Je ouders bezitten een woning waarin je bent opgegroeid.",
+        "Je ouders bezitten meerdere eigendommen.",
+        "Je ouders kunnen je helpen bij het kopen van een woning.",
+        "Je hebt een erfenis van meer dan 50 000 € ontvangen of zal ontvangen.",
+        "Je hebt minstens 5 000 € spaargeld.",
+        "Je ouders kunnen je financieel steunen in geval van nood zonder dat het hen veel kost.",
+        "Je hebt een masterdiploma behaald.",
+        "Je zou via je ouders of hun netwerk aan een job of professionele hulp kunnen geraken.",
+        "Je gaat naar restaurants, de bioscoop of culturele activiteiten.",
+        "Je hebt een of meer hobby's zoals: muziek, tekenen, hockey, paardrijden, tennis, klimmen.",
+        "Je hebt een vast contract (CDI) met meer dan 1 800 € en niemand ten laste."
+      ],
+      "minusItems": [
+        "Je ouders zijn bang van de politie / het leger.",
+        "Bij problemen bellen je ouders niet naar de politie.",
+        "Je financiële steunpilaren hadden korte of precaire contracten / blauwe boorden jobs.",
+        "Je moest je kamer delen met broers/zussen/siblings om financiële redenen.",
+        "Je financiële steunpilaar heeft het middelbaar onderwijs niet afgemaakt.",
+        "Je grootouders hielpen met de opvang van kleinkinderen om financiële redenen.",
+        "Je hebt regelmatige medische kosten.",
+        "Je hebt kosten als gevolg van repressie (boete, advocaat,…).",
+        "Je bent student en je ouders helpen je niet (voldoende)."
+      ],
+      "minusAsPlus": [8],
+      "tierHighMin": 8,
+      "tierMidMin": 4,
+      "tierLowMin": 0,
+      "recoHighHTML": "🌟 <strong>Solidariteitstarief.</strong> Je leeft comfortabel: regelmatige vrije tijd, vakanties, loon boven 1 800 €, of perspectief op eigendom. Je kan meer bijdragen voor wie dat niet kan.",
+      "recoMidHTML": "⚖️ <strong>Kostprijs.</strong> Je hebt een stabiel inkomen en de eindjes lukken zonder al te veel stress. Je loon schommelt rond 1 200–1 600 € (zonder personen ten laste). Je hebt misschien een klein spaarpotje, of ouders op wie je kan terugvallen.",
+      "recoLowHTML": "💚 <strong>Verminderd tarief.</strong> Je hebt geen vermogen en geen vast inkomen dat een stabiel dagelijks leven mogelijk maakt. Je rekent regelmatig op de solidariteit van je omgeving.",
+      "formulaNote": "Als je <strong>8 punten of meer</strong> scoort op de Privilègemeter → solidariteitstarief. <br> Tussen <strong>4 en 7 punten</strong> → kostprijs. <br> Minder dan <strong>4 punten</strong> → verminderd tarief. We helpen je graag als je twijfelt."
+    },
+    "pricing": {
+      "title": "Indicatieve prijzen",
+      "tiers": [
+        { "letter": "A", "class": "tarif-soutien", "priceLabel": "Solidariteitstarief: vanaf 29 € / dag", "totalLabel": "of 87 € voor 3 dagen", "description": "Je leeft comfortabel: regelmatige vrije tijd, vakanties, loon boven 1 800 €, of perspectief op eigendom. Je bent financieel goed omringd en kan je permitteren meer bij te dragen voor wie dat niet kan." },
+        { "letter": "B", "class": "tarif-reel", "priceLabel": "Kostprijs: 19 € / dag", "totalLabel": "of 57 € voor 3 dagen", "description": "Je hebt een stabiel inkomen en de eindjes lukken zonder al te veel stress. Je loon schommelt rond 1 200–1 600 € (zonder personen ten laste). Je hebt misschien een klein spaarpotje, of ouders op wie je kan terugvallen indien nodig." },
+        { "letter": "C", "class": "tarif-reduit", "priceLabel": "Verminderd tarief: 10 € / dag", "totalLabel": "of 30 € voor 3 dagen", "description": "Je hebt geen vermogen en geen vast inkomen dat een stabiel dagelijks leven mogelijk maakt. Je rekent regelmatig op de solidariteit van je omgeving." }
+      ],
+      "campingTitle": "+ Campingbijdrage",
+      "campingText": "Als je op de camping wil slapen, kan je een bijdrage van <strong>± 5 € / dag</strong> toevoegen om bij te dragen aan het herstel van de locatie na het kamp."
+    },
+    "registration": {
+      "title": "🎟️ Hoe inschrijven?",
+      "description": "Inschrijving gebeurt via het online inschrijvingsformulier.",
+      "stepNum": "1",
+      "stepTitle": "Vul het inschrijvingsformulier in",
+      "stepText": "Vul het inschrijvingsformulier in om ons te laten weten dat je naar het kamp komt.",
+      "formUrl": "https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306",
+      "btnForm": "📝 Inschrijvingsformulier invullen →"
+    },
+    "contact": {
+      "title": "Een vraag?",
+      "text": "Voor elke vraag over de ticketing, de vrije prijs of financiële toegankelijkheid, schrijf ons direct:",
+      "btnText": "✉ Schrijf ons",
+      "emailSubject": "Vraag over tickets"
+    },
+    "popup": {
+      "icon": "⏳",
+      "title": "Binnenkort beschikbaar!",
+      "text": "Het inschrijvingsformulier is nog niet open. Het zal binnenkort beschikbaar zijn — kom snel terug!",
+      "btnText": "Begrepen"
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "site": {
+    "title": "BAF Camp 2026 – Belgian Activism Festi-Camp | Grupont, 20-23 août",
+    "description": "Le BAF Camp est un festival militant belge de 4 jours à Grupont : ateliers, concerts, autogestion et militantisme. Édition 2026 du 20 au 23 août.",
+    "keywords": "BAF Camp, BAF, Belgian Activism Festi-Camp, festival militant Belgique, camp activisme, Grupont 2026, festival activiste belge",
+    "locale": "fr_BE"
+  },
+  "nav": {
+    "home": "Accueil",
+    "programme": "Programme",
+    "fonctionnement": "Fonctionnement",
+    "informations": "Informations",
+    "nousAider": "Nous aider",
+    "tickets": "Billetterie prix libre →",
+    "drodownFonctionnement": {
+      "financements": "Financements",
+      "charte": "Notre charte",
+      "autogestion": "Autogestion"
+    },
+    "dropdownInformations": {
+      "venir": "Venir sur place",
+      "nourrir": "Se nourrir",
+      "camping": "Le camping",
+      "bambinerie": "La Bambinerie"
+    },
+    "dropdownAider": {
+      "faireDon": "Faire un don",
+      "inscriptions": "Inscriptions bénévoles",
+      "partager": "Partager",
+      "materiel": "Prêter du matériel"
+    }
+  },
+  "hero": {
+    "eyebrow": "✮ Édition 2026 ✮",
+    "dateLabel": "Date",
+    "dateValue": "20–23 Août 2026",
+    "lieuLabel": "Lieu",
+    "lieuValue": "Les jardins du Moulin à Grupont",
+    "programmeLabel": "Au programme",
+    "programmeValue": "Ateliers, tables rondes, concerts, performances &amp; moments collectifs",
+    "objectifLabel": "Objectif",
+    "objectifValue": "Tous.tes bénévoles pour faire tourner le camp",
+    "btnBillets": "Prendre mes billets",
+    "btnProgramme": "Voir le programme →",
+    "btnBenevolat": "Devenir bénévole"
+  },
+  "enBref": {
+    "eyebrow": "Le BAF Camp",
+    "title": "En bref",
+    "card1Title": "Programmation",
+    "card1Text": "Des intervenant.e.s et artistes sur plusieurs espaces pendant 4 jours de lutte et de fête. La programmation se construit collectivement :",
+    "card1Link": "sur notre framaform",
+    "card1LinkUrl": "https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054",
+    "card1LinkSuffix": "pour proposer une contribution au programme !",
+    "card2Title": "Camping",
+    "card2Text": "Camping ouvert dès le lundi 17 au soir pour venir aider à monter le camp. Possibilité de dormir sur place jusqu'au 26 août (fin du démontage).",
+    "card3Title": "Autogestion",
+    "card3Text": "Qui que tu sois, rejoins notre équipe en nous ",
+    "card3Link": "contactant par mail",
+    "card3LinkUrl": "mailto:Activismcampbelgium@proton.me?subject=Rejoindre%20l%27organisation%20du%20BAF",
+    "card3LinkSuffix": " pour participer à l'organisation en amont et sur place."
+  },
+  "contact": {
+    "eyebrow": "Restons en contact",
+    "title": "Une question ?",
+    "text": "Notre équipe organisatrice bénévole est disponible pour répondre à toutes vos questions.",
+    "btnText": "✉ Nous écrire"
+  },
+  "footer": {
+    "tagline": "Vient prendre une claque !",
+    "navTitle": "Navigation",
+    "navHome": "Accueil",
+    "navProgramme": "Programme",
+    "navAider": "Nous aider",
+    "navInfos": "Infos pratiques",
+    "fonctionnementTitle": "Fonctionnement",
+    "footerFinancements": "Financements",
+    "footerCharte": "Notre charte",
+    "footerAutogestion": "Autogestion",
+    "reseauTitle": "Réseaux",
+    "signalLabel": "Rejoins la boucle Signal",
+    "emailLabel": "Notre mail proton",
+    "copy": "2026 BAF Camp — par et pour toustes",
+    "copyTagline": "Vient prendre une claque !"
+  },
+  "billetterie": {
+    "hero": {
+      "eyebrow": "🎟️ Billetterie",
+      "title": "Prix libre & conscient",
+      "subtitle": "Pour que tu contribues à hauteur de tes moyens."
+    },
+    "intro": {
+      "title": "C'est quoi le prix libre et conscient ?",
+      "p1": "Le BAF Camp ne fonctionne pas avec un tarif fixe. Chacun·e contribue selon ses <strong>ressources réelles</strong> — pas seulement son salaire, mais son patrimoine, ses privilèges, ses filets de sécurité. Les plus à l'aise financièrement paient plus, ce qui permet aux autres de venir.",
+      "p2": "Les prix libres ne fonctionnent pas toujours bien — celleux qui ont plus ont souvent tendance à sous-payer. C'est pourquoi on t'invite à <strong>réfléchir honnêtement</strong> à ta situation avant de choisir ton montant.",
+      "p3": "Évidemment, chaque situation est différente : si tu envoies structurellement de l'argent à des proches ou que tu as des dépenses de santé importantes, tu avises en fonction — mais voici une jauge pour t'aider à te situer.",
+      "p4": "Ce festival est une première édition. Si on ne couvre pas les frais, le projet sera endetté et le futur compromis. On compte vraiment sur votre générosité et votre honnêteté pour que ce projet soit une réussite, notamment sur le plan financier. Les bénéfices seront d'ailleurs redistribués à diverses luttes (locales, pérennisation du festival pour le BAF 2, et redistribution avec la Fondation Marius Jacob<sup>*</sup> et Mycélium<sup>**</sup>).",
+      "footnote1": "La Fondation Marius Jacob",
+      "footnote1Url": "https://www.fondationmariusjacob.org/#about-7",
+      "footnote1Text": "est un outil financier collectif et autogéré qui redistribue des bourses à des activistes, collectifs et mouvements sociaux en Belgique — et qui héberge notre compte bancaire.",
+      "footnote2": "La Fondation Mycélium",
+      "footnote2Url": "https://fondation.mycelium.cc",
+      "footnote2Text": "est une fondation privée participative qui soutient financièrement des initiatives militantes et alternatives en Belgique via son réseau de mécènes."
+    },
+    "privilegeMeter": {
+      "title": "🌡️ Le Privilègomètre — calcule ta contribution juste",
+      "description": "Réponds aux questions ci-dessous pour estimer où tu te situes économiquement. Ce n'est pas un jugement — c'est un outil pour t'aider à contribuer de façon juste.",
+      "introLabel": "📊 Coche ce qui s'applique à toi :",
+      "btnCalculate": "Calculer mon score →",
+      "btnReset": "↩ Recommencer",
+      "scoreLabel": "Ton score",
+      "tierHigh": "💰 Tarif soutien",
+      "tierMid": "⚖️ Prix coûtant",
+      "tierLow": "🌱 Tarif réduit",
+      "plusGroupTitle": "➕ Ajoute 1 point si…",
+      "minusGroupTitle": "➖ Retire 1 point si…",
+      "plusItems": [
+        "Tes parents possèdent un bien immobilier dans lequel tu as grandi.",
+        "Tes parents possèdent plusieurs biens immobiliers.",
+        "Tes parents ont les moyens de t'aider à acheter un bien immobilier.",
+        "Tu as reçu ou vas recevoir un héritage de plus de 50 000 €.",
+        "Tu as au moins 5 000 € de côté.",
+        "Tes parents peuvent te soutenir en cas de besoin financier sans sacrifice.",
+        "Tu as fait des études avec un master.",
+        "Tu pourrais obtenir un emploi ou une aide professionnelle via tes parents ou leur réseau.",
+        "Tu vas au restaurant, au cinéma ou à des activités culturelles.",
+        "Tu as un ou des hobbies parmi : musique, dessin, hockey, équitation, tennis, escalade.",
+        "Tu as un CDI à plus de 1 800 € et personne à ta charge."
+      ],
+      "minusItems": [
+        "Tes parents ont peur de la police / de l'armée.",
+        "En cas de problème, tes parents n'appellent pas la police.",
+        "Tes soutiens financiers avaient des contrats courts et précaires / des emplois en col bleu.",
+        "Tu as dû partager ta chambre avec tes adelphes pour des raisons financières.",
+        "Ton soutien financier n'a pas fini les études secondaires.",
+        "Tes grands-parents ont aidé à la garde de leurs petits enfants pour des raisons financières.",
+        "Tu as des frais médicaux réguliers.",
+        "Tu as des frais liés à la répression (amende, avocat,…).",
+        "Tu es étudiant·e et tes parents ne t'aident pas (suffisamment)."
+      ],
+      "minusAsPlus": [8],
+      "tierHighMin": 8,
+      "tierMidMin": 4,
+      "tierLowMin": 0,
+      "recoHighHTML": "🌟 <strong>Tarif soutien.</strong> Tu vis confortablement : loisirs réguliers, vacances, salaire au-dessus de 1 800 €, ou perspective d'accès à la propriété. Tu peux contribuer davantage pour celleux qui ne le peuvent pas.",
+      "recoMidHTML": "⚖️ <strong>Prix coûtant.</strong> Tu as une rentrée d'argent stable et les fins de mois passent sans trop de stress. Ton salaire tourne autour de 1 200–1 600 € (sans personne à charge). Tu as peut-être un petit matelas d'épargne, ou des parents sur qui compter si vraiment besoin.",
+      "recoLowHTML": "💚 <strong>Tarif réduit.</strong> Tu n'as pas de patrimoine et pas de revenus fixes qui te permettent d'avoir un quotidien stable. Tu comptes régulièrement sur la solidarité de ton entourage.",
+      "formulaNote": "Si tu obtiens <strong>8 points ou plus</strong> au Privilègomètre → tarif soutien. <br> Entre <strong>4 et 7 points</strong> → prix coûtant. <br> Moins de <strong>4 points</strong> → tarif réduit. On peut t'aider à répondre si tu as des doutes."
+    },
+    "pricing": {
+      "title": "Tarifs indicatifs",
+      "tiers": [
+        { "letter": "A", "class": "tarif-soutien", "priceLabel": "Tarif soutien : à partir de 29 € / jour", "totalLabel": "soit 87 € pour 3 jours", "description": "Tu vis confortablement : loisirs réguliers, vacances, salaire au-dessus de 1 800 €, ou perspective d'accès à la propriété. Tu es bien entouré·e financièrement et tu peux te permettre de contribuer davantage pour celleux qui ne le peuvent pas." },
+        { "letter": "B", "class": "tarif-reel", "priceLabel": "Prix coûtant : 19 € / jour", "totalLabel": "soit 57 € pour 3 jours", "description": "Tu as une rentrée d'argent stable et les fins de mois passent sans trop de stress. Ton salaire tourne autour de 1 200–1 600 € (sans personne à charge). Tu as peut-être un petit matelas d'épargne, ou des parents sur qui compter si vraiment besoin." },
+        { "letter": "C", "class": "tarif-reduit", "priceLabel": "Tarif réduit : 10 € / jour", "totalLabel": "soit 30 € pour 3 jours", "description": "Tu n'as pas de patrimoine et pas de revenus fixes qui te permettent d'avoir un quotidien stable. Tu comptes régulièrement sur la solidarité de ton entourage." }
+      ],
+      "campingTitle": "+ Participation camping",
+      "campingText": "Si tu comptes dormir sur place, tu peux ajouter une participation de <strong>± 5 € / jour</strong> pour contribuer à la remise en état du lieu après le camp."
+    },
+    "registration": {
+      "title": "🎟️ Comment s'inscrire ?",
+      "description": "L'inscription se fait via le formulaire d'inscription en ligne.",
+      "stepNum": "1",
+      "stepTitle": "Remplir le formulaire d'inscription",
+      "stepText": "Remplis le formulaire d'inscription pour t'annoncer au camp.",
+      "formUrl": "https://framaforms.org/inscription-benevolat-baf-camp-1780562822",
+      "btnForm": "📝 Remplir le formulaire d'inscription →"
+    },
+    "contact": {
+      "title": "Une question ?",
+      "text": "Pour toute question sur la billetterie, le prix libre ou l'accessibilité financière, écris-nous directement :",
+      "btnText": "✉ Nous écrire",
+      "emailSubject": "Question billetterie"
+    },
+    "popup": {
+      "icon": "⏳",
+      "title": "Bientôt disponible !",
+      "text": "Le formulaire d'inscription n'est pas encore ouvert. Il sera accessible un peu plus tard — reviens bientôt !",
+      "btnText": "J'ai compris"
+    }
+  }
+}
