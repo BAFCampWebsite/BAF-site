@@ -114,34 +114,30 @@
       "tierLow": "🌱 Tarif réduit",
       "plusGroupTitle": "➕ Ajoute 1 point si…",
       "minusGroupTitle": "➖ Retire 1 point si…",
-      "plusItems": [
-        "Tes parents possèdent un bien immobilier dans lequel tu as grandi.",
-        "Tes parents possèdent plusieurs biens immobiliers.",
-        "Tes parents ont les moyens de t'aider à acheter un bien immobilier.",
-        "Tu as reçu ou vas recevoir un héritage de plus de 50 000 €.",
-        "Tu as au moins 5 000 € de côté.",
-        "Tes parents peuvent te soutenir en cas de besoin financier sans sacrifice.",
-        "Tu as fait des études avec un master.",
-        "Tu pourrais obtenir un emploi ou une aide professionnelle via tes parents ou leur réseau.",
-        "Tu vas au restaurant, au cinéma ou à des activités culturelles.",
-        "Tu as un ou des hobbies parmi : musique, dessin, hockey, équitation, tennis, escalade.",
-        "Tu as un CDI à plus de 1 800 € et personne à ta charge."
-      ],
-      "minusItems": [
-        "Tes parents ont peur de la police / de l'armée.",
-        "En cas de problème, tes parents n'appellent pas la police.",
-        "Tes soutiens financiers avaient des contrats courts et précaires / des emplois en col bleu.",
-        "Tu as dû partager ta chambre avec tes adelphes pour des raisons financières.",
-        "Ton soutien financier n'a pas fini les études secondaires.",
-        "Tes grands-parents ont aidé à la garde de leurs petits enfants pour des raisons financières.",
-        "Tu as des frais médicaux réguliers.",
-        "Tu as des frais liés à la répression (amende, avocat,…).",
-        "Tu es étudiant·e et tes parents ne t'aident pas (suffisamment)."
-      ],
-      "minusAsPlus": [8],
-      "tierHighMin": 8,
-      "tierMidMin": 4,
-      "tierLowMin": 0,
+      "plusItems": {
+        "i0": "Tes parents possèdent un bien immobilier dans lequel tu as grandi.",
+        "i1": "Tes parents possèdent plusieurs biens immobiliers.",
+        "i2": "Tes parents ont les moyens de t'aider à acheter un bien immobilier.",
+        "i3": "Tu as reçu ou vas recevoir un héritage de plus de 50 000 €.",
+        "i4": "Tu as au moins 5 000 € de côté.",
+        "i5": "Tes parents peuvent te soutenir en cas de besoin financier sans sacrifice.",
+        "i6": "Tu as fait des études avec un master.",
+        "i7": "Tu pourrais obtenir un emploi ou une aide professionnelle via tes parents ou leur réseau.",
+        "i8": "Tu vas au restaurant, au cinéma ou à des activités culturelles.",
+        "i9": "Tu as un ou des hobbies parmi : musique, dessin, hockey, équitation, tennis, escalade.",
+        "i10": "Tu as un CDI à plus de 1 800 € et personne à ta charge."
+      },
+      "minusItems": {
+        "i0": "Tes parents ont peur de la police / de l'armée.",
+        "i1": "En cas de problème, tes parents n'appellent pas la police.",
+        "i2": "Tes soutiens financiers avaient des contrats courts et précaires / des emplois en col bleu.",
+        "i3": "Tu as dû partager ta chambre avec tes adelphes pour des raisons financières.",
+        "i4": "Ton soutien financier n'a pas fini les études secondaires.",
+        "i5": "Tes grands-parents ont aidé à la garde de leurs petits enfants pour des raisons financières.",
+        "i6": "Tu as des frais médicaux réguliers.",
+        "i7": "Tu as des frais liés à la répression (amende, avocat,…).",
+        "i8": "Tu es étudiant·e et tes parents ne t'aident pas (suffisamment)."
+      },
       "recoHighHTML": "🌟 <strong>Tarif soutien.</strong> Tu vis confortablement : loisirs réguliers, vacances, salaire au-dessus de 1 800 €, ou perspective d'accès à la propriété. Tu peux contribuer davantage pour celleux qui ne le peuvent pas.",
       "recoMidHTML": "⚖️ <strong>Prix coûtant.</strong> Tu as une rentrée d'argent stable et les fins de mois passent sans trop de stress. Ton salaire tourne autour de 1 200–1 600 € (sans personne à charge). Tu as peut-être un petit matelas d'épargne, ou des parents sur qui compter si vraiment besoin.",
       "recoLowHTML": "💚 <strong>Tarif réduit.</strong> Tu n'as pas de patrimoine et pas de revenus fixes qui te permettent d'avoir un quotidien stable. Tu comptes régulièrement sur la solidarité de ton entourage.",
@@ -149,11 +145,21 @@
     },
     "pricing": {
       "title": "Tarifs indicatifs",
-      "tiers": [
-        { "letter": "A", "class": "tarif-soutien", "priceLabel": "Tarif soutien : à partir de 29 € / jour", "totalLabel": "soit 87 € pour 3 jours", "description": "Tu vis confortablement : loisirs réguliers, vacances, salaire au-dessus de 1 800 €, ou perspective d'accès à la propriété. Tu es bien entouré·e financièrement et tu peux te permettre de contribuer davantage pour celleux qui ne le peuvent pas." },
-        { "letter": "B", "class": "tarif-reel", "priceLabel": "Prix coûtant : 19 € / jour", "totalLabel": "soit 57 € pour 3 jours", "description": "Tu as une rentrée d'argent stable et les fins de mois passent sans trop de stress. Ton salaire tourne autour de 1 200–1 600 € (sans personne à charge). Tu as peut-être un petit matelas d'épargne, ou des parents sur qui compter si vraiment besoin." },
-        { "letter": "C", "class": "tarif-reduit", "priceLabel": "Tarif réduit : 10 € / jour", "totalLabel": "soit 30 € pour 3 jours", "description": "Tu n'as pas de patrimoine et pas de revenus fixes qui te permettent d'avoir un quotidien stable. Tu comptes régulièrement sur la solidarité de ton entourage." }
-      ],
+      "tierCost": {
+        "description": "Tu as une rentrée d'argent stable et les fins de mois passent sans trop de stress. Ton salaire tourne autour de 1 200–1 600 € (sans personne à charge). Tu as peut-être un petit matelas d'épargne, ou des parents sur qui compter si vraiment besoin.",
+        "priceLabel": "Prix coûtant : 19 € / jour",
+        "totalLabel": "soit 57 € pour 3 jours"
+      },
+      "tierReduced": {
+        "description": "Tu n'as pas de patrimoine et pas de revenus fixes qui te permettent d'avoir un quotidien stable. Tu comptes régulièrement sur la solidarité de ton entourage.",
+        "priceLabel": "Tarif réduit : 10 € / jour",
+        "totalLabel": "soit 30 € pour 3 jours"
+      },
+      "tierSupport": {
+        "description": "Tu vis confortablement : loisirs réguliers, vacances, salaire au-dessus de 1 800 €, ou perspective d'accès à la propriété. Tu es bien entouré·e financièrement et tu peux te permettre de contribuer davantage pour celleux qui ne le peuvent pas.",
+        "priceLabel": "Tarif soutien : à partir de 29 € / jour",
+        "totalLabel": "soit 87 € pour 3 jours"
+      },
       "campingTitle": "+ Participation camping",
       "campingText": "Si tu comptes dormir sur place, tu peux ajouter une participation de <strong>± 5 € / jour</strong> pour contribuer à la remise en état du lieu après le camp."
     },

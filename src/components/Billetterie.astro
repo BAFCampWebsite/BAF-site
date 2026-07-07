@@ -3,8 +3,54 @@ import { getTranslations } from '../i18n/getTranslations';
 import type { BilletterieMessages } from '../i18n/types';
 
 const t = getTranslations('billetterie');
-const pm = t.raw('privilegeMeter') as BilletterieMessages['privilegeMeter'];
-const minusAsPlus = new Set(pm.minusAsPlus || []);
+const plusItems = [
+  t('privilegeMeter.plusItems.i0'),
+  t('privilegeMeter.plusItems.i1'),
+  t('privilegeMeter.plusItems.i2'),
+  t('privilegeMeter.plusItems.i3'),
+  t('privilegeMeter.plusItems.i4'),
+  t('privilegeMeter.plusItems.i5'),
+  t('privilegeMeter.plusItems.i6'),
+  t('privilegeMeter.plusItems.i7'),
+  t('privilegeMeter.plusItems.i8'),
+  t('privilegeMeter.plusItems.i9'),
+  t('privilegeMeter.plusItems.i10'),
+];
+const minusItems = [
+  t('privilegeMeter.minusItems.i0'),
+  t('privilegeMeter.minusItems.i1'),
+  t('privilegeMeter.minusItems.i2'),
+  t('privilegeMeter.minusItems.i3'),
+  t('privilegeMeter.minusItems.i4'),
+  t('privilegeMeter.minusItems.i5'),
+  t('privilegeMeter.minusItems.i6'),
+  t('privilegeMeter.minusItems.i7'),
+  t('privilegeMeter.minusItems.i8'),
+];
+const minusAsPlus = new Set<number>([]);
+const pricingTiers = [
+  {
+    class: 'tarif-soutien',
+    letter: 'A',
+    priceLabel: t('pricing.tierSupport.priceLabel'),
+    totalLabel: t('pricing.tierSupport.totalLabel'),
+    description: t('pricing.tierSupport.description'),
+  },
+  {
+    class: 'tarif-reel',
+    letter: 'B',
+    priceLabel: t('pricing.tierCost.priceLabel'),
+    totalLabel: t('pricing.tierCost.totalLabel'),
+    description: t('pricing.tierCost.description'),
+  },
+  {
+    class: 'tarif-reduit',
+    letter: 'C',
+    priceLabel: t('pricing.tierReduced.priceLabel'),
+    totalLabel: t('pricing.tierReduced.totalLabel'),
+    description: t('pricing.tierReduced.description'),
+  },
+];
 ---
 
 <!-- Hero -->
@@ -33,42 +79,42 @@ const minusAsPlus = new Set(pm.minusAsPlus || []);
 
   <!-- Section 2 — Privilege Meter -->
   <div class="reveal" id="thunometre-section">
-    <h2>{pm.title}</h2>
-    <p class="section-lead">{pm.description}</p>
+    <h2>{t('privilegeMeter.title')}</h2>
+    <p class="section-lead">{t('privilegeMeter.description')}</p>
 
     <div class="thuno-tool">
       <div class="thuno-questions" id="thunoQuestions">
-        <p class="thuno-intro-label">{pm.introLabel}</p>
+        <p class="thuno-intro-label">{t('privilegeMeter.introLabel')}</p>
 
         <div class="thuno-group">
-          <p class="thuno-group-title">{pm.plusGroupTitle || "➕ Ajoute 1 point si…"}</p>
-          {pm.plusItems.map((item) => (
+          <p class="thuno-group-title">{t('privilegeMeter.plusGroupTitle') || "➕ Ajoute 1 point si…"}</p>
+          {plusItems.map((item) => (
             <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> {item}</label>
           ))}
         </div>
 
         <div class="thuno-group thuno-group-minus">
-          <p class="thuno-group-title">{pm.minusGroupTitle || "➖ Retire 1 point si…"}</p>
-          {pm.minusItems.map((item, i) => (
+          <p class="thuno-group-title">{t('privilegeMeter.minusGroupTitle') || "➖ Retire 1 point si…"}</p>
+          {minusItems.map((item, i) => (
             <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val={minusAsPlus.has(i) ? 1 : -1}> {item}</label>
           ))}
         </div>
 
-        <button class="btn btn-primary" onclick="calculerThuno()" style="margin-top:24px;">{pm.btnCalculate}</button>
+        <button class="btn btn-primary" onclick="calculerThuno()" style="margin-top:24px;">{t('privilegeMeter.btnCalculate')}</button>
       </div>
 
       <div class="thuno-result" id="thunoResult" style="display:none;">
         <div class="thuno-tier-wrap">
-          <div class="thuno-tier thuno-tier-high" id="thunoTierHigh">{pm.tierHigh}</div>
-          <div class="thuno-tier thuno-tier-mid" id="thunoTierMid">{pm.tierMid}</div>
-          <div class="thuno-tier thuno-tier-low" id="thunoTierLow">{pm.tierLow}</div>
+          <div class="thuno-tier thuno-tier-high" id="thunoTierHigh">{t('privilegeMeter.tierHigh')}</div>
+          <div class="thuno-tier thuno-tier-mid" id="thunoTierMid">{t('privilegeMeter.tierMid')}</div>
+          <div class="thuno-tier thuno-tier-low" id="thunoTierLow">{t('privilegeMeter.tierLow')}</div>
         </div>
         <div class="thuno-score-block">
-          <span class="thuno-score-label">{pm.scoreLabel}</span>
+          <span class="thuno-score-label">{t('privilegeMeter.scoreLabel')}</span>
           <span class="thuno-score-value" id="thunoScoreVal">0</span>
         </div>
-        <div class="thuno-reco" id="thunoReco" data-reco-high={pm.recoHighHTML} data-reco-mid={pm.recoMidHTML} data-reco-low={pm.recoLowHTML}></div>
-        <button class="btn" onclick="resetThuno()" style="margin-top:16px; background:var(--creme-fonce); color:var(--encre);">{pm.btnReset}</button>
+        <div class="thuno-reco" id="thunoReco" data-reco-high={t('privilegeMeter.recoHighHTML')} data-reco-mid={t('privilegeMeter.recoMidHTML')} data-reco-low={t('privilegeMeter.recoLowHTML')}></div>
+        <button class="btn" onclick="resetThuno()" style="margin-top:16px; background:var(--creme-fonce); color:var(--encre);">{t('privilegeMeter.btnReset')}</button>
       </div>
     </div>
   </div>
@@ -80,7 +126,7 @@ const minusAsPlus = new Set(pm.minusAsPlus || []);
     <h2>{t('pricing.title')}</h2>
 
     <div class="tarif-scale">
-      {t.raw('pricing.tiers').map((tier) => (
+      {pricingTiers.map((tier) => (
         <div class={`tarif-band ${tier.class}`}>
           <span class="tarif-letter">{tier.letter}</span>
           <div>
@@ -91,7 +137,7 @@ const minusAsPlus = new Set(pm.minusAsPlus || []);
       ))}
     </div>
 
-    <p class="thuno-formula-note" style="margin-top:16px;" set:html={pm.formulaNote}></p>
+    <p class="thuno-formula-note" style="margin-top:16px;" set:html={t('privilegeMeter.formulaNote')}></p>
 
     <div class="tarif-camping-block">
       <span class="tarif-camping-icon">⛺</span>

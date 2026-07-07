@@ -114,34 +114,30 @@
       "tierLow": "🌱 Verminderd tarief",
       "plusGroupTitle": "➕ Voeg 1 punt toe als…",
       "minusGroupTitle": "➖ Trek 1 punt af als…",
-      "plusItems": [
-        "Je ouders bezitten een woning waarin je bent opgegroeid.",
-        "Je ouders bezitten meerdere eigendommen.",
-        "Je ouders kunnen je helpen bij het kopen van een woning.",
-        "Je hebt een erfenis van meer dan 50 000 € ontvangen of zal ontvangen.",
-        "Je hebt minstens 5 000 € spaargeld.",
-        "Je ouders kunnen je financieel steunen in geval van nood zonder dat het hen veel kost.",
-        "Je hebt een masterdiploma behaald.",
-        "Je zou via je ouders of hun netwerk aan een job of professionele hulp kunnen geraken.",
-        "Je gaat naar restaurants, de bioscoop of culturele activiteiten.",
-        "Je hebt een of meer hobby's zoals: muziek, tekenen, hockey, paardrijden, tennis, klimmen.",
-        "Je hebt een vast contract (CDI) met meer dan 1 800 € en niemand ten laste."
-      ],
-      "minusItems": [
-        "Je ouders zijn bang van de politie / het leger.",
-        "Bij problemen bellen je ouders niet naar de politie.",
-        "Je financiële steunpilaren hadden korte of precaire contracten / blauwe boorden jobs.",
-        "Je moest je kamer delen met broers/zussen/siblings om financiële redenen.",
-        "Je financiële steunpilaar heeft het middelbaar onderwijs niet afgemaakt.",
-        "Je grootouders hielpen met de opvang van kleinkinderen om financiële redenen.",
-        "Je hebt regelmatige medische kosten.",
-        "Je hebt kosten als gevolg van repressie (boete, advocaat,…).",
-        "Je bent student en je ouders helpen je niet (voldoende)."
-      ],
-      "minusAsPlus": [8],
-      "tierHighMin": 8,
-      "tierMidMin": 4,
-      "tierLowMin": 0,
+      "plusItems": {
+        "i0": "Je ouders bezitten een woning waarin je bent opgegroeid.",
+        "i1": "Je ouders bezitten meerdere eigendommen.",
+        "i2": "Je ouders kunnen je helpen bij het kopen van een woning.",
+        "i3": "Je hebt een erfenis van meer dan 50 000 € ontvangen of zal ontvangen.",
+        "i4": "Je hebt minstens 5 000 € spaargeld.",
+        "i5": "Je ouders kunnen je financieel steunen in geval van nood zonder dat het hen veel kost.",
+        "i6": "Je hebt een masterdiploma behaald.",
+        "i7": "Je zou via je ouders of hun netwerk aan een job of professionele hulp kunnen geraken.",
+        "i8": "Je gaat naar restaurants, de bioscoop of culturele activiteiten.",
+        "i9": "Je hebt een of meer hobby's zoals: muziek, tekenen, hockey, paardrijden, tennis, klimmen.",
+        "i10": "Je hebt een vast contract (CDI) met meer dan 1 800 € en niemand ten laste."
+      },
+      "minusItems": {
+        "i0": "Je ouders zijn bang van de politie / het leger.",
+        "i1": "Bij problemen bellen je ouders niet naar de politie.",
+        "i2": "Je financiële steunpilaren hadden korte of precaire contracten / blauwe boorden jobs.",
+        "i3": "Je moest je kamer delen met broers/zussen/siblings om financiële redenen.",
+        "i4": "Je financiële steunpilaar heeft het middelbaar onderwijs niet afgemaakt.",
+        "i5": "Je grootouders hielpen met de opvang van kleinkinderen om financiële redenen.",
+        "i6": "Je hebt regelmatige medische kosten.",
+        "i7": "Je hebt kosten als gevolg van repressie (boete, advocaat,…).",
+        "i8": "Je bent student en je ouders helpen je niet (voldoende)."
+      },
       "recoHighHTML": "🌟 <strong>Solidariteitstarief.</strong> Je leeft comfortabel: regelmatige vrije tijd, vakanties, loon boven 1 800 €, of perspectief op eigendom. Je kan meer bijdragen voor wie dat niet kan.",
       "recoMidHTML": "⚖️ <strong>Kostprijs.</strong> Je hebt een stabiel inkomen en de eindjes lukken zonder al te veel stress. Je loon schommelt rond 1 200–1 600 € (zonder personen ten laste). Je hebt misschien een klein spaarpotje, of ouders op wie je kan terugvallen.",
       "recoLowHTML": "💚 <strong>Verminderd tarief.</strong> Je hebt geen vermogen en geen vast inkomen dat een stabiel dagelijks leven mogelijk maakt. Je rekent regelmatig op de solidariteit van je omgeving.",
@@ -149,11 +145,21 @@
     },
     "pricing": {
       "title": "Indicatieve prijzen",
-      "tiers": [
-        { "letter": "A", "class": "tarif-soutien", "priceLabel": "Solidariteitstarief: vanaf 29 € / dag", "totalLabel": "of 87 € voor 3 dagen", "description": "Je leeft comfortabel: regelmatige vrije tijd, vakanties, loon boven 1 800 €, of perspectief op eigendom. Je bent financieel goed omringd en kan je permitteren meer bij te dragen voor wie dat niet kan." },
-        { "letter": "B", "class": "tarif-reel", "priceLabel": "Kostprijs: 19 € / dag", "totalLabel": "of 57 € voor 3 dagen", "description": "Je hebt een stabiel inkomen en de eindjes lukken zonder al te veel stress. Je loon schommelt rond 1 200–1 600 € (zonder personen ten laste). Je hebt misschien een klein spaarpotje, of ouders op wie je kan terugvallen indien nodig." },
-        { "letter": "C", "class": "tarif-reduit", "priceLabel": "Verminderd tarief: 10 € / dag", "totalLabel": "of 30 € voor 3 dagen", "description": "Je hebt geen vermogen en geen vast inkomen dat een stabiel dagelijks leven mogelijk maakt. Je rekent regelmatig op de solidariteit van je omgeving." }
-      ],
+      "tierSupport": {
+        "priceLabel": "Solidariteitstarief: vanaf 29 € / dag",
+        "totalLabel": "of 87 € voor 3 dagen",
+        "description": "Je leeft comfortabel: regelmatige vrije tijd, vakanties, loon boven 1 800 €, of perspectief op eigendom. Je bent financieel goed omringd en kan je permitteren meer bij te dragen voor wie dat niet kan."
+      },
+      "tierCost": {
+        "priceLabel": "Kostprijs: 19 € / dag",
+        "totalLabel": "of 57 € voor 3 dagen",
+        "description": "Je hebt een stabiel inkomen en de eindjes lukken zonder al te veel stress. Je loon schommelt rond 1 200–1 600 € (zonder personen ten laste). Je hebt misschien een klein spaarpotje, of ouders op wie je kan terugvallen indien nodig."
+      },
+      "tierReduced": {
+        "priceLabel": "Verminderd tarief: 10 € / dag",
+        "totalLabel": "of 30 € voor 3 dagen",
+        "description": "Je hebt geen vermogen en geen vast inkomen dat een stabiel dagelijks leven mogelijk maakt. Je rekent regelmatig op de solidariteit van je omgeving."
+      },
       "campingTitle": "+ Campingbijdrage",
       "campingText": "Als je op de camping wil slapen, kan je een bijdrage van <strong>± 5 € / dag</strong> toevoegen om bij te dragen aan het herstel van de locatie na het kamp."
     },
