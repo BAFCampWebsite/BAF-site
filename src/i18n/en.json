@@ -1,0 +1,200 @@
+{
+  "site": {
+    "title": "BAF Camp 2026 – Belgian Activism Festi-Camp | Grupont, 20-23 August",
+    "description": "BAF Camp is a 4-day Belgian activist festival in Grupont: workshops, concerts, self-management and activism. 2026 edition from 20 to 23 August.",
+    "keywords": "BAF Camp, BAF, Belgian Activism Festi-Camp, activist festival Belgium, activism camp, Grupont 2026",
+    "locale": "en_BE"
+  },
+  "nav": {
+    "home": "Home",
+    "programme": "Programme",
+    "fonctionnement": "How it works",
+    "informations": "Information",
+    "nousAider": "Support us",
+    "tickets": "Pay-what-you-can tickets →",
+    "drodownFonctionnement": {
+      "financements": "Funding",
+      "charte": "Our charter",
+      "autogestion": "Self-management"
+    },
+    "dropdownInformations": {
+      "venir": "Getting there",
+      "nourrir": "Food",
+      "camping": "Camping",
+      "bambinerie": "The Bambinerie"
+    },
+    "dropdownAider": {
+      "faireDon": "Donate",
+      "inscriptions": "Volunteer sign-up",
+      "partager": "Share",
+      "materiel": "Lend equipment"
+    }
+  },
+  "hero": {
+    "eyebrow": "✮ 2026 Edition ✮",
+    "dateLabel": "Date",
+    "dateValue": "August 20–23, 2026",
+    "lieuLabel": "Place",
+    "lieuValue": "The Moulin gardens in Grupont",
+    "programmeLabel": "On the program",
+    "programmeValue": "Workshops, round-table discussions, concerts, performances &amp; collective moments",
+    "objectifLabel": "Objective",
+    "objectifValue": "Everyone contributes to make this camp happen",
+    "btnBillets": "Get my tickets",
+    "btnProgramme": "See the program →",
+    "btnBenevolat": "Become a volunteer"
+  },
+  "enBref": {
+    "eyebrow": "The BAF Camp",
+    "title": "In brief",
+    "card1Title": "Programming",
+    "card1Text": "Speakers and artists in several spaces during 4 days of struggle and celebration.",
+    "card1Link": "",
+    "card1LinkUrl": "",
+    "card1LinkSuffix": "",
+    "card2Title": "Camping",
+    "card2Text": "Campsite open from Monday 17th in the evening to come and help set up camp. Possibility of sleeping on site until August 26 (end of dismantling).",
+    "card3Title": "Self-management",
+    "card3Text": "Whoever you are, you can join our team by ",
+    "card3Link": "contacting by email",
+    "card3LinkUrl": "mailto:Activismcampbelgium@proton.me?subject=Rejoindre%20l%27organisation%20du%20BAF",
+    "card3LinkSuffix": " to participate in the organisation."
+  },
+  "contact": {
+    "eyebrow": "Let's stay in touch",
+    "title": "A question?",
+    "text": "Our volunteer organizing team is available to answer all your questions.",
+    "btnText": "✉ Write to us"
+  },
+  "footer": {
+    "tagline": "Vient prendre une claque !",
+    "navTitle": "Navigation",
+    "navHome": "Home",
+    "navProgramme": "Program",
+    "navAider": "Help us",
+    "navInfos": "Practical info",
+    "fonctionnementTitle": "How it works",
+    "footerFinancements": "Funding",
+    "footerCharte": "Our charter",
+    "footerAutogestion": "Self-management",
+    "reseauTitle": "Networks",
+    "signalLabel": "Join the Signal Loop",
+    "emailLabel": "Email",
+    "copy": "2026 BAF Camp — by and for everyone",
+    "copyTagline": "Vient prendre une claque !"
+  },
+  "billetterie": {
+    "hero": {
+      "eyebrow": "🎟️ Tickets",
+      "title": "Pay-what-you-can",
+      "subtitle": "So that you contribute according to your means."
+    },
+    "intro": {
+      "title": "What is pay-what-you-can?",
+      "p1": "Tickets for the BAF Camp do not have a fixed price. Everyone contributes according to their <strong>real means</strong> — not just their salary, but their assets, privileges and safety nets. Those who are more financially comfortable pay more to allow those less privileged to attend.",
+      "p2": "Pay-what-you-can doesn't always work well — people with more means tend to underpay. That's why we invite you to <strong>reflect honestly</strong> on your situation before choosing your amount.",
+      "p3": "Of course, every situation is different: if you regularly send money to loved ones or have significant healthcare expenses, take that into account. Our Privilege-o-meter below can help you calculate a price that is fair to your situation.",
+      "p4": "This festival is a first edition. If we don't cover costs, the project will go into debt and undermine the possibility of future editions. We really count on your generosity and honesty for this project to be a success, especially financially. Any surplus will be redistributed to various (local) struggles, redistributed via the Fondation Marius Jacob<sup>*</sup> and Mycélium<sup>**</sup>) or used to finance next year's edition.",
+      "footnote1": "The Marius Jacob Foundation",
+      "footnote1Url": "https://www.fondationmariusjacob.org/#about-7",
+      "footnote1Text": "is a collective, self-managed financial tool that redistributes grants to activists, collectives and social movements in Belgium — and hosts our bank account.",
+      "footnote2": "The Mycelium Foundation",
+      "footnote2Url": "https://fondation.mycelium.cc",
+      "footnote2Text": "is a participatory private foundation that financially supports militant and alternative initiatives in Belgium through its network of patrons."
+    },
+    "privilegeMeter": {
+      "title": "🌡️ The Privilege-o-meter — calculate your fair contribution",
+      "description": "Answer the questions below to estimate where you stand economically. This is not a judgement — it's a tool to help you contribute fairly.",
+      "introLabel": "📊 Check what applies to you:",
+      "btnCalculate": "Calculate my score →",
+      "btnReset": "↩ Reset",
+      "scoreLabel": "Your score",
+      "tierHigh": "💰 Solidarity rate",
+      "tierMid": "⚖️ Cost price",
+      "tierLow": "🌱 Reduced rate",
+      "plusGroupTitle": "➕ Add 1 point if…",
+      "minusGroupTitle": "➖ Subtract 1 point if…",
+      "plusItems": [
+        "Your parents own a property in which you grew up.",
+        "Your parents own several properties.",
+        "Your parents have the means to help you buy a property.",
+        "You have received or will receive an inheritance of more than €50,000.",
+        "You have at least €5,000 in savings.",
+        "Your parents can support you in case of financial need without it costing them much.",
+        "You hold a master's degree.",
+        "You could get a job or professional help through your parents or their network.",
+        "You go to restaurants, the cinema or cultural activities.",
+        "You have hobbies such as: music lessons, drawing, hockey, horse riding, tennis, climbing.",
+        "You have a permanent contract earning more than €1,800 and no dependants."
+      ],
+      "minusItems": [
+        "Your parents are afraid of the police / the army.",
+        "In case of trouble, your parents do not call the police.",
+        "Your financial support figures had short, precarious contracts / blue-collar jobs.",
+        "You had to share a room with siblings for financial reasons.",
+        "Your financial support figure did not finish secondary school.",
+        "Your grandparents helped with childcare for financial reasons.",
+        "You have regular medical expenses.",
+        "You have costs related to repression (fines, legal fees,…).",
+        "You are a student and your parents do not support you (sufficiently)."
+      ],
+      "minusAsPlus": [8],
+      "tierHighMin": 8,
+      "tierMidMin": 4,
+      "tierLowMin": 0,
+      "recoHighHTML": "🌟 <strong>Solidarity rate.</strong> You live comfortably: regular leisure, holidays, salary above €1,800 per month, or a prospect of home ownership. You can contribute more for those who cannot.",
+      "recoMidHTML": "⚖️ <strong>Cost price.</strong> You have a stable income and make ends meet without too much stress. Your salary is around €1,200–1,600 (with no dependants). You might have a bit of savings, or parents to fall back on if truly needed.",
+      "recoLowHTML": "💚 <strong>Reduced price.</strong> You have no assets and no fixed income that gives you a stable daily life. You regularly rely on the solidarity of those around you.",
+      "formulaNote": "If you score <strong>8 points or more</strong> on the Privilege-o-meter → solidarity rate. <br> Between <strong>4 and 7 points</strong> → cost price. <br> Fewer than <strong>4 points</strong> → reduced rate. Feel free to reach out if you're unsure."
+    },
+    "pricing": {
+      "title": "Indicative prices",
+      "tiers": [
+        {
+          "letter": "A",
+          "class": "tarif-soutien",
+          "priceLabel": "Solidarity rate: from €29 / day",
+          "totalLabel": "or €87 for 3 days",
+          "description": "You live comfortably: regular leisure, holidays, salary above €1,800 per month, or a prospect of home ownership. You are well supported financially and can afford to contribute more for those who cannot."
+        },
+        {
+          "letter": "B",
+          "class": "tarif-reel",
+          "priceLabel": "Cost price: €19 / day",
+          "totalLabel": "or €57 for 3 days",
+          "description": "You have a stable income and make ends meet without too much stress. Your salary is around €1,200–1,600 (with no dependants). You might have a small savings cushion, or parents to fall back on if truly needed."
+        },
+        {
+          "letter": "C",
+          "class": "tarif-reduit",
+          "priceLabel": "Reduced rate: €10 / day",
+          "totalLabel": "or €30 for 3 days",
+          "description": "You have no assets and no fixed income that allows for a stable daily life. You regularly rely on the solidarity of those around you."
+        }
+      ],
+      "campingTitle": "+ Camping contribution",
+      "campingText": "If you plan to sleep on site, you can add a participation of <strong>± €5 / day</strong> to contribute to the restoration of the venue after the camp."
+    },
+    "registration": {
+      "title": "🎟️ How to register?",
+      "description": "Registration is done via the online registration form.",
+      "stepNum": "1",
+      "stepTitle": "Fill in the registration form",
+      "stepText": "Fill in the registration form to let us know you're coming to the camp.",
+      "formUrl": "https://framaforms.org/baf-camp-registration-volunteering-1782682708",
+      "btnForm": "📝 Fill in the registration form →"
+    },
+    "contact": {
+      "title": "A question?",
+      "text": "For any question about ticketing, the pay-what-you-can model or financial accessibility, write to us directly:",
+      "btnText": "✉ Write to us",
+      "emailSubject": "Ticketing question"
+    },
+    "popup": {
+      "icon": "⏳",
+      "title": "Coming soon!",
+      "text": "The registration form isn't open yet. It will be available a bit later — check back soon!",
+      "btnText": "Got it"
+    }
+  }
+}
