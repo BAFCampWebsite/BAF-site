@@ -1,6 +1,6 @@
 {
   "recommendations": [
-    "inlang.vs-code-extension",
-    "astro-build.astro-vscode"
+    "astro-build.astro-vscode",
+    "lokalise.i18n-ally"
   ]
 }
