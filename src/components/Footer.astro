@@ -1,6 +1,10 @@
 ---
-const { lang, t } = Astro.props;
+import { getLocale, getTranslations } from 'astro-intl';
+import type { FooterMessages } from '../i18n/types';
+
+const lang = getLocale();
 const p = lang === 'fr' ? '' : `/${lang}`;
+const t = getTranslations<FooterMessages>('footer');
 ---
 
 <footer>
@@ -8,27 +12,27 @@ const p = lang === 'fr' ? '' : `/${lang}`;
     <div class="footer-logo">
       <img src="/BAF%20Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
     </div>
-    {t.tagline && <p class="footer-tagline">{t.tagline}</p>}
+    {t('tagline') && <p class="footer-tagline">{t('tagline')}</p>}
   </div>
   <div class="footer-col">
-    <h4>{t.navTitle}</h4>
+    <h4>{t('navTitle')}</h4>
     <ul>
-      <li><a href={p + '/'}>{t.navHome}</a></li>
-      <li><a href={p + '/programme'}>{t.navProgramme}</a></li>
-      <li><a href={p + '/nous-aider'}>{t.navAider}</a></li>
-      <li><a href={p + '/infos'}>{t.navInfos}</a></li>
+      <li><a href={p + '/'}>{t('navHome')}</a></li>
+      <li><a href={p + '/programme'}>{t('navProgramme')}</a></li>
+      <li><a href={p + '/nous-aider'}>{t('navAider')}</a></li>
+      <li><a href={p + '/infos'}>{t('navInfos')}</a></li>
     </ul>
   </div>
   <div class="footer-col">
-    <h4>{t.fonctionnementTitle}</h4>
+    <h4>{t('fonctionnementTitle')}</h4>
     <ul>
-      <li><a href={p + '/financements'}>{t.drodownFonctionnement?.financements || 'Financements'}</a></li>
-      <li><a href={p + '/charte'}>{t.drodownFonctionnement?.charte || 'Charte'}</a></li>
-      <li><a href={p + '/autogestion'}>{t.drodownFonctionnement?.autogestion || 'Autogestion'}</a></li>
+      <li><a href={p + '/financements'}>{t('drodownFonctionnement.financements')}</a></li>
+      <li><a href={p + '/charte'}>{t('drodownFonctionnement.charte')}</a></li>
+      <li><a href={p + '/autogestion'}>{t('drodownFonctionnement.autogestion')}</a></li>
     </ul>
   </div>
   <div class="footer-col">
-    <h4>{t.reseauTitle}</h4>
+    <h4>{t('reseauTitle')}</h4>
     <ul>
       <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
       <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">{lang === 'nl' ? 'Sluit je aan bij de Signal-groep' : lang === 'en' ? 'Join the Signal Loop' : 'Rejoins la boucle Signal'}</a></li>
@@ -36,7 +40,7 @@ const p = lang === 'fr' ? '' : `/${lang}`;
     </ul>
   </div>
   <div class="footer-bottom">
-    <span>{t.copy}</span>
-    {t.copyTagline && <span>{t.copyTagline}</span>}
+    <span>{t('copy')}</span>
+    {t('copyTagline') && <span>{t('copyTagline')}</span>}
   </div>
 </footer>

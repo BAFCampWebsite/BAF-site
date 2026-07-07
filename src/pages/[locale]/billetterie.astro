@@ -1,15 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Billetterie from '../../components/Billetterie.astro';
-import { pagePaths } from '../../lib/pages';
 
-export async function getStaticPaths() {
-  return pagePaths('billetterie');
+export function getStaticPaths() {
+  return ['fr', 'en', 'nl'].map(locale => ({ params: { locale } }));
 }
-
-const { lang, t, slug } = Astro.props;
 ---
 
-<BaseLayout {lang} {slug} title={t.site.title} description={t.site.description} keywords={t.site.keywords} locale={t.site.locale} navT={t.nav} footerT={t.footer}>
-  <Billetterie t={t} />
+<BaseLayout slug="billetterie">
+  <Billetterie />
 </BaseLayout>

@@ -1,5 +1,7 @@
 ---
-const { lang } = Astro.props;
+import { getLocale } from 'astro-intl';
+
+const lang = getLocale();
 ---
 <script is:inline>
 document.querySelectorAll('.dd-btn').forEach(btn => {

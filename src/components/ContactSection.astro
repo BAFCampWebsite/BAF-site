@@ -1,12 +1,15 @@
 ---
-const { t } = Astro.props;
+import { getTranslations } from 'astro-intl';
+import type { ContactMessages } from '../i18n/types';
+
+const t = getTranslations<ContactMessages>('contact');
 ---
 
 <section class="section-contact" id="contact">
   <div style="position:relative; z-index:1;">
-    <p class="section-eyebrow reveal" style="display:inline-block; margin-bottom:16px;">{t.eyebrow}</p>
-    <h2 class="section-title reveal" style="margin-bottom:20px;">{t.title}</h2>
-    <p class="contact-sub reveal">{t.text}</p>
-    <a href="mailto:activismcampbelgium@proton.me" class="btn btn-primary reveal" style="margin:0 auto;">{t.btnText}</a>
+    <p class="section-eyebrow reveal" style="display:inline-block; margin-bottom:16px;">{t('eyebrow')}</p>
+    <h2 class="section-title reveal" style="margin-bottom:20px;">{t('title')}</h2>
+    <p class="contact-sub reveal">{t('text')}</p>
+    <a href="mailto:activismcampbelgium@proton.me" class="btn btn-primary reveal" style="margin:0 auto;">{t('btnText')}</a>
   </div>
 </section>
