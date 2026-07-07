@@ -28,28 +28,37 @@ function fill(destination, params, values) {
   );
 }
 
-const vercelConfig = JSON.parse(
-  readFileSync(new URL("../vercel.json", import.meta.url), "utf-8"),
-);
+function buildRedirects() {
+  const vercelConfig = JSON.parse(
+    readFileSync(new URL("../vercel.json", import.meta.url), "utf-8"),
+  );
 
-const simpleRedirects = {};
-const patternRedirects = [];
+  const simpleRedirects = {};
+  const patternRedirects = [];
 
-for (const r of vercelConfig.redirects) {
-  if (!r.source.includes("(") && !r.source.includes(":")) {
-    simpleRedirects[r.source] = r.destination;
-    if (r.source.endsWith("/")) {
-      simpleRedirects[r.source.replace(/\/$/, "")] = r.destination;
-    } else if (r.source !== "/") {
-      simpleRedirects[r.source + "/"] = r.destination;
+  for (const r of vercelConfig.redirects) {
+    if (!r.source.includes("(") && !r.source.includes(":")) {
+      simpleRedirects[r.source] = r.destination;
+      if (r.source.endsWith("/")) {
+        simpleRedirects[r.source.replace(/\/$/, "")] = r.destination;
+      } else if (r.source !== "/") {
+        simpleRedirects[r.source + "/"] = r.destination;
+      }
+    } else {
+      const parsed = parse(r.source);
+      patternRedirects.push({ ...parsed, destination: r.destination });
     }
-  } else {
-    const parsed = parse(r.source);
-    patternRedirects.push({ ...parsed, destination: r.destination });
   }
+
+  return { simpleRedirects, patternRedirects };
 }
 
 export function onRequest(context, next) {
+  if (!import.meta.env.DEV) {
+    return next();
+  }
+
+  const { simpleRedirects, patternRedirects } = buildRedirects();
   const pathname = new URL(context.request.url).pathname;
 
   const target = simpleRedirects[pathname];
