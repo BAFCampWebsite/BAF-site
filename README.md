@@ -50,4 +50,4 @@ See ARCHITECTURE.md for details.
 
 Push to `main` — Vercel detects Astro from `astro.config.mjs` and auto-deploys.
 
-If you open a PR, Vercel will create a preview deployment.
+If you open a PR, Vercel will create a preview deployment, check the "deployments" in the PR itself.
