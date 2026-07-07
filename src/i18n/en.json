@@ -113,34 +113,30 @@
       "tierLow": "🌱 Reduced rate",
       "plusGroupTitle": "➕ Add 1 point if…",
       "minusGroupTitle": "➖ Subtract 1 point if…",
-      "plusItems": [
-        "Your parents own a property in which you grew up.",
-        "Your parents own several properties.",
-        "Your parents have the means to help you buy a property.",
-        "You have received or will receive an inheritance of more than €50,000.",
-        "You have at least €5,000 in savings.",
-        "Your parents can support you in case of financial need without it costing them much.",
-        "You hold a master's degree.",
-        "You could get a job or professional help through your parents or their network.",
-        "You go to restaurants, the cinema or cultural activities.",
-        "You have hobbies such as: music lessons, drawing, hockey, horse riding, tennis, climbing.",
-        "You have a permanent contract earning more than €1,800 and no dependants."
-      ],
-      "minusItems": [
-        "Your parents are afraid of the police / the army.",
-        "In case of trouble, your parents do not call the police.",
-        "Your financial support figures had short, precarious contracts / blue-collar jobs.",
-        "You had to share a room with siblings for financial reasons.",
-        "Your financial support figure did not finish secondary school.",
-        "Your grandparents helped with childcare for financial reasons.",
-        "You have regular medical expenses.",
-        "You have costs related to repression (fines, legal fees,…).",
-        "You are a student and your parents do not support you (sufficiently)."
-      ],
-      "minusAsPlus": [8],
-      "tierHighMin": 8,
-      "tierMidMin": 4,
-      "tierLowMin": 0,
+      "plusItems": {
+        "i0": "Your parents own a property in which you grew up.",
+        "i1": "Your parents own several properties.",
+        "i2": "Your parents have the means to help you buy a property.",
+        "i3": "You have received or will receive an inheritance of more than €50,000.",
+        "i4": "You have at least €5,000 in savings.",
+        "i5": "Your parents can support you in case of financial need without it costing them much.",
+        "i6": "You hold a master's degree.",
+        "i7": "You could get a job or professional help through your parents or their network.",
+        "i8": "You go to restaurants, the cinema or cultural activities.",
+        "i9": "You have hobbies such as: music lessons, drawing, hockey, horse riding, tennis, climbing.",
+        "i10": "You have a permanent contract earning more than €1,800 and no dependants."
+      },
+      "minusItems": {
+        "i0": "Your parents are afraid of the police / the army.",
+        "i1": "In case of trouble, your parents do not call the police.",
+        "i2": "Your financial support figures had short, precarious contracts / blue-collar jobs.",
+        "i3": "You had to share a room with siblings for financial reasons.",
+        "i4": "Your financial support figure did not finish secondary school.",
+        "i5": "Your grandparents helped with childcare for financial reasons.",
+        "i6": "You have regular medical expenses.",
+        "i7": "You have costs related to repression (fines, legal fees,…).",
+        "i8": "You are a student and your parents do not support you (sufficiently)."
+      },
       "recoHighHTML": "🌟 <strong>Solidarity rate.</strong> You live comfortably: regular leisure, holidays, salary above €1,800 per month, or a prospect of home ownership. You can contribute more for those who cannot.",
       "recoMidHTML": "⚖️ <strong>Cost price.</strong> You have a stable income and make ends meet without too much stress. Your salary is around €1,200–1,600 (with no dependants). You might have a bit of savings, or parents to fall back on if truly needed.",
       "recoLowHTML": "💚 <strong>Reduced price.</strong> You have no assets and no fixed income that gives you a stable daily life. You regularly rely on the solidarity of those around you.",
@@ -148,29 +144,21 @@
     },
     "pricing": {
       "title": "Indicative prices",
-      "tiers": [
-        {
-          "letter": "A",
-          "class": "tarif-soutien",
+      "tierSupport": {
           "priceLabel": "Solidarity rate: from €29 / day",
           "totalLabel": "or €87 for 3 days",
-          "description": "You live comfortably: regular leisure, holidays, salary above €1,800 per month, or a prospect of home ownership. You are well supported financially and can afford to contribute more for those who cannot."
+        "description": "You live comfortably: regular leisure, holidays, a salary above €1,800, or the prospect of home ownership. You are financially well-supported and can afford to contribute more for those who cannot."
         },
-        {
-          "letter": "B",
-          "class": "tarif-reel",
+      "tierCost": {
           "priceLabel": "Cost price: €19 / day",
           "totalLabel": "or €57 for 3 days",
-          "description": "You have a stable income and make ends meet without too much stress. Your salary is around €1,200–1,600 (with no dependants). You might have a small savings cushion, or parents to fall back on if truly needed."
+        "description": "You have a stable income and make ends meet without too much stress. Your salary is around €1,200–€1,600 (with no dependants). You might have a bit of savings, or parents to fall back on if truly needed."
         },
-        {
-          "letter": "C",
-          "class": "tarif-reduit",
+      "tierReduced": {
           "priceLabel": "Reduced rate: €10 / day",
           "totalLabel": "or €30 for 3 days",
-          "description": "You have no assets and no fixed income that allows for a stable daily life. You regularly rely on the solidarity of those around you."
-        }
-      ],
+        "description": "You have little or no assets and no fixed income that makes a stable daily life possible. You regularly rely on the solidarity of those around you."
+      },
       "campingTitle": "+ Camping contribution",
       "campingText": "If you plan to sleep on site, you can add a participation of <strong>± €5 / day</strong> to contribute to the restoration of the venue after the camp."
     },
