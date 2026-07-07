@@ -1,0 +1,42 @@
+---
+const { lang, t } = Astro.props;
+---
+
+<section class="section-en-bref reveal" id="en-bref-section">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">{t.eyebrow}</p>
+      <h2 class="section-title">{t.title}</h2>
+    </div>
+  </div>
+  <div class="cards-grid" style="position:relative; z-index:1;">
+    <div class="card">
+      <span class="card-icon">🎤</span>
+      <h3 class="card-title">{t.card1Title}</h3>
+      <p class="card-text">
+        {t.card1Text}
+        {t.card1Link && (
+          <>
+            <br>
+            <a href={t.card1LinkUrl}>{t.card1Link}</a> {t.card1LinkSuffix}
+          </>
+        )}
+      </p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🏕️</span>
+      <h3 class="card-title">{t.card2Title}</h3>
+      <p class="card-text">{t.card2Text}</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🫵</span>
+      <h3 class="card-title">{t.card3Title}</h3>
+      <p class="card-text">
+        {t.card3Text}
+        <a href={t.card3LinkUrl}
+           style="display:inline-block;background:#C466D2;color:#fff;font-size:14px;font-weight:500;padding:2px 12px;border-radius:20px;text-decoration:none;vertical-align:middle;box-shadow:2px 3px 0 #6B5A4A;position:relative;top:-1px;">{t.card3Link}</a>
+        {t.card3LinkSuffix}
+      </p>
+    </div>
+  </div>
+</section>
