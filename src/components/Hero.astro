@@ -1,10 +1,10 @@
 ---
-import { getLocale, getTranslations } from 'astro-intl';
-import type { HeroMessages } from '../i18n/types';
+import { getLocale } from 'astro-intl';
+import { getTranslations } from '../i18n/getTranslations';
 
 const lang = getLocale();
 const p = `/${lang}`;
-const t = getTranslations<HeroMessages>('hero');
+const t = getTranslations('hero');
 ---
 
 <input type="file" id="heroInput" accept="image/*">
