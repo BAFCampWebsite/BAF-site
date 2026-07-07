@@ -5,9 +5,11 @@
     "dev": "astro dev",
     "build": "npm run validate:i18n && astro build",
     "preview": "astro preview",
-    "validate:i18n": "node scripts/validate-translations.mjs"
+    "validate:i18n": "node scripts/validate-translations.mjs",
+    "html-to-markdown": "html-to-markdown"
   },
   "dependencies": {
+    "@wcj/html-to-markdown-cli": "^2.1.1",
     "astro": "^5.0.0"
   }
 }
