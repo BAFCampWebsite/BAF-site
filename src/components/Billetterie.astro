@@ -1,15 +1,15 @@
 ---
-import { getTranslations } from 'astro-intl';
+import { getTranslations } from '../i18n/getTranslations';
 import type { BilletterieMessages } from '../i18n/types';
 
-const t = getTranslations<BilletterieMessages>('billetterie');
+const t = getTranslations('billetterie');
 const pm = t.raw('privilegeMeter') as BilletterieMessages['privilegeMeter'];
 const minusAsPlus = new Set(pm.minusAsPlus || []);
 ---
 
 <!-- Hero -->
 <div class="page-hero anim">
-  <p class="page-hero-eyebrow">{t('hero.eyebrow')}</p>
+  <p class="page-hero-eyebrow">🎟️ {t('hero.eyebrow')}</p>
   <h1 class="page-hero-title">{t('hero.title')}</h1>
   <p class="page-hero-sub">{t('hero.subtitle')}</p>
 </div>

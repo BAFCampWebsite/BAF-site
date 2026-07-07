@@ -1,10 +1,11 @@
 ---
-import { getLocale, getTranslations } from 'astro-intl';
-import type { FooterMessages } from '../i18n/types';
+import { getLocale } from 'astro-intl';
+import { getTranslations } from '../i18n/getTranslations';
+
 
 const lang = getLocale();
 const p = lang === 'fr' ? '' : `/${lang}`;
-const t = getTranslations<FooterMessages>('footer');
+const t = getTranslations('footer');
 ---
 
 <footer>

@@ -1,8 +1,7 @@
 ---
-import { getTranslations } from 'astro-intl';
-import type { EnBrefMessages } from '../i18n/types';
+import { getTranslations } from '../i18n/getTranslations';
 
-const t = getTranslations<EnBrefMessages>('enBref');
+const t = getTranslations('enBref');
 ---
 
 <section class="section-en-bref reveal" id="en-bref-section">

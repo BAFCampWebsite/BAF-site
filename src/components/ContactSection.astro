@@ -1,8 +1,7 @@
 ---
-import { getTranslations } from 'astro-intl';
-import type { ContactMessages } from '../i18n/types';
+import { getTranslations } from '../i18n/getTranslations';
 
-const t = getTranslations<ContactMessages>('contact');
+const t = getTranslations('contact');
 ---
 
 <section class="section-contact" id="contact">

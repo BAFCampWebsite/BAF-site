@@ -1,10 +1,10 @@
 ---
-import { getLocale, getTranslations } from 'astro-intl';
-import type { SiteMessages } from '../i18n/types';
+import { getLocale } from 'astro-intl';
+import { getTranslations } from '../i18n/getTranslations';
 
 const { slug } = Astro.props;
 const lang = getLocale();
-const t = getTranslations<SiteMessages>('site');
+const t = getTranslations('site');
 const origin = 'https://belgian-activism-festi-camp.be';
 const path = `${lang}${slug ? `/${slug}` : ''}`;
 const canonical = `${origin}/${path}/`;
