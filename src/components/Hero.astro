@@ -1,0 +1,53 @@
+---
+const { lang, t } = Astro.props;
+const p = `/${lang}`;
+---
+
+<input type="file" id="heroInput" accept="image/*">
+
+<section class="hero" id="hero-section">
+  <div class="hero-bg">
+    <img id="heroImg" src="" alt="" style="opacity:.28">
+    <div class="hero-bg-overlay"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">{t.eyebrow}</div>
+      <div class="hero-logo">
+        <img src="/BAF%20Logo.png" alt="BAF Camp" id="heroLogoImg">
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-meta-grid">
+        <div class="meta-item">
+          <span class="meta-label">{t.dateLabel}</span>
+          <span class="meta-value">{t.dateValue}</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">{t.lieuLabel}</span>
+          <span class="meta-value">
+            <a href={p + '/infos'} style="color:inherit; text-decoration:none;">{t.lieuValue}</a>
+          </span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">{t.programmeLabel}</span>
+          <a href={p + '/programme'} style="text-decoration:none;">
+            <span class="meta-value">{t.programmeValue}</span>
+          </a>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">{t.objectifLabel}</span>
+          <span class="meta-value">
+            <a href={p + '/infos'} style="color:inherit; text-decoration:none;">{t.objectifValue}</a>
+          </span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href={p + '/billetterie'} class="btn btn-primary">{t.btnBillets}</a>
+        <a href={p + '/programme'} class="btn btn-outline-hero">{t.btnProgramme}</a>
+        <a href={p + '/autogestion'} class="btn btn-primary">{t.btnBenevolat}</a>
+      </div>
+    </div>
+  </div>
+</section>
