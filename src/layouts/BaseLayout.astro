@@ -1,0 +1,21 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Scripts from '../components/Scripts.astro';
+
+const { title, description, keywords, locale, lang, slug, navT, footerT } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <BaseHead {title} {description} {keywords} {locale} {lang} {slug} />
+  </head>
+  <body>
+    <Nav lang={lang} t={navT} {slug} />
+    <slot />
+    <Footer lang={lang} t={footerT} />
+    <Scripts lang={lang} />
+  </body>
+</html>
