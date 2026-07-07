@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const dir = dirname(fileURLToPath(import.meta.url));
 const files = ['fr.json', 'en.json', 'nl.json'];
+const messagesDir = resolve(dir, '..', 'src', 'i18n');
 
 function collectKeys(obj, prefix = '') {
   const keys = [];
@@ -19,7 +20,7 @@ function collectKeys(obj, prefix = '') {
 }
 
 const data = files.map(f => {
-  const content = JSON.parse(readFileSync(resolve(dir, '..', 'src', 'i18n', f), 'utf-8'));
+  const content = JSON.parse(readFileSync(resolve(messagesDir, f), 'utf-8'));
   return { file: f, keys: collectKeys(content) };
 });
 
