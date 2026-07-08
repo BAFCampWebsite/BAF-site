@@ -2,14 +2,18 @@
 
 Static multilingual site for the Belgian Activism Festi-Camp, built with [Astro](https://astro.build).
 
-- **French** at `https://belgian-activism-festi-camp.be/`
+- **French** at `https://belgian-activism-festi-camp.be/` (forwards to /fr)
 - **English** at `https://belgian-activism-festi-camp.be/en/`
 - **Dutch** at `https://belgian-activism-festi-camp.be/nl/`
 
 ## Local development
-Install Node and npm [You can find it here if you don't know how to install it](https://nodejs.org/en/download) (Use the Installer underneath the code block, that's the easiest)
 
-In your terminal, make sure you are in this rep's directory and then run the following commands.
+### Setup
+
+If you haven't set up your Code Editor or environment yet, you can [check out the IDE.md page](IDE.md) with a guide.
+
+In your terminal, make sure you are in this repo's directory and then run the following commands.
+
 ```bash
 npm install
 npm run dev
@@ -17,7 +21,13 @@ npm run dev
 
 The above will start a development server and you can access it by navigating to `http://localhost:4321`. Changes to the files will reload the browser automatically.
 
-## Build
+### Making changes
+
+Some basic guides and guidelines are detailed in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+The above explains the translations, how to add new pages, and how to make links.
+
+### Build
 
 ```bash
 npm run build
@@ -27,7 +37,7 @@ Outputs a fully static site to `dist/`. No runtime JavaScript framework — just
 
 This is what will be deployed eventually
 
-## Preview the build
+#### Preview the build
 
 ```bash
 npm run preview
@@ -35,16 +45,16 @@ npm run preview
 
 ## Project structure
 
-```
+```t
 src/
   i18n/          # Translation JSON files (one per language)
-  components/    # Reusable UI components (Nav, Footer, Hero, etc.)
+  components/    # Individual UI components (Nav, Footer, Hero, etc.)
   layouts/       # Page layout wrapper
-  pages/         # Single catch-all route generating all pages + languages
+  pages/[locale] # Defines routes for all pages
 public/          # Static assets (images, PDFs, style.css)
 ```
 
-See ARCHITECTURE.md for details.
+See [ARCHITECTURE.md](ARCHITECTURE.md) for details.
 
 ## Deployment
 
