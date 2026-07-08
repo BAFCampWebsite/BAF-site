@@ -1,6 +1,6 @@
-import type en from './en.json';
+import type fr from './en.json';
 
-export type Messages = typeof en;
+export type Messages = typeof fr;
 export type SiteMessages = Messages["site"];
 export type NavMessages = Messages["nav"];
 export type HeroMessages = Messages["hero"];
