@@ -11,7 +11,7 @@
     "fonctionnement": "Werking",
     "informations": "Informatie",
     "nousAider": "Ons helpen",
-    "tickets": "Ticketing vrije prijs →",
+    "tickets": "Tickets aan vrije bijdrage →",
     "dropdownFonctionnement": {
       "financements": "Financiering",
       "charte": "Ons charter",
@@ -90,11 +90,11 @@
       "subtitle": "Zodat je bijdraagt naar jouw mogelijkheden."
     },
     "intro": {
-      "title": "Wat is de vrije en bewuste prijs?",
-      "p1": "Het BAF Camp werkt niet met een vaste prijs. Iedereen draagt bij volgens zijn of haar <strong>werkelijke middelen</strong> — niet alleen het loon, maar ook vermogen, privileges en vangnet. Wie het financieel beter heeft, betaalt meer, zodat anderen ook kunnen komen.",
+      "title": "Wat is de vrije bijdrage?",
+      "p1": "Het BAF Camp werkt niet met een vaste prijs. Iedereen draagt bij volgens hun <strong>werkelijke middelen</strong> — niet alleen het loon, maar ook vermogen, privileges en vangnet. Wie het financieel beter heeft, betaalt meer, zodat anderen ook kunnen komen.",
       "p2": "Vrije prijzen werken niet altijd goed — mensen met meer middelen hebben de neiging te weinig te betalen. Daarom nodigen we je uit om <strong>eerlijk na te denken</strong> over jouw situatie voor je een bedrag kiest.",
-      "p3": "Uiteraard is elke situatie anders: als je structureel geld stuurt naar naasten of hoge gezondheidsuitgaven hebt, houd je daar rekening mee — maar hier is een meter om je te helpen situeren.",
-      "p4": "Dit festival is een eerste editie. Als we de kosten niet dekken, raakt het project in de schulden en staat de toekomst op het spel. We rekenen echt op jullie vrijgevigheid en eerlijkheid opdat dit project ook financieel een succes wordt. De winsten worden trouwens herverdeeld naar diverse strijd (lokaal, duurzaamheid van het festival voor BAF 2, en herverdeling via de Fondation Marius Jacob<sup>*</sup> en Mycélium<sup>**</sup>).",
+      "p3": "Uiteraard is elke situatie anders: als je structureel geld stuurt naar naasten of hoge gezondheidskosten hebt, houd je daar rekening mee — maar hieronder vind je een meter om je te helpen situeren.",
+      "p4": "Dit festival is een eerste editie. Als we de kosten niet dekken, raakt het project in de schulden en staat de toekomst op het spel. We rekenen echt op jullie vrijgevigheid en eerlijkheid opdat dit kamp ook financieel rond kan komen. Eventuele winsten worden trouwens herverdeeld naar diverse strijd (lokaal, duurzaamheid van een 2de BAF camp, en herverdeling via de Fondation Marius Jacob<sup>*</sup> en Mycélium<sup>**</sup>).",
       "footnote1": "De Marius Jacob Foundation",
       "footnote1Url": "https://www.fondationmariusjacob.org/#about-7",
       "footnote1Text": "is een collectief en zelfbeheerd financieel instrument dat beurzen herverdeelt aan activisten, collectieven en sociale bewegingen in België — en dat onze bankrekening beheert.",
@@ -104,7 +104,7 @@
     },
     "privilegeMeter": {
       "title": "🌡️ De Privilègemeter — bereken jouw eerlijke bijdrage",
-      "description": "Beantwoord de onderstaande vragen om in te schatten waar je economisch staat. Dit is geen oordeel — het is een hulpmiddel om eerlijk bij te dragen.",
+      "description": "Onderstaande vragen helpen je in te schatten welke prijs bij jouw past. Dit is geen oordeel — het is een hulpmiddel om eerlijk bij te dragen.",
       "introLabel": "📊 Vink aan wat op jou van toepassing is:",
       "btnCalculate": "Bereken mijn score →",
       "btnReset": "↩ Reset",
@@ -124,13 +124,13 @@
         "i6": "Je hebt een masterdiploma behaald.",
         "i7": "Je zou via je ouders of hun netwerk aan een job of professionele hulp kunnen geraken.",
         "i8": "Je gaat naar restaurants, de bioscoop of culturele activiteiten.",
-        "i9": "Je hebt een of meer hobby's zoals: muziek, tekenen, hockey, paardrijden, tennis, klimmen.",
+        "i9": "Je hebt één of meer hobby's zoals: muziek, tekenen, hockey, paardrijden, tennis, klimmen.",
         "i10": "Je hebt een vast contract (CDI) met meer dan 1 800 € en niemand ten laste."
       },
       "minusItems": {
         "i0": "Je ouders zijn bang van de politie / het leger.",
         "i1": "Bij problemen bellen je ouders niet naar de politie.",
-        "i2": "Je financiële steunpilaren hadden korte of precaire contracten / blauwe boorden jobs.",
+        "i2": "De mensen die je financieel ondersteunden in je jeugd hadden korte of precaire contracten of arbeidersjobs.",
         "i3": "Je moest je kamer delen met broers/zussen/siblings om financiële redenen.",
         "i4": "Je financiële steunpilaar heeft het middelbaar onderwijs niet afgemaakt.",
         "i5": "Je grootouders hielpen met de opvang van kleinkinderen om financiële redenen.",
@@ -174,7 +174,7 @@
     },
     "contact": {
       "title": "Een vraag?",
-      "text": "Voor elke vraag over de ticketing, de vrije prijs of financiële toegankelijkheid, schrijf ons direct:",
+      "text": "Voor elke vraag over de tickets, de vrije bijdrage of financiële toegankelijkheid, schrijf ons direct:",
       "btnText": "✉ Schrijf ons",
       "emailSubject": "Vraag over tickets"
     },
