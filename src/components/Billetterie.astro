@@ -79,22 +79,22 @@ const pricingTiers = [
 
   <!-- Section 2 — Privilege Meter -->
   <div class="reveal" id="thunometre-section">
-    <h2>{t('privilegeMeter.title')}</h2>
+    <h2>🌡️ {t('privilegeMeter.title')}</h2>
     <p class="section-lead">{t('privilegeMeter.description')}</p>
 
     <div class="thuno-tool">
       <div class="thuno-questions" id="thunoQuestions">
-        <p class="thuno-intro-label">{t('privilegeMeter.introLabel')}</p>
+        <p class="thuno-intro-label">📊 {t('privilegeMeter.introLabel')}</p>
 
         <div class="thuno-group">
-          <p class="thuno-group-title">{t('privilegeMeter.plusGroupTitle') || "➕ Ajoute 1 point si…"}</p>
+          <p class="thuno-group-title">➕ {t('privilegeMeter.plusGroupTitle') || "Ajoute 1 point si…"}</p>
           {plusItems.map((item) => (
             <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> {item}</label>
           ))}
         </div>
 
         <div class="thuno-group thuno-group-minus">
-          <p class="thuno-group-title">{t('privilegeMeter.minusGroupTitle') || "➖ Retire 1 point si…"}</p>
+          <p class="thuno-group-title">➖ {t('privilegeMeter.minusGroupTitle') || "Retire 1 point si…"}</p>
           {minusItems.map((item, i) => (
             <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val={minusAsPlus.has(i) ? 1 : -1}> {item}</label>
           ))}
@@ -105,15 +105,15 @@ const pricingTiers = [
 
       <div class="thuno-result" id="thunoResult" style="display:none;">
         <div class="thuno-tier-wrap">
-          <div class="thuno-tier thuno-tier-high" id="thunoTierHigh">{t('privilegeMeter.tierHigh')}</div>
-          <div class="thuno-tier thuno-tier-mid" id="thunoTierMid">{t('privilegeMeter.tierMid')}</div>
-          <div class="thuno-tier thuno-tier-low" id="thunoTierLow">{t('privilegeMeter.tierLow')}</div>
+          <div class="thuno-tier thuno-tier-high" id="thunoTierHigh">💰 {t('privilegeMeter.tierHigh')}</div>
+          <div class="thuno-tier thuno-tier-mid" id="thunoTierMid">⚖️ {t('privilegeMeter.tierMid')}</div>
+          <div class="thuno-tier thuno-tier-low" id="thunoTierLow">🌱 {t('privilegeMeter.tierLow')}</div>
         </div>
         <div class="thuno-score-block">
           <span class="thuno-score-label">{t('privilegeMeter.scoreLabel')}</span>
           <span class="thuno-score-value" id="thunoScoreVal">0</span>
         </div>
-        <div class="thuno-reco" id="thunoReco" data-reco-high={t('privilegeMeter.recoHighHTML')} data-reco-mid={t('privilegeMeter.recoMidHTML')} data-reco-low={t('privilegeMeter.recoLowHTML')}></div>
+        <div class="thuno-reco" id="thunoReco" data-reco-high={`🌟 <strong>${t('privilegeMeter.recoHigh.title')}</strong> ${t('privilegeMeter.recoHigh.description')}`} data-reco-mid={`⚖️ <strong>${t('privilegeMeter.recoMid.title')}</strong> ${t('privilegeMeter.recoMid.description')}`} data-reco-low={`💚 <strong>${t('privilegeMeter.recoLow.title')}</strong> ${t('privilegeMeter.recoLow.description')}`}></div>
         <button class="btn" onclick="resetThuno()" style="margin-top:16px; background:var(--creme-fonce); color:var(--encre);">{t('privilegeMeter.btnReset')}</button>
       </div>
     </div>
@@ -152,7 +152,7 @@ const pricingTiers = [
 
   <!-- Section 4 — Registration -->
   <div class="reveal" id="inscription">
-    <h2>{t('registration.title')}</h2>
+    <h2>🎟️ {t('registration.title')}</h2>
     <p class="section-lead">{t('registration.description')}</p>
 
     <div class="step-block">
@@ -161,7 +161,7 @@ const pricingTiers = [
         <h3>{t('registration.stepTitle')}</h3>
         <p>{t('registration.stepText')}</p>
         <a href={t('registration.formUrl')} class="btn btn-primary" onclick="showFormPopup(event)">
-          {t('registration.btnForm')}
+          📝 {t('registration.btnForm')}
         </a>
       </div>
     </div>
@@ -172,11 +172,11 @@ const pricingTiers = [
   <!-- Section 5 — Contact -->
   <div class="reveal">
     <h2>{t('contact.title')}</h2>
-    <p style="font-family:'Libre Baskerville',serif; font-size:.95rem; line-height:1.8; color:var(--encre); max-width:600px;">
+    <p style="font-family:var(--font-serif); font-size:.95rem; line-height:1.8; color:var(--encre); max-width:600px;">
       {t('contact.text')}
     </p>
     <a href={`mailto:activismcampbelgium@proton.me?subject=${encodeURIComponent(t('contact.emailSubject'))}`} class="btn btn-primary" style="margin-top:16px; display:inline-block;">
-      {t('contact.btnText')}
+      ✉ {t('contact.btnText')}
     </a>
   </div>
 
@@ -186,7 +186,7 @@ const pricingTiers = [
 <div class="popup-overlay" id="formPopupOverlay">
   <div class="popup-box">
     <button class="popup-close" onclick="closeFormPopup()" aria-label="Close">✕</button>
-    <p class="popup-icon">{t('popup.icon')}</p>
+    <p class="popup-icon">⏳</p>
     <h3>{t('popup.title')}</h3>
     <p>{t('popup.text')}</p>
     <button class="btn btn-primary" onclick="closeFormPopup()" style="margin-top:16px;">{t('popup.btnText')}</button>
@@ -197,7 +197,7 @@ const pricingTiers = [
 /* ── Intro sections ── */
 .section-intro { max-width: 720px; }
 .section-lead {
-  font-family: 'Libre Baskerville', serif;
+  font-family: var(--font-serif);
   font-size: .97rem;
   line-height: 1.85;
   color: var(--encre);
@@ -217,7 +217,7 @@ const pricingTiers = [
 }
 
 .thuno-intro-label {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   font-size: .8rem;
   font-weight: 700;
   letter-spacing: .06em;
@@ -230,7 +230,7 @@ const pricingTiers = [
 }
 
 .thuno-group-title {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   font-size: .78rem;
   font-weight: 700;
   letter-spacing: .06em;
@@ -251,7 +251,7 @@ const pricingTiers = [
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: var(--font-serif);
   font-size: .88rem;
   line-height: 1.6;
   color: var(--encre);
@@ -283,7 +283,7 @@ const pricingTiers = [
 }
 
 .thuno-tier {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   font-size: .8rem;
   font-weight: 700;
   padding: 10px 20px;
@@ -312,7 +312,7 @@ const pricingTiers = [
 }
 
 .thuno-score-label {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   font-size: .75rem;
   letter-spacing: .06em;
   color: var(--sable);
@@ -320,7 +320,7 @@ const pricingTiers = [
 }
 
 .thuno-score-value {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 3rem;
   font-weight: 700;
   color: var(--rose);
@@ -328,7 +328,7 @@ const pricingTiers = [
 }
 
 .thuno-reco {
-  font-family: 'Libre Baskerville', serif;
+  font-family: var(--font-serif);
   font-size: .95rem;
   line-height: 1.8;
   color: var(--encre);
@@ -340,7 +340,7 @@ const pricingTiers = [
 }
 
 .thuno-formula-note {
-  font-family: 'Libre Baskerville', serif;
+  font-family: var(--font-serif);
   font-size: .82rem;
   font-style: italic;
   color: var(--sable);
@@ -368,7 +368,7 @@ const pricingTiers = [
 }
 
 .tarif-band h4, .tarif-band strong {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   font-size: .88rem;
   font-weight: 700;
   display: block;
@@ -376,7 +376,7 @@ const pricingTiers = [
 }
 
 .tarif-band p {
-  font-family: 'Libre Baskerville', serif;
+  font-family: var(--font-serif);
   font-size: .85rem;
   color: var(--encre);
   margin: 4px 0 0;
@@ -384,7 +384,7 @@ const pricingTiers = [
 }
 
 .tarif-total {
-  font-family: 'Libre Baskerville', serif;
+  font-family: var(--font-serif);
   font-size: .78rem;
   font-weight: 400;
   font-style: italic;
@@ -392,7 +392,7 @@ const pricingTiers = [
 }
 
 .tarif-letter {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 1.3rem;
   font-weight: 700;
   min-width: 48px;
@@ -425,7 +425,7 @@ const pricingTiers = [
 }
 
 .tarif-camping-block strong {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   font-size: .88rem;
   font-weight: 700;
   color: #3a5a9a;
@@ -434,7 +434,7 @@ const pricingTiers = [
 }
 
 .tarif-camping-block p {
-  font-family: 'Libre Baskerville', serif;
+  font-family: var(--font-serif);
   font-size: .85rem;
   color: var(--encre);
   line-height: 1.6;
@@ -451,7 +451,7 @@ const pricingTiers = [
 }
 
 .step-num {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--rose);
@@ -468,7 +468,7 @@ const pricingTiers = [
 }
 
 .step-body h3 {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 1rem;
   font-weight: 700;
   color: var(--encre);
@@ -476,7 +476,7 @@ const pricingTiers = [
 }
 
 .step-body p {
-  font-family: 'Libre Baskerville', serif;
+  font-family: var(--font-serif);
   font-size: .92rem;
   line-height: 1.8;
   color: var(--encre);
@@ -520,7 +520,7 @@ const pricingTiers = [
 }
 
 .popup-box h3 {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--encre);
@@ -528,7 +528,7 @@ const pricingTiers = [
 }
 
 .popup-box p {
-  font-family: 'Libre Baskerville', serif;
+  font-family: var(--font-serif);
   font-size: .92rem;
   line-height: 1.7;
   color: var(--encre);

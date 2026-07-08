@@ -31,7 +31,7 @@
     }
   },
   "hero": {
-    "eyebrow": "✮ Editie 2026 ✮",
+    "eyebrow": "Editie 2026",
     "dateLabel": "Datum",
     "dateValue": "20–23 augustus 2026",
     "lieuLabel": "Plaats",
@@ -64,7 +64,7 @@
     "eyebrow": "Contact houden",
     "title": "Een vraag?",
     "text": "Wij staan klaar om op je vragen te antwoorden.",
-    "btnText": "✉ Schrijf ons"
+    "btnText": "Schrijf ons"
   },
   "footer": {
     "tagline": "Vient prendre une claque !",
@@ -89,9 +89,9 @@
       "title": "Alle info",
       "subtitle": "Over aankomst, slapen, eten, - alles wat je nodig hebt om te komen en te blijven op BAF Camp 2026."
     },
-    "construction": "🚧 Site in aanbouw — volledige en definitieve informatie wordt binnenkort bekend gemaakt!",
+    "construction": "Site in aanbouw — volledige en definitieve informatie wordt binnenkort bekend gemaakt!",
     "acces": {
-      "sectionLabel": "📍 Hoe kom je er?",
+      "sectionLabel": "Hoe kom je er?",
       "title": "Toegang tot het festival",
       "train": {
         "title": "Trein",
@@ -107,12 +107,12 @@
       }
     },
     "restauration": {
-      "sectionLabel": "🍴Eten & drankjes",
+      "sectionLabel": "Eten & drankjes",
       "title": "Keuken",
       "html": "Actiekeukens uit Gent en Brugge zullen voor ons koken: ontbijt, lunch en avondmaal van donderdagavond tot zondagmiddag. Alle maaltijden zijn vegan en aan vrije bijdrage. We gebruiken zoveel mogelijk ingrediënten van recup en lokale boeren."
     },
     "camping": {
-      "sectionLabel": "⛺ Slapen ter plekke",
+      "sectionLabel": "Slapen ter plekke",
       "title": "Camping",
       "html": "De camping is geopend van <strong>17 tot 26 augustus</strong>, op een grasveld vlakbij het festivalterrein.",
       "mixiteText": "Er zal een camping worden voorzien voor chosen mixity van MINT personen (vrouw, Intersex, Non-binary en Trans).",
@@ -122,7 +122,7 @@
       }
     },
     "bambinerie": {
-      "sectionLabel": "🧒 Kleine activisten",
+      "sectionLabel": "Kleine activisten",
       "title": "De Babykamer",
       "introHtml": "Het BAF Camp is er ook voor gezinnen! We voorzien een speciale ruimte<strong>voor kinderen tussen 4 en 16 jaar</strong>, zodat ouders met een gerust hart kunnen genieten van de conferenties en workshops.",
       "morning": {
@@ -139,7 +139,8 @@
       },
       "contact": {
         "title": "Vragen over de Bambinerie?",
-        "html": "Aarzel niet om contact met ons op te nemen via <a href=\"mailto:activismcampbelgium@proton.me\" style=\"color:var(--rose); font-weight:bold;\">activismcampbelgium@proton.me</a> voor al je vragen over kinderopvang."
+        "prefix": "Aarzel niet om contact met ons op te nemen via ",
+        "suffix": " voor al je vragen over kinderopvang."
       }
     }
   },
@@ -163,17 +164,17 @@
       "footnote2Text": "is een participatieve private stichting die financieel militante en alternatieve initiatieven in België ondersteunt via haar netwerk van mecenassen."
     },
     "privilegeMeter": {
-      "title": "🌡️ De Privilègemeter — bereken jouw eerlijke bijdrage",
+      "title": "De Privilègemeter — bereken jouw eerlijke bijdrage",
       "description": "Onderstaande vragen helpen je in te schatten welke prijs bij jouw past. Dit is geen oordeel — het is een hulpmiddel om eerlijk bij te dragen.",
-      "introLabel": "📊 Vink aan wat op jou van toepassing is:",
+      "introLabel": "Vink aan wat op jou van toepassing is:",
       "btnCalculate": "Bereken mijn score →",
       "btnReset": "↩ Reset",
       "scoreLabel": "Jouw score",
-      "tierHigh": "💰 Solidariteitstarief",
-      "tierMid": "⚖️ Kostprijs",
-      "tierLow": "🌱 Verminderd tarief",
-      "plusGroupTitle": "➕ Voeg 1 punt toe als…",
-      "minusGroupTitle": "➖ Trek 1 punt af als…",
+      "tierHigh": "Solidariteitstarief",
+      "tierMid": "Kostprijs",
+      "tierLow": "Verminderd tarief",
+      "plusGroupTitle": "Voeg 1 punt toe als…",
+      "minusGroupTitle": "Trek 1 punt af als…",
       "plusItems": {
         "i0": "Je ouders bezitten een woning waarin je bent opgegroeid.",
         "i1": "Je ouders bezitten meerdere eigendommen.",
@@ -198,9 +199,18 @@
         "i7": "Je hebt kosten als gevolg van repressie (boete, advocaat,…).",
         "i8": "Je bent student en je ouders helpen je niet (voldoende)."
       },
-      "recoHighHTML": "🌟 <strong>Solidariteitstarief.</strong> Je leeft comfortabel: regelmatige vrije tijd, vakanties, loon boven 1 800 €, of perspectief op eigendom. Je kan meer bijdragen voor wie dat niet kan.",
-      "recoMidHTML": "⚖️ <strong>Kostprijs.</strong> Je hebt een stabiel inkomen en de eindjes lukken zonder al te veel stress. Je loon schommelt rond 1 200–1 600 € (zonder personen ten laste). Je hebt misschien een klein spaarpotje, of ouders op wie je kan terugvallen.",
-      "recoLowHTML": "💚 <strong>Verminderd tarief.</strong> Je hebt geen vermogen en geen vast inkomen dat een stabiel dagelijks leven mogelijk maakt. Je rekent regelmatig op de solidariteit van je omgeving.",
+      "recoHigh": {
+        "title": "Solidariteitstarief.",
+        "description": "Je leeft comfortabel: regelmatige vrije tijd, vakanties, loon boven 1 800 €, of perspectief op eigendom. Je kan meer bijdragen voor wie dat niet kan."
+      },
+      "recoMid": {
+        "title": "Kostprijs.",
+        "description": "Je hebt een stabiel inkomen en de eindjes lukken zonder al te veel stress. Je loon schommelt rond 1 200–1 600 € (zonder personen ten laste). Je hebt misschien een klein spaarpotje, of ouders op wie je kan terugvallen."
+      },
+      "recoLow": {
+        "title": "Verminderd tarief.",
+        "description": "Je hebt geen vermogen en geen vast inkomen dat een stabiel dagelijks leven mogelijk maakt. Je rekent regelmatig op de solidariteit van je omgeving."
+      },
       "formulaNote": "Als je <strong>8 punten of meer</strong> scoort op de Privilègemeter → solidariteitstarief. <br> Tussen <strong>4 en 7 punten</strong> → kostprijs. <br> Minder dan <strong>4 punten</strong> → verminderd tarief. We helpen je graag als je twijfelt."
     },
     "pricing": {
@@ -224,22 +234,21 @@
       "campingText": "Als je op de camping wil slapen, kan je een bijdrage van <strong>± 5 € / dag</strong> toevoegen om bij te dragen aan het herstel van de locatie na het kamp."
     },
     "registration": {
-      "title": "🎟️ Hoe inschrijven?",
+      "title": "Hoe inschrijven?",
       "description": "Inschrijving gebeurt via het online inschrijvingsformulier.",
       "stepNum": "1",
       "stepTitle": "Vul het inschrijvingsformulier in",
       "stepText": "Vul het inschrijvingsformulier in om ons te laten weten dat je naar het kamp komt.",
       "formUrl": "https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306",
-      "btnForm": "📝 Inschrijvingsformulier invullen →"
+      "btnForm": "Inschrijvingsformulier invullen →"
     },
     "contact": {
       "title": "Een vraag?",
       "text": "Voor elke vraag over de tickets, de vrije bijdrage of financiële toegankelijkheid, schrijf ons direct:",
-      "btnText": "✉ Schrijf ons",
+      "btnText": "Schrijf ons",
       "emailSubject": "Vraag over tickets"
     },
     "popup": {
-      "icon": "⏳",
       "title": "Binnenkort beschikbaar!",
       "text": "Het inschrijvingsformulier is nog niet open. Het zal binnenkort beschikbaar zijn — kom snel terug!",
       "btnText": "Begrepen"

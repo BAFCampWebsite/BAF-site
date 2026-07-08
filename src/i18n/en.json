@@ -31,7 +31,7 @@
     }
   },
   "hero": {
-    "eyebrow": "✮ 2026 Edition ✮",
+    "eyebrow": "2026 Edition",
     "dateLabel": "Date",
     "dateValue": "August 20–23, 2026",
     "lieuLabel": "Place",
@@ -64,7 +64,7 @@
     "eyebrow": "Let's stay in touch",
     "title": "A question?",
     "text": "Our volunteer organizing team is available to answer all your questions.",
-    "btnText": "✉ Write to us"
+    "btnText": "Write to us"
   },
   "footer": {
     "tagline": "Vient prendre une claque !",
@@ -89,9 +89,9 @@
       "title": "Everything you need to know",
       "subtitle": "How to get here, where to sleep and what to eat — everything you need to know for the BAF Camp."
     },
-    "construction": "🚧 Site under construction — complete and final information will be announced soon!",
+    "construction": "Site under construction — complete and final information will be announced soon!",
     "acces": {
-      "sectionLabel": "📍 How to get there",
+      "sectionLabel": "How to get there",
       "title": "Access to the festival",
       "train": {
         "title": "Train",
@@ -107,12 +107,12 @@
       }
     },
     "restauration": {
-      "sectionLabel": "🍴 Eat & drink",
+      "sectionLabel": "Eat & drink",
       "title": "Catering",
       "html": "Breakfast, lunch and dinner will be provided by an action kitchen from Gent and Brugge, on a pay-what-you-can basis - bring cash! All meals will be vegan and as many ingredients as possible collected through recup or from local farmers. There will also be a bar serving both soft and alcoholic drinks."
     },
     "camping": {
-      "sectionLabel": "⛺ Sleep on site",
+      "sectionLabel": "Sleep on site",
       "title": "Camping",
       "html": "The campsite is open from <strong>August 17 to 26</strong>, on a grassy area a stone's throw from the camp site.",
       "mixiteText": "A seperate campsite is reserved exclusively for women, intersex, non-binary and trans people.",
@@ -122,7 +122,7 @@
       }
     },
     "bambinerie": {
-      "sectionLabel": "🧒 Little activists",
+      "sectionLabel": "Little activists",
       "title": "Bambinerie",
       "introHtml": "The BAF Camp, it\u2019s also for families! A dedicated space <strong>for children between 4 and 16 years old</strong> is planned on the site, so that parents can enjoy the conferences and workshops with peace of mind.",
       "morning": {
@@ -139,7 +139,8 @@
       },
       "contact": {
         "title": "Questions about the Bambinerie?",
-        "html": "Do not hesitate to contact us at <a href=\"mailto:activismcampbelgium@proton.me\" style=\"color:var(--rose); font-weight:bold;\">activismcampbelgium@proton.me</a> for any questions regarding childcare."
+        "prefix": "Do not hesitate to contact us at ",
+        "suffix": " for any questions regarding childcare."
       }
     }
   },
@@ -163,17 +164,17 @@
       "footnote2Url": "https://fondation.mycelium.cc"
     },
     "privilegeMeter": {
-      "title": "🌡️ The Privilege-o-meter — calculate your fair contribution",
+      "title": "The Privilege-o-meter — calculate your fair contribution",
       "description": "Answer the questions below to estimate where you stand economically. This is not a judgement — it's a tool to help you contribute fairly.",
-      "introLabel": "📊 Check what applies to you:",
+      "introLabel": "Check what applies to you:",
       "btnCalculate": "Calculate my score →",
       "btnReset": "↩ Reset",
       "scoreLabel": "Your score",
-      "tierHigh": "💰 Solidarity rate",
-      "tierMid": "⚖️ Cost price",
-      "tierLow": "🌱 Reduced rate",
-      "plusGroupTitle": "➕ Add 1 point if…",
-      "minusGroupTitle": "➖ Subtract 1 point if…",
+      "tierHigh": "Solidarity rate",
+      "tierMid": "Cost price",
+      "tierLow": "Reduced rate",
+      "plusGroupTitle": "Add 1 point if…",
+      "minusGroupTitle": "Subtract 1 point if…",
       "plusItems": {
         "i0": "Your parents own a property in which you grew up.",
         "i1": "Your parents own several properties.",
@@ -198,9 +199,18 @@
         "i7": "You have costs related to repression (fines, legal fees,…).",
         "i8": "You are a student and your parents do not support you (sufficiently)."
       },
-      "recoHighHTML": "🌟 <strong>Solidarity rate.</strong> You live comfortably: regular leisure, holidays, salary above €1,800 per month, or a prospect of home ownership. You can contribute more for those who cannot.",
-      "recoMidHTML": "⚖️ <strong>Cost price.</strong> You have a stable income and make ends meet without too much stress. Your salary is around €1,200–1,600 (with no dependants). You might have a bit of savings, or parents to fall back on if truly needed.",
-      "recoLowHTML": "💚 <strong>Reduced price.</strong> You have no assets and no fixed income that gives you a stable daily life. You regularly rely on the solidarity of those around you.",
+      "recoHigh": {
+        "title": "Solidarity rate.",
+        "description": "You live comfortably: regular leisure, holidays, salary above €1,800 per month, or a prospect of home ownership. You can contribute more for those who cannot."
+      },
+      "recoMid": {
+        "title": "Cost price.",
+        "description": "You have a stable income and make ends meet without too much stress. Your salary is around €1,200–1,600 (with no dependants). You might have a bit of savings, or parents to fall back on if truly needed."
+      },
+      "recoLow": {
+        "title": "Reduced price.",
+        "description": "You have no assets and no fixed income that gives you a stable daily life. You regularly rely on the solidarity of those around you."
+      },
       "formulaNote": "If you score <strong>8 points or more</strong> on the Privilege-o-meter → solidarity rate. <br> Between <strong>4 and 7 points</strong> → cost price. <br> Fewer than <strong>4 points</strong> → reduced rate. Feel free to reach out if you're unsure."
     },
     "pricing": {
@@ -224,22 +234,21 @@
       "campingText": "If you plan to sleep on site, you can add a participation of <strong>± €5 / day</strong> to contribute to the restoration of the venue after the camp."
     },
     "registration": {
-      "title": "🎟️ How to register?",
+      "title": "How to register?",
       "description": "Registration is done via the online registration form.",
       "stepNum": "1",
       "stepTitle": "Fill in the registration form",
       "stepText": "Fill in the registration form to let us know you're coming to the camp.",
       "formUrl": "https://framaforms.org/baf-camp-registration-volunteering-1782682708",
-      "btnForm": "📝 Fill in the registration form →"
+      "btnForm": "Fill in the registration form →"
     },
     "contact": {
       "title": "A question?",
       "text": "For any question about ticketing, the pay-what-you-can model or financial accessibility, write to us directly:",
-      "btnText": "✉ Write to us",
+      "btnText": "Write to us",
       "emailSubject": "Ticketing question"
     },
     "popup": {
-      "icon": "⏳",
       "title": "Coming soon!",
       "text": "The registration form isn't open yet. It will be available a bit later — check back soon!",
       "btnText": "Got it"

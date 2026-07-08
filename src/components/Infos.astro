@@ -16,7 +16,7 @@ const bambinerieBlocks = [
   { icon: '🌅', title: t('bambinerie.morning.title'), html: t('bambinerie.morning.html') },
   { icon: '🌤️', title: t('bambinerie.afternoon.title'), html: t('bambinerie.afternoon.html') },
   { icon: '🎨', title: t('bambinerie.activities.title'), html: t('bambinerie.activities.html') },
-  { icon: '💬', title: t('bambinerie.contact.title'), html: t('bambinerie.contact.html') },
+  { icon: '💬', title: t('bambinerie.contact.title'), prefix: t('bambinerie.contact.prefix'), suffix: t('bambinerie.contact.suffix') },
 ];
 ---
 
@@ -30,12 +30,12 @@ const bambinerieBlocks = [
 
   <div class="reveal" style="margin-bottom:32px;">
     <div class="construction-banner">
-      {t('construction')}
+      🚧 {t('construction')}
     </div>
   </div>
 
   <section id="acces">
-    <p class="section-label">{t('acces.sectionLabel')}</p>
+    <p class="section-label">📍 {t('acces.sectionLabel')}</p>
     <h2>{t('acces.title')}</h2>
 
     <div class="info-grid">
@@ -57,15 +57,15 @@ const bambinerieBlocks = [
   <section id="restauration" style="position:relative;">
     <div class="page-content">
       <div class="section-alt">
-        <p class="section-label" style="background:var(--encre); color:var(--rose);">{t('restauration.sectionLabel')}</p>
+        <p class="section-label" style="background:var(--encre); color:var(--rose);">🍴 {t('restauration.sectionLabel')}</p>
         <h2 style="margin-top:0;">{t('restauration.title')}</h2>
-        <p style="font-family:'Libre Baskerville',serif; font-size:.93rem; line-height:1.8; color:rgba(249,242,236,.8); margin-bottom:32px; position:relative; z-index:1;" set:html={t('restauration.html')}></p>
+        <p style="font-family:var(--font-serif); font-size:.93rem; line-height:1.8; color:rgba(249,242,236,.8); margin-bottom:32px; position:relative; z-index:1;" set:html={t('restauration.html')}></p>
       </div>
     </div>
   </section>
 
   <section id="camping">
-    <p class="section-label">{t('camping.sectionLabel')}</p>
+    <p class="section-label">⛺ {t('camping.sectionLabel')}</p>
     <h2>{t('camping.title')}</h2>
     <p set:html={t('camping.html')}></p>
     <p>{t('camping.mixiteText')}</p>
@@ -82,16 +82,20 @@ const bambinerieBlocks = [
   <hr class="divider">
 
   <section id="bambinerie">
-    <p class="section-label">{t('bambinerie.sectionLabel')}</p>
+    <p class="section-label">🧒 {t('bambinerie.sectionLabel')}</p>
     <h2>{t('bambinerie.title')}</h2>
-    <p style="font-family:'Libre Baskerville',serif; font-size:.93rem; line-height:1.8;" set:html={t('bambinerie.introHtml')}></p>
+    <p style="font-family:var(--font-serif); font-size:.93rem; line-height:1.8;" set:html={t('bambinerie.introHtml')}></p>
 
     {bambinerieBlocks.map((block) => (
       <div class="info-block">
         <span class="info-block-icon">{block.icon}</span>
         <div class="info-block-body">
           <div class="info-block-title">{block.title}</div>
-          <p set:html={block.html}></p>
+          {block.html ? (
+            <p set:html={block.html}></p>
+          ) : (
+            <p>{block.prefix}<a href="mailto:activismcampbelgium@proton.me" style="color:var(--rose); font-weight:bold;">activismcampbelgium@proton.me</a>{block.suffix}</p>
+          )}
         </div>
       </div>
     ))}
@@ -138,14 +142,14 @@ const bambinerieBlocks = [
   .info-card:hover { transform: translate(-3px, -3px); }
   .info-card-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
   .info-card-title {
-    font-family: 'Boogaloo', cursive;
+    font-family: var(--font-display);
     font-size: 1.3rem; letter-spacing: .04em;
     color: var(--vert);
     margin-bottom: 10px;
     text-shadow: 1px 1px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);
   }
   .info-card p {
-    font-family: 'Libre Baskerville', serif;
+    font-family: var(--font-serif);
     font-size: .84rem; line-height: 1.7; color: var(--gris-encre);
     margin-bottom: 0;
   }
@@ -186,18 +190,18 @@ const bambinerieBlocks = [
   .info-block-icon { font-size: 1.8rem; flex-shrink: 0; line-height: 1; }
   .info-block-body {}
   .info-block-title {
-    font-family: 'Boogaloo', cursive;
+    font-family: var(--font-display);
     font-size: 1.1rem; color: var(--vert); margin-bottom: 6px;
     text-shadow: 1px 1px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);
   }
   .info-block p {
-    font-family: 'Libre Baskerville', serif;
+    font-family: var(--font-serif);
     font-size: .84rem; line-height: 1.7; color: var(--gris-encre); margin-bottom: 0;
   }
 
   .section-label {
     display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'Space Mono', monospace;
+    font-family: var(--font-mono);
     font-size: .65rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
     background: var(--vert); color: var(--creme);
     padding: 4px 12px; border-radius: 4px;
