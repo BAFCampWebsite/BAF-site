@@ -99,7 +99,8 @@
       "footnote1Url": "https://www.fondationmariusjacob.org/#about-7",
       "footnote1Text": "is a collective, self-managed financial tool that redistributes grants to activists, collectives and social movements in Belgium — and hosts our bank account.",
       "footnote2": "The Mycelium Foundation",
-      "footnote2Text": "is a participatory private foundation that financially supports militant and alternative initiatives in Belgium through its network of patrons."
+      "footnote2Text": "is a participatory private foundation that financially supports militant and alternative initiatives in Belgium through its network of patrons.",
+      "footnote2Url": "https://fondation.mycelium.cc"
     },
     "privilegeMeter": {
       "title": "🌡️ The Privilege-o-meter — calculate your fair contribution",
@@ -145,18 +146,18 @@
     "pricing": {
       "title": "Indicative prices",
       "tierSupport": {
-          "priceLabel": "Solidarity rate: from €29 / day",
-          "totalLabel": "or €87 for 3 days",
+        "priceLabel": "Solidarity rate: from €29 / day",
+        "totalLabel": "or €87 for 3 days",
         "description": "You live comfortably: regular leisure, holidays, a salary above €1,800, or the prospect of home ownership. You are financially well-supported and can afford to contribute more for those who cannot."
-        },
+      },
       "tierCost": {
-          "priceLabel": "Cost price: €19 / day",
-          "totalLabel": "or €57 for 3 days",
+        "priceLabel": "Cost price: €19 / day",
+        "totalLabel": "or €57 for 3 days",
         "description": "You have a stable income and make ends meet without too much stress. Your salary is around €1,200–€1,600 (with no dependants). You might have a bit of savings, or parents to fall back on if truly needed."
-        },
+      },
       "tierReduced": {
-          "priceLabel": "Reduced rate: €10 / day",
-          "totalLabel": "or €30 for 3 days",
+        "priceLabel": "Reduced rate: €10 / day",
+        "totalLabel": "or €30 for 3 days",
         "description": "You have little or no assets and no fixed income that makes a stable daily life possible. You regularly rely on the solidarity of those around you."
       },
       "campingTitle": "+ Camping contribution",
