@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "astro-build.astro-vscode",
-    "lokalise.i18n-ally"
+    "lokalise.i18n-ally",
+    "davidanson.vscode-markdownlint"
   ]
 }
