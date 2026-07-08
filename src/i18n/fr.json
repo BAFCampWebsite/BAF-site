@@ -83,6 +83,66 @@
     "copy": "2026 BAF Camp — par et pour toustes",
     "copyTagline": "Vient prendre une claque !"
   },
+  "infos": {
+    "hero": {
+      "eyebrow": "Pratique",
+      "title": "Tout savoir",
+      "subtitle": "Venir sur le lieu, y dormir et y manger— tout ce qu'il faut pour venir et rester au BAF Camp 2026."
+    },
+    "construction": "🚧 Site en construction — les informations complètes et definitives seront annoncées prochainement !",
+    "acces": {
+      "sectionLabel": "📍 Comment venir",
+      "title": "Accès au festival",
+      "train": {
+        "title": "Train",
+        "text": "Le site est à 300 m à pied de la gare de Grupont"
+      },
+      "velo": {
+        "title": "Vélo",
+        "text": "Possible de rejoindre le lieu à vélo. Parking et matériel de réparation sur place."
+      },
+      "voiture": {
+        "title": "Voiture",
+        "text": "Accès direct au site en voiture possible à l'adresse : Chem. de Lavaux 1, 6927 Tellin, Belgique. Parking gratuit sur place, covoiturage encouragé."
+      }
+    },
+    "restauration": {
+      "sectionLabel": "🍴 Manger & boire",
+      "title": "Restauration",
+      "html": "Les modalités de cantine ne sont pas encore définies. Si tu fais partie d'un collectif qui peut aider avec du matériel et du savoir faire. <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> Contacte nous ! </a>"
+    },
+    "camping": {
+      "sectionLabel": "⛺ Dormir sur place",
+      "title": "Camping",
+      "html": "Le camping est ouvert du <strong>17 au 26 août</strong>, sur un terrain herbu à deux pas du lieu du camp.",
+      "mixiteText": "Un lieu de camping exclusivement en mixité choisie MINT (Meuf, Intersexe, Non-binaire et Trans) sera aménagé.",
+      "dates": {
+        "title": "Dates d'ouverture",
+        "text": "Arrivée possible dès le Dimanche 16 août à partir de 14h. Départ au plus tard le mardi 26 août à 12h."
+      }
+    },
+    "bambinerie": {
+      "sectionLabel": "🧒 Petits militants",
+      "title": "La Bambinerie",
+      "introHtml": "Le BAF Camp, c'est aussi pour les familles ! Un espace dédié <strong>aux enfants entre 4 et 16 ans </strong>est prévu sur le site, pour que les parents puissent profiter des conférences et ateliers l'esprit tranquille.",
+      "morning": {
+        "title": "Créneau du matin",
+        "html": "Un créneau de <strong>2h le matin</strong> est prévu pour déposer les enfants à la Bambinerie, le temps d'assister aux conférences et ateliers du programme."
+      },
+      "afternoon": {
+        "title": "Créneau de l'après-midi",
+        "html": "Un deuxième créneau de <strong>2h l'après-midi</strong> est proposé pour permettre aux parents de profiter pleinement de la journée."
+      },
+      "activities": {
+        "title": "Activités pour les bambins",
+        "html": "En dehors des créneaux de garde, certaines activités organisées peuvent être adaptées pour les bambins : jeux, créations, découvertes… Le BAF Camp, c'est pour toustes !"
+      },
+      "contact": {
+        "title": "Des questions sur la Bambinerie ?",
+        "html": "N'hésite pas à nous contacter à <a href=\"mailto:activismcampbelgium@proton.me\" style=\"color:var(--rose); font-weight:bold;\">activismcampbelgium@proton.me</a> pour toute question concernant l'accueil des enfants."
+      }
+    }
+  },
   "billetterie": {
     "hero": {
       "eyebrow": "Billetterie",

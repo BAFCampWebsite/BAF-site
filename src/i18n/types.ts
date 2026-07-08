@@ -8,3 +8,4 @@ export type EnBrefMessages = Messages["enBref"];
 export type ContactMessages = Messages["contact"];
 export type FooterMessages = Messages["footer"];
 export type BilletterieMessages = Messages["billetterie"];
+export type InfosMessages = Messages["infos"];

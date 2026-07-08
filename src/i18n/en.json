@@ -83,6 +83,66 @@
     "copy": "2026 BAF Camp — by and for everyone",
     "copyTagline": "Vient prendre une claque !"
   },
+  "infos": {
+    "hero": {
+      "eyebrow": "Practical",
+      "title": "Everything you need to know",
+      "subtitle": "How to get here, where to sleep and what to eat — everything you need to know for the BAF Camp."
+    },
+    "construction": "🚧 Site under construction — complete and final information will be announced soon!",
+    "acces": {
+      "sectionLabel": "📍 How to get there",
+      "title": "Access to the festival",
+      "train": {
+        "title": "Train",
+        "text": "The site is 300 m walk from Grupont train station"
+      },
+      "velo": {
+        "title": "Bike",
+        "text": "Possible to reach the campsite by bike. Parking and repair equipment on site."
+      },
+      "voiture": {
+        "title": "Car",
+        "text": "Direct access to the site by car possible at the address: Chem. de Lavaux 1, 6927 Tellin, Belgium. Free parking on site, carpooling encouraged."
+      }
+    },
+    "restauration": {
+      "sectionLabel": "🍴 Eat & drink",
+      "title": "Catering",
+      "html": "Breakfast, lunch and dinner will be provided by an action kitchen from Gent and Brugge, on a pay-what-you-can basis - bring cash! All meals will be vegan and as many ingredients as possible collected through recup or from local farmers. There will also be a bar serving both soft and alcoholic drinks."
+    },
+    "camping": {
+      "sectionLabel": "⛺ Sleep on site",
+      "title": "Camping",
+      "html": "The campsite is open from <strong>August 17 to 26</strong>, on a grassy area a stone's throw from the camp site.",
+      "mixiteText": "A seperate campsite is reserved exclusively for women, intersex, non-binary and trans people.",
+      "dates": {
+        "title": "Opening dates",
+        "text": "Arrival possible from Sunday August 16 from 2 p.m. Departure no later than Tuesday August 26 at 12 p.m."
+      }
+    },
+    "bambinerie": {
+      "sectionLabel": "🧒 Little activists",
+      "title": "Bambinerie",
+      "introHtml": "The BAF Camp, it\u2019s also for families! A dedicated space <strong>for children between 4 and 16 years old</strong> is planned on the site, so that parents can enjoy the conferences and workshops with peace of mind.",
+      "morning": {
+        "title": "Morning slot",
+        "html": "We offer a <strong>2 hour window in the morning</strong> to drop off the children at the Bambinerie, while they attend the program's conferences and workshops."
+      },
+      "afternoon": {
+        "title": "Afternoon slot",
+        "html": "We offer a second slot of <strong>2 hours in the afternoon</strong> to allow parents to fully enjoy the day."
+      },
+      "activities": {
+        "title": "Activities for toddlers",
+        "html": "Outside of childcare slots, certain organized activities can be adapted for toddlers: games, creations, discoveries, etc. BAF Camp, it\u2019s for everyone!"
+      },
+      "contact": {
+        "title": "Questions about the Bambinerie?",
+        "html": "Do not hesitate to contact us at <a href=\"mailto:activismcampbelgium@proton.me\" style=\"color:var(--rose); font-weight:bold;\">activismcampbelgium@proton.me</a> for any questions regarding childcare."
+      }
+    }
+  },
   "billetterie": {
     "hero": {
       "eyebrow": "Tickets",
