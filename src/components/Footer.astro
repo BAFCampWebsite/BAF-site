@@ -27,17 +27,18 @@ const t = getTranslations('footer');
   <div class="footer-col">
     <h4>{t('fonctionnementTitle')}</h4>
     <ul>
-      <li><a href={p + '/financements'}>{t('drodownFonctionnement.financements')}</a></li>
-      <li><a href={p + '/charte'}>{t('drodownFonctionnement.charte')}</a></li>
-      <li><a href={p + '/autogestion'}>{t('drodownFonctionnement.autogestion')}</a></li>
+      <li><a href={p + '/financements'}>{t('financements')}</a></li>
+      <li><a href={p + '/charte'}>{t('footerCharte')}</a></li>
+      <li><a href={p + '/autogestion'}>{t('autogestion')}</a></li>
     </ul>
   </div>
   <div class="footer-col">
     <h4>{t('reseauTitle')}</h4>
     <ul>
       <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
-      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">{lang === 'nl' ? 'Sluit je aan bij de Signal-groep' : lang === 'en' ? 'Join the Signal Loop' : 'Rejoins la boucle Signal'}</a></li>
-      <li><a href="mailto:activismcampbelgium@proton.me">{lang === 'fr' ? 'Notre mail proton' : 'Email'}</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">
+        {t('signalLabel')}</a></li>
+      <li><a href="mailto:activismcampbelgium@proton.me">{t('emailLabel')}</a></li>
     </ul>
   </div>
   <div class="footer-bottom">
