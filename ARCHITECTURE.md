@@ -6,49 +6,24 @@ The site uses [Astro](https://astro.build) — a static site generator that outp
 
 ## File structure
 
-```
+```py
 src/
-  lib/pages.js                     ← Shared locales + pagePaths() helper
+  lib/pages.js                     # Shared locales + pagePaths() helper
   pages/[locale]/
-    index.astro                    ← /fr/, /en/, /nl/
-    billetterie.astro              ← /fr/billetterie, /en/billetterie, /nl/billetterie
-    programme.astro                ← /fr/programme, /en/programme, /nl/programme
-    ...                            ← one file per page type
-  components/                      ← Shared UI components
-  layouts/BaseLayout.astro         ← Page wrapper (head, nav, footer, scripts)
-  i18n/{fr,en,nl}.json             ← All translatable text
+    index.astro                    # /fr/, /en/, /nl/
+    billetterie.astro              # /fr/billetterie, /en/billetterie, /nl/billetterie
+    programme.astro                # /fr/programme, /en/programme, /nl/programme
+    ...                            # ... one file per page type
+  components/                      # Shared UI components
+  layouts/BaseLayout.astro         # Page wrapper (head, nav, footer, scripts)
+  i18n/{fr,en,nl}.json             # All translatable text
 ```
 
-Each page type has **one file** under `src/pages/[locale]/`. Its `getStaticPaths()` calls the shared `pagePaths('slug')` helper, which returns one path per locale. No conditional dispatch (`page === 'x'`) — the file itself IS the page.
+Each page type has **one file** under `src/pages/[locale]/`. Its `getStaticPaths()` calls the shared `pagePaths('slug')` helper, which returns one path per locale.
 
 ## Adding a new page
 
-1. Create `src/pages/[locale]/my-page.astro`
-2. Add its translations to `src/i18n/{fr,en,nl}.json` under a new key (e.g. `myPage`)
-3. Add a Vercel redirect line in `astro.config.mjs` (under `redirects`) to forward the root-level FR URL
-
-Example:
-
-```astro
----
-// src/pages/[locale]/my-page.astro
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import MyComponent from '../../components/MyComponent.astro';
-import { pagePaths } from '../../lib/pages';
-
-export async function getStaticPaths() {
-  return pagePaths('my-page');
-}
-
-const { lang, t } = Astro.props;
----
-
-<BaseLayout {lang} title={t.site.title} ...>
-  <MyComponent t={t} />
-</BaseLayout>
-```
-
-Three URLs are generated automatically: `/fr/my-page`, `/en/my-page`, `/nl/my-page`.
+See [Contributing.md](CONTRIBUTING.md) for more concrete examples
 
 ## Translations
 
@@ -92,18 +67,18 @@ These are used in `layouts/BaseLayout.astro` which wraps every page. The layout 
 
 ```
 dist/
-  index.html                     ← Meta-redirects to /fr/
-  billetterie/index.html         ← Meta-redirects to /fr/billetterie
-  programme/index.html           ← Meta-redirects to /fr/programme
+  index.html                     # Meta-redirects to /fr/
+  billetterie/index.html         # Meta-redirects to /fr/billetterie
+  programme/index.html           # Meta-redirects to /fr/programme
   ...
-  fr/index.html                  ← FR home
-  fr/billetterie/index.html      ← FR billetterie
-  en/index.html                  ← EN home
-  en/billetterie/index.html      ← EN billetterie
-  nl/index.html                  ← NL home
-  nl/billetterie/index.html      ← NL billetterie
-  style.css                      ← from public/
-  BAF Logo.png                   ← from public/
+  fr/index.html                  # FR home
+  fr/billetterie/index.html      # FR billetterie
+  en/index.html                  # EN home
+  en/billetterie/index.html      # EN billetterie
+  nl/index.html                  # NL home
+  nl/billetterie/index.html      # NL billetterie
+  style.css                      # from public/
+  BAF Logo.png                   # from public/
   ...
 ```
 
