@@ -253,5 +253,293 @@
       "text": "Het inschrijvingsformulier is nog niet open. Het zal binnenkort beschikbaar zijn — kom snel terug!",
       "btnText": "Begrepen"
     }
+  },
+  "programme": {
+    "hero": {
+      "eyebrow": "Programma",
+      "title": "Hoe kunnen we samen de strijd aangaan?",
+      "subtitle": "Het programma zal zich rond deze vraag ontvouwen."
+    },
+    "construction": "Site in aanbouw — het volledige programma wordt binnenkort bekend gemaakt!",
+    "intro": {
+      "title": "Geef samen het programma vorm!",
+      "sentence": "Het kamp werpt licht op de volgende vragen:",
+      "together": {
+        "title": "Samen",
+        "tagline": "Positioneer jezelf en ontdek raakvlakken",
+        "explanation": "Wat hebben wij gemeen? Hoe kunnen we onze strijd inclusiever en toegankelijker maken? Hoe maken we onze meningsverschillen zichtbaar en vinden we punten van overeenstemming waarin we kunnen samenwerken? Hoe strijden we samen tegen onderdrukking (antiracisme, machtsdynamiek, feminisme, antivalidisme)?"
+      },
+      "struggle": {
+        "title": "De strijd",
+        "tagline": "Onze strijd zichtbaar maken en in kaart brengen.",
+        "explanation": "Hoe kunnen wij elkaar steunen? Welke onderwerpen komen vaak voor en wat zijn de strijdpunten in onze regio? Welke krachten en middelen kunnen worden gemobiliseerd? op welke plaatsen? Op welke manieren? We delen onze ervaringen en manieren van strijden, leren van elkaar (concepten, strategieën en creatieve ideeën over strijd). Hoe kunnen we een krachtig en effectief collectief logistiek weefsel voor onze strijd creëren?"
+      }
+    },
+    "filRouge": {
+      "title": "Rode draad in het programma",
+      "text": "Ontdek de ideeën voor dit kamp, de rode draad van het komende programma."
+    },
+    "dayTabs": {
+      "i0": "Donderdag 20/8",
+      "i1": "Vrijdag 21/8",
+      "i2": "Zaterdag 22/8",
+      "i3": "Zondag 23/8"
+    },
+    "dayContent": {
+      "i0": "Na een week van gezamenlijke opbouw, gaat het kamp vanaf de middag van start.",
+      "i1": "De twee belangrijkste dagen van ons kamp staan in het teken van uitwisseling, discussie en workshops rond de vraag: \u201cHoe kunnen we samen strijden?\u201d door iedereen voor iedereen!<br>Als je een workshop of stand wilt voorstellen, een project wilt lanceren of een thema voor een lezing wilt voorstellen - Aarzel dan niet om <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> onze oproep tot bijdragen </a> in te vullen 👊. <br><strong>Laten we samen het programma opstellen!</strong>",
+      "i2": "De twee dagen die de kern van ons kamp vormen, zijn momenten van uitwisseling, discussie en workshops rond de vraag: \u201cHoe kunnen we samen strijden?\u201d door iedereen voor iedereen!<br>Als je een workshop of stand wilt voorstellen, een project wilt lanceren of een thema voor een lezing wilt voorstellen - Aarzel dan niet om <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> onze oproep tot bijdragen </a> in te vullen 👊.<br><strong>Laten we samen het programma vorm geven!</strong>",
+      "i3": "Evaluatie en voorstellen voor de volgende festivaledities. Wat nemen we mee? Wat blijft er over? Het festival eindigt rond de middag! Daarna volgen drie dagen van samen afbreken en opruimen!"
+    },
+    "spaces": {
+      "title": "De ruimtes",
+      "items": {
+        "i0": {
+          "icon": "",
+          "title": "Feesttenten",
+          "text": "Grote ruimtes voor conferenties en debatten voor zoveel mogelijk mensen."
+        },
+        "i1": {
+          "icon": "",
+          "title": "Workshops",
+          "text": "Gezellige ruimtes voor activiteiten en workshops in kleine groepen."
+        },
+        "i2": {
+          "icon": "",
+          "title": "Permanente infrastructuur",
+          "text": "Gevarieerde, zelf beheerde ontmoetingsplekken om te discussiëren en rond te hangen."
+        },
+        "i3": {
+          "icon": "",
+          "title": "De rivier",
+          "text": "Zwemmen toegelaten bij oververhitting van je lijf of brein!"
+        }
+      }
+    }
+  },
+  "nousAider": {
+    "hero": {
+      "eyebrow": "Ondersteuning &amp; Inzet",
+      "title": "Help ons",
+      "subtitle": "Doe een donatie, deel het evenement of leen ons materiaal om samen het festival te doen slagen."
+    },
+    "rejoindre": {
+      "title": "Sluit je bij ons aan!",
+      "text": "Dit kamp is de som van al wie het samen vormgeeft. Kom erbij en voeg je gewicht toe aan de weegschaal!<br> Er is geen ervaring vereist om te helpen. We maken aanpassingen op basis van verzoeken. Je kan je op 3 manieren inzetten:",
+      "cards": {
+        "i0": {
+          "title": "Word vrijwilliger",
+          "text": "Zet je in tijdens het kamp zodat het dagelijks leven daar vlot verloopt. Als iedereen 2 uur per dag helpt, zijn alle shiften gevuld!",
+          "btnText": "Ik schrijf me in"
+        },
+        "i1": {
+          "title": "Help mee bij het opzetten en afbreken van het kamp",
+          "text": "Ja! De opbouw van het kamp start op 16 augustus en de afbraak gaat door tot 26 augustus.",
+          "btnText": "Ik zal er zijn!"
+        },
+        "i2": {
+          "title": "Sluit je aan bij een werkgroep",
+          "text": "Sluit je aan bij een werkgroep om het kamp vooraf te helpen voorbereiden en vorm te geven.",
+          "btnText": "Ontdek de werkgroepen"
+        }
+      }
+    },
+    "don": {
+      "title": "Doe een donatie",
+      "text": "Omdat we een toegankelijke ruimte willen creëren, is er geen andere toegangsbeperking dan de beschikbare plaatsen op de kampplaats.<br>Toch blijven er, ondanks het werk van honderden vrijwilligers, bepaalde onvermijdelijke kosten bestaan.<br>Jouw gift, hoe bescheiden ook, helpt ons onafhankelijk te blijven en trouw te blijven aan onze waarden.",
+      "bankTransfer": {
+        "title": "Bankoverschrijving",
+        "text": "Doe een overschrijving naar de rekening van \"Stichting Marius Jacob\":",
+        "note": "Vermeld <strong>Donatie BAF</strong> als mededeling."
+      },
+      "qrCode": {
+        "title": "QR-code (overschrijving)",
+        "text": "Scan de QR-code met je bankapp:",
+        "note": "Compatibel met alle Belgische bankapps. Vergeet niet <strong>Donatie BAF</strong> als mededeling te vermelden."
+      }
+    },
+    "partager": {
+      "title": "Deel het evenement",
+      "text": "Help om ons te laten horen! Download, print en verspreid ons communicatiemateriaal in je buurt, school en favoriete plekken.",
+      "cards": {
+        "i0": {
+          "title": "A3-poster",
+          "text": "Om te printen en op je favoriete plekken te plakken.",
+          "note": "Linkje komt"
+        },
+        "i1": {
+          "title": "A5-flyer",
+          "text": "Handig formaat voor flyers.",
+          "note": "Linkje komt"
+        },
+        "i2": {
+          "title": "Stickers",
+          "text": "Om indruk te maken, waar je ook gaat.",
+          "note": "Linkje komt"
+        }
+      }
+    },
+    "materiel": {
+      "title": "Materiaal uitlenen",
+      "text": "Heb je materiaal (geluidsinstallaties, verlichting, tent, hekken etc.) en kan je dit aan ons uitlenen gedurende het festival? Laat ons iets weten!",
+      "contactText": " Mail ons op het volgende adres:",
+      "email": "activismcampbelgium@proton.me",
+      "subject": "Uitleen van materiaal",
+      "subjectWarning": "Belangrijk: Graag <strong>\u201cUitleen van materiaal\u201d</strong> in het onderwerp van je e-mail zetten."
+    }
+  },
+  "autogestion": {
+    "hero": {
+      "eyebrow": "Vrijwilligerswerk",
+      "title": "Zelfbeheer",
+      "subtitle": "Info over hoe wij werken"
+    },
+    "structure": {
+      "title": "Onze structuur",
+      "text": "Het BAF Camp is een zelfbeheerd evenement. Er is een algemene coördinatie, bestaande uit verschillende werkgroepen, die elk een ander aspect vormgeven. We proberen ons horizontaal te organiseren. Beslissingen worden genomen met consent en wij pleiten voor een anti-autoritaire houding. De organiserende groep zijn mensen die samen leren dit soort evenementen te creëren, dus staat open voor iedereen. Er zijn geen vaardigheden vereist.",
+      "ctaText": "Sluit je bij ons aan!",
+      "ctaEmail": "volontairesBAF@proton.me",
+      "ctaSubject": "Rejoindre l'organisation du BAF"
+    },
+    "gt": {
+      "title": "Werkgroepen",
+      "intro": "Hier is de lijst met de verschillende werkgroepen. Mail ons door op de knop hierboven te klikken als je je bij een werkgroep wilt aansluiten.",
+      "items": {
+        "i0": { "title": "Werkgroep Zorg", "text": "Denk mee na over de processen die praktisch en theoretisch moeten worden ingevoerd, zodat we onderdrukking voorkomen tijdens het verloop en de voorbereidingen van het festival." },
+        "i1": { "title": "Werkgroep Communicatie", "text": "Beheer sociale netwerken, website, externe communicatie van het evenement." },
+        "i2": { "title": "Werkgroep Vrijwilligers", "text": "Zorg voor de logistiek van het vrijwilligerswerk op de kamplocatie." },
+        "i3": { "title": "Werkgroep Logistiek", "text": "Plan het benodigde materiaal voor het festival, evenals de logistiek van de site (locaties van de verschillende podia, aankomst- en vertrekbeheer, enz.)" },
+        "i4": { "title": "Werkgroep Programmering", "text": "Stel workshopthema\u2019s voor voor het programma en neem contact op met deze collectieven/personen." },
+        "i5": { "title": "Werkgroep Geld &amp; Legaal", "text": "Bepaal een budget voor het festival, neem contact op met donateurs, denk na over de juridische bescherming van het festival en vraag de benodigde vergunningen aan." },
+        "i6": { "title": "Werkgroep Coördinatie", "text": "Ondersteunt de andere groepen en zorgt voor een vloeiende communicatie tussen de verschillende werkgroepen." }
+      }
+    },
+    "benevolat": {
+      "title": "Vrijwilligerswerk",
+      "text1": "Ter plaatse is het onze doelstelling dat dit evenement zo horizontaal en zelfbeheerd mogelijk verloopt. Daarom, om de grens tussen vrijwilligers &amp; \u201cconsument\u00b7en\u201d van het festival zoveel mogelijk uit te wissen, geven idealiter alle deelnemer\u00b7s een beetje van hun tijd om dit festival te laten draaien. We hebben berekend dat als alle vrijwilligers <strong>2 uur per dag</strong> werken, het festival op een zelfbeheerde manier zou moeten kunnen functioneren. Bovendien kan elke taak aangepast worden als je een beperking hebt, van welke aard dan ook.",
+      "text2": "Aarzel niet om nu al je voorkeuren als vrijwilliger door te geven door het <a href=\"billetterie.html\"><strong>inschrijvingsformulier</strong></a> in te vullen. Anders kan je ter plaatse in real time taken vinden om te doen! Heb je v\u00f3\u00f3r 20 augustus vragen of opmerkingen, contacteer ons dan via onze mail: <strong>volontairesBAF@proton.me</strong>!",
+      "text3": "Het kamp zal gezamenlijk opgebouwd en afgebroken worden. <strong>We zullen hulp nodig hebben!</strong> Er moeten tenten en podia opgebouwd worden, maar ook decoratie gemaakt, ruimtes bedacht en infrastructuur uit paletten gebouwd worden, naargelang onze zin! Er blijft nog van alles te bedenken, dus kom vanaf 16 augustus mee helpen bij het cre\u00ebren van deze ruimte! Inschrijvingen om vooraf te helpen bij het opbouwen van het kamp vind je in het formulier hieronder \ud83d\udc47.",
+      "text4": "Maar vergeet v\u00f3\u00f3r alles niet om <a href=\"billetterie.html\"><strong>je plaats voor het evenement te bemachtigen</strong></a>."
+    },
+    "missions": {
+      "title": "Missies beschikbaar",
+      "items": {
+        "i0": "Kom vanaf 16 augustus helpen met het opzetten van het kamp",
+        "i1": "Onthaal &amp; vrijwilligersregistratie",
+        "i2": "de bar verzorgen",
+        "i3": "Koken voor 600 personen",
+        "i4": "Beeldmateriaal en communicatie",
+        "i5": "Zorg en actief luisteren (er wordt training gegeven)",
+        "i6": "Hygi\u00ebne",
+        "i7": "Parkeren",
+        "i8": "Medic (ervaring vereist)",
+        "i9": "Interpretatie (ervaring wenselijk)"
+      }
+    },
+    "inscription": {
+      "title": "Inschrijving voor opbouw/afbraak",
+      "text": "Heb je nu al zin om je in te zetten voor het kamp en te helpen om dit evenement te laten plaatsvinden? Het zou heel waardevol voor ons zijn als je onderstaand formulier invult, zodat we al een idee hebben van onze krachten. We nemen in augustus contact met je op zodra we je bericht ontvangen hebben.",
+      "btnText": "Inschrijving voor opbouw/afbraak",
+      "formUrl": "https://cryptpad.fr/form/#/2/form/view/YdirsY9Ambvl-431q9Kai-8+DISFR6298-euON69DMk/",
+      "deadline": "Deadline voor inschrijvingen via het formulier: 31 juli."
+    }
+  },
+  "charte": {
+    "hero": {
+      "eyebrow": "Werking",
+      "title": "Ons handvest",
+      "subtitle": "De politieke en strategische basis van het BAF Camp"
+    },
+    "pourquoi": {
+      "title": "Waarom dit kamp",
+      "p1": "Het BAF Camp is een ruimte om elkaar te ontmoeten, ons te organiseren en elkaar versterken in de strijd. Het vertrekt vanuit een observatie: rechten nemen af, de repressie neemt toe en bewegingen zijn verdeeld.",
+      "p2": "Het doel is om verbinding te creëren tussen collectieven, praktijken te delen en sterke duurzame allianties op te bouwen, met behoud van levendige en toegankelijke ruimtes."
+    },
+    "objectifs": {
+      "title": "Wat we proberen te doen",
+      "items": {
+        "i0": { "title": "Verbinden", "text": "Bruggen creëren tussen strijd en regio's (Brussel, Wallonië, Vlaanderen)." },
+        "i1": { "title": "Maak zichtbaar", "text": "Nadruk op lokale en internationale strijd." },
+        "i2": { "title": "Organiseer je", "text": "Deel strategieën, debatteer en bouw aan gemeenschap." }
+      }
+    },
+    "positionnement": {
+      "title": "Positionering",
+      "text": "Het kamp maakt deel uit van sociale, antifascistische, ecologische, boeren-, feministische, antiracistische, anti-imperialistische, dekoloniale, antivalidistische en queer-strijd. We zijn anti-autoritair en proberen ongelijke machtsverhoudingen te beperken, ook intern.",
+      "items": {
+        "i0": "Tegen onderdrukking (racisme, seksisme, validisme, classisme, LGBTQIA+fobieën, enz.)",
+        "i1": "Aandacht voor machtsverhoudingen in discussies",
+        "i2": "Centrale plaats voor de betrokken mensen",
+        "i3": "Geen dominante nadruk op een organisatie of ideologie"
+      }
+    },
+    "fonctionnement": {
+      "title": "Collectieve werking",
+      "text": "Het kamp is in zelfbeheer, en berust op actieve deelname via werkgroepen en collectief genomen besluiten.",
+      "items": {
+        "i0": "Horizontale organisatie (logica van consent)",
+        "i1": "Deelname van iedereen (vrijwilligershifts tijdens het kamp)",
+        "i2": "Openheid voor nieuwe mensen en groepen"
+      }
+    },
+    "cadre": {
+      "title": "Basiskader",
+      "text": "Het kamp is geen gegarandeerde \u2018veilige\u2019 ruimte, maar een ruimte waar we proberen om elkaar te respecteren en naar elkaar te luisteren.",
+      "items": {
+        "i0": "Respect voor ervaringen en wat mensen delen",
+        "i1": "Consent vragen (interacties, foto's, fysiek contact)",
+        "i2": "Geen gewelddadig of manipulatief gedrag",
+        "i3": "Neem jouw deel van de verantwoordelijkheid in geval van conflict"
+      },
+      "note": "Tijdens het kamp zal er een team voor zorg en conflictbeheersing aanwezig zijn."
+    },
+    "accessibilite": {
+      "title": "Toegankelijkheid &amp; inclusie",
+      "text": "Er wordt aan gewerkt om het kamp voor zoveel mogelijk mensen toegankelijk te maken, ook al kan niet alles perfect zijn.",
+      "items": {
+        "i0": "FR / NL / EN vertalingen",
+        "i1": "Aandacht aan specifieke noden (voedsel, toegankelijkheid, enz.)",
+        "i2": "Non-mixed spaces",
+        "i3": "Werken met betrokken groepen stroomopwaarts"
+      }
+    },
+    "charteComplete": {
+      "title": "Compleet charter",
+      "text": "Deze pagina is een samenvatting. Het volledige charter beschrijft de regels, definities en processen. Het lezen ervan wordt sterk aanbevolen voor deelname aan het kamp.",
+      "btnText": "Download het charter"
+    }
+  },
+  "financements": {
+    "hero": {
+      "eyebrow": "Financiën &amp; Transparantie",
+      "title": "Financiering",
+      "subtitle": "We tonen je hoe het BAF Camp wordt gefinancierd, en presenteren onze begroting in volledige transparantie."
+    },
+    "construction": "Site in aanbouw — volledige en definitieve informatie volgt binnenkort!",
+    "sources": {
+      "title": "Financieringsbronnen",
+      "text": "Het kamp wordt uit eigen middelen gefinancierd. Het overgrote deel van het festival wordt betaald door bijdragen van de deelnemers. Het merendeel van de inkomsten is dus afkomstig van de ticketverkoop tegen een vrije bijdrage en van de aankopen ter plaatse. Daarvoor:",
+      "cashTitle": "Neem contant geld mee!",
+      "cashSubtitle": "De bankautomaten zijn ver van de locatie.",
+      "subnote": "Hier lees je hoe wij een duurzaam financieel evenwicht bereiken:",
+      "items": {
+        "i0": { "title": "Ticketverkoop", "text": "De ticketverkoop vormt de belangrijkste inkomstenbron van het festival. We vragen een bewuste en geïnformeerde vrije bijdrage." },
+        "i1": { "title": "Bar &amp; keuken", "text": "De opbrengsten uit de bar dragen bij aan het financiële evenwicht van het evenement. De bijdragen voor de maaltijden gaan terug naar het keukencollectief." },
+        "i2": { "title": "Voordelen?", "text": "Zodra het festival break-even draait, gebruiken we de potentiële winst om de sprekers te betalen. Daarna zullen alle mogelijke winsten van het evenement worden gebruikt voor huidige of toekomstige strijd." }
+      }
+    },
+    "transparence": {
+      "title": "Begrotingstransparantie",
+      "text": "De financiële gegevens zijn voor iedereen toegankelijk. De resultaten worden na de editie gepresenteerd.",
+      "items": {
+        "i0": "Financieel rapport 2026 op aanvraag verkrijgbaar",
+        "i1": "Herinvestering van winst in actvistische projecten"
+      }
+    },
+    "soutenir": {
+      "title": "Steun ons",
+      "text": "Wil je partner worden of bijdragen aan dit kamp? Neem contact met ons op!",
+      "btnText": "Financiële steun"
+    }
   }
 }

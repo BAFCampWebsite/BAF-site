@@ -1,0 +1,92 @@
+---
+import { getLocale } from 'astro-intl';
+import { getTranslations } from '../i18n/getTranslations';
+import RoseCta from './RoseCta.astro';
+
+const lang = getLocale();
+const p = `/${lang}`;
+const t = getTranslations('autogestion');
+
+const gtItems = [ t.raw('gt.items.i0'), t.raw('gt.items.i1'), t.raw('gt.items.i2'), t.raw('gt.items.i3'), t.raw('gt.items.i4'), t.raw('gt.items.i5'), t.raw('gt.items.i6') ];
+const gtIcons = ['💚', '🗣️', '🫶', '⚒️', '🎤', '💰', '🔄'];
+
+const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.items.i2'), t('missions.items.i3'), t('missions.items.i4'), t('missions.items.i5'), t('missions.items.i6'), t('missions.items.i7'), t('missions.items.i8'), t('missions.items.i9') ];
+---
+
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ {t('hero.eyebrow')}</p>
+  <h1 class="page-hero-title">{t('hero.title')}</h1>
+  <p class="page-hero-sub">{t('hero.subtitle')}</p>
+</div>
+
+<div class="page-content">
+
+  <div class="reveal">
+    <h2>{t('structure.title')}</h2>
+    <p>{t('structure.text')}</p>
+    <RoseCta>
+      <a href={`mailto:${t('structure.ctaEmail')}?subject=${encodeURIComponent(t('structure.ctaSubject'))}`} style="font-family:var(--font-display);font-size:2.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--creme);text-shadow:3px 3px 0 var(--encre),-1px -1px 0 var(--encre),1px -1px 0 var(--encre),-1px 1px 0 var(--encre);text-decoration:none;">
+        {t('structure.ctaText')}
+      </a>
+    </RoseCta>
+  </div>
+
+  <div class="reveal gt-section">
+    <h2>{t('gt.title')}</h2>
+    <p>{t('gt.intro')}</p>
+    <div class="cards-grid">
+      {gtItems.map((item, i) => (
+        <div class="card">
+          <span class="card-icon">{gtIcons[i]}</span>
+          <h3 class="card-title">{item.title}</h3>
+          <p class="card-text">{item.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="reveal">
+    <h2>{t('benevolat.title')}</h2>
+    <p set:html={t('benevolat.text1')}></p>
+    <p set:html={t('benevolat.text2')}></p>
+    <p set:html={t('benevolat.text3')}></p>
+    <p set:html={t('benevolat.text4')}></p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="reveal">
+    <h2>{t('missions.title')}</h2>
+    <ul>
+      {missions.map((m) => <li>{m}</li>)}
+    </ul>
+  </div>
+
+  <div class="reveal">
+    <h2>{t('inscription.title')}</h2>
+    <p>{t('inscription.text')}</p>
+
+    <RoseCta>
+      <a href={t('inscription.formUrl')} style="font-family:var(--font-display);font-size:2.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--creme);text-shadow:3px 3px 0 var(--encre),-1px -1px 0 var(--encre),1px -1px 0 var(--encre),-1px 1px 0 var(--encre);text-decoration:none;">
+        {t('inscription.btnText')}
+      </a>
+      <div style="font-family:var(--font-serif);font-size:.88rem;color:var(--gris-encre);margin-top:8px;">
+        {t('inscription.deadline')}
+      </div>
+    </RoseCta>
+  </div>
+
+</div>
+
+<style is:global>
+  .gt-section .cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .gt-section .cards-grid .card:nth-child(5) { grid-column: 2; }
+  .gt-section .cards-grid .card:nth-child(6) { grid-column: 3; }
+  .gt-section .cards-grid .card:nth-child(7) { grid-column: 4; }
+  @media(max-width: 900px) {
+    .gt-section .cards-grid { grid-template-columns: 1fr !important; }
+    .gt-section .cards-grid .card:nth-child(5),
+    .gt-section .cards-grid .card:nth-child(6),
+    .gt-section .cards-grid .card:nth-child(7) { grid-column: auto !important; }
+  }
+</style>

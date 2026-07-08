@@ -1,0 +1,72 @@
+---
+import { getLocale } from 'astro-intl';
+import { getTranslations } from '../i18n/getTranslations';
+import RoseCta from './RoseCta.astro';
+
+const lang = getLocale();
+const p = `/${lang}`;
+const t = getTranslations('financements');
+
+const sourceItems = [ t.raw('sources.items.i0'), t.raw('sources.items.i1'), t.raw('sources.items.i2') ];
+const transparenceItems = [ t('transparence.items.i0'), t('transparence.items.i1') ];
+---
+
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ {t('hero.eyebrow')}</p>
+  <h1 class="page-hero-title">{t('hero.title')}</h1>
+  <p class="page-hero-sub">{t('hero.subtitle')}</p>
+</div>
+
+<div class="page-content">
+
+  <div class="reveal" style="margin-bottom:32px;">
+    <div class="construction-banner">
+      🚧 {t('construction')}
+    </div>
+  </div>
+
+  <div class="reveal">
+    <h2>{t('sources.title')}</h2>
+    <p>{t('sources.text')}</p>
+
+    <RoseCta>
+      <div style="font-family:var(--font-display);font-size:2.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--creme);text-shadow:3px 3px 0 var(--encre),-1px -1px 0 var(--encre),1px -1px 0 var(--encre),-1px 1px 0 var(--encre);">
+        {t('sources.cashTitle')}
+      </div>
+      <div style="font-family:var(--font-serif);font-size:.88rem;color:var(--gris-encre);margin-top:8px;">
+        {t('sources.cashSubtitle')}
+      </div>
+    </RoseCta>
+
+    <p>{t('sources.subnote')}</p>
+
+    <div class="cards-grid">
+      {sourceItems.map((item) => (
+        <div class="card">
+          <span class="card-icon">{['🎟️', '🍺', '🔄'][sourceItems.indexOf(item)]}</span>
+          <h3 class="card-title">{item.title}</h3>
+          <p class="card-text">{item.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="reveal">
+    <h2>{t('transparence.title')}</h2>
+    <p>{t('transparence.text')}</p>
+    <ul>
+      {transparenceItems.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <div class="reveal">
+    <h2>{t('soutenir.title')}</h2>
+    <p>{t('soutenir.text')}</p>
+    <a href={`${p}/nous-aider`} class="btn btn-red">💌 &nbsp;{t('soutenir.btnText')}</a>
+  </div>
+
+</div>

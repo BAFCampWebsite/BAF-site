@@ -253,5 +253,293 @@
       "text": "Le formulaire d'inscription n'est pas encore ouvert. Il sera accessible un peu plus tard — reviens bientôt !",
       "btnText": "J'ai compris"
     }
+  },
+  "programme": {
+    "hero": {
+      "eyebrow": "Programme",
+      "title": "Comment lutter ensemble ?",
+      "subtitle": "Le programme s'enroulera autour de cette question."
+    },
+    "construction": "Site en construction — le programme complet sera annoncé prochainement !",
+    "intro": {
+      "title": "Construisons le programme ensemble !",
+      "sentence": "Le camp s'enroulera autour de deux concepts pour tenter d'éclairer les questions suivantes :",
+      "together": {
+        "title": "Ensemble",
+        "tagline": "Se situer et trouver nos points communs.",
+        "explanation": "Qu'est ce qu'on a en commun ? Comment améliorer l'inclusivité de nos luttes et se rendre accessible ? Comment visibiliser nos désaccords et trouver des points d'entente autour desquels se rallier dans des bénéfices mutuels ? Comment ne pas être oppresseurs les un.e.s des autres au sein de la lutte (antiracisme, dynamiques de pouvoir, féminisme, anti-validisme) ?"
+      },
+      "struggle": {
+        "title": "La lutte",
+        "tagline": "Visibiliser et cartographier nos luttes.",
+        "explanation": "Comment nous appuyer les un.e.s sur les autres ? Quels sujets sont communs et quels sont les lieux de luttes à côté de chez nous ? Quelles forces et spécificités peuvent être mobilisées ? à quels endroits ? De quelles manières ? Partager nos experiences et notres façons de lutter, apprendre les un.e.s des autres (concepts, stratégies et idées créative de luttes). Comment créer un tissu logistique collectif puissant et efficace pour nos luttes ?"
+      }
+    },
+    "filRouge": {
+      "title": "Fil rouge de la programmation",
+      "text": "Découvrez les idées qui animeront le camp cette année. Fil rouge du programme à venir."
+    },
+    "dayTabs": {
+      "i0": "Jeudi 20",
+      "i1": "Vendredi 21",
+      "i2": "Samedi 22",
+      "i3": "Dimanche 23"
+    },
+    "dayContent": {
+      "i0": "Après une semaine de montage collectif, ouverture du camp autour de midi.",
+      "i1": "Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : \"Comment lutter ensemble ?\" par tou.te.s pour tou.te.s!<br>Si tu as un atelier ou un stand à proposer, un projet à lancer ou une thématique pour une conférence à proposer - N'hésite pas à remplir <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> notre appel à contributions </a> 👊. <br><strong>Construisons le programme ensemble !</strong>",
+      "i2": "Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : \"Comment lutter ensemble ?\" par tou.te.s pour tou.te.s!<br>Si tu as un atelier ou un stand à proposer, un projet à lancer ou une thématique pour une conférence à proposer - N'hésite pas à remplir <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> notre appel à contributions </a> 👊.<br><strong>Construisons le programme ensemble !</strong>",
+      "i3": "Critique du festival et propositions pour les prochaines éditions. Avec quoi on repart ? Qu'est-ce qui reste ? Fin du festival autour de midi ! Place à 3 jours de démontage et rangement collectif !"
+    },
+    "spaces": {
+      "title": "Les espaces",
+      "items": {
+        "i0": {
+          "icon": "",
+          "title": "Chapiteaux",
+          "text": "De grands espaces pour des conférences débats pour le plus grands nombre."
+        },
+        "i1": {
+          "icon": "",
+          "title": "Ateliers",
+          "text": "Des espaces conviviaux pour faire vivre activités et ateliers en petits groupes autour de problématiques précises."
+        },
+        "i2": {
+          "icon": "",
+          "title": "Infrastructures permanentes",
+          "text": "Plein de lieux variés en auto-gestion pour rencontrer, discuter et flaner ensemble."
+        },
+        "i3": {
+          "icon": "",
+          "title": "Le lac",
+          "text": "Baignade autorisée pour se rafraîchir en cas de surchauffe du corps ou du cerveau."
+        }
+      }
+    }
+  },
+  "nousAider": {
+    "hero": {
+      "eyebrow": "Soutien &amp; Engagement",
+      "title": "Nous aider",
+      "subtitle": "Faire un don, partager l'événement ou prêter du matériel pour réussir ensemble."
+    },
+    "rejoindre": {
+      "title": "Rejoins nous !",
+      "text": "Ce camp sera la somme (voire plus !) des personnes qui le composeront. Vient ajouter ton poids dans la balance.<br>Aucune compétence ou légitimité initiale n'est requise pour pouvoir aider. Des aménagements seront faits en fonction des demandes. Voici les 3 degrés d'investissement possibles :",
+      "cards": {
+        "i0": {
+          "title": "Devenir bénévole",
+          "text": "Prends du temps sur ton camp pour aider au bon déroulement de la vie sur place. Si chacun.e donne 2 h / jour tous les shifts seront complets !",
+          "btnText": "Je m'inscris"
+        },
+        "i1": {
+          "title": "Aider au montage et démontage du camp",
+          "text": "Eh oui ! Le camp sera en fait un peu plus long qu'annoncé : le montage commence à partir du 16 août et le démontage se poursuit jusqu'au 26 août.",
+          "btnText": "Je serai là !"
+        },
+        "i2": {
+          "title": "Rejoindre un GT",
+          "text": "Rejoint l'organisation en intègrant un groupe de travail dès maintenant pour aider à préparer et façonner le camp en amont.",
+          "btnText": "Découvrir les GT"
+        }
+      }
+    },
+    "don": {
+      "title": "Faire un don",
+      "text": "Parceque nous voulons créer un espace accessible, il n'y aura pas de restriction d'accès autre que celle de la place disponible sur le lieu du camp.<br>Cependant, malgré le travail de centaines de bénévoles, certaines dépenses persistent et sont incompressibles.<br>Votre don, aussi modeste soit-il, nous permet de rester indépendants et fidèles à nos valeurs.",
+      "bankTransfer": {
+        "title": "Virement bancaire",
+        "text": "Fais un virement au compte \"Fondation Marius Jacob\" :",
+        "note": "Indique <strong>Don BAF</strong> en communication."
+      },
+      "qrCode": {
+        "title": "QR Code (virement)",
+        "text": "Scanne le QR code avec ton app bancaire :",
+        "note": "Compatible avec toutes les apps bancaires belges. Pense à indiquer <strong>Don BAF</strong> en communication."
+      }
+    },
+    "partager": {
+      "title": "Partager l'événement",
+      "text": "Aidez-nous à faire du bruit ! Téléchargez, imprimez et distribuez nos supports de communication dans vos quartiers, écoles et lieux préférés.",
+      "cards": {
+        "i0": {
+          "title": "Affiche A3",
+          "text": "À imprimer et coller dans vos lieux favoris.",
+          "note": "Lien à venir"
+        },
+        "i1": {
+          "title": "Flyer A5",
+          "text": "Format pratique pour la distribution de main à main.",
+          "note": "Lien à venir"
+        },
+        "i2": {
+          "title": "Autocollants",
+          "text": "Pour marquer les esprits partout où vous allez.",
+          "note": "Lien à venir"
+        }
+      }
+    },
+    "materiel": {
+      "title": "Prêt de matériel",
+      "text": "Vous disposez de matériel (sono, éclairage, tente, barrières, etc.) et souhaitez nous le prêter pour la durée du festival ? Nous sommes preneurs !",
+      "contactText": "Contactez-nous à l'adresse suivante :",
+      "email": "activismcampbelgium@proton.me",
+      "subject": "Prêt de matériel",
+      "subjectWarning": "Important : Merci de mettre <strong>\"Prêt de matériel\"</strong> dans l'objet de votre email."
+    }
+  },
+  "autogestion": {
+    "hero": {
+      "eyebrow": "Bénévolat",
+      "title": "Autogestion",
+      "subtitle": "Quelques informations sur la façon dont on travaille"
+    },
+    "structure": {
+      "title": "Notre structure",
+      "text": "Le BAF Camp est un évènement autogéré. Son mode d'organisation repose sur une coordination générale constituée de plusieurs groupes de travail sur les différents aspects nécessaires à sa réussite. L'organisation de ce camp se fait dans un essai d'horizontalité. Les décisions sont prises par consentement et nous prônons une attitude anti-autoritaire. Le groupe d'organisation est constitué de personnes apprenant ensemble à créer ce genre d'évènements, aussi il est ouvert à toute personne. Aucune compétence n'est requise.",
+      "ctaText": "Rejoignez nous !",
+      "ctaEmail": "volontairesBAF@proton.me",
+      "ctaSubject": "Rejoindre l'organisation du BAF"
+    },
+    "gt": {
+      "title": "Les groupes de travail",
+      "intro": "Voici la liste des différents GT, envoie un mail en cliquant sur le bouton ci-dessus si tu souhaites te joindre à l'un d'entre eux.",
+      "items": {
+        "i0": { "title": "GT Care", "text": "Réfléchir aux processus à mettre en place pratique et théorique pour que des oppressions ne se reproduisent pas durant l'organisation du festival ainsi que durant son déroulement." },
+        "i1": { "title": "GT Communication", "text": "Gérer les réseaux sociaux, le site web, la communication externe de l'évènement." },
+        "i2": { "title": "GT Bénévoles", "text": "S'occuper de la logistique du bénévolat sur le lieu du camp." },
+        "i3": { "title": "GT Logistique", "text": "Prévoir les équipements nécessaires pour le festival ainsi que la logistique du site (emplacements des différents pôles du festival, gestion arrivée et départs, etc.)" },
+        "i4": { "title": "GT Programmation", "text": "Proposer des thèmes d'ateliers pour la programmation du festival et contacter ces collectifs / personnes." },
+        "i5": { "title": "GT Money &amp; Légal", "text": "Définir un budget pour le festival, contacter des donateurs, réfléchir à la protection juridique du festival et demander les autorisations nécessaires." },
+        "i6": { "title": "GT Coordination", "text": "Soutient les autres groupes et s'assure de la communication fluide entre les différents GT." }
+      }
+    },
+    "benevolat": {
+      "title": "Le bénévolat",
+      "text1": "Sur place, nous avons comme objectif que cet évènement se déroule de la manière la plus horizontale et autogérée possible. C'est pourquoi, afin de gommer au max la frontière entre bénévoles &amp; « consommateurices » du festival, idéalement, toustes les participant.e.s donnent un peu de leur temps pour faire tourner ce festival. Nous avons calculé que si tous les bénévoles travaillent <strong>2 heures par jour</strong>, alors le festival devrait pouvoir fonctionner de manière autogérée. Par ailleurs, toute tâche peut être adaptée si tu as un handicap quel qu'il soit.",
+      "text2": "N'hésite pas à déjà signaler tes préférences de bénévole en remplissant le <a href=\"billetterie.html\"><strong>form d'inscription</strong></a>. Sinon, tu pourras trouver des tâches à faire en temps réel sur place ! D'ici le 20 août, si tu as des questions ou des remarques, contacte nous via notre mail :<strong>volontairesBAF@proton.me</strong> !",
+      "text3": "Le camp sera monté et démonté en commun. <strong>Nous aurons besoin d'aide !</strong> Il faudra monter des châpiteaux et des scènes, mais aussi créer la déco, imaginer des espaces et construire des infrastructures en palettes en fonction de nos envies ! Plein de choses resterons à inventer alors venez prendre part à la création de cet espace dès le 16 août ! Inscriptions pour aider à monter le camp en amont dans le formulaire en dessous 👇.",
+      "text4": "Mais avant toute chose, n'oublie pas de <a href=\"billetterie.html\"><strong>prendre ta place pour l'évènement</strong></a>."
+    },
+    "missions": {
+      "title": "Missions disponibles",
+      "items": {
+        "i0": "Venir dès le 16 août pour venir aider à monter le camp",
+        "i1": "Accueil &amp; inscription des bénévoles",
+        "i2": "Tenir le bar",
+        "i3": "Cuisiner pour 600 personnes",
+        "i4": "Prise d'image et communication",
+        "i5": "Care et écoute active (une formation sera donnée)",
+        "i6": "Hygiène",
+        "i7": "Parking",
+        "i8": "Médic (expérience requise)",
+        "i9": "Interpretation (expérience désirable)"
+      }
+    },
+    "inscription": {
+      "title": "Inscription au montage/démontage",
+      "text": "Tu as déjà envie de t'engager pour le camp et d'aider à ce que cet évènement ait lieu ? Ce serait super précieux pour nous que tu remplisse le formulaire ci-dessous pour qu'on puisse déjà compter nos forces. On te recontactera en août une fois ton message reçu.",
+      "btnText": "Inscription au montage/démontage",
+      "formUrl": "https://cryptpad.fr/form/#/2/form/view/YdirsY9Ambvl-431q9Kai-8+DISFR6298-euON69DMk/",
+      "deadline": "Deadline des inscriptions via le form le 31 Juillet."
+    }
+  },
+  "charte": {
+    "hero": {
+      "eyebrow": "Fonctionnement",
+      "title": "Notre charte",
+      "subtitle": "Les bases politiques et stratégiques du BAF Camp"
+    },
+    "pourquoi": {
+      "title": "Pourquoi ce camp",
+      "p1": "Le BAF Camp est un espace pour se rencontrer, s'organiser et renforcer des luttes. Il part d'un constat : les droits reculent, la répression augmente et les mouvements sont fragmentés.",
+      "p2": "L'objectif est de créer des liens entre collectifs, partager des pratiques et construire des alliances fortes et durables, tout en maintenant des espaces vivants et accessibles."
+    },
+    "objectifs": {
+      "title": "Ce qu'on cherche à faire",
+      "items": {
+        "i0": { "title": "Relier", "text": "Créer des ponts entre luttes et territoires (Bruxelles, Wallonie, Flandre)." },
+        "i1": { "title": "Rendre visible", "text": "Mettre en avant des luttes locales et internationales." },
+        "i2": { "title": "S'organiser", "text": "Partager des stratégies, débattre et construire du commun." }
+      }
+    },
+    "positionnement": {
+      "title": "Positionnement",
+      "text": "Le camp s'inscrit dans des luttes sociales, antifasciste, écologiques, paysannes, féministes, antiracistes, anti-impérialisme, décoloniale, anti-validiste et queer. Il repose sur une approche anti-autoritaire et cherche à limiter les rapports de domination, y compris en interne.",
+      "items": {
+        "i0": "Refus des oppressions (racisme, sexisme, validisme, classisme, LGBTQIA+phobies…)",
+        "i1": "Attention aux rapports de pouvoir dans les discussions",
+        "i2": "Place centrale donnée aux personnes concernées",
+        "i3": "Pas de mise en avant dominante d'une organisation ou idéologie"
+      }
+    },
+    "fonctionnement": {
+      "title": "Fonctionnement collectif",
+      "text": "Le camp est autogéré et repose sur une participation active. Il fonctionne via des groupes de travail et des décisions prises collectivement.",
+      "items": {
+        "i0": "Organisation horizontale (logique de consentement)",
+        "i1": "Participation de toustes (shifts bénévoles pendant le camp)",
+        "i2": "Ouverture à de nouvelles personnes et collectifs"
+      }
+    },
+    "cadre": {
+      "title": "Cadre de base",
+      "text": "Le camp n'est pas un espace \"safe\" garanti, mais un espace où l'on essaie de construire des conditions de respect et d'écoute.",
+      "items": {
+        "i0": "Respect des vécus et des prises de parole",
+        "i1": "Consentement (interactions, photos, contact physique)",
+        "i2": "Refus des comportements violents ou manipulateurs",
+        "i3": "Prendre sa part de responsabilité en cas de conflit"
+      },
+      "note": "Une équipe dédiée au care et à la gestion des conflits sera présente pendant le camp."
+    },
+    "accessibilite": {
+      "title": "Accessibilité &amp; inclusion",
+      "text": "Un travail est mené pour rendre le camp accessible au plus grand nombre, même si tout ne pourra pas être parfait.",
+      "items": {
+        "i0": "Traductions FR / NL / EN",
+        "i1": "Attention aux besoins spécifiques (alimentation, accessibilité…)",
+        "i2": "Espaces en mixité choisie",
+        "i3": "Travail avec des collectifs concernés en amont"
+      }
+    },
+    "charteComplete": {
+      "title": "Charte complète",
+      "text": "Cette page est un résumé. La charte complète détaille les règles, définitions et processus. Sa lecture est fortement recommandée pour participer au camp.",
+      "btnText": "Télécharger la charte"
+    }
+  },
+  "financements": {
+    "hero": {
+      "eyebrow": "Finance &amp; Transparence",
+      "title": "Financements",
+      "subtitle": "Comment le BAF Camp est financé et la présentation de notre budget en toute transparence."
+    },
+    "construction": "Site en construction — les informations complètes et definitives seront annoncées prochainement !",
+    "sources": {
+      "title": "Sources de financement",
+      "text": "Le camp est auto-financé. La grande majorité du festival est financée par les participant.e.s. Les sources financières majoritaires viendront des ventes de billets à prix libre, ainsi que des achats sur place. Pour cela :",
+      "cashTitle": "Prévoyez du cash !",
+      "cashSubtitle": "Les distributeurs sont loin du site.",
+      "subnote": "Voici comment nous prévoyons d'atteindre un équilibre financier soutenable.",
+      "items": {
+        "i0": { "title": "Billetterie", "text": "La vente de billets représente la principale source de revenus du festival. Prix libre conscient et éclairé." },
+        "i1": { "title": "Bar &amp; Restauration", "text": "Les recettes du bar contribuent à l'équilibre financier de l'événement. Celles des repas reviendra à la cantine." },
+        "i2": { "title": "Bénéfices ?", "text": "Une fois le festival à l'équilibre, nous utiliseront le potentiel bénéfice pour rétribuer les intervenaant.e.s. Après cela, l'ensemble des bénéfices éventuels de l'événement seront utilisés pour les luttes en cours ou à venir." }
+      }
+    },
+    "transparence": {
+      "title": "Transparence budgétaire",
+      "text": "Les comptes du festival seront accessibles à tous.tes. Le bilan sera présenté après l'édition.",
+      "items": {
+        "i0": "Bilan financier 2026 disponible sur demande",
+        "i1": "Réinjection des bénéfices dans des projets de lutte"
+      }
+    },
+    "soutenir": {
+      "title": "Nous soutenir",
+      "text": "Vous souhaitez devenir partenaire ou contribuer au projet ? Contactez-nous pour en discuter.",
+      "btnText": "Soutenir financièrement"
+    }
   }
 }

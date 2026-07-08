@@ -253,5 +253,332 @@
       "text": "The registration form isn't open yet. It will be available a bit later — check back soon!",
       "btnText": "Got it"
     }
+  },
+  "programme": {
+    "hero": {
+      "eyebrow": "Program",
+      "title": "How to fight together?",
+      "subtitle": "The program will revolve around this question."
+    },
+    "construction": "Site under construction — the full program will be announced soon!",
+    "intro": {
+      "title": "Let\u2019s build the program together!",
+      "sentence": "The camp will explore two concepts:",
+      "together": {
+        "title": "Together",
+        "tagline": "Locate ourselves and find our common ground",
+        "explanation": "What do we have in common? How can we improve the inclusiveness of our struggles and make ourselves more accessible? How can we make our disagreements visible and find points of agreement around which we can rally for mutual benefits? How can we emancipate and not oppress each other within our struggles, that is be truly anti-racist, feminist, anti-capitalist and anti-ableist?"
+      },
+      "struggle": {
+        "title": "Struggling",
+        "tagline": "Visibility and mapping our struggles.",
+        "explanation": "How can we support each other? What subjects are common and what are the places of struggle near us? What strengths and specificities can we mobilise, where and how? What can we learn from our experiences, strategies and tactics? How can we create a powerful, effective and collective logistical network for our struggles?"
+      }
+    },
+    "filRouge": {
+      "title": "Red thread of programming",
+      "text": "Discover the ideas that will liven up the camp this year."
+    },
+    "dayTabs": {
+      "i0": "Thursday 20",
+      "i1": "Friday 21",
+      "i2": "Saturday 22",
+      "i3": "Sunday 23"
+    },
+    "dayContent": {
+      "i0": "After a week of setting up together, the camp opened around midday.",
+      "i1": "The two main days of our camp are opportunities for sharing, discussion and workshops centred on the question: \u2018How can we fight together?\u2019 \u2013 by everyone, for everyone!<br>If you have a workshop or a stand to suggest, a project to launch, or a topic for a talk to propose - Please feel free to fill in <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> our call for contributions </a> 👊. <br><strong>Let\u2019s put the programme together!</strong>",
+      "i2": "The two main days of our camp are opportunities for sharing, discussion and workshops centred on the question: \u2018How can we fight together?\u2019 \u2013 by everyone, for everyone!<br>If you have a workshop or a stand to suggest, a project to launch, or a topic for a talk to propose - Please feel free to fill in <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> our call for contributions </a> 👊. <br><strong>Let\u2019s put the programme together!</strong>",
+      "i3": "A review of the festival and suggestions for future editions. What are we taking away with us? What\u2019s left behind? The festival wraps up around midday! Then it\u2019s time for three days of collective dismantling and tidying up!"
+    },
+    "spaces": {
+      "title": "The spaces",
+      "items": {
+        "i0": {
+          "icon": "",
+          "title": "Marquees",
+          "text": "Large spaces for conferences and debates for up to 150 people"
+        },
+        "i1": {
+          "icon": "",
+          "title": "Workshop tents",
+          "text": "Friendly spaces to host activities and workshops in small groups around specific issues."
+        },
+        "i2": {
+          "icon": "",
+          "title": "Permanent infrastructure",
+          "text": "Places to meet, discuss and hang out together."
+        },
+        "i3": {
+          "icon": "",
+          "title": "The stream",
+          "text": "Body or brain overheating? There\u2019s a stream where you can swim to cool off!"
+        }
+      }
+    }
+  },
+  "nousAider": {
+    "hero": {
+      "eyebrow": "Support &amp; Commitment",
+      "title": "Help us",
+      "subtitle": "Make a donation, share the event or lend equipment to succeed together."
+    },
+    "rejoindre": {
+      "title": "Join us!",
+      "text": "This camp will be the sum (or more!) of the people who compose it, so come and do your part.No initial skill or legitimacy is required to help and we will try to accomodate any needs you might have. Here are the 3 possible degrees of investment:",
+      "cards": {
+        "i0": {
+          "title": "Become a volunteer",
+          "text": "Take time at your camp to help life run smoothly there. If everyone gives 2 hours / day all shifts will be full!",
+          "btnText": "I register"
+        },
+        "i1": {
+          "title": "Help set up and dismantle the camp",
+          "text": "Yes! The camp will actually be a little longer than announced: assembly begins on August 16 and dismantling continues until August 26.",
+          "btnText": "I\u2019ll be there!"
+        },
+        "i2": {
+          "title": "Join a GT",
+          "text": "Join the organization by joining a working group now to help prepare and shape the camp in advance.",
+          "btnText": "Discover the GTs"
+        }
+      }
+    },
+    "don": {
+      "title": "Make a donation",
+      "text": "Because we want to create an accessible space, there will be no restrictions on access other than the number of places available at the camp. However, despite the work of hundreds of volunteers, some expenses remain unavoidable. Your donation, no matter how small, helps us remain independent and stay true to our values.",
+      "bankTransfer": {
+        "title": "Bank transfer",
+        "text": "Make a bank transfer to the account of the \"Marius Jacob Foundation\":",
+        "note": "Please use <strong>BAF Donation</strong> as the payment reference."
+      },
+      "qrCode": {
+        "title": "QR Code (bank transfer)",
+        "text": "Scan the QR code with your banking app:",
+        "note": "Compatible with all Belgian banking apps. Please use <strong>BAF Donation</strong> as the payment reference."
+      }
+    },
+    "partager": {
+      "title": "Share the event",
+      "text": "Help us make some noise! Download, print and distribute our communication materials in your neighborhoods, schools and favorite places.",
+      "cards": {
+        "i0": {
+          "title": "A3 poster",
+          "text": "To print and stick in your favorite places.",
+          "note": "Link to come"
+        },
+        "i1": {
+          "title": "A5 Flyer",
+          "text": "Convenient format for hand-to-hand distribution.",
+          "note": "Link to come"
+        },
+        "i2": {
+          "title": "Stickers",
+          "text": "Stick it to the system wherever you go.",
+          "note": "Link to come"
+        }
+      }
+    },
+    "materiel": {
+      "title": "Equipment loan",
+      "text": "Do you have equipment (sound system, lighting, tent, barriers, etc.) and would like to lend it to us for the duration of the festival? Let us know!",
+      "contactText": "Contact us at the following address:",
+      "email": "activismcampbelgium@proton.me",
+      "subject": "Equipment loan",
+      "subjectWarning": "Important: Please put <strong>\u201cEquipment loan\u201d</strong> in the subject of your email."
+    }
+  },
+  "autogestion": {
+    "hero": {
+      "eyebrow": "Volunteering",
+      "title": "Self-management",
+      "subtitle": "Some information on how we work"
+    },
+    "structure": {
+      "title": "Our structure",
+      "text": "The BAF Camp is a self-managed event. We organise horizontally, with working groups for different aspects (Logistics, Care, Comms, ...) and a coordination working group. Decisions are made by consent and we advocate an anti-authoritarian attitude. The organizing group is made up of people learning together to create these kinds of events, so it is open to anyone. No skills are required.",
+      "ctaText": "Join us!",
+      "ctaEmail": "volontairesBAF@proton.me",
+      "ctaSubject": "Rejoindre l'organisation du BAF"
+    },
+    "gt": {
+      "title": "Working groups",
+      "intro": "Here is the list of the different working groups (\"groupes de travails\" or GTs in French), send an email by clicking on the button above if you wish to join one of them.",
+      "items": {
+        "i0": {
+          "title": "GT Care",
+          "text": "Research and put into practice processes to fight oppressive practices during the organization and the festival itself."
+        },
+        "i1": {
+          "title": "GT Communication",
+          "text": "Manage social networks, website, external communication of the event."
+        },
+        "i2": {
+          "title": "GT Volunteers",
+          "text": "Manage and coordinate festival volunteers."
+        },
+        "i3": {
+          "title": "GT Logistics",
+          "text": "Plan the necessary equipment for the festival as well as the logistics of the site (tent locations, setup and dismantling, etc.)"
+        },
+        "i4": {
+          "title": "GT Programming",
+          "text": "Propose workshop themes for the festival programme and contact these collectives or people, collect contributions for the programme."
+        },
+        "i5": {
+          "title": "GT Money &amp; Legal",
+          "text": "Define a budget for the festival, contact donors, think about the legal protection of the festival and request the necessary authorizations."
+        },
+        "i6": {
+          "title": "GT Coordination",
+          "text": "Supports other groups and ensures fluid communication between the different GTs."
+        }
+      }
+    },
+    "benevolat": {
+      "title": "Volunteering",
+      "text1": "On site, our goal is for this event to run in as horizontal and self-managed a way as possible. That\u2019s why, in order to blur the line between volunteers &amp; \u201cconsumers\u201d of the festival as much as possible, ideally, all participants give a bit of their time to help run this festival. We\u2019ve calculated that if all volunteers work <strong>2 hours a day</strong>, the festival should be able to run in a self-managed way. Furthermore, any task can be adapted if you have a disability of any kind.",
+      "text2": "Feel free to already let us know your volunteering preferences by filling out the <a href=\"billetterie.html\"><strong>registration form</strong></a>. Otherwise, you\u2019ll be able to find tasks to do on the spot in real time! If you have any questions or comments before August 20th, contact us via our email: <strong>volontairesBAF@proton.me</strong>!",
+      "text3": "The camp will be set up and taken down collectively. <strong>We\u2019ll need help!</strong> We\u2019ll need to put up marquees and stages, but also create the decor, imagine spaces and build infrastructure out of pallets according to our ideas! Lots of things are still left to invent, so come take part in creating this space starting August 16th! Sign up to help set up the camp beforehand in the form below 👇.",
+      "text4": "But before anything else, don\u2019t forget to <a href=\"billetterie.html\"><strong>get your spot for the event</strong></a>."
+    },
+    "missions": {
+      "title": "Missions available",
+      "items": {
+        "i0": "Come from August 16 to help set up camp",
+        "i1": "Home &amp; volunteer registration",
+        "i2": "Tending the bar",
+        "i3": "Cooking for 600 people",
+        "i4": "Image capture and communication",
+        "i5": "Care and active listening (training will be given)",
+        "i6": "Hygiene",
+        "i7": "Parking",
+        "i8": "Medic (experience required)",
+        "i9": "Interpreter (experience desirable)"
+      }
+    },
+    "inscription": {
+      "title": "Registration for setup/teardown",
+      "text": "Do you already feel like getting involved in the camp and helping make this event happen? It would be super valuable for us if you filled out the form below, so we can already get an idea of our numbers. We\u2019ll get back to you in August once we\u2019ve received your message.",
+      "btnText": "Registration for setup/teardown",
+      "formUrl": "https://cryptpad.fr/form/#/2/form/view/YdirsY9Ambvl-431q9Kai-8+DISFR6298-euON69DMk/",
+      "deadline": "Registration deadline via the form: July 31st."
+    }
+  },
+  "charte": {
+    "hero": {
+      "eyebrow": "Operation",
+      "title": "Our charter",
+      "subtitle": "The political and strategic bases of the BAF Camp"
+    },
+    "pourquoi": {
+      "title": "Why this camp",
+      "p1": "The BAF Camp is a space to meet, organize and bolster our struggles. It starts from an observation: our rights are declining, repression is increasing and our movements are fragmented.",
+      "p2": "The objective of the BAF camp is to create links between collectives, share practices and build strong and lasting alliances, while maintaining lively and accessible spaces."
+    },
+    "objectifs": {
+      "title": "What we are trying to do",
+      "items": {
+        "i0": {
+          "title": "Connections",
+          "text": "Create bridges between struggles and territories (Brussels, Wallonia, Flanders)."
+        },
+        "i1": {
+          "title": "Spotlight",
+          "text": "Showcase local and international struggles."
+        },
+        "i2": {
+          "title": "Get organized",
+          "text": "Share strategies, debate and find common ground."
+        }
+      }
+    },
+    "positionnement": {
+      "title": "Positioning",
+      "text": "The camp is part of social, anti-fascist, ecological, peasant, feminist, anti-racist, anti-imperialism, decolonial, anti-validist and queer struggles. It is based on an anti-authoritarian approach and seeks to limit relationships of domination, including internally.",
+      "items": {
+        "i0": "Refusal of oppression (racism, sexism, validism, classism, LGBTQIA+phobias, etc.)",
+        "i1": "Pay attention to power relations in discussions",
+        "i2": "Those concerned by an issue are put centre stage",
+        "i3": "No emphasis on a particular organization or ideology"
+      }
+    },
+    "fonctionnement": {
+      "title": "Collective operation",
+      "text": "The camp is self-managed and based on active participation. It operates through working groups and decisions taken collectively.",
+      "items": {
+        "i0": "Horizontal organization based on consensual decision making",
+        "i1": "Everyone participates through volunteer shifts during the camp",
+        "i2": "Openness to new people and groups"
+      }
+    },
+    "cadre": {
+      "title": "Basic framework",
+      "text": "The camp is not a guaranteed \u201csafe\u201d space, but a space where we try to build conditions of respect and listening.",
+      "items": {
+        "i0": "Respect for others and their experiences",
+        "i1": "Consent (when talking to others, taking photos, physical contact...)",
+        "i2": "Refusal of violent or manipulative behavior",
+        "i3": "Take your share of responsibility in the event of conflict"
+      },
+      "note": "A team dedicated to care and conflict management will be present during the camp."
+    },
+    "accessibilite": {
+      "title": "Accessibility &amp; inclusion",
+      "text": "Work is being carried out to make the camp accessible to as many people as possible, even if everything cannot be perfect.",
+      "items": {
+        "i0": "Interpretation into French, Dutch and English as much as possible",
+        "i1": "Pay attention to specific needs (food, accessibility, etc.)",
+        "i2": "Intentionally diverse spaces (e.g. womxn only activities)",
+        "i3": "Working with relevant groups in the run up to the festival"
+      }
+    },
+    "charteComplete": {
+      "title": "Complete charter",
+      "text": "This page is a summary. The complete charter details the rules, definitions and processes. Its reading is strongly recommended for participating in the camp.",
+      "btnText": "Download the charter"
+    }
+  },
+  "financements": {
+    "hero": {
+      "eyebrow": "Finance &amp; Transparency",
+      "title": "Financing",
+      "subtitle": "How the BAF Camp is funded and the presentation of our budget in complete transparency."
+    },
+    "construction": "Site under construction — complete and final information will be announced soon!",
+    "sources": {
+      "title": "Funding sources",
+      "text": "The camp is self-funded. The vast majority of the festival is funded by participants. The majority of financial sources will come from free-price ticket sales, as well as on-site purchases. For that :",
+      "cashTitle": "Bring cash!",
+      "cashSubtitle": "There are no cash machines close to the site.",
+      "subnote": "Here\u2019s how we plan to fairly achieve a balanced and sustainable budget:",
+      "items": {
+        "i0": {
+          "title": "Ticketing",
+          "text": "Ticket sales represent the festival\u2019s main source of income. The price is pay-what-you-can, with a privilege-o-meter to facilitate conscious and informed free pricing."
+        },
+        "i1": {
+          "title": "Bar &amp; Food",
+          "text": "Revenue from the bar contributes to the events budget. Revenues from food go to the collective(s) running the canteen."
+        },
+        "i2": {
+          "title": "Profits?",
+          "text": "Profits from the event will be used for current or future struggles."
+        }
+      }
+    },
+    "transparence": {
+      "title": "Budget transparency",
+      "text": "The festival accounts will be accessible to everyone. The results will be presented after the edition.",
+      "items": {
+        "i0": "2026 financial report available on request",
+        "i1": "Reinjection of profits into selected projects"
+      }
+    },
+    "soutenir": {
+      "title": "Support us",
+      "text": "Do you want to become a partner or contribute to the project? You can click on the link below or contact us via our email.",
+      "btnText": "Financially support"
+    }
   }
 }
