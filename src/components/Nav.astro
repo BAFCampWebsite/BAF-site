@@ -2,12 +2,10 @@
 import { getLocale } from 'astro-intl';
 import { getTranslations } from '../i18n/getTranslations';
 
-import type { NavMessages } from '../i18n/types';
-
 const { slug } = Astro.props;
 const lang = getLocale();
 const p = `/${lang}`;
-const t = getTranslations<NavMessages>('nav');
+const t = getTranslations('nav');
 ---
 
 <input type="file" id="logoInput" accept="image/*">
@@ -28,9 +26,9 @@ const t = getTranslations<NavMessages>('nav');
         <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="dropdown">
-        <a href={`${p}/financements`}><span class="di">💰</span>{t('drodownFonctionnement.financements')}</a>
-        <a href={`${p}/charte`}><span class="di">📜</span>{t('drodownFonctionnement.charte')}</a>
-        <a href={`${p}/autogestion`}><span class="di">🙌</span>{t('drodownFonctionnement.autogestion')}</a>
+        <a href={`${p}/financements`}><span class="di">💰</span>{t('dropdownFonctionnement.financements')}</a>
+        <a href={`${p}/charte`}><span class="di">📜</span>{t('dropdownFonctionnement.charte')}</a>
+        <a href={`${p}/autogestion`}><span class="di">🙌</span>{t('dropdownFonctionnement.autogestion')}</a>
       </div>
     </li>
     <li>
