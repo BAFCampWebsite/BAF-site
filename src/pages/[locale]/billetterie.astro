@@ -1,10 +1,8 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Billetterie from '../../components/Billetterie.astro';
+export { getLocaleStaticPaths as getStaticPaths } from "../../i18n/getStaticPaths";
 
-export function getStaticPaths() {
-  return ['fr', 'en', 'nl'].map(locale => ({ params: { locale } }));
-}
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Billetterie from "../../components/Billetterie.astro";
 ---
 
 <BaseLayout slug="billetterie">
