@@ -134,7 +134,7 @@ const { lang, t } = Astro.props;
 </BaseLayout>
 ```
 
-## Teamup calendar export
+## Manual Teamup calendar export
 
 To fetch events from the Teamup calendar and save them as JSON, you need to configure a few environment variables first.
 
@@ -160,5 +160,28 @@ npm run fetch:teamup
 ```
 
 This will call the Teamup API and write the JSON output to [public/teamup-events.json](public/teamup-events.json).
+
+## Automated Teamup sync
+
+The Teamup update workflow runs automatically on a schedule, and it can also be triggered manually from GitHub Actions.
+
+### Trigger the action manually
+
+If you're inpatient for 6am to roll over, you can trigger the action manually:
+
+1. Open the repository on GitHub and go to the Actions tab.
+2. Select the workflow named "Update Teamup events".
+3. Click "Run workflow".
+4. Choose the branch you want to use (usually `main`) and confirm.
+
+The workflow will reset to the latest `main`, run the export script, and create a pull request if [public/teamup-events.json](public/teamup-events.json) changed.
+
+### Merge the resulting pull request
+
+1. Open the pull request created by the workflow.
+2. Review the diff in [public/teamup-events.json](public/teamup-events.json) to confirm the update looks correct.
+3. If everything looks good, merge the pull request into `main`.
+
+A normal GitHub merge flow is fine here, but "Squash and merge" is often the cleanest option for this kind of automated update.
 
 ## Other Technicalities
