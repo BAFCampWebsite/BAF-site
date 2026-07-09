@@ -16,6 +16,7 @@ jobs:
       CALENDAR_ID: ${{ vars.CALENDAR_ID }}
       START_DATE: 2026-08-18
       END_DATE: 2026-08-25
+      DEST_BRANCH: teamup_sync
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -48,13 +49,20 @@ jobs:
             exit 0
           fi
 
-          branch_name="teamup-events-update-$(date +%Y%m%d%H%M%S)"
-          git checkout -B "$branch_name"
+          branch_name="$DEST_BRANCH"
+          git checkout -B "$branch_name" origin/main
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/teamup-events.json
           git commit -m "chore: update Teamup events"
           git push --force-with-lease origin "$branch_name"
+
+          existing_pr="$(gh pr list --head "$branch_name" --base main --state open --json number --jq '.[0].number')"
+
+          if [ -n "$existing_pr" ]; then
+            echo "Pull request already exists: #$existing_pr"
+            exit 0
+          fi
 
           gh pr create \
             --base main \
