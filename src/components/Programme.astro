@@ -49,7 +49,7 @@ const spaceItems = [
 </div>
 
 <div class="page-content">
-  <div class="reveal" style="margin-bottom:32px;">
+  <div class="reveal reveal-spacing">
     <div class="construction-banner">
       🚧 {t("construction")}
     </div>
@@ -88,11 +88,8 @@ const spaceItems = [
     <div class="bloc-fil">{t("filRouge.text")}</div>
   </div>
 
-  <div class="reveal" style="margin-top:40px;">
-    <div
-      style="display:flex; gap:4px; margin-bottom:32px; flex-wrap:wrap;"
-      id="dayTabs"
-    >
+  <div class="reveal reveal-spacing-large">
+    <div class="day-tabs" id="dayTabs">
       {
         dayTabs.map((tab, i) => (
           <button class="day-tab" data-day={i} onclick={`switchDay(${i},this)`}>
