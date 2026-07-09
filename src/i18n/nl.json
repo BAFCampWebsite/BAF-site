@@ -287,30 +287,26 @@
     },
     "dayContent": {
       "i0": "Na een week van gezamenlijke opbouw, gaat het kamp vanaf de middag van start.",
-      "i1": "De twee belangrijkste dagen van ons kamp staan in het teken van uitwisseling, discussie en workshops rond de vraag: \u201cHoe kunnen we samen strijden?\u201d door iedereen voor iedereen!<br>Als je een workshop of stand wilt voorstellen, een project wilt lanceren of een thema voor een lezing wilt voorstellen - Aarzel dan niet om <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> onze oproep tot bijdragen </a> in te vullen 👊. <br><strong>Laten we samen het programma opstellen!</strong>",
-      "i2": "De twee dagen die de kern van ons kamp vormen, zijn momenten van uitwisseling, discussie en workshops rond de vraag: \u201cHoe kunnen we samen strijden?\u201d door iedereen voor iedereen!<br>Als je een workshop of stand wilt voorstellen, een project wilt lanceren of een thema voor een lezing wilt voorstellen - Aarzel dan niet om <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> onze oproep tot bijdragen </a> in te vullen 👊.<br><strong>Laten we samen het programma vorm geven!</strong>",
+      "i1": "De twee belangrijkste dagen van ons kamp staan in het teken van uitwisseling, discussie en workshops rond de vraag: “Hoe kunnen we samen strijden?” door iedereen voor iedereen!<br>Als je een workshop of stand wilt voorstellen, een project wilt lanceren of een thema voor een lezing wilt voorstellen - Aarzel dan niet om <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> onze oproep tot bijdragen </a> in te vullen 👊. <br><strong>Laten we samen het programma opstellen!</strong>",
+      "i2": "De twee dagen die de kern van ons kamp vormen, zijn momenten van uitwisseling, discussie en workshops rond de vraag: “Hoe kunnen we samen strijden?” door iedereen voor iedereen!<br>Als je een workshop of stand wilt voorstellen, een project wilt lanceren of een thema voor een lezing wilt voorstellen - Aarzel dan niet om <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> onze oproep tot bijdragen </a> in te vullen 👊.<br><strong>Laten we samen het programma vorm geven!</strong>",
       "i3": "Evaluatie en voorstellen voor de volgende festivaledities. Wat nemen we mee? Wat blijft er over? Het festival eindigt rond de middag! Daarna volgen drie dagen van samen afbreken en opruimen!"
     },
     "spaces": {
       "title": "De ruimtes",
       "items": {
         "i0": {
-          "icon": "",
           "title": "Feesttenten",
           "text": "Grote ruimtes voor conferenties en debatten voor zoveel mogelijk mensen."
         },
         "i1": {
-          "icon": "",
           "title": "Workshops",
           "text": "Gezellige ruimtes voor activiteiten en workshops in kleine groepen."
         },
         "i2": {
-          "icon": "",
           "title": "Permanente infrastructuur",
           "text": "Gevarieerde, zelf beheerde ontmoetingsplekken om te discussiëren en rond te hangen."
         },
         "i3": {
-          "icon": "",
           "title": "De rivier",
           "text": "Zwemmen toegelaten bij oververhitting van je lijf of brein!"
         }
@@ -385,7 +381,7 @@
       "contactText": " Mail ons op het volgende adres:",
       "email": "activismcampbelgium@proton.me",
       "subject": "Uitleen van materiaal",
-      "subjectWarning": "Belangrijk: Graag <strong>\u201cUitleen van materiaal\u201d</strong> in het onderwerp van je e-mail zetten."
+      "subjectWarning": "Belangrijk: Graag <strong>“Uitleen van materiaal”</strong> in het onderwerp van je e-mail zetten."
     }
   },
   "autogestion": {
@@ -405,21 +401,42 @@
       "title": "Werkgroepen",
       "intro": "Hier is de lijst met de verschillende werkgroepen. Mail ons door op de knop hierboven te klikken als je je bij een werkgroep wilt aansluiten.",
       "items": {
-        "i0": { "title": "Werkgroep Zorg", "text": "Denk mee na over de processen die praktisch en theoretisch moeten worden ingevoerd, zodat we onderdrukking voorkomen tijdens het verloop en de voorbereidingen van het festival." },
-        "i1": { "title": "Werkgroep Communicatie", "text": "Beheer sociale netwerken, website, externe communicatie van het evenement." },
-        "i2": { "title": "Werkgroep Vrijwilligers", "text": "Zorg voor de logistiek van het vrijwilligerswerk op de kamplocatie." },
-        "i3": { "title": "Werkgroep Logistiek", "text": "Plan het benodigde materiaal voor het festival, evenals de logistiek van de site (locaties van de verschillende podia, aankomst- en vertrekbeheer, enz.)" },
-        "i4": { "title": "Werkgroep Programmering", "text": "Stel workshopthema\u2019s voor voor het programma en neem contact op met deze collectieven/personen." },
-        "i5": { "title": "Werkgroep Geld &amp; Legaal", "text": "Bepaal een budget voor het festival, neem contact op met donateurs, denk na over de juridische bescherming van het festival en vraag de benodigde vergunningen aan." },
-        "i6": { "title": "Werkgroep Coördinatie", "text": "Ondersteunt de andere groepen en zorgt voor een vloeiende communicatie tussen de verschillende werkgroepen." }
+        "i0": {
+          "title": "Werkgroep Zorg",
+          "text": "Denk mee na over de processen die praktisch en theoretisch moeten worden ingevoerd, zodat we onderdrukking voorkomen tijdens het verloop en de voorbereidingen van het festival."
+        },
+        "i1": {
+          "title": "Werkgroep Communicatie",
+          "text": "Beheer sociale netwerken, website, externe communicatie van het evenement."
+        },
+        "i2": {
+          "title": "Werkgroep Vrijwilligers",
+          "text": "Zorg voor de logistiek van het vrijwilligerswerk op de kamplocatie."
+        },
+        "i3": {
+          "title": "Werkgroep Logistiek",
+          "text": "Plan het benodigde materiaal voor het festival, evenals de logistiek van de site (locaties van de verschillende podia, aankomst- en vertrekbeheer, enz.)"
+        },
+        "i4": {
+          "title": "Werkgroep Programmering",
+          "text": "Stel workshopthema’s voor voor het programma en neem contact op met deze collectieven/personen."
+        },
+        "i5": {
+          "title": "Werkgroep Geld &amp; Legaal",
+          "text": "Bepaal een budget voor het festival, neem contact op met donateurs, denk na over de juridische bescherming van het festival en vraag de benodigde vergunningen aan."
+        },
+        "i6": {
+          "title": "Werkgroep Coördinatie",
+          "text": "Ondersteunt de andere groepen en zorgt voor een vloeiende communicatie tussen de verschillende werkgroepen."
+        }
       }
     },
     "benevolat": {
       "title": "Vrijwilligerswerk",
-      "text1": "Ter plaatse is het onze doelstelling dat dit evenement zo horizontaal en zelfbeheerd mogelijk verloopt. Daarom, om de grens tussen vrijwilligers &amp; \u201cconsument\u00b7en\u201d van het festival zoveel mogelijk uit te wissen, geven idealiter alle deelnemer\u00b7s een beetje van hun tijd om dit festival te laten draaien. We hebben berekend dat als alle vrijwilligers <strong>2 uur per dag</strong> werken, het festival op een zelfbeheerde manier zou moeten kunnen functioneren. Bovendien kan elke taak aangepast worden als je een beperking hebt, van welke aard dan ook.",
-      "text2": "Aarzel niet om nu al je voorkeuren als vrijwilliger door te geven door het <a href=\"billetterie.html\"><strong>inschrijvingsformulier</strong></a> in te vullen. Anders kan je ter plaatse in real time taken vinden om te doen! Heb je v\u00f3\u00f3r 20 augustus vragen of opmerkingen, contacteer ons dan via onze mail: <strong>volontairesBAF@proton.me</strong>!",
-      "text3": "Het kamp zal gezamenlijk opgebouwd en afgebroken worden. <strong>We zullen hulp nodig hebben!</strong> Er moeten tenten en podia opgebouwd worden, maar ook decoratie gemaakt, ruimtes bedacht en infrastructuur uit paletten gebouwd worden, naargelang onze zin! Er blijft nog van alles te bedenken, dus kom vanaf 16 augustus mee helpen bij het cre\u00ebren van deze ruimte! Inschrijvingen om vooraf te helpen bij het opbouwen van het kamp vind je in het formulier hieronder \ud83d\udc47.",
-      "text4": "Maar vergeet v\u00f3\u00f3r alles niet om <a href=\"billetterie.html\"><strong>je plaats voor het evenement te bemachtigen</strong></a>."
+      "text1": "Ter plaatse is het onze doelstelling dat dit evenement zo horizontaal en zelfbeheerd mogelijk verloopt. Daarom, om de grens tussen vrijwilligers &amp; “consument·en” van het festival zoveel mogelijk uit te wissen, geven idealiter alle deelnemer·s een beetje van hun tijd om dit festival te laten draaien. We hebben berekend dat als alle vrijwilligers <strong>2 uur per dag</strong> werken, het festival op een zelfbeheerde manier zou moeten kunnen functioneren. Bovendien kan elke taak aangepast worden als je een beperking hebt, van welke aard dan ook.",
+      "text2": "Aarzel niet om nu al je voorkeuren als vrijwilliger door te geven door het <a href=\"billetterie.html\"><strong>inschrijvingsformulier</strong></a> in te vullen. Anders kan je ter plaatse in real time taken vinden om te doen! Heb je vóór 20 augustus vragen of opmerkingen, contacteer ons dan via onze mail: <strong>volontairesBAF@proton.me</strong>!",
+      "text3": "Het kamp zal gezamenlijk opgebouwd en afgebroken worden. <strong>We zullen hulp nodig hebben!</strong> Er moeten tenten en podia opgebouwd worden, maar ook decoratie gemaakt, ruimtes bedacht en infrastructuur uit paletten gebouwd worden, naargelang onze zin! Er blijft nog van alles te bedenken, dus kom vanaf 16 augustus mee helpen bij het creëren van deze ruimte! Inschrijvingen om vooraf te helpen bij het opbouwen van het kamp vind je in het formulier hieronder 👇.",
+      "text4": "Maar vergeet vóór alles niet om <a href=\"billetterie.html\"><strong>je plaats voor het evenement te bemachtigen</strong></a>."
     },
     "missions": {
       "title": "Missies beschikbaar",
@@ -430,7 +447,7 @@
         "i3": "Koken voor 600 personen",
         "i4": "Beeldmateriaal en communicatie",
         "i5": "Zorg en actief luisteren (er wordt training gegeven)",
-        "i6": "Hygi\u00ebne",
+        "i6": "Hygiëne",
         "i7": "Parkeren",
         "i8": "Medic (ervaring vereist)",
         "i9": "Interpretatie (ervaring wenselijk)"
@@ -458,9 +475,18 @@
     "objectifs": {
       "title": "Wat we proberen te doen",
       "items": {
-        "i0": { "title": "Verbinden", "text": "Bruggen creëren tussen strijd en regio's (Brussel, Wallonië, Vlaanderen)." },
-        "i1": { "title": "Maak zichtbaar", "text": "Nadruk op lokale en internationale strijd." },
-        "i2": { "title": "Organiseer je", "text": "Deel strategieën, debatteer en bouw aan gemeenschap." }
+        "i0": {
+          "title": "Verbinden",
+          "text": "Bruggen creëren tussen strijd en regio's (Brussel, Wallonië, Vlaanderen)."
+        },
+        "i1": {
+          "title": "Maak zichtbaar",
+          "text": "Nadruk op lokale en internationale strijd."
+        },
+        "i2": {
+          "title": "Organiseer je",
+          "text": "Deel strategieën, debatteer en bouw aan gemeenschap."
+        }
       }
     },
     "positionnement": {
@@ -484,7 +510,7 @@
     },
     "cadre": {
       "title": "Basiskader",
-      "text": "Het kamp is geen gegarandeerde \u2018veilige\u2019 ruimte, maar een ruimte waar we proberen om elkaar te respecteren en naar elkaar te luisteren.",
+      "text": "Het kamp is geen gegarandeerde ‘veilige’ ruimte, maar een ruimte waar we proberen om elkaar te respecteren en naar elkaar te luisteren.",
       "items": {
         "i0": "Respect voor ervaringen en wat mensen delen",
         "i1": "Consent vragen (interacties, foto's, fysiek contact)",
@@ -523,9 +549,18 @@
       "cashSubtitle": "De bankautomaten zijn ver van de locatie.",
       "subnote": "Hier lees je hoe wij een duurzaam financieel evenwicht bereiken:",
       "items": {
-        "i0": { "title": "Ticketverkoop", "text": "De ticketverkoop vormt de belangrijkste inkomstenbron van het festival. We vragen een bewuste en geïnformeerde vrije bijdrage." },
-        "i1": { "title": "Bar &amp; keuken", "text": "De opbrengsten uit de bar dragen bij aan het financiële evenwicht van het evenement. De bijdragen voor de maaltijden gaan terug naar het keukencollectief." },
-        "i2": { "title": "Voordelen?", "text": "Zodra het festival break-even draait, gebruiken we de potentiële winst om de sprekers te betalen. Daarna zullen alle mogelijke winsten van het evenement worden gebruikt voor huidige of toekomstige strijd." }
+        "i0": {
+          "title": "Ticketverkoop",
+          "text": "De ticketverkoop vormt de belangrijkste inkomstenbron van het festival. We vragen een bewuste en geïnformeerde vrije bijdrage."
+        },
+        "i1": {
+          "title": "Bar &amp; keuken",
+          "text": "De opbrengsten uit de bar dragen bij aan het financiële evenwicht van het evenement. De bijdragen voor de maaltijden gaan terug naar het keukencollectief."
+        },
+        "i2": {
+          "title": "Voordelen?",
+          "text": "Zodra het festival break-even draait, gebruiken we de potentiële winst om de sprekers te betalen. Daarna zullen alle mogelijke winsten van het evenement worden gebruikt voor huidige of toekomstige strijd."
+        }
       }
     },
     "transparence": {

@@ -295,22 +295,18 @@
       "title": "Les espaces",
       "items": {
         "i0": {
-          "icon": "",
           "title": "Chapiteaux",
           "text": "De grands espaces pour des conférences débats pour le plus grands nombre."
         },
         "i1": {
-          "icon": "",
           "title": "Ateliers",
           "text": "Des espaces conviviaux pour faire vivre activités et ateliers en petits groupes autour de problématiques précises."
         },
         "i2": {
-          "icon": "",
           "title": "Infrastructures permanentes",
           "text": "Plein de lieux variés en auto-gestion pour rencontrer, discuter et flaner ensemble."
         },
         "i3": {
-          "icon": "",
           "title": "Le lac",
           "text": "Baignade autorisée pour se rafraîchir en cas de surchauffe du corps ou du cerveau."
         }
@@ -405,13 +401,34 @@
       "title": "Les groupes de travail",
       "intro": "Voici la liste des différents GT, envoie un mail en cliquant sur le bouton ci-dessus si tu souhaites te joindre à l'un d'entre eux.",
       "items": {
-        "i0": { "title": "GT Care", "text": "Réfléchir aux processus à mettre en place pratique et théorique pour que des oppressions ne se reproduisent pas durant l'organisation du festival ainsi que durant son déroulement." },
-        "i1": { "title": "GT Communication", "text": "Gérer les réseaux sociaux, le site web, la communication externe de l'évènement." },
-        "i2": { "title": "GT Bénévoles", "text": "S'occuper de la logistique du bénévolat sur le lieu du camp." },
-        "i3": { "title": "GT Logistique", "text": "Prévoir les équipements nécessaires pour le festival ainsi que la logistique du site (emplacements des différents pôles du festival, gestion arrivée et départs, etc.)" },
-        "i4": { "title": "GT Programmation", "text": "Proposer des thèmes d'ateliers pour la programmation du festival et contacter ces collectifs / personnes." },
-        "i5": { "title": "GT Money &amp; Légal", "text": "Définir un budget pour le festival, contacter des donateurs, réfléchir à la protection juridique du festival et demander les autorisations nécessaires." },
-        "i6": { "title": "GT Coordination", "text": "Soutient les autres groupes et s'assure de la communication fluide entre les différents GT." }
+        "i0": {
+          "title": "GT Care",
+          "text": "Réfléchir aux processus à mettre en place pratique et théorique pour que des oppressions ne se reproduisent pas durant l'organisation du festival ainsi que durant son déroulement."
+        },
+        "i1": {
+          "title": "GT Communication",
+          "text": "Gérer les réseaux sociaux, le site web, la communication externe de l'évènement."
+        },
+        "i2": {
+          "title": "GT Bénévoles",
+          "text": "S'occuper de la logistique du bénévolat sur le lieu du camp."
+        },
+        "i3": {
+          "title": "GT Logistique",
+          "text": "Prévoir les équipements nécessaires pour le festival ainsi que la logistique du site (emplacements des différents pôles du festival, gestion arrivée et départs, etc.)"
+        },
+        "i4": {
+          "title": "GT Programmation",
+          "text": "Proposer des thèmes d'ateliers pour la programmation du festival et contacter ces collectifs / personnes."
+        },
+        "i5": {
+          "title": "GT Money &amp; Légal",
+          "text": "Définir un budget pour le festival, contacter des donateurs, réfléchir à la protection juridique du festival et demander les autorisations nécessaires."
+        },
+        "i6": {
+          "title": "GT Coordination",
+          "text": "Soutient les autres groupes et s'assure de la communication fluide entre les différents GT."
+        }
       }
     },
     "benevolat": {
@@ -458,9 +475,18 @@
     "objectifs": {
       "title": "Ce qu'on cherche à faire",
       "items": {
-        "i0": { "title": "Relier", "text": "Créer des ponts entre luttes et territoires (Bruxelles, Wallonie, Flandre)." },
-        "i1": { "title": "Rendre visible", "text": "Mettre en avant des luttes locales et internationales." },
-        "i2": { "title": "S'organiser", "text": "Partager des stratégies, débattre et construire du commun." }
+        "i0": {
+          "title": "Relier",
+          "text": "Créer des ponts entre luttes et territoires (Bruxelles, Wallonie, Flandre)."
+        },
+        "i1": {
+          "title": "Rendre visible",
+          "text": "Mettre en avant des luttes locales et internationales."
+        },
+        "i2": {
+          "title": "S'organiser",
+          "text": "Partager des stratégies, débattre et construire du commun."
+        }
       }
     },
     "positionnement": {
@@ -523,9 +549,18 @@
       "cashSubtitle": "Les distributeurs sont loin du site.",
       "subnote": "Voici comment nous prévoyons d'atteindre un équilibre financier soutenable.",
       "items": {
-        "i0": { "title": "Billetterie", "text": "La vente de billets représente la principale source de revenus du festival. Prix libre conscient et éclairé." },
-        "i1": { "title": "Bar &amp; Restauration", "text": "Les recettes du bar contribuent à l'équilibre financier de l'événement. Celles des repas reviendra à la cantine." },
-        "i2": { "title": "Bénéfices ?", "text": "Une fois le festival à l'équilibre, nous utiliseront le potentiel bénéfice pour rétribuer les intervenaant.e.s. Après cela, l'ensemble des bénéfices éventuels de l'événement seront utilisés pour les luttes en cours ou à venir." }
+        "i0": {
+          "title": "Billetterie",
+          "text": "La vente de billets représente la principale source de revenus du festival. Prix libre conscient et éclairé."
+        },
+        "i1": {
+          "title": "Bar &amp; Restauration",
+          "text": "Les recettes du bar contribuent à l'équilibre financier de l'événement. Celles des repas reviendra à la cantine."
+        },
+        "i2": {
+          "title": "Bénéfices ?",
+          "text": "Une fois le festival à l'équilibre, nous utiliseront le potentiel bénéfice pour rétribuer les intervenaant.e.s. Après cela, l'ensemble des bénéfices éventuels de l'événement seront utilisés pour les luttes en cours ou à venir."
+        }
       }
     },
     "transparence": {
