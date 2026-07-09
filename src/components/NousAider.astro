@@ -36,7 +36,7 @@ const partagerCards = [
           <span class="card-icon">{['🤩', '⚒️', '👋'][rejoindreCards.indexOf(card)]}</span>
           <h3 class="card-title">{card.title}</h3>
           <p class="card-text">{card.text}</p>
-          <a href={`${p}/autogestion`} class="btn btn-red" style="display:inline-block;padding:15px 40px;font-size:1.2em;">
+          <a href={`${p}/autogestion`} class="btn btn-red action-link">
             {card.btnText}
           </a>
         </div>
@@ -48,7 +48,7 @@ const partagerCards = [
 
   <div id="don" class="reveal">
     <h2>{t('don.title')}</h2>
-    <p class="section-lead" style="font-size:1.1em;line-height:1.6;margin-bottom:30px;" set:html={t('don.text')}></p>
+    <p class="section-lead section-lead--large" set:html={t('don.text')}></p>
 
     <div class="paiement-options">
       <div class="paiement-card">
@@ -86,7 +86,7 @@ const partagerCards = [
           <span class="card-icon">{['📄', '📄', '🏷️'][partagerCards.indexOf(card)]}</span>
           <h3 class="card-title">{card.title}</h3>
           <p class="card-text">{card.text}</p>
-          <p style="font-size:0.9em;color:#888;font-style:italic;">{card.note}</p>
+          <p class="card-note">{card.note}</p>
         </div>
       ))}
     </div>
@@ -98,12 +98,12 @@ const partagerCards = [
     <h2>{t('materiel.title')}</h2>
     <p>{t('materiel.text')}</p>
 
-    <div style="background:var(--blanc-sale);padding:30px;border-radius:8px;text-align:center;margin-top:20px;border:var(--contour);">
-      <p style="color:var(--encre);">{t('materiel.contactText')}</p>
-      <a href={`mailto:${t('materiel.email')}?subject=${encodeURIComponent(t('materiel.subject'))}`} class="btn btn-red" style="display:inline-block;margin-bottom:20px;">
+    <div class="panel-card">
+      <p>{t('materiel.contactText')}</p>
+      <a href={`mailto:${t('materiel.email')}?subject=${encodeURIComponent(t('materiel.subject'))}`} class="btn btn-red">
         ✉️ &nbsp;{t('materiel.email')}
       </a>
-      <p style="background:var(--creme-fonce);color:var(--rose-dark);padding:15px;border-radius:5px;display:inline-block;font-weight:bold;border:2px dashed var(--rose);" set:html={t('materiel.subjectWarning')}></p>
+      <p class="panel-warning" set:html={t('materiel.subjectWarning')}></p>
     </div>
   </div>
 

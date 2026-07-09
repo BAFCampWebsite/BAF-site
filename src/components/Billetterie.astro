@@ -69,9 +69,9 @@ const pricingTiers = [
     <p class="section-lead" set:html={t('intro.p2')}></p>
     <p class="section-lead">{t('intro.p3')}</p>
     <p class="section-lead" set:html={t('intro.p4')}></p>
-    <p class="section-lead" style="font-size:.8rem; color:var(--sable); margin-top:8px; font-style:italic;">
-      <sup>*</sup> <a href={t('intro.footnote1Url')} target="_blank" rel="noopener" style="color:var(--sable);">{t('intro.footnote1')}</a> {t('intro.footnote1Text')}<br>
-      <sup>**</sup> <a href={t('intro.footnote2Url')} target="_blank" rel="noopener" style="color:var(--sable);">{t('intro.footnote2')}</a> {t('intro.footnote2Text')}
+    <p class="section-lead section-footnote">
+      <sup>*</sup> <a href={t('intro.footnote1Url')} target="_blank" rel="noopener" class="section-footnote-link">{t('intro.footnote1')}</a> {t('intro.footnote1Text')}<br>
+      <sup>**</sup> <a href={t('intro.footnote2Url')} target="_blank" rel="noopener" class="section-footnote-link">{t('intro.footnote2')}</a> {t('intro.footnote2Text')}
     </p>
   </div>
 
@@ -100,7 +100,7 @@ const pricingTiers = [
           ))}
         </div>
 
-        <button class="btn btn-primary" onclick="calculerThuno()" style="margin-top:24px;">{t('privilegeMeter.btnCalculate')}</button>
+        <button class="btn btn-primary thuno-calc-btn" onclick="calculerThuno()">{t('privilegeMeter.btnCalculate')}</button>
       </div>
 
       <div class="thuno-result" id="thunoResult" style="display:none;">
@@ -114,7 +114,7 @@ const pricingTiers = [
           <span class="thuno-score-value" id="thunoScoreVal">0</span>
         </div>
         <div class="thuno-reco" id="thunoReco" data-reco-high={`🌟 <strong>${t('privilegeMeter.recoHigh.title')}</strong> ${t('privilegeMeter.recoHigh.description')}`} data-reco-mid={`⚖️ <strong>${t('privilegeMeter.recoMid.title')}</strong> ${t('privilegeMeter.recoMid.description')}`} data-reco-low={`💚 <strong>${t('privilegeMeter.recoLow.title')}</strong> ${t('privilegeMeter.recoLow.description')}`}></div>
-        <button class="btn" onclick="resetThuno()" style="margin-top:16px; background:var(--creme-fonce); color:var(--encre);">{t('privilegeMeter.btnReset')}</button>
+        <button class="btn thuno-reset-btn" onclick="resetThuno()">{t('privilegeMeter.btnReset')}</button>
       </div>
     </div>
   </div>
@@ -137,7 +137,7 @@ const pricingTiers = [
       ))}
     </div>
 
-    <p class="thuno-formula-note" style="margin-top:16px;" set:html={t('privilegeMeter.formulaNote')}></p>
+    <p class="thuno-formula-note" set:html={t('privilegeMeter.formulaNote')}></p>
 
     <div class="tarif-camping-block">
       <span class="tarif-camping-icon">⛺</span>
@@ -172,10 +172,10 @@ const pricingTiers = [
   <!-- Section 5 — Contact -->
   <div class="reveal">
     <h2>{t('contact.title')}</h2>
-    <p style="font-family:var(--font-serif); font-size:.95rem; line-height:1.8; color:var(--encre); max-width:600px;">
+    <p class="contact-copy">
       {t('contact.text')}
     </p>
-    <a href={`mailto:activismcampbelgium@proton.me?subject=${encodeURIComponent(t('contact.emailSubject'))}`} class="btn btn-primary" style="margin-top:16px; display:inline-block;">
+    <a href={`mailto:activismcampbelgium@proton.me?subject=${encodeURIComponent(t('contact.emailSubject'))}`} class="btn btn-primary contact-btn">
       ✉ {t('contact.btnText')}
     </a>
   </div>
@@ -189,7 +189,7 @@ const pricingTiers = [
     <p class="popup-icon">⏳</p>
     <h3>{t('popup.title')}</h3>
     <p>{t('popup.text')}</p>
-    <button class="btn btn-primary" onclick="closeFormPopup()" style="margin-top:16px;">{t('popup.btnText')}</button>
+    <button class="btn btn-primary popup-confirm-btn" onclick="closeFormPopup()">{t('popup.btnText')}</button>
   </div>
 </div>
 

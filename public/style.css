@@ -109,6 +109,106 @@ body::after {
 }
 .lieu-link:hover { color: var(--rose); }
 
+/* ── Shared utility patterns ── */
+.text-display-link {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--creme);
+  text-shadow: var(--contour-bd-md);
+  text-decoration: none;
+}
+.inline-note {
+  font-family: var(--font-serif);
+  font-size: .88rem;
+  color: var(--gris-encre);
+  margin-top: 8px;
+}
+.section-contact-shell { position: relative; z-index: 1; }
+.section-contact-eyebrow { display: inline-block; margin-bottom: 16px; }
+.section-contact-title { margin-bottom: 20px; }
+.section-contact-cta { margin: 0 auto; }
+.action-link {
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 1.2em;
+}
+.section-lead--large {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.card-note {
+  font-size: .9em;
+  color: #888;
+  font-style: italic;
+}
+.panel-card {
+  background: var(--blanc-sale);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+  border: var(--contour);
+}
+.panel-card p { color: var(--encre); }
+.panel-card .btn { display: inline-block; margin-bottom: 20px; }
+.panel-warning {
+  background: var(--creme-fonce);
+  color: var(--rose-dark);
+  padding: 15px;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: bold;
+  border: 2px dashed var(--rose);
+}
+.text-link-accent {
+  color: var(--rose);
+  font-weight: bold;
+}
+.reveal-spacing { margin-bottom: 32px; }
+.map-panel {
+  width: 100%;
+  height: 420px;
+  border-radius: 8px;
+  border: 2px solid var(--encre);
+  box-shadow: 6px 6px 0 var(--encre);
+}
+.section-contrast { position: relative; }
+.section-contrast .section-label {
+  background: var(--encre);
+  color: var(--rose);
+}
+.section-contrast-content {
+  font-family: var(--font-serif);
+  font-size: .93rem;
+  line-height: 1.8;
+  color: rgba(249, 242, 236, .8);
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+.section-contrast-title { margin-top: 0; }
+.section-footnote {
+  font-size: .8rem;
+  color: var(--sable);
+  margin-top: 8px;
+  font-style: italic;
+}
+.section-footnote-link { color: var(--sable); }
+.thuno-calc-btn { margin-top: 24px; }
+.thuno-reset-btn { margin-top: 16px; background: var(--creme-fonce); color: var(--encre); }
+.contact-copy {
+  font-family: var(--font-serif);
+  font-size: .95rem;
+  line-height: 1.8;
+  color: var(--encre);
+  max-width: 600px;
+}
+.contact-btn { margin-top: 16px; display: inline-block; }
+.popup-confirm-btn { margin-top: 16px; }
+
 /* ══ NAVBAR ══ */
 nav {
   position: sticky; top: 0; z-index: 200;

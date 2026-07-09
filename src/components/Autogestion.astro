@@ -33,7 +33,7 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
     <h2>{t('structure.title')}</h2>
     <p>{t('structure.text')}</p>
     <RoseCta>
-      <a href={`mailto:${t('structure.ctaEmail')}?subject=${encodeURIComponent(t('structure.ctaSubject'))}`} style="font-family:var(--font-display);font-size:2.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--creme);text-shadow:3px 3px 0 var(--encre),-1px -1px 0 var(--encre),1px -1px 0 var(--encre),-1px 1px 0 var(--encre);text-decoration:none;">
+      <a href={`mailto:${t('structure.ctaEmail')}?subject=${encodeURIComponent(t('structure.ctaSubject'))}`} class="text-display-link">
         {t('structure.ctaText')}
       </a>
     </RoseCta>
@@ -75,10 +75,10 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
     <p>{t('inscription.text')}</p>
 
     <RoseCta>
-      <a href={t('inscription.formUrl')} style="font-family:var(--font-display);font-size:2.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--creme);text-shadow:3px 3px 0 var(--encre),-1px -1px 0 var(--encre),1px -1px 0 var(--encre),-1px 1px 0 var(--encre);text-decoration:none;">
+      <a href={t('inscription.formUrl')} class="text-display-link">
         {t('inscription.btnText')}
       </a>
-      <div style="font-family:var(--font-serif);font-size:.88rem;color:var(--gris-encre);margin-top:8px;">
+      <div class="inline-note">
         {t('inscription.deadline')}
       </div>
     </RoseCta>

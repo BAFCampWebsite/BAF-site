@@ -28,7 +28,7 @@ const bambinerieBlocks = [
 
 <div class="page-content">
 
-  <div class="reveal" style="margin-bottom:32px;">
+  <div class="reveal reveal-spacing">
     <div class="construction-banner">
       🚧 {t('construction')}
     </div>
@@ -48,18 +48,18 @@ const bambinerieBlocks = [
       ))}
 
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-      <div id="map" style="width:100%; height:420px; border-radius:8px; border:2px solid var(--encre); box-shadow:6px 6px 0 var(--encre);"></div>
+      <div id="map" class="map-panel"></div>
     </div>
   </section>
 
   <hr class="divider">
 
-  <section id="restauration" style="position:relative;">
+  <section id="restauration" class="section-contrast">
     <div class="page-content">
       <div class="section-alt">
-        <p class="section-label" style="background:var(--encre); color:var(--rose);">🍴 {t('restauration.sectionLabel')}</p>
-        <h2 style="margin-top:0;">{t('restauration.title')}</h2>
-        <p style="font-family:var(--font-serif); font-size:.93rem; line-height:1.8; color:rgba(249,242,236,.8); margin-bottom:32px; position:relative; z-index:1;" set:html={t('restauration.html')}></p>
+        <p class="section-label">🍴 {t('restauration.sectionLabel')}</p>
+        <h2 class="section-contrast-title">{t('restauration.title')}</h2>
+        <p class="section-contrast-content" set:html={t('restauration.html')}></p>
       </div>
     </div>
   </section>
@@ -94,7 +94,7 @@ const bambinerieBlocks = [
           {block.html ? (
             <p set:html={block.html}></p>
           ) : (
-            <p>{block.prefix}<a href="mailto:activismcampbelgium@proton.me" style="color:var(--rose); font-weight:bold;">activismcampbelgium@proton.me</a>{block.suffix}</p>
+            <p>{block.prefix}<a href="mailto:activismcampbelgium@proton.me" class="text-link-accent">activismcampbelgium@proton.me</a>{block.suffix}</p>
           )}
         </div>
       </div>
