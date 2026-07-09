@@ -86,7 +86,6 @@ async function main() {
 
   mkdirSync(dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, `${JSON.stringify({
-    fetchedAt: new Date().toISOString(),
     calendarId,
     startDate,
     endDate,
