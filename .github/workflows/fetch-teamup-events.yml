@@ -1,0 +1,63 @@
+name: Update Teamup events
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  fetch-events:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      TEAMUP_API_KEY: ${{ secrets.TEAMUP_API_KEY }}
+      CALENDAR_ID: ${{ vars.CALENDAR_ID }}
+      START_DATE: 2026-08-18
+      END_DATE: 2026-08-25
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Reset to main branch
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+
+      - name: Fetch Teamup events
+        run: npm run fetch:teamup
+
+      - name: Create or update PR if changes exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- public/teamup-events.json; then
+            echo "No changes detected."
+            exit 0
+          fi
+
+          branch_name="teamup-events-update-$(date +%Y%m%d%H%M%S)"
+          git checkout -B "$branch_name"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/teamup-events.json
+          git commit -m "chore: update Teamup events"
+          git push --force-with-lease origin "$branch_name"
+
+          gh pr create \
+            --base main \
+            --head "$branch_name" \
+            --title "chore: update Teamup events" \
+            --body "Automated update of Teamup events data."
