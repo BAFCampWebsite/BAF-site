@@ -37,7 +37,7 @@
     "lieuLabel": "Place",
     "lieuValue": "The Moulin gardens in Grupont",
     "programmeLabel": "On the program",
-    "programmeValue": "Workshops, round-table discussions, concerts, performances &amp; collective moments",
+    "programmeValue": "Workshops, round-table discussions, concerts, performances & collective moments",
     "objectifLabel": "Objective",
     "objectifValue": "Everyone contributes to make this camp happen",
     "btnBillets": "Get my tickets",
@@ -315,7 +315,7 @@
   },
   "nousAider": {
     "hero": {
-      "eyebrow": "Support &amp; Commitment",
+      "eyebrow": "Support & Commitment",
       "title": "Help us",
       "subtitle": "Make a donation, share the event or lend equipment to succeed together."
     },
@@ -422,7 +422,7 @@
           "text": "Propose workshop themes for the festival programme and contact these collectives or people, collect contributions for the programme."
         },
         "i5": {
-          "title": "GT Money &amp; Legal",
+          "title": "GT Money & Legal",
           "text": "Define a budget for the festival, contact donors, think about the legal protection of the festival and request the necessary authorizations."
         },
         "i6": {
@@ -433,7 +433,7 @@
     },
     "benevolat": {
       "title": "Volunteering",
-      "text1": "On site, our goal is for this event to run in as horizontal and self-managed a way as possible. That’s why, in order to blur the line between volunteers &amp; “consumers” of the festival as much as possible, ideally, all participants give a bit of their time to help run this festival. We’ve calculated that if all volunteers work <strong>2 hours a day</strong>, the festival should be able to run in a self-managed way. Furthermore, any task can be adapted if you have a disability of any kind.",
+      "text1": "On site, our goal is for this event to run in as horizontal and self-managed a way as possible. That’s why, in order to blur the line between volunteers & “consumers” of the festival as much as possible, ideally, all participants give a bit of their time to help run this festival. We’ve calculated that if all volunteers work <strong>2 hours a day</strong>, the festival should be able to run in a self-managed way. Furthermore, any task can be adapted if you have a disability of any kind.",
       "text2": "Feel free to already let us know your volunteering preferences by filling out the <a href=\"billetterie.html\"><strong>registration form</strong></a>. Otherwise, you’ll be able to find tasks to do on the spot in real time! If you have any questions or comments before August 20th, contact us via our email: <strong>volontairesBAF@proton.me</strong>!",
       "text3": "The camp will be set up and taken down collectively. <strong>We’ll need help!</strong> We’ll need to put up marquees and stages, but also create the decor, imagine spaces and build infrastructure out of pallets according to our ideas! Lots of things are still left to invent, so come take part in creating this space starting August 16th! Sign up to help set up the camp beforehand in the form below 👇.",
       "text4": "But before anything else, don’t forget to <a href=\"billetterie.html\"><strong>get your spot for the event</strong></a>."
@@ -442,7 +442,7 @@
       "title": "Missions available",
       "items": {
         "i0": "Come from August 16 to help set up camp",
-        "i1": "Home &amp; volunteer registration",
+        "i1": "Home & volunteer registration",
         "i2": "Tending the bar",
         "i3": "Cooking for 600 people",
         "i4": "Image capture and communication",
@@ -520,7 +520,7 @@
       "note": "A team dedicated to care and conflict management will be present during the camp."
     },
     "accessibilite": {
-      "title": "Accessibility &amp; inclusion",
+      "title": "Accessibility & inclusion",
       "text": "Work is being carried out to make the camp accessible to as many people as possible, even if everything cannot be perfect.",
       "items": {
         "i0": "Interpretation into French, Dutch and English as much as possible",
@@ -537,7 +537,7 @@
   },
   "financements": {
     "hero": {
-      "eyebrow": "Finance &amp; Transparency",
+      "eyebrow": "Finance & Transparency",
       "title": "Financing",
       "subtitle": "How the BAF Camp is funded and the presentation of our budget in complete transparency."
     },
@@ -554,7 +554,7 @@
           "text": "Ticket sales represent the festival’s main source of income. The price is pay-what-you-can, with a privilege-o-meter to facilitate conscious and informed free pricing."
         },
         "i1": {
-          "title": "Bar &amp; Food",
+          "title": "Bar & Food",
           "text": "Revenue from the bar contributes to the events budget. Revenues from food go to the collective(s) running the canteen."
         },
         "i2": {

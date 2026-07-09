@@ -37,7 +37,7 @@
     "lieuLabel": "Lieu",
     "lieuValue": "Les jardins du Moulin à Grupont",
     "programmeLabel": "Au programme",
-    "programmeValue": "Ateliers, tables rondes, concerts, performances &amp; moments collectifs",
+    "programmeValue": "Ateliers, tables rondes, concerts, performances & moments collectifs",
     "objectifLabel": "Objectif",
     "objectifValue": "Tous.tes bénévoles pour faire tourner le camp",
     "btnBillets": "Prendre mes billets",
@@ -315,7 +315,7 @@
   },
   "nousAider": {
     "hero": {
-      "eyebrow": "Soutien &amp; Engagement",
+      "eyebrow": "Soutien & Engagement",
       "title": "Nous aider",
       "subtitle": "Faire un don, partager l'événement ou prêter du matériel pour réussir ensemble."
     },
@@ -422,7 +422,7 @@
           "text": "Proposer des thèmes d'ateliers pour la programmation du festival et contacter ces collectifs / personnes."
         },
         "i5": {
-          "title": "GT Money &amp; Légal",
+          "title": "GT Money & Légal",
           "text": "Définir un budget pour le festival, contacter des donateurs, réfléchir à la protection juridique du festival et demander les autorisations nécessaires."
         },
         "i6": {
@@ -433,7 +433,7 @@
     },
     "benevolat": {
       "title": "Le bénévolat",
-      "text1": "Sur place, nous avons comme objectif que cet évènement se déroule de la manière la plus horizontale et autogérée possible. C'est pourquoi, afin de gommer au max la frontière entre bénévoles &amp; « consommateurices » du festival, idéalement, toustes les participant.e.s donnent un peu de leur temps pour faire tourner ce festival. Nous avons calculé que si tous les bénévoles travaillent <strong>2 heures par jour</strong>, alors le festival devrait pouvoir fonctionner de manière autogérée. Par ailleurs, toute tâche peut être adaptée si tu as un handicap quel qu'il soit.",
+      "text1": "Sur place, nous avons comme objectif que cet évènement se déroule de la manière la plus horizontale et autogérée possible. C'est pourquoi, afin de gommer au max la frontière entre bénévoles & « consommateurices » du festival, idéalement, toustes les participant.e.s donnent un peu de leur temps pour faire tourner ce festival. Nous avons calculé que si tous les bénévoles travaillent <strong>2 heures par jour</strong>, alors le festival devrait pouvoir fonctionner de manière autogérée. Par ailleurs, toute tâche peut être adaptée si tu as un handicap quel qu'il soit.",
       "text2": "N'hésite pas à déjà signaler tes préférences de bénévole en remplissant le <a href=\"billetterie.html\"><strong>form d'inscription</strong></a>. Sinon, tu pourras trouver des tâches à faire en temps réel sur place ! D'ici le 20 août, si tu as des questions ou des remarques, contacte nous via notre mail :<strong>volontairesBAF@proton.me</strong> !",
       "text3": "Le camp sera monté et démonté en commun. <strong>Nous aurons besoin d'aide !</strong> Il faudra monter des châpiteaux et des scènes, mais aussi créer la déco, imaginer des espaces et construire des infrastructures en palettes en fonction de nos envies ! Plein de choses resterons à inventer alors venez prendre part à la création de cet espace dès le 16 août ! Inscriptions pour aider à monter le camp en amont dans le formulaire en dessous 👇.",
       "text4": "Mais avant toute chose, n'oublie pas de <a href=\"billetterie.html\"><strong>prendre ta place pour l'évènement</strong></a>."
@@ -442,7 +442,7 @@
       "title": "Missions disponibles",
       "items": {
         "i0": "Venir dès le 16 août pour venir aider à monter le camp",
-        "i1": "Accueil &amp; inscription des bénévoles",
+        "i1": "Accueil & inscription des bénévoles",
         "i2": "Tenir le bar",
         "i3": "Cuisiner pour 600 personnes",
         "i4": "Prise d'image et communication",
@@ -520,7 +520,7 @@
       "note": "Une équipe dédiée au care et à la gestion des conflits sera présente pendant le camp."
     },
     "accessibilite": {
-      "title": "Accessibilité &amp; inclusion",
+      "title": "Accessibilité & inclusion",
       "text": "Un travail est mené pour rendre le camp accessible au plus grand nombre, même si tout ne pourra pas être parfait.",
       "items": {
         "i0": "Traductions FR / NL / EN",
@@ -537,7 +537,7 @@
   },
   "financements": {
     "hero": {
-      "eyebrow": "Finance &amp; Transparence",
+      "eyebrow": "Finance & Transparence",
       "title": "Financements",
       "subtitle": "Comment le BAF Camp est financé et la présentation de notre budget en toute transparence."
     },
@@ -554,7 +554,7 @@
           "text": "La vente de billets représente la principale source de revenus du festival. Prix libre conscient et éclairé."
         },
         "i1": {
-          "title": "Bar &amp; Restauration",
+          "title": "Bar & Restauration",
           "text": "Les recettes du bar contribuent à l'équilibre financier de l'événement. Celles des repas reviendra à la cantine."
         },
         "i2": {
