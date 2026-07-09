@@ -241,7 +241,7 @@
             <h4>Bank transfer</h4>
             <p>Transfer to the Fondation Marius Jacob account:</p>
             <div class="iban-block">
-              <code id="ibanCode"><strong>BE65 5230 8110 3896</strong></code>
+              <code id="ibanCode"><strong>BE12 8919 6407 1892</strong></code>
               <button class="copy-btn" onclick="copyIban()" title="Copy IBAN">📋</button>
             </div>
             <p class="paiement-note">Use <strong>BAF</strong> as the payment reference.</p>
@@ -831,7 +831,7 @@ function resetThuno() {
 }
 
 function copyIban() {
-  const iban = 'BE65 5230 8110 3896';
+  const iban = 'BE12 8919 6407 1892';
   navigator.clipboard.writeText(iban).then(() => {
     const btn = document.querySelector('.copy-btn');
     btn.textContent = '✅';

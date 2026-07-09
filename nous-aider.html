@@ -142,7 +142,7 @@
         <h4>Virement bancaire</h4>
         <p>Fais un virement au compte "Fondation Marius Jacob" :</p>
         <div class="iban-block">
-          <code id="ibanCode"><strong>BE65 5230 8110 3896</strong></code>
+          <code id="ibanCode"><strong>BE12 8919 6407 1892</strong></code>
           <button class="copy-btn" onclick="copyIban()" title="Copier l'IBAN">📋</button>
         </div>
         <p class="paiement-note">Indique <strong>Don BAF</strong> en communication.</p>
@@ -397,7 +397,7 @@ document.querySelectorAll('.lang-switcher a').forEach(a => {
 });
 
 function copyIban() {
-  const iban = 'BE65 5230 8110 3896';
+  const iban = 'BE12 8919 6407 1892';
   navigator.clipboard.writeText(iban).then(() => {
     const btn = document.querySelector('.copy-btn');
     btn.textContent = '✅';

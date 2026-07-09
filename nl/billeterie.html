@@ -241,7 +241,7 @@
             <h4>Bankoverschrijving</h4>
             <p>Doe een overschrijving naar de rekening "Fondation Marius Jacob":</p>
             <div class="iban-block">
-              <code id="ibanCode"><strong>BE65 5230 8110 3896</strong></code>
+              <code id="ibanCode"><strong>BE12 8919 6407 1892</strong></code>
               <button class="copy-btn" onclick="copyIban()" title="IBAN kopiëren">📋</button>
             </div>
             <p class="paiement-note">Vermeld <strong>BAF</strong> als mededeling.</p>
@@ -832,7 +832,7 @@ function resetThuno() {
 }
 
 function copyIban() {
-  const iban = 'BE65 5230 8110 3896';
+  const iban = 'BE12 8919 6407 1892';
   navigator.clipboard.writeText(iban).then(() => {
     const btn = document.querySelector('.copy-btn');
     btn.textContent = '✅';
