@@ -40,7 +40,7 @@ const bambinerieBlocks = [
 
     <div class="info-grid">
       {accesCards.map((card) => (
-        <div class="info-card">
+        <div class="info-card surface-card">
           <span class="info-card-icon">{card.icon}</span>
           <h3 class="info-card-title">{card.title}</h3>
           <p>{card.text}</p>
@@ -87,7 +87,7 @@ const bambinerieBlocks = [
     <p style="font-family:var(--font-serif); font-size:.93rem; line-height:1.8;" set:html={t('bambinerie.introHtml')}></p>
 
     {bambinerieBlocks.map((block) => (
-      <div class="info-block">
+      <div class="info-block surface-card">
         <span class="info-block-icon">{block.icon}</span>
         <div class="info-block-body">
           <div class="info-block-title">{block.title}</div>
