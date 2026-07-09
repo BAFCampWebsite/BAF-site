@@ -134,4 +134,31 @@ const { lang, t } = Astro.props;
 </BaseLayout>
 ```
 
+## Teamup calendar export
+
+To fetch events from the Teamup calendar and save them as JSON, you need to configure a few environment variables first.
+
+### 1. Set up the environment variables
+
+Create or update your local [.env](.env) file with the following values:
+
+```env
+TEAMUP_API_KEY=your-teamup-api-token
+CALENDAR_ID=your-calendar-id
+START_DATE=2026-08-01
+END_DATE=2026-08-30
+```
+
+You can also provide these values through GitHub Actions secrets or environment variables when running in CI.
+
+### 2. Run the export script
+
+From the project root, run:
+
+```bash
+npm run fetch:teamup
+```
+
+This will call the Teamup API and write the JSON output to [public/teamup-events.json](public/teamup-events.json).
+
 ## Other Technicalities
