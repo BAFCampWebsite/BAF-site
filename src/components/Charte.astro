@@ -5,7 +5,11 @@ import RoseCta from './RoseCta.astro';
 
 const t = getTranslations('charte');
 
-const objectifItems = [ t.raw('objectifs.items.i0'), t.raw('objectifs.items.i1'), t.raw('objectifs.items.i2') ];
+const objectifItems = [
+  { title: t('objectifs.items.i0.title'), text: t('objectifs.items.i0.text') },
+  { title: t('objectifs.items.i1.title'), text: t('objectifs.items.i1.text') },
+  { title: t('objectifs.items.i2.title'), text: t('objectifs.items.i2.text') }
+];
 const positionnementItems = [ t('positionnement.items.i0'), t('positionnement.items.i1'), t('positionnement.items.i2'), t('positionnement.items.i3') ];
 const fonctionnementItems = [ t('fonctionnement.items.i0'), t('fonctionnement.items.i1'), t('fonctionnement.items.i2') ];
 const cadreItems = [ t('cadre.items.i0'), t('cadre.items.i1'), t('cadre.items.i2'), t('cadre.items.i3') ];

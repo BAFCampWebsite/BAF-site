@@ -7,7 +7,15 @@ const lang = getLocale();
 const p = `/${lang}`;
 const t = getTranslations('autogestion');
 
-const gtItems = [ t.raw('gt.items.i0'), t.raw('gt.items.i1'), t.raw('gt.items.i2'), t.raw('gt.items.i3'), t.raw('gt.items.i4'), t.raw('gt.items.i5'), t.raw('gt.items.i6') ];
+const gtItems = [
+  { title: t('gt.items.i0.title'), text: t('gt.items.i0.text') },
+  { title: t('gt.items.i1.title'), text: t('gt.items.i1.text') },
+  { title: t('gt.items.i2.title'), text: t('gt.items.i2.text') },
+  { title: t('gt.items.i3.title'), text: t('gt.items.i3.text') },
+  { title: t('gt.items.i4.title'), text: t('gt.items.i4.text') },
+  { title: t('gt.items.i5.title'), text: t('gt.items.i5.text') },
+  { title: t('gt.items.i6.title'), text: t('gt.items.i6.text') }
+];
 const gtIcons = ['💚', '🗣️', '🫶', '⚒️', '🎤', '💰', '🔄'];
 
 const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.items.i2'), t('missions.items.i3'), t('missions.items.i4'), t('missions.items.i5'), t('missions.items.i6'), t('missions.items.i7'), t('missions.items.i8'), t('missions.items.i9') ];

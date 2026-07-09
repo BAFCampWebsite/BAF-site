@@ -7,7 +7,11 @@ const lang = getLocale();
 const p = `/${lang}`;
 const t = getTranslations('financements');
 
-const sourceItems = [ t.raw('sources.items.i0'), t.raw('sources.items.i1'), t.raw('sources.items.i2') ];
+const sourceItems = [
+  { title: t('sources.items.i0.title'), text: t('sources.items.i0.text') },
+  { title: t('sources.items.i1.title'), text: t('sources.items.i1.text') },
+  { title: t('sources.items.i2.title'), text: t('sources.items.i2.text') }
+];
 const transparenceItems = [ t('transparence.items.i0'), t('transparence.items.i1') ];
 ---
 

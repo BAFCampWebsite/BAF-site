@@ -6,8 +6,16 @@ const lang = getLocale();
 const p = `/${lang}`;
 const t = getTranslations('nousAider');
 
-const rejoindreCards = [ t.raw('rejoindre.cards.i0'), t.raw('rejoindre.cards.i1'), t.raw('rejoindre.cards.i2') ];
-const partagerCards = [ t.raw('partager.cards.i0'), t.raw('partager.cards.i1'), t.raw('partager.cards.i2') ];
+const rejoindreCards = [
+  { title: t('rejoindre.cards.i0.title'), text: t('rejoindre.cards.i0.text'), btnText: t('rejoindre.cards.i0.btnText') },
+  { title: t('rejoindre.cards.i1.title'), text: t('rejoindre.cards.i1.text'), btnText: t('rejoindre.cards.i1.btnText') },
+  { title: t('rejoindre.cards.i2.title'), text: t('rejoindre.cards.i2.text'), btnText: t('rejoindre.cards.i2.btnText') }
+];
+const partagerCards = [
+  { title: t('partager.cards.i0.title'), text: t('partager.cards.i0.text'), note: t('partager.cards.i0.note') },
+  { title: t('partager.cards.i1.title'), text: t('partager.cards.i1.text'), note: t('partager.cards.i1.note') },
+  { title: t('partager.cards.i2.title'), text: t('partager.cards.i2.text'), note: t('partager.cards.i2.note') }
+];
 ---
 
 <div class="page-hero anim">
