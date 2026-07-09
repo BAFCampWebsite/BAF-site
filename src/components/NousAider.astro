@@ -48,7 +48,7 @@ const partagerCards = [ t.raw('partager.cards.i0'), t.raw('partager.cards.i1'), 
         <h4>{t('don.bankTransfer.title')}</h4>
         <p>{t('don.bankTransfer.text')}</p>
         <div class="iban-block">
-          <code id="ibanCode"><strong>BE65 5230 8110 3896</strong></code>
+          <code id="ibanCode"><strong>BE12 8919 6407 1892</strong></code>
           <button class="copy-btn" onclick="copyIban()" title="Copy IBAN">📋</button>
         </div>
         <p class="paiement-note" set:html={t('don.bankTransfer.note')}></p>
@@ -121,7 +121,7 @@ const partagerCards = [ t.raw('partager.cards.i0'), t.raw('partager.cards.i1'), 
 
 <script>
   function copyIban() {
-    const iban = 'BE65 5230 8110 3896';
+    const iban = 'BE12 8919 6407 1892';
     navigator.clipboard.writeText(iban).then(() => {
       const btn = document.querySelector('.copy-btn');
       if (btn) { btn.textContent = '✅'; setTimeout(() => btn.textContent = '📋', 2000); }
