@@ -91,7 +91,6 @@ async function main() {
     startDate,
     endDate,
     events: Array.isArray(payload.events) ? payload.events : [],
-    raw: payload,
   }, null, 2)}\n`);
 
   console.log(`Saved Teamup events to ${outputPath}`);
