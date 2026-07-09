@@ -5,6 +5,7 @@ import teamupEvents from "../../public/teamup-events.json";
 
 const lang = getLocale();
 const t = getTranslations("programme");
+const addToCalendarLabel = t("calendar.addToCalendar");
 
 const SUBCALENDAR_ID_MAP = {
   "15782183": "CONFERENCE",
@@ -367,6 +368,28 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     line-height: 1.8;
     margin: 0;
   }
+  .calendar-modal-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 999px;
+    background: var(--rose);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: var(--ombre);
+  }
+  .calendar-modal-action:hover {
+    opacity: 0.92;
+  }
   .calendar-empty {
     border: 1px dashed var(--sable);
     border-radius: 14px;
@@ -379,7 +402,7 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
   @media (max-width: 640px) { .calendar-grid { grid-template-columns: 1fr; } }
 </style>
 
-<script define:vars={{ calendarEvents }}>
+<script define:vars={{ calendarEvents, addToCalendarLabel }}>
   const eventCards = calendarEvents || [];
   const buttons = Array.from(document.querySelectorAll(".calendar-filter"));
   const container = document.getElementById("calendarEvents");
@@ -388,6 +411,7 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
   const closeButtons = Array.from(document.querySelectorAll("[data-close-modal]"));
   let activeCategory = "all";
   let activeDay = "all";
+  let activeEvent = null;
 
   function escapeHtml(value) {
     return String(value)
@@ -398,8 +422,68 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
       .replaceAll("'", "&#39;");
   }
 
+  function escapeIcsText(value) {
+    return String(value)
+      .replace(/\r\n?/g, "\n")
+      .replace(/\n/g, "\\n")
+      .replace(/\\/g, "\\\\")
+      .replace(/;/g, "\\;")
+      .replace(/,/g, "\\,");
+  }
+
+  function toIcsDate(value) {
+    const date = new Date(value);
+    return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+  }
+
+  function createCalendarFile(event) {
+    const title = (event.title || "Untitled event").replace(/\r?\n/g, " ");
+    const location = (event.location || "").replace(/\r?\n/g, " ");
+    const description = (event.notesText || event.notes || "").replace(/\r?\n/g, "\n");
+    const start = toIcsDate(event.start_dt);
+    const end = toIcsDate(event.end_dt);
+    const ics = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//BAF//Programme//EN",
+      "CALSCALE:GREGORIAN",
+      "BEGIN:VEVENT",
+      `UID:${event.id || Date.now()}@baf-site`,
+      `DTSTAMP:${toIcsDate(new Date())}`,
+      `DTSTART:${start}`,
+      `DTEND:${end}`,
+      `SUMMARY:${escapeIcsText(title)}`,
+      description ? `DESCRIPTION:${escapeIcsText(description)}` : "",
+      location ? `LOCATION:${escapeIcsText(location)}` : "",
+      "END:VEVENT",
+      "END:VCALENDAR",
+    ]
+      .filter(Boolean)
+      .join("\r\n");
+
+    return URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+  }
+
+  function downloadCalendarEvent(event) {
+    if (!event) return;
+    const url = createCalendarFile(event);
+    const link = document.createElement("a");
+    const filename = String(event.title || "event")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "") || "event";
+
+    link.href = url;
+    link.download = `${filename}.ics`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => URL.revokeObjectURL(url), 0);
+  }
+
   function openModal(event) {
     if (!modal || !modalContent) return;
+    activeEvent = event;
     const title = escapeHtml(event.title || "Untitled event");
     const dateLabel = escapeHtml(event.dayLabel || event.dateLabel || "");
     const timeLabel = escapeHtml(event.timeLabel || "");
@@ -420,14 +504,25 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
           ${who ? `<div class="calendar-modal-meta-item"><strong>Hosted by</strong><span>${who}</span></div>` : ""}
         </div>
         ${notes ? `<p class="calendar-modal-notes">${notes}</p>` : ""}
+        <button type="button" class="calendar-modal-action" data-add-to-calendar>${addToCalendarLabel}</button>
       </div>
     `;
+
+    const addToCalendarButton = modalContent.querySelector("[data-add-to-calendar]");
+    addToCalendarButton?.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (activeEvent) {
+        downloadCalendarEvent(activeEvent);
+      }
+    });
+
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
   }
 
   function closeModal() {
     if (!modal) return;
+    activeEvent = null;
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
   }

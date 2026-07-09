@@ -285,6 +285,7 @@
         "all": "Tous les jours"
       },
       "noDescription": "Pas de description pour l'instant.",
+      "addToCalendar": "Ajouter au calendrier",
       "filters": {
         "all": "Tout",
         "conference": "Conférence",
@@ -293,12 +294,6 @@
         "theatre": "Théâtre",
         "workshops": "Ateliers"
       }
-    },
-    "dayTabs": {
-      "i0": "Jeudi 20",
-      "i1": "Vendredi 21",
-      "i2": "Samedi 22",
-      "i3": "Dimanche 23"
     },
     "dayContent": {
       "i0": "Après une semaine de montage collectif, ouverture du camp autour de midi.",

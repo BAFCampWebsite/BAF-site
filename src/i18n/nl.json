@@ -285,6 +285,7 @@
         "all": "Alle dagen"
       },
       "noDescription": "Nog geen beschrijving.",
+      "addToCalendar": "Aan kalender toevoegen",
       "filters": {
         "all": "Alles",
         "conference": "Conferentie",
@@ -293,12 +294,6 @@
         "theatre": "Theater",
         "workshops": "Workshops"
       }
-    },
-    "dayTabs": {
-      "i0": "Donderdag 20/8",
-      "i1": "Vrijdag 21/8",
-      "i2": "Zaterdag 22/8",
-      "i3": "Zondag 23/8"
     },
     "dayContent": {
       "i0": "Na een week van gezamenlijke opbouw, gaat het kamp vanaf de middag van start.",

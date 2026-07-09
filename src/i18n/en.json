@@ -285,6 +285,7 @@
         "all": "All days"
       },
       "noDescription": "No description yet.",
+      "addToCalendar": "Add to calendar",
       "filters": {
         "all": "All",
         "conference": "Conference",
@@ -293,12 +294,6 @@
         "theatre": "Theatre",
         "workshops": "Workshops"
       }
-    },
-    "dayTabs": {
-      "i0": "Thursday 20",
-      "i1": "Friday 21",
-      "i2": "Saturday 22",
-      "i3": "Sunday 23"
     },
     "dayContent": {
       "i0": "After a week of setting up together, the camp opened around midday.",
