@@ -279,6 +279,21 @@
       "title": "Fil rouge de la programmation",
       "text": "Découvrez les idées qui animeront le camp cette année. Fil rouge du programme à venir."
     },
+    "calendar": {
+      "title": "Aperçu du programme",
+      "dayFilters": {
+        "all": "Tous les jours"
+      },
+      "noDescription": "Pas de description pour l'instant.",
+      "filters": {
+        "all": "Tout",
+        "conference": "Conférence",
+        "film": "Film",
+        "music": "Musique",
+        "theatre": "Théâtre",
+        "workshops": "Ateliers"
+      }
+    },
     "dayTabs": {
       "i0": "Jeudi 20",
       "i1": "Vendredi 21",

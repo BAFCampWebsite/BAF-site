@@ -1,43 +1,31 @@
 ---
 import { getLocale } from "astro-intl";
 import { getTranslations } from "../i18n/getTranslations";
+import ProgrammeCalendar from "./ProgrammeCalendar.astro";
 
 const lang = getLocale();
 const t = getTranslations("programme");
 
-const dayTabs = [
-  t("dayTabs.i0"),
-  t("dayTabs.i1"),
-  t("dayTabs.i2"),
-  t("dayTabs.i3"),
-];
-const dayContent = [
-  t("dayContent.i0"),
-  t("dayContent.i1"),
-  t("dayContent.i2"),
-  t("dayContent.i3"),
-];
-
 const spaceItems = [
-  { 
+  {
     icon: "🔥",
     title: t("spaces.items.i0.title"),
-    text: t("spaces.items.i0.text") 
+    text: t("spaces.items.i0.text"),
   },
-  { 
+  {
     icon: "❤️",
     title: t("spaces.items.i1.title"),
-    text: t("spaces.items.i1.text") 
+    text: t("spaces.items.i1.text"),
   },
-  { 
+  {
     icon: "📚",
     title: t("spaces.items.i2.title"),
-    text: t("spaces.items.i2.text") 
+    text: t("spaces.items.i2.text"),
   },
-  { 
+  {
     icon: "🌊",
     title: t("spaces.items.i3.title"),
-    text: t("spaces.items.i3.text") 
+    text: t("spaces.items.i3.text"),
   },
 ];
 ---
@@ -88,18 +76,7 @@ const spaceItems = [
     <div class="bloc-fil">{t("filRouge.text")}</div>
   </div>
 
-  <div class="reveal reveal-spacing-large">
-    <div class="day-tabs" id="dayTabs">
-      {
-        dayTabs.map((tab, i) => (
-          <button class="day-tab" data-day={i} onclick={`switchDay(${i},this)`}>
-            {tab}
-          </button>
-        ))
-      }
-    </div>
-    <div id="dayContent"></div>
-  </div>
+  <ProgrammeCalendar />
 
   <hr class="divider" />
 
@@ -148,82 +125,3 @@ const spaceItems = [
     border-radius: 20px;
     font-size: 16px;
   }
-  .day-tab {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    background: var(--blanc-sale);
-    color: var(--encre);
-    border: var(--contour);
-    border-radius: 20px;
-    padding: 8px 18px;
-    cursor: pointer;
-    box-shadow: var(--ombre);
-    transition:
-      transform 0.12s,
-      box-shadow 0.12s,
-      background 0.12s,
-      color 0.12s;
-  }
-  .day-tab:hover:not(.active) {
-    background: var(--creme-fonce);
-    transform: translate(-2px, -2px);
-    box-shadow: var(--ombre-lg);
-  }
-  .day-tab:active {
-    transform: translate(0, 0);
-    box-shadow: none;
-  }
-  .day-tab.active {
-    background: var(--blanc-sale);
-    color: var(--rose) !important;
-    border-color: var(--rose);
-    box-shadow: var(--ombre-rose);
-  }
-  .day-editor {
-    background: var(--blanc-sale);
-    border: var(--contour-lg);
-    border-radius: 12px;
-    padding: 32px;
-    box-shadow: var(--ombre-lg);
-    min-height: 280px;
-  }
-  .day-editor-label {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gris-encre);
-    margin-bottom: 12px;
-    display: block;
-  }
-  .day-editor p {
-    font-family: var(--font-serif);
-    font-size: 0.92rem;
-    line-height: 1.8;
-    color: var(--encre);
-  }
-</style>
-
-<script define:vars={{ dayTabs, dayContent }}>
-  function switchDay(i, btn) {
-    document
-      .querySelectorAll(".day-tab")
-      .forEach((t) => t.classList.remove("active"));
-    btn.classList.add("active");
-    renderDay(i);
-  }
-
-  function renderDay(i) {
-    document.getElementById("dayContent").innerHTML = `
-      <div class="day-editor">
-        <span class="day-editor-label">${dayTabs[i]}</span>
-        <p>${dayContent[i]}</p>
-      </div>
-    `;
-  }
-
-  document.querySelector(".day-tab")?.classList.add("active");
-  renderDay(0);
-</script>

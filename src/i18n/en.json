@@ -279,6 +279,21 @@
       "title": "Red thread of programming",
       "text": "Discover the ideas that will liven up the camp this year."
     },
+    "calendar": {
+      "title": "Programme overview",
+      "dayFilters": {
+        "all": "All days"
+      },
+      "noDescription": "No description yet.",
+      "filters": {
+        "all": "All",
+        "conference": "Conference",
+        "film": "Film",
+        "music": "Music",
+        "theatre": "Theatre",
+        "workshops": "Workshops"
+      }
+    },
     "dayTabs": {
       "i0": "Thursday 20",
       "i1": "Friday 21",

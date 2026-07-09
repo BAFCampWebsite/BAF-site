@@ -279,6 +279,21 @@
       "title": "Rode draad in het programma",
       "text": "Ontdek de ideeën voor dit kamp, de rode draad van het komende programma."
     },
+    "calendar": {
+      "title": "Programma-overzicht",
+      "dayFilters": {
+        "all": "Alle dagen"
+      },
+      "noDescription": "Nog geen beschrijving.",
+      "filters": {
+        "all": "Alles",
+        "conference": "Conferentie",
+        "film": "Film",
+        "music": "Muziek",
+        "theatre": "Theater",
+        "workshops": "Workshops"
+      }
+    },
     "dayTabs": {
       "i0": "Donderdag 20/8",
       "i1": "Vrijdag 21/8",
