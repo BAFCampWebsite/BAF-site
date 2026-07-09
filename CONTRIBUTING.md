@@ -21,6 +21,8 @@ The website "design" and the actual text are split up in different folders. In t
 
 The system will replace these placeholders at build time (before the deployment) by finding the value for the specified key in each of the language files under [src/i18n](src/i18n/).
 
+! Note: if you're running the dev server, you will need to restart it if you want to see changes to translation files.
+
 ### About key structure
 
 This setup is pretty freeform but there's one thing that's useful, and that's sticking to namespaces.
