@@ -56,11 +56,10 @@ const calendarEvents = (teamupEvents?.events ?? [])
   .map((event) => {
     const start = new Date(event.start_dt);
     const end = new Date(event.end_dt);
-    const category = SUBCALENDAR_ID_MAP[String(event.subcalendar_id)] ?? "WORKSHOPS";
     const notesText = getNotesText(event.notes);
     const previewText = notesText
       ? notesText.split(/\r?\n/)[0].trim()
-      : t("calendar.noDescription");
+      : "";
 
     const dayKey = start.toISOString().slice(0, 10);
     const dayLabel = new Intl.DateTimeFormat(lang, {
@@ -69,28 +68,46 @@ const calendarEvents = (teamupEvents?.events ?? [])
       month: "short",
     }).format(start);
 
+    const dateLabel = new Intl.DateTimeFormat(lang, {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+    }).format(start);
+
+    const timeLabel = `${start.toLocaleTimeString(lang, {
+      hour: "2-digit",
+      minute: "2-digit",
+    })} — ${end.toLocaleTimeString(lang, {
+      hour: "2-digit",
+      minute: "2-digit",
+    })}`;
+
+    const ids = event.subcalendar_ids?.length
+      ? event.subcalendar_ids
+      : [event.subcalendar_id];
+
+    const seen = new Set();
+    const cats = [];
+    ids.forEach((id) => {
+      const cat = SUBCALENDAR_ID_MAP[String(id)] ?? "WORKSHOPS";
+      if (seen.has(cat)) return;
+      seen.add(cat);
+      cats.push(cat);
+    });
+    cats.sort((a) => (a === "FILM" ? -1 : 1));
+
     return {
       ...event,
-      category,
-      accent: categoryMeta[category]?.accent ?? "var(--gris-encre)",
-      label: categoryMeta[category]?.label ?? t("calendar.filters.workshops"),
+      categories: cats,
+      accents: cats.map((c) => categoryMeta[c]?.accent ?? "var(--gris-encre)"),
+      labels: cats.map((c) => categoryMeta[c]?.label ?? t("calendar.filters.workshops")),
       dayKey,
       dayLabel,
-      dateLabel: new Intl.DateTimeFormat(lang, {
-        weekday: "short",
-        day: "numeric",
-        month: "short",
-      }).format(start),
-      timeLabel: `${start.toLocaleTimeString(lang, {
-        hour: "2-digit",
-        minute: "2-digit",
-      })} — ${end.toLocaleTimeString(lang, {
-        hour: "2-digit",
-        minute: "2-digit",
-      })}`,
+      dateLabel,
+      timeLabel,
       notesText,
       previewText,
-      isPlaceholder: !notesText,
+      isPlaceholder: !previewText,
     };
   })
   .sort((a, b) => new Date(a.start_dt) - new Date(b.start_dt));
@@ -232,6 +249,24 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     border-color: var(--rose);
   }
   .calendar-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .calendar-day-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .calendar-day-heading {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gris-encre);
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--sable);
+  }
+  .calendar-day-grid {
     display: grid;
     gap: 16px;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -259,6 +294,11 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
+  }
+  .calendar-card-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
   }
   .calendar-card-category {
     display: inline-flex;
@@ -304,10 +344,6 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     margin: 0;
     font-size: 0.92rem;
     line-height: 1.6;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
   .calendar-card-preview.is-placeholder {
     display: block;
@@ -360,6 +396,11 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     line-height: 1.3;
   }
   .calendar-modal-body { display: grid; gap: 14px; }
+  .calendar-modal-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
   .calendar-modal-badge {
     display: inline-flex;
     align-self: flex-start;
@@ -409,8 +450,8 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     font-size: 0.95rem;
     line-height: 1.6;
   }
-  @media (max-width: 1024px) { .calendar-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 640px) { .calendar-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 1024px) { .calendar-day-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 640px) { .calendar-day-grid { grid-template-columns: 1fr; } }
 </style>
 
 <script define:vars={{ calendarEvents, addToCalendarLabel }}>
@@ -501,12 +542,16 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     const location = event.location ? escapeHtml(event.location) : "";
     const who = event.who ? escapeHtml(event.who) : "";
     const notes = event.notesText ? escapeHtml(event.notesText).replace(/\n/g, "<br>") : "";
-    const accent = event.accent || "var(--rose)";
-    const categoryLabel = escapeHtml(event.label || "");
+    const modalBadges = (event.labels || [])
+      .map((label, i) => {
+        const bg = (event.accents && event.accents[i]) || "var(--rose)";
+        return `<span class="calendar-modal-badge" style="background:${bg};">${escapeHtml(label)}</span>`;
+      })
+      .join("") || `<span class="calendar-modal-badge" style="background:var(--rose);">Event</span>`;
 
     modalContent.innerHTML = `
       <div class="calendar-modal-body">
-        <span class="calendar-modal-badge" style="background:${accent};">${categoryLabel}</span>
+        <div class="calendar-modal-badges">${modalBadges}</div>
         <h3 id="eventModalTitle" class="calendar-modal-title">${title}</h3>
         <div class="calendar-modal-meta">
           <div class="calendar-modal-meta-item"><strong>Date</strong><span>${dateLabel}</span></div>
@@ -538,10 +583,43 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     modal.setAttribute("aria-hidden", "true");
   }
 
+  function renderCard(event) {
+    const title = escapeHtml(event.title || "Untitled event");
+    const dateLabel = escapeHtml(event.dateLabel || "");
+    const timeLabel = escapeHtml(event.timeLabel || "");
+    const location = event.location ? escapeHtml(event.location) : "";
+    const who = event.who ? escapeHtml(event.who) : "";
+    const preview = event.previewText ? escapeHtml(event.previewText) : "";
+    const previewClass = event.isPlaceholder ? "calendar-card-preview is-placeholder" : "calendar-card-preview";
+    const accent = (event.accents && event.accents[0]) || "var(--rose)";
+    const badges = (event.labels || [])
+      .map((label, i) => {
+        const bg = (event.accents && event.accents[i]) || "var(--rose)";
+        return `<span class="calendar-card-category" style="background:${bg};">${escapeHtml(label)}</span>`;
+      })
+      .join("");
+
+    return `
+      <article class="calendar-card" data-event-id="${event.id}" style="border-left-color:${accent};">
+        <div class="calendar-card-top">
+          <span class="calendar-card-date">${dateLabel}</span>
+          <div class="calendar-card-categories">${badges}</div>
+        </div>
+        <h3>${title}</h3>
+        <div class="calendar-card-meta-grid">
+          <div class="calendar-card-meta-item"><span>🕒</span><span>${timeLabel}</span></div>
+          ${location ? `<div class="calendar-card-meta-item"><span>📍</span><span>${location}</span></div>` : ""}
+          ${who ? `<div class="calendar-card-meta-item"><span>👤</span><span>${who}</span></div>` : ""}
+        </div>
+        ${preview ? `<p class="${previewClass}">${preview}</p>` : ""}
+      </article>
+    `;
+  }
+
   function renderEvents() {
     const visibleEvents = eventCards.filter((event) => {
       const matchesCategory =
-        activeCategory === "all" ? true : event.category === activeCategory;
+        activeCategory === "all" ? true : (event.categories || []).includes(activeCategory);
       const matchesDay = activeDay === "all" ? true : event.dayKey === activeDay;
       return matchesCategory && matchesDay;
     });
@@ -553,35 +631,21 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
       return;
     }
 
-    container.innerHTML = visibleEvents
-      .map((event) => {
-        const title = escapeHtml(event.title || "Untitled event");
-        const dateLabel = escapeHtml(event.dateLabel || "");
-        const timeLabel = escapeHtml(event.timeLabel || "");
-        const location = event.location ? escapeHtml(event.location) : "";
-        const who = event.who ? escapeHtml(event.who) : "";
-        const preview = event.previewText ? escapeHtml(event.previewText) : "";
-        const previewClass = event.isPlaceholder ? "calendar-card-preview is-placeholder" : "calendar-card-preview";
-        const categoryLabel = escapeHtml(event.label || "");
-        const accent = event.accent || "var(--rose)";
-
+    if (activeDay !== "all") {
+      container.innerHTML = `<div class="calendar-day-grid">${visibleEvents.map(renderCard).join("")}</div>`;
+    } else {
+      const dayKeys = [...new Set(visibleEvents.map((e) => e.dayKey))];
+      container.innerHTML = dayKeys.map((dayKey) => {
+        const dayEvents = visibleEvents.filter((e) => e.dayKey === dayKey);
+        const dayLabel = escapeHtml(dayEvents[0].dayLabel || dayKey);
         return `
-          <article class="calendar-card" data-event-id="${event.id}" style="border-left-color:${accent};">
-            <div class="calendar-card-top">
-              <span class="calendar-card-date">${dateLabel}</span>
-              <span class="calendar-card-category" style="background:${accent};">${categoryLabel}</span>
-            </div>
-            <h3>${title}</h3>
-            <div class="calendar-card-meta-grid">
-              <div class="calendar-card-meta-item"><span>🕒</span><span>${timeLabel}</span></div>
-              ${location ? `<div class="calendar-card-meta-item"><span>📍</span><span>${location}</span></div>` : ""}
-              ${who ? `<div class="calendar-card-meta-item"><span>👤</span><span>${who}</span></div>` : ""}
-            </div>
-            ${preview ? `<p class="${previewClass}">${preview}</p>` : ""}
-          </article>
+          <div class="calendar-day-section">
+            <h2 class="calendar-day-heading">${dayLabel}</h2>
+            <div class="calendar-day-grid">${dayEvents.map(renderCard).join("")}</div>
+          </div>
         `;
-      })
-      .join("");
+      }).join("");
+    }
   }
 
   buttons.forEach((button) => {
