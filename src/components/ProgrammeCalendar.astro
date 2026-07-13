@@ -1,0 +1,693 @@
+---
+import { getLocale } from "astro-intl";
+import { getTranslations } from "../i18n/getTranslations";
+import teamupEvents from "../../public/teamup-events.json";
+
+const lang = getLocale();
+const t = getTranslations("programme");
+const addToCalendarLabel = t("calendar.addToCalendar");
+
+const SUBCALENDAR_ID_MAP = {
+  "15782183": "CONFERENCE",
+  "15782182": "FILM",
+  "15766557": "MUSIC",
+  "15782184": "THEATRE",
+  "15766558": "WORKSHOPS",
+};
+
+const categoryMeta = {
+  CONFERENCE: {
+    accent: "var(--rose)",
+    label: t("calendar.filters.conference"),
+  },
+  FILM: {
+    accent: "var(--bleu)",
+    label: t("calendar.filters.film"),
+  },
+  MUSIC: {
+    accent: "#9b4d4d",
+    label: t("calendar.filters.music"),
+  },
+  THEATRE: {
+    accent: "#3f6f4f",
+    label: t("calendar.filters.theatre"),
+  },
+  WORKSHOPS: {
+    accent: "#5e4b9b",
+    label: t("calendar.filters.workshops"),
+  },
+};
+
+const getNotesText = (notes = "") => {
+  const normalized = String(notes || "")
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<\/p>\s*<p>/gi, "\n")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\u00a0/g, " ")
+    .replace(/[ \t]+/g, " ")
+    .replace(/\s*\n\s*/g, "\n")
+    .replace(/\n{2,}/g, "\n")
+    .trim();
+
+  return normalized;
+};
+
+const calendarEvents = (teamupEvents?.events ?? [])
+  .map((event) => {
+    const start = new Date(event.start_dt);
+    const end = new Date(event.end_dt);
+    const notesText = getNotesText(event.notes);
+    const previewText = notesText
+      ? notesText.split(/\r?\n/)[0].trim()
+      : "";
+
+    const dayKey = start.toISOString().slice(0, 10);
+    const dayLabel = new Intl.DateTimeFormat(lang, {
+      weekday: "long",
+      day: "numeric",
+      month: "short",
+    }).format(start);
+
+    const dateLabel = new Intl.DateTimeFormat(lang, {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+    }).format(start);
+
+    const timeLabel = `${start.toLocaleTimeString(lang, {
+      hour: "2-digit",
+      minute: "2-digit",
+    })} — ${end.toLocaleTimeString(lang, {
+      hour: "2-digit",
+      minute: "2-digit",
+    })}`;
+
+    const ids = event.subcalendar_ids?.length
+      ? event.subcalendar_ids
+      : [event.subcalendar_id];
+
+    const seen = new Set();
+    const cats = [];
+    ids.forEach((id) => {
+      const cat = SUBCALENDAR_ID_MAP[String(id)] ?? "WORKSHOPS";
+      if (seen.has(cat)) return;
+      seen.add(cat);
+      cats.push(cat);
+    });
+    cats.sort((a) => (a === "FILM" ? -1 : 1));
+
+    return {
+      ...event,
+      categories: cats,
+      accents: cats.map((c) => categoryMeta[c]?.accent ?? "var(--gris-encre)"),
+      labels: cats.map((c) => categoryMeta[c]?.label ?? t("calendar.filters.workshops")),
+      dayKey,
+      dayLabel,
+      dateLabel,
+      timeLabel,
+      notesText,
+      previewText,
+      isPlaceholder: !previewText,
+    };
+  })
+  .sort((a, b) => new Date(a.start_dt) - new Date(b.start_dt));
+
+const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey))).map(
+  (dayKey) => {
+    const date = new Date(dayKey);
+    return {
+      dayKey,
+      label: new Intl.DateTimeFormat(lang, {
+        weekday: "long",
+        day: "numeric",
+        month: "short",
+      }).format(date),
+    };
+  }
+);
+---
+
+<div class="reveal" style="margin-top:40px;">
+  <div class="calendar-shell">
+    <div class="calendar-special-card">
+      <span class="calendar-special-label">{t("calendar.title")}</span>
+      <div class="calendar-special-content" set:html={t("dayContent.i1")} />
+    </div>
+
+    <div class="calendar-toolbar" aria-label="Day filters">
+      <button class="calendar-filter active" data-day="all" data-category="all">
+        {t("calendar.dayFilters.all")}
+      </button>
+      {
+        dayFilters.map((day) => (
+          <button class="calendar-filter" data-day={day.dayKey} data-category="all">
+            {day.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="calendar-toolbar" aria-label="Event filters">
+      <button class="calendar-filter active" data-category="all">
+        {t("calendar.filters.all")}
+      </button>
+      <button class="calendar-filter" data-category="CONFERENCE">
+        {t("calendar.filters.conference")}
+      </button>
+      <button class="calendar-filter" data-category="FILM">
+        {t("calendar.filters.film")}
+      </button>
+      <button class="calendar-filter" data-category="MUSIC">
+        {t("calendar.filters.music")}
+      </button>
+      <button class="calendar-filter" data-category="THEATRE">
+        {t("calendar.filters.theatre")}
+      </button>
+      <button class="calendar-filter" data-category="WORKSHOPS">
+        {t("calendar.filters.workshops")}
+      </button>
+    </div>
+    <div class="construction-banner">⚠ {t("construction")}</div>
+
+    <div id="calendarEvents" class="calendar-grid"></div>
+  </div>
+</div>
+
+<div id="eventModal" class="calendar-modal" aria-hidden="true">
+  <div class="calendar-modal-backdrop" data-close-modal></div>
+  <div class="calendar-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="eventModalTitle">
+    <button class="calendar-modal-close" type="button" aria-label="Close" data-close-modal>
+      ×
+    </button>
+    <div id="eventModalContent"></div>
+  </div>
+</div>
+
+<style is:global>
+  .calendar-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .calendar-special-card {
+    background: var(--blanc-sale);
+    border: var(--contour-lg);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--ombre-lg);
+  }
+  .calendar-special-label,
+  .calendar-card-date,
+  .calendar-card-category,
+  .calendar-modal-meta-item strong,
+  .calendar-modal-badge,
+  .calendar-filter {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .calendar-special-label {
+    display: inline-block;
+    font-size: 0.68rem;
+    color: var(--gris-encre);
+    margin-bottom: 10px;
+    letter-spacing: 0.16em;
+  }
+  .calendar-special-content p,
+  .calendar-card-meta-item,
+  .calendar-card-preview,
+  .calendar-modal-meta-item,
+  .calendar-modal-notes,
+  .calendar-empty {
+    font-family: var(--font-serif);
+    color: var(--encre);
+  }
+  .calendar-special-content p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0;
+  }
+  .calendar-toolbar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .calendar-filter {
+    border: var(--contour);
+    border-radius: 999px;
+    background: var(--blanc-sale);
+    color: var(--encre);
+    padding: 8px 14px;
+    font-size: 0.68rem;
+    cursor: pointer;
+    box-shadow: var(--ombre);
+  }
+  .calendar-filter[data-day] { background: var(--creme); }
+  .calendar-filter.active {
+    background: var(--rose);
+    color: white;
+    border-color: var(--rose);
+  }
+  .calendar-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .calendar-day-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .calendar-day-heading {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gris-encre);
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--sable);
+  }
+  .calendar-day-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .calendar-card {
+    background: var(--blanc-sale);
+    border: 1px solid var(--sable);
+    border-left: 6px solid var(--rose);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--ombre);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .calendar-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ombre-lg);
+  }
+  .calendar-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .calendar-card-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .calendar-card-category {
+    display: inline-flex;
+    align-self: flex-start;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.63rem;
+    color: white;
+    background: var(--rose);
+  }
+  .calendar-card-date {
+    font-size: 0.72rem;
+    color: var(--gris-encre);
+  }
+  .calendar-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .calendar-card-meta-grid,
+  .calendar-modal-meta {
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--creme);
+    border: 1px solid var(--sable);
+  }
+  .calendar-card-meta-item,
+  .calendar-modal-meta-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .calendar-card-meta-item span:first-child {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    min-width: 1.1rem;
+  }
+  .calendar-card-preview {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+  .calendar-card-preview.is-placeholder {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    color: var(--gris-encre);
+    opacity: 0.8;
+    padding-top: 2px;
+  }
+  .calendar-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .calendar-modal.is-open { display: flex; }
+  .calendar-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 15, 15, 0.62);
+    backdrop-filter: blur(3px);
+  }
+  .calendar-modal-dialog {
+    position: relative;
+    width: min(720px, 100%);
+    max-height: min(85vh, 900px);
+    overflow: auto;
+    background: var(--blanc-sale);
+    border: var(--contour-lg);
+    border-radius: 20px;
+    box-shadow: var(--ombre-lg);
+    padding: 28px;
+  }
+  .calendar-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gris-encre);
+  }
+  .calendar-modal-title {
+    margin: 0 0 12px;
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+  .calendar-modal-body { display: grid; gap: 14px; }
+  .calendar-modal-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .calendar-modal-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.63rem;
+    color: white;
+  }
+  .calendar-modal-meta-item strong {
+    font-size: 0.7rem;
+    color: var(--gris-encre);
+    min-width: 90px;
+  }
+  .calendar-modal-notes {
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0;
+  }
+  .calendar-modal-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 999px;
+    background: var(--rose);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: var(--ombre);
+  }
+  .calendar-modal-action:hover {
+    opacity: 0.92;
+  }
+  .calendar-empty {
+    border: 1px dashed var(--sable);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  @media (max-width: 1024px) { .calendar-day-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 640px) { .calendar-day-grid { grid-template-columns: 1fr; } }
+</style>
+
+<script define:vars={{ calendarEvents, addToCalendarLabel }}>
+  const eventCards = calendarEvents || [];
+  const buttons = Array.from(document.querySelectorAll(".calendar-filter"));
+  const container = document.getElementById("calendarEvents");
+  const modal = document.getElementById("eventModal");
+  const modalContent = document.getElementById("eventModalContent");
+  const closeButtons = Array.from(document.querySelectorAll("[data-close-modal]"));
+  let activeCategory = "all";
+  let activeDay = "all";
+  let activeEvent = null;
+
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
+  function escapeIcsText(value) {
+    return String(value)
+      .replace(/\r\n?/g, "\n")
+      .replace(/\n/g, "\\n")
+      .replace(/\\/g, "\\\\")
+      .replace(/;/g, "\\;")
+      .replace(/,/g, "\\,");
+  }
+
+  function toIcsDate(value) {
+    const date = new Date(value);
+    return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+  }
+
+  function createCalendarFile(event) {
+    const title = (event.title || "Untitled event").replace(/\r?\n/g, " ");
+    const location = (event.location || "").replace(/\r?\n/g, " ");
+    const description = (event.notesText || event.notes || "").replace(/\r?\n/g, "\n");
+    const start = toIcsDate(event.start_dt);
+    const end = toIcsDate(event.end_dt);
+    const ics = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//BAF//Programme//EN",
+      "CALSCALE:GREGORIAN",
+      "BEGIN:VEVENT",
+      `UID:${event.id || Date.now()}@baf-site`,
+      `DTSTAMP:${toIcsDate(new Date())}`,
+      `DTSTART:${start}`,
+      `DTEND:${end}`,
+      `SUMMARY:${escapeIcsText(title)}`,
+      description ? `DESCRIPTION:${escapeIcsText(description)}` : "",
+      location ? `LOCATION:${escapeIcsText(location)}` : "",
+      "END:VEVENT",
+      "END:VCALENDAR",
+    ]
+      .filter(Boolean)
+      .join("\r\n");
+
+    return URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+  }
+
+  function downloadCalendarEvent(event) {
+    if (!event) return;
+    const url = createCalendarFile(event);
+    const link = document.createElement("a");
+    const filename = String(event.title || "event")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "") || "event";
+
+    link.href = url;
+    link.download = `${filename}.ics`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => URL.revokeObjectURL(url), 0);
+  }
+
+  function openModal(event) {
+    if (!modal || !modalContent) return;
+    activeEvent = event;
+    const title = escapeHtml(event.title || "Untitled event");
+    const dateLabel = escapeHtml(event.dayLabel || event.dateLabel || "");
+    const timeLabel = escapeHtml(event.timeLabel || "");
+    const location = event.location ? escapeHtml(event.location) : "";
+    const who = event.who ? escapeHtml(event.who) : "";
+    const notes = event.notesText ? escapeHtml(event.notesText).replace(/\n/g, "<br>") : "";
+    const modalBadges = (event.labels || [])
+      .map((label, i) => {
+        const bg = (event.accents && event.accents[i]) || "var(--rose)";
+        return `<span class="calendar-modal-badge" style="background:${bg};">${escapeHtml(label)}</span>`;
+      })
+      .join("") || `<span class="calendar-modal-badge" style="background:var(--rose);">Event</span>`;
+
+    modalContent.innerHTML = `
+      <div class="calendar-modal-body">
+        <div class="calendar-modal-badges">${modalBadges}</div>
+        <h3 id="eventModalTitle" class="calendar-modal-title">${title}</h3>
+        <div class="calendar-modal-meta">
+          <div class="calendar-modal-meta-item"><strong>Date</strong><span>${dateLabel}</span></div>
+          <div class="calendar-modal-meta-item"><strong>Time</strong><span>${timeLabel}</span></div>
+          ${location ? `<div class="calendar-modal-meta-item"><strong>Location</strong><span>${location}</span></div>` : ""}
+          ${who ? `<div class="calendar-modal-meta-item"><strong>Hosted by</strong><span>${who}</span></div>` : ""}
+        </div>
+        ${notes ? `<p class="calendar-modal-notes">${notes}</p>` : ""}
+        <button type="button" class="calendar-modal-action" data-add-to-calendar>${addToCalendarLabel}</button>
+      </div>
+    `;
+
+    const addToCalendarButton = modalContent.querySelector("[data-add-to-calendar]");
+    addToCalendarButton?.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (activeEvent) {
+        downloadCalendarEvent(activeEvent);
+      }
+    });
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    activeEvent = null;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+  }
+
+  function renderCard(event) {
+    const title = escapeHtml(event.title || "Untitled event");
+    const dateLabel = escapeHtml(event.dateLabel || "");
+    const timeLabel = escapeHtml(event.timeLabel || "");
+    const location = event.location ? escapeHtml(event.location) : "";
+    const who = event.who ? escapeHtml(event.who) : "";
+    const preview = event.previewText ? escapeHtml(event.previewText) : "";
+    const previewClass = event.isPlaceholder ? "calendar-card-preview is-placeholder" : "calendar-card-preview";
+    const accent = (event.accents && event.accents[0]) || "var(--rose)";
+    const badges = (event.labels || [])
+      .map((label, i) => {
+        const bg = (event.accents && event.accents[i]) || "var(--rose)";
+        return `<span class="calendar-card-category" style="background:${bg};">${escapeHtml(label)}</span>`;
+      })
+      .join("");
+
+    return `
+      <article class="calendar-card" data-event-id="${event.id}" style="border-left-color:${accent};">
+        <div class="calendar-card-top">
+          <span class="calendar-card-date">${dateLabel}</span>
+          <div class="calendar-card-categories">${badges}</div>
+        </div>
+        <h3>${title}</h3>
+        <div class="calendar-card-meta-grid">
+          <div class="calendar-card-meta-item"><span>🕒</span><span>${timeLabel}</span></div>
+          ${location ? `<div class="calendar-card-meta-item"><span>📍</span><span>${location}</span></div>` : ""}
+          ${who ? `<div class="calendar-card-meta-item"><span>👤</span><span>${who}</span></div>` : ""}
+        </div>
+        ${preview ? `<p class="${previewClass}">${preview}</p>` : ""}
+      </article>
+    `;
+  }
+
+  function renderEvents() {
+    const visibleEvents = eventCards.filter((event) => {
+      const matchesCategory =
+        activeCategory === "all" ? true : (event.categories || []).includes(activeCategory);
+      const matchesDay = activeDay === "all" ? true : event.dayKey === activeDay;
+      return matchesCategory && matchesDay;
+    });
+
+    if (!container) return;
+
+    if (!visibleEvents.length) {
+      container.innerHTML = '<div class="calendar-empty">No events for this selection yet.</div>';
+      return;
+    }
+
+    if (activeDay !== "all") {
+      container.innerHTML = `<div class="calendar-day-grid">${visibleEvents.map(renderCard).join("")}</div>`;
+    } else {
+      const dayKeys = [...new Set(visibleEvents.map((e) => e.dayKey))];
+      container.innerHTML = dayKeys.map((dayKey) => {
+        const dayEvents = visibleEvents.filter((e) => e.dayKey === dayKey);
+        const dayLabel = escapeHtml(dayEvents[0].dayLabel || dayKey);
+        return `
+          <div class="calendar-day-section">
+            <h2 class="calendar-day-heading">${dayLabel}</h2>
+            <div class="calendar-day-grid">${dayEvents.map(renderCard).join("")}</div>
+          </div>
+        `;
+      }).join("");
+    }
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.day) {
+        activeDay = button.dataset.day || "all";
+        const dayButtons = Array.from(document.querySelectorAll('.calendar-filter[data-day]'));
+        dayButtons.forEach((item) => item.classList.toggle("active", item === button));
+      } else {
+        activeCategory = button.dataset.category || "all";
+        const categoryButtons = Array.from(document.querySelectorAll('.calendar-filter:not([data-day])'));
+        categoryButtons.forEach((item) => item.classList.toggle("active", item === button));
+      }
+      renderEvents();
+    });
+  });
+
+  container?.addEventListener("click", (event) => {
+    const card = event.target.closest(".calendar-card");
+    if (!card) return;
+    const selectedEvent = eventCards.find((item) => String(item.id) === card.getAttribute("data-event-id"));
+    if (selectedEvent) {
+      openModal(selectedEvent);
+    }
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", closeModal);
+  });
+
+  modal?.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  });
+
+  renderEvents();
+</script>

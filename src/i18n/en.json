@@ -95,7 +95,11 @@
       "title": "Access to the festival",
       "train": {
         "title": "Train",
-        "text": "The site is 300 m walk from Grupont train station"
+        "text": "The site is a 300 m walk from Grupont station. This Infrabel page provides official information on rail access and any works on the Ciney–Haversin axis.",
+        "linkLabel": "See official Infrabel information",
+        "linkUrl": "https://infrabel.be/en/axe3-ciney-haversin",
+        "warningLabel": "⚠️ Warning",
+        "warningText": "There will probably be train problems, so please check before coming."
       },
       "velo": {
         "title": "Bike",
@@ -279,11 +283,21 @@
       "title": "Red thread of programming",
       "text": "Discover the ideas that will liven up the camp this year."
     },
-    "dayTabs": {
-      "i0": "Thursday 20",
-      "i1": "Friday 21",
-      "i2": "Saturday 22",
-      "i3": "Sunday 23"
+    "calendar": {
+      "title": "Programme overview",
+      "dayFilters": {
+        "all": "All days"
+      },
+      "noDescription": "No description yet.",
+      "addToCalendar": "Add to calendar",
+      "filters": {
+        "all": "All",
+        "conference": "Conference",
+        "film": "Film",
+        "music": "Music",
+        "theatre": "Theatre",
+        "workshops": "Workshops"
+      }
     },
     "dayContent": {
       "i0": "After a week of setting up together, the camp opened around midday.",

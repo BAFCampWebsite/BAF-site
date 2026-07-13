@@ -6,6 +6,7 @@
   /* ── PALETTE ── */
   --rose:        #F066AA/* Mauve de base : C466D2*/;
   --rose-hot:    #F066AA;
+  --bleu:        #4a7db4;
   --rose-dark:   #B03878;
   --vert:        #4A8C5C;
   --vert-light:  #5DA672;
@@ -235,6 +236,9 @@ body::after {
   border-radius: var(--radius-sm);
   border: 2px solid var(--encre);
   box-shadow: 6px 6px 0 var(--encre);
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
 }
 .section-contrast { position: relative; }
 .section-contrast .section-label {
@@ -272,7 +276,7 @@ body::after {
 
 /* ══ NAVBAR ══ */
 nav {
-  position: sticky; top: 0; z-index: 200;
+  position: sticky; top: 0; z-index: 1000;
   height: var(--nav-h);
   background: var(--vert);
   border-bottom: var(--contour-lg);

@@ -21,6 +21,8 @@ The website "design" and the actual text are split up in different folders. In t
 
 The system will replace these placeholders at build time (before the deployment) by finding the value for the specified key in each of the language files under [src/i18n](src/i18n/).
 
+! Note: if you're running the dev server, you will need to restart it if you want to see changes to translation files.
+
 ### About key structure
 
 This setup is pretty freeform but there's one thing that's useful, and that's sticking to namespaces.
@@ -132,4 +134,59 @@ const { lang, t } = Astro.props;
 </BaseLayout>
 ```
 
-## Other Technicalities
+## Calendar events
+
+The events themselves are edited in the teamup.com calendar. That is the source of truth. If you need to change things, ask around for access.
+
+These events get downloaded into the repo using the `npm run fetch:teamup` command, and there are two ways to run it. Locally, or using GitHub actions. The latter allows this process to run without a local machine.
+
+### Local fetch
+
+To fetch events from the Teamup calendar and save them as JSON on your machine locally, you need to configure a few environment variables first.
+
+#### 1. Set up the environment variables
+
+Create or update your local [.env](.env) file with the following values:
+
+```env
+TEAMUP_API_KEY=your-teamup-api-token
+CALENDAR_ID=your-calendar-id
+START_DATE=2026-08-01
+END_DATE=2026-08-30
+```
+
+You can also provide these values through GitHub Actions secrets or environment variables when running in CI.
+
+#### 2. Run the export script
+
+From the project root, run:
+
+```bash
+npm run fetch:teamup
+```
+
+This will call the Teamup API and write the JSON output to [public/teamup-events.json](public/teamup-events.json).
+
+### GitHub Actions Teamup sync
+
+The Teamup update workflow runs automatically on a schedule (6am UTC), but it can also be triggered manually from GitHub Actions if you don't want to wait.
+
+#### Trigger the action manually
+
+You can trigger the action manually like so:
+
+1. Open the repository on [GitHub and go to the Actions tab](https://github.com/BAFCampWebsite/BAF-site/actions).
+2. Select the workflow named "Update Teamup events".
+3. Click "Run workflow".
+4. Choose the branch you want to use (usually `main`) and confirm.
+
+The workflow will reset its state to the latest `main`, run the export script, and create a pull request if [public/teamup-events.json](public/teamup-events.json) changed.
+
+#### Merge the resulting pull request
+
+1. Open the [pull request created by the workflow](https://github.com/BAFCampWebsite/BAF-site/pulls?q=is%3Apr+is%3Aopen+chore%3A+update+Teamup+events). (it'll be called `chore: update Teamup events`)
+2. Review the changes in [public/teamup-events.json](public/teamup-events.json) to confirm the update looks correct.
+3. When ready, merge the pull request into the `main` branch.
+
+A normal GitHub merge flow is fine here, but "Squash and merge" is often the cleanest option for this kind of automated update.
+
