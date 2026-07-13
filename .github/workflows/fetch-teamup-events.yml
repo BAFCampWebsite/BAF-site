@@ -68,4 +68,5 @@ jobs:
             --base main \
             --head "$branch_name" \
             --title "chore: update Teamup events" \
-            --body "Automated update of Teamup events data."
+            --body "Automated update of Teamup events data." \
+            --reviewer "jvacek,junglegobs,BAFCampWebsite"
