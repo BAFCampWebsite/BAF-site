@@ -351,7 +351,8 @@
       "qrCode": {
         "title": "QR Code (virement)",
         "text": "Scanne le QR code avec ton app bancaire :",
-        "note": "Compatible avec toutes les apps bancaires belges. Pense à indiquer <strong>Don BAF</strong> en communication."
+        "note": "Compatible avec toutes les apps bancaires belges. Pense à indiquer <strong>Don BAF</strong> en communication.",
+        "alt": "QR code virement BAF Camp"
       }
     },
     "partager": {

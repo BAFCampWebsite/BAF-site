@@ -351,7 +351,8 @@
       "qrCode": {
         "title": "QR Code (bank transfer)",
         "text": "Scan the QR code with your banking app:",
-        "note": "Compatible with all Belgian banking apps. Please use <strong>BAF Donation</strong> as the payment reference."
+        "note": "Compatible with all Belgian banking apps. Please use <strong>BAF Donation</strong> as the payment reference.",
+        "alt": "QR code BAF Camp transfer"
       }
     },
     "partager": {

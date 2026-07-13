@@ -351,7 +351,8 @@
       "qrCode": {
         "title": "QR-code (overschrijving)",
         "text": "Scan de QR-code met je bankapp:",
-        "note": "Compatibel met alle Belgische bankapps. Vergeet niet <strong>Donatie BAF</strong> als mededeling te vermelden."
+        "note": "Compatibel met alle Belgische bankapps. Vergeet niet <strong>Donatie BAF</strong> als mededeling te vermelden.",
+        "alt": "QR-code BAF Kamptransfer"
       }
     },
     "partager": {
