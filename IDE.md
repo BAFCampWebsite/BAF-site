@@ -19,6 +19,8 @@ Install the recommended extensions from the extensions tab (astro, i18n-ally, an
 
 I have already defined most of the settings for you in the [vscode workspace settings file](.vscode/settings.json).
 
+There's also a [VS Code launch config](.vscode/launch.json) for the dev server. You can start it from the **Run and Debug** panel (`Ctrl+Shift+D`) — it runs `npm run dev` and opens `http://localhost:4321` in your browser when ready.
+
 ## Working with i18n-ally
 
 This tool makes it much easier to work with translation files in your IDE, as the placeholders get replaced for you in your code so you understand what goes where.

@@ -10,16 +10,23 @@ Static multilingual site for the Belgian Activism Festi-Camp, built with [Astro]
 
 ### Setup
 
-If you haven't set up your Code Editor or environment yet, you can [check out the IDE.md page](IDE.md) with a guide.
+You will need to have a few dependencies and a code editor installed to run this locally. You can [check out the IDE.md page](IDE.md) with a guide.
 
-In your terminal, make sure you are in this repo's directory and then run the following commands.
+#### Launching the dev server
 
-```bash
-npm install
-npm run dev
-```
+These steps explain how to preview the changes you're making locally.
 
-The above will start a development server and you can access it by navigating to `http://localhost:4321`. Changes to the files will reload the browser automatically.
+You have two options:
+
+- In VS Code, you can run the dev server from the **Run and Debug** panel (`Ctrl+Shift+D`) — a [launch configuration](.vscode/launch.json) is included.
+- Alternatively, in your terminal, make sure you are in this repo's directory and then run the following commands.
+
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+Either of the two methods above will start a development server and you can access it by navigating to `http://localhost:4321`. Changes to the files will reload the browser automatically.
 
 ### Making changes
 
