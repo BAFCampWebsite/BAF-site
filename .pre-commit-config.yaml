@@ -10,9 +10,10 @@ repos:
     hooks:
       - id: prettier
         name: prettier
-        entry: npx prettier --write --list-different
+        entry: npm run format
         language: system
         files: \.(astro|js|mjs|cjs|ts|json|css|md)$
+        pass_filenames: false
       - id: eslint
         name: eslint
         entry: npx eslint --fix
