@@ -1,0 +1,71 @@
+---
+import { getLocale } from 'astro-intl';
+import { getTranslations } from '../i18n/getTranslations';
+
+const { slug } = Astro.props;
+const lang = getLocale();
+const p = `/${lang}`;
+const t = getTranslations('nav');
+---
+
+<input type="file" id="logoInput" accept="image/*">
+
+<nav>
+  <a class="nav-logo">
+    <div class="logo-img-wrap">
+      <img id="logoImg" src="/BAF%20ic%C3%B4ne.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href={`${p}/`}>{t('home')}</a></li>
+    <li><a href={`${p}/programme`}>{t('programme')}</a></li>
+    <li>
+      <button class="dd-btn">{t('fonctionnement')}
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href={`${p}/financements`}><span class="di">💰</span>{t('dropdownFonctionnement.financements')}</a>
+        <a href={`${p}/charte`}><span class="di">📜</span>{t('dropdownFonctionnement.charte')}</a>
+        <a href={`${p}/autogestion`}><span class="di">🙌</span>{t('dropdownFonctionnement.autogestion')}</a>
+      </div>
+    </li>
+    <li>
+      <button class="dd-btn">{t('informations')}
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href={`${p}/infos#acces`}><span class="di">📍</span>{t('dropdownInformations.venir')}</a>
+        <a href={`${p}/infos#restauration`}><span class="di">🍔</span>{t('dropdownInformations.nourrir')}</a>
+        <a href={`${p}/infos#camping`}><span class="di">⛺</span>{t('dropdownInformations.camping')}</a>
+        <a href={`${p}/infos#bambinerie`}><span class="di">🧸</span>{t('dropdownInformations.bambinerie')}</a>
+      </div>
+    </li>
+    <li>
+      <button class="dd-btn">{t('nousAider')}
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href={`${p}/nous-aider`}><span class="di">❤️</span>{t('dropdownAider.faireDon')}</a>
+        <a href={`${p}/autogestion`}><span class="di">🙌</span>{t('dropdownAider.inscriptions')}</a>
+        <a href={`${p}/nous-aider#partager`}><span class="di">📢</span>{t('dropdownAider.partager')}</a>
+        <a href={`${p}/nous-aider#materiel`}><span class="di">🔌</span>{t('dropdownAider.materiel')}</a>
+      </div>
+    </li>
+    <li><a href={`${p}/billetterie`} class="btn nav-cta">{t('tickets')}</a></li>
+  </ul>
+
+  <div class="lang-switcher">
+    {['fr', 'nl', 'en'].map((l, i) => (
+      <>
+        {i > 0 && <span>|</span>}
+        <a href={slug ? `/${l}/${slug}` : `/${l}/`} class:list={{ active: lang === l }}>{l.toUpperCase()}</a>
+      </>
+    ))}
+  </div>
+
+  <button class="burger" id="burgerBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>

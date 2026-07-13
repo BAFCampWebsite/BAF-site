@@ -1,0 +1,92 @@
+---
+import { getLocale } from 'astro-intl';
+import { getTranslations } from '../i18n/getTranslations';
+import RoseCta from './RoseCta.astro';
+
+const t = getTranslations('charte');
+
+const objectifItems = [
+  { title: t('objectifs.items.i0.title'), text: t('objectifs.items.i0.text') },
+  { title: t('objectifs.items.i1.title'), text: t('objectifs.items.i1.text') },
+  { title: t('objectifs.items.i2.title'), text: t('objectifs.items.i2.text') }
+];
+const positionnementItems = [ t('positionnement.items.i0'), t('positionnement.items.i1'), t('positionnement.items.i2'), t('positionnement.items.i3') ];
+const fonctionnementItems = [ t('fonctionnement.items.i0'), t('fonctionnement.items.i1'), t('fonctionnement.items.i2') ];
+const cadreItems = [ t('cadre.items.i0'), t('cadre.items.i1'), t('cadre.items.i2'), t('cadre.items.i3') ];
+const accessibiliteItems = [ t('accessibilite.items.i0'), t('accessibilite.items.i1'), t('accessibilite.items.i2'), t('accessibilite.items.i3') ];
+---
+
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ {t('hero.eyebrow')}</p>
+  <h1 class="page-hero-title">{t('hero.title')}</h1>
+  <p class="page-hero-sub">{t('hero.subtitle')}</p>
+</div>
+
+<div class="page-content">
+
+  <div class="reveal">
+    <h2>{t('pourquoi.title')}</h2>
+    <p>{t('pourquoi.p1')}</p>
+    <p>{t('pourquoi.p2')}</p>
+  </div>
+
+  <div class="reveal">
+    <h2>{t('objectifs.title')}</h2>
+    <div class="cards-grid">
+      {objectifItems.map((item) => (
+        <div class="card">
+          <span class="card-icon">{['🤝', '📢', '🧠'][objectifItems.indexOf(item)]}</span>
+          <h3 class="card-title">{item.title}</h3>
+          <p class="card-text">{item.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="reveal">
+    <h2>{t('positionnement.title')}</h2>
+    <p>{t('positionnement.text')}</p>
+    <ul>
+      {positionnementItems.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+
+  <div class="reveal">
+    <h2>{t('fonctionnement.title')}</h2>
+    <p>{t('fonctionnement.text')}</p>
+    <ul>
+      {fonctionnementItems.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+
+  <div class="reveal">
+    <h2>{t('cadre.title')}</h2>
+    <p>{t('cadre.text')}</p>
+    <ul>
+      {cadreItems.map((item) => <li>{item}</li>)}
+    </ul>
+    <p>{t('cadre.note')}</p>
+  </div>
+
+  <div class="reveal">
+    <h2>{t('accessibilite.title')}</h2>
+    <p>{t('accessibilite.text')}</p>
+    <ul>
+      {accessibiliteItems.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <div class="reveal">
+    <h2>{t('charteComplete.title')}</h2>
+    <p>{t('charteComplete.text')}</p>
+
+    <RoseCta>
+      <a href="/Charte-BAF-Camp-2026.pdf" download class="text-display-link text-display-link--compact">
+        {t('charteComplete.btnText')}
+      </a>
+    </RoseCta>
+  </div>
+
+</div>

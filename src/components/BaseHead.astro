@@ -1,0 +1,36 @@
+---
+import { getLocale } from 'astro-intl';
+import { getTranslations } from '../i18n/getTranslations';
+
+const { slug } = Astro.props;
+const lang = getLocale();
+const t = getTranslations('site');
+const origin = 'https://belgian-activism-festi-camp.be';
+const path = `${lang}${slug ? `/${slug}` : ''}`;
+const canonical = `${origin}/${path}/`;
+const ogImage = `${origin}/BAF%20Logo.png`;
+---
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{t('title')}</title>
+<meta name="description" content={t('description')}>
+<meta name="keywords" content={t('keywords')}>
+<link rel="canonical" href={canonical}>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content={t('title')}>
+<meta property="og:description" content={t('description')}>
+<meta property="og:url" content={canonical}>
+<meta property="og:image" content={ogImage}>
+<meta property="og:locale" content={t('locale')}>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={t('title')}>
+<meta name="twitter:description" content={t('description')}>
+<meta name="twitter:image" content={ogImage}>
+
+{['fr', 'en', 'nl'].map(l => (
+  <link rel="alternate" hreflang={l} href={`${origin}/${l}${slug ? `/${slug}` : ''}/`} />
+))}
+
+<link rel="stylesheet" href="/style.css">

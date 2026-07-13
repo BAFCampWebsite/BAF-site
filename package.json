@@ -1,0 +1,21 @@
+{
+  "name": "baf-site",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run validate:i18n && astro build",
+    "preview": "astro preview",
+    "validate:i18n": "node scripts/validate-translations.mjs",
+    "html-to-markdown": "html-to-markdown",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^6.0.0",
+    "astro-intl": "^2.2.1"
+  },
+  "devDependencies": {
+    "@wcj/html-to-markdown-cli": "^2.1.1",
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^5.9.3"
+  }
+}
