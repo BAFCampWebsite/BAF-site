@@ -95,7 +95,11 @@
       "title": "Toegang tot het festival",
       "train": {
         "title": "Trein",
-        "text": "De locatie ligt op 300 meter wandelen van het treinstation van Grupont"
+        "text": "De locatie ligt op 300 meter wandelen van het treinstation van Grupont. Deze Infrabel-pagina geeft de officiële informatie over de spoorverbinding en eventuele werken op de Ciney–Haversin-as.",
+        "linkLabel": "Bekijk de officiële Infrabel-informatie",
+        "linkUrl": "https://infrabel.be/nl/axe3-ciney-haversin",
+        "warningLabel": "⚠️ Waarschuwing",
+        "warningText": "Er zullen waarschijnlijk problemen met treinen zijn, dus check dit vóór je komt."
       },
       "velo": {
         "title": "Fiets",

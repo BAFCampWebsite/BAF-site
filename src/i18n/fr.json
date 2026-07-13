@@ -95,7 +95,11 @@
       "title": "Accès au festival",
       "train": {
         "title": "Train",
-        "text": "Le site est à 300 m à pied de la gare de Grupont"
+        "text": "Le site est à 300 m à pied de la gare de Grupont. Cette page Infrabel donne les informations officielles sur l’accès ferroviaire et les éventuels travaux sur l’axe Ciney–Haversin.",
+        "linkLabel": "Voir les informations officielles Infrabel",
+        "linkUrl": "https://infrabel.be/fr/axe3-ciney-haversin",
+        "warningLabel": "⚠️ Avertissement",
+        "warningText": "Il y aura probablement des problèmes de trains, à vérifier avant de venir."
       },
       "velo": {
         "title": "Vélo",

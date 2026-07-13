@@ -95,7 +95,11 @@
       "title": "Access to the festival",
       "train": {
         "title": "Train",
-        "text": "The site is 300 m walk from Grupont train station"
+        "text": "The site is a 300 m walk from Grupont station. This Infrabel page provides official information on rail access and any works on the Ciney–Haversin axis.",
+        "linkLabel": "See official Infrabel information",
+        "linkUrl": "https://infrabel.be/en/axe3-ciney-haversin",
+        "warningLabel": "⚠️ Warning",
+        "warningText": "There will probably be train problems, so please check before coming."
       },
       "velo": {
         "title": "Bike",
