@@ -13,6 +13,15 @@ If you don't have these, it's good to download them
 - [NodeJS + NPM](https://nodejs.org/en/download)
   - **Get the Installer** underneath the code block if that's scary and/or you don't know about package managers.
 
+On windows, you can install all of the above by running the following command in powershell:
+
+```powershell
+winget install -e --id Git.Git;winget install -e --id OpenJS.NodeJS; winget install Microsoft.VisualStudioCode
+
+powershellCopyEditSet-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
+
+
 ## Setting up VSCode
 
 Install the recommended extensions from the extensions tab (astro, i18n-ally, and the markdownlint).
