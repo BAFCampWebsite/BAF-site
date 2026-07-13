@@ -7,19 +7,35 @@ const p = `/${lang}`;
 const t = getTranslations('hero');
 ---
 
-<input type="file" id="heroInput" accept="image/*">
+<input
+  type="file"
+  id="heroInput"
+  accept="image/*"
+/>
 
-<section class="hero" id="hero-section">
+<section
+  class="hero"
+  id="hero-section"
+>
   <div class="hero-bg">
-    <img id="heroImg" src="" alt="" class="hero-image-fade">
+    <img
+      id="heroImg"
+      src=""
+      alt=""
+      class="hero-image-fade"
+    />
     <div class="hero-bg-overlay"></div>
   </div>
 
   <div class="hero-inner">
-      <div class="hero-content">
+    <div class="hero-content">
       <div class="hero-eyebrow">✮ {t('eyebrow')} ✮</div>
       <div class="hero-logo">
-        <img src="/BAF%20Logo.png" alt="BAF Camp" id="heroLogoImg">
+        <img
+          src="/BAF%20Logo.png"
+          alt="BAF Camp"
+          id="heroLogoImg"
+        />
       </div>
     </div>
     <div class="hero-right">
@@ -31,26 +47,49 @@ const t = getTranslations('hero');
         <div class="meta-item">
           <span class="meta-label">{t('lieuLabel')}</span>
           <span class="meta-value">
-            <a href={p + '/infos'} class="meta-link">{t('lieuValue')}</a>
+            <a
+              href={p + '/infos'}
+              class="meta-link"
+              >{t('lieuValue')}</a
+            >
           </span>
         </div>
         <div class="meta-item">
           <span class="meta-label">{t('programmeLabel')}</span>
-          <a href={p + '/programme'} class="meta-link">
+          <a
+            href={p + '/programme'}
+            class="meta-link"
+          >
             <span class="meta-value">{t('programmeValue')}</span>
           </a>
         </div>
         <div class="meta-item">
           <span class="meta-label">{t('objectifLabel')}</span>
           <span class="meta-value">
-            <a href={p + '/infos'} class="meta-link">{t('objectifValue')}</a>
+            <a
+              href={p + '/infos'}
+              class="meta-link"
+              >{t('objectifValue')}</a
+            >
           </span>
         </div>
       </div>
       <div class="hero-actions">
-        <a href={p + '/billetterie'} class="btn btn-primary">{t('btnBillets')}</a>
-        <a href={p + '/programme'} class="btn btn-outline-hero">{t('btnProgramme')}</a>
-        <a href={p + '/autogestion'} class="btn btn-primary">{t('btnBenevolat')}</a>
+        <a
+          href={p + '/billetterie'}
+          class="btn btn-primary"
+          >{t('btnBillets')}</a
+        >
+        <a
+          href={p + '/programme'}
+          class="btn btn-outline-hero"
+          >{t('btnProgramme')}</a
+        >
+        <a
+          href={p + '/autogestion'}
+          class="btn btn-primary"
+          >{t('btnBenevolat')}</a
+        >
       </div>
     </div>
   </div>

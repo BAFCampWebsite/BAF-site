@@ -1,10 +1,7 @@
 ---
-import { getLocale } from 'astro-intl';
 import { getTranslations } from '../i18n/getTranslations';
 import RoseCta from './RoseCta.astro';
 
-const lang = getLocale();
-const p = `/${lang}`;
 const t = getTranslations('autogestion');
 
 const gtItems = [
@@ -14,11 +11,22 @@ const gtItems = [
   { title: t('gt.items.i3.title'), text: t('gt.items.i3.text') },
   { title: t('gt.items.i4.title'), text: t('gt.items.i4.text') },
   { title: t('gt.items.i5.title'), text: t('gt.items.i5.text') },
-  { title: t('gt.items.i6.title'), text: t('gt.items.i6.text') }
+  { title: t('gt.items.i6.title'), text: t('gt.items.i6.text') },
 ];
 const gtIcons = ['💚', '🗣️', '🫶', '⚒️', '🎤', '💰', '🔄'];
 
-const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.items.i2'), t('missions.items.i3'), t('missions.items.i4'), t('missions.items.i5'), t('missions.items.i6'), t('missions.items.i7'), t('missions.items.i8'), t('missions.items.i9') ];
+const missions = [
+  t('missions.items.i0'),
+  t('missions.items.i1'),
+  t('missions.items.i2'),
+  t('missions.items.i3'),
+  t('missions.items.i4'),
+  t('missions.items.i5'),
+  t('missions.items.i6'),
+  t('missions.items.i7'),
+  t('missions.items.i8'),
+  t('missions.items.i9'),
+];
 ---
 
 <div class="page-hero anim">
@@ -28,12 +36,14 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
 </div>
 
 <div class="page-content">
-
   <div class="reveal">
     <h2>{t('structure.title')}</h2>
     <p>{t('structure.text')}</p>
     <RoseCta>
-      <a href={`mailto:${t('structure.ctaEmail')}?subject=${encodeURIComponent(t('structure.ctaSubject'))}`} class="text-display-link">
+      <a
+        href={`mailto:${t('structure.ctaEmail')}?subject=${encodeURIComponent(t('structure.ctaSubject'))}`}
+        class="text-display-link"
+      >
         {t('structure.ctaText')}
       </a>
     </RoseCta>
@@ -43,25 +53,27 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
     <h2>{t('gt.title')}</h2>
     <p>{t('gt.intro')}</p>
     <div class="cards-grid">
-      {gtItems.map((item, i) => (
-        <div class="card surface-card">
-          <span class="card-icon">{gtIcons[i]}</span>
-          <h3 class="card-title">{item.title}</h3>
-          <p class="card-text">{item.text}</p>
-        </div>
-      ))}
+      {
+        gtItems.map((item, i) => (
+          <div class="card surface-card">
+            <span class="card-icon">{gtIcons[i]}</span>
+            <h3 class="card-title">{item.title}</h3>
+            <p class="card-text">{item.text}</p>
+          </div>
+        ))
+      }
     </div>
   </div>
 
   <div class="reveal">
     <h2>{t('benevolat.title')}</h2>
-    <p set:html={t('benevolat.text1')}></p>
-    <p set:html={t('benevolat.text2')}></p>
-    <p set:html={t('benevolat.text3')}></p>
-    <p set:html={t('benevolat.text4')}></p>
+    <p set:html={t('benevolat.text1')} />
+    <p set:html={t('benevolat.text2')} />
+    <p set:html={t('benevolat.text3')} />
+    <p set:html={t('benevolat.text4')} />
   </div>
 
-  <hr class="divider">
+  <hr class="divider" />
 
   <div class="reveal">
     <h2>{t('missions.title')}</h2>
@@ -75,7 +87,10 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
     <p>{t('inscription.text')}</p>
 
     <RoseCta>
-      <a href={t('inscription.formUrl')} class="text-display-link">
+      <a
+        href={t('inscription.formUrl')}
+        class="text-display-link"
+      >
         {t('inscription.btnText')}
       </a>
       <div class="inline-note">
@@ -83,18 +98,31 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
       </div>
     </RoseCta>
   </div>
-
 </div>
 
 <style is:global>
-  .gt-section .cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .gt-section .cards-grid .card:nth-child(5) { grid-column: 2; }
-  .gt-section .cards-grid .card:nth-child(6) { grid-column: 3; }
-  .gt-section .cards-grid .card:nth-child(7) { grid-column: 4; }
-  @media(max-width: 900px) {
-    .gt-section .cards-grid { grid-template-columns: 1fr !important; }
+  .gt-section .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .gt-section .cards-grid .card:nth-child(5) {
+    grid-column: 2;
+  }
+  .gt-section .cards-grid .card:nth-child(6) {
+    grid-column: 3;
+  }
+  .gt-section .cards-grid .card:nth-child(7) {
+    grid-column: 4;
+  }
+  @media (max-width: 900px) {
+    .gt-section .cards-grid {
+      grid-template-columns: 1fr !important;
+    }
     .gt-section .cards-grid .card:nth-child(5),
     .gt-section .cards-grid .card:nth-child(6),
-    .gt-section .cards-grid .card:nth-child(7) { grid-column: auto !important; }
+    .gt-section .cards-grid .card:nth-child(7) {
+      grid-column: auto !important;
+    }
   }
 </style>

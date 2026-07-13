@@ -1,94 +1,90 @@
 ---
-import { getLocale } from "astro-intl";
-import { getTranslations } from "../i18n/getTranslations";
-import ProgrammeCalendar from "./ProgrammeCalendar.astro";
+import { getTranslations } from '../i18n/getTranslations';
 
-const lang = getLocale();
-const t = getTranslations("programme");
+const t = getTranslations('programme');
 
 const spaceItems = [
   {
-    icon: "🔥",
-    title: t("spaces.items.i0.title"),
-    text: t("spaces.items.i0.text"),
+    icon: '🔥',
+    title: t('spaces.items.i0.title'),
+    text: t('spaces.items.i0.text'),
   },
   {
-    icon: "❤️",
-    title: t("spaces.items.i1.title"),
-    text: t("spaces.items.i1.text"),
+    icon: '❤️',
+    title: t('spaces.items.i1.title'),
+    text: t('spaces.items.i1.text'),
   },
   {
-    icon: "📚",
-    title: t("spaces.items.i2.title"),
-    text: t("spaces.items.i2.text"),
+    icon: '📚',
+    title: t('spaces.items.i2.title'),
+    text: t('spaces.items.i2.text'),
   },
   {
-    icon: "🌊",
-    title: t("spaces.items.i3.title"),
-    text: t("spaces.items.i3.text"),
+    icon: '🌊',
+    title: t('spaces.items.i3.title'),
+    text: t('spaces.items.i3.text'),
   },
 ];
 ---
 
 <div class="page-hero anim">
-  <p class="page-hero-eyebrow">✦ {t("hero.eyebrow")}</p>
-  <h1 class="page-hero-title">{t("hero.title")}</h1>
-  <p class="page-hero-sub">{t("hero.subtitle")}</p>
+  <p class="page-hero-eyebrow">✦ {t('hero.eyebrow')}</p>
+  <h1 class="page-hero-title">{t('hero.title')}</h1>
+  <p class="page-hero-sub">{t('hero.subtitle')}</p>
 </div>
 
 <div class="page-content">
   <div class="reveal reveal-spacing">
     <div class="construction-banner">
-      🚧 {t("construction")}
+      🚧 {t('construction')}
     </div>
   </div>
 
   <div class="reveal">
-    <h2>{t("intro.title")}</h2>
-    <p>{t("intro.sentence")}</p>
+    <h2>{t('intro.title')}</h2>
+    <p>{t('intro.sentence')}</p>
     <p>
-      <strong>"{t("intro.together.title")}"</strong> : {
-        t("intro.together.tagline")
-      }
+      <strong>"{t('intro.together.title')}"</strong> : {t('intro.together.tagline')}
     </p>
-    <p>{t("intro.together.explanation")}</p>
+    <p>{t('intro.together.explanation')}</p>
     <p>
-      <strong>"{t("intro.struggle.title")}"</strong> : {
-        t("intro.struggle.tagline")
-      }
+      <strong>"{t('intro.struggle.title')}"</strong> : {t('intro.struggle.tagline')}
     </p>
-    <p>{t("intro.struggle.explanation")}</p>
+    <p>{t('intro.struggle.explanation')}</p>
   </div>
 
   <div class="reveal centre">
-    <svg class="titre-fil" viewBox="0 0 600 120">
+    <svg
+      class="titre-fil"
+      viewBox="0 0 600 120"
+    >
       <path
         id="filPath"
         d="M10,60 Q150,10 300,60 T590,60"
         fill="none"
-        stroke="none"></path>
+        stroke="none"
+      ></path>
       <text class="fil-texte">
-        <textPath href="#filPath" startOffset="50%" text-anchor="middle"
-          >{t("filRouge.title")}</textPath
+        <textPath
+          href="#filPath"
+          startOffset="50%"
+          text-anchor="middle"
+          >{t('filRouge.title')}</textPath
         >
       </text>
     </svg>
-    <div class="bloc-fil">{t("filRouge.text")}</div>
+    <div class="bloc-fil">{t('filRouge.text')}</div>
   </div>
-
-  <!-- <ProgrammeCalendar /> -->
 
   <hr class="divider" />
 
   <div class="reveal">
-    <h2>{t("spaces.title")}</h2>
+    <h2>{t('spaces.title')}</h2>
     <div class="cards-grid">
       {
         spaceItems.map((item) => (
           <div class="card">
-            <span class="card-icon">
-              {item.icon}
-            </span>
+            <span class="card-icon">{item.icon}</span>
             <h3 class="card-title">{item.title}</h3>
             <p class="card-text">{item.text}</p>
           </div>
@@ -125,3 +121,4 @@ const spaceItems = [
     border-radius: 20px;
     font-size: 16px;
   }
+</style>

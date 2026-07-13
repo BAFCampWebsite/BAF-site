@@ -1,0 +1,21 @@
+{
+  "formatter": {
+    "language_server": {
+      "name": "prettier"
+    }
+  },
+  "code_actions_on_format": {
+    "source.fixAll.eslint": true
+  },
+  "enable_language_server": true,
+  "languages": {
+    "Astro": {
+      "language_servers": ["astro", "eslint", "!typescript-language-server", "!vtsls"],
+      "formatter": {
+        "language_server": {
+          "name": "prettier"
+        }
+      }
+    }
+  }
+}

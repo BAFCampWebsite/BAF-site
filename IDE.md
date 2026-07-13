@@ -21,7 +21,6 @@ winget install -e --id Git.Git;winget install -e --id OpenJS.NodeJS; winget inst
 powershellCopyEditSet-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 ```
 
-
 ## Setting up VSCode
 
 Install the recommended extensions from the extensions tab (astro, i18n-ally, and the markdownlint).

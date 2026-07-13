@@ -48,16 +48,16 @@ A prebuild validation script (`npm run validate:i18n`) checks that all three JSO
 
 Shared UI is extracted into `src/components/`:
 
-| Component | Purpose |
-|-----------|---------|
-| `Nav.astro` | Navigation bar with dropdowns, burger menu, language switcher |
-| `Footer.astro` | 4-column footer with nav, social links, copyright |
-| `BaseHead.astro` | `<head>` with SEO, Open Graph, Twitter cards, hreflang, canonical |
-| `Scripts.astro` | Vanilla JS for dropdowns, scroll-reveal, logo/hero upload |
-| `Hero.astro` | Index page hero with event meta grid + CTAs |
-| `EnBref.astro` | "In brief" card section |
-| `ContactSection.astro` | Contact CTA section |
-| `Billetterie.astro` | Ticket page with privilege meter, pricing tiers, form popup |
+| Component              | Purpose                                                           |
+| ---------------------- | ----------------------------------------------------------------- |
+| `Nav.astro`            | Navigation bar with dropdowns, burger menu, language switcher     |
+| `Footer.astro`         | 4-column footer with nav, social links, copyright                 |
+| `BaseHead.astro`       | `<head>` with SEO, Open Graph, Twitter cards, hreflang, canonical |
+| `Scripts.astro`        | Vanilla JS for dropdowns, scroll-reveal, logo/hero upload         |
+| `Hero.astro`           | Index page hero with event meta grid + CTAs                       |
+| `EnBref.astro`         | "In brief" card section                                           |
+| `ContactSection.astro` | Contact CTA section                                               |
+| `Billetterie.astro`    | Ticket page with privilege meter, pricing tiers, form popup       |
 
 These are used in `layouts/BaseLayout.astro` which wraps every page. The layout receives `slug` (current page name) and passes it to `Nav` and `BaseHead` so the language switcher and canonical/alternate URLs stay on the correct page.
 
@@ -94,11 +94,11 @@ Vercel auto-detects Astro from `astro.config.mjs`:
 
 `vercel.json` handles redirects that Astro's static redirects cannot express:
 
-| From | To | Reason |
-|------|-----|--------|
-| `/billeterie` | `/fr/billetterie` | Common typo |
-| `/billeterie/` | `/fr/billetterie` | Trailing-slash variant |
-| `/:path.html` | `/fr/:path` | Clean URLs for old bookmarks |
+| From           | To                | Reason                       |
+| -------------- | ----------------- | ---------------------------- |
+| `/billeterie`  | `/fr/billetterie` | Common typo                  |
+| `/billeterie/` | `/fr/billetterie` | Trailing-slash variant       |
+| `/:path.html`  | `/fr/:path`       | Clean URLs for old bookmarks |
 
 Locale prefix redirects (`/` → `/fr/`, `/billetterie` → `/fr/billetterie`, etc.) are handled natively by Astro's `redirects` config in `astro.config.mjs` — no Vercel rule needed.
 
@@ -106,11 +106,11 @@ Locale prefix redirects (`/` → `/fr/`, `/billetterie` → `/fr/billetterie`, e
 
 Every URL has a three-letter locale prefix:
 
-| Language | Home | Subpage |
-|----------|------|---------|
-| French | `/fr/` | `/fr/programme` |
-| English | `/en/` | `/en/programme` |
-| Dutch | `/nl/` | `/nl/programme` |
+| Language | Home   | Subpage         |
+| -------- | ------ | --------------- |
+| French   | `/fr/` | `/fr/programme` |
+| English  | `/en/` | `/en/programme` |
+| Dutch    | `/nl/` | `/nl/programme` |
 
 Root-level URLs (`/`, `/programme`, etc.) automatically redirect to their `/fr/...` equivalent via Astro's `<meta http-equiv="refresh">`.
 

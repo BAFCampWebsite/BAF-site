@@ -21,10 +21,10 @@ You have two options:
 - In VS Code, you can run the dev server from the **Run and Debug** panel (`Ctrl+Shift+D`) — a [launch configuration](.vscode/launch.json) is included.
 - Alternatively, in your terminal, make sure you are in this repo's directory and then run the following commands.
 
-   ```bash
-   npm install
-   npm run dev
-   ```
+  ```bash
+  npm install
+  npm run dev
+  ```
 
 Either of the two methods above will start a development server and you can access it by navigating to `http://localhost:4321`. Changes to the files will reload the browser automatically.
 
@@ -68,4 +68,3 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for details.
 Push to `main` — Vercel detects Astro from `astro.config.mjs` and auto-deploys.
 
 If you open a PR, Vercel will create a preview deployment, check the "deployments" in the PR itself.
-

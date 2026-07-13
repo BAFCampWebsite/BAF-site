@@ -37,6 +37,7 @@ import { getTranslations } from '../i18n/getTranslations';
 
 const t = getTranslations('nav');
 ---
+
 <h1>{t('card.title')}</h1>
 <p>{t('card.subtitle')}</p>
 ```
@@ -65,13 +66,13 @@ This is very similar to the above, except you will need to define a key, and the
 
     ```json
     {
-        "billetterie":{
-            "hero":{
-                "title" : "Existing title",
-                "subtitle" : "This is a new paragraph about beautiful things",
-                // [...] Other stuff
-            }
+      "billetterie": {
+        "hero": {
+          "title": "Existing title",
+          "subtitle": "This is a new paragraph about beautiful things"
+          // [...] Other stuff
         }
+      }
     }
     ```
 
@@ -99,8 +100,9 @@ import { getLocale } from 'astro-intl';
 const lang = getLocale();
 const p = `/${lang}`; // <- This is the language prefix. e.g. `/fr`, `/en`, etc.
 ---
+
 <!-- And then someplace in your code... -->
-    <a href={`${p}/myPage`}>{t('programme')}</a>
+<a href={`${p}/myPage`}>{t('programme')}</a>
 ```
 
 ## Adding pages
@@ -114,22 +116,25 @@ To add a new page, you need to follow the following steps:
   - Adjust the `<BaseLayout>` to include your components in the order you want.
 - Add links to the page (see [chapter above](#linking-to-pages))
 - _If you added a new namespace_, make sure to add it to the [types.ts](src/i18n/types.ts) file
-Example:
+  Example:
 
 ```astro src/pages/[locale]/my-page.astro
 ---
 // This does the /en /fr magic
-export { getLocaleStaticPaths as getStaticPaths } from "../../i18n/getStaticPaths";
+export { getLocaleStaticPaths as getStaticPaths } from '../../i18n/getStaticPaths';
 
 // Contains the navigation, footer, the CSS, etc.
 import BaseLayout from '../../layouts/BaseLayout.astro';
-// 
+//
 import MyComponent from '../../components/MyComponent.astro';
 
 const { lang, t } = Astro.props;
 ---
 
-<BaseLayout title={t('myPage.title')} ...>
+<BaseLayout
+  title={t('myPage.title')}
+  ...
+>
   <MyComponent t={t} />
 </BaseLayout>
 ```
@@ -189,4 +194,3 @@ The workflow will reset its state to the latest `main`, run the export script, a
 3. When ready, merge the pull request into the `main` branch.
 
 A normal GitHub merge flow is fine here, but "Squash and merge" is often the cleanest option for this kind of automated update.
-

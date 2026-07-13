@@ -12,4 +12,5 @@
 - Make separate components for highly repeatable items, or for very isolated parts which are better to keep out and organised separately.
 
 ## Design
+
 - There's a design system in [the css sheet](public/style.css), use it and avoid unnecessary inline styles.
