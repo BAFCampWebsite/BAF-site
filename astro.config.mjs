@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import astroIntl from "astro-intl";
+import { readFileSync } from 'node:fs';
 
 export default defineConfig({
   site: 'https://belgian-activism-festi-camp.be',
@@ -8,10 +9,24 @@ export default defineConfig({
       defaultLocale: "fr",
       locales: ["fr", "en", "nl"],
       messages: {
-        fr: () => import("./src/i18n/fr.json", { with: { type: "json" } }),
-        en: () => import("./src/i18n/en.json", { with: { type: "json" } }),
-        nl: () => import("./src/i18n/nl.json", { with: { type: "json" } }),
+        fr: () => JSON.parse(readFileSync("./src/i18n/fr.json", "utf-8")),
+        en: () => JSON.parse(readFileSync("./src/i18n/en.json", "utf-8")),
+        nl: () => JSON.parse(readFileSync("./src/i18n/nl.json", "utf-8")),
       },
     }),
   ],
+  vite: {
+    plugins: [
+      {
+        name: "i18n-hot-reload",
+        configureServer(server) {
+          server.watcher.on("change", (filePath) => {
+            if (filePath.includes("/src/i18n/") && filePath.endsWith(".json")) {
+              server.ws.send({ type: "full-reload" });
+            }
+          });
+        },
+      },
+    ],
+  },
 });
