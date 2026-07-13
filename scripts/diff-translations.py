@@ -34,7 +34,7 @@ def md_from_html(html_path: Path) -> str:
 OUT = ROOT / "compare"
 for slug in PAGES:
     for locale in ("fr", "en", "nl"):
-        src = ROOT / f"{slug}.html" if locale == "fr" else ROOT / locale / f"{slug}.html"
+        src = ROOT / "old_html" / ("" if locale =="fr" else locale) / f"{slug}.html"
         dst = ROOT / "dist" / locale / slug / "index.html"
 
         if not src.exists() or not dst.exists():
@@ -42,7 +42,7 @@ for slug in PAGES:
 
         out_dir = OUT / locale / slug
         out_dir.mkdir(parents=True, exist_ok=True)
-        (out_dir / "source.md").write_text(md_from_html(src) + "\n")
-        (out_dir / "dist.md").write_text(md_from_html(dst) + "\n")
+        (out_dir / "old.md").write_text(md_from_html(src) + "\n")
+        (out_dir / "astro.md").write_text(md_from_html(dst) + "\n")
 
 print(f"Markdown files written to {OUT}/")
