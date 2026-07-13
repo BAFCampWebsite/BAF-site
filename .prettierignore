@@ -1,0 +1,5 @@
+dist/
+.astro/
+node_modules/
+compare/
+public/teamup-events.json
