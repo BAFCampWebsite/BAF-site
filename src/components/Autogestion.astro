@@ -1,10 +1,7 @@
 ---
-import { getLocale } from 'astro-intl';
 import { getTranslations } from '../i18n/getTranslations';
 import RoseCta from './RoseCta.astro';
 
-const lang = getLocale();
-const p = `/${lang}`;
 const t = getTranslations('autogestion');
 
 const gtItems = [

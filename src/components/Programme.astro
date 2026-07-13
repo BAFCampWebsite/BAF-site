@@ -1,9 +1,6 @@
 ---
-import { getLocale } from 'astro-intl';
 import { getTranslations } from '../i18n/getTranslations';
-import ProgrammeCalendar from './ProgrammeCalendar.astro';
 
-const lang = getLocale();
 const t = getTranslations('programme');
 
 const spaceItems = [
@@ -78,8 +75,6 @@ const spaceItems = [
     </svg>
     <div class="bloc-fil">{t('filRouge.text')}</div>
   </div>
-
-  <!-- <ProgrammeCalendar /> -->
 
   <hr class="divider" />
 

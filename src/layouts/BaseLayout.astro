@@ -1,5 +1,5 @@
 ---
-import { setRequestLocale } from 'astro-intl';
+import { getLocale, setRequestLocale } from 'astro-intl';
 import BaseHead from '../components/BaseHead.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -8,10 +8,11 @@ import Scripts from '../components/Scripts.astro';
 await setRequestLocale(Astro.url);
 
 const { slug } = Astro.props;
+const lang = getLocale();
 ---
 
 <!doctype html>
-<html>
+<html lang={lang}>
   <head>
     <BaseHead {slug} />
   </head>

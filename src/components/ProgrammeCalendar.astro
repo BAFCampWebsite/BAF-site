@@ -7,7 +7,7 @@ const lang = getLocale();
 const t = getTranslations('programme');
 const addToCalendarLabel = t('calendar.addToCalendar');
 
-const SUBCALENDAR_ID_MAP = {
+const SUBCALENDAR_ID_MAP: Record<string, string> = {
   '15782183': 'CONFERENCE',
   '15782182': 'FILM',
   '15766557': 'MUSIC',
@@ -15,7 +15,7 @@ const SUBCALENDAR_ID_MAP = {
   '15766558': 'WORKSHOPS',
 };
 
-const categoryMeta = {
+const categoryMeta: Record<string, { accent: string; label: string }> = {
   CONFERENCE: {
     accent: 'var(--rose)',
     label: t('calendar.filters.conference'),
@@ -83,7 +83,7 @@ const calendarEvents = (teamupEvents?.events ?? [])
     const ids = event.subcalendar_ids?.length ? event.subcalendar_ids : [event.subcalendar_id];
 
     const seen = new Set();
-    const cats = [];
+    const cats: string[] = [];
     ids.forEach((id) => {
       const cat = SUBCALENDAR_ID_MAP[String(id)] ?? 'WORKSHOPS';
       if (seen.has(cat)) return;
@@ -106,7 +106,7 @@ const calendarEvents = (teamupEvents?.events ?? [])
       isPlaceholder: !previewText,
     };
   })
-  .sort((a, b) => new Date(a.start_dt) - new Date(b.start_dt));
+  .sort((a, b) => new Date(a.start_dt).getTime() - new Date(b.start_dt).getTime());
 
 const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey))).map((dayKey) => {
   const date = new Date(dayKey);
@@ -526,7 +526,7 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
   }
 </style>
 
-<script define:vars={{ calendarEvents, addToCalendarLabel }}>
+<script define:vars={{ calendarEvents, addToCalendarLabel }} is:inline>
   const eventCards = calendarEvents || [];
   const buttons = Array.from(document.querySelectorAll('.calendar-filter'));
   const container = document.getElementById('calendarEvents');

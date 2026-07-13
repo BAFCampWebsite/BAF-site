@@ -276,14 +276,14 @@ const partagerCards = [
 </style>
 
 <script>
-  function copyIban() {
+  (window as any).copyIban = function () {
     const iban = 'BE12 8919 6407 1892';
     navigator.clipboard.writeText(iban).then(() => {
-      const btn = document.querySelector('.copy-btn');
+      const btn = document.querySelector('.copy-btn') as HTMLElement | null;
       if (btn) {
         btn.textContent = '✅';
         setTimeout(() => (btn.textContent = '📋'), 2000);
       }
     });
-  }
+  };
 </script>

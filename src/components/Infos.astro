@@ -1,9 +1,6 @@
 ---
-import { getLocale } from 'astro-intl';
 import { getTranslations } from '../i18n/getTranslations';
 
-const lang = getLocale();
-const p = `/${lang}`;
 const t = getTranslations('infos');
 
 const accesCards = [
@@ -163,6 +160,7 @@ const bambinerieBlocks = [
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+  declare const L: any;
   const map = L.map('map', { scrollWheelZoom: false }).setView([49.9072, 5.2697], 15);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',

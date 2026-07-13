@@ -1,6 +1,5 @@
 ---
 import { getTranslations } from '../i18n/getTranslations';
-import type { BilletterieMessages } from '../i18n/types';
 
 const t = getTranslations('billetterie');
 const plusItems = [
@@ -259,7 +258,7 @@ const pricingTiers = [
         <a
           href={t('registration.formUrl')}
           class="btn btn-primary"
-          onclick="showFormPopup(event)"
+          onclick="showFormPopup()"
         >
           📝 {t('registration.btnForm')}
         </a>
@@ -736,52 +735,64 @@ const pricingTiers = [
 </style>
 
 <script>
-  window.calculerThuno = function () {
-    const checkboxes = document.querySelectorAll('.thuno-cb');
+  const w = window as any;
+  const $ = (id: string) => document.getElementById(id);
+
+  w.calculerThuno = function () {
+    const checkboxes = document.querySelectorAll('.thuno-cb') as NodeListOf<HTMLInputElement>;
     let score = 0;
     checkboxes.forEach((cb) => {
-      if (cb.checked) score += parseInt(cb.dataset.val);
+      if (cb.checked) score += parseInt(cb.dataset.val ?? '0');
     });
 
-    document.getElementById('thunoScoreVal').textContent = score > 0 ? '+' + score : score;
-    document.getElementById('thunoQuestions').style.display = 'none';
-    document.getElementById('thunoResult').style.display = 'block';
+    const scoreVal = $('thunoScoreVal');
+    if (scoreVal) scoreVal.textContent = String(score > 0 ? '+' + score : score);
 
-    const high = document.getElementById('thunoTierHigh');
-    const mid = document.getElementById('thunoTierMid');
-    const low = document.getElementById('thunoTierLow');
-    [high, mid, low].forEach((el) => el.classList.remove('active'));
+    const questions = $('thunoQuestions');
+    if (questions) questions.style.display = 'none';
 
-    const reco = document.getElementById('thunoReco');
+    const result = $('thunoResult');
+    if (result) result.style.display = 'block';
+
+    const high = $('thunoTierHigh');
+    const mid = $('thunoTierMid');
+    const low = $('thunoTierLow');
+    [high, mid, low].forEach((el) => el?.classList.remove('active'));
+
+    const reco = $('thunoReco');
 
     if (score >= 8) {
-      high.classList.add('active');
-      reco.innerHTML = reco.dataset.recoHigh;
+      high?.classList.add('active');
+      if (reco) reco.innerHTML = reco.dataset.recoHigh ?? '';
     } else if (score >= 4) {
-      mid.classList.add('active');
-      reco.innerHTML = reco.dataset.recoMid;
+      mid?.classList.add('active');
+      if (reco) reco.innerHTML = reco.dataset.recoMid ?? '';
     } else {
-      low.classList.add('active');
-      reco.innerHTML = reco.dataset.recoLow;
+      low?.classList.add('active');
+      if (reco) reco.innerHTML = reco.dataset.recoLow ?? '';
     }
   };
 
-  window.resetThuno = function () {
-    document.querySelectorAll('.thuno-cb').forEach((cb) => (cb.checked = false));
-    document.getElementById('thunoResult').style.display = 'none';
-    document.getElementById('thunoQuestions').style.display = 'block';
+  w.resetThuno = function () {
+    (document.querySelectorAll('.thuno-cb') as NodeListOf<HTMLInputElement>).forEach((cb) => (cb.checked = false));
+    const result = $('thunoResult');
+    if (result) result.style.display = 'none';
+    const questions = $('thunoQuestions');
+    if (questions) questions.style.display = 'block';
   };
 
-  window.showFormPopup = function (e) {
-    e.preventDefault();
-    document.getElementById('formPopupOverlay').style.display = 'flex';
+  w.showFormPopup = function () {
+    const overlay = $('formPopupOverlay');
+    if (overlay) overlay.style.display = 'flex';
   };
 
-  window.closeFormPopup = function () {
-    document.getElementById('formPopupOverlay').style.display = 'none';
+  w.closeFormPopup = function () {
+    const overlay = $('formPopupOverlay');
+    if (overlay) overlay.style.display = 'none';
   };
 
-  document.getElementById('formPopupOverlay').addEventListener('click', function (e) {
-    if (e.target === this) window.closeFormPopup();
+  const overlay = $('formPopupOverlay');
+  overlay?.addEventListener('click', function (e) {
+    if (e.target === this) w.closeFormPopup();
   });
 </script>
