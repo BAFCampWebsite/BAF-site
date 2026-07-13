@@ -7,7 +7,15 @@ const p = `/${lang}`;
 const t = getTranslations('infos');
 
 const accesCards = [
-  { icon: '🚆', title: t('acces.train.title'), text: t('acces.train.text') },
+  {
+    icon: '🚆',
+    title: t('acces.train.title'),
+    text: t('acces.train.text'),
+    linkLabel: t('acces.train.linkLabel'),
+    linkUrl: t('acces.train.linkUrl'),
+    warningLabel: t('acces.train.warningLabel'),
+    warningText: t('acces.train.warningText'),
+  },
   { icon: '🚲', title: t('acces.velo.title'), text: t('acces.velo.text') },
   { icon: '🚗', title: t('acces.voiture.title'), text: t('acces.voiture.text') },
 ];
@@ -40,10 +48,23 @@ const bambinerieBlocks = [
 
     <div class="info-grid">
       {accesCards.map((card) => (
-        <div class="info-card surface-card">
-          <span class="info-card-icon">{card.icon}</span>
-          <h3 class="info-card-title">{card.title}</h3>
-          <p>{card.text}</p>
+        <div>
+          <div class="info-card surface-card">
+            <span class="info-card-icon">{card.icon}</span>
+            <h3 class="info-card-title">{card.title}</h3>
+            <p>{card.text}</p>
+            {card.linkLabel && card.linkUrl && (
+              <a class="info-card-link" href={card.linkUrl} target="_blank" rel="noopener noreferrer">
+                {card.linkLabel}
+              </a>
+            )}
+          </div>
+          {card.warningText && (
+            <div class="info-card-warning">
+              <strong>{card.warningLabel}</strong>
+              <p>{card.warningText}</p>
+            </div>
+          )}
         </div>
       ))}
 
@@ -152,6 +173,40 @@ const bambinerieBlocks = [
     font-family: var(--font-serif);
     font-size: .84rem; line-height: 1.7; color: var(--gris-encre);
     margin-bottom: 0;
+  }
+  .info-card-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--rose);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .info-card-warning {
+    margin-top: 10px;
+    padding: 12px 14px;
+    border: 2px solid #c62828;
+    border-radius: 10px;
+    background: #ffe2e2;
+    box-shadow: 4px 4px 0 #c62828;
+  }
+  .info-card-warning strong {
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--font-display);
+    font-size: .95rem;
+    color: #8e1d1d;
+  }
+  .info-card-warning p {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: .82rem;
+    line-height: 1.6;
+    color: #8e1d1d;
   }
 
   .section-alt {

@@ -95,7 +95,11 @@
       "title": "Accès au festival",
       "train": {
         "title": "Train",
-        "text": "Le site est à 300 m à pied de la gare de Grupont"
+        "text": "Le site est à 300 m à pied de la gare de Grupont. Cette page Infrabel donne les informations officielles sur l’accès ferroviaire et les éventuels travaux sur l’axe Ciney–Haversin.",
+        "linkLabel": "Voir les informations officielles Infrabel",
+        "linkUrl": "https://infrabel.be/fr/axe3-ciney-haversin",
+        "warningLabel": "⚠️ Avertissement",
+        "warningText": "Il y aura probablement des problèmes de trains, à vérifier avant de venir."
       },
       "velo": {
         "title": "Vélo",
@@ -279,11 +283,21 @@
       "title": "Fil rouge de la programmation",
       "text": "Découvrez les idées qui animeront le camp cette année. Fil rouge du programme à venir."
     },
-    "dayTabs": {
-      "i0": "Jeudi 20",
-      "i1": "Vendredi 21",
-      "i2": "Samedi 22",
-      "i3": "Dimanche 23"
+    "calendar": {
+      "title": "Aperçu du programme",
+      "dayFilters": {
+        "all": "Tous les jours"
+      },
+      "noDescription": "Pas de description pour l'instant.",
+      "addToCalendar": "Ajouter au calendrier",
+      "filters": {
+        "all": "Tout",
+        "conference": "Conférence",
+        "film": "Film",
+        "music": "Musique",
+        "theatre": "Théâtre",
+        "workshops": "Ateliers"
+      }
     },
     "dayContent": {
       "i0": "Après une semaine de montage collectif, ouverture du camp autour de midi.",

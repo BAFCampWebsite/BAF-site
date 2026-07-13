@@ -6,6 +6,7 @@
     "build": "npm run validate:i18n && astro build",
     "preview": "astro preview",
     "validate:i18n": "node scripts/validate-translations.mjs",
+    "fetch:teamup": "node scripts/fetch-teamup-events.mjs",
     "html-to-markdown": "html-to-markdown",
     "astro": "astro"
   },
