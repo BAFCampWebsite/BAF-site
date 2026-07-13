@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="nl"> 
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Het BAF Camp is een Belgisch militant festival van 4 dagen in Grupont: workshops, concerten, zelfbeheer en activisme. Editie 2026 van 20 tot 23 augustus.">
+  <meta name="keywords" content="BAF Camp, BAF, Belgian Activism festival, militant festival België, activisme camp, Grupont 2026">
+  <title>Ticketing — BAF Camp</title>
+  <link rel="stylesheet" href="../style.css"> 
+</head>
+  
+<body>
+<input type="file" id="logoInput" accept="image/*" style="display:none">
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap">
+      <img id="logoImg" src="../BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="programme.html">Programma</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Werking
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="financements.html"><span class="di">💰</span>Financiering</a>
+        <a href="charte.html"><span class="di">📜</span>Ons charter</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Zelfbeheer</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Informatie
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="infos.html#acces"><span class="di">📍</span>Hoe geraken</a>
+        <a href="infos.html#restauration"><span class="di">🍔</span>Eten</a>
+        <a href="infos.html#camping"><span class="di">⛺</span>Camping</a>
+        <a href="infos.html#bambinerie"><span class="di">🧸</span>De Bambinerie</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Ons helpen
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="nous-aider.html"><span class="di">❤️</span>Doneren</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Vrijwilligers inschrijving</a>
+        <a href="nous-aider.html#partager"><span class="di">📢</span>Delen</a>
+        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Materiaal uitlenen</a>
+      </div>
+    </li>
+    <li><a href="billetterie.html" class="btn nav-cta">Tickets aan vrije bijdrage →</a></li>
+  </ul> 
+
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="lang-switcher">
+     <a href="/index.html">FR</a>
+     <span>|</span>
+     <a href="/nl/index.html">NL</a>
+     <span>|</span>
+     <a href="/en/index.html">EN</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">🎟️ Ticketing</p>
+  <h1 class="page-hero-title">Vrije & bewuste prijs</h1>
+  <p class="page-hero-sub">Zodat je bijdraagt naar jouw mogelijkheden.</p>
+</div>
+
+<div class="page-content">
+
+  <!-- ══════════════════════════════════════════
+       SECTIE 1 — WAT IS DE VRIJE PRIJS?
+  ══════════════════════════════════════════ -->
+  <div class="reveal section-intro">
+    <h2>Wat is de vrije bijdrage?</h2>
+    <p class="section-lead">
+      Het BAF Camp werkt niet met een vaste prijs. Iedereen draagt bij volgens hun <strong>werkelijke middelen</strong> — niet alleen het loon telt, maar ook vermogen, privileges en vangnet. Wie het financieel beter heeft, betaalt meer, zodat anderen ook kunnen komen.
+    </p>
+    <p class="section-lead">
+      Vrije prijzen werken niet altijd goed — mensen met meer middelen hebben de neiging te weinig te betalen. Daarom nodigen we je uit om <strong>eerlijk na te denken</strong> over jouw situatie voor je een bedrag kiest.
+    </p>
+    <p class="section-lead">
+      Uiteraard is elke situatie anders: als je structureel geld stuurt naar naasten of hoge gezondheidskosten hebt, houd je daar rekening mee — maar hieronder vind je een meter om je te helpen situeren.
+    </p>
+    <p class="section-lead">
+      Dit festival is een eerste editie. Als we de kosten niet dekken, raakt het project in de schulden en staat de toekomst op het spel. We rekenen echt op jullie vrijgevigheid en eerlijkheid opdat dit kamp ook financieel rond kan komen. Eventuele winsten worden trouwens herverdeeld naar diverse strijd (lokaal, duurzaamheid van een 2de BAF camp, en herverdeling via de Fondation Marius Jacob<sup>*</sup> en Mycélium<sup>**</sup>).
+    </p>
+    <p class="section-lead" style="font-size:.8rem; color:var(--sable); margin-top:8px; font-style:italic;">
+      <sup>*</sup> <a href="https://www.fondationmariusjacob.org/#about-7" target="_blank" rel="noopener" style="color:var(--sable);">De Fondation Marius Jacob</a> is een collectief en zelfbeheerd financieel instrument dat beurzen herverdeelt aan activisten, collectieven en sociale bewegingen in België — en dat onze bankrekening beheert.<br>
+      <sup>**</sup> <a href="https://fondation.mycelium.cc" target="_blank" rel="noopener" style="color:var(--sable);">De Fondation Mycélium</a> is een participatieve private stichting die financieel militante en alternatieve initiatieven in België ondersteunt via haar netwerk van mecenassen.
+    </p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════
+       SECTIE 2 — PRIVILÈGEMETER
+  ══════════════════════════════════════════ -->
+  <div class="reveal" id="thunometre-section">
+    <h2>🌡️ De Privilègemeter — bereken jouw eerlijke bijdrage</h2>
+    <p class="section-lead">
+     Onderstaande vragen helpen je in te schatten welke prijs bij jouw past. Dit is geen oordeel — het is een hulpmiddel om eerlijk bij te dragen.
+    </p>
+
+    <div class="thuno-tool">
+      <!-- Vragenlijst -->
+      <div class="thuno-questions" id="thunoQuestions">
+        <p class="thuno-intro-label">📊 Vink aan wat op jou van toepassing is:</p>
+
+        <div class="thuno-group">
+          <p class="thuno-group-title">➕ Voeg 1 punt toe als…</p>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> Je ouders bezitten een woning waarin je bent opgegroeid.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> Je ouders bezitten meerdere eigendommen.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> Je ouders kunnen je helpen bij het kopen van een woning.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> Je hebt een erfenis van meer dan 50 000 € ontvangen of zal ontvangen.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> Je hebt minstens 5 000 € spaargeld.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> Je ouders kunnen je financieel steunen in geval van nood zonder dat het hen veel kost.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> Je hebt een masterdiploma behaald.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> Je zou via je ouders of hun netwerk aan een job of professionele hulp kunnen geraken.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> Je gaat naar restaurants, de bioscoop of culturele activiteiten.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> Je hebt één of meer hobby's zoals: muziek, tekenen, hockey, paardrijden, tennis, klimmen.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> Je hebt een vast contract (CDI) met meer dan 1 800 € en niemand ten laste.</label>
+        </div>
+
+        <div class="thuno-group thuno-group-minus">
+          <p class="thuno-group-title">➖ Trek 1 punt af als…</p>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="-1"> Je ouders zijn bang van de politie / het leger.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="-1"> Bij problemen bellen je ouders niet naar de politie.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="-1"> De mensen die je financieel ondersteunden in je jeugd hadden korte of precaire contracten of arbeidersjobs.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="-1"> Je moest je kamer delen met broers/zussen/siblings om financiële redenen.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="-1"> Je financiële steunpilaar heeft het middelbaar onderwijs niet afgemaakt.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="-1"> Je grootouders hielpen met de opvang van kleinkinderen om financiële redenen.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="-1"> Je hebt regelmatige medische kosten.</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="-1"> Je hebt kosten als gevolg van repressie (boete, advocaat,…).</label>
+          <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> Je bent student en je ouders helpen je niet (voldoende).</label>
+
+        </div>
+
+        <button class="btn btn-primary" onclick="calculerThuno()" style="margin-top:24px;">Bereken mijn score →</button>
+      </div>
+
+      <!-- Resultaat -->
+      <div class="thuno-result" id="thunoResult" style="display:none;">
+        <div class="thuno-tier-wrap">
+          <div class="thuno-tier thuno-tier-high" id="thunoTierHigh">💰 Solidariteitstarief</div>
+          <div class="thuno-tier thuno-tier-mid" id="thunoTierMid">⚖️ Kostprijs</div>
+          <div class="thuno-tier thuno-tier-low" id="thunoTierLow">🌱 Verminderd tarief</div>
+        </div>
+        <div class="thuno-score-block">
+          <span class="thuno-score-label">Jouw score</span>
+          <span class="thuno-score-value" id="thunoScoreVal">0</span>
+        </div>
+        <div class="thuno-reco" id="thunoReco"></div>
+        <button class="btn" onclick="resetThuno()" style="margin-top:16px; background:var(--creme-fonce); color:var(--encre);">↩ Opnieuw beginnen</button>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════
+       SECTIE 3 — TARIEVEN
+  ══════════════════════════════════════════ -->
+  <div class="reveal">
+    <h2>Indicatieve tarieven</h2>
+
+    <div class="tarif-scale">
+      <div class="tarif-band tarif-soutien">
+        <span class="tarif-letter">A</span>
+        <div>
+          <strong>Solidariteitstarief: vanaf 29 € / dag <span class="tarif-total">— of 87 € voor 3 dagen</span></strong>
+          <p>Je leeft comfortabel: regelmatige vrije tijd, vakanties, loon boven 1 800 €, of perspectief op eigendom. Je bent financieel goed omringd en kan je permitteren meer bij te dragen voor wie dat niet kan.</p>
+        </div>
+      </div>
+      <div class="tarif-band tarif-reel">
+        <span class="tarif-letter">B</span>
+        <div>
+          <strong>Kostprijs: 19 € / dag <span class="tarif-total">— of 57 € voor 3 dagen</span></strong>
+          <p>Je hebt een stabiel inkomen en de eindjes lukken zonder al te veel stress. Je loon schommelt rond 1 200–1 600 € (zonder personen ten laste). Je hebt misschien een klein spaarpotje, of ouders op wie je kan terugvallen indien nodig.</p>
+        </div>
+      </div>
+      <div class="tarif-band tarif-reduit">
+        <span class="tarif-letter">C</span>
+        <div>
+          <strong>Verminderd tarief: 10 € / dag <span class="tarif-total">— of 30 € voor 3 dagen</span></strong>
+          <p>Je hebt geen vermogen en geen vast inkomen dat een stabiel dagelijks leven mogelijk maakt. Je rekent regelmatig op de solidariteit van je omgeving.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="thuno-formula-note" style="margin-top:16px;">
+      Als je <strong>8 punten of meer</strong> scoort op de Privilègemeter → solidariteitstarief. <br>
+      Tussen <strong>4 en 7 punten</strong> → kostprijs. <br>
+      Minder dan <strong>4 punten</strong> → verminderd tarief. We helpen je graag als je twijfelt.
+    </p>
+
+    <!-- ── Camping tarief ── -->
+    <div class="tarif-camping-block">
+      <span class="tarif-camping-icon">⛺</span>
+      <div>
+        <strong>+ Campingbijdrage</strong>
+        <p>Als je op de camping wil slapen, kan je een bijdrage van <strong>± 5 € / dag</strong> toevoegen om bij te dragen aan het herstel van de locatie na het kamp.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════
+       SECTIE 4 — HOE INSCHRIJVEN
+  ══════════════════════════════════════════ -->
+  <div class="reveal" id="inscription">
+    <h2>🎟️ Hoe inschrijven?</h2>
+    <p class="section-lead">
+      Inschrijven gebeurt in <strong>twee verplichte stappen</strong>: de betaling (of de belofte om ter plaatse te betalen) <strong>EN</strong> het invullen van het formulier. Beide zijn onmisbaar.
+    </p>
+
+    <!-- Stap 1: Betaling -->
+    <div class="step-block">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Kies je betaalmethode</h3>
+        <p>Drie opties:</p>
+
+        <div class="paiement-options">
+
+          <div class="paiement-card">
+            <span class="paiement-icon">🏦</span>
+            <h4>Bankoverschrijving</h4>
+            <p>Doe een overschrijving naar de rekening "Fondation Marius Jacob":</p>
+            <div class="iban-block">
+              <code id="ibanCode"><strong>BE12 8919 6407 1892</strong></code>
+              <button class="copy-btn" onclick="copyIban()" title="IBAN kopiëren">📋</button>
+            </div>
+            <p class="paiement-note">Vermeld <strong>BAF</strong> als mededeling.</p>
+          </div>
+
+          <div class="paiement-card">
+            <span class="paiement-icon">📱</span>
+            <h4>QR-code (overschrijving)</h4>
+            <p>Scan de QR-code met je bank-app:</p>
+            <div class="qr-wrap">
+              <img src="../QR_CODE_BAF_Camp.png" alt="QR-code overschrijving BAF Camp" class="qr-img">
+            </div>
+            <p class="paiement-note">Compatibel met alle Belgische bank-apps. Vergeet niet <strong>BAF</strong> te vermelden als mededeling.</p>
+          </div>
+
+          <div class="paiement-card paiement-cash">
+            <span class="paiement-icon">💵</span>
+            <h4>Ter plaatse betalen (cash)</h4>
+            <p>Je kan cash betalen aan de ingang van het festival. <strong>Vul in elk geval het formulier in</strong> met het verwachte bedrag.</p>
+            <div class="cash-warning">
+              ⚠️ We raden je <strong>sterk</strong> aan om vooraf te betalen als dat kan — dat helpt ons de kosten in te schatten, het budget te beheren en onze organisatiestress te verminderen!
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Stap 2: Formulier -->
+    <div class="step-block">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Het inschrijvingsformulier invullen</h3>
+        <p>
+          Na het betalen (of de beslissing om ter plaatse te betalen), <strong>vul je het inschrijvingsformulier in</strong>. Zo kunnen we bijhouden welk bedrag je hebt betaald of gepland.
+        </p>
+        <p>
+          Aan de ingang van het festival controleren we de inschrijvingen:
+        </p>
+        <ul class="check-list">
+          <li>✅ Je hebt vooraf betaald → we controleren het bedrag, welkom!</li>
+          <li>💵 Je hebt gezegd ter plaatse te betalen → we vragen je om aan de inkom te betalen.</li>
+        </ul>
+        <a href="https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306" class="btn btn-primary" target="_blank" rel="noopener">
+          📝 &nbsp;Inschrijvingsformulier invullen →
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════
+       SECTIE 5 — WAAROM VOORAF BETALEN
+  ══════════════════════════════════════════ -->
+  <div class="reveal">
+    <h2>💡 Waarom vooraf betalen?</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-icon">📊</span>
+        <h3 class="card-title">Kosten inschatten</h3>
+        <p class="card-text">Zo kunnen we de festivaluitgaven vooraf plannen en op tijd bestellen wat nodig is.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🧮</span>
+        <h3 class="card-title">Budget beheren</h3>
+        <p class="card-text">We krijgen een duidelijk beeld van wat nog gefinancierd moet worden en mogelijke tekorten.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🧘</span>
+        <h3 class="card-title">Stress verminderen</h3>
+        <p class="card-text">Financiële zekerheid vooraf betekent minder druk voor het organisatieteam. En dat merk je tijdens het kamp!</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📖</span>
+        <h3 class="card-title">Open boekhouding</h3>
+        <p class="card-text">Alle budgetdetails worden volledig transparant gepubliceerd op de pagina <a href="financements.html">Financiering</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════
+       SECTIE 6 — EEN VRAAG?
+  ══════════════════════════════════════════ -->
+  <div class="reveal">
+    <h2>Een vraag?</h2>
+    <p style="font-family:'Libre Baskerville',serif; font-size:.95rem; line-height:1.8; color:var(--encre); max-width:600px;">
+      Voor elke vraag over de tickets, de vrije bijdrage of financiële toegankelijkheid, schrijf ons direct:
+    </p>
+    <a href="mailto:activismcampbelgium@proton.me?subject=Vraag ticketing" class="btn btn-primary" style="margin-top:16px; display:inline-block;">
+      ✉ &nbsp;Schrijf ons
+    </a>
+  </div>
+
+</div><!-- einde .page-content -->
+
+<style>
+/* ── Intro sections ── */
+.section-intro { max-width: 720px; }
+.section-lead {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .97rem;
+  line-height: 1.85;
+  color: var(--encre);
+  margin-bottom: 14px;
+  max-width: 720px;
+}
+
+.thuno-tool {
+  background: var(--blanc-sale);
+  border: var(--contour-lg);
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: var(--ombre-lg);
+  max-width: 760px;
+  margin-top: 24px;
+}
+
+.thuno-intro-label {
+  font-family: 'Space Mono', monospace;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--rose);
+  margin-bottom: 20px;
+}
+
+.thuno-group { margin-bottom: 28px; }
+
+.thuno-group-title {
+  font-family: 'Space Mono', monospace;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--encre);
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  background: var(--creme-fonce);
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.thuno-group-minus .thuno-group-title { background: #fde8e8; color: #c0392b; }
+
+.thuno-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: .88rem;
+  line-height: 1.6;
+  color: var(--encre);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .15s;
+  margin-bottom: 4px;
+}
+
+.thuno-item:hover { background: var(--creme); }
+
+.thuno-cb {
+  margin-top: 3px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--rose);
+}
+
+.thuno-result { text-align: center; }
+
+.thuno-tier-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.thuno-tier {
+  font-family: 'Space Mono', monospace;
+  font-size: .8rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: 2px solid transparent;
+  opacity: .35;
+  transition: all .3s;
+  letter-spacing: .04em;
+}
+
+.thuno-tier.active { opacity: 1; transform: scale(1.05); }
+.thuno-tier-high.active { background: #e8f5e9; border-color: #2e7d32; color: #2e7d32; }
+.thuno-tier-mid.active  { background: #fef3e2; border-color: #c0820b; color: #c0820b; }
+.thuno-tier-low.active  { background: #ede9f6; border-color: #6b5fa5; color: #6b5fa5; }
+
+.thuno-score-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.thuno-score-label {
+  font-family: 'Space Mono', monospace;
+  font-size: .75rem;
+  letter-spacing: .06em;
+  color: var(--sable);
+  text-transform: uppercase;
+}
+
+.thuno-score-value {
+  font-family: 'Space Mono', monospace;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--rose);
+  line-height: 1;
+}
+
+.thuno-reco {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .95rem;
+  line-height: 1.8;
+  color: var(--encre);
+  background: var(--creme);
+  border-radius: 10px;
+  padding: 16px 20px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.thuno-formula-note {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .82rem;
+  font-style: italic;
+  color: var(--sable);
+  margin-top: 10px;
+  max-width: 660px;
+  line-height: 1.7;
+}
+
+.tarif-scale {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 720px;
+  margin-top: 20px;
+}
+
+.tarif-band {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 18px 22px;
+  border-radius: 12px;
+  border-left: 5px solid transparent;
+}
+
+.tarif-band h4, .tarif-band strong {
+  font-family: 'Space Mono', monospace;
+  font-size: .88rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.tarif-band p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .85rem;
+  color: var(--encre);
+  margin: 4px 0 0;
+  line-height: 1.6;
+}
+
+.tarif-total {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .78rem;
+  font-weight: 400;
+  font-style: italic;
+  opacity: .75;
+}
+
+.tarif-letter {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  min-width: 48px;
+  flex-shrink: 0;
+  color: inherit;
+  opacity: .6;
+}
+
+.tarif-soutien { background: #f1f8e9; border-color: #558b2f; color: #558b2f; }
+.tarif-reel    { background: var(--creme); border-color: var(--sable); color: var(--encre); }
+.tarif-reduit  { background: #ede9f6; border-color: #6b5fa5; color: #6b5fa5; }
+
+.tarif-camping-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 20px;
+  max-width: 720px;
+  background: #f0f4ff;
+  border: 2px dashed #7b9de0;
+  border-radius: 12px;
+  padding: 18px 22px;
+}
+
+.tarif-camping-icon { font-size: 1.8rem; flex-shrink: 0; margin-top: 2px; }
+
+.tarif-camping-block strong {
+  font-family: 'Space Mono', monospace;
+  font-size: .88rem;
+  font-weight: 700;
+  color: #3a5a9a;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.tarif-camping-block p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .85rem;
+  color: var(--encre);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.step-block {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  max-width: 760px;
+}
+
+.step-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--rose);
+  background: var(--creme-fonce);
+  border: 2px solid var(--rose);
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.step-body h3 {
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--encre);
+  margin-bottom: 12px;
+}
+
+.step-body p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .92rem;
+  line-height: 1.8;
+  color: var(--encre);
+  margin-bottom: 10px;
+  max-width: 640px;
+}
+
+.paiement-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.paiement-card {
+  background: var(--blanc-sale);
+  border: var(--contour);
+  border-radius: 14px;
+  padding: 22px 18px;
+  transition: box-shadow .2s, transform .2s;
+}
+
+.paiement-card:hover { box-shadow: var(--ombre-lg); transform: translateY(-2px); }
+
+.paiement-icon { font-size: 2rem; display: block; margin-bottom: 10px; }
+
+.paiement-card h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--encre);
+  margin-bottom: 8px;
+}
+
+.paiement-card p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .85rem;
+  line-height: 1.6;
+  color: var(--encre);
+  margin-bottom: 8px;
+}
+
+.paiement-note { font-size: .78rem !important; color: var(--sable) !important; font-style: italic; }
+
+.iban-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--creme);
+  border: var(--contour);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.iban-block code {
+  font-family: 'Space Mono', monospace;
+  font-size: .82rem;
+  color: var(--encre);
+  flex: 1;
+  word-break: break-all;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 2px 6px;
+  border-radius: 6px;
+  transition: background .15s;
+  flex-shrink: 0;
+}
+.copy-btn:hover { background: var(--creme-fonce); }
+
+.qr-wrap { display: flex; justify-content: center; margin: 12px 0; }
+
+.qr-img {
+  width: 160px;
+  height: 100%;
+  border-radius: 12px;
+  border: 3px solid var(--rose);
+  object-fit: contain;
+  background: #fff;
+}
+
+.cash-warning {
+  background: #fef3e2;
+  border: 2px solid #f39c12;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: .83rem;
+  line-height: 1.6;
+  color: #7d5a00;
+  margin-top: 10px;
+}
+
+.paiement-cash { border-color: #f39c12; }
+
+.check-list { list-style: none; padding: 0; margin: 12px 0 20px; }
+
+.check-list li {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .92rem;
+  line-height: 1.7;
+  color: var(--encre);
+  padding: 6px 0;
+}
+
+@media (max-width: 600px) {
+  .thuno-tool { padding: 20px 16px; }
+  .thuno-item { font-size: .83rem; padding: 7px 6px; }
+  .tarif-band { flex-direction: column; gap: 6px; }
+  .tarif-camping-block { flex-direction: column; gap: 8px; }
+  .step-block { flex-direction: column; gap: 14px; }
+  .step-num { width: 40px; height: 40px; font-size: 1.3rem; }
+  .paiement-options { grid-template-columns: 1fr; }
+  .qr-img { width: 140px; height: 140px; }
+  .iban-block { flex-direction: column; align-items: flex-start; }
+}
+</style>
+
+<footer>
+  <div>
+    <div class="footer-logo">
+      <img src="../BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+    </div>
+    <p class="footer-tagline">Kom een klap krijgen!</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigatie</h4>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="programme.html">Programma</a></li>
+      <li><a href="nous-aider.html">Ons helpen</a></li>
+      <li><a href="infos.html">Praktische info</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Werking</h4>
+    <ul>
+      <li><a href="financements.html">Financiering</a></li>
+      <li><a href="charte.html">Charter</a></li>
+      <li><a href="autogestion.html">Zelfbeheer</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Netwerken</h4>
+    <ul>
+      <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Signal-groep vervoegen</a></li>
+      <li><a href="mailto:activismcampbelgium@proton.me">Onze proton-mail</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 BAF Camp — door en voor iedereen</span>
+    <span>Kom een klap krijgen!</span>
+  </div>
+</footer>
+
+<script>
+function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+
+document.getElementById('logoInput').addEventListener('change', function() {
+  const file = this.files[0]; if (!file) return;
+  document.getElementById('logoImg').src = URL.createObjectURL(file);
+});
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});
+
+function calculerThuno() {
+  const checkboxes = document.querySelectorAll('.thuno-cb');
+  let score = 0;
+  checkboxes.forEach(cb => { if (cb.checked) score += parseInt(cb.dataset.val); });
+
+  document.getElementById('thunoScoreVal').textContent = score > 0 ? '+' + score : score;
+  document.getElementById('thunoQuestions').style.display = 'none';
+  document.getElementById('thunoResult').style.display = 'block';
+
+  const high = document.getElementById('thunoTierHigh');
+  const mid  = document.getElementById('thunoTierMid');
+  const low  = document.getElementById('thunoTierLow');
+  [high, mid, low].forEach(el => el.classList.remove('active'));
+
+  const reco = document.getElementById('thunoReco');
+
+  if (score >= 8) {
+    high.classList.add('active');
+    reco.innerHTML = '🌟 <strong>Solidariteitstarief.</strong> Je leeft comfortabel: regelmatige vrije tijd, vakanties, loon boven 1 800 €, of perspectief op eigendom. Je kan meer bijdragen voor wie dat niet kan.';
+  } else if (score >= 4) {
+    mid.classList.add('active');
+    reco.innerHTML = '⚖️ <strong>Kostprijs.</strong> Je hebt een stabiel inkomen en de eindjes lukken zonder al te veel stress. Je loon schommelt rond 1 200–1 600 € (zonder personen ten laste). Je hebt misschien een klein spaarpotje, of ouders op wie je kan terugvallen.';
+  } else {
+    low.classList.add('active');
+    reco.innerHTML = '💚 <strong>Verminderd tarief.</strong> Je hebt geen vermogen en geen vast inkomen dat een stabiel dagelijks leven mogelijk maakt. Je rekent regelmatig op de solidariteit van je omgeving.';
+  }
+}
+
+function resetThuno() {
+  document.querySelectorAll('.thuno-cb').forEach(cb => cb.checked = false);
+  document.getElementById('thunoResult').style.display = 'none';
+  document.getElementById('thunoQuestions').style.display = 'block';
+}
+
+function copyIban() {
+  const iban = 'BE12 8919 6407 1892';
+  navigator.clipboard.writeText(iban).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = '✅';
+    setTimeout(() => btn.textContent = '📋', 2000);
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr"> 
+   
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Le BAF Camp est un festival militant belge de 4 jours à Grupont : ateliers, concerts, autogestion et militantisme. Édition 2026 du 20 au 23 août.">
+  <meta name="keywords" content="BAF Camp,BAF, Belgian Activism festival, festival militant Belgique, camp activisme, Grupont 2026">
+  <title>Financements — BAF Camp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  
+<body>
+<input type="file" id="logoInput" accept="image/*">
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap" >
+      <img id="logoImg" src="BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="programme.html">Programme</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Fonctionnement
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="financements.html"><span class="di">💰</span>Financements</a>
+        <a href="charte.html"><span class="di">📜</span>Notre charte</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Autogestion</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Informations
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="infos.html#acces"><span class="di">📍</span>Venir sur place</a>
+        <a href="infos.html#restauration"><span class="di">🍔</span>Se nourrir</a>
+        <a href="infos.html#camping"><span class="di">⛺</span>Le camping</a>
+        <a href="infos.html#bambinerie"><span class="di">🧸</span>La Bambinerie</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Nous aider
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="nous-aider.html"><span class="di">❤️</span>Faire un don</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
+        <a href="nous-aider.html#partager"><span class="di">📢</span>Partager</a>
+        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Prêter du matériel</a>
+      </div>
+    </li>
+    <li><a href="billetterie.html" class="btn nav-cta">Billetterie prix libre →</a></li>
+  </ul>
+
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="lang-switcher">
+  <a href="/index.html">FR</a>
+  <span>|</span>
+  <a href="/nl/index.html">NL</a>
+  <span>|</span>
+  <a href="/en/index.html">EN</a>
+</div>
+  
+</nav>
+
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ Finance &amp; Transparence</p>
+  <h1 class="page-hero-title">Financements</h1>
+  <p class="page-hero-sub">Comment le BAF Camp est financé et la présentation de notre budget en toute transparence.</p>
+</div>
+
+<div class="page-content">
+
+  <!-- Bandeau site en construction -->
+  <div class="reveal" style="margin-bottom:32px;">
+    <div class="construction-banner">
+      🚧 Site en construction — les informations complètes et definitives seront annoncées prochainement !
+    </div>
+  </div>
+
+  <div class="reveal">
+    <h2>Sources de financement</h2>
+    <p>Le camp est auto-financé. La grande majorité du festival est financée par les participant.e.s. Les sources financières majoritaires viendront des ventes de billets à prix libre, ainsi que des achats sur place. Pour cela : </p>
+
+    <!-- Iconographie "prévoyez du cash" -->
+    <div style="
+      display: inline-block;
+      margin: 40px auto 48px auto;
+      left: 50%;
+      text-align: center;
+      width: 100%;
+    ">
+      <div style="
+        display: inline-block;
+        border: 3px solid var(--encre);
+        border-radius: 8px;
+        box-shadow: 6px 6px 0 var(--encre);
+        background: var(--rose);
+        padding: 18px 60px;
+        position: relative;
+      ">
+        <div style="
+          font-family: 'Boogaloo', cursive;
+          font-size: 2.6rem;
+          letter-spacing: .08em;
+          text-transform: uppercase;
+          color: var(--creme);
+          text-shadow: 3px 3px 0 var(--encre), -1px -1px 0 var(--encre), 1px -1px 0 var(--encre), -1px 1px 0 var(--encre);
+        ">Prévoyez du cash !
+        </div>
+        <div style="
+          font-family: 'Libre Baskerville', serif;
+          font-size: .88rem;
+          color: var(--gris-encre);
+          margin-top: 8px;
+        ">Les distributeurs sont loin du site.</div>
+      </div>
+    </div>
+
+    <p>Voici comment nous prévoyons d'atteindre un équilibre financier soutenable.</p>
+
+    <div class="cards-grid">
+      <div class="card"><span class="card-icon">🎟️</span><h3 class="card-title">Billetterie</h3><p class="card-text">La vente de billets représente la principale source de revenus du festival. Prix libre conscient et éclairé.</p></div>
+      <div class="card"><span class="card-icon">🍺</span><h3 class="card-title">Bar &amp; Restauration</h3><p class="card-text">Les recettes du bar contribuent à l'équilibre financier de l'événement. Celles des repas reviendra à la cantine.</p></div>
+      <div class="card"><span class="card-icon">🔄</span><h3 class="card-title">Bénéfices ?</h3><p class="card-text">Une fois le festival à l'équilibre, nous utiliseront le potentiel bénéfice pour rétribuer les intervenaant.e.s. Après cela, l'ensemble des bénéfices éventuels de l'événement seront utilisés pour les luttes en cours ou à venir.</p></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="reveal">
+    <h2>Transparence budgétaire</h2>
+    <p>Les comptes du festival seront accessibles à tous.tes. Le bilan sera présenté après l'édition.</p>
+    <ul>
+      <li>Bilan financier 2026 disponible sur demande</li>
+      <li>Réinjection des bénéfices dans des projets de lutte</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <div class="reveal">
+    <h2>Nous soutenir</h2>
+    <p>Vous souhaitez devenir partenaire ou contribuer au projet ? Contactez-nous pour en discuter.</p>
+    <a href="nous-aider.html#don" class="btn btn-red">💌 &nbsp;Soutenir financièrement</a>
+  </div>
+
+</div>
+
+<footer>
+
+  <div>
+    <div class="footer-logo">
+      <img src="BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+    </div>
+    <p class="footer-tagline">Vient prendre une claque !</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="programme.html">Programme</a></li>
+      <li><a href="nous-aider.html">Nous aider</a></li>
+      <li><a href="infos.html">Infos pratiques</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Fonctionnement</h4>
+    <ul>
+      <li><a href="financements.html">Financements</a></li>
+      <li><a href="charte.html">Charte</a></li>
+      <li><a href="autogestion.html">Autogestion</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Réseaux</h4>
+    <ul>
+      <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Rejoins la boucle Signal</a></li>
+      <li><a href="mailto:activismcampbelgium@proton.me">Notre mail proton</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 BAF Camp — par et pour toustes</span>
+    <span>Vient prendre une claque !</span>
+  </div>
+</footer>
+
+
+
+<script>
+function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+document.getElementById('logoInput').addEventListener('change', function() {
+  const file = this.files[0]; if (!file) return;
+  const img = document.getElementById('logoImg');
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
+});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Met en gras la langue active selon l'URL
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});
+  
+</script>
+
+</body>
+</html>

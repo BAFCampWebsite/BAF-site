@@ -1,0 +1,382 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+   
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Le BAF Camp est un festival militant belge de 4 jours à Grupont : ateliers, concerts, autogestion et militantisme. Édition 2026 du 20 au 23 août.">
+  <meta name="keywords" content="BAF Camp,BAF, Belgian Activism festival, festival militant Belgique, camp activisme, Grupont 2026">
+  <title>Programme — BAF Camp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<input type="file" id="logoInput" accept="image/*">
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap" >
+      <img id="logoImg" src="BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="programme.html">Programme</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Fonctionnement
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="financements.html"><span class="di">💰</span>Financements</a>
+        <a href="charte.html"><span class="di">📜</span>Notre charte</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Autogestion</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Informations
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="infos.html#acces"><span class="di">📍</span>Venir sur place</a>
+        <a href="infos.html#restauration"><span class="di">🍔</span>Se nourrir</a>
+        <a href="infos.html#camping"><span class="di">⛺</span>Le camping</a>
+        <a href="infos.html#bambinerie"><span class="di">🧸</span>La Bambinerie</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Nous aider 
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="nous-aider.html"><span class="di">❤️</span>Faire un don</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Inscription bénevoles</a>
+        <a href="nous-aider.html#partager"><span class="di">📢</span>Partager</a>
+        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Prêter du matériel</a>
+      </div>
+    </li>
+    <li><a href="billetterie.html" class="btn nav-cta">Billetterie prix libre →</a></li>
+  </ul>
+
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="lang-switcher">
+  <a href="/index.html">FR</a>
+  <span>|</span>
+  <a href="/nl/index.html">NL</a>
+  <span>|</span>
+  <a href="/en/index.html">EN</a>
+  </div>
+  
+</nav>
+
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ Programme</p>
+  <h1 class="page-hero-title">Comment lutter ensemble ?</h1>
+  <p class="page-hero-sub">Le programme s'enroulera autour de cette question.</p>
+</div>
+
+<div class="page-content">
+
+  <!-- Bandeau site en construction -->
+  <div class="reveal" style="margin-bottom:32px;">
+    <div class="construction-banner">
+      🚧 Site en construction — le programme complet sera annoncé prochainement !
+    </div>
+  </div>
+<div class="reveal">
+  <h2>Construisons le programme ensemble !</h2>
+  <p>Le camp s'enroulera autour de deux concepts pour tenter d'éclairer les questions suivantes :<br>
+    <br>
+<strong>"Ensemble"</strong>" : Se situer et trouver nos points communs. <br>
+    Qu'est ce qu'on a en commun ? Comment améliorer l'inclusivité de nos luttes et se rendre accessible ?
+    Comment visibiliser nos désaccords et trouver des points d'entente autour desquels se rallier dans des bénéfices mutuels ?
+    Comment ne pas être oppresseurs les un.e.s des autres au sein de la lutte (antiracisme, dynamiques de pouvoir, féminisme, anti-validisme) ?
+<br>
+    <br>
+<strong> "La lutte"</strong>" : Visibilier et cartographier nos luttes.<br>
+    Comment nous appuyer les un.e.s sur les autres ? Quels sujets sont communs et quels sont les lieux de luttes à côté de chez nous ?
+    Quelles forces et spécificités peuvent être mobilisées? à quels endroits ? De quelles manières ? 
+    Partager nos experiences et notres façons de lutter, apprendre les un.e.s des autres (concepts, stratégies et idées créative de luttes). 
+    Comment créer un tissu logistique collectif puissant et efficace pour nos luttes ? </p>
+</div>
+
+<div class="reveal centre">
+
+  <!-- Titre en fil -->
+  <svg class="titre-fil" viewBox="0 0 600 120">
+    <path id="filPath"
+          d="M10,60 Q150,10 300,60 T590,60"
+          fill="none"
+          stroke="none"/>
+
+    <text class="fil-texte">
+      <textPath href="#filPath" startOffset="50%" text-anchor="middle">
+        Fil rouge de la programmation
+      </textPath>
+    </text>
+  </svg>
+
+  <!-- Bloc texte encadré -->
+  <div class="bloc-fil">
+    Découvrez les idées qui animeront le camp cette année. Fil rouge du programme à venir.
+  </div>
+
+</div>
+
+<style>
+  /* Conteneur centré */
+  .centre {
+    text-align: center;
+  }
+
+  /* SVG centré et même largeur que le bloc */
+  .titre-fil {
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  /* Texte = fil */
+  .fil-texte {
+    fill: none;
+    stroke: #c40000;
+    stroke-width: 1.2;
+    font-size: 20px;
+    font-family: cursive;
+    letter-spacing: 1px;
+  }
+
+  /* Bloc encadré aligné */
+  .bloc-fil {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 500px;
+
+    text-align: center;
+
+    border: 2px dashed #c40000;
+    border-radius: 20px;
+
+    font-size: 16px;
+  }
+</style>
+</style>
+</style>
+  <div class="reveal" style="margin-top:40px;">
+    <div style="display:flex; gap:4px; margin-bottom:32px; flex-wrap:wrap;" id="dayTabs">
+      <button class="day-tab active" onclick="switchDay(0,this)">Jeudi 20</button>
+      <button class="day-tab" onclick="switchDay(1,this)">Vendredi 21</button>
+      <button class="day-tab" onclick="switchDay(2,this)">Samedi 22</button>
+      <button class="day-tab" onclick="switchDay(3,this)">Dimanche 23</button>
+    </div>
+    <div id="dayContent"></div>
+  </div>
+
+  <hr class="divider">
+  <div class="reveal">
+    <h2>Les espaces</h2>
+    <div class="cards-grid">
+      <div class="card"><span class="card-icon">🔥</span><h3 class="card-title">Chapiteaux</h3><p class="card-text">De grands espaces pour des conférences débats pour le plus grands nombre.</p></div>
+      <div class="card"><span class="card-icon">❤️</span><h3 class="card-title">Ateliers</h3><p class="card-text">Des espaces conviviaux pour faire vivre activités et ateliers en petits groupes autour de problématiques précises.</p></div>
+      <div class="card"><span class="card-icon">📚</span><h3 class="card-title">Infrastructures permanentes</h3><p class="card-text">Plein de lieux variés en auto-gestion pour rencontrer, discuter et flaner ensemble.</p></div>
+      <div class="card"><span class="card-icon">🌊</span><h3 class="card-title">Le lac</h3><p class="card-text">Baignade autorisée pour se rafraîchir en cas de surchauffe du corps ou du cerveau.</p></div>
+   
+    </div>
+  </div>
+</div>
+
+<style>
+.construction-banner {
+  font-family: 'Space Mono', monospace;
+  font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+  background: var(--creme-fonce);
+  border: 2px dashed var(--rose);
+  border-radius: 8px;
+  padding: 14px 20px;
+  color: var(--rose-dark);
+  text-align: center;
+}
+
+.day-tab {
+  font-family: 'Space Mono', monospace;
+  font-size: .72rem; font-weight: 700; letter-spacing: .06em;
+  background: var(--blanc-sale);
+  color: var(--encre);
+  border: var(--contour);
+  border-radius: 20px;
+  padding: 8px 18px;
+  cursor: pointer;
+  box-shadow: var(--ombre);
+  transition: transform .12s, box-shadow .12s, background .12s, color .12s;
+}
+.day-tab:hover:not(.active) {
+  background: var(--creme-fonce);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--ombre-lg);
+}
+.day-tab:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+.day-tab.active {
+  background: var(--blanc-sale);
+  color: var(--rose) !important;
+  border-color: var(--rose);
+  box-shadow: var(--ombre-rose);
+}
+
+.day-editor {
+  background: var(--blanc-sale);
+  border: var(--contour-lg);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: var(--ombre-lg);
+  min-height: 280px;
+}
+.day-editor-label {
+  font-family: 'Space Mono', monospace;
+  font-size: .65rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--gris-encre);
+  margin-bottom: 12px;
+  display: block;
+}
+.day-editor textarea {
+  width: 100%;
+  min-height: 220px;
+  background: var(--creme);
+  border: 1px solid var(--sable);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: .92rem; line-height: 1.8;
+  color: var(--encre);
+  resize: vertical;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.day-editor textarea:focus {
+  border-color: var(--rose);
+  box-shadow: var(--ombre-rose);
+}
+.day-editor textarea::placeholder {
+  color: var(--sable);
+  font-style: italic;
+}
+</style>
+
+<script>
+const jours = ['Jeudi 20', 'Vendredi 21', 'Samedi 22', 'Dimanche 23'];
+const contenu = [
+  `Après une semaine de montage collectif, ouverture du camp autour de midi.`,
+  `Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : "Comment lutter ensemble ?" par tou.te.s pour tou.te.s!
+Si tu as un atelier ou un stand à proposer, un projet à lancer ou une thématique pour une conférence à proposer
+- N'hésite pas à remplir <a href="https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054"> notre appel à contributions </a> 👊. <br>
+<strong>Construisons le programme ensemble !</strong>`,
+  `Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : "Comment lutter ensemble ?" par tou.te.s pour tou.te.s!
+Si tu as un atelier ou un stand à proposer, un projet à lancer ou une thématique pour une conférence à proposer 
+- N'hésite pas à remplir <a href="https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054"> notre appel à contributions </a> 👊.<br>
+<strong>Construisons le programme ensemble !</strong>`,
+  `Critique du festival et propositions pour les prochaines éditions. Avec quoi on repart ? Qu'est-ce qui reste ? Fin du festival autour de midi ! Place à 3 jours de démontage et rangement collectif !`
+];
+
+function switchDay(i, btn) {
+  // Sauvegarde le texte du jour actuel
+  const active = document.querySelector('.day-tab.active');
+  if (active) {
+    const idx = [...document.querySelectorAll('.day-tab')].indexOf(active);
+    const ta = document.querySelector('.day-editor textarea');
+    if (ta) contenu[idx] = ta.value;
+  }
+  document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderDay(i);
+}
+
+function renderDay(i) {
+  document.getElementById('dayContent').innerHTML = `
+    <div class="day-editor">
+      <span class="day-editor-label">Programme — ${jours[i]}</span>
+      <p style="font-family:'Libre Baskerville',serif; font-size:.92rem; line-height:1.8; color:var(--encre);">${contenu[i]}</p>
+    </div>
+  `;
+}
+
+renderDay(0);
+</script>
+
+<footer>
+  <div>
+    <div class="footer-logo">
+      <img src="BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+    </div>
+    <p class="footer-tagline">Vient prendre une claque !</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="programme.html">Programme</a></li>
+      <li><a href="nous-aider.html">Nous aider</a></li>
+      <li><a href="infos.html">Infos pratiques</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Fonctionnement</h4>
+    <ul>
+      <li><a href="financements.html">Financements</a></li>
+      <li><a href="charte.html">Charte</a></li>
+      <li><a href="autogestion.html">Autogestion</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Réseaux</h4>
+    <ul>
+      <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Rejoins la boucle Signal</a></li>
+      <li><a href="mailto:activismcampbelgium@proton.me">Notre mail proton</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 BAF Camp — par et pour toustes</span>
+    <span>Vient prendre une claque !</span>
+  </div>
+</footer>
+
+<script>
+function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+document.getElementById('logoInput').addEventListener('change', function() {
+  const file = this.files[0]; if (!file) return;
+  const img = document.getElementById('logoImg');
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+  document.getElementById('logoPlaceholder').style.display = 'none';
+});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Met en gras la langue active selon l'URL
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});
+
+
+</script>
+
+</body>
+</html>

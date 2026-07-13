@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">  
+   
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Le BAF Camp est un festival militant belge de 4 jours à Grupont : ateliers, concerts, autogestion et militantisme. Édition 2026 du 20 au 23 août.">
+  <meta name="keywords" content="BAF Camp,BAF, Belgian Activism festival, festival militant Belgique, camp activisme, Grupont 2026">
+  <title>Nous aider — BAF Camp</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+  
+<body>
+<!-- Input pour le logo -->
+<input type="file" id="logoInput" accept="image/*">
+
+<!-- NAVIGATION -->
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap" >
+      <img id="logoImg" src="BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
+  </a>
+
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="programme.html">Programme</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Fonctionnement
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="financements.html"><span class="di">💰</span>Financements</a>
+        <a href="charte.html"><span class="di">📜</span>Notre charte</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Autogestion</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Informations
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="infos.html#acces"><span class="di">📍</span>Venir sur place</a>
+        <a href="infos.html#restauration"><span class="di">🍔</span>Se nourrir</a>
+        <a href="infos.html#camping"><span class="di">⛺</span>Le camping</a>
+        <a href="infos.html#bambinerie"><span class="di">🧸</span>La Bambinerie</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Nous aider
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="nous-aider.html"><span class="di">❤️</span>Faire un don</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Inscriptions bénévoles</a>
+        <a href="nous-aider.html#partager"><span class="di">📢</span>Partager</a>
+        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Prêter du matériel</a>
+      </div>
+    </li>
+    <li><a href="billetterie.html" class="btn nav-cta">Billetterie prix libre →</a></li>
+  </ul>
+
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="lang-switcher">
+    <a href="/index.html">FR</a>
+    <span>|</span>
+    <a href="/nl/index.html">NL</a>
+    <span>|</span>
+    <a href="/en/index.html">EN</a>
+  </div>
+  
+</nav>
+
+<!-- HERO HEADER -->
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ Soutien &amp; Engagement</p>
+  <h1 class="page-hero-title">Nous aider</h1>
+  <p class="page-hero-sub">Faire un don, partager l'événement ou prêter du matériel pour réussir ensemble.</p>
+</div>
+
+<div class="page-content">
+
+  <!-- SECTION 0 : NOUS REJOINDRE -->
+  <div class="reveal" id="rejoindre">
+    <h2>Rejoins nous !</h2>
+    <p>Ce camp sera la somme (voire plus !) des personnes qui le composeront. Vient ajouter ton poids dans la balance.<br>
+      Aucune compétence ou légitimité initiale n'est requise pour pouvoir aider. Des aménagements seront faits en fonction des demandes. Voici les 3 degrés d'investissement possibles :</p>
+
+    <div class="cards-grid">
+      <!-- Carte 1 -->
+      <div class="card">
+        <span class="card-icon">🤩</span>
+        <h3 class="card-title">Devenir bénévole</h3>
+        <p class="card-text">Prends du temps sur ton camp pour aider au bon déroulement de la vie sur place. Si chacun.e donne 2 h / jour tous les shifts seront complets !</p>
+        <a href="autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">
+          🫶 &nbsp; Je m'inscris
+        </a>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="card">
+        <span class="card-icon">⚒️</span>
+        <h3 class="card-title">Aider au montage et démontage du camp</h3>
+        <p class="card-text">Eh oui ! Le camp sera en fait un peu plus long qu'annoncé : le montage commence à partir du 16 août et le démontage se poursuit jusqu'au 26 août.</p>
+        <a href="autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">
+          🎪 &nbsp; Je serai là !
+        </a>
+      </div>
+
+      <!-- Carte 3 -->
+      <div class="card">
+        <span class="card-icon">👋</span>
+        <h3 class="card-title">Rejoindre un GT</h3>
+        <p class="card-text">Rejoint l'organisation en intègrant un groupe de travail dès maintenant pour aider à préparer et façonner le camp en amont.</p>
+        <a href="autogestion.html" class="btn btn-red" style="display: inline-block; padding: 15px 40px; font-size: 1.2em;">
+          ❤️ &nbsp; Découvrir les GT
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 1 : FAIRE UN DON -->
+  <div id="don" class="reveal">
+    <h2>Faire un don</h2>
+    <p class="section-lead" style="font-size: 1.1em; line-height: 1.6; margin-bottom: 30px;">
+      Parceque nous voulons créer un espace accessible, il n'y aura pas de restriction d'accès autre que celle de la place disponible sur le lieu du camp.<br>
+      Cependant, malgré le travail de centaines de bénévoles, certaines dépenses persistent et sont incompressibles.<br>
+      Votre don, aussi modeste soit-il, nous permet de rester indépendants et fidèles à nos valeurs.
+    </p>
+
+    <div class="paiement-options">
+
+      <div class="paiement-card">
+        <span class="paiement-icon">🏦</span>
+        <h4>Virement bancaire</h4>
+        <p>Fais un virement au compte "Fondation Marius Jacob" :</p>
+        <div class="iban-block">
+          <code id="ibanCode"><strong>BE12 8919 6407 1892</strong></code>
+          <button class="copy-btn" onclick="copyIban()" title="Copier l'IBAN">📋</button>
+        </div>
+        <p class="paiement-note">Indique <strong>Don BAF</strong> en communication.</p>
+      </div>
+
+      <div class="paiement-card">
+        <span class="paiement-icon">📱</span>
+        <h4>QR Code (virement)</h4>
+        <p>Scanne le QR code avec ton app bancaire :</p>
+        <div class="qr-wrap">
+          <img src="QR_CODE_BAF_Camp.png" alt="QR code virement BAF Camp" class="qr-img">
+        </div>
+        <p class="paiement-note">Compatible avec toutes les apps bancaires belges. Pense à indiquer <strong>Don BAF</strong> en communication.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 2 : PARTAGER L'ÉVÉNEMENT -->
+  <div class="reveal" id="partager">
+    <h2>Partager l'événement</h2>
+    <p>Aidez-nous à faire du bruit ! Téléchargez, imprimez et distribuez nos supports de communication dans vos quartiers, écoles et lieux préférés.</p>
+
+    <div class="cards-grid">
+      <!-- Fichier 1 -->
+      <div class="card">
+        <span class="card-icon">📄</span>
+        <h3 class="card-title">Affiche A3</h3>
+        <p class="card-text">À imprimer et coller dans vos lieux favoris.</p>
+        <p style="font-size: 0.9em; color: #888; font-style: italic;">Lien à venir</p>
+      </div>
+
+      <!-- Fichier 2 -->
+      <div class="card">
+        <span class="card-icon">📄</span>
+        <h3 class="card-title">Flyer A5</h3>
+        <p class="card-text">Format pratique pour la distribution de main à main.</p>
+        <p style="font-size: 0.9em; color: #888; font-style: italic;">Lien à venir</p>
+      </div>
+
+      <!-- Fichier 3 -->
+      <div class="card">
+        <span class="card-icon">🏷️</span>
+        <h3 class="card-title">Autocollants</h3>
+        <p class="card-text">Pour marquer les esprits partout où vous allez.</p>
+        <p style="font-size: 0.9em; color: #888; font-style: italic;">Lien à venir</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 3 : PRÊT DE MATÉRIEL -->
+  <div class="reveal" id="materiel">
+    <h2>Prêt de matériel</h2>
+    <p>Vous disposez de matériel (sono, éclairage, tente, barrières, etc.) et souhaitez nous le prêter pour la durée du festival ? Nous sommes preneurs !</p>
+
+    <div style="background-color: #f9f9f9; padding: 30px; border-radius: 8px; text-align: center; margin-top: 20px;">
+      <p style="color: black;">Contactez-nous à l'adresse suivante :</p>
+      <a href="mailto:activismcampbelgium@proton.me" class="btn btn-red" style="display: inline-block; margin-bottom: 20px;">
+        ✉️ &nbsp; activismcampbelgium@proton.me
+      </a>
+      <p style="background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; display: inline-block; font-weight: bold; border: 1px solid #ffeeba;">
+        ⚠️ Important : Merci de mettre <strong>"Prêt de matériel"</strong> dans l'objet de votre email.
+      </p>
+    </div>
+  </div>
+
+</div><!-- fin .page-content -->
+
+<!-- STYLES SPÉCIFIQUES -->
+<style>
+.section-lead {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .97rem;
+  line-height: 1.85;
+  color: var(--encre);
+  margin-bottom: 14px;
+  max-width: 720px;
+}
+
+.paiement-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+  max-width: 560px;
+}
+
+.paiement-card {
+  background: var(--blanc-sale);
+  border: var(--contour);
+  border-radius: 14px;
+  padding: 22px 18px;
+  transition: box-shadow .2s, transform .2s;
+}
+
+.paiement-card:hover {
+  box-shadow: var(--ombre-lg);
+  transform: translateY(-2px);
+}
+
+.paiement-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.paiement-card h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--encre);
+  margin-bottom: 8px;
+}
+
+.paiement-card p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: .85rem;
+  line-height: 1.6;
+  color: var(--encre);
+  margin-bottom: 8px;
+}
+
+.paiement-note {
+  font-size: .78rem !important;
+  color: var(--sable) !important;
+  font-style: italic;
+}
+
+.iban-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--creme);
+  border: var(--contour);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.iban-block code {
+  font-family: 'Space Mono', monospace;
+  font-size: .82rem;
+  color: var(--encre);
+  flex: 1;
+  word-break: break-all;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 2px 6px;
+  border-radius: 6px;
+  transition: background .15s;
+  flex-shrink: 0;
+}
+.copy-btn:hover { background: var(--creme-fonce); }
+
+.qr-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.qr-img {
+  width: 160px;
+  height: 100%;
+  border-radius: 12px;
+  border: 3px solid var(--rose);
+  object-fit: contain;
+  background: #fff;
+}
+
+@media (max-width: 600px) {
+  .paiement-options { grid-template-columns: 1fr; }
+  .iban-block { flex-direction: column; align-items: flex-start; }
+  .qr-img { width: 140px; height: 140px; }
+}
+</style>
+
+<footer>
+  <div>
+    <div class="footer-logo">
+      <img src="BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+    </div>
+    <p class="footer-tagline">Vient prendre une claque !</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="programme.html">Programme</a></li>
+      <li><a href="nous-aider.html">Nous aider</a></li>
+      <li><a href="infos.html">Infos pratiques</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Fonctionnement</h4>
+    <ul>
+      <li><a href="financements.html">Financements</a></li>
+      <li><a href="charte.html">Charte</a></li>
+      <li><a href="autogestion.html">Autogestion</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Réseaux</h4>
+    <ul>
+      <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Rejoins la boucle Signal</a></li>
+      <li><a href="mailto:activismcampbelgium@proton.me">Notre mail proton</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 BAF Camp — par et pour toustes</span>
+    <span>Vient prendre une claque !</span>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+document.getElementById('logoInput').addEventListener('change', function() {
+  const file = this.files[0]; if (!file) return;
+  const img = document.getElementById('logoImg');
+  img.src = URL.createObjectURL(file);
+  img.style.display = 'block';
+});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});
+
+function copyIban() {
+  const iban = 'BE12 8919 6407 1892';
+  navigator.clipboard.writeText(iban).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = '✅';
+    setTimeout(() => btn.textContent = '📋', 2000);
+  });
+}
+</script>
+
+</body>
+</html>

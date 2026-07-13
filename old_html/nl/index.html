@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="nl">  
+   
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>BAF Camp 2026</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+  
+
+  <body>
+<input type="file" id="logoInput" accept="image/*" style="display:none">
+<nav>
+ <a class="nav-logo">
+    <div class="logo-img-wrap">
+      <img id="logoImg" src="../BAF icône.png" alt="Logo BAF Camp">
+    </div>
+    <span class="nav-site-name">BAF <span>CAMP</span></span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="programme.html">Programma</a></li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Werking
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="financements.html"><span class="di">💰</span>Financiering</a>
+        <a href="charte.html"><span class="di">📜</span>Ons charter</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Zelfbeheer</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Informatie
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="infos.html#acces"><span class="di">📍</span>Hoe geraken</a>
+        <a href="infos.html#restauration"><span class="di">🍔</span>Eten</a>
+        <a href="infos.html#camping"><span class="di">⛺</span>Camping</a>
+        <a href="infos.html#bambinerie"><span class="di">🧸</span>De Bambinerie</a>
+      </div>
+    </li>
+    <li>
+      <button onclick="toggleDD(this.parentElement)">Ons helpen
+        <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown">
+        <a href="nous-aider.html"><span class="di">❤️</span>Doneren</a>
+        <a href="autogestion.html"><span class="di">🙌</span>Vrijwilligers inschrijving</a>
+        <a href="nous-aider.html#partager"><span class="di">📢</span>Delen</a>
+        <a href="nous-aider.html#materiel"><span class="di">🔌</span>Materiaal uitlenen</a>
+      </div>
+    </li>
+    <li><a href="billetterie.html" class="btn nav-cta">Ticketing vrije prijs →</a></li>
+  </ul> 
+
+  <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="lang-switcher">
+     <a href="/index.html">FR</a>
+     <span>|</span>
+     <a href="/nl/index.html">NL</a>
+     <span>|</span>
+     <a href="/en/index.html">EN</a>
+  </div>
+</nav>
+<!-- Input fichiers cachés -->
+<input type="file" id="logoInput" accept="image/*">
+<input type="file" id="heroInput" accept="image/*">
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero-section">
+  <div class="hero-bg">
+    <img id="heroImg" src="" alt="" style="opacity:.28">
+    <div class="hero-bg-overlay"></div>
+  </div>
+
+ <div class="hero-inner">
+  <div class="hero-content">
+    <div class="hero-eyebrow">✮ Editie 2026 ✮</div>
+    <div class="hero-logo">
+      <img src="../BAF Logo.png" alt="BAF Camp" id="heroLogoImg"></div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-meta-grid">
+      <div class="meta-item">
+        <span class="meta-label">Datum</span>
+        <span class="meta-value">20–23 augustus 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Plaats</span>
+        <span class="meta-value">
+          <a href="/nl/infos.html" style="color:inherit; text-decoration:none;">De Moulin-tuinen in Grupont</a>
+        </span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Op het programma</span>
+        <a href="/nl/programme.html" style="text-decoration:none;">
+          <span class="meta-value">Workshops, rondetafelgesprekken, concerten, optredens &amp; en activiteiten</span>
+        </a>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Doel</span>
+        <span class="meta-value">
+          <a href="/nl/infos.html" style="color:inherit; text-decoration:none;">Alle vrijwilligers helpen mee om het kamp draaiende te houden</a>
+        </span>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="/nl/billetterie.html" class="btn btn-primary">Tickets kopen</a>
+      <a href="/nl/programme.html" class="btn btn-outline-hero">Bekijk het programma →</a>
+      <a href="/nl/autogestion.html" class="btn btn-primary">Word vrijwilliger</a>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<!-- ══ EN BREF ══ -->
+<section class="section-en-bref reveal" id="en-bref-section">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">Het BAF Camp</p>
+      <h2 class="section-title">In het kort</h2>
+    </div>
+  </div>
+  <div class="cards-grid" style="position:relative; z-index:1;">
+    <div class="card">
+      <span class="card-icon">🎤</span>
+      <h3 class="card-title">Programma</h3>
+      <p class="card-text">Sprekers en artiesten op verschillende podia tijdens vier dagen vol strijd en feest. Het programma wordt samen vormgegeven: Stel een bijdrage voor via onze <a href="https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054">Framaform-pagina</a> !</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🏕️</span>
+      <h3 class="card-title">Camping</h3>
+      <p class="card-text">De camping is vanaf maandagavond 17 augustus open voor ieder die wil helpen met het opbouwen en afbreken van het kamp, tot en met 26 augustus (einde van de afbouw).</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🫵</span>
+      <h3 class="card-title">Zelfbeheer</h3>
+      <p class="card-text">Wie je ook bent, sluit je aan bij ons team door ons <a href="mailto:Activismcampbelgium@proton.me?subject=Rejoindre%20l%27organisation%20du%20BAF"
+           style="display:inline-block;background:#C466D2;color:#fff;font-size:14px;font-weight:500;padding:2px 12px;border-radius:20px;text-decoration:none;vertical-align:middle;box-shadow:2px 3px 0 #6B5A4A;position:relative;top:-1px;">een e-mail te sturen</a> om mee te helpen, zowel vooraf als ter plaatse.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="section-contact" id="contact">
+  <div style="position:relative; z-index:1;">
+    <p class="section-eyebrow reveal" style="display:inline-block; margin-bottom:16px;">Contact houden</p>
+    <h2 class="section-title reveal" style="margin-bottom:20px;">Een vraag?</h2>
+    <p class="contact-sub reveal">Wij staan klaar om op je vragen te antwoorden.</p>
+    <a href="mailto:activismcampbelgium@proton.me" class="btn btn-primary reveal" style="margin:0 auto;">✉ Schrijf ons</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+
+<footer>
+
+  <div>
+    <div class="footer-logo">
+      <img src="../BAF Logo.png" alt="Logo BAF Camp" id="footerLogoImg"></div>
+    <p class="footer-tagline">Geef er een klap op!</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigatie</h4>
+    <ul>
+      <li><a href="/nl/index.html">Welkom</a></li>
+      <li><a href="/nl/programme.html">Programma</a></li>
+      <li><a href="/nl/nous-aider.html">Help ons</a></li>
+      <li><a href="/nl/infos.html">Praktische informatie</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Organisatie</h4>
+    <ul>
+      <li><a href="/nl/financements.html">Financiering</a></li>
+      <li><a href="/nl/charte.html">Charter</a></li>
+      <li><a href="/nl/autogestion.html">Zelfbeheer</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Netwerken</h4>
+    <ul>
+      <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
+      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">Sluit je aan bij de Signal-groep</a></li>
+      <li><a href="mailto:activismcampbelgium@proton.me">Ons proton mailadres</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 BAF Camp – door en voor iedereen</span>
+    <span>Geef er een klap op!</span>
+  </div>
+</footer>
+
+<script>
+/* ── NAV ── */
+function toggleDD(li) {
+  const was = li.classList.contains('open');
+  document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!was) li.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-links > li'))
+    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+});
+
+/* ── REVEAL ── */
+const obs = new IntersectionObserver(entries =>
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: .1 }
+);
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── LOGO & HERO BG ── */
+function fileToBase64(file) {
+  return new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(r.result);
+    r.onerror = rej;
+    r.readAsDataURL(file);
+  });
+}
+
+function applyNavLogo(src) {
+  document.getElementById('logoImg').src = src;
+}
+
+function applyFooterLogo(src) {
+  document.getElementById('footerLogoImg').src = src;
+}
+
+function applyHeroBg(src, op) {
+  const img = document.getElementById('heroImg');
+  img.src = src;
+  img.style.opacity = (op ?? 28) / 100;
+}
+
+/* Charger depuis localStorage au démarrage */
+(function () {
+  const n  = localStorage.getItem('baf_logo_nav');
+  const bg = localStorage.getItem('baf_hero_bg');
+  const op = localStorage.getItem('baf_hero_opacity') || 28;
+  if (n)  { applyNavLogo(n); applyFooterLogo(n); }
+  if (bg) applyHeroBg(bg, Number(op));
+})();
+
+/* Logo (navbar + footer partagent la même image) */
+document.getElementById('logoInput').addEventListener('change', async function () {
+  const f = this.files[0]; if (!f) return;
+  try {
+    const b = await fileToBase64(f);
+    localStorage.setItem('baf_logo_nav', b);
+    applyNavLogo(b);
+    applyFooterLogo(b);
+  } catch { alert('Fichier trop lourd.'); }
+  this.value = '';
+});
+
+/* Image de fond du hero */
+document.getElementById('heroInput').addEventListener('change', async function () {
+  const f = this.files[0]; if (!f) return;
+  try {
+    const b = await fileToBase64(f);
+    localStorage.setItem('baf_hero_bg', b);
+    localStorage.setItem('baf_hero_opacity', 28);
+    applyHeroBg(b, 28);
+  } catch { alert('Photo trop lourde.'); }
+  this.value = '';
+});
+
+  // Met en gras la langue active selon l'URL
+document.querySelectorAll('.lang-switcher a').forEach(a => {
+  if (window.location.pathname.startsWith('/nl') && a.href.includes('/nl/')) a.classList.add('active');
+  else if (window.location.pathname.startsWith('/en') && a.href.includes('/en/')) a.classList.add('active');
+  else if (!window.location.pathname.startsWith('/en') && !window.location.pathname.startsWith('/nl') && a.href.endsWith('/index.html') && !a.href.includes('/en/') && !a.href.includes('/nl/')) a.classList.add('active');
+});
+  
+</script>
+
+</body>
+</html>
