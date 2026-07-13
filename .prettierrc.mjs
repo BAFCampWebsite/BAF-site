@@ -5,6 +5,7 @@ export default {
   printWidth: 120,
   // tabWidth: 2,
   plugins: ['prettier-plugin-astro'],
+  singleAttributePerLine: true,
   overrides: [
     {
       files: '*.astro',

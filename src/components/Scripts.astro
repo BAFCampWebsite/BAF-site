@@ -3,84 +3,97 @@ import { getLocale } from 'astro-intl';
 
 const lang = getLocale();
 ---
+
 <script is:inline>
-document.querySelectorAll('.dd-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const li = this.parentElement;
-    const was = li.classList.contains('open');
-    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
-    if (!was) li.classList.add('open');
+  document.querySelectorAll('.dd-btn').forEach((btn) => {
+    btn.addEventListener('click', function () {
+      const li = this.parentElement;
+      const was = li.classList.contains('open');
+      document.querySelectorAll('.nav-links > li').forEach((l) => l.classList.remove('open'));
+      if (!was) li.classList.add('open');
+    });
   });
-});
 
-document.addEventListener('click', e => {
-  if (!e.target.closest('.nav-links > li'))
-    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
-});
-
-document.getElementById('burgerBtn')?.addEventListener('click', function() {
-  document.getElementById('navLinks').classList.toggle('open');
-});
-
-const obs = new IntersectionObserver(entries =>
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-  { threshold: .1 }
-);
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-});
-
-function fileToBase64(file) {
-  return new Promise((res, rej) => {
-    const r = new FileReader();
-    r.onload = () => res(r.result);
-    r.onerror = rej;
-    r.readAsDataURL(file);
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-links > li'))
+      document.querySelectorAll('.nav-links > li').forEach((l) => l.classList.remove('open'));
   });
-}
 
-function applyNavLogo(src) {
-  document.getElementById('logoImg').src = src;
-}
+  document.getElementById('burgerBtn')?.addEventListener('click', function () {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
 
-function applyFooterLogo(src) {
-  document.getElementById('footerLogoImg').src = src;
-}
+  const obs = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      }),
+    { threshold: 0.1 },
+  );
 
-function applyHeroBg(src, op) {
-  const img = document.getElementById('heroImg');
-  img.src = src;
-  img.style.opacity = (op ?? 28) / 100;
-}
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+  });
 
-(function () {
-  const n  = localStorage.getItem('baf_logo_nav');
-  const bg = localStorage.getItem('baf_hero_bg');
-  const op = localStorage.getItem('baf_hero_opacity') || 28;
-  if (n)  { applyNavLogo(n); applyFooterLogo(n); }
-  if (bg) applyHeroBg(bg, Number(op));
-})();
+  function fileToBase64(file) {
+    return new Promise((res, rej) => {
+      const r = new FileReader();
+      r.onload = () => res(r.result);
+      r.onerror = rej;
+      r.readAsDataURL(file);
+    });
+  }
 
-document.getElementById('logoInput')?.addEventListener('change', async function () {
-  const f = this.files[0]; if (!f) return;
-  try {
-    const b = await fileToBase64(f);
-    localStorage.setItem('baf_logo_nav', b);
-    applyNavLogo(b);
-    applyFooterLogo(b);
-  } catch { alert('Fichier trop lourd.'); }
-  this.value = '';
-});
+  function applyNavLogo(src) {
+    document.getElementById('logoImg').src = src;
+  }
 
-document.getElementById('heroInput')?.addEventListener('change', async function () {
-  const f = this.files[0]; if (!f) return;
-  try {
-    const b = await fileToBase64(f);
-    localStorage.setItem('baf_hero_bg', b);
-    localStorage.setItem('baf_hero_opacity', 28);
-    applyHeroBg(b, 28);
-  } catch { alert('Photo trop lourde.'); }
-  this.value = '';
-});
+  function applyFooterLogo(src) {
+    document.getElementById('footerLogoImg').src = src;
+  }
+
+  function applyHeroBg(src, op) {
+    const img = document.getElementById('heroImg');
+    img.src = src;
+    img.style.opacity = (op ?? 28) / 100;
+  }
+
+  (function () {
+    const n = localStorage.getItem('baf_logo_nav');
+    const bg = localStorage.getItem('baf_hero_bg');
+    const op = localStorage.getItem('baf_hero_opacity') || 28;
+    if (n) {
+      applyNavLogo(n);
+      applyFooterLogo(n);
+    }
+    if (bg) applyHeroBg(bg, Number(op));
+  })();
+
+  document.getElementById('logoInput')?.addEventListener('change', async function () {
+    const f = this.files[0];
+    if (!f) return;
+    try {
+      const b = await fileToBase64(f);
+      localStorage.setItem('baf_logo_nav', b);
+      applyNavLogo(b);
+      applyFooterLogo(b);
+    } catch {
+      alert('Fichier trop lourd.');
+    }
+    this.value = '';
+  });
+
+  document.getElementById('heroInput')?.addEventListener('change', async function () {
+    const f = this.files[0];
+    if (!f) return;
+    try {
+      const b = await fileToBase64(f);
+      localStorage.setItem('baf_hero_bg', b);
+      localStorage.setItem('baf_hero_opacity', 28);
+      applyHeroBg(b, 28);
+    } catch {
+      alert('Photo trop lourde.');
+    }
+    this.value = '';
+  });
 </script>

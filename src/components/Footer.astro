@@ -2,7 +2,6 @@
 import { getLocale } from 'astro-intl';
 import { getTranslations } from '../i18n/getTranslations';
 
-
 const lang = getLocale();
 const p = lang === 'fr' ? '' : `/${lang}`;
 const t = getTranslations('footer');
@@ -11,7 +10,11 @@ const t = getTranslations('footer');
 <footer>
   <div>
     <div class="footer-logo">
-      <img src="/BAF%20Logo.png" alt="Logo BAF Camp" id="footerLogoImg">
+      <img
+        src="/BAF%20Logo.png"
+        alt="Logo BAF Camp"
+        id="footerLogoImg"
+      />
     </div>
     {t('tagline') && <p class="footer-tagline">{t('tagline')}</p>}
   </div>
@@ -36,8 +39,11 @@ const t = getTranslations('footer');
     <h4>{t('reseauTitle')}</h4>
     <ul>
       <li><a href="https://stuut.info/SAVE-THE-DATE-Appel-a-de-nouvelles-energies-pour-le-BAF-Camp-10924">Stuut</a></li>
-      <li><a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">
-        {t('signalLabel')}</a></li>
+      <li>
+        <a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN">
+          {t('signalLabel')}</a
+        >
+      </li>
       <li><a href="mailto:activismcampbelgium@proton.me">{t('emailLabel')}</a></li>
     </ul>
   </div>
