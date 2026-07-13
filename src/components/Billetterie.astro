@@ -87,14 +87,14 @@ const pricingTiers = [
         <p class="thuno-intro-label">📊 {t('privilegeMeter.introLabel')}</p>
 
         <div class="thuno-group">
-          <p class="thuno-group-title">➕ {t('privilegeMeter.plusGroupTitle') || "Ajoute 1 point si…"}</p>
+          <p class="thuno-group-title">➕ {t('privilegeMeter.plusGroupTitle')}</p>
           {plusItems.map((item) => (
             <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val="1"> {item}</label>
           ))}
         </div>
 
         <div class="thuno-group thuno-group-minus">
-          <p class="thuno-group-title">➖ {t('privilegeMeter.minusGroupTitle') || "Retire 1 point si…"}</p>
+          <p class="thuno-group-title">➖ {t('privilegeMeter.minusGroupTitle')}</p>
           {minusItems.map((item, i) => (
             <label class="thuno-item"><input type="checkbox" class="thuno-cb" data-val={minusAsPlus.has(i) ? 1 : -1}> {item}</label>
           ))}
