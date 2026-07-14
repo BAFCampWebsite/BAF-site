@@ -67,7 +67,7 @@
     "btnText": "Nous écrire"
   },
   "footer": {
-    "tagline": "Vient prendre une claque !",
+    "tagline": "Viens prendre une claque !",
     "navTitle": "Navigation",
     "navHome": "Accueil",
     "navProgramme": "Programme",
@@ -81,7 +81,7 @@
     "signalLabel": "Rejoins la boucle Signal",
     "emailLabel": "Notre mail proton",
     "copy": "2026 BAF Camp — par et pour toustes",
-    "copyTagline": "Vient prendre une claque !"
+    "copyTagline": "Viens prendre une claque !"
   },
   "infos": {
     "hero": {
@@ -335,7 +335,7 @@
     },
     "rejoindre": {
       "title": "Rejoins nous !",
-      "text": "Ce camp sera la somme (voire plus !) des personnes qui le composeront. Vient ajouter ton poids dans la balance.<br>Aucune compétence ou légitimité initiale n'est requise pour pouvoir aider. Des aménagements seront faits en fonction des demandes. Voici les 3 degrés d'investissement possibles :",
+      "text": "Ce camp sera la somme (voire plus !) des personnes qui le composeront. Viens ajouter ton poids dans la balance.<br>Aucune compétence ou légitimité initiale n'est requise pour pouvoir aider. Des aménagements seront faits en fonction des demandes. Voici les 3 degrés d'investissement possibles :",
       "cards": {
         "i0": {
           "title": "Devenir bénévole",
