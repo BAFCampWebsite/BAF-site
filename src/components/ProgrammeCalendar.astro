@@ -61,25 +61,31 @@ const calendarEvents = (teamupEvents?.events ?? [])
       ? notesText.split(/\r?\n/)[0].trim()
       : "";
 
-    const dayKey = start.toISOString().slice(0, 10);
+    const dayKey = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Brussels",
+    }).format(start);
     const dayLabel = new Intl.DateTimeFormat(lang, {
       weekday: "long",
       day: "numeric",
       month: "short",
+      timeZone: "Europe/Brussels",
     }).format(start);
 
     const dateLabel = new Intl.DateTimeFormat(lang, {
       weekday: "short",
       day: "numeric",
       month: "short",
+      timeZone: "Europe/Brussels",
     }).format(start);
 
     const timeLabel = `${start.toLocaleTimeString(lang, {
       hour: "2-digit",
       minute: "2-digit",
+      timeZone: "Europe/Brussels",
     })} — ${end.toLocaleTimeString(lang, {
       hour: "2-digit",
       minute: "2-digit",
+      timeZone: "Europe/Brussels",
     })}`;
 
     const ids = event.subcalendar_ids?.length
@@ -121,6 +127,7 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
         weekday: "long",
         day: "numeric",
         month: "short",
+        timeZone: "Europe/Brussels",
       }).format(date),
     };
   }
