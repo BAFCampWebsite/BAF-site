@@ -1,0 +1,10 @@
+---
+export { getLocaleStaticPaths as getStaticPaths } from "../../i18n/getStaticPaths";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SalesConditions from "../../components/SalesConditions.astro";
+---
+
+<BaseLayout slug="sales-conditions">
+  <SalesConditions />
+</BaseLayout>

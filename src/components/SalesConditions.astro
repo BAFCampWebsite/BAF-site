@@ -1,0 +1,24 @@
+---
+import { getLocale } from 'astro-intl';
+import { getTranslations } from '../i18n/getTranslations';
+import { readFileSync } from 'node:fs';
+import { Marked } from 'marked';
+
+const lang = getLocale();
+const t = getTranslations('salesConditions');
+
+const marked = new Marked();
+const filePath = `src/markdown/sales-conditions/${lang}.md`;
+const content = readFileSync(filePath, 'utf-8');
+const html = marked.parse(content);
+---
+
+<div class="page-hero anim">
+  <p class="page-hero-eyebrow">✦ {t('hero.eyebrow')}</p>
+  <h1 class="page-hero-title">{t('hero.title')}</h1>
+  <p class="page-hero-sub">{t('hero.subtitle')}</p>
+</div>
+
+<div class="page-content markdown-content">
+  <article set:html={html} />
+</div>
