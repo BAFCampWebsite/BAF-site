@@ -254,7 +254,8 @@
     },
     "popup": {
       "title": "Inschrijvingslink hier!",
-      "formUrl": "https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306"
+      "text": "",
+      "btnText": "Shrijf ons"
     }
   },
   "programme": {
