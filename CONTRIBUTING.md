@@ -89,6 +89,24 @@ If we decide to add more, there are a few things that will need to be added
 - Adjust the i18n-ally plugin config in
 - Update the [script for validation](scripts/validate-translations.mjs) to include the new json file
 
+### Exception: long-form content via Markdown
+
+Most text lives in the JSON translation files, but content that is long, document-like, or rarely changed can live in localized Markdown files instead. The [sales-conditions](src/pages/[locale]/sales-conditions.astro) page is the first example of this pattern.
+
+Instead of storing paragraphs inside `fr.json` / `en.json` / `nl.json`, each locale has its own `.md` file under [src/markdown/sales-conditions/](src/markdown/sales-conditions/). The component reads the correct one based on the current locale and converts it to HTML at build time using the `marked` library.
+
+To edit the content, simply edit the corresponding Markdown file — no need to touch the JSON translation files or restart the dev server. The page hero (title, subtitle, eyebrow) is still stored in the JSON translations under the `salesConditions` namespace, so keep that in sync if you change the page name.
+
+To add another page using this pattern, follow the same approach:
+
+1. Create the localized Markdown files at `src/markdown/<page-name>/{fr,en,nl}.md`.
+2. Create a component (like [SalesConditions.astro](src/components/SalesConditions.astro)) that reads the file for the current locale with `readFileSync` and renders it through `marked`.
+3. Create the page route at `src/pages/[locale]/<page-name>.astro`.
+4. Add hero translations (eyebrow, title, subtitle) under a matching namespace in each JSON file.
+5. Link the page in the nav or elsewhere.
+
+Note: the i18n validation script only checks the JSON files, not the Markdown files. Make sure all three locale versions stay in sync manually.
+
 ## Linking to pages
 
 Make sure to include the language prefix when making links. This way you won't always get sent to the index, and actually get the translation of the same page.
