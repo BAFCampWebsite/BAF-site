@@ -63,7 +63,7 @@ This is very similar to the above, except you will need to define a key, and the
 - Add the key in the translation files, and add the translated value.
   - If you want to add value for `billetterie.hero.subtitle`, you would add it someplace like this:
 
-    ```json
+    ```jsonc
     {
         "billetterie":{
             "hero":{
@@ -207,4 +207,3 @@ The workflow will reset its state to the latest `main`, run the export script, a
 3. When ready, merge the pull request into the `main` branch.
 
 A normal GitHub merge flow is fine here, but "Squash and merge" is often the cleanest option for this kind of automated update.
-
