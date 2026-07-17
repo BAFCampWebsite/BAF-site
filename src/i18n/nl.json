@@ -239,7 +239,7 @@
     },
     "registration": {
       "title": "Hoe inschrijven?",
-      "description": "Inschrijving gebeurt via het online inschrijvingsformulier: https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306.",
+      "description": "Inschrijving gebeurt via het online inschrijvingsformulier: https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306 .",
       "stepNum": "1",
       "stepTitle": "Vul het inschrijvingsformulier in",
       "stepText": "Vul het inschrijvingsformulier in om ons te laten weten dat je naar het kamp komt, via deze link: https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306.",
@@ -253,9 +253,9 @@
       "emailSubject": "Vraag over tickets"
     },
     "popup": {
-      "title": "Inschrijvingslink hier!",
-      "text": "",
-      "btnText": "Shrijf ons"
+      "title": "Binnenkort beschikbaar!",
+      "text": "Het inschrijvingsformulier is nog niet open. Het zal binnenkort beschikbaar zijn — kom snel terug!",
+      "btnText": "Begrepen"
     }
   },
   "programme": {
