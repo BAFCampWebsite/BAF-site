@@ -21,7 +21,8 @@
       "venir": "Venir sur place",
       "nourrir": "Se nourrir",
       "camping": "Le camping",
-      "bambinerie": "La Bambinerie"
+      "bambinerie": "La Bambinerie",
+      "conditionsVente": "Conditions de vente"
     },
     "dropdownAider": {
       "faireDon": "Faire un don",
@@ -590,6 +591,13 @@
       "title": "Nous soutenir",
       "text": "Vous souhaitez devenir partenaire ou contribuer au projet ? Contactez-nous pour en discuter.",
       "btnText": "Soutenir financièrement"
+    }
+  },
+  "salesConditions": {
+    "hero": {
+      "eyebrow": "Infos pratiques",
+      "title": "Conditions de vente",
+      "subtitle": "Modalités d'achat, remboursement et contact"
     }
   }
 }

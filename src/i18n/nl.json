@@ -21,7 +21,8 @@
       "venir": "Hoe geraken",
       "nourrir": "Eten",
       "camping": "Camping",
-      "bambinerie": "De Bambinerie"
+      "bambinerie": "De Bambinerie",
+      "conditionsVente": "Verkoopvoorwaarden"
     },
     "dropdownAider": {
       "faireDon": "Doneren",
@@ -590,6 +591,13 @@
       "title": "Steun ons",
       "text": "Wil je partner worden of bijdragen aan dit kamp? Neem contact met ons op!",
       "btnText": "Financiële steun"
+    }
+  },
+  "salesConditions": {
+    "hero": {
+      "eyebrow": "Praktische info",
+      "title": "Verkoopvoorwaarden",
+      "subtitle": "Aankoop-, terugbetalings- en contactgegevens"
     }
   }
 }
