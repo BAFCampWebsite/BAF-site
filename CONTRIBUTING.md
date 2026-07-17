@@ -63,7 +63,7 @@ This is very similar to the above, except you will need to define a key, and the
 - Add the key in the translation files, and add the translated value.
   - If you want to add value for `billetterie.hero.subtitle`, you would add it someplace like this:
 
-    ```json
+    ```jsonc
     {
         "billetterie":{
             "hero":{
@@ -88,6 +88,24 @@ If we decide to add more, there are a few things that will need to be added
 - Update the [Nav component](src/components/Nav.astro) to include a new language
 - Adjust the i18n-ally plugin config in
 - Update the [script for validation](scripts/validate-translations.mjs) to include the new json file
+
+### Exception: long-form content via Markdown
+
+Most text lives in the JSON translation files, but content that is long, document-like, or rarely changed can live in localized Markdown files instead. The [sales-conditions](src/pages/[locale]/sales-conditions.astro) page is the first example of this pattern.
+
+Instead of storing paragraphs inside `fr.json` / `en.json` / `nl.json`, each locale has its own `.md` file under [src/markdown/sales-conditions/](src/markdown/sales-conditions/). The component reads the correct one based on the current locale and converts it to HTML at build time using the `marked` library.
+
+To edit the content, simply edit the corresponding Markdown file — no need to touch the JSON translation files or restart the dev server. The page hero (title, subtitle, eyebrow) is still stored in the JSON translations under the `salesConditions` namespace, so keep that in sync if you change the page name.
+
+To add another page using this pattern, follow the same approach:
+
+1. Create the localized Markdown files at `src/markdown/<page-name>/{fr,en,nl}.md`.
+2. Create a component (like [SalesConditions.astro](src/components/SalesConditions.astro)) that reads the file for the current locale with `readFileSync` and renders it through `marked`.
+3. Create the page route at `src/pages/[locale]/<page-name>.astro`.
+4. Add hero translations (eyebrow, title, subtitle) under a matching namespace in each JSON file.
+5. Link the page in the nav or elsewhere.
+
+Note: the i18n validation script only checks the JSON files, not the Markdown files. Make sure all three locale versions stay in sync manually.
 
 ## Linking to pages
 
@@ -189,4 +207,3 @@ The workflow will reset its state to the latest `main`, run the export script, a
 3. When ready, merge the pull request into the `main` branch.
 
 A normal GitHub merge flow is fine here, but "Squash and merge" is often the cleanest option for this kind of automated update.
-

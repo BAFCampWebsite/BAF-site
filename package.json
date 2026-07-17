@@ -12,11 +12,12 @@
   },
   "dependencies": {
     "astro": "^6.0.0",
-    "astro-intl": "^2.2.1"
+    "astro-intl": "^2.2.1",
+    "marked": "^18.0.6"
   },
   "devDependencies": {
-    "@wcj/html-to-markdown-cli": "^2.1.1",
     "@astrojs/check": "^0.9.9",
+    "@wcj/html-to-markdown-cli": "^2.1.1",
     "typescript": "^5.9.3"
   }
 }

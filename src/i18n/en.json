@@ -21,7 +21,8 @@
       "venir": "Getting there",
       "nourrir": "Food",
       "camping": "Camping",
-      "bambinerie": "The Bambinerie"
+      "bambinerie": "The Bambinerie",
+      "conditionsVente": "Terms of sale"
     },
     "dropdownAider": {
       "faireDon": "Donate",
@@ -73,6 +74,7 @@
     "navProgramme": "Program",
     "navAider": "Help us",
     "navInfos": "Practical info",
+    "navConditionsVente": "Terms of sale",
     "fonctionnementTitle": "How it works",
     "financements": "Funding",
     "footerCharte": "Our charter",
@@ -590,6 +592,13 @@
       "title": "Support us",
       "text": "Do you want to become a partner or contribute to the project? You can click on the link below or contact us via our email.",
       "btnText": "Financially support"
+    }
+  },
+  "salesConditions": {
+    "hero": {
+      "eyebrow": "Practical info",
+      "title": "Terms of Sale",
+      "subtitle": "Purchase, refund and contact details"
     }
   }
 }
