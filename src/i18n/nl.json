@@ -242,7 +242,7 @@
       "description": "Inschrijving gebeurt via het online inschrijvingsformulier.",
       "stepNum": "1",
       "stepTitle": "Vul het inschrijvingsformulier in",
-      "stepText": "Vul het inschrijvingsformulier in om ons te laten weten dat je naar het kamp komt.",
+      "stepText": "Vul het inschrijvingsformulier in om ons te laten weten dat je naar het kamp komt, via deze link: https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306.",
       "formUrl": "https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306",
       "btnForm": "Inschrijvingsformulier invullen →"
     },
