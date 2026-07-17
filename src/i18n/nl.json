@@ -254,7 +254,7 @@
     },
     "popup": {
       "title": "Inschrijvingslink hier!",
-      "text": "https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306"
+      "formUrl": "https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306"
     }
   },
   "programme": {
