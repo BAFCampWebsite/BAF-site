@@ -1,0 +1,3 @@
+# Not yet available in English...
+
+... but the French version is.
