@@ -1,7 +1,10 @@
 ---
 import { getTranslations } from '../i18n/getTranslations';
+import { getLocale } from 'astro-intl';
 import type { BilletterieMessages } from '../i18n/types';
 const t = getTranslations('billetterie');
+const lang = getLocale();
+const salesConditionsUrl = `/${lang}/sales-conditions`;
 
 const plusItems = [
   t('privilegeMeter.plusItems.i0'),
@@ -153,7 +156,7 @@ const pricingTiers = [
   <!-- Section 4 — Registration -->
   <div class="reveal" id="inscription">
     <h2>🎟️ {t('registration.title')}</h2>
-    <p class="section-lead">{t('registration.description')}</p>
+    <p class="section-lead" set:html={t('registration.description').replace('{salesConditionsUrl}', salesConditionsUrl)}></p>
 
     <div class="step-block">
       <div class="step-num">{t('registration.stepNum')}</div>

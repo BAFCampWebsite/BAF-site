@@ -241,7 +241,7 @@
     },
     "registration": {
       "title": "Hoe inschrijven?",
-      "description": "Inschrijving gebeurt via het online inschrijvingsformulier.",
+      "description": "Inschrijving gebeurt via het online inschrijvingsformulier. Je kan onze verkoopsvoorwaarden <a href=\"{salesConditionsUrl}\">hier</a> vinden.",
       "stepNum": "1",
       "stepTitle": "Vul het inschrijvingsformulier in",
       "stepText": "Vul het inschrijvingsformulier in om ons te laten weten dat je naar het kamp komt.",

@@ -241,7 +241,7 @@
     },
     "registration": {
       "title": "Comment s'inscrire ?",
-      "description": "L'inscription se fait via le formulaire d'inscription en ligne.",
+      "description": "L'inscription se fait via le formulaire d'inscription en ligne. Vous pouvez trouver nos conditions de ventes <a href=\"{salesConditionsUrl}\">ici.</a>",
       "stepNum": "1",
       "stepTitle": "Remplir le formulaire d'inscription",
       "stepText": "Remplis le formulaire d'inscription pour t'annoncer au camp.",
