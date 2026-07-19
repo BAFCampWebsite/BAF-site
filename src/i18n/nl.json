@@ -129,24 +129,24 @@
     },
     "bambinerie": {
       "sectionLabel": "Kleine activisten",
-      "title": "De Babykamer",
-      "introHtml": "Het BAF Camp is er ook voor gezinnen! We voorzien een speciale ruimte<strong>voor kinderen tussen 4 en 16 jaar</strong>, zodat ouders met een gerust hart kunnen genieten van de conferenties en workshops.",
+      "title": "De Bambinerie",
+      "introHtml": "Het BAF Camp is ook voor gezinnen! Op de locatie is een speciale ruimte <strong>voor kinderen tussen 4 en 16 jaar</strong> voorzien, zodat ze die kunnen toe-eigenen, creëren en hun eigen ruimtes laten leven.",
       "morning": {
-        "title": "Ochtend tijdslot",
-        "html": "Een tijdslot van <strong>2 uur in de ochtend</strong>. Het is de bedoeling dat de kinderen bij de Bambinerie worden afgezet, terwijl volwassenen de conferenties en workshops van het programma bijwonen."
+        "title": "Ochtendslot",
+        "html": "Een <strong>ochtendslot van 10 tot 12 uur</strong> is voorzien om kinderen te ontvangen in de Bambinerie,"
       },
       "afternoon": {
-        "title": "Middag tijdslot",
-        "html": "Een tweede tijdslot van <strong>2 uur tijdens de namiddag</strong> wordt aangeboden zodat ouders ten volle van de dag kunnen genieten."
+        "title": "Namiddagslot",
+        "html": "Een tweede <strong>slot van 2 uur in de namiddag, van 14 tot 16 uur</strong> wordt aangeboden zodat ze na de maaltijd weer bij elkaar kunnen komen."
       },
       "activities": {
-        "title": "Activiteiten voor peuters",
-        "html": "Buiten de kinderopvangplaatsen kunnen bepaalde georganiseerde activiteiten worden aangepast voor peuters: spelletjes, creaties, ontdekkingen, enz. BAF Camp is er voor iedereen!"
+        "title": "Activiteiten voor de kleine mensen",
+        "html": "Buiten de openingsuren zijn bepaalde programme-ruimtes voorzien om aangepast te worden aan kinderen: spellen, voorstellingen, creaties en ontdekkingen!"
       },
       "contact": {
         "title": "Vragen over de Bambinerie?",
         "prefix": "Aarzel niet om contact met ons op te nemen via ",
-        "suffix": " voor al je vragen over kinderopvang."
+        "suffix": " voor vragen over de opvang van kinderen."
       }
     }
   },
