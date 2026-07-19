@@ -127,24 +127,24 @@
     },
     "bambinerie": {
       "sectionLabel": "Little activists",
-      "title": "Bambinerie",
-      "introHtml": "The BAF Camp, it’s also for families! A dedicated space <strong>for children between 4 and 16 years old</strong> is planned on the site, so that parents can enjoy the conferences and workshops with peace of mind.",
+      "title": "The Bambinerie",
+      "introHtml": "The BAF Camp is also for families! A dedicated space <strong>for children between 4 and 16 years old</strong> is planned on site, so they can take ownership, create and bring their own spaces to life.",
       "morning": {
         "title": "Morning slot",
-        "html": "We offer a <strong>2 hour window in the morning</strong> to drop off the children at the Bambinerie, while they attend the program's conferences and workshops."
+        "html": "A <strong>10am to 12pm morning slot</strong> is planned to welcome children at the Bambinerie,"
       },
       "afternoon": {
         "title": "Afternoon slot",
-        "html": "We offer a second slot of <strong>2 hours in the afternoon</strong> to allow parents to fully enjoy the day."
+        "html": "A second <strong>2-hour slot in the afternoon, from 2pm to 4pm</strong> is offered to let them meet again after lunch."
       },
       "activities": {
-        "title": "Activities for toddlers",
-        "html": "Outside of childcare slots, certain organized activities can be adapted for toddlers: games, creations, discoveries, etc. BAF Camp, it’s for everyone!"
+        "title": "Activities for the little ones",
+        "html": "Outside the opening slots, certain programming spaces are planned to be adapted for children: games, shows, creations and discoveries!"
       },
       "contact": {
         "title": "Questions about the Bambinerie?",
-        "prefix": "Do not hesitate to contact us at ",
-        "suffix": " for any questions regarding childcare."
+        "prefix": "Feel free to contact us at ",
+        "suffix": " for any questions about welcoming children."
       }
     }
   },
