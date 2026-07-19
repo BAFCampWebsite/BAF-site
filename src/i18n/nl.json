@@ -22,6 +22,7 @@
       "nourrir": "Eten",
       "camping": "Camping",
       "bambinerie": "De Bambinerie",
+      "other": "Andere informatie",
       "conditionsVente": "Verkoopvoorwaarden"
     },
     "dropdownAider": {
@@ -147,6 +148,14 @@
         "title": "Vragen over de Bambinerie?",
         "prefix": "Aarzel niet om contact met ons op te nemen via ",
         "suffix": " voor vragen over de opvang van kinderen."
+      }
+    },
+    "other": {
+      "sectionLabel": "Andere informatie",
+      "title": "Andere informatie",
+      "dogs": {
+        "title": "Honden",
+        "text": "Honden zijn helaas niet toegestaan op de locatie, aangezien dit een privaat eigendom is met verschillende andere honden en dieren."
       }
     }
   },

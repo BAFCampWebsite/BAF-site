@@ -22,6 +22,7 @@
       "nourrir": "Food",
       "camping": "Camping",
       "bambinerie": "The Bambinerie",
+      "other": "Other infos",
       "conditionsVente": "Terms of sale"
     },
     "dropdownAider": {
@@ -147,6 +148,14 @@
         "title": "Questions about the Bambinerie?",
         "prefix": "Feel free to contact us at ",
         "suffix": " for any questions about welcoming children."
+      }
+    },
+    "other": {
+      "sectionLabel": "FAQ",
+      "title": "FAQ",
+      "dogs": {
+        "title": "Dogs",
+        "text": "Dogs are unfortunately not permitted on-site, as this is a private property with several other dogs and animals."
       }
     }
   },

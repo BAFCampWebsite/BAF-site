@@ -22,6 +22,7 @@
       "nourrir": "Se nourrir",
       "camping": "Le camping",
       "bambinerie": "La Bambinerie",
+      "other": "Autres infos",
       "conditionsVente": "Conditions de vente"
     },
     "dropdownAider": {
@@ -147,6 +148,14 @@
         "title": "Des questions sur la Bambinerie ?",
         "prefix": "N'hésite pas à nous contacter à ",
         "suffix": " pour toute question concernant l'accueil des enfants."
+      }
+    },
+    "other": {
+      "sectionLabel": "Autres informations",
+      "title": "Autres informations",
+      "dogs": {
+        "title": "Chiens",
+        "text": "Les chiens ne sont malheureusement pas autorisés sur le site, car il s'agit d'une propriété privée avec plusieurs autres chiens et animaux."
       }
     }
   },
