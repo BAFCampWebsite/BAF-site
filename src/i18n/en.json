@@ -21,7 +21,8 @@
       "venir": "Getting there",
       "nourrir": "Food",
       "camping": "Camping",
-      "bambinerie": "The Bambinerie"
+      "bambinerie": "The Bambinerie",
+      "conditionsVente": "Terms of sale"
     },
     "dropdownAider": {
       "faireDon": "Donate",
@@ -73,6 +74,7 @@
     "navProgramme": "Program",
     "navAider": "Help us",
     "navInfos": "Practical info",
+    "navConditionsVente": "Terms of sale",
     "fonctionnementTitle": "How it works",
     "financements": "Funding",
     "footerCharte": "Our charter",
@@ -264,7 +266,7 @@
       "title": "How to fight together?",
       "subtitle": "The program will revolve around this question."
     },
-    "construction": "Site under construction — the full program will be announced soon!",
+    "construction": "This is a provisional program which could change between now and the start of the festival.",
     "intro": {
       "title": "Let’s build the program together!",
       "sentence": "The camp will explore two concepts:",
@@ -301,8 +303,8 @@
     },
     "dayContent": {
       "i0": "After a week of setting up together, the camp opened around midday.",
-      "i1": "The two main days of our camp are opportunities for sharing, discussion and workshops centred on the question: ‘How can we fight together?’ – by everyone, for everyone!<br>If you have a workshop or a stand to suggest, a project to launch, or a topic for a talk to propose - Please feel free to fill in <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> our call for contributions </a> 👊. <br><strong>Let’s put the programme together!</strong>",
-      "i2": "The two main days of our camp are opportunities for sharing, discussion and workshops centred on the question: ‘How can we fight together?’ – by everyone, for everyone!<br>If you have a workshop or a stand to suggest, a project to launch, or a topic for a talk to propose - Please feel free to fill in <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> our call for contributions </a> 👊. <br><strong>Let’s put the programme together!</strong>",
+      "i1": "The two main days of our camp are opportunities for sharing, discussion and workshops centred on the question: ‘How can we fight together?’ – by everyone, for everyone!<br>",
+      "i2": "The two main days of our camp are opportunities for sharing, discussion and workshops centred on the question: ‘How can we fight together?’ – by everyone, for everyone!<br>To ensure inclusivity, all activities in the marquees will be <strong>presented in at least three languages</strong>: English, French and Dutch.",
       "i3": "A review of the festival and suggestions for future editions. What are we taking away with us? What’s left behind? The festival wraps up around midday! Then it’s time for three days of collective dismantling and tidying up!"
     },
     "spaces": {
@@ -449,9 +451,9 @@
     "benevolat": {
       "title": "Volunteering",
       "text1": "On site, our goal is for this event to run in as horizontal and self-managed a way as possible. That’s why, in order to blur the line between volunteers & “consumers” of the festival as much as possible, ideally, all participants give a bit of their time to help run this festival. We’ve calculated that if all volunteers work <strong>2 hours a day</strong>, the festival should be able to run in a self-managed way. Furthermore, any task can be adapted if you have a disability of any kind.",
-      "text2": "Feel free to already let us know your volunteering preferences by filling out the <a href=\"billetterie.html\"><strong>registration form</strong></a>. Otherwise, you’ll be able to find tasks to do on the spot in real time! If you have any questions or comments before August 20th, contact us via our email: <strong>volontairesBAF@proton.me</strong>!",
+      "text2": "Feel free to already let us know your volunteering preferences by filling out the <a href=\"/billetterie.html\"><strong>registration form</strong></a>. Otherwise, you’ll be able to find tasks to do on the spot in real time! If you have any questions or comments before August 20th, contact us via our email: <strong>volontairesBAF@proton.me</strong>!",
       "text3": "The camp will be set up and taken down collectively. <strong>We’ll need help!</strong> We’ll need to put up marquees and stages, but also create the decor, imagine spaces and build infrastructure out of pallets according to our ideas! Lots of things are still left to invent, so come take part in creating this space starting August 16th! Sign up to help set up the camp beforehand in the form below 👇.",
-      "text4": "But before anything else, don’t forget to <a href=\"billetterie.html\"><strong>get your spot for the event</strong></a>."
+      "text4": "But before anything else, don’t forget to <a href=\"/billetterie.html\"><strong>get your spot for the event</strong></a>."
     },
     "missions": {
       "title": "Missions available",
@@ -590,6 +592,13 @@
       "title": "Support us",
       "text": "Do you want to become a partner or contribute to the project? You can click on the link below or contact us via our email.",
       "btnText": "Financially support"
+    }
+  },
+  "salesConditions": {
+    "hero": {
+      "eyebrow": "Practical info",
+      "title": "Terms of Sale",
+      "subtitle": "Purchase, refund and contact details"
     }
   }
 }

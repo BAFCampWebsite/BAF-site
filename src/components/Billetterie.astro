@@ -1,8 +1,11 @@
 ---
 import { getTranslations } from '../i18n/getTranslations';
 import type { BilletterieMessages } from '../i18n/types';
+import type { Locale } from '../i18n/getTranslations';
 
 const t = getTranslations('billetterie');
+const locale = Astro.params.locale as Locale;
+const isNL = locale === 'nl';
 const plusItems = [
   t('privilegeMeter.plusItems.i0'),
   t('privilegeMeter.plusItems.i1'),
@@ -160,7 +163,7 @@ const pricingTiers = [
       <div class="step-body">
         <h3>{t('registration.stepTitle')}</h3>
         <p>{t('registration.stepText')}</p>
-        <a href={t('registration.formUrl')} class="btn btn-primary" onclick="showFormPopup(event)">
+        <a href={t('registration.formUrl')} class="btn btn-primary" {...!isNL && { onclick: "showFormPopup(event)" }}>
           📝 {t('registration.btnForm')}
         </a>
       </div>
@@ -182,6 +185,7 @@ const pricingTiers = [
 
 </div>
 
+{!isNL && (
 <!-- Popup -->
 <div class="popup-overlay" id="formPopupOverlay">
   <div class="popup-box">
@@ -192,6 +196,7 @@ const pricingTiers = [
     <button class="btn btn-primary popup-confirm-btn" onclick="closeFormPopup()">{t('popup.btnText')}</button>
   </div>
 </div>
+)}
 
 <style is:global>
 /* ── Intro sections ── */

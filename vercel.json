@@ -1,16 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
-    { "source": "/", "destination": "/fr/", "permanent": true },
-    { "source": "/billetterie", "destination": "/fr/billetterie", "permanent": true },
-    { "source": "/programme", "destination": "/fr/programme", "permanent": true },
-    { "source": "/infos", "destination": "/fr/infos", "permanent": true },
-    { "source": "/financements", "destination": "/fr/financements", "permanent": true },
-    { "source": "/charte", "destination": "/fr/charte", "permanent": true },
-    { "source": "/autogestion", "destination": "/fr/autogestion", "permanent": true },
-    { "source": "/nous-aider", "destination": "/fr/nous-aider", "permanent": true },
-    { "source": "/billeterie", "destination": "/fr/billetterie" },
-    { "source": "/billeterie/", "destination": "/fr/billetterie" },
-    { "source": "/:path(.+)\\.html", "destination": "/fr/:path", "permanent": true }
+    { "source": "/", "destination": "/en/", "permanent": true },
+    { "source": "/index.html", "destination": "/en/", "permanent": true },
+    { "source": "/billetterie", "destination": "/en/billetterie", "permanent": true },
+    { "source": "/programme", "destination": "/en/programme", "permanent": true },
+    { "source": "/infos", "destination": "/en/infos", "permanent": true },
+    { "source": "/financements", "destination": "/en/financements", "permanent": true },
+    { "source": "/charte", "destination": "/en/charte", "permanent": true },
+    { "source": "/autogestion", "destination": "/en/autogestion", "permanent": true },
+    { "source": "/nous-aider", "destination": "/en/nous-aider", "permanent": true },
+    { "source": "/billeterie", "destination": "/en/billetterie" },
+    { "source": "/billeterie/", "destination": "/en/billetterie" },
+    { "source": "/:path(.+)\\.html", "destination": "/en/:path", "permanent": true }
   ]
 }

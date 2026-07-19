@@ -21,7 +21,8 @@
       "venir": "Venir sur place",
       "nourrir": "Se nourrir",
       "camping": "Le camping",
-      "bambinerie": "La Bambinerie"
+      "bambinerie": "La Bambinerie",
+      "conditionsVente": "Conditions de vente"
     },
     "dropdownAider": {
       "faireDon": "Faire un don",
@@ -67,12 +68,13 @@
     "btnText": "Nous écrire"
   },
   "footer": {
-    "tagline": "Vient prendre une claque !",
+    "tagline": "Viens prendre une claque !",
     "navTitle": "Navigation",
     "navHome": "Accueil",
     "navProgramme": "Programme",
     "navAider": "Nous aider",
     "navInfos": "Infos pratiques",
+    "navConditionsVente": "Conditions de vente",
     "fonctionnementTitle": "Fonctionnement",
     "financements": "Financements",
     "footerCharte": "Notre charte",
@@ -81,7 +83,7 @@
     "signalLabel": "Rejoins la boucle Signal",
     "emailLabel": "Notre mail proton",
     "copy": "2026 BAF Camp — par et pour toustes",
-    "copyTagline": "Vient prendre une claque !"
+    "copyTagline": "Viens prendre une claque !"
   },
   "infos": {
     "hero": {
@@ -264,7 +266,7 @@
       "title": "Comment lutter ensemble ?",
       "subtitle": "Le programme s'enroulera autour de cette question."
     },
-    "construction": "Site en construction — le programme complet sera annoncé prochainement !",
+    "construction": "Ceci est un programme provisoire qui pourrait être modifié d'ici le début du festival.",
     "intro": {
       "title": "Construisons le programme ensemble !",
       "sentence": "Le camp s'enroulera autour de deux concepts pour tenter d'éclairer les questions suivantes :",
@@ -301,7 +303,7 @@
     },
     "dayContent": {
       "i0": "Après une semaine de montage collectif, ouverture du camp autour de midi.",
-      "i1": "Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : \"Comment lutter ensemble ?\" par tou.te.s pour tou.te.s!<br>Si tu as un atelier ou un stand à proposer, un projet à lancer ou une thématique pour une conférence à proposer - N'hésite pas à remplir <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> notre appel à contributions </a> 👊. <br><strong>Construisons le programme ensemble !</strong>",
+      "i1": "Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : \"Comment lutter ensemble ?\" par tou.te.s pour tou.te.s! <br> Pour être inclusif, tout les activités dans les chapiteaux seront <strong>interprété en au moins trois langues</strong>: anglais, français et néerlandais.",
       "i2": "Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : \"Comment lutter ensemble ?\" par tou.te.s pour tou.te.s!<br>Si tu as un atelier ou un stand à proposer, un projet à lancer ou une thématique pour une conférence à proposer - N'hésite pas à remplir <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> notre appel à contributions </a> 👊.<br><strong>Construisons le programme ensemble !</strong>",
       "i3": "Critique du festival et propositions pour les prochaines éditions. Avec quoi on repart ? Qu'est-ce qui reste ? Fin du festival autour de midi ! Place à 3 jours de démontage et rangement collectif !"
     },
@@ -335,7 +337,7 @@
     },
     "rejoindre": {
       "title": "Rejoins nous !",
-      "text": "Ce camp sera la somme (voire plus !) des personnes qui le composeront. Vient ajouter ton poids dans la balance.<br>Aucune compétence ou légitimité initiale n'est requise pour pouvoir aider. Des aménagements seront faits en fonction des demandes. Voici les 3 degrés d'investissement possibles :",
+      "text": "Ce camp sera la somme (voire plus !) des personnes qui le composeront. Viens ajouter ton poids dans la balance.<br>Aucune compétence ou légitimité initiale n'est requise pour pouvoir aider. Des aménagements seront faits en fonction des demandes. Voici les 3 degrés d'investissement possibles :",
       "cards": {
         "i0": {
           "title": "Devenir bénévole",
@@ -449,9 +451,9 @@
     "benevolat": {
       "title": "Le bénévolat",
       "text1": "Sur place, nous avons comme objectif que cet évènement se déroule de la manière la plus horizontale et autogérée possible. C'est pourquoi, afin de gommer au max la frontière entre bénévoles & « consommateurices » du festival, idéalement, toustes les participant.e.s donnent un peu de leur temps pour faire tourner ce festival. Nous avons calculé que si tous les bénévoles travaillent <strong>2 heures par jour</strong>, alors le festival devrait pouvoir fonctionner de manière autogérée. Par ailleurs, toute tâche peut être adaptée si tu as un handicap quel qu'il soit.",
-      "text2": "N'hésite pas à déjà signaler tes préférences de bénévole en remplissant le <a href=\"billetterie.html\"><strong>form d'inscription</strong></a>. Sinon, tu pourras trouver des tâches à faire en temps réel sur place ! D'ici le 20 août, si tu as des questions ou des remarques, contacte nous via notre mail :<strong>volontairesBAF@proton.me</strong> !",
+      "text2": "N'hésite pas à déjà signaler tes préférences de bénévole en remplissant le <a href=\"/billetterie.html\"><strong>form d'inscription</strong></a>. Sinon, tu pourras trouver des tâches à faire en temps réel sur place ! D'ici le 20 août, si tu as des questions ou des remarques, contacte nous via notre mail :<strong>volontairesBAF@proton.me</strong> !",
       "text3": "Le camp sera monté et démonté en commun. <strong>Nous aurons besoin d'aide !</strong> Il faudra monter des châpiteaux et des scènes, mais aussi créer la déco, imaginer des espaces et construire des infrastructures en palettes en fonction de nos envies ! Plein de choses resterons à inventer alors venez prendre part à la création de cet espace dès le 16 août ! Inscriptions pour aider à monter le camp en amont dans le formulaire en dessous 👇.",
-      "text4": "Mais avant toute chose, n'oublie pas de <a href=\"billetterie.html\"><strong>prendre ta place pour l'évènement</strong></a>."
+      "text4": "Mais avant toute chose, n'oublie pas de <a href=\"/billetterie.html\"><strong>prendre ta place pour l'évènement</strong></a>."
     },
     "missions": {
       "title": "Missions disponibles",
@@ -590,6 +592,13 @@
       "title": "Nous soutenir",
       "text": "Vous souhaitez devenir partenaire ou contribuer au projet ? Contactez-nous pour en discuter.",
       "btnText": "Soutenir financièrement"
+    }
+  },
+  "salesConditions": {
+    "hero": {
+      "eyebrow": "Infos pratiques",
+      "title": "Conditions de vente",
+      "subtitle": "Modalités d'achat, remboursement et contact"
     }
   }
 }

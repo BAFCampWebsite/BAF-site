@@ -2,8 +2,8 @@
 
 Static multilingual site for the Belgian Activism Festi-Camp, built with [Astro](https://astro.build).
 
-- **French** at `https://belgian-activism-festi-camp.be/` (forwards to /fr)
-- **English** at `https://belgian-activism-festi-camp.be/en/`
+- **French** at `https://belgian-activism-festi-camp.be/fr` 
+- **English** at `https://belgian-activism-festi-camp.be/en/`(forwards to /eng)
 - **Dutch** at `https://belgian-activism-festi-camp.be/nl/`
 
 ## Local development

@@ -21,7 +21,8 @@
       "venir": "Hoe geraken",
       "nourrir": "Eten",
       "camping": "Camping",
-      "bambinerie": "De Bambinerie"
+      "bambinerie": "De Bambinerie",
+      "conditionsVente": "Verkoopvoorwaarden"
     },
     "dropdownAider": {
       "faireDon": "Doneren",
@@ -73,6 +74,7 @@
     "navProgramme": "Programma",
     "navAider": "Help ons",
     "navInfos": "Praktische info",
+    "navConditionsVente": "Verkoopvoorwaarden",
     "fonctionnementTitle": "Hoe het werkt",
     "financements": "Financiering",
     "footerCharte": "Ons charter",
@@ -239,10 +241,10 @@
     },
     "registration": {
       "title": "Hoe inschrijven?",
-      "description": "Inschrijving gebeurt via het online inschrijvingsformulier.",
+      "description": "Inschrijving gebeurt via het online inschrijvingsformulier: https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306 .",
       "stepNum": "1",
       "stepTitle": "Vul het inschrijvingsformulier in",
-      "stepText": "Vul het inschrijvingsformulier in om ons te laten weten dat je naar het kamp komt.",
+      "stepText": "Vul het inschrijvingsformulier in om ons te laten weten dat je naar het kamp komt, via deze link: https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306.",
       "formUrl": "https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306",
       "btnForm": "Inschrijvingsformulier invullen →"
     },
@@ -301,7 +303,7 @@
     },
     "dayContent": {
       "i0": "Na een week van gezamenlijke opbouw, gaat het kamp vanaf de middag van start.",
-      "i1": "De twee belangrijkste dagen van ons kamp staan in het teken van uitwisseling, discussie en workshops rond de vraag: “Hoe kunnen we samen strijden?” door iedereen voor iedereen!<br>Als je een workshop of stand wilt voorstellen, een project wilt lanceren of een thema voor een lezing wilt voorstellen - Aarzel dan niet om <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> onze oproep tot bijdragen </a> in te vullen 👊. <br><strong>Laten we samen het programma opstellen!</strong>",
+      "i1": "De twee belangrijkste dagen van ons kamp staan in het teken van uitwisseling, discussie en workshops rond de vraag: “Hoe kunnen we samen strijden?” door iedereen voor iedereen!<br>Om inclusief te zijn, zullen alle activiteiten in de tenten <strong>in ten minste drie talen worden vertolkt</strong>: Engels, Frans en Nederlands.",
       "i2": "De twee dagen die de kern van ons kamp vormen, zijn momenten van uitwisseling, discussie en workshops rond de vraag: “Hoe kunnen we samen strijden?” door iedereen voor iedereen!<br>Als je een workshop of stand wilt voorstellen, een project wilt lanceren of een thema voor een lezing wilt voorstellen - Aarzel dan niet om <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> onze oproep tot bijdragen </a> in te vullen 👊.<br><strong>Laten we samen het programma vorm geven!</strong>",
       "i3": "Evaluatie en voorstellen voor de volgende festivaledities. Wat nemen we mee? Wat blijft er over? Het festival eindigt rond de middag! Daarna volgen drie dagen van samen afbreken en opruimen!"
     },
@@ -449,9 +451,9 @@
     "benevolat": {
       "title": "Vrijwilligerswerk",
       "text1": "Ter plaatse is het onze doelstelling dat dit evenement zo horizontaal en zelfbeheerd mogelijk verloopt. Daarom, om de grens tussen vrijwilligers & “consument·en” van het festival zoveel mogelijk uit te wissen, geven idealiter alle deelnemer·s een beetje van hun tijd om dit festival te laten draaien. We hebben berekend dat als alle vrijwilligers <strong>2 uur per dag</strong> werken, het festival op een zelfbeheerde manier zou moeten kunnen functioneren. Bovendien kan elke taak aangepast worden als je een beperking hebt, van welke aard dan ook.",
-      "text2": "Aarzel niet om nu al je voorkeuren als vrijwilliger door te geven door het <a href=\"billetterie.html\"><strong>inschrijvingsformulier</strong></a> in te vullen. Anders kan je ter plaatse in real time taken vinden om te doen! Heb je vóór 20 augustus vragen of opmerkingen, contacteer ons dan via onze mail: <strong>volontairesBAF@proton.me</strong>!",
+      "text2": "Aarzel niet om nu al je voorkeuren als vrijwilliger door te geven door het <a href=\"/billetterie.html\"><strong>inschrijvingsformulier</strong></a> in te vullen. Anders kan je ter plaatse in real time taken vinden om te doen! Heb je vóór 20 augustus vragen of opmerkingen, contacteer ons dan via onze mail: <strong>volontairesBAF@proton.me</strong>!",
       "text3": "Het kamp zal gezamenlijk opgebouwd en afgebroken worden. <strong>We zullen hulp nodig hebben!</strong> Er moeten tenten en podia opgebouwd worden, maar ook decoratie gemaakt, ruimtes bedacht en infrastructuur uit paletten gebouwd worden, naargelang onze zin! Er blijft nog van alles te bedenken, dus kom vanaf 16 augustus mee helpen bij het creëren van deze ruimte! Inschrijvingen om vooraf te helpen bij het opbouwen van het kamp vind je in het formulier hieronder 👇.",
-      "text4": "Maar vergeet vóór alles niet om <a href=\"billetterie.html\"><strong>je plaats voor het evenement te bemachtigen</strong></a>."
+      "text4": "Maar vergeet vóór alles niet om <a href=\"/billetterie.html\"><strong>je plaats voor het evenement te bemachtigen</strong></a>."
     },
     "missions": {
       "title": "Missies beschikbaar",
@@ -590,6 +592,13 @@
       "title": "Steun ons",
       "text": "Wil je partner worden of bijdragen aan dit kamp? Neem contact met ons op!",
       "btnText": "Financiële steun"
+    }
+  },
+  "salesConditions": {
+    "hero": {
+      "eyebrow": "Praktische info",
+      "title": "Verkoopvoorwaarden",
+      "subtitle": "Aankoop-, terugbetalings- en contactgegevens"
     }
   }
 }
