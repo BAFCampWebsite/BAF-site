@@ -241,7 +241,7 @@
     },
     "registration": {
       "title": "How to register?",
-      "description": "Registration is done via the online registration form.",
+      "description": "Registration is done via the online registration form. You can find our sales conditions <a href=\"{salesConditionsUrl}\">here</a>.",
       "stepNum": "1",
       "stepTitle": "Fill in the registration form",
       "stepText": "Fill in the registration form to let us know you're coming to the camp.",
