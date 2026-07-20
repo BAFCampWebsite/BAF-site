@@ -110,22 +110,24 @@ Le non-respect de ces interdictions peut entraîner le refus ou le retrait du dr
 Sont autorisés, les gourdes, les snacks (fruits, biscuits, chocolats) et les boîtes à tartines.
 
 Sont expressément interdites sur le site du camp et peuvent donner lieu au refus ou au retrait du droit d’entrée au camp, sans droit à restitution du prix d’achat du billet, les actions suivantes :
-– adopter un comportement visant à troubler l’ordre public ou à inciter à la violence ;
-– pénétrer dans les zones auxquelles le billet ne donne pas accès ;
-– endommager de quelque façon les infrastructures, le matériel, la décoration et tout autre élément sur le site; tout dégât ou conséquence des dégradations produites par un.e participant.e lui sera par ailleurs facturé ;
-– bloquer les accès, les sorties et sorties de secours ;
-– vendre des victuailles, des boissons ou tout autre produit sans l’autorisation expresse des organisateurices ;
-– vendre des drogues ;
-– jeter (ou tirer avec) des objets sous forme solide, liquide ou gazeuse ;
-– fumer ou vapoter dans les zones où cela est interdit ;
-– mettre des déchets, spécialement des cigarettes dans la nature (= n’importe où ailleurs que dans le poubelles prévue) ;
-– uteliser du savon dans la riviére ;
-– uriner en public ;
-– garer un véhicule sans l’autorisation expresse de l’Organisateur ; le véhicule pourra par ailleurs être enlevé aux frais du propriétaire ;
-– voler des décorations ou tout autre matériel du Festival ;
-– faire du feu ;
-– tout comportement qui n’est pas en d’accord avec la Charte du BAF Camp est strictement interdit ;
-– mettre d’autres participant.es en danger.
+
+* adopter un comportement visant à troubler l’ordre public ou à inciter à la violence ;
+* pénétrer dans les zones auxquelles le billet ne donne pas accès ;
+* endommager de quelque façon les infrastructures, le matériel, la décoration et tout autre élément sur le site; tout dégât ou conséquence des dégradations produites par un.e participant.e lui sera par ailleurs facturé ;
+* bloquer les accès, les sorties et sorties de secours ;
+* vendre des victuailles, des boissons ou tout autre produit sans l’autorisation expresse des organisateurices ;
+* vendre des drogues ;
+* jeter (ou tirer avec) des objets sous forme solide, liquide ou gazeuse ;
+* fumer ou vapoter dans les zones où cela est interdit ;
+* mettre des déchets, spécialement des cigarettes dans la nature (= n’importe où ailleurs que dans le poubelles prévue) ;
+* utiliser du savon non-biodégradable dans la riviére ;
+* uriner en public ;
+* garer un véhicule sans l’autorisation expresse de l’Organisateur ; le véhicule pourra par ailleurs être enlevé aux frais du propriétaire ;
+* voler des décorations ou tout autre matériel du Festival ;
+* faire du feu ;
+* tout comportement qui n’est pas en d’accord avec la Charte du BAF Camp est strictement interdit ;
+* mettre d’autres participant.es en danger.
+
 Les organisateurices se réserve le droit d’exclure définitivement quiconque ne respectera pas la charte du BAF camp. Aucun dédommagement ne pourra être demandé par la personne exclue.
 
 ## Article 6: Responsabilité
