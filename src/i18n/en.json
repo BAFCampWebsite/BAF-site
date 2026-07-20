@@ -110,13 +110,13 @@
       },
       "voiture": {
         "title": "Car",
-        "text": "Direct access to the site by car possible at the address: Chem. de Lavaux 1, 6927 Tellin, Belgium. Free parking on site, carpooling encouraged."
+        "text": "Direct access to the site by car is possible at the address: Chem. de Lavaux 1, 6927 Tellin, Belgium. Free parking on site, carpooling encouraged. <a href=\"https://www.mobicoop.fr/\" target=\"_blank\" rel=\"noopener noreferrer\">Here</a> is an open-source carpooling site to help you organise your trip. Please offer your ride if your car is not full!"
       }
     },
     "restauration": {
       "sectionLabel": "Eat & drink",
       "title": "Catering",
-      "html": "Breakfast, lunch and dinner will be provided by an action kitchen from Gent and Brugge, on a pay-what-you-can basis - bring cash! All meals will be vegan and as many ingredients as possible collected through recup or from local farmers. There will also be a bar serving both soft and alcoholic drinks."
+      "html": "The Kokkerellen canteen will be on site to cook vegan dishes three times a day! It will be joined by an anarchist bakers' brigade for fresh bread 24 hours a day!"
     },
     "camping": {
       "sectionLabel": "Sleep on site",
@@ -332,8 +332,8 @@
           "text": "Places to meet, discuss and hang out together."
         },
         "i3": {
-          "title": "The stream",
-          "text": "Body or brain overheating? There’s a stream where you can swim to cool off!"
+          "title": "The river",
+          "text": "Body or brain overheating? You can swim in the river to cool off, and biodegradable soap will be provided for washing."
         }
       }
     }

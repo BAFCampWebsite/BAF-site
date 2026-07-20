@@ -67,33 +67,26 @@ const bambinerieBlocks = [
     <h2>{t("acces.title")}</h2>
 
     <div class="info-grid">
-      {
-        accesCards.map((card) => (
-          <div>
-            <div class="info-card surface-card">
-              <span class="info-card-icon">{card.icon}</span>
-              <h3 class="info-card-title">{card.title}</h3>
-              <p>{card.text}</p>
-              {card.linkLabel && card.linkUrl && (
-                <a
-                  class="info-card-link"
-                  href={card.linkUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {card.linkLabel}
-                </a>
-              )}
-            </div>
-            {card.warningText && (
-              <div class="info-card-warning">
-                <strong>{card.warningLabel}</strong>
-                <p>{card.warningText}</p>
-              </div>
+      {accesCards.map((card) => (
+        <div>
+          <div class="info-card surface-card">
+            <span class="info-card-icon">{card.icon}</span>
+            <h3 class="info-card-title">{card.title}</h3>
+            <p>{card.text}</p>
+            {card.linkLabel && card.linkUrl && (
+              <a class="info-card-link" href={card.linkUrl} target="_blank" rel="noopener noreferrer">
+                {card.linkLabel}
+              </a>
             )}
           </div>
-        ))
-      }
+          {card.warningText && (
+            <div class="info-card-warning">
+              <strong>{card.warningLabel}</strong>
+              <p>{card.warningText}</p>
+            </div>
+          )}
+        </div>
+      ))}
 
       <link
         rel="stylesheet"
