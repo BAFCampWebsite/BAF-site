@@ -107,13 +107,13 @@
       },
       "voiture": {
         "title": "Voiture",
-        "text": "Accès direct au site en voiture possible à l'adresse : Chem. de Lavaux 1, 6927 Tellin, Belgique. Parking gratuit sur place, covoiturage encouragé."
+        "text": "Accès direct au site en voiture possible à l'adresse : Chem. de Lavaux 1, 6927 Tellin, Belgique. Parking gratuit sur place, covoiturage encouragé. <a href=\"https://www.mobicoop.fr/\" target=\"_blank\" rel=\"noopener noreferrer\">Voici</a> un site de covoiturage open source pour vous auto-organiser lors de votre venue. Merci de proposer votre trajet si votre voiture n'est pas remplie !"
       }
     },
     "restauration": {
       "sectionLabel": "Manger & boire",
       "title": "Restauration",
-      "html": "Les modalités de cantine ne sont pas encore définies. Si tu fais partie d'un collectif qui peut aider avec du matériel et du savoir faire. <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> Contacte nous ! </a>"
+      "html": "La cantine Kokkerellen sera sur place pour cuisiner des plats végan 3 fois par jour ! Elle sera accompagnée par une brigade de boulangers anarchistes pour du pain frais 24h/24 !"
     },
     "camping": {
       "sectionLabel": "Dormir sur place",
@@ -321,8 +321,8 @@
           "text": "Plein de lieux variés en auto-gestion pour rencontrer, discuter et flaner ensemble."
         },
         "i3": {
-          "title": "Le lac",
-          "text": "Baignade autorisée pour se rafraîchir en cas de surchauffe du corps ou du cerveau."
+          "title": "La rivière",
+          "text": "Baignade autorisée pour se rafraîchir en cas de surchauffe du corps ou du cerveau. Du savon bio-dégradable sera fourni pour se laver."
         }
       }
     }
