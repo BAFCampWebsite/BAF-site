@@ -46,7 +46,8 @@ You have the right to access, modify, rectify or delete your personal data. If y
 
 This website is governed by Belgian law. Only the courts of the Brussels judicial district have jurisdiction in the event of a dispute.
 
-Use of cookies
+## Use of cookies
+
 During your visit to the website, cookies may be automatically installed on your hard drive. These files are used solely to better tailor the website to your needs and not to personally identify you. You can block the use of these cookies, be notified before they are used or delete them from your hard drive using your browser settings.
 
 # GENERAL TERMS AND CONDITIONS for BAF CAMP:
@@ -175,7 +176,7 @@ The recording and storage of the images in question by the police and/or the org
 
 If a participant wishes to exercise their right to be forgotten (erasure of their personal data), the organiser is obligated to remove all such data and consequently can no longer offer their services or grant them access to the Camp. The order will be cancelled without refund.
 
-## Article 8: Applicable Law, Jurisdiction and General Provision 
+## Article 8: Applicable Law, Jurisdiction and General Provision
 
 These General Terms and Conditions are governed by Belgian law.
 
