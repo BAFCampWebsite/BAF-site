@@ -2,6 +2,14 @@
 
 Pour les conditions de ventes, voyez ci dessous après les informations par rapport au site web.
 
+*Petit résumé des points importants pour tou.te.s qui  iront pas ces conditions:*
+
+* Vous avez besoin d’un billet (qui est à prix libre) pour entrer au BAF pour assurer qu’on ne soit pas trop.
+* Si tu as réserver une place au BAF mais tu ne viens pas, dites le nous pour qu’on puisse le donner à quelqu’un d’autre ! -> [volontairesBAF@proton.me](mailto:volontairesBAF@proton.me)
+* On ne remboursera pas les billets.
+* Si vous venez au BAF camp, vous acceptez notre charte.
+* Ne sont pas permi : les appareils photo (pour la sécurité des participant.e.s) et les chiens (à cause des autres animaux sur le site) et autre chose regarder art.4 et 5
+
 ## Le présent site est la propriété de l’association d’organisation du BAF Camp : 
 
 Dénomination : BAF collectif 
@@ -41,14 +49,6 @@ Le présent site est régi par le droit belge en vigueur. Seuls les tribunaux de
 Durant la visite sur le site, des cookies peuvent être installés automatiquement sur le disque dur du visiteur. Ces fichiers sont utilisés uniquement dans le but de mieux adapter le site web aux besoins des visiteurs et non pour identifier personnellement le visiteur. Par l’intermédiaire de son navigateur, l’utilisateur pourra bloquer l’utilisation de ces cookies, être informé préalablement de leur utilisation ou de les supprimer de leur disque dur.
 
 # CONDITIONS GENERALES DE VENTE du BAF CAMP
-
-*Petit résumé des points importants pour tou.te.s qui  liront pas ces conditions:*
-
-* Vous avez besoin d’un billet (qui est à prix libre) pour entrer au BAF pour assurer qu’on ne soit pas trop.
-* Si tu as réserver une place au BAF mais tu ne viens pas, dites le nous pour qu’on puisse le donner à quelqu’un d’autre ! -> [volontairesBAF@proton.me](mailto:volontairesBAF@proton.me)
-* On ne remboursera pas les billets.
-* Si vous venez au BAF camp, vous acceptez notre charte.
-* Ne sont pas permi : les appareils photo (pour la sécurité des participant.e.s) et les chiens (à cause des autres animaux sur le site) et autre chose regarder art.4 et 5
 
 ## Préambule
 
