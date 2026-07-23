@@ -1,8 +1,14 @@
 import { defineConfig } from 'astro/config';
 import astroIntl from "astro-intl";
 import { readFileSync } from 'node:fs';
+import vercel from '@astrojs/vercel';
 
 export default defineConfig({
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   site: 'https://belgian-activism-festi-camp.be',
   integrations: [
     astroIntl({
