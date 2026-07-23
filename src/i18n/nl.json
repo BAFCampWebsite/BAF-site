@@ -110,13 +110,13 @@
       },
       "voiture": {
         "title": "Auto",
-        "text": "Directe toegang met de auto mogelijk op het adres: Chem. de Lavaux 1, 6927 Tellin, België. Gratis parkeren vlakbij het terrein, carpoolen wordt aangemoedigd."
+        "text": "Directe toegang met de auto is mogelijk op het adres: Chem. de Lavaux 1, 6927 Tellin, België. Gratis parkeren vlakbij het terrein, carpoolen wordt aangemoedigd. <a href=\"https://www.mobicoop.fr/\" target=\"_blank\" rel=\"noopener noreferrer\">Hier</a> is een opensource carpoolingsite om jullie te helpen je komst te organiseren. Deel je rit als je auto niet vol zit!"
       }
     },
     "restauration": {
       "sectionLabel": "Eten & drankjes",
       "title": "Keuken",
-      "html": "Actiekeukens uit Gent en Brugge zullen voor ons koken: ontbijt, lunch en avondmaal van donderdagavond tot zondagmiddag. Alle maaltijden zijn vegan en aan vrije bijdrage. We gebruiken zoveel mogelijk ingrediënten van recup en lokale boeren."
+      "html": "De Kokkerellen-cantine zal ter plaatse zijn om drie keer per dag vegan gerechten te bereiden! Ze wordt begeleid door een anarchistische bakkersbrigade voor vers brood 24 uur per dag!"
     },
     "camping": {
       "sectionLabel": "Slapen ter plekke",
@@ -333,7 +333,7 @@
         },
         "i3": {
           "title": "De rivier",
-          "text": "Zwemmen toegelaten bij oververhitting van je lijf of brein!"
+          "text": "Zwemmen is toegestaan om af te koelen bij oververhitting van je lijf of brein. Biologisch afbreekbare zeep wordt voorzien om je te wassen."
         }
       }
     }
