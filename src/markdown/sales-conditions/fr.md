@@ -186,4 +186,4 @@ Les parties s’engagent à remplacer le ou les disposition(s) par la ou les dis
 En cas de litige, seuls les tribunaux de l’arrondissement de Bruxelles sont compétents.
 Les présentes conditions générales sont libellées sous toute réserve et sans reconnaissance préjudiciable aucune dans le chef de l’Organisateur.
 
-Ces conditions de ventes sont inspirées de celles de la SEMO ASBL. Merci pour leur travail. 
+Ces conditions de ventes sont inspirées de celles de la SEMO ASBL. Merci pour leur travail.
