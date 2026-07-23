@@ -22,6 +22,7 @@
       "nourrir": "Se nourrir",
       "camping": "Le camping",
       "bambinerie": "La Bambinerie",
+      "other": "Autres infos",
       "conditionsVente": "Conditions de vente"
     },
     "dropdownAider": {
@@ -130,23 +131,31 @@
     "bambinerie": {
       "sectionLabel": "Petits militants",
       "title": "La Bambinerie",
-      "introHtml": "Le BAF Camp, c'est aussi pour les familles ! Un espace dédié <strong>aux enfants entre 4 et 16 ans </strong>est prévu sur le site, pour que les parents puissent profiter des conférences et ateliers l'esprit tranquille.",
+      "introHtml": "Le BAF Camp, c'est aussi pour les familles ! Un espace dédié <strong>aux enfants entre 4 et 16 ans </strong>est prévu sur le site, pour qu'iels puissent s'approprier, créer et faire vivre leurs propresespaces ",
       "morning": {
         "title": "Créneau du matin",
-        "html": "Un créneau de <strong>2h le matin</strong> est prévu pour déposer les enfants à la Bambinerie, le temps d'assister aux conférences et ateliers du programme."
+        "html": "Un créneau de <strong>10h à 12h le matin</strong> est prévu pour accueillir les enfants à la Bambinerie, "
       },
       "afternoon": {
         "title": "Créneau de l'après-midi",
-        "html": "Un deuxième créneau de <strong>2h l'après-midi</strong> est proposé pour permettre aux parents de profiter pleinement de la journée."
+        "html": "Un deuxième créneau de <strong>2h l'après-midi, de 14h à 16h</strong> est proposé pour leur permettre de se retrouver après le repas."
       },
       "activities": {
         "title": "Activités pour les bambins",
-        "html": "En dehors des créneaux de garde, certaines activités organisées peuvent être adaptées pour les bambins : jeux, créations, découvertes… Le BAF Camp, c'est pour toustes !"
+        "html": "En dehors des créneaux d'ouverture, certains espaces de programmation sont prévus pour être adapté aux enfants : jeux, spectacles, créations, découvertes !"
       },
       "contact": {
         "title": "Des questions sur la Bambinerie ?",
         "prefix": "N'hésite pas à nous contacter à ",
         "suffix": " pour toute question concernant l'accueil des enfants."
+      }
+    },
+    "other": {
+      "sectionLabel": "Autres informations",
+      "title": "Autres informations",
+      "dogs": {
+        "title": "Chiens",
+        "text": "Les chiens ne sont malheureusement pas autorisés sur le site, car il s'agit d'une propriété privée avec plusieurs autres chiens et animaux."
       }
     }
   },
@@ -241,7 +250,7 @@
     },
     "registration": {
       "title": "Comment s'inscrire ?",
-      "description": "L'inscription se fait via le formulaire d'inscription en ligne.",
+      "description": "L'inscription se fait via le formulaire d'inscription en ligne. Vous pouvez trouver nos conditions de ventes <a href=\"{salesConditionsUrl}\">ici.</a>",
       "stepNum": "1",
       "stepTitle": "Remplir le formulaire d'inscription",
       "stepText": "Remplis le formulaire d'inscription pour t'annoncer au camp.",
