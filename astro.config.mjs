@@ -24,9 +24,9 @@ export default defineConfig({
     i18n: {
         defaultLocale: 'en',
         locales: {
-          en: 'en', 
-          nl: 'nl',
-          fr: 'fr',
+          en: 'en-UK', 
+          nl: 'nl-BE',
+          fr: 'fr-BE',
         },
       },
     })],
