@@ -98,11 +98,11 @@
       "title": "Toegang tot het festival",
       "train": {
         "title": "Trein",
-        "text": "De locatie ligt op 300 meter wandelen van het treinstation van Grupont. Deze Infrabel-pagina geeft de officiële informatie over de spoorverbinding en eventuele werken op de Ciney–Haversin-as.",
+        "text": "De locatie ligt op 300 meter wandelen van het treinstation van Grupont.",
         "linkLabel": "Bekijk de officiële Infrabel-informatie",
         "linkUrl": "https://infrabel.be/nl/axe3-ciney-haversin",
         "warningLabel": "⚠️ Waarschuwing",
-        "warningText": "Er zullen waarschijnlijk problemen met treinen zijn, dus check dit vóór je komt."
+        "warningText": "Er zullen waarschijnlijk problemen met treinen zijn, dus check dit vóór je komt. Deze Infrabel-pagina geeft de officiële informatie over de spoorverbinding en eventuele werken op de Ciney–Haversin-as."
       },
       "velo": {
         "title": "Fiets",
@@ -110,7 +110,7 @@
       },
       "voiture": {
         "title": "Auto",
-        "text": "Directe toegang met de auto is mogelijk op het adres: Chem. de Lavaux 1, 6927 Tellin, België. Gratis parkeren vlakbij het terrein, carpoolen wordt aangemoedigd. <a href=\"https://www.mobicoop.fr/\" target=\"_blank\" rel=\"noopener noreferrer\">Hier</a> is een opensource carpoolingsite om jullie te helpen je komst te organiseren. Deel je rit als je auto niet vol zit!"
+        "text": "Directe toegang met de auto is mogelijk op het adres: Chem. de Lavaux 1, 6927 Tellin, België. Gratis parkeren vlakbij het terrein, carpoolen wordt aangemoedigd."
       }
     },
     "restauration": {

@@ -98,11 +98,11 @@
       "title": "Access to the festival",
       "train": {
         "title": "Train",
-        "text": "The site is a 300 m walk from Grupont station. This Infrabel page provides official information on rail access and any works on the Ciney–Haversin axis.",
+        "text": "The site is a 300 m walk from Grupont station.",
         "linkLabel": "See official Infrabel information",
         "linkUrl": "https://infrabel.be/en/axe3-ciney-haversin",
         "warningLabel": "⚠️ Warning",
-        "warningText": "There will probably be train problems, so please check before coming."
+        "warningText": "There will probably be train problems, so please check before coming. This Infrabel page provides official information on rail access and any works on the Ciney–Haversin axis."
       },
       "velo": {
         "title": "Bike",
@@ -110,7 +110,7 @@
       },
       "voiture": {
         "title": "Car",
-        "text": "Direct access to the site by car is possible at the address: Chem. de Lavaux 1, 6927 Tellin, Belgium. Free parking on site, carpooling encouraged. <a href=\"https://www.mobicoop.fr/\" target=\"_blank\" rel=\"noopener noreferrer\">Here</a> is an open-source carpooling site to help you organise your trip. Please offer your ride if your car is not full!"
+        "text": "Direct access to the site by car is possible at the address: Chem. de Lavaux 1, 6927 Tellin, Belgium. Free parking on site, carpooling encouraged."
       }
     },
     "restauration": {
