@@ -1,0 +1,13 @@
+{
+  "name": "BAF Camp — Belgian Activism Festi-Camp",
+  "short_name": "BAF Camp",
+  "description": "Belgian Activism Festi-Camp — un festival pour explorer et célébrer l'activisme en Belgique",
+  "start_url": "/fr/",
+  "display": "standalone",
+  "background_color": "#FEF9F2",
+  "theme_color": "#4A8C5C",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
