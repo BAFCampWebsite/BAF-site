@@ -110,7 +110,12 @@
       },
       "voiture": {
         "title": "Voiture",
-        "text": "Accès direct au site en voiture possible à l'adresse : Chem. de Lavaux 1, 6927 Tellin, Belgique. Parking gratuit sur place, covoiturage encouragé."
+        "text": "Accès direct au site en voiture possible à l'adresse : Chem. de Lavaux 1, 6927 Tellin, Belgique. Parking gratuit sur place.",
+        "carpool": {
+          "text": "Nous utilisons HopHub pour aider les participants à proposer et à rejoindre des courses",
+          "linkLabel": "Découvrez HopHub",
+          "heading": "Rejoignez le covoiturage !"
+        }
       }
     },
     "restauration": {

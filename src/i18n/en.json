@@ -98,7 +98,7 @@
       "title": "Access to the festival",
       "train": {
         "title": "Train",
-        "text": "The site is a 300 m walk from Grupont station.",
+        "text": "The site is a 300m walk from Grupont station.",
         "linkLabel": "See official Infrabel information",
         "linkUrl": "https://infrabel.be/en/axe3-ciney-haversin",
         "warningLabel": "⚠️ Warning",
@@ -110,7 +110,12 @@
       },
       "voiture": {
         "title": "Car",
-        "text": "Direct access to the site by car is possible at the address: Chem. de Lavaux 1, 6927 Tellin, Belgium. Free parking on site, carpooling encouraged."
+        "text": "Direct access to the site by car is possible at the address: Chem. de Lavaux 1, 6927 Tellin, Belgium. Free parking on site.",
+        "carpool": {
+          "text": "We are using HopHub to help attendees offer and join rides",
+          "linkLabel": "Check out HopHub",
+          "heading": "Join the carpool!"
+        }
       }
     },
     "restauration": {

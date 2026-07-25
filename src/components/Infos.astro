@@ -80,6 +80,18 @@ const bambinerieBlocks = [
           <span class="info-card-icon">🚗</span>
           <h3 class="info-card-title">{t("acces.voiture.title")}</h3>
           <p>{t("acces.voiture.text")}</p>
+          <div class="info-card-success">
+            <strong>🤲 {t("acces.voiture.carpool.heading")}</strong>
+            <p>{t("acces.voiture.carpool.text")}</p>
+            <a
+              class="info-card-link"
+              href="https://hophub.xyz/e/baf-camp-2026-93cc4c"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("acces.voiture.carpool.linkLabel")}
+            </a>
+          </div>
         </div>
       </div>
 
@@ -272,6 +284,29 @@ const bambinerieBlocks = [
     font-size: 0.82rem;
     line-height: 1.6;
     color: #8e1d1d;
+  }
+
+  .info-card-success {
+    margin-top: 10px;
+    padding: 12px 14px;
+    border: 2px solid var(--vert-dark);
+    border-radius: 10px;
+    background: #d4edda;
+    box-shadow: 4px 4px 0 var(--vert-dark);
+  }
+  .info-card-success strong {
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--vert-dark);
+  }
+  .info-card-success p {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--vert-dark);
   }
 
   .section-alt {
