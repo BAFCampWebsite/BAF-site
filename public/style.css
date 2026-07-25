@@ -316,6 +316,7 @@ nav {
   font-size: var(--text-3xl); color: var(--creme);
   letter-spacing: .1em;
   text-shadow: var(--contour-bd-md);
+  line-height: 0.9em;
 }
 .nav-site-name span { color: var(--rose); }
 
@@ -454,7 +455,9 @@ nav {
 }
 .meta-label {
   font-family: var(--font-mono);
-  font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--vert);
+  font-size: 1rem; letter-spacing: .2em; text-transform: uppercase; color: var(--vert-dark);
+  font-weight: 800;
+
 }
 .meta-value {
   font-family: var(--font-display);
@@ -553,7 +556,7 @@ nav {
 .section-contact .section-title { color: var(--creme); text-shadow: 2px 2px 0 rgba(28,18,8,.3); }
 .contact-sub {
   font-family: var(--font-serif); font-style: italic;
-  color: rgba(249,242,236,.7); max-width: 400px; margin: 0 auto 40px;
+  color: var(--creme-fonce); max-width: 400px; margin: 0 auto 40px;
   line-height: 1.75; font-size: .93rem;
 }
 
@@ -596,7 +599,7 @@ nav {
 .page-content p {
   font-family: var(--font-serif);
   font-size: .93rem; line-height: 1.85;
-  color: var(--gris-encre); margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 .page-content ul { list-style: none; margin-bottom: 20px; }
 .page-content ul li {
@@ -897,7 +900,7 @@ footer {
   }
 
   .hero-eyebrow {
-    font-size: .6rem;
+    font-size: 1.1rem;
     padding: 4px 10px;
     margin-bottom: 16px;
   }
