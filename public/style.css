@@ -591,7 +591,6 @@ nav {
   font-family: var(--font-display);
   font-size: 2rem; letter-spacing: .04em;
   color: var(--vert); margin-bottom: 20px; margin-top: 48px;
-  text-shadow: var(--contour-bd-sm);
 }
 .page-content h2:first-child { margin-top: 0; }
 .page-content p {
@@ -615,13 +614,11 @@ nav {
   font-family: var(--font-display);
   font-size: 2.2rem; letter-spacing: .04em;
   color: var(--rose-hot); margin-bottom: 16px; margin-top: 0;
-  text-shadow: var(--contour-bd-md);
 }
 .markdown-content h3 {
   font-family: var(--font-display);
   font-size: 1.5rem; letter-spacing: .04em;
   color: var(--vert); margin-bottom: 12px; margin-top: 32px;
-  text-shadow: var(--contour-bd-sm);
 }
 .markdown-content h4 {
   font-family: var(--font-mono);
@@ -677,7 +674,7 @@ nav {
 .card-icon { font-size: 1.8rem; margin-bottom: 14px; display: block; }
 .card-title {
   font-family: var(--font-display); font-size: 1.35rem; letter-spacing: .04em;
-  color: var(--vert); margin-bottom: 10px; text-shadow: var(--contour-bd-sm);
+  color: var(--vert); margin-bottom: 10px;
 }
 .card-text {
   font-family: var(--font-serif); font-size: .84rem; line-height: 1.7; color: var(--gris-encre);
