@@ -4,22 +4,34 @@ import { getLocale } from 'astro-intl';
 const lang = getLocale();
 ---
 <script is:inline>
+function closeAllDropdowns() {
+  document.querySelectorAll('.nav-links > li, .mobile-nav-links > li').forEach(l => l.classList.remove('open'));
+}
+
 document.querySelectorAll('.dd-btn').forEach(btn => {
   btn.addEventListener('click', function() {
     const li = this.parentElement;
     const was = li.classList.contains('open');
-    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+    closeAllDropdowns();
     if (!was) li.classList.add('open');
   });
 });
 
 document.addEventListener('click', e => {
-  if (!e.target.closest('.nav-links > li'))
-    document.querySelectorAll('.nav-links > li').forEach(l => l.classList.remove('open'));
+  if (!e.target.closest('.nav-links > li, .mobile-nav-links > li'))
+    closeAllDropdowns();
 });
 
 document.getElementById('burgerBtn')?.addEventListener('click', function() {
-  document.getElementById('navLinks').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.body.classList.toggle('nav-open');
+});
+
+document.getElementById('mobileMenu')?.addEventListener('click', function(e) {
+  if (e.target === this) {
+    this.classList.remove('open');
+    document.body.classList.remove('nav-open');
+  }
 });
 
 const obs = new IntersectionObserver(entries =>
