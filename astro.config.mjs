@@ -20,15 +20,16 @@ export default defineConfig({
       en: () => JSON.parse(readFileSync("./src/i18n/en.json", "utf-8")),
       nl: () => JSON.parse(readFileSync("./src/i18n/nl.json", "utf-8")),
     },
-  }), sitemap({ 
+  }), sitemap({
     i18n: {
         defaultLocale: 'en',
         locales: {
-          en: 'en-UK', 
+          en: 'en-UK',
           nl: 'nl-BE',
           fr: 'fr-BE',
         },
       },
+    xslURL: 'https://gitcdn.xyz/repo/pedroborges/xml-sitemap-stylesheet/master/sitemap.xsl'
     })],
   vite: {
     plugins: [
