@@ -20,7 +20,16 @@ export default defineConfig({
       en: () => JSON.parse(readFileSync("./src/i18n/en.json", "utf-8")),
       nl: () => JSON.parse(readFileSync("./src/i18n/nl.json", "utf-8")),
     },
-  }), sitemap()],
+  }), sitemap({ 
+    i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en', 
+          nl: 'nl',
+          fr: 'fr',
+        },
+      },
+    })],
   vite: {
     plugins: [
       {
