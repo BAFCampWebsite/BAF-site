@@ -5,7 +5,7 @@ import { getTranslations } from '../i18n/getTranslations';
 const { slug } = Astro.props;
 const lang = getLocale();
 const t = getTranslations('site');
-const origin = 'https://belgian-activism-festi-camp.be';
+const origin = 'https://bafcamp.be';
 const path = `${lang}${slug ? `/${slug}` : ''}`;
 const canonical = `${origin}/${path}/`;
 const ogImage = `${origin}/BAF%20Logo.png`;

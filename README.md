@@ -2,9 +2,9 @@
 
 Static multilingual site for the Belgian Activism Festi-Camp, built with [Astro](https://astro.build).
 
-- **French** at `https://belgian-activism-festi-camp.be/fr` 
-- **English** at `https://belgian-activism-festi-camp.be/en/`(forwards to /eng)
-- **Dutch** at `https://belgian-activism-festi-camp.be/nl/`
+- **French** at `https://bafcamp.be/fr` 
+- **English** at `https://bafcamp.be/en/`(forwards to /eng)
+- **Dutch** at `https://bafcamp.be/nl/`
 
 ## Local development
 
@@ -68,4 +68,3 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for details.
 Push to `main` — Vercel detects Astro from `astro.config.mjs` and auto-deploys.
 
 If you open a PR, Vercel will create a preview deployment, check the "deployments" in the PR itself.
-
