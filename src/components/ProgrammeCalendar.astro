@@ -6,6 +6,7 @@ import teamupEvents from "../../public/teamup-events.json";
 const lang = getLocale();
 const t = getTranslations("programme");
 const addToCalendarLabel = t("calendar.addToCalendar");
+const searchPlaceholder = t("calendar.searchPlaceholder");
 
 const SUBCALENDAR_ID_MAP = {
   "15782183": "CONFERENCE",
@@ -173,6 +174,7 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
       <button class="calendar-filter" data-category="WORKSHOPS">
         {t("calendar.filters.workshops")}
       </button>
+      <input class="calendar-search-input" type="search" placeholder={searchPlaceholder} aria-label={searchPlaceholder}>
     </div>
     <div class="construction-banner">⚠ {t("construction")}</div>
 
@@ -255,6 +257,26 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     background: var(--rose);
     color: white;
     border-color: var(--rose);
+  }
+  .calendar-search-input {
+    border: var(--contour);
+    border-radius: 999px;
+    background: var(--blanc-sale);
+    color: var(--encre);
+    padding: 8px 14px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    outline: none;
+    margin-left: auto;
+    max-width: 220px;
+    box-shadow: var(--ombre);
+  }
+  .calendar-search-input:focus {
+    border-color: var(--rose);
+    box-shadow: var(--ombre), 0 0 0 2px color-mix(in srgb, var(--rose) 30%, transparent);
   }
   .calendar-grid {
     display: flex;
@@ -472,6 +494,8 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
   let activeCategory = "all";
   let activeDay = "all";
   let activeEvent = null;
+  let activeSearch = "";
+  let searchTimeout = null;
 
   function escapeHtml(value) {
     return String(value)
@@ -629,7 +653,13 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
       const matchesCategory =
         activeCategory === "all" ? true : (event.categories || []).includes(activeCategory);
       const matchesDay = activeDay === "all" ? true : event.dayKey === activeDay;
-      return matchesCategory && matchesDay;
+      if (!activeSearch) return matchesCategory && matchesDay;
+      const haystack = [
+        event.title || "",
+        event.notesText || event.notes || "",
+        event.who || "",
+      ].join(" ").toLowerCase();
+      return matchesCategory && matchesDay && haystack.includes(activeSearch);
     });
 
     if (!container) return;
@@ -669,6 +699,15 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
       }
       renderEvents();
     });
+  });
+
+  const searchInput = document.querySelector(".calendar-search-input");
+  searchInput?.addEventListener("input", () => {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      activeSearch = (searchInput.value || "").toLowerCase().trim();
+      renderEvents();
+    }, 250);
   });
 
   container?.addEventListener("click", (event) => {
