@@ -84,12 +84,16 @@ async function main() {
     ? resolve(repoRoot, process.argv[2])
     : resolve(repoRoot, 'public', 'teamup-events.json');
 
+  const events = (Array.isArray(payload.events) ? payload.events : []).sort(
+    (a, b) => a.id - b.id,
+  );
+
   mkdirSync(dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, `${JSON.stringify({
     calendarId,
     startDate,
     endDate,
-    events: Array.isArray(payload.events) ? payload.events : [],
+    events,
   }, null, 2)}\n`);
 
   console.log(`Saved Teamup events to ${outputPath}`);
