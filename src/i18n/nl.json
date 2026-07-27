@@ -303,6 +303,7 @@
       "dayFilters": {
         "all": "Alle dagen"
       },
+      "searchPlaceholder": "Zoeken…",
       "noDescription": "Nog geen beschrijving.",
       "addToCalendar": "Aan kalender toevoegen",
       "filters": {

@@ -303,6 +303,7 @@
       "dayFilters": {
         "all": "Tous les jours"
       },
+      "searchPlaceholder": "Chercher…",
       "noDescription": "Pas de description pour l'instant.",
       "addToCalendar": "Ajouter au calendrier",
       "filters": {
