@@ -3,7 +3,7 @@ Zie hieronder, na de informatie over de website, de verkoopvoorwaarden.
 *Een korte samenvatting van de belangrijkste punten voor iedereen die er niet bij kan zijn:*
 
 * Je hebt een ticket nodig (waarvoor je zelf de prijs bepaalt) om toegang te krijgen tot het BAF, zodat we niet te veel mensen binnenlaten.
-* Als je een plek bij het BAF hebt gereserveerd maar niet komt, laat het ons dan weten, zodat we die aan iemand anders kunnen geven! -> [volontairesBAF@proton.me](mailto:volontairesBAF@proton.me)
+* Als je een plek bij het BAF hebt gereserveerd maar niet komt, laat het ons dan weten, zodat we die aan iemand anders kunnen geven! -> [volunteers@bafcamp.be](mailto:volunteers@bafcamp.be)
 * Tickets worden niet terugbetaald.
 * Als je naar het BAF-kamp komt, ga je akkoord met ons reglement.
 * Niet toegestaan zijn: camera’s (voor de veiligheid van de deelnemers) en honden (vanwege de andere dieren op het terrein) en overige zaken, zie art. 4 en 5
@@ -14,7 +14,7 @@ Naam: BAF collectif
 
 Rechtsvorm: Feitelijke vereniging
 
-Contact: [activismcampbelgium@proton.me](mailto:activismcampbelgium@proton.me)
+Contact: [contact@bafcamp.be](mailto:contact@bafcamp.be)
 
 Door deze website te bezoeken en te gebruiken, gaat de bezoeker uitdrukkelijk akkoord met de volgende algemene gebruiksvoorwaarden.
   
@@ -41,7 +41,7 @@ BAF collectif hecht veel waarde aan de bescherming van de privacy, in overeenste
 
 Hoewel het grootste deel van de inhoud van deze website beschikbaar is zonder dat de persoonsgegevens van bezoekers nodig zijn, is het mogelijk dat bezoekers worden gevraagd om persoonsgegevens te verstrekken. Het BAF-collectief gebruikt deze gegevens uitsluitend om te reageren op verzoeken om informatie en/of om bezoekers op de hoogte te houden van het laatste nieuws over het BAF-kamp. Deze gegevens worden niet doorverkocht, overgedragen of verhuurd aan derden.
 
-U hebt het recht op inzage, wijziging, correctie of verwijdering van uw persoonsgegevens. Indien u dit recht wenst uit te oefenen, kunt u ons een e-mail sturen naar [activismcampbelgium@proton.me](mailto:activismcampbelgium@proton.me). De wijziging zal binnen maximaal 50 dagen na ontvangst van uw verzoek worden doorgevoerd.
+U hebt het recht op inzage, wijziging, correctie of verwijdering van uw persoonsgegevens. Indien u dit recht wenst uit te oefenen, kunt u ons een e-mail sturen naar [contact@bafcamp.be](mailto:contact@bafcamp.be). De wijziging zal binnen maximaal 50 dagen na ontvangst van uw verzoek worden doorgevoerd.
 
 ## Toepasselijk recht en bevoegde rechtbanken
 
@@ -82,7 +82,7 @@ De aanbevolen prijzen kunnen veranderen.
 
 De btw en andere belastingen zijn voor rekening van de deelnemer.
 
-Het herroepingsrecht is niet van toepassing, aangezien de dienst (ticketreservering) onmiddellijk wordt uitgevoerd. Als je een plaats hebt gereserveerd of een ticket hebt gekocht en je kunt niet komen, laat het ons dan alstublieft weten via e-mail [volontairesBAF@proton.me](mailto:volontairesBAF@proton.me), zodat we de plaats aan iemand anders kunnen geven!
+Het herroepingsrecht is niet van toepassing, aangezien de dienst (ticketreservering) onmiddellijk wordt uitgevoerd. Als je een plaats hebt gereserveerd of een ticket hebt gekocht en je kunt niet komen, laat het ons dan alstublieft weten via e-mail [volunteers@bafcamp.be](mailto:volunteers@bafcamp.be), zodat we de plaats aan iemand anders kunnen geven!
 
 Na betaling is het ticket helaas niet restitueerbaar (vanwege onze beveiligingsprocedures en de mogelijkheid om een valse naam te gebruiken bij de registratie). 
 In geval van annulering van het kamp worden geen tickets terugbetaald.
@@ -109,7 +109,7 @@ Bovendien behouden de organisatoren zich het recht voor om, om dwingende en aant
 
 In dat geval worden tickets niet terugbetaald of omgeruild.
 
-In geval van onbehagen of onveiligheid in verband met het BAF-kamp kan terugbetaling van het ticket worden besproken. Neem gerust contact op met de organisatoren en de Caregroep om dit te bespreken via [activismcampbelgium@proton.me](mailto:activismcampbelgium@proton.me).
+In geval van onbehagen of onveiligheid in verband met het BAF-kamp kan terugbetaling van het ticket worden besproken. Neem gerust contact op met de organisatoren en de Caregroep om dit te bespreken via [contact@bafcamp.be](mailto:contact@bafcamp.be).
 
 ## Artikel 5: Verboden
 

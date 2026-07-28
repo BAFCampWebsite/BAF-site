@@ -3,7 +3,7 @@ For the terms of sale, see below after the information about the website.
 *A quick summary of the key points for anyone who won’t be able to make it:*
 
 * You need a ticket (which is pay-what-you-can) to enter the BAF to ensure we don’t get too crowded.
-* If you’ve reserved a spot at the BAF but won’t be coming, please let us know so we can give it to someone else! -> [volontairesBAF@proton.me](mailto:volontairesBAF@proton.me)
+* If you’ve reserved a spot at the BAF but won’t be coming, please let us know so we can give it to someone else! -> [volunteers@bafcamp.be](mailto:volunteers@bafcamp.be)
 * We won’t issue refunds
 * If you come to the BAF camp, you agree with our charter
 * Not allowed are: cameras (for the safety of the participants) and dogs (because of the other animals on site), something else to keep: ## articles 4 and 5.
@@ -14,7 +14,7 @@ Name: BAF Collective
 
 Legal form: De facto association
 
-Contact: [activismcampbelgium@proton.me](mailto:activismcampbelgium@proton.me)
+Contact: [contact@bafcamp.be](mailto:contact@bafcamp.be)
 
 By accessing and using this website, the visitor explicitly agrees to the following terms and conditions of use.
 
@@ -40,7 +40,7 @@ The BAF collective is committed to respecting privacy, in accordance with the pr
 
 Although most of the content on this site is available without requiring visitors' personal data, visitors may be asked to provide personal information. The BAF Collective uses this data exclusively to respond to information requests and/or to keep visitors informed about BAF camp news. This data will not be resold, transferred or rented to any third party.
 
-You have the right to access, modify, rectify or delete your personal data. If you wish to exercise this right, you can do so by sending an email to [activismcampbelgium@proton.me](mailto:activismcampbelgium@proton.me). The modification will be made within a maximum of 50 days of receipt of your request.
+You have the right to access, modify, rectify or delete your personal data. If you wish to exercise this right, you can do so by sending an email to [contact@bafcamp.be](mailto:contact@bafcamp.be). The modification will be made within a maximum of 50 days of receipt of your request.
 
 ## Applicable law and competent courts
 
@@ -79,7 +79,7 @@ Recommended prices may change.
 
 VAT and other taxes are the responsibility of the participant.
 
-The right of withdrawal does not apply, since the service (ticket booking) is carried out immediately.  If you have booked a ticket and cannot attend please let us know, via [volontairesBAF@proton.me](mailto:volontairesBAF@proton.me) so that we can offer the place to someone else.
+The right of withdrawal does not apply, since the service (ticket booking) is carried out immediately.  If you have booked a ticket and cannot attend please let us know, via [volunteers@bafcamp.be](mailto:volunteers@bafcamp.be) so that we can offer the place to someone else.
 
 After payment, the ticket is unfortunately not refundable (due to our security procedures and the possibility of issuing a refund for registration).
 
@@ -105,7 +105,7 @@ Furthermore, for compelling and demonstrable security reasons or simply on the a
 * ask the participants to leave the camp grounds.
 
 In this case, tickets are neither refunded nor exchanged.
-In case of discomfort or insecurity related to the BAF camp, ticket refunds can be considered. Please contact the organisers and the Care group for this via [activismcampbelgium@proton.me](mailto:activismcampbelgium@proton.me).
+In case of discomfort or insecurity related to the BAF camp, ticket refunds can be considered. Please contact the organisers and the Care group for this via [contact@bafcamp.be](mailto:contact@bafcamp.be).
 
 ## Article 5: Prohibitions
 

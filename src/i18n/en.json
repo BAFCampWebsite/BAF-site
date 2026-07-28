@@ -58,7 +58,7 @@
     "card3Title": "Self-management",
     "card3Text": "Whoever you are, you can join our team by ",
     "card3Link": "contacting by email",
-    "card3LinkUrl": "mailto:Activismcampbelgium@proton.me?subject=Rejoindre%20l%27organisation%20du%20BAF",
+    "card3LinkUrl": "mailto:contact@bafcamp.be?subject=Rejoindre%20l%27organisation%20du%20BAF",
     "card3LinkSuffix": " to participate in the organisation."
   },
   "contact": {
@@ -410,7 +410,7 @@
       "title": "Equipment loan",
       "text": "Do you have equipment (sound system, lighting, tent, barriers, etc.) and would like to lend it to us for the duration of the festival? Let us know!",
       "contactText": "Contact us at the following address:",
-      "email": "activismcampbelgium@proton.me",
+      "email": "contact@bafcamp.be",
       "subject": "Equipment loan",
       "subjectWarning": "Important: Please put <strong>“Equipment loan”</strong> in the subject of your email."
     }
@@ -425,7 +425,7 @@
       "title": "Our structure",
       "text": "The BAF Camp is a self-managed event. We organise horizontally, with working groups for different aspects (Logistics, Care, Comms, ...) and a coordination working group. Decisions are made by consent and we advocate an anti-authoritarian attitude. The organizing group is made up of people learning together to create these kinds of events, so it is open to anyone. No skills are required.",
       "ctaText": "Join us!",
-      "ctaEmail": "volontairesBAF@proton.me",
+      "ctaEmail": "volunteers@bafcamp.be",
       "ctaSubject": "Rejoindre l'organisation du BAF"
     },
     "gt": {
@@ -465,7 +465,7 @@
     "benevolat": {
       "title": "Volunteering",
       "text1": "On site, our goal is for this event to run in as horizontal and self-managed a way as possible. That’s why, in order to blur the line between volunteers & “consumers” of the festival as much as possible, ideally, all participants give a bit of their time to help run this festival. We’ve calculated that if all volunteers work <strong>2 hours a day</strong>, the festival should be able to run in a self-managed way. Furthermore, any task can be adapted if you have a disability of any kind.",
-      "text2": "Feel free to already let us know your volunteering preferences by filling out the <a href=\"/billetterie.html\"><strong>registration form</strong></a>. Otherwise, you’ll be able to find tasks to do on the spot in real time! If you have any questions or comments before August 20th, contact us via our email: <strong>volontairesBAF@proton.me</strong>!",
+      "text2": "Feel free to already let us know your volunteering preferences by filling out the <a href=\"/billetterie.html\"><strong>registration form</strong></a>. Otherwise, you’ll be able to find tasks to do on the spot in real time! If you have any questions or comments before August 20th, contact us via our email: <strong>volunteers@bafcamp.be</strong>!",
       "text3": "The camp will be set up and taken down collectively. <strong>We’ll need help!</strong> We’ll need to put up marquees and stages, but also create the decor, imagine spaces and build infrastructure out of pallets according to our ideas! Lots of things are still left to invent, so come take part in creating this space starting August 16th! Sign up to help set up the camp beforehand in the form below 👇.",
       "text4": "But before anything else, don’t forget to <a href=\"/billetterie.html\"><strong>get your spot for the event</strong></a>."
     },

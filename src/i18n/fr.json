@@ -58,7 +58,7 @@
     "card3Title": "Autogestion",
     "card3Text": "Qui que tu sois, rejoins notre équipe en nous ",
     "card3Link": "contactant par mail",
-    "card3LinkUrl": "mailto:Activismcampbelgium@proton.me?subject=Rejoindre%20l%27organisation%20du%20BAF",
+    "card3LinkUrl": "mailto:contact@bafcamp.be?subject=Rejoindre%20l%27organisation%20du%20BAF",
     "card3LinkSuffix": " pour participer à l'organisation en amont et sur place."
   },
   "contact": {
@@ -81,7 +81,7 @@
     "autogestion": "Autogestion",
     "reseauTitle": "Réseaux",
     "signalLabel": "Rejoins la boucle Signal",
-    "emailLabel": "Notre mail proton",
+    "emailLabel": "Notre mail",
     "copy": "2026 BAF Camp — par et pour toustes",
     "copyTagline": "Viens prendre une claque !"
   },
@@ -410,7 +410,7 @@
       "title": "Prêt de matériel",
       "text": "Vous disposez de matériel (sono, éclairage, tente, barrières, etc.) et souhaitez nous le prêter pour la durée du festival ? Nous sommes preneurs !",
       "contactText": "Contactez-nous à l'adresse suivante :",
-      "email": "activismcampbelgium@proton.me",
+      "email": "contact@bafcamp.be",
       "subject": "Prêt de matériel",
       "subjectWarning": "Important : Merci de mettre <strong>\"Prêt de matériel\"</strong> dans l'objet de votre email."
     }
@@ -425,7 +425,7 @@
       "title": "Notre structure",
       "text": "Le BAF Camp est un évènement autogéré. Son mode d'organisation repose sur une coordination générale constituée de plusieurs groupes de travail sur les différents aspects nécessaires à sa réussite. L'organisation de ce camp se fait dans un essai d'horizontalité. Les décisions sont prises par consentement et nous prônons une attitude anti-autoritaire. Le groupe d'organisation est constitué de personnes apprenant ensemble à créer ce genre d'évènements, aussi il est ouvert à toute personne. Aucune compétence n'est requise.",
       "ctaText": "Rejoignez nous !",
-      "ctaEmail": "volontairesBAF@proton.me",
+      "ctaEmail": "volunteers@bafcamp.be",
       "ctaSubject": "Rejoindre l'organisation du BAF"
     },
     "gt": {
@@ -465,7 +465,7 @@
     "benevolat": {
       "title": "Le bénévolat",
       "text1": "Sur place, nous avons comme objectif que cet évènement se déroule de la manière la plus horizontale et autogérée possible. C'est pourquoi, afin de gommer au max la frontière entre bénévoles & « consommateurices » du festival, idéalement, toustes les participant.e.s donnent un peu de leur temps pour faire tourner ce festival. Nous avons calculé que si tous les bénévoles travaillent <strong>2 heures par jour</strong>, alors le festival devrait pouvoir fonctionner de manière autogérée. Par ailleurs, toute tâche peut être adaptée si tu as un handicap quel qu'il soit.",
-      "text2": "N'hésite pas à déjà signaler tes préférences de bénévole en remplissant le <a href=\"/billetterie.html\"><strong>form d'inscription</strong></a>. Sinon, tu pourras trouver des tâches à faire en temps réel sur place ! D'ici le 20 août, si tu as des questions ou des remarques, contacte nous via notre mail :<strong>volontairesBAF@proton.me</strong> !",
+      "text2": "N'hésite pas à déjà signaler tes préférences de bénévole en remplissant le <a href=\"/billetterie.html\"><strong>form d'inscription</strong></a>. Sinon, tu pourras trouver des tâches à faire en temps réel sur place ! D'ici le 20 août, si tu as des questions ou des remarques, contacte nous via notre mail :<strong>volunteers@bafcamp.be</strong> !",
       "text3": "Le camp sera monté et démonté en commun. <strong>Nous aurons besoin d'aide !</strong> Il faudra monter des châpiteaux et des scènes, mais aussi créer la déco, imaginer des espaces et construire des infrastructures en palettes en fonction de nos envies ! Plein de choses resterons à inventer alors venez prendre part à la création de cet espace dès le 16 août ! Inscriptions pour aider à monter le camp en amont dans le formulaire en dessous 👇.",
       "text4": "Mais avant toute chose, n'oublie pas de <a href=\"/billetterie.html\"><strong>prendre ta place pour l'évènement</strong></a>."
     },

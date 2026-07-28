@@ -3,7 +3,7 @@ Pour les conditions de ventes, voyez ci dessous après les informations par rapp
 *Petit résumé des points importants pour tou.te.s qui  iront pas ces conditions:*
 
 * Vous avez besoin d’un billet (qui est à prix libre) pour entrer au BAF pour assurer qu’on ne soit pas trop.
-* Si tu as réserver une place au BAF mais tu ne viens pas, dites le nous pour qu’on puisse le donner à quelqu’un d’autre ! -> [volontairesBAF@proton.me](mailto:volontairesBAF@proton.me)
+* Si tu as réserver une place au BAF mais tu ne viens pas, dites le nous pour qu’on puisse le donner à quelqu’un d’autre ! -> [volunteers@bafcamp.be](mailto:volunteers@bafcamp.be)
 * On ne remboursera pas les billets.
 * Si vous venez au BAF camp, vous acceptez notre charte.
 * Ne sont pas permi : les appareils photo (pour la sécurité des participant.e.s) et les chiens (à cause des autres animaux sur le site) et autre chose regarder art.4 et 5
@@ -14,7 +14,7 @@ Dénomination : BAF collectif
 
 Forme juridique : Association de fait
 
-Contact : [activismcampbelgium@proton.me](mailto:activismcampbelgium@proton.me)
+Contact : [contact@bafcamp.be](mailto:contact@bafcamp.be)
 
 En accédant à ce site web et en l’utilisant, le visiteur marque explicitement son accord avec les conditions générales d’utilisation suivantes.
 
@@ -38,7 +38,7 @@ En cas de litige, vous pouvez contacter la Plateforme de Règlement en Ligne des
 Le BAF collectif est soucieux du respect de la vie privée, conformément aux dispositions du Règlement général sur la protection des données (RGPD) 2016/679 du 27 avril 2016 relatif à la protection des personnes physiques à l’égard du traitement des données à caractère personnel et à la libre circulation de ces données.
 
 Bien que la plupart des contenus du présent site sont disponibles sans que les données personnelles des visiteurs ne soient nécessaires, il est possible que les visiteurs soient invités à fournir des données personnelles. Le BAF collectif utilise ses données exclusivement pour répondre aux demandes d’informations et/ou pour tenir informer les visiteurs de l’actualité du BAF camp. Ces données ne feront pas l’objet d’une revente, cession ou location à un tiers.
-Vous disposez des droits d’accès, de modification, de rectification ou de suppression des dates vous concernant. Si vous souhaitez exercer ce droit, vous pouvez le faire en nous écrivant un email à l’adresse [activismcampbelgium@proton.me](mailto:activismcampbelgium@proton.me). La modification interviendra dans un maximum de 50 jours à compter de la réception de votre demande.
+Vous disposez des droits d’accès, de modification, de rectification ou de suppression des dates vous concernant. Si vous souhaitez exercer ce droit, vous pouvez le faire en nous écrivant un email à l’adresse [contact@bafcamp.be](mailto:contact@bafcamp.be). La modification interviendra dans un maximum de 50 jours à compter de la réception de votre demande.
 
 ## Droit applicable et tribunaux compétents
 
@@ -78,7 +78,7 @@ Les recommandations des prix conseillés peuvent changer.
 
 La TVA et autres taxes sont à la charge du participant.
 
-Le droit de rétractation n’est pas d’application, étant donné que le service (réservation du billet) est effectué immédiatement. Si tu as réservé une place ou acheté un ticket et que tu ne peux pas venir, s’il-t-plaît informe nous via le mail [volontairesBAF@proton.me](mailto:volontairesBAF@proton.me) pour qu’on puisse donner la place à quelqu’une d’autre !
+Le droit de rétractation n’est pas d’application, étant donné que le service (réservation du billet) est effectué immédiatement. Si tu as réservé une place ou acheté un ticket et que tu ne peux pas venir, s’il-t-plaît informe nous via le mail [volunteers@bafcamp.be](mailto:volunteers@bafcamp.be) pour qu’on puisse donner la place à quelqu’une d’autre !
 
 Après paiement, le billet n’est malheureusement pas remboursable (a cause de nos procedures de securité et la possibilite de uteliser une blase pour la registration).
 
@@ -101,7 +101,7 @@ En outre, pour une raison de sécurité impérieuse et démontrable ou sur simpl
 * demander aux participant.es de quitter le terrain du camp.
 
 Dans ce cas, les billets ne sont pas remboursés, ni échangés.
-En cas de mal être ou d’insécurité lié au BAF camp, le remboursement de billet peut être discuté et sentez vous libre de contacter les organisateur.ices et le groupe Care pour en discuter sous [activismcampbelgium@proton.me](mailto:activismcampbelgium@proton.me).
+En cas de mal être ou d’insécurité lié au BAF camp, le remboursement de billet peut être discuté et sentez vous libre de contacter les organisateur.ices et le groupe Care pour en discuter sous [contact@bafcamp.be](mailto:contact@bafcamp.be).
 
 ## Article 5 : Interdictions
 

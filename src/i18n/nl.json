@@ -58,7 +58,7 @@
     "card3Title": "Zelfbeheer",
     "card3Text": "Wie je ook bent, sluit je aan bij ons team door ons ",
     "card3Link": "een e-mail te sturen",
-    "card3LinkUrl": "mailto:Activismcampbelgium@proton.me?subject=Rejoindre%20l%27organisation%20du%20BAF",
+    "card3LinkUrl": "mailto:contact@bafcamp.be?subject=Rejoindre%20l%27organisation%20du%20BAF",
     "card3LinkSuffix": " om mee te helpen, zowel vooraf als ter plaatse."
   },
   "contact": {
@@ -410,7 +410,7 @@
       "title": "Materiaal uitlenen",
       "text": "Heb je materiaal (geluidsinstallaties, verlichting, tent, hekken etc.) en kan je dit aan ons uitlenen gedurende het festival? Laat ons iets weten!",
       "contactText": " Mail ons op het volgende adres:",
-      "email": "activismcampbelgium@proton.me",
+      "email": "contact@bafcamp.be",
       "subject": "Uitleen van materiaal",
       "subjectWarning": "Belangrijk: Graag <strong>“Uitleen van materiaal”</strong> in het onderwerp van je e-mail zetten."
     }
@@ -425,7 +425,7 @@
       "title": "Onze structuur",
       "text": "Het BAF Camp is een zelfbeheerd evenement. Er is een algemene coördinatie, bestaande uit verschillende werkgroepen, die elk een ander aspect vormgeven. We proberen ons horizontaal te organiseren. Beslissingen worden genomen met consent en wij pleiten voor een anti-autoritaire houding. De organiserende groep zijn mensen die samen leren dit soort evenementen te creëren, dus staat open voor iedereen. Er zijn geen vaardigheden vereist.",
       "ctaText": "Sluit je bij ons aan!",
-      "ctaEmail": "volontairesBAF@proton.me",
+      "ctaEmail": "volunteers@bafcamp.be",
       "ctaSubject": "Rejoindre l'organisation du BAF"
     },
     "gt": {
@@ -465,7 +465,7 @@
     "benevolat": {
       "title": "Vrijwilligerswerk",
       "text1": "Ter plaatse is het onze doelstelling dat dit evenement zo horizontaal en zelfbeheerd mogelijk verloopt. Daarom, om de grens tussen vrijwilligers & “consument·en” van het festival zoveel mogelijk uit te wissen, geven idealiter alle deelnemer·s een beetje van hun tijd om dit festival te laten draaien. We hebben berekend dat als alle vrijwilligers <strong>2 uur per dag</strong> werken, het festival op een zelfbeheerde manier zou moeten kunnen functioneren. Bovendien kan elke taak aangepast worden als je een beperking hebt, van welke aard dan ook.",
-      "text2": "Aarzel niet om nu al je voorkeuren als vrijwilliger door te geven door het <a href=\"/billetterie.html\"><strong>inschrijvingsformulier</strong></a> in te vullen. Anders kan je ter plaatse in real time taken vinden om te doen! Heb je vóór 20 augustus vragen of opmerkingen, contacteer ons dan via onze mail: <strong>volontairesBAF@proton.me</strong>!",
+      "text2": "Aarzel niet om nu al je voorkeuren als vrijwilliger door te geven door het <a href=\"/billetterie.html\"><strong>inschrijvingsformulier</strong></a> in te vullen. Anders kan je ter plaatse in real time taken vinden om te doen! Heb je vóór 20 augustus vragen of opmerkingen, contacteer ons dan via onze mail: <strong>volunteers@bafcamp.be</strong>!",
       "text3": "Het kamp zal gezamenlijk opgebouwd en afgebroken worden. <strong>We zullen hulp nodig hebben!</strong> Er moeten tenten en podia opgebouwd worden, maar ook decoratie gemaakt, ruimtes bedacht en infrastructuur uit paletten gebouwd worden, naargelang onze zin! Er blijft nog van alles te bedenken, dus kom vanaf 16 augustus mee helpen bij het creëren van deze ruimte! Inschrijvingen om vooraf te helpen bij het opbouwen van het kamp vind je in het formulier hieronder 👇.",
       "text4": "Maar vergeet vóór alles niet om <a href=\"/billetterie.html\"><strong>je plaats voor het evenement te bemachtigen</strong></a>."
     },
