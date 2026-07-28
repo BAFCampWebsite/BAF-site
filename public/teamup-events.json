@@ -73,11 +73,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/ Division historique de la gauche en Belgique",
+      "title": "Division historique de la gauche en Belgique",
       "who": "",
       "location": "",
-      "notes": "<p>interpretation : NDLS - ENGL</p>",
-      "version": "29fb0618c611",
+      "notes": "",
+      "version": "6c6f5c061dca",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -86,12 +86,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-09T12:54:28+02:00",
-      "update_dt": "2026-07-17T11:21:36+02:00",
+      "update_dt": "2026-07-28T20:03:53+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7867157,
+          "event_id": "2128956803",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR (interpreted to NL, EN)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-28T20:03:11+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/qmxVx37sQUyJeMk4aWNtKr5nBmZCjNVQntdzyAU-DfEWhJSZ7lo9-xCNq0jRnr0?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2128957005",
@@ -856,11 +870,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "ENG/ Building Autonomy",
+      "title": "Building Autonomy",
       "who": "",
       "location": "",
       "notes": "",
-      "version": "57a3045ce8a6",
+      "version": "9e8665c1dc35",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -869,12 +883,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T18:02:14+02:00",
-      "update_dt": "2026-07-17T11:24:21+02:00",
+      "update_dt": "2026-07-28T20:05:56+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7867173,
+          "event_id": "2130502927",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>EN (interpreted to NL, FR)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-28T20:05:23+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/73ws_admWj3JH6KEEhwBsurFriH6Xs--I4ug8w4WUqNgkd86j0_3bPvaipkBtjk?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130503130",
@@ -886,11 +914,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/ Problème des prisons",
+      "title": "Problème des prisons",
       "who": "",
       "location": "",
       "notes": "",
-      "version": "030b4395c93f",
+      "version": "0bb0f4a2cc66",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -899,12 +927,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T18:03:21+02:00",
-      "update_dt": "2026-07-17T11:24:40+02:00",
+      "update_dt": "2026-07-28T20:06:13+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7867177,
+          "event_id": "2130503130",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR (interpreted to NL, EN)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-28T20:05:40+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/OJV6807DCaqSntg6TDrtyEdgcLBsvsAH89eVGdQMkNQA0Uq468cxMVuPPnI4gwk?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130503196",
