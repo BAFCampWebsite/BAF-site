@@ -76,6 +76,12 @@ async function fetchEvents({ apiKey, calendarId, startDate, endDate }) {
   return response.json();
 }
 
+function overwriteWho(events) {
+  for (const event of events) {
+    event.who = "";
+  }
+}
+
 async function main() {
   const { apiKey, calendarId, startDate, endDate } = loadConfig();
   const payload = await fetchEvents({ apiKey, calendarId, startDate, endDate });
@@ -87,6 +93,8 @@ async function main() {
   const events = (Array.isArray(payload.events) ? payload.events : []).sort(
     (a, b) => a.id - b.id,
   );
+
+  overwriteWho(events);
 
   mkdirSync(dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, `${JSON.stringify({
