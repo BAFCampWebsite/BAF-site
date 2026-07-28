@@ -53,11 +53,17 @@ const getNotesText = (notes = "") => {
   return normalized;
 };
 
+const getFirstCommentText = (comments = []) => {
+  if (!comments?.length) return "";
+  return getNotesText(comments[0].message || "");
+};
+
 const calendarEvents = (teamupEvents?.events ?? [])
   .map((event) => {
     const start = new Date(event.start_dt);
     const end = new Date(event.end_dt);
     const notesText = getNotesText(event.notes);
+    const languageNote = getFirstCommentText(event.comments);
     const previewText = notesText
       ? notesText.split(/\r?\n/)[0].trim()
       : "";
@@ -114,6 +120,7 @@ const calendarEvents = (teamupEvents?.events ?? [])
       timeLabel,
       notesText,
       previewText,
+      languageNote,
       isPlaceholder: !previewText,
     };
   })
@@ -365,6 +372,15 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     font-size: 0.9rem;
     line-height: 1.5;
   }
+  .calendar-card-language,
+  .calendar-modal-language {
+    font-size: 0.8rem;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
   .calendar-card-meta-item span:first-child {
     font-size: 0.95rem;
     line-height: 1.2;
@@ -573,6 +589,7 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     const timeLabel = escapeHtml(event.timeLabel || "");
     const location = event.location ? escapeHtml(event.location) : "";
     const who = event.who ? escapeHtml(event.who) : "";
+    const languageNote = event.languageNote ? escapeHtml(event.languageNote) : "";
     const notes = event.notesText ? escapeHtml(event.notesText).replace(/\n/g, "<br>") : "";
     const modalBadges = (event.labels || [])
       .map((label, i) => {
@@ -588,6 +605,7 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
         <div class="calendar-modal-meta">
           <div class="calendar-modal-meta-item"><strong>Date</strong><span>${dateLabel}</span></div>
           <div class="calendar-modal-meta-item"><strong>Time</strong><span>${timeLabel}</span></div>
+          ${languageNote ? `<div class="calendar-modal-meta-item"><strong>Language</strong><span class="calendar-modal-language">${languageNote}</span></div>` : ""}
           ${location ? `<div class="calendar-modal-meta-item"><strong>Location</strong><span>${location}</span></div>` : ""}
           ${who ? `<div class="calendar-modal-meta-item"><strong>Hosted by</strong><span>${who}</span></div>` : ""}
         </div>
@@ -621,6 +639,7 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     const timeLabel = escapeHtml(event.timeLabel || "");
     const location = event.location ? escapeHtml(event.location) : "";
     const who = event.who ? escapeHtml(event.who) : "";
+    const languageNote = event.languageNote ? escapeHtml(event.languageNote) : "";
     const preview = event.previewText ? escapeHtml(event.previewText) : "";
     const previewClass = event.isPlaceholder ? "calendar-card-preview is-placeholder" : "calendar-card-preview";
     const accent = (event.accents && event.accents[0]) || "var(--rose)";
@@ -640,7 +659,8 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
         <h3>${title}</h3>
         <div class="calendar-card-meta-grid">
           <div class="calendar-card-meta-item"><span>🕒</span><span>${timeLabel}</span></div>
-          ${location ? `<div class="calendar-card-meta-item"><span>📍</span><span>${location}</span></div>` : ""}
+          ${languageNote ? `<div class="calendar-card-meta-item"><span>💬</span><span class="calendar-card-language">${languageNote}</span></div>` : ""}
+          ${location ? `<div class="calendar-card-meta-item"><span>🎪</span><span>${location}</span></div>` : ""}
           ${who ? `<div class="calendar-card-meta-item"><span>👤</span><span>${who}</span></div>` : ""}
         </div>
         ${preview ? `<p class="${previewClass}">${preview}</p>` : ""}
@@ -658,6 +678,7 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
         event.title || "",
         event.notesText || event.notes || "",
         event.who || "",
+        event.languageNote || "",
       ].join(" ").toLowerCase();
       return matchesCategory && matchesDay && haystack.includes(activeSearch);
     });
