@@ -1,6 +1,7 @@
 ---
 import { getLocale } from 'astro-intl';
 import { getTranslations } from '../i18n/getTranslations';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 const { slug } = Astro.props;
 const lang = getLocale();
@@ -43,3 +44,4 @@ const ogImage = `${origin}/BAF%20Logo.png`;
 <link rel="manifest" href="/site.webmanifest">
 
 <link rel="stylesheet" href="/style.css">
+<SpeedInsights />
