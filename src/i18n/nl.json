@@ -20,8 +20,9 @@
       "venir": "Hoe geraken",
       "nourrir": "Eten",
       "camping": "Camping",
-      "bambinerie": "De Bambinerie",
+      "bambinerie": "De Jeugdhoek",
       "other": "Andere informatie",
+      "accessibilite": "Toegankelijkheid",
       "conditionsVente": "Verkoopvoorwaarden"
     },
     "dropdownAider": {
@@ -54,7 +55,7 @@
     "card1LinkUrl": "https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054",
     "card1LinkSuffix": "!",
     "card2Title": "Camping",
-    "card2Text": "De camping is vanaf maandagavond 17 augustus open voor ieder die wil helpen met het opbouwen en afbreken van het kamp, tot en met 26 augustus (einde van de afbouw).",
+    "card2Text": "De camping is vanaf donderdag 20 augustus om 14.00 uur geopend. U kunt er verblijven tot 23 augustus om 18.00 uur.",
     "card3Title": "Zelfbeheer",
     "card3Text": "Wie je ook bent, sluit je aan bij ons team door ons ",
     "card3Link": "een e-mail te sturen",
@@ -125,20 +126,20 @@
     "camping": {
       "sectionLabel": "Slapen ter plekke",
       "title": "Camping",
-      "html": "De camping is geopend van <strong>17 tot 26 augustus</strong>, op een grasveld vlakbij het festivalterrein.",
+      "html": "De camping is geopend van <strong>20 tot 23 augustus</strong>, op een grasveld vlakbij het festivalterrein.",
       "mixiteText": "Er zal een camping worden voorzien voor chosen mixity van MINT personen (vrouw, Intersex, Non-binary en Trans).",
       "dates": {
         "title": "Openingsdata",
-        "text": "Aankomst mogelijk vanaf zondag 16 augustus vanaf 14.00 uur. Vertrek ten laatste dinsdag 26 augustus om 12.00 uur."
+        "text": "Aankomst mogelijk vanaf donderdag 20 augustus, vanaf 14.00 uur. Vertrek uiterlijk op zondag 23 augustus om 18.00 uur."
       }
     },
     "bambinerie": {
       "sectionLabel": "Kleine activisten",
-      "title": "De Bambinerie",
+      "title": "De Jeugdhoek",
       "introHtml": "Het BAF Camp is ook voor gezinnen! Op de locatie is een speciale ruimte <strong>voor kinderen tussen 4 en 16 jaar</strong> voorzien, zodat ze die kunnen toe-eigenen, creëren en hun eigen ruimtes laten leven.",
       "morning": {
         "title": "Ochtendslot",
-        "html": "Een <strong>ochtendslot van 10 tot 12 uur</strong> is voorzien om kinderen te ontvangen in de Bambinerie,"
+        "html": "Een <strong>ochtendslot van 10 tot 12 uur</strong> is voorzien om kinderen te ontvangen in de Jeugdhoek,"
       },
       "afternoon": {
         "title": "Namiddagslot",
@@ -149,9 +150,210 @@
         "html": "Buiten de openingsuren zijn bepaalde programme-ruimtes voorzien om aangepast te worden aan kinderen: spellen, voorstellingen, creaties en ontdekkingen!"
       },
       "contact": {
-        "title": "Vragen over de Bambinerie?",
+        "title": "Vragen over de Jeugdhoek?",
         "prefix": "Aarzel niet om contact met ons op te nemen via ",
         "suffix": " voor vragen over de opvang van kinderen."
+      }
+    },
+    "accessibilite": {
+      "hero": {
+        "eyebrow": "Praktische info",
+        "title": "Toegankelijkheid",
+        "subtitle": "Wat we inrichten — en wat we nog niet kunnen inrichten — voor deze eerste editie van het BAF Camp.",
+        "note": "Deze pagina zal zich verder ontwikkelen naarmate we feedback krijgen."
+      },
+      "intro": {
+        "sectionLabel": "Lees dit eerst",
+        "title": "Waarom deze pagina?",
+        "p1": "In dit onderdeel vind je zowel de toegankelijkheidsmaatregelen die tijdens deze eerste editie van BAF Camp zullen worden voorzien als de maatregelen die niet zullen worden voorzien. Door duidelijk uit te leggen welke voorzieningen tijdens het festival aanwezig zullen zijn, hopen we iedereen in staat te stellen om goed geïnformeerd te beslissen of die persoon wil deelnemen en/of bepaalde hulpmiddelen mee wil brengen, met kennis van de toegankelijkheid van onze ruimte.",
+        "p2": "We baseren deze aanpak op de werkzaamheden van Les Dévalideuses.",
+        "sourcePrefix": "Bron:",
+        "sourceLinkText": "lesdevalideuses.org",
+        "definitionTitle": "Onze definitie",
+        "definitionText": "Een toegankelijke ruimte is een ruimte die actief werkt om systemisch geweld en genormaliseerde onderdrukking in onze samenleving niet te reproduceren.",
+        "remarksTitle": "Voorafgaande opmerkingen",
+        "remarksP1": "We hebben ervoor gekozen om slechts een deel van de mogelijke maatregelen te implementeren vanwege praktische redenen, zoals een gebrek aan tijd, financiering of onverwachte obstakels die op het terrein zijn opgedoken. Deze tekortkomingen zijn niet het gevolg van een hiërarchie tussen vormen van discriminatie en evenmin van een politieke keuze. Als er een volgende editie van BAF Camp komt, zullen we verder werken aan de ontbrekende maatregelen en daarbij ook rekening houden met de feedback die we ontvangen.",
+        "remarksP2": "We zijn ons ervan bewust dat deze maatregelen voor sommige personen onvoldoende zullen zijn om deel te nemen, en dat dit gebrek een bijkomende vorm van uitsluiting kan betekenen. Daarvoor bieden wij onze oprechte excuses aan.",
+        "remarksP3": "Daarnaast werd het programma en de organisatie van dit festival voornamelijk vormgegeven door valide, witte en Franstalige personen. Daardoor ligt de macht vooral bij deze groepen en wordt het festival niet echt gemengd, maar streeft het slechts naar inclusiviteit, wat op zichzelf als een tweede vorm van \"geweld\" kan worden ervaren.",
+        "remarksP4": "Deze maatregelen werden onder meer geïnspireerd door de gids van Les Dévalideuses."
+      },
+      "care": {
+        "title": "Care-team",
+        "items": {
+          "i0": "Niet-gemengde ruimtes op het festivalterrein (camping, chillruimte, sommige workshops).",
+          "i1": "Er is een geweldsbarometer opgesteld met een gekwalificeerde persoon, zodat het care-team in geval van geweld een helder protocol kan volgen.",
+          "i2": "Een carecel zal mensen ontvangen die willen rusten in een rustige en veilige ruimte en zal actief luisteren. Deze begeleiding kan mensen helpen om ervaringen van mogelijk geweld tijdens het festival te bespreken en stelt het care-team in staat om gepast te reageren volgens de wensen van de persoon die het geweld heeft meegemaakt of waargenomen.",
+          "i3": "Een getraind street medics-team zal aanwezig zijn voor medische hulp.",
+          "i4": "Er zal 24/7 toezicht op het kamp zijn (met personeel 's nachts) voor de fysieke en mentale veiligheid en het welzijn van iedereen.",
+          "i5": "Er is geen telefoonlijn voor de carecel tijdens het festival.",
+          "i6": "We kunnen niet voor iedere mogelijke vorm van discriminatie (queerfobie, ableïsme, enz.) een getrainde persoon garanderen, maar we doen alles wat we kunnen om passende oplossingen te vinden."
+        }
+      },
+      "engagement": {
+        "title": "Verplichting van festivalbezoekers",
+        "items": {
+          "i0": "Een charter met de waarden van BAF Camp is geschreven en voorgelezen aan alle medewerkers, die zich ertoe verbinden deze te volgen.",
+          "i1": "Een introductie op de receptie zal festivalbezoekers informeren over mogelijke discriminatie en geweld, en over de maatregelen die daarop volgen.",
+          "i2": "Een ticketcharter, die de algemene charter samenvat, wordt ondertekend door festivalbezoekers bij de aankoop van een ticket. Bij niet-naleving zullen maatregelen volgen door het care-team."
+        }
+      },
+      "formation": {
+        "title": "Opleiding van het personeel",
+        "items": {
+          "i0": "Het personeel heeft training gekregen over geweld in festivalcontexten.",
+          "i1": "Het care-team zal tijdens de opbouw zoveel mogelijk mensen informeren over classisme, LGBTQIA+-geweld, handicap en VSS.",
+          "i2": "Een professional van ASBL Tilt zal het personeel en de vrijwilligers twee keer trainen over racisme in festivals.",
+          "i3": "Er is geen training door professionals over classisme, LGBTQIA+-geweld, handicap of VSS."
+        }
+      },
+      "general": {
+        "title": "Algemene voorzieningen",
+        "items": {
+          "i0": "Ruimtes voor mensen met een handicap worden gemarkeerd met bloemen om stigmatiserende signalisatie te voorkomen.",
+          "i1": "De koelkast is toegankelijk voor voedsel voor speciale diëten en medicijnen.",
+          "i2": "Bloemvormige pins geven een zichtbare of onzichtbare handicap aan voor degenen die dat willen (de betekenis wordt aan iedereen uitgelegd).",
+          "i3": "Er is een aanpasbaar badge beschikbaar (naam/blaze, pronouns, sociale batterij, taal, enz.).",
+          "i4": "Een SNJ-achtige tent met tien campbedden, comfortabeler dan gewone camping, is op aanvraag toegankelijk — beperkte plaatsen, te reserveren per e-mail: activismcampbelgium@proton.me.",
+          "i5": "Er is geen speciale contactpersoon voor de opvang van gehandicapte bezoekers, maar er is wel een referentiepersoon bereikbaar voor vragen over de voorzieningen."
+        }
+      },
+      "children": {
+        "title": "Toegankelijkheid voor kinderen",
+        "items": {
+          "i0": "Een ruimte voor en door kinderen, met materiaal om spellen en activiteiten te bouwen, begeleid door ervaren vrijwilligers twee uur 's ochtends en twee uur 's middags. Buiten deze momenten blijft de ruimte toegankelijk, maar zonder begeleiding.",
+          "i1": "Activiteiten die toegankelijk zijn voor kinderen gedurende het hele festival (improvisatie, moestuinworkshops, en meer).",
+          "i2": "Veranderingstafels in of bij de wasruimtes.",
+          "i3": "De koelkast is toegankelijk voor voeding voor baby’s.",
+          "i4": "De balie van de bar en keuken wordt op sommige plaatsen verlaagd tot kinderhoogte."
+        }
+      },
+      "visual": {
+        "title": "Visuele toegankelijkheid",
+        "items": {
+          "i0": "Grote orientatiepanelen geven de verschillende ruimtes van het festival aan.",
+          "i1": "Paden en ruimtes zijn voldoende verlicht om zonder problemen te bewegen.",
+          "i2": "Deelnemers worden uitgenodigd om de visuele delen van hun workshops te beschrijven.",
+          "i3": "Er is geen persoon belast met ontvangst en oriëntatie van slechtziende of blinde mensen.",
+          "i4": "Geen braille-ondersteuning.",
+          "i5": "Blindenhonden zijn niet welkom, conform het verzoek van de eigenaar van de locatie."
+        }
+      },
+      "auditory": {
+        "title": "Auditieve toegankelijkheid",
+        "items": {
+          "i0": "Meer dan 60% van de workshops wordt in het Frans gegeven. Activiteiten in de twee grote chapiteaux (150p) worden vertaald in het Engels, Nederlands en Frans. Workshops in het Engels of Nederlands vinden gedurende de hele dag plaats.",
+          "i1": "Geen vertaling in gebarentaal.",
+          "i2": "Geen ondertiteling of magnetische lus.",
+          "i3": "Geen specifieke voorzieningen voor dove-blinden (tactiele gebarentaal, haptische communicatie).",
+          "i4": "Geen gebarentaalles tijdens het kamp."
+        }
+      },
+      "spatial": {
+        "sectionLabel": "Ruimtelijk",
+        "title": "Ruimtelijke toegankelijkheid",
+        "alertTitle": "Lees dit eerst",
+        "alertText": "Er zullen waarschijnlijk geen rijmatten of rolpaden op het festivalterrein aanwezig zijn. Omdat het terrein grotendeels uit gras bestaat en gedeeltelijk hellend is, erkennen wij dat de toegang tot het festival zeer beperkt zal zijn voor veel personen met een beperkte mobiliteit. Hiervoor bieden wij onze excuses aan. De ruimtes die zonder helling toegankelijk zijn, bevinden zich voornamelijk langs de rivier (blauw aangeduid op de kaart). Sommige workshopzones en de chillruimte bevinden zich op hellend terrein.",
+        "railTitle": "Pad vanaf het station",
+        "railText": "De treinreis naar Grupont vereist ten minste één overstap in Rochefort-Jemelle. Aangezien dit station niet zelfstandig toegankelijk is, moet assistentie voor in- en uitstappen minstens 24 uur op voorhand bij de NMBS worden gereserveerd. De route die voor festivalgangers wordt aangegeven, loopt via een bospad. We voorzien echter ook een alternatieve toegang voor mensen die een toegankelijkere ondergrond nodig hebben. Via die route ligt station Grupont op ongeveer 400 meter van het festivalterrein. Het station heeft geen toegankelijkheidshelling en er is een trap van 3 treden om het perron te verlaten. De weg tussen station en festival is geasfalteerd, maar op sommige stukken zonder trottoir. De eerste 200 meter zijn erg steil en de laatste 100 meter bestaan uit asfalt met grind.",
+        "terrainTitle": "Inrichting van het terrein",
+        "terrainText": "Het festival vindt plaats op grasachtig terrein. De camping is bereikbaar via een steil aardeweggetje van 200 meter vanaf het festival. Het terrein omvat verschillende hoger gelegen zones (met een hoogteverschil van ongeveer 1 tot 3 meter) en zones aan weerszijden van een houten brug. De meeste andere ruimtes (kantine, bar, grote tenten) bevinden zich op het vlakke deel van het terrein. Het terrein ligt langs een rivier, wat 's nachts voor een erg vochtige en koude sfeer kan zorgen.",
+        "planLabel": "Bekijk het plan",
+        "items": {
+          "i0": "Parkeerplaatsen voor PMR worden voorzien bij de ingang. We kunnen echter niet garanderen dat deze permanent beschikbaar blijven: het kan nodig zijn om de persoon eerst zo dicht mogelijk af te zetten en de wagen daarna in het dorp te parkeren om de doorgang voor hulpdiensten vrij te houden.",
+          "i1": "Toegankelijke toiletten en wasruimtes voor PMR-gebruikers (voldoende ruimte, handsteunen, brede deur).",
+          "i2": "Risicovolle gebieden (gaten, rivier) worden gemarkeerd met lint of borden.",
+          "i3": "Bar- en keukenbalies toegankelijk op rolstoelhoogte of voor kleine mensen.",
+          "i4": "PMR-behoeften zijn meegenomen in de plannen voor nooduitgang.",
+          "i5": "Geen speciale PMR-ruimtes in de verschillende locaties. Op verzoek zorgen we er wel voor dat personen dicht bij het podium kunnen plaatsnemen en reserveren we zitplaatsen hiervoor.",
+          "i6": "We kunnen niet overal een variatie aan zitplaatsen garanderen, maar we werken eraan.",
+          "i7": "Geen IMO-voertuig beschikbaar vanaf het festival om mensen van het station op te halen."
+        }
+      },
+      "sensorial": {
+        "sectionLabel": "Zintuiglijk",
+        "title": "Zintuiglijke toegankelijkheid",
+        "items": {
+          "i0": "Een info-ruimte zal een kaart en programma bieden en vragen beantwoorden over de organisatie (wijzigingen van tijd of plaats).",
+          "i1": "Deelnemers worden uitgenodigd om het verwachte stimulatieniveau aan te geven (TW, visuele effecten, geweld, geschreeuw), en die informatie zal beschikbaar zijn in het programma of aan het infopunt. Er zullen geen stroboscopische lichten op de podia zijn.",
+          "i2": "Een chillruimte zonder geluid en een rustige ruimte in de care-zone (zo veel mogelijk gezien de grootte van het festival). Door de relatief kleine omvang van het festival is het wel mogelijk dat geluid van de podia toch tot in de care-zone doordringt.",
+          "i3": "Geluidsverminderende hoofdtelefoons zijn beschikbaar in de care-zone.",
+          "i4": "Geen toegankelijke geluidsmeter voor de verschillende podia.",
+          "i5": "Informatie wordt niet visueel of auditief toegankelijk gemaakt (pictogrammen, afbeeldingen).",
+          "i6": "Tijdelijke wijzigingen worden getoond in de infospace, maar we kunnen niet garanderen dat iedereen hierover wordt geïnformeerd via bijvoorbeeld een centraal omroepsysteem."
+        }
+      },
+      "cognitive": {
+        "sectionLabel": "Cognitief",
+        "title": "Cognitieve toegankelijkheid",
+        "items": {
+          "i0": "Duidelijke signalering geeft de locatie van de verschillende ruimtes aan, met plannen beschikbaar aan de receptie.",
+          "i1": "Zelfbeheerde tenten voor activiteiten naar keuze, naast chill- en rustige ruimtes om te schrijven of lezen zonder interactie.",
+          "i2": "In de grote chapiteaux is het mogelijk om vragen schriftelijk te stellen of meningen te uiten, die worden doorgegeven aan de facilitatoren, zodat deelnemen mogelijk blijft zonder publiek te spreken.",
+          "i3": "Geen tekst in FALC (Makkelijk te lezen en te begrijpen) voor deze editie, waardoor onze communicatie minder toegankelijk is. We hopen dit in een volgende editie wel te kunnen voorzien."
+        }
+      },
+      "sanitary": {
+        "sectionLabel": "Sanitair",
+        "title": "Sanitaire toegankelijkheid",
+        "items": {
+          "i0": "Maskers en gel beschikbaar in de care-ruimte.",
+          "i1": "Alcoholische handgel wordt verplicht uitgedeeld voor de passage naar de cantine.",
+          "i2": "De capaciteit van elke ruimte is beperkt en wordt gepreciseerd op het programma.",
+          "i3": "Het dragen van een masker is niet verplicht.",
+          "i4": "Geen verplichting om een negatieve PCR-test te tonen om toegang te krijgen tot het festival."
+        }
+      },
+      "material": {
+        "sectionLabel": "Pak je tas",
+        "title": "Wat meebrengen",
+        "food": {
+          "label": "Eten / water",
+          "text": "je bord of kom + lepel + beker, en iets om te eten of te snacken als je wilt (er zal ter plaatse eten beschikbaar zijn volgens het principe van vrije bijdrage)."
+        },
+        "sun": {
+          "label": "Zon",
+          "text": "pet of hoed, zonnebril, zonnecrème."
+        },
+        "hygiene": {
+          "label": "Hygiëne",
+          "text": "toilettas, handdoek, muggenwerend middel."
+        },
+        "money": {
+          "label": "Geld",
+          "text": "neem contant geld mee."
+        },
+        "clothes": {
+          "label": "Kleding",
+          "text": "voldoende voor het hele verblijf, inclusief warme kledij voor de nacht: de weide kan vochtig zijn en het kan 's nachts koud worden. Vergeet je zwemkleding niet als je van de rivier wil genieten."
+        },
+        "water": {
+          "label": "Je fles",
+          "text": "om gehydrateerd te blijven tijdens het festival."
+        },
+        "tent": {
+          "label": "Je tent",
+          "text": "als je op de locatie slaapt."
+        },
+        "sleeping": {
+          "label": "Slaapzak",
+          "text": "een warme slaapzak en een matras."
+        },
+        "flashlight": {
+          "label": "Lamp",
+          "text": "een zaklamp of hoofdlamp."
+        },
+        "earplugs": {
+          "label": "Oordopjes",
+          "text": "om je tegen geluid te beschermen."
+        },
+        "medicine": {
+          "label": "Medicijnen",
+          "text": "je medicijnen voor de hele duur van het festival."
+        },
+        "entertainment": {
+          "label": "Onderdak",
+          "text": "een kaartspel, een boek of iets om je mee bezig te houden."
+        }
       }
     },
     "other": {
