@@ -6,27 +6,27 @@ const lang = getLocale();
 const p = `/${lang}`;
 const t = getTranslations("infos");
 
-const bambinerieBlocks = [
+const espaceJeunesseBlocks = [
   {
     icon: "🌅",
-    title: t("bambinerie.morning.title"),
-    html: t("bambinerie.morning.html"),
+    title: t("espaceJeunesse.morning.title"),
+    html: t("espaceJeunesse.morning.html"),
   },
   {
     icon: "🌤️",
-    title: t("bambinerie.afternoon.title"),
-    html: t("bambinerie.afternoon.html"),
+    title: t("espaceJeunesse.afternoon.title"),
+    html: t("espaceJeunesse.afternoon.html"),
   },
   {
     icon: "🎨",
-    title: t("bambinerie.activities.title"),
-    html: t("bambinerie.activities.html"),
+    title: t("espaceJeunesse.activities.title"),
+    html: t("espaceJeunesse.activities.html"),
   },
   {
     icon: "💬",
-    title: t("bambinerie.contact.title"),
-    prefix: t("bambinerie.contact.prefix"),
-    suffix: t("bambinerie.contact.suffix"),
+    title: t("espaceJeunesse.contact.title"),
+    prefix: t("espaceJeunesse.contact.prefix"),
+    suffix: t("espaceJeunesse.contact.suffix"),
   },
 ];
 ---
@@ -129,16 +129,16 @@ const bambinerieBlocks = [
 
   <hr class="divider" />
 
-  <section id="bambinerie">
-    <p class="section-label">🧒 {t("bambinerie.sectionLabel")}</p>
-    <h2>{t("bambinerie.title")}</h2>
+  <section id="espace-jeunesse">
+    <p class="section-label">🧒 {t("espaceJeunesse.sectionLabel")}</p>
+    <h2>{t("espaceJeunesse.title")}</h2>
     <p
       style="font-family:var(--font-serif); font-size:.93rem; line-height:1.8;"
-      set:html={t("bambinerie.introHtml")}
+      set:html={t("espaceJeunesse.introHtml")}
     />
 
     {
-      bambinerieBlocks.map((block) => (
+      espaceJeunesseBlocks.map((block) => (
         <div class="info-block surface-card">
           <span class="info-block-icon">{block.icon}</span>
           <div class="info-block-body">

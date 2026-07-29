@@ -4,6 +4,25 @@ import { getTranslations } from "../i18n/getTranslations";
 
 const lang = getLocale();
 const t = getTranslations("infos");
+const espaceJeunesseHref = `/${lang}/infos#espace-jeunesse`;
+const charteHref = `/${lang}/charte`;
+const ticketingCharterParts = {
+  fr: {
+    prefix: "Une ",
+    link: "charte billetterie",
+    suffix:", résumant la charte globale, sera signée par toustes les festivalier.es à l'achat du billet. En cas de non-respect, des mesures seront prises par la team care.",
+  },
+  en: {
+    prefix: "A ",
+    link: "ticketing charter",
+    suffix:", summarizing the overall charter, will be signed by festival-goers when buying a ticket. In case of non-compliance, measures will be taken by the care team.",
+  },
+  nl: {
+    prefix: "Een ",
+    link: "ticketcharter",
+    suffix:", die de algemene charter samenvat, wordt ondertekend door festivalbezoekers bij de aankoop van een ticket. Bij niet-naleving zullen maatregelen volgen door het care-team.",
+  },
+}[lang as "fr" | "en" | "nl"];
 
 const careItems = [
   { type: "yes", text: t("accessibilite.care.items.i0") },
@@ -16,9 +35,14 @@ const careItems = [
 ];
 
 const engagementItems = [
-  { type: "yes", text: t("accessibilite.engagement.items.i0") },
+  {
+    type: "yes",
+    prefix: t("accessibilite.engagement.items.i0Prefix"),
+    link: t("accessibilite.engagement.items.i0Link"),
+    suffix: t("accessibilite.engagement.items.i0Suffix"),
+  },
   { type: "yes", text: t("accessibilite.engagement.items.i1") },
-  { type: "yes", text: t("accessibilite.engagement.items.i2") },
+  { type: "yes", parts: ticketingCharterParts },
 ];
 
 const formationItems = [
@@ -38,7 +62,12 @@ const generalItems = [
 ];
 
 const childrenItems = [
-  { type: "yes", text: t("accessibilite.children.items.i0") },
+  {
+    type: "yes",
+    prefix: t("accessibilite.children.items.i0Prefix"),
+    link: t("accessibilite.children.items.i0Link"),
+    suffix: t("accessibilite.children.items.i0Suffix"),
+  },
   { type: "yes", text: t("accessibilite.children.items.i1") },
   { type: "yes", text: t("accessibilite.children.items.i2") },
   { type: "yes", text: t("accessibilite.children.items.i3") },
@@ -188,7 +217,21 @@ const materialItems = [
     <h2>🎪 {t("accessibilite.engagement.title")}</h2>
     <ul class="access-list">
       {engagementItems.map((item) => (
-        <li class={`access-${item.type}`}>{item.text}</li>
+        item.parts ? (
+          <li class={`access-${item.type}`}>
+            <span class="access-inline-copy">
+              {item.parts.prefix}<a href={charteHref} class="text-link-accent">{item.parts.link}</a>{item.parts.suffix}
+            </span>
+          </li>
+        ) : item.link ? (
+          <li class={`access-${item.type}`}>
+            <span class="access-inline-copy">
+              {item.prefix}<a href={charteHref} class="text-link-accent">{item.link}</a>{item.suffix}
+            </span>
+          </li>
+        ) : (
+          <li class={`access-${item.type}`}>{item.text}</li>
+        )
       ))}
     </ul>
   </section>
@@ -217,7 +260,16 @@ const materialItems = [
     <h2>🧒 {t("accessibilite.children.title")}</h2>
     <ul class="access-list">
       {childrenItems.map((item) => (
-        <li class={`access-${item.type}`}>{item.text}</li>
+        item.link ? (
+          <li class={`access-${item.type}`}>
+            <span class="access-inline-copy">
+              {item.prefix}
+              <a href={espaceJeunesseHref} class="text-link-accent">{item.link}</a>,{item.suffix}
+            </span>
+          </li>
+        ) : (
+          <li class={`access-${item.type}`}>{item.text}</li>
+        )
       ))}
     </ul>
   </section>

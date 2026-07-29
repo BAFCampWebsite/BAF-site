@@ -20,7 +20,7 @@
       "venir": "Venir sur place",
       "nourrir": "Se nourrir",
       "camping": "Le camping",
-      "bambinerie": "L'Espace Jeunesse",
+      "espaceJeunesse": "Espace Jeunesse",
       "other": "Autres infos",
       "accessibilite": "Accessibilité",
       "conditionsVente": "Conditions de vente"
@@ -133,9 +133,9 @@
         "text": "Arrivée possible dès le Jeudi 20 Août, à partir de 14h. Départ au plus tard le Dimanche 23 Août à 18h."
       }
     },
-    "bambinerie": {
+    "espaceJeunesse": {
       "sectionLabel": "Petits militants",
-      "title": "L'Espace Jeunesse",
+      "title": "Espace Jeunesse",
       "introHtml": "Le BAF Camp, c'est aussi pour les familles ! Un espace dédié <strong>aux enfants entre 4 et 16 ans </strong>est prévu sur le site, pour qu'iels puissent s'approprier, créer et faire vivre leurs propres espaces ",
       "morning": {
         "title": "Créneau du matin",
@@ -192,9 +192,13 @@
       "engagement": {
         "title": "Engagement des festivalier.es",
         "items": {
-          "i0": "Une charte reprenant les valeurs du BAF Camp a été rédigée et lue par tout le staff, qui s'engage à la suivre.",
+          "i0Prefix": "Une ",
+          "i0Link": "charte",
+          "i0Suffix": " reprenant les valeurs du BAF Camp a été rédigée et lue par tout le staff, qui s'engage à la suivre.",
           "i1": "Un briefing à l'accueil sensibilisera toustes les festivalier.es aux discriminations et violences possibles, et aux dispositifs prévus en réaction.",
-          "i2": "Une charte billetterie, résumant la charte globale, sera signée par toustes les festivalier.es à l'achat du billet. En cas de non-respect, des mesures seront prises par la team care."
+          "i2Prefix": "Une ",
+          "i2Link": "charte billetterie",
+          "i2Suffix": ", résumant la charte globale, sera signée par toustes les festivalier.es à l'achat du billet. En cas de non-respect, des mesures seront prises par la team care."
         }
       },
       "formation": {
@@ -220,7 +224,9 @@
       "children": {
         "title": "Accessibilité enfants",
         "items": {
-          "i0": "Un espace pour et par les enfants, avec du matériel pour construire jeux et activités, accompagné par des bénévoles expérimenté.es deux heures le matin et deux heures l'après-midi. Le reste du temps, l'espace restera accessible mais sans bénévoles d'accompagnement.",
+          "i0Prefix": "Un ",
+          "i0Link": "espace pour et par les enfants",
+          "i0Suffix": " avec du matériel pour construire jeux et activités, accompagné par des bénévoles expérimenté.es deux heures le matin et deux heures l'après-midi. Le reste du temps, l'espace restera accessible mais sans bénévoles d'accompagnement.",
           "i1": "Des activités accessibles aux enfants tout au long du festival (improvisation, ateliers potager, et plus).",
           "i2": "Des tables à langer disponibles dans ou à proximité des espaces de lavage.",
           "i3": "Le frigo sera accessible pour la nourriture destinée aux nourrissons.",
@@ -256,7 +262,7 @@
         "railTitle": "Chemin depuis la gare",
         "railText": "Le trajet en train jusqu'à Grupont nécessite au moins un changement à Rochefort-Jemelle. Cette gare n'étant pas accessible en autonomie, la réservation d'une assistance pour l'embarquement et le débarquement est obligatoire auprès de la SNCB au moins 24h à l'avance. Le chemin indiqué pour les festivalier.es est un chemin de terre passant par la forêt. Nous aménagerons également une autre entrée pour les personnes nécessitant une route avec un revêtement plus accessible. Par ce chemin, la gare de Grupont se situe à environ 400 mètres de l'endroit du festival. Cette gare ne possède pas de rampe PMR et il existe un escalier de 3 marches pour sortir du quai. La route entre le festival et la gare est goudronnée, malgré une absence de trottoir par endroits. Les 200 premiers mètres de cette route sont très pentus, et les 100 derniers mètres se font sur un chemin avec du goudron et des cailloux.",
         "terrainTitle": "Aménagement du terrain",
-        "terrainText": "Le festival se trouve sur un terrain herbacé. Le camping est joignable depuis l'endroit du festival par un chemin en terre et pentu de 200 mètres. Le lieu du festival comporte plusieurs espaces se trouvant en hauteur (dévers allant de 1 mètres à 3 mètres) ou de part et d'autre d'une passerelle en bois. La majorité des autres espaces (cantine, bar, grands chapiteaux) se trouve sur la partie plane du terrain. Le terrain est bordé par une rivière ce qui peut rendre l'atmosphère très humide et froid la nuit.",
+        "terrainText": "Le festival se trouve sur un terrain herbacé. Le camping est joignable depuis l'endroit du festival par un chemin en terre et pentu de 200 mètres. Le lieu du festival comporte plusieurs espaces se trouvant en hauteur (dévers allant de 1 mètre à 3 mètres) ou de part et d'autre d'une passerelle en bois. La majorité des autres espaces (cantine, bar, grands chapiteaux) se trouve sur la partie plane du terrain. Le terrain est bordé par une rivière ce qui peut rendre l'atmosphère très humide et froide la nuit.",
         "planLabel": "Voir le plan",
         "items": {
           "i0": "Des places de stationnement PMR seront prévues près de l'entrée. Nous ne pouvons toutefois pas garantir qu'elles restent occupables en permanence : il pourra être nécessaire de déposer la personne au plus proche, puis de garer le véhicule dans le village afin de maintenir le passage des secours.",

@@ -20,7 +20,7 @@
       "venir": "Getting there",
       "nourrir": "Food",
       "camping": "Camping",
-      "bambinerie": "The Youth Corner",
+      "espaceJeunesse": "Youth Space",
       "other": "FAQ",
       "accessibilite": "Accessibility",
       "conditionsVente": "Terms of sale"
@@ -133,13 +133,13 @@
         "text": "Arrival possible from Thursday 20 August, from 2.00 pm. Departure by 6.00 pm on Sunday 23 August at the latest."
       }
     },
-    "bambinerie": {
+    "espaceJeunesse": {
       "sectionLabel": "Little activists",
-      "title": "The Youth Corner",
+      "title": "Youth Space",
       "introHtml": "The BAF Camp is also for families! A dedicated space <strong>for children between 4 and 16 years old</strong> is planned on site, so they can take ownership, create and bring their own spaces to life.",
       "morning": {
         "title": "Morning slot",
-        "html": "A <strong>10am to 12pm morning slot</strong> is planned to welcome children at the Youth Corner,"
+        "html": "A <strong>10am to 12pm morning slot</strong> is planned to welcome children at the Youth Space,"
       },
       "afternoon": {
         "title": "Afternoon slot",
@@ -150,7 +150,7 @@
         "html": "Outside the opening slots, certain programming spaces are planned to be adapted for children: games, shows, creations and discoveries!"
       },
       "contact": {
-        "title": "Questions about the Youth Corner?",
+        "title": "Questions about the Youth Space?",
         "prefix": "Feel free to contact us at ",
         "suffix": " for any questions about welcoming children."
       }
@@ -192,9 +192,13 @@
       "engagement": {
         "title": "Festival-goers' commitment",
         "items": {
-          "i0": "A charter reflecting the values of BAF Camp has been written and read by all staff, who commit to following it.",
+          "i0Prefix": "A ",
+          "i0Link": "charter",
+          "i0Suffix": " reflecting the values of BAF Camp has been written and read by all staff, who commit to following it.",
           "i1": "A briefing at reception will raise awareness among festival-goers about possible discrimination and violence, and the measures planned in response.",
-          "i2": "A ticketing charter, summarizing the overall charter, will be signed by festival-goers when buying a ticket. In case of non-compliance, measures will be taken by the care team."
+          "i2Prefix": "A ",
+          "i2Link": "ticketing charter",
+          "i2Suffix": ", summarizing the overall charter, will be signed by festival-goers when buying a ticket. In case of non-compliance, measures will be taken by the care team."
         }
       },
       "formation": {
@@ -220,7 +224,9 @@
       "children": {
         "title": "Children's accessibility",
         "items": {
-          "i0": "A space for and by children, with materials to build games and activities, supported by experienced volunteers for two hours in the morning and two in the afternoon. The space will remain accessible outside these periods without supervision.",
+          "i0Prefix": "A ",
+          "i0Link": "space for and by children",
+          "i0Suffix": " with materials to build games and activities, supported by experienced volunteers for two hours in the morning and two in the afternoon. The space will remain accessible outside these periods without supervision.",
           "i1": "Activities accessible to children throughout the festival (improvisation, gardening workshops, and more).",
           "i2": "Changing tables available in or near the washing spaces.",
           "i3": "The fridge will be accessible for food for babies.",

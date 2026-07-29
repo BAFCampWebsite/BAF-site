@@ -229,6 +229,7 @@ body::after {
 .text-link-accent {
   color: var(--rose);
   font-weight: bold;
+  text-decoration: none;
 }
 .reveal-spacing { margin-bottom: var(--space-6); }
 .map-panel {

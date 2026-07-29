@@ -20,7 +20,7 @@
       "venir": "Hoe geraken",
       "nourrir": "Eten",
       "camping": "Camping",
-      "bambinerie": "De Jeugdhoek",
+      "espaceJeunesse": "Jeugdzone",
       "other": "Andere informatie",
       "accessibilite": "Toegankelijkheid",
       "conditionsVente": "Verkoopvoorwaarden"
@@ -133,13 +133,13 @@
         "text": "Aankomst mogelijk vanaf donderdag 20 augustus, vanaf 14.00 uur. Vertrek uiterlijk op zondag 23 augustus om 18.00 uur."
       }
     },
-    "bambinerie": {
+    "espaceJeunesse": {
       "sectionLabel": "Kleine activisten",
-      "title": "De Jeugdhoek",
+      "title": "Jeugdzone",
       "introHtml": "Het BAF Camp is ook voor gezinnen! Op de locatie is een speciale ruimte <strong>voor kinderen tussen 4 en 16 jaar</strong> voorzien, zodat ze die kunnen toe-eigenen, creëren en hun eigen ruimtes laten leven.",
       "morning": {
         "title": "Ochtendslot",
-        "html": "Een <strong>ochtendslot van 10 tot 12 uur</strong> is voorzien om kinderen te ontvangen in de Jeugdhoek,"
+        "html": "Een <strong>ochtendslot van 10 tot 12 uur</strong> is voorzien om kinderen te ontvangen in de Jeugdzone,"
       },
       "afternoon": {
         "title": "Namiddagslot",
@@ -150,7 +150,7 @@
         "html": "Buiten de openingsuren zijn bepaalde programme-ruimtes voorzien om aangepast te worden aan kinderen: spellen, voorstellingen, creaties en ontdekkingen!"
       },
       "contact": {
-        "title": "Vragen over de Jeugdhoek?",
+        "title": "Vragen over de Jeugdzone?",
         "prefix": "Aarzel niet om contact met ons op te nemen via ",
         "suffix": " voor vragen over de opvang van kinderen."
       }
@@ -192,9 +192,13 @@
       "engagement": {
         "title": "Verplichting van festivalbezoekers",
         "items": {
-          "i0": "Een charter met de waarden van BAF Camp is geschreven en voorgelezen aan alle medewerkers, die zich ertoe verbinden deze te volgen.",
+          "i0Prefix": "Een ",
+          "i0Link": "charter",
+          "i0Suffix": " met de waarden van BAF Camp is geschreven en voorgelezen aan alle medewerkers, die zich ertoe verbinden deze te volgen.",
           "i1": "Een introductie op de receptie zal festivalbezoekers informeren over mogelijke discriminatie en geweld, en over de maatregelen die daarop volgen.",
-          "i2": "Een ticketcharter, die de algemene charter samenvat, wordt ondertekend door festivalbezoekers bij de aankoop van een ticket. Bij niet-naleving zullen maatregelen volgen door het care-team."
+          "i2Prefix": "Een ",
+          "i2Link": "ticketcharter",
+          "i2Suffix": ", die de algemene charter samenvat, wordt ondertekend door festivalbezoekers bij de aankoop van een ticket. Bij niet-naleving zullen maatregelen volgen door het care-team."
         }
       },
       "formation": {
@@ -220,9 +224,11 @@
       "children": {
         "title": "Toegankelijkheid voor kinderen",
         "items": {
-          "i0": "Een ruimte voor en door kinderen, met materiaal om spellen en activiteiten te bouwen, begeleid door ervaren vrijwilligers twee uur 's ochtends en twee uur 's middags. Buiten deze momenten blijft de ruimte toegankelijk, maar zonder begeleiding.",
+          "i0Prefix": "Een ",
+          "i0Link": "ruimte voor en door kinderen",
+          "i0Suffix": " met materiaal om spellen en activiteiten te bouwen, begeleid door ervaren vrijwilligers twee uur 's ochtends en twee uur 's middags. Buiten deze momenten blijft de ruimte toegankelijk, maar zonder begeleiding.",
           "i1": "Activiteiten die toegankelijk zijn voor kinderen gedurende het hele festival (improvisatie, moestuinworkshops, en meer).",
-          "i2": "Veranderingstafels in of bij de wasruimtes.",
+          "i2": "Verschoontafels in of bij de wasruimtes.",
           "i3": "De koelkast is toegankelijk voor voeding voor baby’s.",
           "i4": "De balie van de bar en keuken wordt op sommige plaatsen verlaagd tot kinderhoogte."
         }
@@ -230,7 +236,7 @@
       "visual": {
         "title": "Visuele toegankelijkheid",
         "items": {
-          "i0": "Grote orientatiepanelen geven de verschillende ruimtes van het festival aan.",
+          "i0": "Grote oriëntatiepanelen geven de verschillende ruimtes van het festival aan.",
           "i1": "Paden en ruimtes zijn voldoende verlicht om zonder problemen te bewegen.",
           "i2": "Deelnemers worden uitgenodigd om de visuele delen van hun workshops te beschrijven.",
           "i3": "Er is geen persoon belast met ontvangst en oriëntatie van slechtziende of blinde mensen.",
@@ -245,7 +251,7 @@
           "i1": "Geen vertaling in gebarentaal.",
           "i2": "Geen ondertiteling of magnetische lus.",
           "i3": "Geen specifieke voorzieningen voor dove-blinden (tactiele gebarentaal, haptische communicatie).",
-          "i4": "Geen gebarentaalles tijdens het kamp."
+          "i4": "Geen gebarentaallessen tijdens het kamp."
         }
       },
       "spatial": {
