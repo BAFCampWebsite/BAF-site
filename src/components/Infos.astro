@@ -175,14 +175,18 @@ const bambinerieBlocks = [
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+  // Leaflet is loaded via the external script above. suppress TS checks here.
+  // @ts-ignore
   const map = L.map("map", { scrollWheelZoom: false }).setView(
     [49.9072, 5.2697],
     15,
   );
+  // @ts-ignore
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "© OpenStreetMap contributors",
     maxZoom: 19,
   }).addTo(map);
+  // @ts-ignore
   L.marker([50.0923867580313, 5.277445980713076])
     .addTo(map)
     .bindPopup(

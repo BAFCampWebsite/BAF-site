@@ -20,8 +20,9 @@
       "venir": "Getting there",
       "nourrir": "Food",
       "camping": "Camping",
-      "bambinerie": "The Bambinerie",
+      "bambinerie": "The Youth Corner",
       "other": "FAQ",
+      "accessibilite": "Accessibility",
       "conditionsVente": "Terms of sale"
     },
     "dropdownAider": {
@@ -54,7 +55,7 @@
     "card1LinkUrl": "https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054",
     "card1LinkSuffix": "to offer a contribution to the program!",
     "card2Title": "Camping",
-    "card2Text": "Campsite open from Monday 17th in the evening to come and help set up camp. Possibility of sleeping on site until August 26 (end of dismantling).",
+    "card2Text": "Campsite open from Thursday 20th, 2pm. Possibility of sleeping on site until August 23, 6pm.",
     "card3Title": "Self-management",
     "card3Text": "Whoever you are, you can join our team by ",
     "card3Link": "contacting by email",
@@ -125,20 +126,20 @@
     "camping": {
       "sectionLabel": "Sleep on site",
       "title": "Camping",
-      "html": "The campsite is open from <strong>August 17 to 26</strong>, on a grassy area a stone's throw from the camp site.",
+      "html": "The campsite is open from <strong>August 20 to 23</strong>, on a grassy area a stone's throw from the camp site.",
       "mixiteText": "A seperate campsite is reserved exclusively for women, intersex, non-binary and trans people.",
       "dates": {
         "title": "Opening dates",
-        "text": "Arrival possible from Sunday August 16 from 2 p.m. Departure no later than Tuesday August 26 at 12 p.m."
+        "text": "Arrival possible from Thursday 20 August, from 2.00 pm. Departure by 6.00 pm on Sunday 23 August at the latest."
       }
     },
     "bambinerie": {
       "sectionLabel": "Little activists",
-      "title": "The Bambinerie",
+      "title": "The Youth Corner",
       "introHtml": "The BAF Camp is also for families! A dedicated space <strong>for children between 4 and 16 years old</strong> is planned on site, so they can take ownership, create and bring their own spaces to life.",
       "morning": {
         "title": "Morning slot",
-        "html": "A <strong>10am to 12pm morning slot</strong> is planned to welcome children at the Bambinerie,"
+        "html": "A <strong>10am to 12pm morning slot</strong> is planned to welcome children at the Youth Corner,"
       },
       "afternoon": {
         "title": "Afternoon slot",
@@ -149,9 +150,210 @@
         "html": "Outside the opening slots, certain programming spaces are planned to be adapted for children: games, shows, creations and discoveries!"
       },
       "contact": {
-        "title": "Questions about the Bambinerie?",
+        "title": "Questions about the Youth Corner?",
         "prefix": "Feel free to contact us at ",
         "suffix": " for any questions about welcoming children."
+      }
+    },
+    "accessibilite": {
+      "hero": {
+        "eyebrow": "Practical info",
+        "title": "Accessibility",
+        "subtitle": "What we are putting in place — and what we cannot yet put in place — for this first edition of the BAF Camp.",
+        "note": "This page is expected to evolve as feedback comes in."
+      },
+      "intro": {
+        "sectionLabel": "Read this first",
+        "title": "Why this page?",
+        "p1": "In this section you will find the accessibility measures that will be implemented, as well as those that will not be implemented during this first edition of BAF Camp. By explaining which measures will be in place during the festival, we hope to allow everyone to make an informed decision about attending and/or bringing the equipment they need with full knowledge of the accessibility of our space.",
+        "p2": "We are drawing on the work of Les Dévalideuses to build this approach.",
+        "sourcePrefix": "Source:",
+        "sourceLinkText": "lesdevalideuses.org",
+        "definitionTitle": "Our definition",
+        "definitionText": "An accessible space is a space that works to avoid reproducing systemic violence and normalized oppression in our society.",
+        "remarksTitle": "Preliminary remarks",
+        "remarksP1": "We have chosen to implement only certain measures for practical reasons (lack of time, funding, concrete obstacles encountered on the ground and not anticipated in advance). These shortcomings are not the result of a hierarchy of discriminations nor a political choice.",
+        "remarksP2": "We are aware that these measures will not be sufficient for some people to attend, and that this lack constitutes an additional form of exclusionary violence. We are sorry for that.",
+        "remarksP3": "In addition, the festival programme and organization were mainly built by able-bodied, white, francophone people, which concentrates power among them and means the event will not be fully mixed but will only tend toward inclusivity.",
+        "remarksP4": "These measures were developed in particular via the Les Dévalideuses accessibility guide."
+      },
+      "care": {
+        "title": "Care team",
+        "items": {
+          "i0": "Non-mixed spaces on the festival site (camping, chill space, some workshops).",
+          "i1": "A violence barometer has been established with a qualified person, so the care team can follow a clear protocol in case of violence.",
+          "i2": "A care cell will welcome people who want to rest in a calm and safe space and offer active listening.",
+          "i3": "A trained street medics team will be present for medical help.",
+          "i4": "A surveillance system will run 24/7 on the camp (with staff at night) for everyone's safety and comfort.",
+          "i5": "There is no phone line for the care cell during the festival.",
+          "i6": "We cannot guarantee the presence of a trained person for every potential discrimination (queerphobia, ableism, etc.), but we will do everything possible to find suitable solutions."
+        }
+      },
+      "engagement": {
+        "title": "Festival-goers' commitment",
+        "items": {
+          "i0": "A charter reflecting the values of BAF Camp has been written and read by all staff, who commit to following it.",
+          "i1": "A briefing at reception will raise awareness among festival-goers about possible discrimination and violence, and the measures planned in response.",
+          "i2": "A ticketing charter, summarizing the overall charter, will be signed by festival-goers when buying a ticket. In case of non-compliance, measures will be taken by the care team."
+        }
+      },
+      "formation": {
+        "title": "Staff training",
+        "items": {
+          "i0": "The staff have received training on violence in festival settings.",
+          "i1": "The care team will brief as many people as possible during setup on issues of classism, LGBTQIA+ violence, dis/ability and VSS.",
+          "i2": "A professional from ASBL Tilt will train staff and volunteers twice on racism in festivals.",
+          "i3": "No training is given by professionals on classism, LGBTQIA+ violence, dis/ability or VSS."
+        }
+      },
+      "general": {
+        "title": "General measures",
+        "items": {
+          "i0": "Spaces for disabled people will be marked with flowers to avoid stigmatizing signage.",
+          "i1": "The fridge will be accessible to store food for specific diets and medication.",
+          "i2": "Flower-shaped pins will indicate a visible or invisible disability for those who want to use them (their meaning will be explained to everyone).",
+          "i3": "A customizable badge will be available (name/blaze, pronouns, social battery, language, etc.).",
+          "i4": "An SNJ-style tent with around ten camp beds, more comfortable than regular camping, will be accessible on request — limited places, to be booked by email: activismcampbelgium@proton.me.",
+          "i5": "There is no dedicated contact person for the punctual reception of disabled visitors, but a reference person will be available for questions about the measures."
+        }
+      },
+      "children": {
+        "title": "Children's accessibility",
+        "items": {
+          "i0": "A space for and by children, with materials to build games and activities, supported by experienced volunteers for two hours in the morning and two in the afternoon.",
+          "i1": "Activities accessible to children throughout the festival (improvisation, gardening workshops, and more).",
+          "i2": "Changing tables available in or near the washing spaces.",
+          "i3": "The fridge will be accessible for food for babies.",
+          "i4": "Bar and kitchen counters will be lowered in some places to child height."
+        }
+      },
+      "visual": {
+        "title": "Visual accessibility",
+        "items": {
+          "i0": "Large orientation panels will indicate the different spaces of the festival.",
+          "i1": "Paths and spaces will be sufficiently lit to move around easily.",
+          "i2": "Facilitators will be invited to describe the visual parts of their workshops.",
+          "i3": "There is no dedicated person to greet and orient blind or partially sighted people.",
+          "i4": "No braille materials.",
+          "i5": "Guide dogs are not welcome, following the request of the property owner."
+        }
+      },
+      "auditory": {
+        "title": "Auditory accessibility",
+        "items": {
+          "i0": "More than 60% of workshops will be given in French. Activities in the two large chapiteaux (150p) will be translated into English, Dutch and French. English or Dutch workshops will happen throughout the day.",
+          "i1": "No sign language translation.",
+          "i2": "No closed captioning or magnetic loop system.",
+          "i3": "No specific provision for deaf-blind people (tactile sign language, haptic communication).",
+          "i4": "No sign language classes during the camp."
+        }
+      },
+      "spatial": {
+        "sectionLabel": "Spatial",
+        "title": "Spatial accessibility",
+        "alertTitle": "Please read this first",
+        "alertText": "There will not be any rolling mats on the festival site. The ground is grassy and partly sloped: access to our festival will already be very limited for wheelchair users. We are sorry about that.",
+        "railTitle": "Path from the station",
+        "railText": "The train journey to Grupont requires at least one change at Rochefort-Jemelle. This station is not accessible independently, so booking assistance for boarding and disembarking is mandatory with SNCB at least 24 hours in advance.",
+        "terrainTitle": "Ground layout",
+        "terrainText": "The festival is on a grassy field. The campsite is reached from the festival by a muddy and steep 200-meter path. The site has several elevated areas or passages on wooden bridges.",
+        "planLabel": "View the plan",
+        "items": {
+          "i0": "PMR parking spaces will be provided near the entrance.",
+          "i1": "Accessible toilets and washing facilities for PMR users (enough space, handrails, wide door).",
+          "i2": "Risky areas (holes, river) will be marked with tape or signs.",
+          "i3": "Bar and kitchen counters accessible at wheelchair height or for small people.",
+          "i4": "PMR needs have been taken into account in the emergency evacuation plans.",
+          "i5": "No dedicated PMR spaces in the different locations.",
+          "i6": "We cannot guarantee a variety of seating everywhere, but we are working on it.",
+          "i7": "No IMO vehicle available from the festival to collect people from the station."
+        }
+      },
+      "sensorial": {
+        "sectionLabel": "Sensory",
+        "title": "Sensory accessibility",
+        "items": {
+          "i0": "An info space will provide a map and programme, and allow questions about organization (time or place changes).",
+          "i1": "Facilitators will be invited to indicate the expected stimulation level (TW, visual effects, violence, shouting).",
+          "i2": "A chill area without sound and a quiet space in the care zone (as much as possible given the size of the festival).",
+          "i3": "Noise-reducing headphones will be available in the care area.",
+          "i4": "No accessible sound meter for the different stages.",
+          "i5": "Information will not be made visually or audibly accessible (pictograms, images).",
+          "i6": "Schedule changes will be displayed at the info space, but we cannot guarantee that everyone will be informed."
+        }
+      },
+      "cognitive": {
+        "sectionLabel": "Cognitive",
+        "title": "Cognitive accessibility",
+        "items": {
+          "i0": "Clear signage will indicate the location of different spaces, with maps available at reception.",
+          "i1": "Self-managed tents for activities of your choice, as well as chill and quiet spaces to write or read without interacting.",
+          "i2": "In the large chapiteaux, it will be possible to ask questions in writing or express opinions, transmitted to facilitators.",
+          "i3": "No writing in FALC (Easy to Read and Understand) for this edition."
+        }
+      },
+      "sanitary": {
+        "sectionLabel": "Sanitary",
+        "title": "Sanitary accessibility",
+        "items": {
+          "i0": "Masks and gel available in the care space.",
+          "i1": "Hand sanitizer distributed before entering the canteen.",
+          "i2": "The capacity of each space is limited and will be specified on the programme.",
+          "i3": "Wearing a mask will not be mandatory.",
+          "i4": "No requirement to present a negative PCR test to enter the festival."
+        }
+      },
+      "material": {
+        "sectionLabel": "Pack your bag",
+        "title": "What to bring",
+        "food": {
+          "label": "Food / water",
+          "text": "your plate or bowl + spoon + cup, and something to eat or snack on if you want."
+        },
+        "sun": {
+          "label": "Sun",
+          "text": "cap or hat, sunglasses, sunscreen."
+        },
+        "hygiene": {
+          "label": "Hygiene",
+          "text": "toiletry bag, towel, mosquito repellent, neutral-pH soap."
+        },
+        "money": {
+          "label": "Money",
+          "text": "bring cash."
+        },
+        "clothes": {
+          "label": "Clothes",
+          "text": "enough for the whole stay, including warm clothes for the night."
+        },
+        "water": {
+          "label": "Your bottle",
+          "text": "to stay hydrated throughout the festival."
+        },
+        "tent": {
+          "label": "Your tent",
+          "text": "if you sleep on site."
+        },
+        "sleeping": {
+          "label": "Sleeping bag",
+          "text": "a warm sleeping bag and a mattress."
+        },
+        "flashlight": {
+          "label": "Lamp",
+          "text": "a torch or headlamp."
+        },
+        "earplugs": {
+          "label": "Earplugs",
+          "text": "to protect yourself from noise."
+        },
+        "medicine": {
+          "label": "Medicine",
+          "text": "your medication for the duration of the festival."
+        },
+        "entertainment": {
+          "label": "Entertainment",
+          "text": "a deck of cards, a book or something to keep you occupied."
+        }
       }
     },
     "other": {
