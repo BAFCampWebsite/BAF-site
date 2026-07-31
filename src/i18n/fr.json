@@ -20,8 +20,9 @@
       "venir": "Venir sur place",
       "nourrir": "Se nourrir",
       "camping": "Le camping",
-      "bambinerie": "La Bambinerie",
+      "espaceJeunesse": "Espace Jeunesse",
       "other": "Autres infos",
+      "accessibilite": "Accessibilité",
       "conditionsVente": "Conditions de vente"
     },
     "dropdownAider": {
@@ -54,7 +55,7 @@
     "card1LinkUrl": "https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054",
     "card1LinkSuffix": "pour proposer une contribution au programme !",
     "card2Title": "Camping",
-    "card2Text": "Camping ouvert dès le lundi 17 au soir pour venir aider à monter le camp. Possibilité de dormir sur place jusqu'au 26 août (fin du démontage).",
+    "card2Text": "Camping ouvert dès le Jeudi 20, 14h. Possibilité de dormir sur place jusqu'au 23 Août, 18h.",
     "card3Title": "Autogestion",
     "card3Text": "Qui que tu sois, rejoins notre équipe en nous ",
     "card3Link": "contactant par mail",
@@ -125,20 +126,20 @@
     "camping": {
       "sectionLabel": "Dormir sur place",
       "title": "Camping",
-      "html": "Le camping est ouvert du <strong>17 au 26 août</strong>, sur un terrain herbu à deux pas du lieu du camp.",
+      "html": "Le camping est ouvert du <strong>20 au 23 août</strong>, sur un terrain herbu à deux pas du lieu du camp.",
       "mixiteText": "Un lieu de camping exclusivement en mixité choisie MINT (Meuf, Intersexe, Non-binaire et Trans) sera aménagé.",
       "dates": {
         "title": "Dates d'ouverture",
-        "text": "Arrivée possible dès le Dimanche 16 août à partir de 14h. Départ au plus tard le mardi 26 août à 12h."
+        "text": "Arrivée possible dès le Jeudi 20 Août, à partir de 14h. Départ au plus tard le Dimanche 23 Août à 18h."
       }
     },
-    "bambinerie": {
+    "espaceJeunesse": {
       "sectionLabel": "Petits militants",
-      "title": "La Bambinerie",
+      "title": "Espace Jeunesse",
       "introHtml": "Le BAF Camp, c'est aussi pour les familles ! Un espace dédié <strong>aux enfants entre 4 et 16 ans </strong>est prévu sur le site, pour qu'iels puissent s'approprier, créer et faire vivre leurs propres espaces ",
       "morning": {
         "title": "Créneau du matin",
-        "html": "Un créneau de <strong>10h à 12h le matin</strong> est prévu pour accueillir les enfants à la Bambinerie, "
+        "html": "Un créneau de <strong>10h à 12h le matin</strong> est prévu pour accueillir les enfants à l'Espace Jeunesse, "
       },
       "afternoon": {
         "title": "Créneau de l'après-midi",
@@ -149,9 +150,216 @@
         "html": "En dehors des créneaux d'ouverture, certains espaces de programmation sont prévus pour être adapté aux enfants : jeux, spectacles, créations, découvertes !"
       },
       "contact": {
-        "title": "Des questions sur la Bambinerie ?",
+        "title": "Des questions sur l'Espace Jeunesse ?",
         "prefix": "N'hésite pas à nous contacter à ",
         "suffix": " pour toute question concernant l'accueil des enfants."
+      }
+    },
+    "accessibilite": {
+      "hero": {
+        "eyebrow": "Infos pratiques",
+        "title": "Accessibilité",
+        "subtitle": "Ce que nous mettons en place — et ce que nous ne pouvons pas encore mettre en place — pour cette première édition du BAF Camp.",
+        "note": "Cette page est amenée à évoluer en fonction des retours reçus."
+      },
+      "intro": {
+        "sectionLabel": "À lire avant tout",
+        "title": "Pourquoi cette page ?",
+        "p1": "Dans cet onglet vous trouverez les différents aménagements d'accessibilité qui seront mis en place, mais aussi ceux qui ne seront pas mis en place lors de cette première édition du BAF Camp. En expliquant quels dispositifs prendront place lors du festival, nous espérons permettre à chacun.e de pouvoir décider de sa venue et/ou de s'équiper en ayant connaissance de l'accessibilité de notre espace.",
+        "p2": "Nous nous appuyons ici sur les recommandations de Les Dévalideuses.",
+        "sourcePrefix": "Source :",
+        "sourceLinkText": "lesdevalideuses.org",
+        "definitionTitle": "Notre définition",
+        "definitionText": "Un espace accessible = un espace qui travaille à ne pas reproduire les violences systémiques et les oppressions normalisées dans notre société.",
+        "remarksTitle": "Remarques préliminaires",
+        "remarksP1": "Nous avons choisi de ne mettre en place que certains dispositifs pour des raisons matérielles (manque de temps, de financement, obstacles concrets rencontrés sur le terrain et non anticipés). Ces manquements ne sont pas le fruit d'une hiérarchisation des discriminations ni d'une volonté politique. Si une nouvelle édition du BAF voit le jour, nous travaillerons davantage à la mise en place des mesures manquantes, en prenant également en compte les retours reçus.",
+        "remarksP2": "Nous sommes conscient.es que ces dispositifs ne seront pas suffisants pour la venue de certaines personnes, et que ce manque constitue une nouvelle violence d'exclusion à leur égard. Nous en sommes désolé.es.",
+        "remarksP3": "De plus, le programme et l'organisation de ce festival ont principalement été réalisés avec des personnes valides, blanches et francophones, ce qui implique une concentration du pouvoir entre ces personnes et, de ce fait, un festival qui ne sera pas mixte mais qui tendra seulement à l'inclusivité, pouvant représenter ainsi une seconde forme de \"violence\".",
+        "remarksP4": "Ces mesures ont notamment été pensées grâce au guide de Les Dévalideuses."
+      },
+      "care": {
+        "title": "Équipe care",
+        "items": {
+          "i0": "Espaces en non-mixité sur le festival (camping, espace détente, certains ateliers).",
+          "i1": "Un baromètre de la violence a été établi avec une personne qualifiée, pour permettre à l'équipe care de suivre un protocole clair en cas de violences.",
+          "i2": "Une cellule « care » accueillera les personnes souhaitant se reposer dans un espace calme et sécurisant, et proposera de l'écoute active. Elle permettra aux personnes de déposer des potentielles violences vécues sur le festival, et à l'équipe en place de réagir selon les attentes des personnes concernées.",
+          "i3": "Une équipe de street médics formée sera présente pour toute aide médicale.",
+          "i4": "Un système de veille circulera 24h/24 sur le camp (accompagné du staff la nuit) pour la sécurité et le confort mental et physique de chacun.e.",
+          "i5": "Pas de ligne d'écoute téléphonique de la cellule care durant le festival.",
+          "i6": "Nous ne pouvons pas assurer la présence d'une personne formée à chaque discrimination potentielle (queerphobie, validisme…), mais nous mettrons tout en œuvre pour trouver des solutions adaptées."
+        }
+      },
+      "engagement": {
+        "title": "Engagement des festivalier.es",
+        "items": {
+          "i0Prefix": "Une ",
+          "i0Link": "charte",
+          "i0Suffix": " reprenant les valeurs du BAF Camp a été rédigée et lue par tout le staff, qui s'engage à la suivre.",
+          "i1": "Un briefing à l'accueil sensibilisera toustes les festivalier.es aux discriminations et violences possibles, et aux dispositifs prévus en réaction.",
+          "i2Prefix": "Une ",
+          "i2Link": "charte billetterie",
+          "i2Suffix": ", résumant la charte globale, sera signée par toustes les festivalier.es à l'achat du billet. En cas de non-respect, des mesures seront prises par la team care."
+        }
+      },
+      "formation": {
+        "title": "Formation du staff",
+        "items": {
+          "i0": "Le staff a suivi une formation sur les violences en milieu festif.",
+          "i1": "La team care briefera un maximum de personnes présentes au montage sur les enjeux de classisme, de violences LGBTQIA+, d'handidévalidisme et de VSS.",
+          "i2": "Une professionnelle de l'ASBL Tilt formera à deux reprises le staff et les bénévoles du montage aux enjeux de racisme dans les festivals.",
+          "i3": "Pas de formation donnée par des professionnel.les sur le classisme, les violences LGBTQIA+, l'handidévalidisme ou les VSS."
+        }
+      },
+      "general": {
+        "title": "Dispositifs généraux",
+        "items": {
+          "i0": "Les espaces aménagés pour les personnes en situation de handicap seront signalés par des fleurs, pour éviter une signalétique stigmatisante.",
+          "i1": "Le frigo sera accessible pour stocker de la nourriture liée à des régimes spécifiques et des médicaments.",
+          "i2": "Des pins en forme de fleur permettront d'indiquer un handicap visible ou invisible pour celleux qui le souhaitent (leur signification sera communiquée à tout le monde).",
+          "i3": "Un badge personnalisable sera disponible (prénom/blaze, pronoms, batterie sociale, langue, etc.).",
+          "i4": "Une tente type SNJ avec une dizaine de lits de camp, plus confortables que le camping, sera accessible sur demande — places limitées, à réserver par email : activismcampbelgium@proton.me.",
+          "i5": "Pas de personne référente dédiée à l'accueil ponctuel des publics handicapés, mais une personne de référence sera joignable pour toute question sur les dispositifs."
+        }
+      },
+      "children": {
+        "title": "Accessibilité enfants",
+        "items": {
+          "i0Prefix": "Un ",
+          "i0Link": "espace pour et par les enfants",
+          "i0Suffix": " avec du matériel pour construire jeux et activités, accompagné par des bénévoles expérimenté.es deux heures le matin et deux heures l'après-midi. Le reste du temps, l'espace restera accessible mais sans bénévoles d'accompagnement.",
+          "i1": "Des activités accessibles aux enfants tout au long du festival (improvisation, ateliers potager, et plus).",
+          "i2": "Des tables à langer disponibles dans ou à proximité des espaces de lavage.",
+          "i3": "Le frigo sera accessible pour la nourriture destinée aux nourrissons.",
+          "i4": "Les comptoirs du bar et de la cuisine seront abaissés par endroits, à hauteur d'enfant."
+        }
+      },
+      "visual": {
+        "title": "Accessibilité visuelle",
+        "items": {
+          "i0": "De grands panneaux d'orientation indiqueront les différents espaces du festival.",
+          "i1": "Chemins et espaces suffisamment éclairés pour s'y déplacer sans encombre.",
+          "i2": "Les intervenant.es seront invité.es à décrire les parties visuelles de leurs ateliers.",
+          "i3": "Pas de personne chargée d'accueillir et d'orienter les personnes malvoyantes ou aveugles.",
+          "i4": "Pas de supports en braille.",
+          "i5": "Les chiens guides ne sont pas les bienvenus, suite à la demande du propriétaire des lieux."
+        }
+      },
+      "auditory": {
+        "title": "Accessibilité auditive",
+        "items": {
+          "i0": "Plus de 60 % des ateliers seront donnés en français. Les activités dans les deux grands chapiteaux (150p) seront traduites en anglais, néerlandais et français. Des ateliers en anglais ou néerlandais auront lieu à tout moment de la journée.",
+          "i1": "Pas de traduction en langue des signes.",
+          "i2": "Pas de dispositif de vélotypie ni de boucle magnétique.",
+          "i3": "Pas d'aménagement spécifique pour les personnes sourdes et aveugles (langue des signes tactile, communication haptique).",
+          "i4": "Pas de cours de langue des signes pendant le camp."
+        }
+      },
+      "spatial": {
+        "sectionLabel": "Spatiale",
+        "title": "Accessibilité spatiale",
+        "alertTitle": "À lire en priorité",
+        "alertText": "Il n'y aura à priori pas de tapis de roulage sur le festival. Le terrain est recouvert d'herbe et en partie en pente : l'accès à notre festival sera d'ores et déjà extrêmement limité pour les personnes PMR. Nous en sommes désolé.es. Les espaces accessibles sans pente sont tous les espaces qui longent la rivière (en bleu sur la carte). Certaines zones ateliers et la zone chill sont situées sur la pente du terrain.",
+        "railTitle": "Chemin depuis la gare",
+        "railText": "Le trajet en train jusqu'à Grupont nécessite au moins un changement à Rochefort-Jemelle. Cette gare n'étant pas accessible en autonomie, la réservation d'une assistance pour l'embarquement et le débarquement est obligatoire auprès de la SNCB au moins 24h à l'avance. Le chemin indiqué pour les festivalier.es est un chemin de terre passant par la forêt. Nous aménagerons également une autre entrée pour les personnes nécessitant une route avec un revêtement plus accessible. Par ce chemin, la gare de Grupont se situe à environ 400 mètres de l'endroit du festival. Cette gare ne possède pas de rampe PMR et il existe un escalier de 3 marches pour sortir du quai. La route entre le festival et la gare est goudronnée, malgré une absence de trottoir par endroits. Les 200 premiers mètres de cette route sont très pentus, et les 100 derniers mètres se font sur un chemin avec du goudron et des cailloux.",
+        "terrainTitle": "Aménagement du terrain",
+        "terrainText": "Le festival se trouve sur un terrain herbacé. Le camping est joignable depuis l'endroit du festival par un chemin en terre et pentu de 200 mètres. Le lieu du festival comporte plusieurs espaces se trouvant en hauteur (dévers allant de 1 mètre à 3 mètres) ou de part et d'autre d'une passerelle en bois. La majorité des autres espaces (cantine, bar, grands chapiteaux) se trouve sur la partie plane du terrain. Le terrain est bordé par une rivière ce qui peut rendre l'atmosphère très humide et froide la nuit.",
+        "planLabel": "Voir le plan",
+        "items": {
+          "i0": "Des places de stationnement PMR seront prévues près de l'entrée. Nous ne pouvons toutefois pas garantir qu'elles restent occupables en permanence : il pourra être nécessaire de déposer la personne au plus proche, puis de garer le véhicule dans le village afin de maintenir le passage des secours.",
+          "i1": "Toilettes et salles de lavage adaptées PMR (taille suffisante, barre d'appui, porte large).",
+          "i2": "Les espaces accidentés (trous, rivière) seront signalés par de la rubalise ou des panneaux.",
+          "i3": "Comptoirs du bar et de la cuisine accessibles à hauteur de fauteuil ou pour les personnes de petite taille.",
+          "i4": "La prise en compte des personnes PMR a été effectuée dans les plans d'évacuation d'urgence.",
+          "i5": "Pas d'espaces « spécial PMR » dédiés dans les différents lieux. Nous veillerons cependant, sur demande, à placer les personnes à proximité de la scène et à réserver des sièges à cet effet.",
+          "i6": "Nous ne pouvons pas garantir une variété de sièges partout, mais nous y travaillons.",
+          "i7": "Pas de véhicule IMO disponible depuis le festival pour aller chercher des personnes à la gare."
+        }
+      },
+      "sensorial": {
+        "sectionLabel": "Sensorielle",
+        "title": "Accessibilité sensorielle",
+        "items": {
+          "i0": "Un espace « info » permettra d'obtenir un plan et un programme, et de poser des questions sur l'organisation (changements d'heure ou de lieu).",
+          "i1": "Les intervenant.es sont invité.es à indiquer le niveau de stimulation attendu (TW, effets visuels, violence, cris), et ces informations seront disponibles sur le planning ou à l'espace info. Il n'y aura pas de lumières stroboscopiques sur les scènes du festival.",
+          "i2": "Un espace chill sans sonorisation et un espace calme dans la zone care (sans bruit, dans la mesure du possible). Cependant, au vu de la taille relativement petite du festival, du bruit provenant des scènes pourra tout de même parvenir jusque dans la zone care.",
+          "i3": "Des casques à réduction de bruit seront disponibles à la zone care.",
+          "i4": "Pas de sonomètre accessible pour les différentes scènes.",
+          "i5": "L'information ne sera pas rendue accessible visuellement ou auditivement (pictogrammes, images).",
+          "i6": "Les changements d'horaire seront affichés à l'espace info, mais nous ne pouvons garantir que chacun.e en sera informé.e via, par exemple, un système de sonorisation du festival."
+        }
+      },
+      "cognitive": {
+        "sectionLabel": "Cognitive",
+        "title": "Accessibilité cognitive",
+        "items": {
+          "i0": "Des panneaux clairs indiqueront l'emplacement des différents espaces, avec des plans disponibles à l'accueil.",
+          "i1": "Des tentes autogérées pour mener les activités de son choix, ainsi que des espaces chill et calmes pour écrire ou lire sans avoir à interagir.",
+          "i2": "Dans les grands chapiteaux, possibilité de poser des questions par écrit ou d'exprimer son avis, transmis aux facilitateur.ices, afin de pouvoir participer sans avoir à prendre la parole.",
+          "i3": "Pas d'écriture en FALC (Facile à Lire et à Comprendre) pour cette édition, ce qui rend notre communication moins accessible. Nous espérons pouvoir le mettre en place lors d'une future édition."
+        }
+      },
+      "sanitary": {
+        "sectionLabel": "Sanitaire",
+        "title": "Accessibilité sanitaire",
+        "items": {
+          "i0": "Masques et gel disponibles à l'espace care.",
+          "i1": "Gel hydroalcoolique distribué obligatoirement avant le passage à la cantine.",
+          "i2": "La capacité d'accueil de chaque espace est limitée et sera précisée sur le programme.",
+          "i3": "Le port du masque ne sera pas obligatoire.",
+          "i4": "Pas d'obligation de présenter un test PCR négatif pour entrer sur le festival."
+        }
+      },
+      "material": {
+        "sectionLabel": "Prépare ton sac",
+        "title": "Matériel à emporter avec toi",
+        "food": {
+          "label": "Nourriture / eau",
+          "text": "ton assiette ou bol + cuillère + gobelet, et de quoi manger ou grignoter si tu le souhaites (de la nourriture sera disponible sur place à prix libre)."
+        },
+        "sun": {
+          "label": "Soleil",
+          "text": "casquette ou chapeau, lunettes de soleil, crème solaire."
+        },
+        "hygiene": {
+          "label": "Hygiène",
+          "text": "trousse de toilette, essuie, répulsif anti-moustiques."
+        },
+        "money": {
+          "label": "Argent",
+          "text": "prévois du cash."
+        },
+        "clothes": {
+          "label": "Vêtements",
+          "text": "de quoi tenir tout le séjour, y compris une tenue chaude pour la nuit : la prairie peut être humide et il peut faire froid. N'oublie pas ton maillot si tu veux profiter de la rivière."
+        },
+        "water": {
+          "label": "Ta gourde",
+          "text": "pour rester hydraté.e tout au long du festival."
+        },
+        "tent": {
+          "label": "Ta tente",
+          "text": "si tu dors sur place."
+        },
+        "sleeping": {
+          "label": "Sac de couchage",
+          "text": "un sac de couchage chaud et un matelas."
+        },
+        "flashlight": {
+          "label": "Lampe",
+          "text": "une lampe de poche ou une frontale."
+        },
+        "earplugs": {
+          "label": "Bouchons d'oreilles",
+          "text": "pour te protéger du bruit."
+        },
+        "medicine": {
+          "label": "Médicaments",
+          "text": "tes médicaments pour la durée du festival."
+        },
+        "entertainment": {
+          "label": "Occupation",
+          "text": "un jeu de cartes, un livre ou de quoi t'occuper."
+        }
       }
     },
     "other": {

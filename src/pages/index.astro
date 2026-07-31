@@ -1,0 +1,28 @@
+---
+const defaultLocale = "en";
+const supportedLocales = ["fr", "en", "nl"];
+---
+
+<html lang={defaultLocale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content={`0; url=/${defaultLocale}/`} />
+    <link rel="canonical" href={`/${defaultLocale}/`} />
+    <title>BAF Camp</title>
+    <script define:vars={{ defaultLocale, supportedLocales }}>
+      const browserLocale = navigator.language.toLowerCase();
+      const matchingLocale = supportedLocales.find((locale) =>
+        browserLocale.startsWith(locale),
+      );
+      const targetLocale = matchingLocale ?? defaultLocale;
+
+      window.location.replace(`/${targetLocale}/`);
+    </script>
+  </head>
+  <body>
+    <p>
+      Redirecting to <a href={`/${defaultLocale}/`}>/${defaultLocale}/</a>.
+    </p>
+  </body>
+</html>
