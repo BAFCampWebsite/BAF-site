@@ -381,6 +381,11 @@
       "title": "Maximale capaciteit bereikt",
       "text": "We hebben de maximale capaciteit van het kamp bereikt : de ticketing is daarom gesloten. Bedankt voor je interesse en steun !"
     },
+    "waitlist": {
+      "title": "Wachtlijst",
+      "text": "Als iemand annuleert, contacteren we mensen op de wachtlijst in volgorde van inschrijving.",
+      "btnText": "Aanmelden voor de wachtlijst →"
+    },
     "intro": {
       "title": "Wat is de vrije bijdrage?",
       "p1": "Het BAF Camp werkt niet met een vaste prijs. Iedereen draagt bij volgens hun <strong>werkelijke middelen</strong> — niet alleen het loon, maar ook vermogen, privileges en vangnet. Wie het financieel beter heeft, betaalt meer, zodat anderen ook kunnen komen.",

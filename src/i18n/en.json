@@ -381,6 +381,11 @@
       "title": "Maximum capacity reached",
       "text": "We have reached the festival's maximum capacity, so ticketing is now closed. Thank you for your interest and support!"
     },
+    "waitlist": {
+      "title": "Waitlist",
+      "text": "If someone cancels, we will reach out to people on the waitlist on a first come, first served basis.",
+      "btnText": "Join the waitlist →"
+    },
     "intro": {
       "title": "What is pay-what-you-can?",
       "p1": "Tickets for the BAF Camp do not have a fixed price. Everyone contributes according to their <strong>real means</strong> — not just their salary, but their assets, privileges and safety nets. Those who are more financially comfortable pay more to allow those less privileged to attend.",

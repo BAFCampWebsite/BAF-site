@@ -381,6 +381,11 @@
       "title": "Capacité maximale atteinte",
       "text": "Nous avons atteint la capacité maximale du camp : la billetterie est donc fermée. Merci pour ton intérêt et ton soutien !"
     },
+    "waitlist": {
+      "title": "Liste d'attente",
+      "text": "En cas d'annulation, nous contacterons les personnes inscrites sur la liste d'attente, dans l'ordre d'arrivée.",
+      "btnText": "Rejoindre la liste d'attente →"
+    },
     "intro": {
       "title": "C'est quoi le prix libre et conscient ?",
       "p1": "Le BAF Camp ne fonctionne pas avec un tarif fixe. Chacun·e contribue selon ses <strong>ressources réelles</strong> — pas seulement son salaire, mais son patrimoine, ses privilèges, ses filets de sécurité. Les plus à l'aise financièrement paient plus, ce qui permet aux autres de venir.",

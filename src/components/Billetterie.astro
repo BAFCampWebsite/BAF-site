@@ -3,6 +3,8 @@ import { getTranslations } from '../i18n/getTranslations';
 import type { BilletterieMessages } from '../i18n/types';
 const t = getTranslations('billetterie');
 
+const waitlistUrl = 'https://framaforms.org/waitlist-baf-camp-2026';
+
 const plusItems = [
   t('privilegeMeter.plusItems.i0'),
   t('privilegeMeter.plusItems.i1'),
@@ -69,6 +71,17 @@ const pricingTiers = [
       <h2>{t('closed.title')}</h2>
       <p set:html={t('closed.text')}></p>
     </div>
+  </div>
+
+  <!-- Waitlist -->
+  <div class="waitlist-block reveal">
+    <div>
+      <h2>📝 {t('waitlist.title')}</h2>
+      <p>{t('waitlist.text')}</p>
+    </div>
+    <a href={waitlistUrl} target="_blank" rel="noopener" class="btn btn-primary waitlist-btn">
+      {t('waitlist.btnText')}
+    </a>
   </div>
 
   <hr class="divider">
@@ -459,6 +472,43 @@ const pricingTiers = [
   margin: 0;
 }
 
+/* ── Liste d'attente ── */
+.waitlist-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 760px;
+  background: var(--blanc-sale);
+  border: var(--contour-lg);
+  border-left: 8px solid var(--vert-dark);
+  border-radius: 12px;
+  box-shadow: var(--ombre-lg);
+  padding: 24px 28px;
+  margin-top: 24px;
+}
+
+.waitlist-block h2 {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--vert-dark);
+  margin: 0 0 8px;
+}
+
+.waitlist-block p {
+  font-family: var(--font-serif);
+  font-size: .95rem;
+  line-height: 1.8;
+  color: var(--encre);
+  margin: 0;
+}
+
+.waitlist-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 /* ══ RESPONSIVE MOBILE ══ */
 @media (max-width: 600px) {
   .thuno-tool { padding: 20px 16px; }
@@ -466,6 +516,8 @@ const pricingTiers = [
   .tarif-band { flex-direction: column; gap: 6px; }
   .tarif-camping-block { flex-direction: column; gap: 8px; }
   .closed-banner { flex-direction: column; gap: 10px; padding: 20px 18px; }
+  .waitlist-block { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px 18px; }
+  .waitlist-btn { white-space: normal; }
 }
 </style>
 
