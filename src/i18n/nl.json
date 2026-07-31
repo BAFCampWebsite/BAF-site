@@ -10,7 +10,6 @@
     "fonctionnement": "Werking",
     "informations": "Informatie",
     "nousAider": "Ons helpen",
-    "tickets": "Tickets aan vrije bijdrage →",
     "dropdownFonctionnement": {
       "financements": "Financiering",
       "charte": "Ons charter",
@@ -42,7 +41,6 @@
     "programmeValue": "Workshops, rondetafelgesprekken, concerten, optredens & en activiteiten",
     "objectifLabel": "Doel",
     "objectifValue": "Alle vrijwilligers helpen mee om het kamp draaiende te houden",
-    "btnBillets": "Tickets kopen",
     "btnProgramme": "Bekijk het programma →",
     "btnBenevolat": "Word vrijwilliger"
   },
@@ -377,6 +375,10 @@
       "title": "Vrije & bewuste prijs",
       "subtitle": "Zodat je bijdraagt naar jouw mogelijkheden."
     },
+    "closed": {
+      "title": "Maximale capaciteit bereikt",
+      "text": "We hebben de maximale capaciteit van het kamp bereikt : de ticketing is daarom gesloten. Bedankt voor je interesse en steun !"
+    },
     "intro": {
       "title": "Wat is de vrije bijdrage?",
       "p1": "Het BAF Camp werkt niet met een vaste prijs. Iedereen draagt bij volgens hun <strong>werkelijke middelen</strong> — niet alleen het loon, maar ook vermogen, privileges en vangnet. Wie het financieel beter heeft, betaalt meer, zodat anderen ook kunnen komen.",
@@ -460,25 +462,11 @@
       "campingTitle": "+ Campingbijdrage",
       "campingText": "Als je op de camping wil slapen, kan je een bijdrage van <strong>± 5 € / dag</strong> toevoegen om bij te dragen aan het herstel van de locatie na het kamp."
     },
-    "registration": {
-      "title": "Hoe inschrijven?",
-      "description": "Inschrijving gebeurt via het online inschrijvingsformulier. Je kan onze verkoopsvoorwaarden <a href=\"{salesConditionsUrl}\">hier</a> vinden.",
-      "stepNum": "1",
-      "stepTitle": "Vul het inschrijvingsformulier in",
-      "stepText": "Vul het inschrijvingsformulier in om ons te laten weten dat je naar het kamp komt, via deze link: https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306.",
-      "formUrl": "https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306",
-      "btnForm": "Inschrijvingsformulier invullen →"
-    },
     "contact": {
       "title": "Een vraag?",
       "text": "Voor elke vraag over de tickets, de vrije bijdrage of financiële toegankelijkheid, schrijf ons direct:",
       "btnText": "Schrijf ons",
       "emailSubject": "Vraag over tickets"
-    },
-    "popup": {
-      "title": "Binnenkort beschikbaar!",
-      "text": "Het inschrijvingsformulier is nog niet open. Het zal binnenkort beschikbaar zijn — kom snel terug!",
-      "btnText": "Begrepen"
     }
   },
   "programme": {
@@ -684,9 +672,8 @@
     "benevolat": {
       "title": "Vrijwilligerswerk",
       "text1": "Ter plaatse is het onze doelstelling dat dit evenement zo horizontaal en zelfbeheerd mogelijk verloopt. Daarom, om de grens tussen vrijwilligers & “consument·en” van het festival zoveel mogelijk uit te wissen, geven idealiter alle deelnemer·s een beetje van hun tijd om dit festival te laten draaien. We hebben berekend dat als alle vrijwilligers <strong>2 uur per dag</strong> werken, het festival op een zelfbeheerde manier zou moeten kunnen functioneren. Bovendien kan elke taak aangepast worden als je een beperking hebt, van welke aard dan ook.",
-      "text2": "Aarzel niet om nu al je voorkeuren als vrijwilliger door te geven door het <a href=\"/billetterie.html\"><strong>inschrijvingsformulier</strong></a> in te vullen. Anders kan je ter plaatse in real time taken vinden om te doen! Heb je vóór 20 augustus vragen of opmerkingen, contacteer ons dan via onze mail: <strong>volunteers@bafcamp.be</strong>!",
-      "text3": "Het kamp zal gezamenlijk opgebouwd en afgebroken worden. <strong>We zullen hulp nodig hebben!</strong> Er moeten tenten en podia opgebouwd worden, maar ook decoratie gemaakt, ruimtes bedacht en infrastructuur uit paletten gebouwd worden, naargelang onze zin! Er blijft nog van alles te bedenken, dus kom vanaf 16 augustus mee helpen bij het creëren van deze ruimte! Inschrijvingen om vooraf te helpen bij het opbouwen van het kamp vind je in het formulier hieronder 👇.",
-      "text4": "Maar vergeet vóór alles niet om <a href=\"/billetterie.html\"><strong>je plaats voor het evenement te bemachtigen</strong></a>."
+      "text2": "Aarzel niet om ons je voorkeuren als vrijwilliger door te geven — je kan ook ter plaatse in real time taken vinden om te doen! Heb je vóór 20 augustus vragen of opmerkingen, contacteer ons dan via onze mail: <strong>volunteers@bafcamp.be</strong>!",
+      "text3": "Het kamp zal samen worden opgebouwd en afgebroken. <strong>We hebben hulp nodig!</strong> We moeten tenten en podia opzetten, maar ook de decoratie maken, ruimtes bedenken en infrastructuur bouwen uit paletten naar onze zin! Er valt nog van alles te verzinnen, dus kom vanaf 16 augustus meebouwen aan deze ruimte! Schrijf je in om op voorhand te helpen bij de opbouw via het formulier hieronder 👇."
     },
     "missions": {
       "title": "Missies beschikbaar",

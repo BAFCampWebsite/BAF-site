@@ -1,10 +1,7 @@
 ---
 import { getTranslations } from '../i18n/getTranslations';
-import { getLocale } from 'astro-intl';
 import type { BilletterieMessages } from '../i18n/types';
 const t = getTranslations('billetterie');
-const lang = getLocale();
-const salesConditionsUrl = `/${lang}/sales-conditions`;
 
 const plusItems = [
   t('privilegeMeter.plusItems.i0'),
@@ -64,6 +61,17 @@ const pricingTiers = [
 </div>
 
 <div class="page-content">
+
+  <!-- Closed notice -->
+  <div class="closed-banner reveal">
+    <p class="closed-banner-icon">🚫</p>
+    <div>
+      <h2>{t('closed.title')}</h2>
+      <p set:html={t('closed.text')}></p>
+    </div>
+  </div>
+
+  <hr class="divider">
 
   <!-- Section 1 — Intro -->
   <div class="reveal section-intro">
@@ -152,25 +160,6 @@ const pricingTiers = [
 
   <hr class="divider">
 
-  <!-- Section 4 — Registration -->
-  <div class="reveal" id="inscription">
-    <h2>🎟️ {t('registration.title')}</h2>
-    <p class="section-lead" set:html={t('registration.description').replace('{salesConditionsUrl}', salesConditionsUrl)}></p>
-
-    <div class="step-block">
-      {/* <div class="step-num">{t('registration.stepNum')}</div> */}
-      <div class="step-body">
-        {/* <h3>{t('registration.stepTitle')}</h3> */}
-        {/* <p>{t('registration.stepText')}</p> */}
-        <a href={t('registration.formUrl')} class="btn btn-primary">
-          📝 {t('registration.btnForm')}
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
   <!-- Section 5 — Contact -->
   <div class="reveal">
     <h2>{t('contact.title')}</h2>
@@ -183,17 +172,6 @@ const pricingTiers = [
   </div>
 
 </div>
-
-{/* <!-- Popup -->
-<div class="popup-overlay" id="formPopupOverlay">
-  <div class="popup-box">
-    <button class="popup-close" onclick="closeFormPopup()" aria-label="Close">✕</button>
-    <p class="popup-icon">⏳</p>
-    <h3>{t('popup.title')}</h3>
-    <p>{t('popup.text')}</p>
-    <button class="btn btn-primary popup-confirm-btn" onclick="closeFormPopup()">{t('popup.btnText')}</button>
-  </div>
-</div> */}
 
 <style is:global>
 /* ── Intro sections ── */
@@ -443,114 +421,43 @@ const pricingTiers = [
   margin: 0;
 }
 
-/* ── Étapes inscription ── */
-.step-block {
+/* ── Avis de fermeture / capacité maximale ── */
+.closed-banner {
   display: flex;
-  gap: 24px;
   align-items: flex-start;
-  margin-bottom: 40px;
+  gap: 18px;
   max-width: 760px;
-}
-
-.step-num {
-  font-family: var(--font-mono);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--rose);
   background: var(--creme-fonce);
-  border: 2px solid var(--rose);
-  border-radius: 50%;
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 4px;
-}
-
-.step-body h3 {
-  font-family: var(--font-mono);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--encre);
-  margin-bottom: 12px;
-}
-
-.step-body p {
-  font-family: var(--font-serif);
-  font-size: .92rem;
-  line-height: 1.8;
-  color: var(--encre);
-  margin-bottom: 10px;
-  max-width: 640px;
-}
-
-/* ── Popup formulaire ── */
-.popup-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(20, 15, 10, .55);
-  z-index: 10002;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.popup-box {
-  background: var(--blanc-sale);
   border: var(--contour-lg);
-  border-radius: 16px;
+  border-left: 8px solid var(--rose);
+  border-radius: 12px;
   box-shadow: var(--ombre-lg);
-  padding: 36px 30px;
-  max-width: 380px;
-  width: 100%;
-  text-align: center;
-  position: relative;
-  animation: popupIn .25s ease;
+  padding: 24px 28px;
+  margin-top: 24px;
 }
 
-@keyframes popupIn {
-  from { transform: scale(.92); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
-}
-
-.popup-icon {
-  font-size: 2.4rem;
-  margin: 0 0 10px;
-}
-
-.popup-box h3 {
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--encre);
-  margin-bottom: 12px;
-}
-
-.popup-box p {
-  font-family: var(--font-serif);
-  font-size: .92rem;
-  line-height: 1.7;
-  color: var(--encre);
+.closed-banner-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
   margin: 0;
 }
 
-.popup-close {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  background: none;
-  border: none;
+.closed-banner h2 {
+  font-family: var(--font-mono);
   font-size: 1.1rem;
-  cursor: pointer;
-  color: var(--sable);
-  padding: 4px 8px;
-  border-radius: 6px;
-  transition: background .15s;
+  font-weight: 700;
+  color: var(--rose-dark);
+  margin: 0 0 8px;
 }
-.popup-close:hover { background: var(--creme-fonce); }
+
+.closed-banner p {
+  font-family: var(--font-serif);
+  font-size: .95rem;
+  line-height: 1.8;
+  color: var(--encre);
+  margin: 0;
+}
 
 /* ══ RESPONSIVE MOBILE ══ */
 @media (max-width: 600px) {
@@ -558,9 +465,7 @@ const pricingTiers = [
   .thuno-item { font-size: .83rem; padding: 7px 6px; }
   .tarif-band { flex-direction: column; gap: 6px; }
   .tarif-camping-block { flex-direction: column; gap: 8px; }
-  .step-block { flex-direction: column; gap: 14px; }
-  .step-num { width: 40px; height: 40px; font-size: 1.3rem; }
-  .popup-box { padding: 28px 20px; }
+  .closed-banner { flex-direction: column; gap: 10px; padding: 20px 18px; }
 }
 </style>
 
@@ -598,17 +503,4 @@ window.resetThuno = function () {
   document.getElementById('thunoResult').style.display = 'none';
   document.getElementById('thunoQuestions').style.display = 'block';
 };
-
-window.showFormPopup = function (e) {
-  e.preventDefault();
-  document.getElementById('formPopupOverlay').style.display = 'flex';
-};
-
-window.closeFormPopup = function () {
-  document.getElementById('formPopupOverlay').style.display = 'none';
-};
-
-document.getElementById('formPopupOverlay').addEventListener('click', function(e) {
-  if (e.target === this) window.closeFormPopup();
-});
 </script>
