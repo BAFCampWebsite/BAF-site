@@ -13,11 +13,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "ENG/ OPENING PLENARY",
+      "title": "OPENING PLENARY",
       "who": "",
       "location": "Grupont",
       "notes": "",
-      "version": "89e9b2b5a459",
+      "version": "9ab3a1f4e91f",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -26,12 +26,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-09T12:49:25+02:00",
-      "update_dt": "2026-07-14T16:21:34+02:00",
+      "update_dt": "2026-07-29T17:16:08+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7873926,
+          "event_id": "2128955450",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>EN (interpreted to FR, NL)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T17:11:16+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/pEjtCU1SOB68ifkY6RRFIFwiJETeivZ-ff3eGtBvrOThYNAajvrHYSN30mRp2XM?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2128956605",
@@ -45,9 +59,9 @@
       "rrule": "",
       "title": "KARAOKEEEEE",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 1",
       "notes": "",
-      "version": "22bda71a8057",
+      "version": "19835a16499a",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -56,7 +70,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-09T12:53:48+02:00",
-      "update_dt": "2026-07-14T21:30:44+02:00",
+      "update_dt": "2026-07-29T23:09:01+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -75,9 +89,9 @@
       "rrule": "",
       "title": "Division historique de la gauche en Belgique",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 1",
       "notes": "",
-      "version": "6c6f5c061dca",
+      "version": "e14250bae0b4",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -86,7 +100,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-09T12:54:28+02:00",
-      "update_dt": "2026-07-28T20:03:53+02:00",
+      "update_dt": "2026-07-29T23:15:33+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -103,7 +117,7 @@
           "creation_dt": "2026-07-28T20:03:11+02:00",
           "update_dt": null,
           "updater": "",
-          "avatar": "https://teamup.com/avatar/qmxVx37sQUyJeMk4aWNtKr5nBmZCjNVQntdzyAU-DfEWhJSZ7lo9-xCNq0jRnr0?size=28&type=gravatar"
+          "avatar": "https://teamup.com/avatar/V1Jb0Q9VUOl8ew3d2qGlwwr6tZ4PEmH0edyVAhZkpufMgr0ySJwW0SXIxjKVEk4?size=28&type=gravatar"
         }
       ]
     },
@@ -117,11 +131,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "EN/NL/ Revolutionary history of flanders",
+      "title": "Revolutionary history of flanders",
       "who": "",
-      "location": "",
-      "notes": "<p>Interpretation : NDLS - ENGL</p>",
-      "version": "af818d83ee13",
+      "location": "Chapiteau 1",
+      "notes": "",
+      "version": "5f396af34ce3",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -130,12 +144,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-09T12:55:15+02:00",
-      "update_dt": "2026-07-15T00:31:40+02:00",
+      "update_dt": "2026-07-29T23:20:55+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7876799,
+          "event_id": "2128957005",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>EN (interpreted to NL, FR)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:16:26+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/XTQPYfAqj6ApbW-JZ_hcaJwFkhgRmlPm-aBzxQXVi8pJfOebxjY41as78zC_QTg?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130488005",
@@ -147,11 +175,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/ Reprendre le pouvoir de notre alimentation sur notre territoire",
+      "title": "Reprendre le pouvoir de notre alimentation sur notre territoire",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 1",
       "notes": "",
-      "version": "dd43349e4245",
+      "version": "42da7e44d3c6",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -160,12 +188,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:14:37+02:00",
-      "update_dt": "2026-07-28T17:59:46+02:00",
+      "update_dt": "2026-07-29T23:05:46+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7873993,
+          "event_id": "2130488005",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR (interpreted to NL, EN)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T17:18:02+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/IJoGt-sedUdHU4zAwyLVL-54JTWVd2ZCCSjODIfTWxAtcxpELa4bX5IcXBeV-B8?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130489616",
@@ -177,11 +219,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/ Contre la militarisation",
+      "title": "Contre la militarisation",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 2",
       "notes": "",
-      "version": "10ce90451719",
+      "version": "e5074441a78c",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -190,12 +232,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:18:54+02:00",
-      "update_dt": "2026-07-17T11:21:55+02:00",
+      "update_dt": "2026-07-29T23:37:53+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7876942,
+          "event_id": "2130489616",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR (interpreted to NL, EN)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:37:12+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/DPKOTP-PouRven6zYX3t6aIdxpQn8B5cybfI1ageOFYkug4Pxh360_Wq1TP2Bpw?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130489719",
@@ -207,11 +263,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/ Mémoire coloniale : Lumumba",
+      "title": "Mémoire coloniale : Lumumba",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 1",
       "notes": "",
-      "version": "bf0c8ba3f49c",
+      "version": "f642a2755a7a",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -220,12 +276,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:20:09+02:00",
-      "update_dt": "2026-07-17T11:22:01+02:00",
+      "update_dt": "2026-07-29T23:28:06+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7876843,
+          "event_id": "2130489719",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR (interpreted to NL, EN)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:24:03+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/ppkiFxzk_3J2zT-QNYSDRvtD1Jz9MfgkzN9sdSwZr4hpRMio5YaJycIbxMbK9x8?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130489882",
@@ -237,11 +307,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/EN/  les dynamiques de pouvoir en collectif - Handling power dynamics in collectives",
+      "title": "Les dynamiques de pouvoir en collectif / Handling power dynamics in collectives",
       "who": "",
-      "location": "",
+      "location": "Tente ciné",
       "notes": "",
-      "version": "b18f0b39d3ed",
+      "version": "0c86e27b01a6",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -250,42 +320,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:20:59+02:00",
-      "update_dt": "2026-07-21T17:17:00+02:00",
+      "update_dt": "2026-07-29T23:48:17+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
-    },
-    {
-      "id": "2130490207",
-      "series_id": null,
-      "remote_id": null,
-      "subcalendar_id": 15766558,
-      "subcalendar_ids": [
-        15766558
-      ],
-      "all_day": false,
-      "rrule": "",
-      "title": "FR/ Initiation au cirque",
-      "who": "",
-      "location": "",
-      "notes": "",
-      "version": "5fd669ae92dd",
-      "readonly": true,
-      "tz": "Europe/Brussels",
-      "attachments": [],
-      "start_dt": "2026-08-21T11:30:00+02:00",
-      "end_dt": "2026-08-21T13:00:00+02:00",
-      "ristart_dt": null,
-      "rsstart_dt": null,
-      "creation_dt": "2026-07-12T17:22:02+02:00",
-      "update_dt": "2026-07-14T21:53:51+02:00",
-      "delete_dt": null,
-      "signup_enabled": false,
-      "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7876993,
+          "event_id": "2130489882",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR/EN</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:46:12+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/XF1ArDIGhs9JX5tt0N6le3cTjWI0J6fgMrf-wIbl3G5rbQeesd5Ijpcq52UgLfo?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130490667",
@@ -300,9 +354,9 @@
       "rrule": "",
       "title": "Concert & table ronde sur les conditions de vie des femmes sans papier",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 2",
       "notes": "",
-      "version": "5da4ce331de3",
+      "version": "5108c079ae8a",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -311,12 +365,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:23:57+02:00",
-      "update_dt": "2026-07-25T11:39:30+02:00",
+      "update_dt": "2026-07-29T23:39:08+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7876954,
+          "event_id": "2130490667",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR (interpreted to NL, EN)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:38:08+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/vJfxlMSJWOtlx2tSuq6x5V65kn6I0GCtlrIeSMNsZqWNa5CkwaSvi4W8u2Iiueg?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130490724",
@@ -328,11 +396,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/ Fabriquer son anneau contraceptif",
+      "title": "Fabriquer son anneau contraceptif",
       "who": "",
-      "location": "",
+      "location": "Tente autogestion",
       "notes": "",
-      "version": "1d8570aaaddd",
+      "version": "0b61018ff97e",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -341,12 +409,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:24:51+02:00",
-      "update_dt": "2026-07-17T11:22:31+02:00",
+      "update_dt": "2026-07-29T23:49:42+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7877002,
+          "event_id": "2130490724",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:49:06+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/AESUjBOWa4vEPEeh2tThhX-m6WvZY3Pr6vUXmecZ1BNN5zF2qoTcN2-w5Q7p1IY?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130490812",
@@ -388,11 +470,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/ Bataille culturelle de l'information",
+      "title": "Bataille culturelle de l'information",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 1",
       "notes": "",
-      "version": "ec89ccfab1e4",
+      "version": "06d2175c02b3",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -401,12 +483,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:27:22+02:00",
-      "update_dt": "2026-07-17T11:22:36+02:00",
+      "update_dt": "2026-07-29T23:30:17+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7876882,
+          "event_id": "2130490903",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR (interpreted to NL, EN)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:28:30+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/Jr1zhhx7NksE5OvDc1tBsPqVPqwMawRnqy2Q5xTtpCxDiHkCQdE_wKmA0pPk83M?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130491594",
@@ -418,11 +514,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "ENG/ Conference on Palestine",
+      "title": "Conference on Palestine",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 2",
       "notes": "",
-      "version": "07a0a672fe63",
+      "version": "a0edd9803f21",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -431,12 +527,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:31:07+02:00",
-      "update_dt": "2026-07-17T18:41:25+02:00",
+      "update_dt": "2026-07-29T23:40:06+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7876961,
+          "event_id": "2130491594",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>EN (interpreted to NL, FR)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:39:18+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/gfoDcGTVdxBOxp9rNQRNj6qjPIx1e4nxNfwX2RcTaQon17SxYS245mNZB2EzKss?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130491694",
@@ -448,25 +558,39 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/ Et un matin tout était en flamme",
+      "title": "Et un matin tout était en flamme",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 1",
       "notes": "",
-      "version": "dd561b31fc19",
+      "version": "eaaaa92953a6",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
-      "start_dt": "2026-08-21T21:00:00+02:00",
-      "end_dt": "2026-08-21T22:30:00+02:00",
+      "start_dt": "2026-08-21T20:30:00+02:00",
+      "end_dt": "2026-08-21T22:00:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:32:16+02:00",
-      "update_dt": "2026-07-17T11:23:08+02:00",
+      "update_dt": "2026-07-29T23:34:07+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7876904,
+          "event_id": "2130491694",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:32:15+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/bV6ovkHBaIR1IrkOZcj2H_1ajk0qPH_FcYgER0YJOba9eMO47-zScAEL4-3d-Nk?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130491819",
@@ -480,9 +604,9 @@
       "rrule": "",
       "title": "Anti-Skapitalista",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 1",
       "notes": "",
-      "version": "b0592cdde8fb",
+      "version": "ec183d88b214",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -491,7 +615,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:33:19+02:00",
-      "update_dt": "2026-07-27T10:30:11+02:00",
+      "update_dt": "2026-07-29T23:34:19+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -510,9 +634,9 @@
       "rrule": "",
       "title": "DRAG SHOW",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 2",
       "notes": "",
-      "version": "0299d45acc8a",
+      "version": "0892899bca98",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -521,7 +645,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:33:49+02:00",
-      "update_dt": "2026-07-15T21:36:00+02:00",
+      "update_dt": "2026-07-29T23:35:06+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -541,9 +665,9 @@
       "rrule": "",
       "title": "Nos libertés retrouvées",
       "who": "",
-      "location": "",
+      "location": "Tente ciné",
       "notes": "<p>Film sur le parcours migratoire d'une personne LGBTQIA+ </p>",
-      "version": "c75092752b1b",
+      "version": "b03e7bdb156d",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -552,12 +676,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:40:26+02:00",
-      "update_dt": "2026-07-17T11:23:03+02:00",
+      "update_dt": "2026-07-29T23:51:45+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7877024,
+          "event_id": "2130493424",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:53:11+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/pWlgfJlw2-fKEQ4uK9WrhxuzLd4vZq_IV8c68DAn98_GlBUeU_--kk7N2IZCpCE?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130493467",
@@ -572,23 +710,37 @@
       "rrule": "",
       "title": "Le balai libéré",
       "who": "",
-      "location": "",
+      "location": "Tente ciné",
       "notes": "",
-      "version": "b045e300288f",
+      "version": "c0285a910cfb",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
       "start_dt": "2026-08-21T21:00:00+02:00",
-      "end_dt": "2026-08-21T22:00:00+02:00",
+      "end_dt": "2026-08-21T22:30:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:41:06+02:00",
-      "update_dt": "2026-07-17T11:23:41+02:00",
+      "update_dt": "2026-07-29T23:52:56+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7877021,
+          "event_id": "2130493467",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:52:23+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/4ITqQDe3TYwB_Pri-v1y0Ymfy-lof7QIFTkz4ZAP6w79aPMIgc4PpN859I3i46U?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130496137",
@@ -692,9 +844,9 @@
       "rrule": "",
       "title": "FR/ Auto-défense queer féministe",
       "who": "",
-      "location": "",
+      "location": "Tente ciné",
       "notes": "<p><strong>Mixité choisie</strong> : LGBTQIA+ et femmes alliées</p>\n<p>Savoir se défendre contre la violence est essentiel à la survie des femmes et des personnes LGBTQIA+ qui vivent dans un patriarcat capitaliste néocolonial, cis-hétéronormatif.</p>\n<p>En nous inspirant des traditions historiques d’autodéfense féministe (Wen Do, Riposte, Seito Boei) et en mettant l’accent sur une approche somatique (corps et esprit), nous intégrons des méthodes d’autodéfense psychologiques, verbales, émotionnelles et physiques. Nos ateliers abordent les réactions au stress, dans le but de renforcer la confiance en soi, le sentiment de sécurité et la prise de conscience. Ils comprennent des jeux de rôle, des exercices de définition des limites et des techniques pratiques d’autodéfense.</p>\n<p>NB : Un protocole de réduction des risques liés aux virus respiratoires sera proposé pendant cet atelier. </p>",
-      "version": "f6283c9ff271",
+      "version": "f45c7da4fbfc",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -703,12 +855,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:50:12+02:00",
-      "update_dt": "2026-07-25T20:58:39+02:00",
+      "update_dt": "2026-07-29T23:57:26+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7877040,
+          "event_id": "2130497038",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:56:54+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/miS9WSbc7Qwj2mwYjfR351M3jmnBnB_A6qSm1xjtGefYQ6yzuw_mWwzdCwX_ry8?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130497247",
@@ -720,11 +886,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/ Lutter en solidarité avec les sans-papiers",
+      "title": "Lutter en solidarité avec les sans-papiers",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 1",
       "notes": "",
-      "version": "8dcd5fd724d7",
+      "version": "0ec3d3384230",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -733,12 +899,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:53:12+02:00",
-      "update_dt": "2026-07-28T19:05:34+02:00",
+      "update_dt": "2026-07-29T23:59:09+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7877043,
+          "event_id": "2130497247",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR (interpreted to NL, EN)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:58:22+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/n80nFa5nqFQ65XCpl-KawNia72Ju3mD1P6fuDNyhgWCPwXnLzuEk1g0SlZripR0?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130500484",
@@ -872,9 +1052,9 @@
       "rrule": "",
       "title": "Building Autonomy",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 1",
       "notes": "",
-      "version": "9e8665c1dc35",
+      "version": "b44edbbb32fc",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -883,7 +1063,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T18:02:14+02:00",
-      "update_dt": "2026-07-28T20:05:56+02:00",
+      "update_dt": "2026-07-29T23:59:53+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -900,7 +1080,7 @@
           "creation_dt": "2026-07-28T20:05:23+02:00",
           "update_dt": null,
           "updater": "",
-          "avatar": "https://teamup.com/avatar/73ws_admWj3JH6KEEhwBsurFriH6Xs--I4ug8w4WUqNgkd86j0_3bPvaipkBtjk?size=28&type=gravatar"
+          "avatar": "https://teamup.com/avatar/DjRX7AUJaja4men9Ar4cULTxB2lF4162ufvPnC6DDk3ro_VE_2WBYuJ-69y4mq8?size=28&type=gravatar"
         }
       ]
     },
@@ -944,7 +1124,7 @@
           "creation_dt": "2026-07-28T20:05:40+02:00",
           "update_dt": null,
           "updater": "",
-          "avatar": "https://teamup.com/avatar/OJV6807DCaqSntg6TDrtyEdgcLBsvsAH89eVGdQMkNQA0Uq468cxMVuPPnI4gwk?size=28&type=gravatar"
+          "avatar": "https://teamup.com/avatar/qk-MKLXUX9VgT_0gdjLA5FYaNSpfoPda6yxh-wze7FnUSNiOnasn-6Zc8DTYNOc?size=28&type=gravatar"
         }
       ]
     },
@@ -1080,11 +1260,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/ Habiter les fissures",
+      "title": "Habiter les fissures",
       "who": "",
-      "location": "",
+      "location": "Tente ciné",
       "notes": "",
-      "version": "1d4be9ffd807",
+      "version": "ee29f8610e08",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -1093,12 +1273,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T18:11:11+02:00",
-      "update_dt": "2026-07-17T11:24:36+02:00",
+      "update_dt": "2026-07-30T00:02:38+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7877065,
+          "event_id": "2130504197",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-30T00:02:05+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/1YD-OzCQ1njpQbshtp8h4rheL07ef1kwEECZsRbR9yzvS8fqIlwrBRiYydrrMtA?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130508437",
@@ -1140,11 +1334,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "ENG/ Struggles of the revolutionary neighbourhood",
+      "title": "Struggles of the revolutionary neighbourhood",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 1",
       "notes": "",
-      "version": "0f2945b7ea72",
+      "version": "6ad70fb9e52e",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -1153,12 +1347,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T22:23:20+02:00",
-      "update_dt": "2026-07-17T11:22:58+02:00",
+      "update_dt": "2026-07-29T23:31:36+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7876895,
+          "event_id": "2130564486",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>EN (interpreted to NL, FR)</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:31:00+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/7juCPfRx3xtPJYpgnTnvldSxKTTsbxJeoqUCss03Fwfz22F-sbyrsJAkbA3XIyA?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130565062",
@@ -1170,11 +1378,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "NL/ Artivism & zines",
+      "title": "Artivism & zines",
       "who": "",
-      "location": "",
+      "location": "Tente atelier",
       "notes": "",
-      "version": "f3787b86be63",
+      "version": "9201513934ba",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -1183,12 +1391,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T22:25:00+02:00",
-      "update_dt": "2026-07-17T11:22:06+02:00",
+      "update_dt": "2026-07-29T23:44:23+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7876980,
+          "event_id": "2130565062",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>NL</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:42:48+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/l7a9Jfa6cEITkAPmht8KhuHjF1maxEwV2YR8_r6ObeJ6JUlg2-JxvJ9_IbZdD_Q?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2130565271",
@@ -1226,29 +1448,44 @@
       "remote_id": null,
       "subcalendar_id": 15766557,
       "subcalendar_ids": [
-        15766557
+        15766557,
+        15766558
       ],
       "all_day": false,
       "rrule": "",
-      "title": "Chants de luttes",
+      "title": "Collective choir",
       "who": "",
-      "location": "",
+      "location": "Chapiteau 2",
       "notes": "",
-      "version": "2cd5ba68ae65",
+      "version": "4784bc48e06b",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
       "start_dt": "2026-08-20T21:00:00+02:00",
-      "end_dt": "2026-08-20T22:00:00+02:00",
+      "end_dt": "2026-08-20T22:30:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-14T09:45:09+02:00",
-      "update_dt": "2026-07-15T21:27:30+02:00",
+      "update_dt": "2026-07-29T23:08:46+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7874002,
+          "event_id": "2131477522",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR, NL, EN</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T17:19:05+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/CPUsXPQU5EqRUgsblj6Y0MKo5F89O1lgSoufdZjjnr3xMNJYVA80tczIm25t_I8?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2131949286",
@@ -1260,11 +1497,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/ Rencontre, discussion & débat mouvant entre personnes racisées",
+      "title": "Rencontre, discussion & débat mouvant entre personnes racisées",
       "who": "",
-      "location": "",
+      "location": "Tente autogestion",
       "notes": "",
-      "version": "fa04ebc57a58",
+      "version": "a8f7896c357e",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -1273,12 +1510,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-15T00:45:56+02:00",
-      "update_dt": null,
+      "update_dt": "2026-07-29T23:22:11+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7876827,
+          "event_id": "2131949286",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:21:37+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/p_bDvaI7omVQD7BctKQw-RVR4Wh72xqZSk_ssmUD93bbTwFSzdfLrm2HQiVFYFY?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2132546149",
@@ -1292,9 +1543,9 @@
       "rrule": "",
       "title": "Interpretation workshop",
       "who": "",
-      "location": "",
+      "location": "Tente ciné",
       "notes": "",
-      "version": "722703339515",
+      "version": "cb59ab387c9b",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -1303,12 +1554,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-15T21:46:32+02:00",
-      "update_dt": "2026-07-17T11:22:47+02:00",
+      "update_dt": "2026-07-29T23:50:46+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7877011,
+          "event_id": "2132546149",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>EN/FR</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:50:00+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/Y-8ntV6wHGHdM2cJlcHOImaqqiG8Vgadr6rqOW4_yygN2OJMiY60hHFL0arkGwU?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2132547846",
@@ -1320,11 +1585,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "FR/ Atelier slam",
+      "title": "Atelier slam",
       "who": "",
-      "location": "",
+      "location": "Tente atelier",
       "notes": "",
-      "version": "939cdc5bdd5c",
+      "version": "e72834799a2b",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -1333,12 +1598,26 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-15T21:49:49+02:00",
-      "update_dt": "2026-07-17T11:22:52+02:00",
+      "update_dt": "2026-07-29T23:45:43+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "id": 7876988,
+          "event_id": "2132547846",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:45:10+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/jpDF6C1mcPHl22AxLQaGJ5-xa68ioAId44ST0tUuO77-VUpudmI01aLc8mo1f30?size=28&type=gravatar"
+        }
+      ]
     },
     {
       "id": "2132573670",
@@ -1519,6 +1798,95 @@
       "comments_enabled": true,
       "comments_visibility": "all_users",
       "comments": []
+    },
+    {
+      "id": "2140661540",
+      "series_id": null,
+      "remote_id": null,
+      "subcalendar_id": 15782183,
+      "subcalendar_ids": [
+        15782183,
+        15782184
+      ],
+      "all_day": false,
+      "rrule": "",
+      "title": "Amnésie coloniale, la fabrique des dominations",
+      "who": "",
+      "location": "Chapiteau 2",
+      "notes": "",
+      "version": "f571fd88306f",
+      "readonly": true,
+      "tz": "Europe/Brussels",
+      "attachments": [],
+      "start_dt": "2026-08-20T18:00:00+02:00",
+      "end_dt": "2026-08-20T19:30:00+02:00",
+      "ristart_dt": null,
+      "rsstart_dt": null,
+      "creation_dt": "2026-07-29T17:25:03+02:00",
+      "update_dt": "2026-07-29T23:05:35+02:00",
+      "delete_dt": null,
+      "signup_enabled": false,
+      "comments_enabled": true,
+      "comments_visibility": "all_users",
+      "comments": [
+        {
+          "id": 7874064,
+          "event_id": "2140661540",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T17:24:34+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/7YryJCRQ0l8k3SoEHIpu8bafwAerb_xwAJFTuQ4VT_8xJn5TlD27maUhtg35T5Q?size=28&type=gravatar"
+        }
+      ]
+    },
+    {
+      "id": "2140889119",
+      "series_id": null,
+      "remote_id": null,
+      "subcalendar_id": 15782183,
+      "subcalendar_ids": [
+        15782183
+      ],
+      "all_day": false,
+      "rrule": "",
+      "title": "Spectacle d'impro",
+      "who": "",
+      "location": "Chapiteau 2",
+      "notes": "",
+      "version": "147b87c20570",
+      "readonly": true,
+      "tz": "Europe/Brussels",
+      "attachments": [],
+      "start_dt": "2026-08-21T20:30:00+02:00",
+      "end_dt": "2026-08-21T21:30:00+02:00",
+      "ristart_dt": null,
+      "rsstart_dt": null,
+      "creation_dt": "2026-07-29T23:42:49+02:00",
+      "update_dt": null,
+      "delete_dt": null,
+      "signup_enabled": false,
+      "comments_enabled": true,
+      "comments_visibility": "all_users",
+      "comments": [
+        {
+          "id": 7876977,
+          "event_id": "2140889119",
+          "name": "BAF Programme",
+          "email": "",
+          "email_hash": "4822675361bdc7ee8756c76b8a95e763",
+          "message": "<p>FR</p>",
+          "remote_id": null,
+          "creation_dt": "2026-07-29T23:42:19+02:00",
+          "update_dt": null,
+          "updater": "",
+          "avatar": "https://teamup.com/avatar/A2PIbB96RwBRO4Bvm8RCoO042wXcfDljxVqdjPQJ-mm6ObO4aTBJxryBRUIhRJU?size=28&type=gravatar"
+        }
+      ]
     }
   ]
 }
