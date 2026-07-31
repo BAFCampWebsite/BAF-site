@@ -379,7 +379,8 @@
     },
     "closed": {
       "title": "Capacité maximale atteinte",
-      "text": "Nous avons atteint la capacité maximale du camp : la billetterie est donc fermée. Merci pour ton intérêt et ton soutien !"
+      "text": "Nous avons atteint la capacité maximale du camp : la billetterie est donc fermée. Merci pour ton intérêt et ton soutien !",
+      "text2": "Des places sont réservées pour les habitant·es de Grupont et des environs."
     },
     "waitlist": {
       "title": "Liste d'attente",

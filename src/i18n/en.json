@@ -379,7 +379,8 @@
     },
     "closed": {
       "title": "Maximum capacity reached",
-      "text": "We have reached the festival's maximum capacity, so ticketing is now closed. Thank you for your interest and support!"
+      "text": "We have reached the festival's maximum capacity, so ticketing is now closed. Thank you for your interest and support!",
+      "text2": "Spots are being held for locals of Grupont and the surrounding area."
     },
     "waitlist": {
       "title": "Waitlist",

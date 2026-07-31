@@ -379,7 +379,8 @@
     },
     "closed": {
       "title": "Maximale capaciteit bereikt",
-      "text": "We hebben de maximale capaciteit van het kamp bereikt : de ticketing is daarom gesloten. Bedankt voor je interesse en steun !"
+      "text": "We hebben de maximale capaciteit van het kamp bereikt : de ticketing is daarom gesloten. Bedankt voor je interesse en steun !",
+      "text2": "Er worden plaatsen gereserveerd voor inwoners van Grupont en omgeving."
     },
     "waitlist": {
       "title": "Wachtlijst",
