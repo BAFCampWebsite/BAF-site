@@ -10,6 +10,7 @@
     "fonctionnement": "Werking",
     "informations": "Informatie",
     "nousAider": "Ons helpen",
+    "tickets": "Tickets aan vrije bijdrage →",
     "dropdownFonctionnement": {
       "financements": "Financiering",
       "charte": "Ons charter",
@@ -41,6 +42,7 @@
     "programmeValue": "Workshops, rondetafelgesprekken, concerten, optredens & en activiteiten",
     "objectifLabel": "Doel",
     "objectifValue": "Alle vrijwilligers helpen mee om het kamp draaiende te houden",
+    "btnBillets": "Tickets kopen",
     "btnProgramme": "Bekijk het programma →",
     "btnBenevolat": "Word vrijwilliger"
   },

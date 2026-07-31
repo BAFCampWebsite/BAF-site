@@ -10,6 +10,7 @@
     "fonctionnement": "Fonctionnement",
     "informations": "Informations",
     "nousAider": "Nous aider",
+    "tickets": "Billetterie prix libre →",
     "dropdownFonctionnement": {
       "financements": "Financements",
       "charte": "Notre charte",
@@ -41,6 +42,7 @@
     "programmeValue": "Ateliers, tables rondes, concerts, performances & moments collectifs",
     "objectifLabel": "Objectif",
     "objectifValue": "Tous.tes bénévoles pour faire tourner le camp",
+    "btnBillets": "Prendre mes billets",
     "btnProgramme": "Voir le programme →",
     "btnBenevolat": "Devenir bénévole"
   },

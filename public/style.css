@@ -379,6 +379,23 @@ nav {
   flex-shrink: 0;
 }
 
+.nav-links > li > a.nav-cta {
+  font-family: var(--font-display);
+  font-size: .9rem; letter-spacing: .08em;
+  background: var(--rose); color: var(--creme);
+  border-radius: 20px;
+  border: var(--contour);
+  box-shadow: var(--ombre);
+  margin-left: 12px;
+  transition: transform .12s, box-shadow .12s;
+  text-shadow: none;
+}
+.nav-links > li > a.nav-cta:hover {
+  background: var(--rose-hot);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--ombre-lg);
+}
+
 /* ══ HERO (page d'accueil) ══ */
 .hero {
   min-height: calc(100vh - var(--nav-h) - env(safe-area-inset-top, 0px));
@@ -1287,6 +1304,23 @@ footer {
   .mobile-nav-links > li > a:hover,
   .mobile-nav-links > li > button:hover,
   .mobile-nav-links > li.open > button { color: var(--rose); }
+  .mobile-nav-links > li > a.nav-cta {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    background: var(--rose); color: var(--creme);
+    border-radius: 20px;
+    border: var(--contour);
+    box-shadow: var(--ombre);
+    justify-content: center;
+    padding: 12px 20px;
+    margin-top: 12px;
+    transition: transform .12s, box-shadow .12s;
+  }
+  .mobile-nav-links > li > a.nav-cta:hover {
+    background: var(--rose-hot);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--ombre-lg);
+  }
   .mobile-nav-links .dropdown a {
     padding: 12px 16px;
     font-size: .85rem;
