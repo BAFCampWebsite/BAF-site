@@ -82,6 +82,14 @@ function overwriteWho(events) {
   }
 }
 
+function stripComments(events) {
+  for (const event of events) {
+    if (Array.isArray(event.comments)) {
+      event.comments = event.comments.map((comment) => ({ message: comment.message }));
+    }
+  }
+}
+
 async function main() {
   const { apiKey, calendarId, startDate, endDate } = loadConfig();
   const payload = await fetchEvents({ apiKey, calendarId, startDate, endDate });
@@ -95,6 +103,7 @@ async function main() {
   );
 
   overwriteWho(events);
+  stripComments(events);
 
   mkdirSync(dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, `${JSON.stringify({
