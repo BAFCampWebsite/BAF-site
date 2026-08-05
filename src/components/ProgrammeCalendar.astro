@@ -15,6 +15,8 @@ const addToCalendarLabel = t("calendar.addToCalendar");
 const searchPlaceholder = t("calendar.searchPlaceholder");
 const viewCardsLabel = t("calendar.view.cards");
 const viewTimelineLabel = t("calendar.view.timeline");
+const showFiltersLabel = t("calendar.showFilters");
+const hideFiltersLabel = t("calendar.hideFilters");
 const noLocationLabel = t("calendar.noLocation");
 const noEventsMessage = t("calendar.noEvents");
 
@@ -43,9 +45,13 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
       <button class="calendar-view-toggle" type="button" data-view="timeline">
         {viewTimelineLabel}
       </button>
+      <button class="calendar-filters-toggle" type="button" data-toggle-filters aria-expanded="false">
+        <span class="calendar-filters-toggle-icon" aria-hidden="true"></span>
+        <span class="calendar-filters-toggle-label">{showFiltersLabel}</span>
+      </button>
     </div>
 
-    <div class="calendar-filter-panel">
+    <div class="calendar-filter-panel" data-filter-panel>
       <div class="calendar-filter-row">
         <span class="calendar-filter-label"><span class="calendar-filter-emoji">🗓️</span> {t("calendar.filterLabels.day")}</span>
         <div class="calendar-filter-options">
@@ -117,6 +123,8 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
       addToCalendarLabel,
       noLocationLabel,
       noEventsMessage,
+      showFiltersLabel,
+      hideFiltersLabel,
     })}></script>
   </div>
 </div>
@@ -195,6 +203,12 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
     display: flex;
     align-items: flex-start;
     gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--sable);
+  }
+  .calendar-filter-row:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
   }
   .calendar-filter-label {
     flex: 0 0 90px;
@@ -285,6 +299,42 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
     cursor: pointer;
     box-shadow: var(--ombre);
     transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .calendar-filters-toggle {
+    display: none;
+    border: 2px solid var(--encre);
+    border-radius: 999px;
+    background: var(--creme);
+    color: var(--encre);
+    padding: 12px 18px;
+    font-size: 0.82rem;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--ombre);
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .calendar-filters-toggle-icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--encre);
+    border-radius: 2px;
+    flex: 0 0 auto;
+    transition: transform 0.15s ease;
+  }
+  .calendar-filters-toggle[aria-expanded="true"] .calendar-filters-toggle-icon {
+    background: var(--rose);
+    transform: rotate(45deg);
+  }
+  .calendar-filters-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ombre-lg);
   }
   .calendar-view-toggle:hover {
     transform: translateY(-2px);
@@ -524,11 +574,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
     --tl-hour-height: 60px;
     --tl-gutter-width: 56px;
     --tl-row-pad: 6px;
-    border: var(--contour);
-    border-radius: 16px;
     background: var(--blanc-sale);
-    box-shadow: var(--ombre);
-    overflow: hidden;
   }
   .timeline-header {
     display: flex;
@@ -544,6 +590,11 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
   }
   .timeline-corner {
     flex: 0 0 var(--tl-gutter-width);
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    background: var(--creme);
+    border-right: 1px solid var(--sable);
   }
   .timeline-loc-header {
     flex: 1 1 0;
@@ -579,6 +630,10 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
     flex: 0 0 var(--tl-gutter-width);
     position: relative;
     border-right: 1px solid var(--sable);
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--blanc-sale);
   }
   .timeline-hour {
     position: absolute;
@@ -668,6 +723,11 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
   }
   .timeline-scroll {
     overflow-x: auto;
+    overflow-y: hidden;
+    border: var(--contour);
+    border-radius: 16px;
+    background: var(--blanc-sale);
+    box-shadow: var(--ombre);
   }
   .timeline-day-section {
     display: flex;
@@ -676,6 +736,22 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
   }
   @media (max-width: 1024px) { .calendar-day-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 640px) { .calendar-day-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) {
+    .calendar-filters-toggle {
+      display: inline-flex;
+    }
+    .calendar-filter-panel[hidden] {
+      display: none;
+    }
+    .calendar-filter-row {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .calendar-filter-label {
+      flex: 0 0 auto;
+      padding-top: 0;
+    }
+  }
 </style>
 
 <script>
@@ -689,14 +765,15 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
   const calendarData = JSON.parse(
     document.querySelector("[data-calendar-data]")?.textContent || "{}"
   );
-  const { calendarEvents, addToCalendarLabel, noLocationLabel, noEventsMessage } = calendarData;
-
+  const { calendarEvents, addToCalendarLabel, noLocationLabel, noEventsMessage, showFiltersLabel, hideFiltersLabel } = calendarData;
   const eventCards = calendarEvents || [];
   const buttons = Array.from(document.querySelectorAll(".calendar-filter"));
   const container = document.getElementById("calendarEvents");
   const modal = document.getElementById("eventModal");
   const modalContent = document.getElementById("eventModalContent");
   const closeButtons = Array.from(document.querySelectorAll("[data-close-modal]"));
+  const filtersToggle = document.querySelector("[data-toggle-filters]");
+  const filterPanel = document.querySelector("[data-filter-panel]");
   let activeCategory = "all";
   let activeDay = "all";
   let activeLocation = "all";
@@ -886,6 +963,16 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
     });
   });
 
+  filtersToggle?.addEventListener("click", () => {
+    if (!filterPanel) return;
+    const isOpen = filterPanel.hidden === false;
+    filterPanel.hidden = isOpen;
+    filterPanel.dataset.userOpened = "1";
+    filtersToggle.setAttribute("aria-expanded", String(!isOpen));
+    const label = filtersToggle.querySelector(".calendar-filters-toggle-label");
+    if (label) label.textContent = isOpen ? showFiltersLabel : hideFiltersLabel;
+  });
+
   const searchInput = document.querySelector(".calendar-search-input");
   searchInput?.addEventListener("input", () => {
     clearTimeout(searchTimeout);
@@ -921,5 +1008,23 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
   });
   renderEvents();
   updateClearButtons();
+
+  const mobileQuery = window.matchMedia("(max-width: 640px)");
+  function applyResponsiveFilters() {
+    if (!filterPanel || !filtersToggle) return;
+    if (mobileQuery.matches) {
+      if (filterPanel.hidden === false && !filterPanel.dataset.userOpened) {
+        filterPanel.hidden = true;
+        filtersToggle.setAttribute("aria-expanded", "false");
+        const label = filtersToggle.querySelector(".calendar-filters-toggle-label");
+        if (label) label.textContent = showFiltersLabel;
+      }
+    } else {
+      filterPanel.hidden = false;
+      filtersToggle.setAttribute("aria-expanded", "true");
+    }
+  }
+  applyResponsiveFilters();
+  mobileQuery.addEventListener?.("change", applyResponsiveFilters);
 
 </script>

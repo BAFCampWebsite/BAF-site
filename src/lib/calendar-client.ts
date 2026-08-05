@@ -208,7 +208,7 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
 
   const heightPx = dayEnd - dayStart;
   const dayLabel = escapeHtml(dayEvents[0].dayLabel || dayKey);
-  const minWidth = Math.max(locations.length * 150 + 70, 520);
+  const minWidth = Math.max(locations.length * 200 + 70, 520);
 
   return `
     <div class="timeline-day-section">

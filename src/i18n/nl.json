@@ -519,6 +519,8 @@
         "search": "Zoeken"
       },
       "clear": "Wissen",
+      "showFilters": "Filters",
+      "hideFilters": "Filters verbergen",
       "searchPlaceholder": "Zoeken…",
       "noDescription": "Nog geen beschrijving.",
       "noLocation": "Geen locatie ingesteld",

@@ -519,6 +519,8 @@
         "search": "Search"
       },
       "clear": "Clear",
+      "showFilters": "Filters",
+      "hideFilters": "Hide filters",
       "searchPlaceholder": "Search…",
       "noDescription": "No description yet.",
       "noLocation": "No location set",
