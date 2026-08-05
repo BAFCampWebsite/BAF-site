@@ -508,14 +508,23 @@
     },
     "calendar": {
       "title": "Aperçu du programme",
-      "dayFilters": {
-        "all": "Tous les jours"
+      "view": {
+        "cards": "Cartes",
+        "timeline": "Frise"
       },
+      "filterLabels": {
+        "day": "Jour",
+        "type": "Type",
+        "location": "Lieu",
+        "search": "Recherche"
+      },
+      "clear": "Effacer",
       "searchPlaceholder": "Chercher…",
       "noDescription": "Pas de description pour l'instant.",
+      "noLocation": "Aucun lieu défini",
+      "noEvents": "Aucun événement pour cette sélection pour le moment.",
       "addToCalendar": "Ajouter au calendrier",
       "filters": {
-        "all": "Tout",
         "conference": "Conférence",
         "film": "Film",
         "music": "Musique",

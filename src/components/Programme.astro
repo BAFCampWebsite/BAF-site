@@ -46,18 +46,18 @@ const spaceItems = [
   <div class="reveal">
     <h2>{t("intro.title")}</h2>
     <p>{t("intro.sentence")}</p>
-    <p>
-      <strong>"{t("intro.together.title")}"</strong> : {
-        t("intro.together.tagline")
-      }
-    </p>
-    <p>{t("intro.together.explanation")}</p>
-    <p>
-      <strong>"{t("intro.struggle.title")}"</strong> : {
-        t("intro.struggle.tagline")
-      }
-    </p>
-    <p>{t("intro.struggle.explanation")}</p>
+    <div class="cards-grid">
+      <div class="card">
+        <h3 class="card-title">🤲 "{t("intro.together.title")}"</h3>
+        <p class="card-tagline">{t("intro.together.tagline")}</p>
+        <p class="card-text">{t("intro.together.explanation")}</p>
+      </div>
+      <div class="card">
+        <h3 class="card-title">🫯 "{t("intro.struggle.title")}"</h3>
+        <p class="card-tagline">{t("intro.struggle.tagline")}</p>
+        <p class="card-text">{t("intro.struggle.explanation")}</p>
+      </div>
+    </div>
   </div>
 
   <!-- <div class="reveal centre">
