@@ -508,14 +508,23 @@
     },
     "calendar": {
       "title": "Programma-overzicht",
-      "dayFilters": {
-        "all": "Alle dagen"
+      "view": {
+        "cards": "Kaarten",
+        "timeline": "Tijdlijn"
       },
+      "filterLabels": {
+        "day": "Dag",
+        "type": "Type",
+        "location": "Locatie",
+        "search": "Zoeken"
+      },
+      "clear": "Wissen",
       "searchPlaceholder": "Zoeken…",
       "noDescription": "Nog geen beschrijving.",
+      "noLocation": "Geen locatie ingesteld",
+      "noEvents": "Nog geen evenementen voor deze selectie.",
       "addToCalendar": "Aan kalender toevoegen",
       "filters": {
-        "all": "Alles",
         "conference": "Conferentie",
         "film": "Film",
         "music": "Muziek",

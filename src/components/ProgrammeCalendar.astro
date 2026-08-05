@@ -7,6 +7,10 @@ const lang = getLocale();
 const t = getTranslations("programme");
 const addToCalendarLabel = t("calendar.addToCalendar");
 const searchPlaceholder = t("calendar.searchPlaceholder");
+const viewCardsLabel = t("calendar.view.cards");
+const viewTimelineLabel = t("calendar.view.timeline");
+const noLocationLabel = t("calendar.noLocation");
+const noEventsMessage = t("calendar.noEvents");
 
 const SUBCALENDAR_ID_MAP = {
   "15782183": "CONFERENCE",
@@ -68,30 +72,58 @@ const calendarEvents = (teamupEvents?.events ?? [])
       ? notesText.split(/\r?\n/)[0].trim()
       : "";
 
-    const dayKey = new Intl.DateTimeFormat("en-CA", {
+    const brusselsParts = new Intl.DateTimeFormat("en-CA", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23",
       timeZone: "Europe/Brussels",
-    }).format(start);
+    }).formatToParts(start);
+    const brParts = (type) => brusselsParts.find((p) => p.type === type)?.value;
+    const brYear = Number(brParts("year"));
+    const brMonth = Number(brParts("month"));
+    const brDay = Number(brParts("day"));
+    const brHour = Number(brParts("hour"));
+
+    const realDay = new Date(Date.UTC(brYear, brMonth - 1, brDay));
+    const effectiveDay = new Date(realDay);
+    if (brHour < 3) effectiveDay.setUTCDate(effectiveDay.getUTCDate() - 1);
+
+    const dayKey = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "UTC",
+    }).format(effectiveDay);
     const dayLabel = new Intl.DateTimeFormat(lang, {
       weekday: "long",
       day: "numeric",
       month: "short",
-      timeZone: "Europe/Brussels",
-    }).format(start);
+      timeZone: "UTC",
+    }).format(effectiveDay);
 
     const dateLabel = new Intl.DateTimeFormat(lang, {
       weekday: "short",
       day: "numeric",
       month: "short",
-      timeZone: "Europe/Brussels",
-    }).format(start);
+      timeZone: "UTC",
+    }).format(effectiveDay);
+
+    const realDateLabel = new Intl.DateTimeFormat(lang, {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+      timeZone: "UTC",
+    }).format(realDay);
 
     const timeLabel = `${start.toLocaleTimeString(lang, {
       hour: "2-digit",
       minute: "2-digit",
+      hourCycle: "h23",
       timeZone: "Europe/Brussels",
     })} — ${end.toLocaleTimeString(lang, {
       hour: "2-digit",
       minute: "2-digit",
+      hourCycle: "h23",
       timeZone: "Europe/Brussels",
     })}`;
 
@@ -114,9 +146,11 @@ const calendarEvents = (teamupEvents?.events ?? [])
       categories: cats,
       accents: cats.map((c) => categoryMeta[c]?.accent ?? "var(--gris-encre)"),
       labels: cats.map((c) => categoryMeta[c]?.label ?? t("calendar.filters.workshops")),
+      locationKey: String(event.location || "").trim().toLowerCase() || "__none__",
       dayKey,
       dayLabel,
       dateLabel,
+      realDateLabel,
       timeLabel,
       notesText,
       previewText,
@@ -135,11 +169,24 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
         weekday: "long",
         day: "numeric",
         month: "short",
-        timeZone: "Europe/Brussels",
+        timeZone: "UTC",
       }).format(date),
     };
   }
 );
+
+const locationFilters = Array.from(
+  new Set(calendarEvents.map((event) => event.locationKey))
+)
+  .sort()
+  .map((locationKey) => {
+    const sample = calendarEvents.find((event) => event.locationKey === locationKey);
+    const raw = String(sample?.location || "").trim();
+    return {
+      locationKey,
+      label: raw || noLocationLabel,
+    };
+  });
 ---
 
 <div style="margin-top:40px;">
@@ -149,39 +196,78 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
       <div class="calendar-special-content" set:html={t("dayContent.i1")} />
     </div>
 
-    <div class="calendar-toolbar" aria-label="Day filters">
-      <button class="calendar-filter active" data-day="all" data-category="all">
-        {t("calendar.dayFilters.all")}
+    <div class="calendar-toolbar" aria-label="View switcher">
+      <button class="calendar-view-toggle active" type="button" data-view="cards">
+        {viewCardsLabel}
       </button>
-      {
-        dayFilters.map((day) => (
-          <button class="calendar-filter" data-day={day.dayKey} data-category="all">
-            {day.label}
-          </button>
-        ))
-      }
+      <button class="calendar-view-toggle" type="button" data-view="timeline">
+        {viewTimelineLabel}
+      </button>
     </div>
 
-    <div class="calendar-toolbar" aria-label="Event filters">
-      <button class="calendar-filter active" data-category="all">
-        {t("calendar.filters.all")}
-      </button>
-      <button class="calendar-filter" data-category="CONFERENCE">
-        {t("calendar.filters.conference")}
-      </button>
-      <button class="calendar-filter" data-category="FILM">
-        {t("calendar.filters.film")}
-      </button>
-      <button class="calendar-filter" data-category="MUSIC">
-        {t("calendar.filters.music")}
-      </button>
-      <button class="calendar-filter" data-category="THEATRE">
-        {t("calendar.filters.theatre")}
-      </button>
-      <button class="calendar-filter" data-category="WORKSHOPS">
-        {t("calendar.filters.workshops")}
-      </button>
-      <input class="calendar-search-input" type="search" placeholder={searchPlaceholder} aria-label={searchPlaceholder}>
+    <div class="calendar-filter-panel">
+      <div class="calendar-filter-row">
+        <span class="calendar-filter-label">{t("calendar.filterLabels.day")}</span>
+        <div class="calendar-filter-options">
+          <button class="calendar-filter-clear" type="button" data-clear="day" disabled>
+            ✕ {t("calendar.clear")}
+          </button>
+          {
+            dayFilters.map((day) => (
+              <button class="calendar-filter" data-day={day.dayKey}>
+                {day.label}
+              </button>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="calendar-filter-row">
+        <span class="calendar-filter-label">{t("calendar.filterLabels.type")}</span>
+        <div class="calendar-filter-options">
+          <button class="calendar-filter-clear" type="button" data-clear="category" disabled>
+            ✕ {t("calendar.clear")}
+          </button>
+          <button class="calendar-filter" data-category="CONFERENCE">
+            {t("calendar.filters.conference")}
+          </button>
+          <button class="calendar-filter" data-category="FILM">
+            {t("calendar.filters.film")}
+          </button>
+          <button class="calendar-filter" data-category="MUSIC">
+            {t("calendar.filters.music")}
+          </button>
+          <button class="calendar-filter" data-category="THEATRE">
+            {t("calendar.filters.theatre")}
+          </button>
+          <button class="calendar-filter" data-category="WORKSHOPS">
+            {t("calendar.filters.workshops")}
+          </button>
+        </div>
+      </div>
+
+      <div class="calendar-filter-row">
+        <span class="calendar-filter-label">{t("calendar.filterLabels.location")}</span>
+        <div class="calendar-filter-options">
+          <button class="calendar-filter-clear" type="button" data-clear="location" disabled>
+            ✕ {t("calendar.clear")}
+          </button>
+          {
+            locationFilters.map((loc) => (
+              <button class="calendar-filter" data-location={loc.locationKey}>
+                {loc.label}
+              </button>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="calendar-filter-row">
+        <span class="calendar-filter-label">{t("calendar.filterLabels.search")}</span>
+        <div class="calendar-filter-options">
+          <input class="calendar-search-input" type="search" placeholder={searchPlaceholder} aria-label={searchPlaceholder}>
+        </div>
+      </div>
     </div>
     <div class="construction-banner">⚠ {t("construction")}</div>
 
@@ -244,10 +330,55 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     line-height: 1.8;
     margin: 0;
   }
-  .calendar-toolbar {
+  .calendar-filter-panel {
     display: flex;
-    gap: 8px;
+    flex-direction: column;
+    gap: 10px;
+    border: var(--contour);
+    border-radius: 16px;
+    padding: 16px;
+    background: var(--blanc-sale);
+    box-shadow: var(--ombre);
+  }
+  .calendar-filter-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .calendar-filter-label {
+    flex: 0 0 90px;
+    padding-top: 9px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.62rem;
+    color: var(--gris-encre);
+  }
+  .calendar-filter-options {
+    display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+  .calendar-filter-clear {
+    border: var(--contour);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--gris-encre);
+    padding: 8px 14px;
+    font-size: 0.66rem;
+    cursor: pointer;
+    opacity: 0.75;
+  }
+  .calendar-filter-clear:hover:not(:disabled) {
+    color: var(--encre);
+    opacity: 1;
+  }
+  .calendar-filter-clear:disabled {
+    cursor: default;
+    opacity: 0.3;
   }
   .calendar-filter {
     border: var(--contour);
@@ -277,13 +408,32 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     letter-spacing: 0.08em;
     text-transform: uppercase;
     outline: none;
-    margin-left: auto;
-    max-width: 220px;
+    max-width: 260px;
+    width: 100%;
     box-shadow: var(--ombre);
   }
   .calendar-search-input:focus {
     border-color: var(--rose);
     box-shadow: var(--ombre), 0 0 0 2px color-mix(in srgb, var(--rose) 30%, transparent);
+  }
+  .calendar-view-toggle {
+    border: var(--contour);
+    border-radius: 999px;
+    background: var(--blanc-sale);
+    color: var(--encre);
+    padding: 8px 14px;
+    font-size: 0.68rem;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--ombre);
+  }
+  .calendar-view-toggle.active {
+    background: var(--encre);
+    color: var(--blanc-sale);
+    border-color: var(--encre);
   }
   .calendar-grid {
     display: flex;
@@ -331,6 +481,18 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
+  }
+  .calendar-card-top-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-left: auto;
+  }
+  .calendar-card-time {
+    font-size: 0.72rem;
+    color: var(--gris-encre);
+    white-space: nowrap;
   }
   .calendar-card-categories {
     display: flex;
@@ -496,11 +658,173 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     font-size: 0.95rem;
     line-height: 1.6;
   }
+  .timeline {
+    --tl-hour-height: 60px;
+    --tl-gutter-width: 56px;
+    --tl-row-pad: 6px;
+    border: var(--contour);
+    border-radius: 16px;
+    background: var(--blanc-sale);
+    box-shadow: var(--ombre);
+    overflow: hidden;
+  }
+  .timeline-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--sable);
+    background: var(--creme);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.63rem;
+    color: var(--gris-encre);
+  }
+  .timeline-corner {
+    flex: 0 0 var(--tl-gutter-width);
+  }
+  .timeline-loc-header {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px var(--tl-row-pad);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: 1px solid var(--sable);
+  }
+  .timeline-body {
+    display: flex;
+    position: relative;
+  }
+  .timeline-gutter,
+  .timeline-track {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--tl-hour-height) - 1px),
+      var(--sable) calc(var(--tl-hour-height) - 1px),
+      var(--sable) var(--tl-hour-height)
+    );
+  }
+  .timeline-track {
+    flex: 1 1 0;
+    min-width: 0;
+    position: relative;
+    border-left: 1px solid var(--sable);
+  }
+  .timeline-gutter {
+    flex: 0 0 var(--tl-gutter-width);
+    position: relative;
+    border-right: 1px solid var(--sable);
+  }
+  .timeline-hour {
+    position: absolute;
+    right: 6px;
+    transform: translateY(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--gris-encre);
+    white-space: nowrap;
+    background: var(--blanc-sale);
+    padding: 0 4px;
+  }
+  .timeline-event {
+    position: absolute;
+    left: var(--tl-row-pad);
+    right: var(--tl-row-pad);
+    overflow: hidden;
+    border: 1px solid var(--sable);
+    border-left: 4px solid var(--rose);
+    border-radius: 8px;
+    background: var(--creme);
+    padding: 4px 6px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    box-shadow: var(--ombre);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .timeline-event:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--ombre-lg);
+    z-index: 2;
+  }
+  .timeline-event-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .timeline-event-time {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--gris-encre);
+    white-space: nowrap;
+  }
+  .timeline-event-badges {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin-left: auto;
+  }
+  .timeline-event-badge {
+    display: inline-flex;
+    border-radius: 999px;
+    padding: 1px 6px;
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: white;
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+  .timeline-event-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--encre);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .timeline-event-language {
+    align-self: flex-start;
+    font-size: 0.55rem;
+    font-style: italic;
+    color: var(--gris-encre);
+    line-height: 1.5;
+    white-space: nowrap;
+    padding-right: 2px;
+  }
+  .timeline-scroll {
+    overflow-x: auto;
+  }
+  .timeline-day-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
   @media (max-width: 1024px) { .calendar-day-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 640px) { .calendar-day-grid { grid-template-columns: 1fr; } }
 </style>
 
-<script define:vars={{ calendarEvents, addToCalendarLabel }}>
+<script
+  define:vars={{
+    calendarEvents,
+    addToCalendarLabel,
+    viewCardsLabel,
+    viewTimelineLabel,
+    noLocationLabel,
+    noEventsMessage,
+  }}>
   const eventCards = calendarEvents || [];
   const buttons = Array.from(document.querySelectorAll(".calendar-filter"));
   const container = document.getElementById("calendarEvents");
@@ -509,6 +833,8 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
   const closeButtons = Array.from(document.querySelectorAll("[data-close-modal]"));
   let activeCategory = "all";
   let activeDay = "all";
+  let activeLocation = "all";
+  let activeView = "cards";
   let activeEvent = null;
   let activeSearch = "";
   let searchTimeout = null;
@@ -585,7 +911,7 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     if (!modal || !modalContent) return;
     activeEvent = event;
     const title = escapeHtml(event.title || "Untitled event");
-    const dateLabel = escapeHtml(event.dayLabel || event.dateLabel || "");
+    const dateLabel = escapeHtml(event.realDateLabel || event.dayLabel || event.dateLabel || "");
     const timeLabel = escapeHtml(event.timeLabel || "");
     const location = event.location ? escapeHtml(event.location) : "";
     const who = event.who ? escapeHtml(event.who) : "";
@@ -654,11 +980,13 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
       <article class="calendar-card" data-event-id="${event.id}" style="border-left-color:${accent};">
         <div class="calendar-card-top">
           <span class="calendar-card-date">${dateLabel}</span>
-          <div class="calendar-card-categories">${badges}</div>
+          <div class="calendar-card-top-right">
+            <span class="calendar-card-time">${timeLabel}</span>
+            <div class="calendar-card-categories">${badges}</div>
+          </div>
         </div>
         <h3>${title}</h3>
         <div class="calendar-card-meta-grid">
-          <div class="calendar-card-meta-item"><span>🕒</span><span>${timeLabel}</span></div>
           ${languageNote ? `<div class="calendar-card-meta-item"><span>💬</span><span class="calendar-card-language">${languageNote}</span></div>` : ""}
           ${location ? `<div class="calendar-card-meta-item"><span>🎪</span><span>${location}</span></div>` : ""}
           ${who ? `<div class="calendar-card-meta-item"><span>👤</span><span>${who}</span></div>` : ""}
@@ -668,25 +996,165 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     `;
   }
 
+  function getMinutes(value) {
+    const date = new Date(value);
+    const brussels = new Intl.DateTimeFormat("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23",
+      timeZone: "Europe/Brussels",
+    }).format(date);
+    const [hh, mm] = brussels.split(":").map(Number);
+    return hh * 60 + mm;
+  }
+
+  function getLocationLabel(event) {
+    const loc = String(event.location || "").trim();
+    return loc ? loc : noLocationLabel;
+  }
+
+  function getDayMinutes(value, dayKey) {
+    const date = new Date(value);
+    const brusselsDate = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Brussels",
+    }).format(date);
+    const mins = getMinutes(value);
+    const eventDay = new Date(brusselsDate + "T00:00:00Z").getTime();
+    const keyDay = new Date(dayKey + "T00:00:00Z").getTime();
+    const diffDays = Math.round((eventDay - keyDay) / 86400000);
+    return mins + diffDays * 24 * 60;
+  }
+
+  function renderTimelineEvent(event, dayStartMin, dayKey) {
+    const startMin = getDayMinutes(event.start_dt, dayKey);
+    const endMin = getDayMinutes(event.end_dt, dayKey);
+    const top = startMin - dayStartMin;
+    const height = Math.max(endMin - startMin, 34);
+    const accent = (event.accents && event.accents[0]) || "var(--rose)";
+    const title = escapeHtml(event.title || "Untitled event");
+    const timeLabel = escapeHtml(event.timeLabel || "");
+    const languageNote = event.languageNote ? escapeHtml(event.languageNote) : "";
+    const badges = (event.labels || [])
+      .map((label, i) => {
+        const bg = (event.accents && event.accents[i]) || "var(--rose)";
+        return `<span class="timeline-event-badge" style="background:${bg};">${escapeHtml(label)}</span>`;
+      })
+      .join("");
+
+    return `
+      <div
+        class="timeline-event"
+        data-event-id="${event.id}"
+        style="top:${top}px;height:${height}px;border-left-color:${accent};"
+        title="${title}"
+      >
+        <div class="timeline-event-head">
+          <span class="timeline-event-time">${timeLabel}</span>
+          <span class="timeline-event-badges">${badges}</span>
+        </div>
+        ${languageNote ? `<span class="timeline-event-language">💬 ${languageNote}</span>` : ""}
+        <span class="timeline-event-title">${title}</span>
+      </div>
+    `;
+  }
+
+  function renderTimelineDay(dayKey, dayEvents) {
+    const startTimes = dayEvents.map((e) => getDayMinutes(e.start_dt, dayKey));
+    const endTimes = dayEvents.map((e) => getDayMinutes(e.end_dt, dayKey));
+    let dayStart = Math.floor(Math.min(...startTimes) / 60) * 60;
+    let dayEnd = Math.max(Math.ceil(Math.max(...endTimes) / 60) * 60, Math.max(...endTimes) + 30);
+    if (dayEnd <= dayStart) dayEnd = dayStart + 24 * 60;
+
+    const hourLabels = [];
+    for (let m = dayStart; m <= dayEnd; m += 60) {
+      const hh = String((Math.floor(m / 60) % 24)).padStart(2, "0");
+      hourLabels.push(`<span class="timeline-hour" style="top:${m - dayStart}px;">${hh}:00</span>`);
+    }
+
+    const locations = Array.from(
+      new Set(dayEvents.map((e) => String(e.location || "").trim().toLowerCase()))
+    ).sort();
+    if (locations.length === 0) locations.push("");
+
+    const headers = locations
+      .map((loc) => {
+        const sample = dayEvents.find(
+          (e) => String(e.location || "").trim().toLowerCase() === loc
+        );
+        const label = escapeHtml(getLocationLabel(sample));
+        return `<div class="timeline-loc-header" title="${label}">${label}</div>`;
+      })
+      .join("");
+
+    const tracks = locations
+      .map((loc) => {
+        const events = dayEvents.filter(
+          (e) => String(e.location || "").trim().toLowerCase() === loc
+        );
+        const inner = events.map((e) => renderTimelineEvent(e, dayStart, dayKey)).join("");
+        return `<div class="timeline-track">${inner}</div>`;
+      })
+      .join("");
+
+    const heightPx = dayEnd - dayStart;
+    const dayLabel = escapeHtml(dayEvents[0].dayLabel || dayKey);
+    const minWidth = Math.max(locations.length * 150 + 70, 520);
+
+    return `
+      <div class="timeline-day-section">
+        <h2 class="calendar-day-heading">${dayLabel}</h2>
+        <div class="timeline-scroll">
+          <div class="timeline" style="min-width:${minWidth}px;">
+            <div class="timeline-header">
+              <div class="timeline-corner"></div>
+              ${headers}
+            </div>
+            <div class="timeline-body" style="height:${heightPx}px;">
+              <div class="timeline-gutter">${hourLabels.join("")}</div>
+              ${tracks}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderTimeline(visibleEvents) {
+    if (activeDay !== "all") {
+      return renderTimelineDay(activeDay, visibleEvents);
+    }
+    const dayKeys = [...new Set(visibleEvents.map((e) => e.dayKey))];
+    return dayKeys
+      .map((dayKey) => renderTimelineDay(dayKey, visibleEvents.filter((e) => e.dayKey === dayKey)))
+      .join("");
+  }
+
   function renderEvents() {
     const visibleEvents = eventCards.filter((event) => {
       const matchesCategory =
         activeCategory === "all" ? true : (event.categories || []).includes(activeCategory);
       const matchesDay = activeDay === "all" ? true : event.dayKey === activeDay;
-      if (!activeSearch) return matchesCategory && matchesDay;
+      const matchesLocation =
+        activeLocation === "all" ? true : event.locationKey === activeLocation;
+      if (!activeSearch) return matchesCategory && matchesDay && matchesLocation;
       const haystack = [
         event.title || "",
         event.notesText || event.notes || "",
         event.who || "",
         event.languageNote || "",
       ].join(" ").toLowerCase();
-      return matchesCategory && matchesDay && haystack.includes(activeSearch);
+      return matchesCategory && matchesDay && matchesLocation && haystack.includes(activeSearch);
     });
 
     if (!container) return;
 
     if (!visibleEvents.length) {
-      container.innerHTML = '<div class="calendar-empty">No events for this selection yet.</div>';
+      container.innerHTML = `<div class="calendar-empty">${noEventsMessage}</div>`;
+      return;
+    }
+
+    if (activeView === "timeline") {
+      container.innerHTML = renderTimeline(visibleEvents);
       return;
     }
 
@@ -707,17 +1175,59 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
     }
   }
 
+  function updateClearButtons() {
+    const dayClear = document.querySelector('[data-clear="day"]');
+    const catClear = document.querySelector('[data-clear="category"]');
+    const locClear = document.querySelector('[data-clear="location"]');
+    if (dayClear) dayClear.disabled = activeDay === "all";
+    if (catClear) catClear.disabled = activeCategory === "all";
+    if (locClear) locClear.disabled = activeLocation === "all";
+  }
+
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       if (button.dataset.day) {
-        activeDay = button.dataset.day || "all";
         const dayButtons = Array.from(document.querySelectorAll('.calendar-filter[data-day]'));
-        dayButtons.forEach((item) => item.classList.toggle("active", item === button));
+        activeDay = button.classList.contains("active") ? "all" : (button.dataset.day || "all");
+        dayButtons.forEach((item) => item.classList.toggle("active", item === button && activeDay !== "all"));
+      } else if (button.dataset.location) {
+        const locationButtons = Array.from(document.querySelectorAll('.calendar-filter[data-location]'));
+        activeLocation = button.classList.contains("active") ? "all" : (button.dataset.location || "all");
+        locationButtons.forEach((item) => item.classList.toggle("active", item === button && activeLocation !== "all"));
       } else {
-        activeCategory = button.dataset.category || "all";
-        const categoryButtons = Array.from(document.querySelectorAll('.calendar-filter:not([data-day])'));
-        categoryButtons.forEach((item) => item.classList.toggle("active", item === button));
+        const categoryButtons = Array.from(document.querySelectorAll('.calendar-filter[data-category]'));
+        activeCategory = button.classList.contains("active") ? "all" : (button.dataset.category || "all");
+        categoryButtons.forEach((item) => item.classList.toggle("active", item === button && activeCategory !== "all"));
       }
+      updateClearButtons();
+      renderEvents();
+    });
+  });
+
+  const clearButtons = Array.from(document.querySelectorAll(".calendar-filter-clear"));
+  clearButtons.forEach((clearBtn) => {
+    clearBtn.addEventListener("click", () => {
+      const type = clearBtn.dataset.clear;
+      if (type === "day") {
+        activeDay = "all";
+        document.querySelectorAll('.calendar-filter[data-day]').forEach((b) => b.classList.remove("active"));
+      } else if (type === "category") {
+        activeCategory = "all";
+        document.querySelectorAll('.calendar-filter[data-category]').forEach((b) => b.classList.remove("active"));
+      } else if (type === "location") {
+        activeLocation = "all";
+        document.querySelectorAll('.calendar-filter[data-location]').forEach((b) => b.classList.remove("active"));
+      }
+      updateClearButtons();
+      renderEvents();
+    });
+  });
+
+  const viewToggles = Array.from(document.querySelectorAll(".calendar-view-toggle"));
+  viewToggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      activeView = toggle.dataset.view || "cards";
+      viewToggles.forEach((item) => item.classList.toggle("active", item === toggle));
       renderEvents();
     });
   });
@@ -732,7 +1242,7 @@ const dayFilters = Array.from(new Set(calendarEvents.map((event) => event.dayKey
   });
 
   container?.addEventListener("click", (event) => {
-    const card = event.target.closest(".calendar-card");
+    const card = event.target.closest(".calendar-card, .timeline-event");
     if (!card) return;
     const selectedEvent = eventCards.find((item) => String(item.id) === card.getAttribute("data-event-id"));
     if (selectedEvent) {

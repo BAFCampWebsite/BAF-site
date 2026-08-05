@@ -508,14 +508,23 @@
     },
     "calendar": {
       "title": "Programme overview",
-      "dayFilters": {
-        "all": "All days"
+      "view": {
+        "cards": "Cards",
+        "timeline": "Timeline"
       },
+      "filterLabels": {
+        "day": "Day",
+        "type": "Type",
+        "location": "Location",
+        "search": "Search"
+      },
+      "clear": "Clear",
       "searchPlaceholder": "Search…",
       "noDescription": "No description yet.",
+      "noLocation": "No location set",
+      "noEvents": "No events for this selection yet.",
       "addToCalendar": "Add to calendar",
       "filters": {
-        "all": "All",
         "conference": "Conference",
         "film": "Film",
         "music": "Music",
