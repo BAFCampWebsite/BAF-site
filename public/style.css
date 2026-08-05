@@ -1033,11 +1033,15 @@ nav {
 .card:hover { transform: translate(-3px, -3px); box-shadow: var(--ombre-xl); }
 .card-icon { font-size: 1.8rem; margin-bottom: 14px; display: block; }
 .card-title {
-  font-family: var(--font-display); font-size: 1.35rem; letter-spacing: .04em;
+  font-family: var(--font-display); font-size: 1.7rem; letter-spacing: .04em;
   color: var(--vert); margin-bottom: 10px;
 }
 .card-text {
   font-family: var(--font-serif); font-size: .84rem; line-height: 1.7; color: var(--gris-encre);
+}
+.card-tagline {
+  font-family: var(--font-serif); font-size: .84rem; font-style: italic;
+  color: var(--rose-hot); margin-bottom: 10px;
 }
 .pill-link {
   display: inline-block;
