@@ -47,11 +47,8 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
 
     <div class="calendar-filter-panel">
       <div class="calendar-filter-row">
-        <span class="calendar-filter-label">{t("calendar.filterLabels.day")}</span>
+        <span class="calendar-filter-label"><span class="calendar-filter-emoji">🗓️</span> {t("calendar.filterLabels.day")}</span>
         <div class="calendar-filter-options">
-          <button class="calendar-filter-clear" type="button" data-clear="day" disabled>
-            ✕ {t("calendar.clear")}
-          </button>
           {
             dayFilters.map((day) => (
               <button class="calendar-filter" data-day={day.dayKey}>
@@ -59,15 +56,15 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
               </button>
             ))
           }
+          <button class="calendar-filter-clear" type="button" data-clear="day" disabled>
+            ✕ {t("calendar.clear")}
+          </button>
         </div>
       </div>
 
       <div class="calendar-filter-row">
-        <span class="calendar-filter-label">{t("calendar.filterLabels.type")}</span>
+        <span class="calendar-filter-label"><span class="calendar-filter-emoji">🤨</span> {t("calendar.filterLabels.type")}</span>
         <div class="calendar-filter-options">
-          <button class="calendar-filter-clear" type="button" data-clear="category" disabled>
-            ✕ {t("calendar.clear")}
-          </button>
           <button class="calendar-filter" data-category="CONFERENCE">
             {t("calendar.filters.conference")}
           </button>
@@ -83,15 +80,15 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
           <button class="calendar-filter" data-category="WORKSHOPS">
             {t("calendar.filters.workshops")}
           </button>
+          <button class="calendar-filter-clear" type="button" data-clear="category" disabled>
+            ✕ {t("calendar.clear")}
+          </button>
         </div>
       </div>
 
       <div class="calendar-filter-row">
-        <span class="calendar-filter-label">{t("calendar.filterLabels.location")}</span>
+        <span class="calendar-filter-label"><span class="calendar-filter-emoji">🎪</span> {t("calendar.filterLabels.location")}</span>
         <div class="calendar-filter-options">
-          <button class="calendar-filter-clear" type="button" data-clear="location" disabled>
-            ✕ {t("calendar.clear")}
-          </button>
           {
             locationFilters.map((loc) => (
               <button class="calendar-filter" data-location={loc.locationKey}>
@@ -99,11 +96,14 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
               </button>
             ))
           }
+          <button class="calendar-filter-clear" type="button" data-clear="location" disabled>
+            ✕ {t("calendar.clear")}
+          </button>
         </div>
       </div>
 
       <div class="calendar-filter-row">
-        <span class="calendar-filter-label">{t("calendar.filterLabels.search")}</span>
+        <span class="calendar-filter-label"><span class="calendar-filter-emoji">🔎</span> {t("calendar.filterLabels.search")}</span>
         <div class="calendar-filter-options">
           <input class="calendar-search-input" type="search" placeholder={searchPlaceholder} aria-label={searchPlaceholder}>
         </div>
@@ -200,6 +200,10 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
     text-transform: uppercase;
     font-size: 0.62rem;
     color: var(--gris-encre);
+  }
+  .calendar-filter-emoji {
+    font-size: 1rem;
+    letter-spacing: 0;
   }
   .calendar-filter-options {
     display: flex;
@@ -336,7 +340,9 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
     margin-left: auto;
   }
   .calendar-card-time {
-    font-size: 0.72rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 700;
     color: var(--gris-encre);
     white-space: nowrap;
   }
@@ -808,9 +814,18 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
     const dayClear = document.querySelector('[data-clear="day"]');
     const catClear = document.querySelector('[data-clear="category"]');
     const locClear = document.querySelector('[data-clear="location"]');
-    if (dayClear) dayClear.disabled = activeDay === "all";
-    if (catClear) catClear.disabled = activeCategory === "all";
-    if (locClear) locClear.disabled = activeLocation === "all";
+    if (dayClear) {
+      dayClear.style.display = activeDay === "all" ? "none" : "";
+      dayClear.disabled = activeDay === "all";
+    }
+    if (catClear) {
+      catClear.style.display = activeCategory === "all" ? "none" : "";
+      catClear.disabled = activeCategory === "all";
+    }
+    if (locClear) {
+      locClear.style.display = activeLocation === "all" ? "none" : "";
+      locClear.disabled = activeLocation === "all";
+    }
   }
 
   buttons.forEach((button) => {
@@ -894,6 +909,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
       closeModal();
     }
   });
-
   renderEvents();
+  updateClearButtons();
+
 </script>
