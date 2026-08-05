@@ -137,6 +137,11 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
     flex-direction: column;
     gap: 16px;
   }
+  .calendar-toolbar {
+    display: flex;
+    gap: 10px;
+    margin: 4px 0;
+  }
   .calendar-special-card {
     background: var(--blanc-sale);
     border: var(--contour-lg);
@@ -267,23 +272,28 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
     box-shadow: var(--ombre), 0 0 0 2px color-mix(in srgb, var(--rose) 30%, transparent);
   }
   .calendar-view-toggle {
-    border: var(--contour);
+    border: 2px solid var(--encre);
     border-radius: 999px;
     background: var(--blanc-sale);
     color: var(--encre);
-    padding: 8px 14px;
-    font-size: 0.68rem;
+    padding: 12px 24px;
+    font-size: 0.82rem;
     font-family: var(--font-mono);
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     cursor: pointer;
     box-shadow: var(--ombre);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .calendar-view-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ombre-lg);
   }
   .calendar-view-toggle.active {
-    background: var(--encre);
-    color: var(--blanc-sale);
-    border-color: var(--encre);
+    background: var(--rose);
+    color: white;
+    border-color: var(--rose);
   }
   .calendar-grid {
     display: flex;
