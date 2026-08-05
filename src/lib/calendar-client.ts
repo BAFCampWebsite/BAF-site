@@ -73,7 +73,6 @@ type TimelineEvent = {
 
 export function renderCard(event: TimelineEvent) {
   const title = escapeHtml(event.title || "Untitled event");
-  const dateLabel = escapeHtml(event.dateLabel || "");
   const timeLabel = escapeHtml(event.timeLabel || "");
   const location = event.location ? escapeHtml(event.location) : "";
   const who = event.who ? escapeHtml(event.who) : "";
@@ -91,9 +90,8 @@ export function renderCard(event: TimelineEvent) {
   return `
     <article class="calendar-card" data-event-id="${event.id}" style="border-left-color:${accent};">
       <div class="calendar-card-top">
-        <span class="calendar-card-date">${dateLabel}</span>
+        <span class="calendar-card-time">${timeLabel}</span>
         <div class="calendar-card-top-right">
-          <span class="calendar-card-time">${timeLabel}</span>
           <div class="calendar-card-categories">${badges}</div>
         </div>
       </div>
