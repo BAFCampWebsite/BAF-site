@@ -377,15 +377,12 @@
       "title": "Vrije & bewuste prijs",
       "subtitle": "Zodat je bijdraagt naar jouw mogelijkheden."
     },
-    "closed": {
-      "title": "Maximale capaciteit bereikt",
-      "text": "We hebben de maximale capaciteit van het kamp bereikt : de ticketing is daarom gesloten. Bedankt voor je interesse en steun !",
-      "text2": "Er worden plaatsen gereserveerd voor inwoners van Grupont en omgeving."
-    },
-    "waitlist": {
-      "title": "Wachtlijst",
-      "text": "Als iemand annuleert, contacteren we mensen op de wachtlijst in volgorde van inschrijving.",
-      "btnText": "Aanmelden voor de wachtlijst →"
+    "registration": {
+      "title": "Hoe inschrijven?",
+      "description": "Inschrijving gebeurt via het online inschrijvingsformulier. Je kan onze verkoopsvoorwaarden <a href=\"{salesConditionsUrl}\">hier</a> vinden.",
+      "btnForm": "Inschrijvingsformulier invullen →",
+      "waitlistNote": "Sommige dagen zijn al volzet — het formulier toont welke dagen nog beschikbaar zijn voor je je inschrijft. Als een dag die je wil vol is, word je via je inschrijving automatisch op de wachtlijst voor die dag geplaatst ; als er een plaats vrijkomt, contacteren we je in volgorde van inschrijving.",
+      "formUrl": "https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306"
     },
     "intro": {
       "title": "Wat is de vrije bijdrage?",

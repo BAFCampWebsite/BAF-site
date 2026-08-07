@@ -377,15 +377,12 @@
       "title": "Pay-what-you-can",
       "subtitle": "So that you contribute according to your means."
     },
-    "closed": {
-      "title": "Maximum capacity reached",
-      "text": "We have reached the festival's maximum capacity, so ticketing is now closed. Thank you for your interest and support!",
-      "text2": "Spots are being held for locals of Grupont and the surrounding area."
-    },
-    "waitlist": {
-      "title": "Waitlist",
-      "text": "If someone cancels, we will reach out to people on the waitlist on a first come, first served basis.",
-      "btnText": "Join the waitlist →"
+    "registration": {
+      "title": "How to register?",
+      "description": "Registration is done via the online registration form. You can find our sales conditions <a href=\"{salesConditionsUrl}\">here</a>.",
+      "btnForm": "Fill in the registration form →",
+      "waitlistNote": "Some days are already fully booked — the form will show which days are still available before you sign up. If a day you want is full, signing up automatically puts you on the waiting list for that day; if a spot frees up, we'll contact you in order of sign-up.",
+      "formUrl": "https://framaforms.org/baf-camp-registration-volunteering-1782682708"
     },
     "intro": {
       "title": "What is pay-what-you-can?",

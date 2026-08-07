@@ -377,15 +377,12 @@
       "title": "Prix libre & conscient",
       "subtitle": "Pour que tu contribues à hauteur de tes moyens."
     },
-    "closed": {
-      "title": "Capacité maximale atteinte",
-      "text": "Nous avons atteint la capacité maximale du camp : la billetterie est donc fermée. Merci pour ton intérêt et ton soutien !",
-      "text2": "Des places sont réservées pour les habitant·es de Grupont et des environs."
-    },
-    "waitlist": {
-      "title": "Liste d'attente",
-      "text": "En cas d'annulation, nous contacterons les personnes inscrites sur la liste d'attente, dans l'ordre d'arrivée.",
-      "btnText": "Rejoindre la liste d'attente →"
+    "registration": {
+      "title": "Comment s'inscrire ?",
+      "description": "L'inscription se fait via le formulaire d'inscription en ligne. Vous pouvez trouver nos conditions de vente <a href=\"{salesConditionsUrl}\">ici.</a>",
+      "btnForm": "Remplir le formulaire d'inscription →",
+      "waitlistNote": "Certaines journées sont déjà complètes — le formulaire t'indiquera quelles journées sont encore disponibles avant de t'inscrire. Si une journée souhaitée est complète, ton inscription t'ajoute automatiquement à la liste d'attente pour cette journée ; si une place se libère, nous te contacterons dans l'ordre d'inscription.",
+      "formUrl": "https://framaforms.org/inscription-benevolat-baf-camp-1780562822"
     },
     "intro": {
       "title": "C'est quoi le prix libre et conscient ?",

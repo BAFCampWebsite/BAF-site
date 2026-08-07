@@ -1,9 +1,10 @@
 ---
 import { getTranslations } from '../i18n/getTranslations';
+import { getLocale } from 'astro-intl';
 import type { BilletterieMessages } from '../i18n/types';
 const t = getTranslations('billetterie');
-
-const waitlistUrl = 'https://framaforms.org/waitlist-baf-camp-2026';
+const lang = getLocale();
+const salesConditionsUrl = `/${lang}/sales-conditions`;
 
 const plusItems = [
   t('privilegeMeter.plusItems.i0'),
@@ -64,28 +65,11 @@ const pricingTiers = [
 
 <div class="page-content">
 
-  <!-- Closed notice -->
-  <div class="closed-banner reveal">
-    <p class="closed-banner-icon">🚫</p>
-    <div>
-      <h2>{t('closed.title')}</h2>
-      <p set:html={t('closed.text')}></p>
-      <p set:html={t('closed.text2')}></p>
-    </div>
+  <!-- Booked-out days warning -->
+  <div class="registration-warning registration-warning--top reveal">
+    <span class="registration-warning-icon">⚠️</span>
+    <p class="registration-warning-text">{t('registration.waitlistNote')}</p>
   </div>
-
-  <!-- Waitlist -->
-  <div class="waitlist-block reveal">
-    <div>
-      <h2>📝 {t('waitlist.title')}</h2>
-      <p>{t('waitlist.text')}</p>
-    </div>
-    <a href={waitlistUrl} target="_blank" rel="noopener" class="btn btn-primary waitlist-btn">
-      {t('waitlist.btnText')}
-    </a>
-  </div>
-
-  <hr class="divider">
 
   <!-- Section 1 — Intro -->
   <div class="reveal section-intro">
@@ -168,6 +152,27 @@ const pricingTiers = [
       <div>
         <strong>{t('pricing.campingTitle')}</strong>
         <p set:html={t('pricing.campingText')}></p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Section 4 — Registration -->
+  <div class="reveal" id="inscription">
+    <h2>🎟️ {t('registration.title')}</h2>
+    <p class="section-lead" set:html={t('registration.description').replace('{salesConditionsUrl}', salesConditionsUrl)}></p>
+
+    <div class="registration-warning">
+      <span class="registration-warning-icon">⚠️</span>
+      <p class="registration-warning-text">{t('registration.waitlistNote')}</p>
+    </div>
+
+    <div class="step-block">
+      <div class="step-body">
+        <a href={t('registration.formUrl')} target="_blank" rel="noopener" class="btn btn-primary">
+          📝 {t('registration.btnForm')}
+        </a>
       </div>
     </div>
   </div>
@@ -435,79 +440,59 @@ const pricingTiers = [
   margin: 0;
 }
 
-/* ── Avis de fermeture / capacité maximale ── */
-.closed-banner {
+/* ── Inscription ── */
+.step-block {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  max-width: 760px;
+}
+
+.step-body p {
+  font-family: var(--font-serif);
+  font-size: .92rem;
+  line-height: 1.8;
+  color: var(--encre);
+  margin-bottom: 10px;
+}
+
+.registration-warning {
   display: flex;
   align-items: flex-start;
-  gap: 18px;
+  gap: 14px;
   max-width: 760px;
-  background: var(--creme-fonce);
-  border: var(--contour-lg);
-  border-left: 8px solid var(--rose);
+  margin: 20px 0;
+  background: #fef3e2;
+  border: 2px solid #e6a817;
+  border-left: 8px solid #d68910;
   border-radius: 12px;
   box-shadow: var(--ombre-lg);
-  padding: 24px 28px;
-  margin-top: 24px;
+  padding: 18px 22px;
 }
 
-.closed-banner-icon {
-  font-size: 2rem;
+.registration-warning-icon {
+  font-size: 1.6rem;
   line-height: 1;
   flex-shrink: 0;
-  margin: 0;
+  margin-top: 2px;
 }
 
-.closed-banner h2 {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--rose-dark);
-  margin: 0 0 8px;
-}
-
-.closed-banner p {
+.registration-warning-text {
   font-family: var(--font-serif);
-  font-size: .95rem;
-  line-height: 1.8;
-  color: var(--encre);
+  font-size: .92rem;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #6e4b0a;
   margin: 0;
 }
 
-/* ── Liste d'attente ── */
-.waitlist-block {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  max-width: 760px;
-  background: var(--blanc-sale);
-  border: var(--contour-lg);
-  border-left: 8px solid var(--vert-dark);
-  border-radius: 12px;
-  box-shadow: var(--ombre-lg);
-  padding: 24px 28px;
-  margin-top: 24px;
+.registration-warning--top {
+  margin: 0 0 24px;
 }
 
-.waitlist-block h2 {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--vert-dark);
-  margin: 0 0 8px;
-}
-
-.waitlist-block p {
-  font-family: var(--font-serif);
-  font-size: .95rem;
-  line-height: 1.8;
-  color: var(--encre);
-  margin: 0;
-}
-
-.waitlist-btn {
-  flex-shrink: 0;
-  white-space: nowrap;
+@media (max-width: 600px) {
+  .registration-warning { flex-direction: column; gap: 10px; padding: 16px 16px; }
 }
 
 /* ══ RESPONSIVE MOBILE ══ */
@@ -516,9 +501,6 @@ const pricingTiers = [
   .thuno-item { font-size: .83rem; padding: 7px 6px; }
   .tarif-band { flex-direction: column; gap: 6px; }
   .tarif-camping-block { flex-direction: column; gap: 8px; }
-  .closed-banner { flex-direction: column; gap: 10px; padding: 20px 18px; }
-  .waitlist-block { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px 18px; }
-  .waitlist-btn { white-space: normal; }
 }
 </style>
 
