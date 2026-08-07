@@ -98,9 +98,9 @@ async function main() {
     ? resolve(repoRoot, process.argv[2])
     : resolve(repoRoot, 'public', 'teamup-events.json');
 
-  const events = (Array.isArray(payload.events) ? payload.events : []).sort(
-    (a, b) => a.id - b.id,
-  );
+  const events = (Array.isArray(payload.events) ? payload.events : [])
+    .filter((event) => !event.all_day)
+    .sort((a, b) => a.id - b.id);
 
   overwriteWho(events);
   stripComments(events);
