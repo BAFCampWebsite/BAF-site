@@ -377,6 +377,13 @@
       "title": "Pay-what-you-can",
       "subtitle": "So that you contribute according to your means."
     },
+    "registration": {
+      "title": "How to register?",
+      "description": "Registration is done via the online registration form. You can find our sales conditions <a href=\"{salesConditionsUrl}\">here</a>.",
+      "btnForm": "Fill in the registration form →",
+      "waitlistNote": "Some days are already fully booked — the form will show which days are still available before you sign up. If a day you want is full, signing up automatically puts you on the waiting list for that day; if a spot frees up, we'll contact you in order of sign-up.",
+      "formUrl": "https://framaforms.org/baf-camp-registration-volunteering-1782682708"
+    },
     "intro": {
       "title": "What is pay-what-you-can?",
       "p1": "Tickets for the BAF Camp do not have a fixed price. Everyone contributes according to their <strong>real means</strong> — not just their salary, but their assets, privileges and safety nets. Those who are more financially comfortable pay more to allow those less privileged to attend.",
@@ -460,25 +467,11 @@
       "campingTitle": "+ Camping contribution",
       "campingText": "If you plan to sleep on site, you can add a participation of <strong>± €5 / day</strong> to contribute to the restoration of the venue after the camp."
     },
-    "registration": {
-      "title": "How to register?",
-      "description": "Registration is done via the online registration form. You can find our sales conditions <a href=\"{salesConditionsUrl}\">here</a>.",
-      "stepNum": "1",
-      "stepTitle": "Fill in the registration form",
-      "stepText": "Fill in the registration form to let us know you're coming to the camp.",
-      "formUrl": "https://framaforms.org/baf-camp-registration-volunteering-1782682708",
-      "btnForm": "Fill in the registration form →"
-    },
     "contact": {
       "title": "A question?",
       "text": "For any question about ticketing, the pay-what-you-can model or financial accessibility, write to us directly:",
       "btnText": "Write to us",
       "emailSubject": "Ticketing question"
-    },
-    "popup": {
-      "title": "Coming soon!",
-      "text": "The registration form isn't open yet. It will be available a bit later — check back soon!",
-      "btnText": "Got it"
     }
   },
   "programme": {
@@ -684,9 +677,8 @@
     "benevolat": {
       "title": "Volunteering",
       "text1": "On site, our goal is for this event to run in as horizontal and self-managed a way as possible. That’s why, in order to blur the line between volunteers & “consumers” of the festival as much as possible, ideally, all participants give a bit of their time to help run this festival. We’ve calculated that if all volunteers work <strong>2 hours a day</strong>, the festival should be able to run in a self-managed way. Furthermore, any task can be adapted if you have a disability of any kind.",
-      "text2": "Feel free to already let us know your volunteering preferences by filling out the <a href=\"/billetterie.html\"><strong>registration form</strong></a>. Otherwise, you’ll be able to find tasks to do on the spot in real time! If you have any questions or comments before August 20th, contact us via our email: <strong>volunteers@bafcamp.be</strong>!",
-      "text3": "The camp will be set up and taken down collectively. <strong>We’ll need help!</strong> We’ll need to put up marquees and stages, but also create the decor, imagine spaces and build infrastructure out of pallets according to our ideas! Lots of things are still left to invent, so come take part in creating this space starting August 16th! Sign up to help set up the camp beforehand in the form below 👇.",
-      "text4": "But before anything else, don’t forget to <a href=\"/billetterie.html\"><strong>get your spot for the event</strong></a>."
+      "text2": "Feel free to let us know your volunteering preferences — you'll also be able to find tasks to do on the spot in real time! If you have any questions or comments before August 20th, contact us via our email: <strong>volunteers@bafcamp.be</strong>!",
+      "text3": "The camp will be set up and taken down collectively. <strong>We’ll need help!</strong> We’ll need to put up marquees and stages, but also create the decor, imagine spaces and build infrastructure out of pallets according to our ideas! Lots of things are still left to invent, so come take part in creating this space starting August 16th! Sign up to help set up the camp beforehand in the form below 👇."
     },
     "missions": {
       "title": "Missions available",
