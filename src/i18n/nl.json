@@ -526,6 +526,7 @@
       "noLocation": "Geen locatie ingesteld",
       "noEvents": "Nog geen evenementen voor deze selectie.",
       "addToCalendar": "Aan kalender toevoegen",
+      "timelineOther": "Anders",
       "filters": {
         "conference": "Conferentie",
         "film": "Film",

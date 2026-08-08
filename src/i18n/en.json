@@ -526,6 +526,7 @@
       "noLocation": "No location set",
       "noEvents": "No events for this selection yet.",
       "addToCalendar": "Add to calendar",
+      "timelineOther": "Other",
       "filters": {
         "conference": "Conference",
         "film": "Film",

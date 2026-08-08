@@ -19,6 +19,7 @@ const showFiltersLabel = t("calendar.showFilters");
 const hideFiltersLabel = t("calendar.hideFilters");
 const noLocationLabel = t("calendar.noLocation");
 const noEventsMessage = t("calendar.noEvents");
+const timelineOtherLabel = t("calendar.timelineOther");
 
 const categoryMeta = buildCategoryMeta(t);
 const calendarEvents = buildCalendarEvents(
@@ -123,6 +124,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
       addToCalendarLabel,
       noLocationLabel,
       noEventsMessage,
+      timelineOtherLabel,
       showFiltersLabel,
       hideFiltersLabel,
     })}></script>
@@ -721,6 +723,20 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
     white-space: nowrap;
     padding-right: 2px;
   }
+  .timeline-event-location {
+    align-self: flex-start;
+    font-size: 0.55rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gris-encre);
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
   .timeline-scroll {
     overflow-x: auto;
     overflow-y: hidden;
@@ -765,7 +781,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
   const calendarData = JSON.parse(
     document.querySelector("[data-calendar-data]")?.textContent || "{}"
   );
-  const { calendarEvents, addToCalendarLabel, noLocationLabel, noEventsMessage, showFiltersLabel, hideFiltersLabel } = calendarData;
+  const { calendarEvents, addToCalendarLabel, noLocationLabel, noEventsMessage, timelineOtherLabel, showFiltersLabel, hideFiltersLabel } = calendarData;
   const eventCards = calendarEvents || [];
   const buttons = Array.from(document.querySelectorAll(".calendar-filter"));
   const container = document.getElementById("calendarEvents");
@@ -876,7 +892,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel);
     }
 
     if (activeView === "timeline") {
-      container.innerHTML = renderTimeline(visibleEvents, activeDay, noLocationLabel);
+      container.innerHTML = renderTimeline(visibleEvents, activeDay, noLocationLabel, timelineOtherLabel);
       return;
     }
 

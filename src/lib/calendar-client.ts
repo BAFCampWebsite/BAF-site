@@ -135,7 +135,30 @@ export function getDayMinutes(value: string | Date, dayKey: string) {
   return mins + diffDays * 24 * 60;
 }
 
-export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, dayKey: string) {
+const TIMELINE_COLUMN_KEYS = [
+  "chapiteaux1",
+  "chapiteaux2",
+  "atelier",
+  "cine",
+  "autogestion",
+  "jam",
+  "other",
+] as const;
+
+type TimelineColumnKey = (typeof TIMELINE_COLUMN_KEYS)[number];
+
+export function getTimelineColumnKey(location: string | undefined): TimelineColumnKey {
+  const loc = String(location || "").trim().toLowerCase();
+  if (loc.includes("chapiteau 1") || loc.includes("chapiteaux 1")) return "chapiteaux1";
+  if (loc.includes("chapiteau 2") || loc.includes("chapiteaux 2")) return "chapiteaux2";
+  if (loc.includes("atelier")) return "atelier";
+  if (loc.includes("ciné") || loc.includes("cine")) return "cine";
+  if (loc.includes("autogestion") || loc.includes("auto-gestion")) return "autogestion";
+  if (loc.includes("jam")) return "jam";
+  return "other";
+}
+
+export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, dayKey: string, showLocation = false) {
   const startMin = getDayMinutes(event.start_dt, dayKey);
   const endMin = getDayMinutes(event.end_dt, dayKey);
   const top = startMin - dayStartMin;
@@ -143,6 +166,7 @@ export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, d
   const accent = (event.accents && event.accents[0]) || "var(--rose)";
   const title = escapeHtml(event.title || "Untitled event");
   const timeLabel = escapeHtml(event.timeLabel || "");
+  const location = event.location ? escapeHtml(String(event.location).trim()) : "";
   const languageNote = event.languageNote ? escapeHtml(event.languageNote) : "";
   const badges = (event.labels || [])
     .map((label, i) => {
@@ -163,12 +187,13 @@ export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, d
         <span class="timeline-event-badges">${badges}</span>
       </div>
       ${languageNote ? `<span class="timeline-event-language">💬 ${languageNote}</span>` : ""}
+      ${showLocation && location ? `<span class="timeline-event-location">${location}</span>` : ""}
       <span class="timeline-event-title">${title}</span>
     </div>
   `;
 }
 
-export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], noLocationLabel: string) {
+export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], noLocationLabel: string, otherLabel: string) {
   const startTimes = dayEvents.map((e) => getDayMinutes(e.start_dt, dayKey));
   const endTimes = dayEvents.map((e) => getDayMinutes(e.end_dt, dayKey));
   let dayStart = Math.floor(Math.min(...startTimes) / 60) * 60;
@@ -181,34 +206,36 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
     hourLabels.push(`<span class="timeline-hour" style="top:${m - dayStart}px;">${hh}:00</span>`);
   }
 
-  const locations = Array.from(
-    new Set(dayEvents.map((e) => String(e.location || "").trim().toLowerCase()))
-  ).sort();
-  if (locations.length === 0) locations.push("");
+  const presentColumns = Array.from(
+    new Set(dayEvents.map((e) => getTimelineColumnKey(e.location)))
+  );
+  const columns = TIMELINE_COLUMN_KEYS.filter((key) => presentColumns.includes(key));
+  if (columns.length === 0) columns.push("other");
 
-  const headers = locations
-    .map((loc) => {
-      const sample = dayEvents.find(
-        (e) => String(e.location || "").trim().toLowerCase() === loc
-      );
+  const headers = columns
+    .map((columnKey) => {
+      if (columnKey === "other") {
+        const label = escapeHtml(otherLabel);
+        return `<div class="timeline-loc-header" title="${label}">${label}</div>`;
+      }
+      const sample = dayEvents.find((e) => getTimelineColumnKey(e.location) === columnKey);
       const label = escapeHtml(getLocationLabel(sample, noLocationLabel));
       return `<div class="timeline-loc-header" title="${label}">${label}</div>`;
     })
     .join("");
 
-  const tracks = locations
-    .map((loc) => {
-      const events = dayEvents.filter(
-        (e) => String(e.location || "").trim().toLowerCase() === loc
-      );
-      const inner = events.map((e) => renderTimelineEvent(e, dayStart, dayKey)).join("");
+  const tracks = columns
+    .map((columnKey) => {
+      const events = dayEvents.filter((e) => getTimelineColumnKey(e.location) === columnKey);
+      const showLocation = columnKey === "other";
+      const inner = events.map((e) => renderTimelineEvent(e, dayStart, dayKey, showLocation)).join("");
       return `<div class="timeline-track">${inner}</div>`;
     })
     .join("");
 
   const heightPx = dayEnd - dayStart;
   const dayLabel = escapeHtml(dayEvents[0].dayLabel || dayKey);
-  const minWidth = Math.max(locations.length * 200 + 70, 520);
+  const minWidth = Math.max(columns.length * 200 + 70, 520);
 
   return `
     <div class="timeline-day-section">
@@ -229,12 +256,12 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
   `;
 }
 
-export function renderTimeline(visibleEvents: TimelineEvent[], activeDay: string, noLocationLabel: string) {
+export function renderTimeline(visibleEvents: TimelineEvent[], activeDay: string, noLocationLabel: string, otherLabel: string) {
   if (activeDay !== "all") {
-    return renderTimelineDay(activeDay, visibleEvents, noLocationLabel);
+    return renderTimelineDay(activeDay, visibleEvents, noLocationLabel, otherLabel);
   }
   const dayKeys = [...new Set(visibleEvents.map((e) => e.dayKey))];
   return dayKeys
-    .map((dayKey) => renderTimelineDay(dayKey, visibleEvents.filter((e) => e.dayKey === dayKey), noLocationLabel))
+    .map((dayKey) => renderTimelineDay(dayKey, visibleEvents.filter((e) => e.dayKey === dayKey), noLocationLabel, otherLabel))
     .join("");
 }

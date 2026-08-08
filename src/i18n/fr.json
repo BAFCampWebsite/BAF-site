@@ -526,6 +526,7 @@
       "noLocation": "Aucun lieu défini",
       "noEvents": "Aucun événement pour cette sélection pour le moment.",
       "addToCalendar": "Ajouter au calendrier",
+      "timelineOther": "Autres",
       "filters": {
         "conference": "Conférence",
         "film": "Film",
