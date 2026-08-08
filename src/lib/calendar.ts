@@ -22,6 +22,29 @@ export function buildCategoryMeta(t: (key: string) => string) {
 
 export type CategoryMeta = ReturnType<typeof buildCategoryMeta>;
 
+export const TENT_KEYS = [
+  "chapiteaux1",
+  "chapiteaux2",
+  "atelier",
+  "cine",
+  "autogestion",
+  "jam",
+  "other",
+] as const;
+
+export type TentKey = (typeof TENT_KEYS)[number];
+
+export function getTentKey(location: string | undefined): TentKey {
+  const loc = String(location || "").trim().toLowerCase();
+  if (loc.includes("chapiteau 1") || loc.includes("chapiteaux 1")) return "chapiteaux1";
+  if (loc.includes("chapiteau 2") || loc.includes("chapiteaux 2")) return "chapiteaux2";
+  if (loc.includes("atelier")) return "atelier";
+  if (loc.includes("ciné") || loc.includes("cine")) return "cine";
+  if (loc.includes("autogestion") || loc.includes("auto-gestion")) return "autogestion";
+  if (loc.includes("jam")) return "jam";
+  return "other";
+}
+
 export function getNotesText(notes: unknown = "") {
   const normalized = String(notes || "")
     .replace(/<br\s*\/?>/gi, "\n")
@@ -129,7 +152,7 @@ export function buildCalendarEvents(
         categories: cats,
         accents: cats.map((c) => categoryMeta[c]?.accent ?? "var(--gris-encre)"),
         labels: cats.map((c) => categoryMeta[c]?.label ?? workshopsLabel),
-        locationKey: String(event.location || "").trim().toLowerCase() || "__none__",
+        locationKey: getTentKey(event.location as string),
         dayKey,
         dayLabel,
         dateLabel,
@@ -163,17 +186,21 @@ export function buildDayFilters(
 }
 
 export function buildLocationFilters(
-  events: { locationKey: string; location?: string }[],
+  events: { location?: unknown }[],
   noLocationLabel: string,
+  otherLabel: string,
 ) {
-  return Array.from(new Set(events.map((event) => event.locationKey)))
-    .sort()
-    .map((locationKey) => {
-      const sample = events.find((event) => event.locationKey === locationKey);
-      const raw = String(sample?.location || "").trim();
-      return {
-        locationKey,
-        label: raw || noLocationLabel,
-      };
-    });
+  const presentTents = new Set(events.map((event) => getTentKey(event.location as string)));
+  const tents = TENT_KEYS.filter((key) => presentTents.has(key));
+  if (tents.length === 0) tents.push("other");
+
+  return tents.map((tentKey) => {
+    const sample = events.find((event) => getTentKey(event.location as string) === tentKey);
+    const raw = String(sample?.location || "").trim();
+    const label = tentKey === "other" ? otherLabel : raw || noLocationLabel;
+    return {
+      locationKey: tentKey,
+      label,
+    };
+  });
 }

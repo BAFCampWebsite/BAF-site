@@ -135,28 +135,7 @@ export function getDayMinutes(value: string | Date, dayKey: string) {
   return mins + diffDays * 24 * 60;
 }
 
-const TIMELINE_COLUMN_KEYS = [
-  "chapiteaux1",
-  "chapiteaux2",
-  "atelier",
-  "cine",
-  "autogestion",
-  "jam",
-  "other",
-] as const;
-
-type TimelineColumnKey = (typeof TIMELINE_COLUMN_KEYS)[number];
-
-export function getTimelineColumnKey(location: string | undefined): TimelineColumnKey {
-  const loc = String(location || "").trim().toLowerCase();
-  if (loc.includes("chapiteau 1") || loc.includes("chapiteaux 1")) return "chapiteaux1";
-  if (loc.includes("chapiteau 2") || loc.includes("chapiteaux 2")) return "chapiteaux2";
-  if (loc.includes("atelier")) return "atelier";
-  if (loc.includes("ciné") || loc.includes("cine")) return "cine";
-  if (loc.includes("autogestion") || loc.includes("auto-gestion")) return "autogestion";
-  if (loc.includes("jam")) return "jam";
-  return "other";
-}
+import { getTentKey, TENT_KEYS } from "./calendar";
 
 export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, dayKey: string, showLocation = false) {
   const startMin = getDayMinutes(event.start_dt, dayKey);
@@ -206,28 +185,28 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
     hourLabels.push(`<span class="timeline-hour" style="top:${m - dayStart}px;">${hh}:00</span>`);
   }
 
-  const presentColumns = Array.from(
-    new Set(dayEvents.map((e) => getTimelineColumnKey(e.location)))
+  const presentTents = Array.from(
+    new Set(dayEvents.map((e) => getTentKey(e.location)))
   );
-  const columns = TIMELINE_COLUMN_KEYS.filter((key) => presentColumns.includes(key));
-  if (columns.length === 0) columns.push("other");
+  const tents = TENT_KEYS.filter((key) => presentTents.includes(key));
+  if (tents.length === 0) tents.push("other");
 
-  const headers = columns
-    .map((columnKey) => {
-      if (columnKey === "other") {
+  const headers = tents
+    .map((tentKey) => {
+      if (tentKey === "other") {
         const label = escapeHtml(otherLabel);
         return `<div class="timeline-loc-header" title="${label}">${label}</div>`;
       }
-      const sample = dayEvents.find((e) => getTimelineColumnKey(e.location) === columnKey);
+      const sample = dayEvents.find((e) => getTentKey(e.location) === tentKey);
       const label = escapeHtml(getLocationLabel(sample, noLocationLabel));
       return `<div class="timeline-loc-header" title="${label}">${label}</div>`;
     })
     .join("");
 
-  const tracks = columns
-    .map((columnKey) => {
-      const events = dayEvents.filter((e) => getTimelineColumnKey(e.location) === columnKey);
-      const showLocation = columnKey === "other";
+  const tracks = tents
+    .map((tentKey) => {
+      const events = dayEvents.filter((e) => getTentKey(e.location) === tentKey);
+      const showLocation = tentKey === "other";
       const inner = events.map((e) => renderTimelineEvent(e, dayStart, dayKey, showLocation)).join("");
       return `<div class="timeline-track">${inner}</div>`;
     })
@@ -235,7 +214,7 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
 
   const heightPx = dayEnd - dayStart;
   const dayLabel = escapeHtml(dayEvents[0].dayLabel || dayKey);
-  const minWidth = Math.max(columns.length * 200 + 70, 520);
+  const minWidth = Math.max(tents.length * 200 + 70, 520);
 
   return `
     <div class="timeline-day-section">
