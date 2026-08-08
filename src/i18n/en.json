@@ -229,8 +229,7 @@
           "i0Suffix": " with materials to build games and activities, supported by experienced volunteers for two hours in the morning and two in the afternoon. The space will remain accessible outside these periods without supervision.",
           "i1": "Activities accessible to children throughout the festival (improvisation, gardening workshops, and more).",
           "i2": "Changing tables available in or near the washing spaces.",
-          "i3": "The fridge will be accessible for food for babies.",
-          "i4": "Bar and kitchen counters will be lowered in some places to child height."
+          "i3": "The fridge will be accessible for food for babies."
         }
       },
       "visual": {
@@ -266,9 +265,8 @@
         "planLabel": "View the plan",
         "items": {
           "i0": "PMR parking spaces will be provided near the entrance. However, we cannot guarantee they will remain permanently available: it may be necessary to drop the person as close as possible to the site, then park the car in the village to keep emergency access clear.",
-          "i1": "Accessible toilets and washing facilities for PMR users (enough space, handrails, wide door).",
+          "i1": "No guarantee that there will be accessible toilets and washing facilities for PMR users (enough space, handrails, wide door).",
           "i2": "Risky areas (holes, river) will be marked with tape or signs.",
-          "i3": "Bar and kitchen counters accessible at wheelchair height or for small people.",
           "i4": "PMR needs have been taken into account in the emergency evacuation plans.",
           "i5": "No dedicated PMR spaces in the different locations. However, on request, we will ensure people can be placed near the stage and we will reserve seats for this purpose.",
           "i6": "We cannot guarantee a variety of seating everywhere, but we are working on it.",
@@ -330,7 +328,7 @@
         },
         "clothes": {
           "label": "Clothes",
-          "text": "enough for the whole stay, including warm clothes for the night: the meadow can be damp and nights can be cold. Do not forget your swimsuit if you want to enjoy the river."
+          "text": "enough for the whole stay, including warm clothes for the night: the meadow can be damp and nights can be cold."
         },
         "water": {
           "label": "Your bottle",
