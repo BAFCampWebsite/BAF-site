@@ -163,7 +163,6 @@
         "note": "This page is expected to evolve as feedback comes in."
       },
       "intro": {
-        "sectionLabel": "Read this first",
         "title": "Why this page?",
         "p1": "In this section you will find the accessibility measures that will be implemented, as well as those that will not be implemented during this first edition of BAF Camp. By explaining which measures will be in place during the festival, we hope to allow everyone to make an informed decision about attending and/or bringing the equipment they need with full knowledge of the accessibility of our space.",
         "p2": "We are drawing on the work of Les Dévalideuses to build this approach.",
@@ -195,10 +194,7 @@
           "i0Prefix": "A ",
           "i0Link": "charter",
           "i0Suffix": " reflecting the values of BAF Camp has been written and read by all staff, who commit to following it.",
-          "i1": "A briefing at reception will raise awareness among festival-goers about possible discrimination and violence, and the measures planned in response.",
-          "i2Prefix": "A ",
-          "i2Link": "ticketing charter",
-          "i2Suffix": ", summarizing the overall charter, will be signed by festival-goers when buying a ticket. In case of non-compliance, measures will be taken by the care team."
+          "i1": "A briefing at reception will raise awareness among festival-goers about possible discrimination and violence, and the measures planned in response."
         }
       },
       "formation": {
@@ -255,7 +251,6 @@
         }
       },
       "spatial": {
-        "sectionLabel": "Spatial",
         "title": "Spatial accessibility",
         "alertTitle": "Please read this first",
         "alertText": "There will probably be no access matting on the festival site. The ground is grassy and partly sloped: access to our festival will already be extremely limited for many people with reduced mobility. We are sincerely sorry for this. Accessible areas without slopes are mainly those located along the river (marked in blue on the map). Some workshop areas and the chill zone are located on sloped ground.",
@@ -276,7 +271,6 @@
         }
       },
       "sensorial": {
-        "sectionLabel": "Sensory",
         "title": "Sensory accessibility",
         "items": {
           "i0": "An info space will provide a map and programme, and allow questions about organization (time or place changes).",
@@ -289,7 +283,6 @@
         }
       },
       "cognitive": {
-        "sectionLabel": "Cognitive",
         "title": "Cognitive accessibility",
         "items": {
           "i0": "Clear signage will indicate the location of different spaces, with maps available at reception.",
@@ -299,7 +292,6 @@
         }
       },
       "sanitary": {
-        "sectionLabel": "Sanitary",
         "title": "Sanitary accessibility",
         "items": {
           "i0": "Masks and gel available in the care space.",
@@ -310,7 +302,6 @@
         }
       },
       "material": {
-        "sectionLabel": "Pack your bag",
         "title": "What to bring",
         "food": {
           "label": "Food / water",
@@ -385,10 +376,7 @@
       "p4": "This festival is a first edition. If we don't cover costs, the project will go into debt and undermine the possibility of future editions. We really count on your generosity and honesty for this project to be a success, especially financially. Any surplus will be redistributed to various (local) struggles via the Fondation Marius Jacob<sup>*</sup> or used to finance next year's edition.",
       "footnote1": "The Marius Jacob Foundation",
       "footnote1Url": "https://www.fondationmariusjacob.org/#about-7",
-      "footnote1Text": "is a collective, self-managed financial tool that redistributes grants to activists, collectives and social movements in Belgium — and hosts our bank account.",
-      "footnote2": "The Mycelium Foundation",
-      "footnote2Text": "is a participatory private foundation that financially supports militant and alternative initiatives in Belgium through its network of patrons.",
-      "footnote2Url": "https://fondation.mycelium.cc"
+      "footnote1Text": "is a collective, self-managed financial tool that redistributes grants to activists, collectives and social movements in Belgium — and hosts our bank account."
     },
     "privilegeMeter": {
       "title": "The Privilege-o-meter — calculate your fair contribution",
@@ -522,7 +510,6 @@
       "showFilters": "Filters",
       "hideFilters": "Hide filters",
       "searchPlaceholder": "Search…",
-      "noDescription": "No description yet.",
       "noLocation": "No location set",
       "noEvents": "No events for this selection yet.",
       "addToCalendar": "Add to calendar",
@@ -536,10 +523,7 @@
       }
     },
     "dayContent": {
-      "i0": "After a week of setting up together, the camp opened around midday.",
-      "i1": "The two main days of our camp are opportunities for sharing, discussion and workshops centred on the question: ‘How can we fight together?’ – by everyone, for everyone!<br>",
-      "i2": "The two main days of our camp are opportunities for sharing, discussion and workshops centred on the question: ‘How can we fight together?’ – by everyone, for everyone!<br>To ensure inclusivity, all activities in the marquees will be <strong>presented in at least three languages</strong>: English, French and Dutch.",
-      "i3": "A review of the festival and suggestions for future editions. What are we taking away with us? What’s left behind? The festival wraps up around midday! Then it’s time for three days of collective dismantling and tidying up!"
+      "i1": "The two main days of our camp are opportunities for sharing, discussion and workshops centred on the question: ‘How can we fight together?’ – by everyone, for everyone!<br>"
     },
     "spaces": {
       "title": "The spaces",

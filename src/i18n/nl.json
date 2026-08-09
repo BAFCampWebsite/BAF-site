@@ -163,7 +163,6 @@
         "note": "Deze pagina zal zich verder ontwikkelen naarmate we feedback krijgen."
       },
       "intro": {
-        "sectionLabel": "Lees dit eerst",
         "title": "Waarom deze pagina?",
         "p1": "In dit onderdeel vind je zowel de toegankelijkheidsmaatregelen die tijdens deze eerste editie van BAF Camp zullen worden voorzien als de maatregelen die niet zullen worden voorzien. Door duidelijk uit te leggen welke voorzieningen tijdens het festival aanwezig zullen zijn, hopen we iedereen in staat te stellen om goed geïnformeerd te beslissen of die persoon wil deelnemen en/of bepaalde hulpmiddelen mee wil brengen, met kennis van de toegankelijkheid van onze ruimte.",
         "p2": "We baseren deze aanpak op de werkzaamheden van Les Dévalideuses.",
@@ -195,10 +194,7 @@
           "i0Prefix": "Een ",
           "i0Link": "charter",
           "i0Suffix": " met de waarden van BAF Camp is geschreven en voorgelezen aan alle medewerkers, die zich ertoe verbinden deze te volgen.",
-          "i1": "Een introductie op de receptie zal festivalbezoekers informeren over mogelijke discriminatie en geweld, en over de maatregelen die daarop volgen.",
-          "i2Prefix": "Een ",
-          "i2Link": "ticketcharter",
-          "i2Suffix": ", die de algemene charter samenvat, wordt ondertekend door festivalbezoekers bij de aankoop van een ticket. Bij niet-naleving zullen maatregelen volgen door het care-team."
+          "i1": "Een introductie op de receptie zal festivalbezoekers informeren over mogelijke discriminatie en geweld, en over de maatregelen die daarop volgen."
         }
       },
       "formation": {
@@ -255,7 +251,6 @@
         }
       },
       "spatial": {
-        "sectionLabel": "Ruimtelijk",
         "title": "Ruimtelijke toegankelijkheid",
         "alertTitle": "Lees dit eerst",
         "alertText": "Er zullen waarschijnlijk geen rijmatten of rolpaden op het festivalterrein aanwezig zijn. Omdat het terrein grotendeels uit gras bestaat en gedeeltelijk hellend is, erkennen wij dat de toegang tot het festival zeer beperkt zal zijn voor veel personen met een beperkte mobiliteit. Hiervoor bieden wij onze excuses aan. De ruimtes die zonder helling toegankelijk zijn, bevinden zich voornamelijk langs de rivier (blauw aangeduid op de kaart). Sommige workshopzones en de chillruimte bevinden zich op hellend terrein.",
@@ -276,7 +271,6 @@
         }
       },
       "sensorial": {
-        "sectionLabel": "Zintuiglijk",
         "title": "Zintuiglijke toegankelijkheid",
         "items": {
           "i0": "Een info-ruimte zal een kaart en programma bieden en vragen beantwoorden over de organisatie (wijzigingen van tijd of plaats).",
@@ -289,7 +283,6 @@
         }
       },
       "cognitive": {
-        "sectionLabel": "Cognitief",
         "title": "Cognitieve toegankelijkheid",
         "items": {
           "i0": "Duidelijke signalering geeft de locatie van de verschillende ruimtes aan, met plannen beschikbaar aan de receptie.",
@@ -299,7 +292,6 @@
         }
       },
       "sanitary": {
-        "sectionLabel": "Sanitair",
         "title": "Sanitaire toegankelijkheid",
         "items": {
           "i0": "Maskers en gel beschikbaar in de care-ruimte.",
@@ -310,7 +302,6 @@
         }
       },
       "material": {
-        "sectionLabel": "Pak je tas",
         "title": "Wat meebrengen",
         "food": {
           "label": "Eten / water",
@@ -385,10 +376,7 @@
       "p4": "Dit festival is een eerste editie. Als we de kosten niet dekken, raakt het project in de schulden en staat de toekomst op het spel. We rekenen echt op jullie vrijgevigheid en eerlijkheid opdat dit kamp ook financieel rond kan komen. Eventuele winsten worden trouwens herverdeeld naar diverse strijd (lokaal, duurzaamheid van een 2de BAF camp, en herverdeling via de Fondation Marius Jacob<sup>*</sup>).",
       "footnote1": "De Marius Jacob Foundation",
       "footnote1Url": "https://www.fondationmariusjacob.org/#about-7",
-      "footnote1Text": "is een collectief en zelfbeheerd financieel instrument dat beurzen herverdeelt aan activisten, collectieven en sociale bewegingen in België — en dat onze bankrekening beheert.",
-      "footnote2": "De Mycelium Foundation",
-      "footnote2Url": "https://fondation.mycelium.cc",
-      "footnote2Text": "is een participatieve private stichting die financieel militante en alternatieve initiatieven in België ondersteunt via haar netwerk van mecenassen."
+      "footnote1Text": "is een collectief en zelfbeheerd financieel instrument dat beurzen herverdeelt aan activisten, collectieven en sociale bewegingen in België — en dat onze bankrekening beheert."
     },
     "privilegeMeter": {
       "title": "De Privilègemeter — bereken jouw eerlijke bijdrage",
@@ -522,7 +510,6 @@
       "showFilters": "Filters",
       "hideFilters": "Filters verbergen",
       "searchPlaceholder": "Zoeken…",
-      "noDescription": "Nog geen beschrijving.",
       "noLocation": "Geen locatie ingesteld",
       "noEvents": "Nog geen evenementen voor deze selectie.",
       "addToCalendar": "Aan kalender toevoegen",
@@ -536,10 +523,7 @@
       }
     },
     "dayContent": {
-      "i0": "Na een week van gezamenlijke opbouw, gaat het kamp vanaf de middag van start.",
-      "i1": "De twee belangrijkste dagen van ons kamp staan in het teken van uitwisseling, discussie en workshops rond de vraag: “Hoe kunnen we samen strijden?” door iedereen voor iedereen!<br>Om inclusief te zijn, zullen alle activiteiten in de tenten <strong>in ten minste drie talen worden vertolkt</strong>: Engels, Frans en Nederlands.",
-      "i2": "De twee dagen die de kern van ons kamp vormen, zijn momenten van uitwisseling, discussie en workshops rond de vraag: “Hoe kunnen we samen strijden?” door iedereen voor iedereen!<br>Als je een workshop of stand wilt voorstellen, een project wilt lanceren of een thema voor een lezing wilt voorstellen - Aarzel dan niet om <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> onze oproep tot bijdragen </a> in te vullen 👊.<br><strong>Laten we samen het programma vorm geven!</strong>",
-      "i3": "Evaluatie en voorstellen voor de volgende festivaledities. Wat nemen we mee? Wat blijft er over? Het festival eindigt rond de middag! Daarna volgen drie dagen van samen afbreken en opruimen!"
+      "i1": "De twee belangrijkste dagen van ons kamp staan in het teken van uitwisseling, discussie en workshops rond de vraag: “Hoe kunnen we samen strijden?” door iedereen voor iedereen!<br>Om inclusief te zijn, zullen alle activiteiten in de tenten <strong>in ten minste drie talen worden vertolkt</strong>: Engels, Frans en Nederlands."
     },
     "spaces": {
       "title": "De ruimtes",

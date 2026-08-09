@@ -163,7 +163,6 @@
         "note": "Cette page est amenée à évoluer en fonction des retours reçus."
       },
       "intro": {
-        "sectionLabel": "À lire avant tout",
         "title": "Pourquoi cette page ?",
         "p1": "Dans cet onglet vous trouverez les différents aménagements d'accessibilité qui seront mis en place, mais aussi ceux qui ne seront pas mis en place lors de cette première édition du BAF Camp. En expliquant quels dispositifs prendront place lors du festival, nous espérons permettre à chacun.e de pouvoir décider de sa venue et/ou de s'équiper en ayant connaissance de l'accessibilité de notre espace.",
         "p2": "Nous nous appuyons ici sur les recommandations de Les Dévalideuses.",
@@ -195,10 +194,7 @@
           "i0Prefix": "Une ",
           "i0Link": "charte",
           "i0Suffix": " reprenant les valeurs du BAF Camp a été rédigée et lue par tout le staff, qui s'engage à la suivre.",
-          "i1": "Un briefing à l'accueil sensibilisera toustes les festivalier.es aux discriminations et violences possibles, et aux dispositifs prévus en réaction.",
-          "i2Prefix": "Une ",
-          "i2Link": "charte billetterie",
-          "i2Suffix": ", résumant la charte globale, sera signée par toustes les festivalier.es à l'achat du billet. En cas de non-respect, des mesures seront prises par la team care."
+          "i1": "Un briefing à l'accueil sensibilisera toustes les festivalier.es aux discriminations et violences possibles, et aux dispositifs prévus en réaction."
         }
       },
       "formation": {
@@ -255,7 +251,6 @@
         }
       },
       "spatial": {
-        "sectionLabel": "Spatiale",
         "title": "Accessibilité spatiale",
         "alertTitle": "À lire en priorité",
         "alertText": "Il n'y aura à priori pas de tapis de roulage sur le festival. Le terrain est recouvert d'herbe et en partie en pente : l'accès à notre festival sera d'ores et déjà extrêmement limité pour les personnes PMR. Nous en sommes désolé.es. Les espaces accessibles sans pente sont tous les espaces qui longent la rivière (en bleu sur la carte). Certaines zones ateliers et la zone chill sont situées sur la pente du terrain.",
@@ -276,7 +271,6 @@
         }
       },
       "sensorial": {
-        "sectionLabel": "Sensorielle",
         "title": "Accessibilité sensorielle",
         "items": {
           "i0": "Un espace « info » permettra d'obtenir un plan et un programme, et de poser des questions sur l'organisation (changements d'heure ou de lieu).",
@@ -289,7 +283,6 @@
         }
       },
       "cognitive": {
-        "sectionLabel": "Cognitive",
         "title": "Accessibilité cognitive",
         "items": {
           "i0": "Des panneaux clairs indiqueront l'emplacement des différents espaces, avec des plans disponibles à l'accueil.",
@@ -299,7 +292,6 @@
         }
       },
       "sanitary": {
-        "sectionLabel": "Sanitaire",
         "title": "Accessibilité sanitaire",
         "items": {
           "i0": "Masques et gel disponibles à l'espace care.",
@@ -310,7 +302,6 @@
         }
       },
       "material": {
-        "sectionLabel": "Prépare ton sac",
         "title": "Matériel à emporter avec toi",
         "food": {
           "label": "Nourriture / eau",
@@ -385,10 +376,7 @@
       "p4": "Ce festival est une première édition. Si on ne couvre pas les frais, le projet sera endetté et le futur compromis. On compte vraiment sur votre générosité et votre honnêteté pour que ce projet soit une réussite, notamment sur le plan financier. Les bénéfices seront d'ailleurs redistribués à diverses luttes (locales, pérennisation du festival pour le BAF 2, et redistribution avec la Fondation Marius Jacob<sup>*</sup>).",
       "footnote1": "La Fondation Marius Jacob",
       "footnote1Url": "https://www.fondationmariusjacob.org/#about-7",
-      "footnote1Text": "est un outil financier collectif et autogéré qui redistribue des bourses à des activistes, collectifs et mouvements sociaux en Belgique — et qui héberge notre compte bancaire.",
-      "footnote2": "La Fondation Mycélium",
-      "footnote2Url": "https://fondation.mycelium.cc",
-      "footnote2Text": "est une fondation privée participative qui soutient financièrement des initiatives militantes et alternatives en Belgique via son réseau de mécènes."
+      "footnote1Text": "est un outil financier collectif et autogéré qui redistribue des bourses à des activistes, collectifs et mouvements sociaux en Belgique — et qui héberge notre compte bancaire."
     },
     "privilegeMeter": {
       "title": "Le Privilègomètre — calcule ta contribution juste",
@@ -522,7 +510,6 @@
       "showFilters": "Filtres",
       "hideFilters": "Masquer les filtres",
       "searchPlaceholder": "Chercher…",
-      "noDescription": "Pas de description pour l'instant.",
       "noLocation": "Aucun lieu défini",
       "noEvents": "Aucun événement pour cette sélection pour le moment.",
       "addToCalendar": "Ajouter au calendrier",
@@ -536,10 +523,7 @@
       }
     },
     "dayContent": {
-      "i0": "Après une semaine de montage collectif, ouverture du camp autour de midi.",
-      "i1": "Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : \"Comment lutter ensemble ?\" par tou.te.s pour tou.te.s! <br> Pour être inclusif, tout les activités dans les chapiteaux seront <strong>interprété en au moins trois langues</strong>: anglais, français et néerlandais.",
-      "i2": "Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : \"Comment lutter ensemble ?\" par tou.te.s pour tou.te.s!<br>Si tu as un atelier ou un stand à proposer, un projet à lancer ou une thématique pour une conférence à proposer - N'hésite pas à remplir <a href=\"https://framaforms.org/appel-a-contribution-au-belgian-activist-festival-baf-1772488054\"> notre appel à contributions </a> 👊.<br><strong>Construisons le programme ensemble !</strong>",
-      "i3": "Critique du festival et propositions pour les prochaines éditions. Avec quoi on repart ? Qu'est-ce qui reste ? Fin du festival autour de midi ! Place à 3 jours de démontage et rangement collectif !"
+      "i1": "Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : \"Comment lutter ensemble ?\" par tou.te.s pour tou.te.s! <br> Pour être inclusif, tout les activités dans les chapiteaux seront <strong>interprété en au moins trois langues</strong>: anglais, français et néerlandais."
     },
     "spaces": {
       "title": "Les espaces",
