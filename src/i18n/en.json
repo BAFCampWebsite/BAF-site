@@ -357,7 +357,28 @@
       "dogs": {
         "title": "Dogs",
         "text": "Dogs are unfortunately not permitted on-site, as this is a private property with several other dogs and animals."
+      },
+      "cash":{
+        "title":"Cash",
+        "text":"The festival is cash only. There will be no possibility to pay by card or other means. Please bring enough cash for your stay. On average, we suggest at least 10€ per day."
+      },
+      "glass":{
+        "title":"Glass",
+        "text": "Glass bottles are not allowed on site for safety reasons. Please bring your drinks in a plastic bottle or a can."
+      },
+      "police":{
+        "title":"Police",
+        "text": "As any other public event, we will blah blah blah something about police possibly being there"
+      },
+      "medic":{
+        "title":"Medic",
+        "text": "A trained medics team will be present for medical help."
+      },
+      "cameras":{
+        "title":"Cameras",
+        "text": "It is generally prohibited to take pictures at the festival site and camp. Festival-coordinated photographers will be on site, and opt-in badges will be available at the entrance."
       }
+
     }
   },
   "billetterie": {
