@@ -80,8 +80,8 @@
       "title": "Division historique de la gauche en Belgique",
       "who": "",
       "location": "Chapiteau 1",
-      "notes": "",
-      "version": "e14250bae0b4",
+      "notes": "<p>Conférence sur l’analyse historique des mouvements de gauches en Belgique. Retour sur les divisions entre réformismes et révolutionnaires belges. </p>",
+      "version": "8f45611bc9dd",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -90,7 +90,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-09T12:54:28+02:00",
-      "update_dt": "2026-07-29T23:15:33+02:00",
+      "update_dt": "2026-08-08T17:35:04+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -250,8 +250,8 @@
       "title": "Les dynamiques de pouvoir en collectif / Handling power dynamics in collectives",
       "who": "",
       "location": "Tente ciné",
-      "notes": "",
-      "version": "0c86e27b01a6",
+      "notes": "<p>Atelier pour comprendre les dynamiques de pouvoir dans les collectif. Workshop to analyse the power dynamics in collectifs. </p>",
+      "version": "028ffe2b4496",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -260,7 +260,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:20:59+02:00",
-      "update_dt": "2026-07-29T23:48:17+02:00",
+      "update_dt": "2026-08-08T17:33:58+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -1587,11 +1587,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "\"Regardez-moi, je suis déconstruit\"",
+      "title": "Regardez-moi, je suis déconstruit",
       "who": "",
       "location": "Chapiteau 1",
-      "notes": "",
-      "version": "db8acc10f217",
+      "notes": "<p><em>Performance drag king suivie d'un échange avec le public</em>. Comment être un homme déconstruit ? un allié féministe ? </p>\n<p>Edgar Atoi, “mec déconstruit” et fervant féministe, vient partager ses bonnes pratiques… ou mieux, les déconstruire ! À travers cette performance Drag King satirique, l’artiste queer Tara nous livre un regard acéré sur les contradictions et absurdités rencontrées dans ses relations avec ces hommes en quête de déconstruction. Préparez une bonne dose d’auto-dérision, promis, Tara ne vous veut pas de mal!</p>\n<p>Nous ouvrirons ensuite avec le public une réflexion sur les violences et rapports de<br>genre dans les milieux “de gauche”, militants et/ou féministes et pour offrir des pistes vers une posture juste d'allié.</p>",
+      "version": "ea3711e3d756",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -2118,7 +2118,11 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "message": "<p>FR</p>"
+        }
+      ]
     },
     {
       "id": "2145868612",
@@ -2162,9 +2166,9 @@
       "rrule": "",
       "title": "La répression policière",
       "who": "",
-      "location": "Chapiteau 1",
+      "location": "Tente Atelier",
       "notes": "",
-      "version": "fbd6262c30f9",
+      "version": "5ebec67fb346",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -2173,12 +2177,16 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-08T10:47:25+02:00",
-      "update_dt": "2026-08-08T10:49:38+02:00",
+      "update_dt": "2026-08-08T20:35:52+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "message": "<p>FR</p>"
+        }
+      ]
     },
     {
       "id": "2146367946",
@@ -2272,7 +2280,79 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "message": "<p>FR (interpreted to NL, EN)</p>"
+        }
+      ]
+    },
+    {
+      "id": "2146506168",
+      "series_id": null,
+      "remote_id": null,
+      "subcalendar_id": 15766558,
+      "subcalendar_ids": [
+        15766558
+      ],
+      "all_day": false,
+      "rrule": "",
+      "title": "Outil : roue de la résilience",
+      "who": "",
+      "location": "Tente Atelier",
+      "notes": "<p>Comment mieux se préparer, individuellement et collectivement, à faire face aux conséquences psychologiques et émotionnelles des expériences stressantes.</p>\n<p>L'une des choses les plus étonnantes chez les activistes et les collectifs militants est que nous nous exposons souvent délibérément au stress et à la violence si nous pensons que c'est nécessaire. De plus, par la structure de nos groupes, nous portons de nombreuses responsabilités humaines et activités pouvant nous exposer à des stress intenses et/ou prolongés. Ce qui est également étonnant, c'est le peu que nous savons des effets psychologiques des stress élevés, prolongés et de la violence. Avec cet atelier nous proposons quelques pistes pour mieux se préparer et nous soutenir les un.es les autres face aux conséquences mentales et émotionnelles d'expériences stressantes. L'une des bonnes pratiques de soutien mutuel consiste à travailler collectivement sur les structures et les moyens déjà à notre disposition pour nous donner plus de résilience dans ce que nous avons à traverser.</p>\n<p>Dans cet atelier on introduit l'outil la roue de la résilience. On va faire des techniques de dé-stress pour commencer, puis on donne un peu de théorie sur l'outil de la roue de la résilience. Ensuite, une partie en individuel pour faire sa propre roue de la résilience, puis en petit groupe avant de revenir en grand groupe pour échanger sur l'outil. S'il nous reste du temps on abordera les réactions à haut stress. </p>\n<p>Donné par Soutien et Rétablissement (S&amp;R). Pour plus d’info: https://stuut.info/+-Soutien-Retablissement-+</p>\n<p></p>",
+      "version": "ef2ddb090dc3",
+      "readonly": true,
+      "tz": "Europe/Brussels",
+      "attachments": [],
+      "start_dt": "2026-08-22T13:30:00+02:00",
+      "end_dt": "2026-08-22T15:30:00+02:00",
+      "ristart_dt": null,
+      "rsstart_dt": null,
+      "creation_dt": "2026-08-08T19:34:02+02:00",
+      "update_dt": "2026-08-08T20:01:13+02:00",
+      "delete_dt": null,
+      "signup_enabled": false,
+      "comments_enabled": true,
+      "comments_visibility": "all_users",
+      "comments": [
+        {
+          "message": "<p>FR (EN/ NL friendly) </p>"
+        }
+      ]
+    },
+    {
+      "id": "2146525670",
+      "series_id": null,
+      "remote_id": null,
+      "subcalendar_id": 15766558,
+      "subcalendar_ids": [
+        15766558
+      ],
+      "all_day": false,
+      "rrule": "",
+      "title": "La méditation pour soutenir nos luttes",
+      "who": "",
+      "location": "Chill",
+      "notes": "<p>La méditation est une manière privilégiée de sortir du productivisme et retrouver notre puissance d'êtres vivants. Ne rien faire pendant 20 minutes, oser être simplement présent·es et rencontrer ce qui est là. Nous touchons le silence, l'inaction, l'écoute et la lenteur comme des gestes révolutionnaires qui nous renforcent et nous relient. Cette expérience toute simple ouvre une brèche dans la trame de la journée, relâche un peu de pression et aide à se (re)situer dans le monde... pour se remettre debout et reprendre à neuf !</p>",
+      "version": "abd779a7cc8f",
+      "readonly": true,
+      "tz": "Europe/Brussels",
+      "attachments": [],
+      "start_dt": "2026-08-22T14:00:00+02:00",
+      "end_dt": "2026-08-22T15:00:00+02:00",
+      "ristart_dt": null,
+      "rsstart_dt": null,
+      "creation_dt": "2026-08-08T20:49:03+02:00",
+      "update_dt": null,
+      "delete_dt": null,
+      "signup_enabled": false,
+      "comments_enabled": true,
+      "comments_visibility": "all_users",
+      "comments": [
+        {
+          "message": "<p>FR</p>"
+        }
+      ]
     }
   ]
 }
