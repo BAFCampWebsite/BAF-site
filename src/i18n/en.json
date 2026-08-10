@@ -360,7 +360,7 @@
       },
       "cash": {
         "title": "Cash",
-        "text": "<bold>Bring cash</bold> — you'll need it to enjoy the refreshing drinks sold at our bar!"
+        "text": "<bold>Bring cash</bold> — you'll need it to enjoy the refreshing drinks sold at our bar and 3 vegan meals a day!"
       },
       "glass": {
         "title": "Glass bottles",
@@ -380,7 +380,7 @@
       },
       "police": {
         "title": "Police presence",
-        "text": "As BAF is open to the general public, we cannot guarantee that (undercovers) officers will not be among us. <bold>Please be as mindful</bold> as you would be anywhere else."
+        "text": "As BAF is open to the general public, we cannot guarantee that (undercovers) officers will not be among us. <bold>Please be as mindful</bold> as you would be anywhere else about how you share information and with whom."
       },
       "camping": {
         "title": "Camping equipment",

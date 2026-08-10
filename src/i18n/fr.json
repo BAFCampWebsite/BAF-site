@@ -360,7 +360,7 @@
       },
       "cash": {
         "title": "Argent liquide",
-        "text": "<bold>Apportez de l'argent liquide</bold> ! Cela vous permettra notamment de profiter des boissons rafraîchissantes vendues à notre bar."
+        "text": "<bold>Apportez de l'argent liquide</bold> ! Cela vous permettra notamment de profiter des boissons rafraîchissantes vendues à notre bar et de 3 repas vegan par jour."
       },
       "glass": {
         "title": "Consignes en verre",
@@ -380,7 +380,7 @@
       },
       "police": {
         "title": "Présence policière",
-        "text": "Le BAF étant ouvert au grand public, nous ne pouvons pas garantir qu'il n'y aura pas d'agents (en civil) parmi nous. Veuillez donc <bold>faire preuve de la même vigilance</bold> que partout ailleurs."
+        "text": "Le BAF étant ouvert au grand public, nous ne pouvons pas garantir qu'il n'y aura pas d'agents (en civil) parmi nous. Veuillez donc <bold>faire preuve de la même vigilance</bold> que partout ailleurs. Restez prudent·e·s quant à la manière et à qui vous partagez certaines informations."
       },
       "camping": {
         "title": "Matériel de camping",

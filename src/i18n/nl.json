@@ -360,11 +360,11 @@
       },
       "cash": {
         "title": "Cash",
-        "text": "<bold>Breng cash geld mee</bold> — daarmee kan je onder andere genieten van de verfrissende drankjes aan de bar en 3 vegan maaltijden per dag."
+        "text": "<bold>Breng cash geld mee</bold> — daarmee kan je onder andere genieten van de verfrissende drankjes aan de bar en 3 vegan maaltijden per dag!"
       },
       "glass": {
         "title": "Glazen flessen",
-        "text": "<bold>Neem geen glazen flessen mee</bold> op het terrein."
+        "text": "Neem alsjeblieft <bold>geen glazen flessen mee</bold> op het terrein, om ons te helpen afval te beheren."
       },
       "heat": {
         "title": "Voorbereiding op de hitte",
@@ -392,7 +392,7 @@
       },
       "signal": {
         "title": "Signal-groep",
-        "text": "Indien je op de hoogte wil blijven van alle belangrijke updates en aankondigingen in aanloop naar het kamp, ben je welkom in onze 'algemene info' signal group: <link>groep</link>."
+        "text": "Indien je op de hoogte wil blijven van alle belangrijke updates en aankondigingen in aanloop naar het kamp, ben je welkom in onze 'algemene info' <link>signal group</link>."
       },
       "medic": {
         "title": "Medics",
