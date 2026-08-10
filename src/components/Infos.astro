@@ -29,6 +29,20 @@ const espaceJeunesseBlocks = [
     suffix: t("espaceJeunesse.contact.suffix"),
   },
 ];
+const otherBlocks = [
+  { icon: "🐶", title: t("other.dogs.title"), text: t("other.dogs.text") },
+  { icon: "💸", title: t("other.cash.title"), text: t("other.cash.text") },
+  { icon: "🍾", title: t("other.glass.title"), text: t("other.glass.text") },
+  { icon: "☀️", title: t("other.heat.title"), text: t("other.heat.text") },
+  { icon: "🏊", title: t("other.swimming.title"), text: t("other.swimming.text") },
+  { icon: "👮", title: t("other.police.title"), text: t("other.police.text") },
+  { icon: "⛺", title: t("other.camping.title"), text: t("other.camping.text") },
+  { icon: "🚗", title: t("other.carpool.title"), text: t("other.carpool.text") },
+  { icon: "💳", title: t("other.bankTransfer.title"), text: t("other.bankTransfer.text") },
+  { icon: "📣", title: t("other.signal.title"), text: t("other.signal.text") },
+  { icon: "⛑️", title: t("other.medic.title"), text: t("other.medic.text") },
+  { icon: "📸", title: t("other.cameras.title"), text: t("other.cameras.text") },
+];
 ---
 
 <div class="page-hero anim">
@@ -168,18 +182,16 @@ const espaceJeunesseBlocks = [
   <section id="other">
     <p class="section-label">❓ {t("other.sectionLabel")}</p>
     <h2>{t("other.title")}</h2>
-    <h3>🐶 {t("other.dogs.title")}</h3>
-    <p>{t("other.dogs.text")}</p>
-    <h3>💸 {t("other.cash.title")}</h3>
-    <p>{t("other.cash.text")}</p>
-    <h3>🍾 {t("other.glass.title")}</h3>
-    <p>{t("other.glass.text")}</p>
-    <h3>👮 {t("other.police.title")}</h3>
-    <p>{t("other.police.text")}</p>
-    <h3>⛑️ {t("other.medic.title")}</h3>
-    <p>{t("other.medic.text")}</p>
-    <h3>📸 {t("other.cameras.title")}</h3>
-    <p>{t("other.cameras.text")}</p>
+    {
+      otherBlocks.map((block) => (
+        <div>
+          <h3>
+            {block.icon} {block.title}
+          </h3>
+          <p set:html={block.text} />
+        </div>
+      ))
+    }
   </section>
 </div>
 

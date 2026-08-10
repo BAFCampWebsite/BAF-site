@@ -21,7 +21,7 @@
       "nourrir": "Food",
       "camping": "Camping",
       "espaceJeunesse": "Youth Space",
-      "other": "FAQ",
+      "other": "Practical info",
       "accessibilite": "Accessibility",
       "conditionsVente": "Terms of sale"
     },
@@ -352,33 +352,56 @@
       }
     },
     "other": {
-      "sectionLabel": "FAQ",
-      "title": "FAQ",
+      "sectionLabel": "Practical info",
+      "title": "Practical info",
       "dogs": {
         "title": "Dogs",
-        "text": "Dogs are unfortunately not permitted on-site, as this is a private property with several other dogs and animals."
+        "text": "Dogs are unfortunately not allowed on site. The site is home to other animals, so we're not able to accommodate dogs on site."
       },
-      "cash":{
-        "title":"Cash",
-        "text":"The festival is cash only. There will be no possibility to pay by card or other means. Please bring enough cash for your stay. On average, we suggest at least 10€ per day."
+      "cash": {
+        "title": "Cash",
+        "text": "Bring cash — you'll need it to enjoy the refreshing drinks sold at our bar!"
       },
-      "glass":{
-        "title":"Glass",
-        "text": "Glass bottles are not allowed on site for safety reasons. Please bring your drinks in a plastic bottle or a can."
+      "glass": {
+        "title": "Glass bottles",
+        "text": "Please don't bring glass bottles onto the site, to help us manage waste."
       },
-      "police":{
-        "title":"Police",
-        "text": "As any other public event, we will blah blah blah something about police possibly being there"
+      "heat": {
+        "title": "Prepare for the heat",
+        "text": "It might get quite hot, so don't forget to bring a hat, plenty of sunscreen, and your water bottle!"
       },
-      "medic":{
-        "title":"Medic",
+      "swimming": {
+        "title": "Swimming & showers",
+        "text": "Unfortunately, swimming in the river will be restricted so as to protect the biodiversity onsite, though there will be showers to clean yourself. Please don't bring your own soap — we'll be providing soap that's suitable for use in nature."
+      },
+      "police": {
+        "title": "Police presence",
+        "text": "As BAF is open to the general public, we cannot guarantee that (undercovers) officers will not be among us. Please be as mindful as you would be anywhere else."
+      },
+      "camping": {
+        "title": "Camping equipment",
+        "text": "If you're short on camping equipment (tent, mattress, sleeping bag, etc.), feel free to reach out to us directly to let us know, and we'll find a solution together."
+      },
+      "carpool": {
+        "title": "Carpooling & trains",
+        "text": "For anyone traveling from further away, we've put together a car-sharing platform to make it easier to organize rides with other participants heading to the festival from the same cities: <a href=\"https://hophub.xyz/e/baf-camp-2026-93cc4c\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-link-accent\">hophub.xyz</a>. Please note that there will be train disruptions on the way to Grupont over the weekend (Saturday and Sunday), so plan accordingly."
+      },
+      "bankTransfer": {
+        "title": "Pay in advance",
+        "text": "For anyone who'd like to pay in advance by bank transfer instead of on site, here's a reminder of the account details: Fondation Marius Jacob, BE12 8919 6407 1892, Communication: BAF."
+      },
+      "signal": {
+        "title": "Signal chat",
+        "text": "To stay in the loop on everything else, we encourage you to join our Signal chat, where we'll be sharing all important updates and announcements in the lead-up to BAF Camp: <a href=\"https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-link-accent\">Join the Signal group</a>."
+      },
+      "medic": {
+        "title": "Medics",
         "text": "A trained medics team will be present for medical help."
       },
-      "cameras":{
-        "title":"Cameras",
+      "cameras": {
+        "title": "Photography",
         "text": "It is generally prohibited to take pictures at the festival site and camp. Festival-coordinated photographers will be on site, and opt-in badges will be available at the entrance."
       }
-
     }
   },
   "billetterie": {
