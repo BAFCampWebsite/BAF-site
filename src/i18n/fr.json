@@ -356,15 +356,15 @@
       "title": "Infos pratiques",
       "dogs": {
         "title": "Chiens",
-        "text": "La venue des chiens n'est malheureusement pas autorisée : le site accueille d'autres animaux et ne permet donc pas d'accueillir de chiens sur place."
+        "text": "La venue des chiens n'est malheureusement <bold>pas autorisée</bold> : le site accueille d'autres animaux et ne permet donc pas d'accueillir de chiens sur place."
       },
       "cash": {
         "title": "Argent liquide",
-        "text": "Apportez de l'argent liquide ! Cela vous permettra notamment de profiter des boissons rafraîchissantes vendues à notre bar."
+        "text": "<bold>Apportez de l'argent liquide</bold> ! Cela vous permettra notamment de profiter des boissons rafraîchissantes vendues à notre bar."
       },
       "glass": {
         "title": "Consignes en verre",
-        "text": "Merci de ne pas apporter de consignes en verre sur le site, afin de faciliter notre gestion des déchets."
+        "text": "Merci de <bold>ne pas apporter de consignes en verre</bold> sur le site, afin de faciliter notre gestion des déchets."
       },
       "heat": {
         "title": "Prépare-toi à la chaleur",
@@ -376,11 +376,11 @@
       },
       "washing": {
         "title": "Espace pour se laver",
-        "text": "Des espaces pour se laver seront à votre disposition pour vous rafraîchir. Merci de ne pas apporter votre propre savon ; nous vous fournirons un savon adapté à une utilisation en pleine nature."
+        "text": "Des espaces pour se laver seront à votre disposition pour vous rafraîchir. Merci de <bold>ne pas apporter votre propre savon</bold> ; nous vous fournirons un savon adapté à une utilisation en pleine nature."
       },
       "police": {
         "title": "Présence policière",
-        "text": "Le BAF étant ouvert au grand public, nous ne pouvons pas garantir qu'il n'y aura pas d'agents (en civil) parmi nous. Veuillez donc faire preuve de la même vigilance que partout ailleurs."
+        "text": "Le BAF étant ouvert au grand public, nous ne pouvons pas garantir qu'il n'y aura pas d'agents (en civil) parmi nous. Veuillez donc <bold>faire preuve de la même vigilance</bold> que partout ailleurs."
       },
       "camping": {
         "title": "Matériel de camping",
@@ -388,7 +388,7 @@
       },
       "bankTransfer": {
         "title": "Payer à l'avance",
-        "text": "Pour celleux qui souhaiteraient payer à l'avance par virement plutôt que sur place, voici un rappel du numéro de compte : Fondation Marius Jacob, BE12 8919 6407 1892, Communication : BAF."
+        "text": "Pour celleux qui souhaiteraient payer à l'avance par virement plutôt que sur place, consulte le <link>détail du paiement sur la page billetterie</link>."
       },
       "signal": {
         "title": "Groupe Signal",
@@ -400,7 +400,7 @@
       },
       "cameras": {
         "title": "Photographie",
-        "text": "Il est généralement interdit de prendre des photos sur le site du festival et le camp. Des photographes coordonnés par le festival seront présents, et des badges opt-in seront disponibles à l'entrée."
+        "text": "Il est <bold>généralement interdit de prendre des photos</bold> sur le site du festival et le camp. Des photographes coordonnés par le festival seront présents, et des badges opt-in seront disponibles à l'entrée."
       }
     }
   },

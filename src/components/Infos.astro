@@ -31,28 +31,37 @@ const espaceJeunesseBlocks = [
 ];
 const linkTag = (href: string) => (chunks: string) =>
   `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-link-accent">${chunks}</a>`;
+const boldTag = (chunks: string) => `<span class="text-strong">${chunks}</span>`;
 
 const otherBlocks: Array<{ icon: string; title: string; html: string }> = [
-  { icon: "🐶", title: t("other.dogs.title"), html: t("other.dogs.text") },
-  { icon: "💸", title: t("other.cash.title"), html: t("other.cash.text") },
-  { icon: "🍾", title: t("other.glass.title"), html: t("other.glass.text") },
-  { icon: "☀️", title: t("other.heat.title"), html: t("other.heat.text") },
-  { icon: "🏊", title: t("other.swimming.title"), html: t("other.swimming.text") },
-  { icon: "🧼", title: t("other.washing.title"), html: t("other.washing.text") },
-  { icon: "👮", title: t("other.police.title"), html: t("other.police.text") },
-  { icon: "⛺", title: t("other.camping.title"), html: t("other.camping.text") },
-  { icon: "💳", title: t("other.bankTransfer.title"), html: t("other.bankTransfer.text") },
+  { icon: "🐶", title: t("other.dogs.title"), html: t.markup("other.dogs.text", { bold: boldTag }) },
+  { icon: "💸", title: t("other.cash.title"), html: t.markup("other.cash.text", { bold: boldTag }) },
+  { icon: "🍾", title: t("other.glass.title"), html: t.markup("other.glass.text", { bold: boldTag }) },
+  { icon: "☀️", title: t("other.heat.title"), html: t.markup("other.heat.text", { bold: boldTag }) },
+  { icon: "🏊", title: t("other.swimming.title"), html: t.markup("other.swimming.text", { bold: boldTag }) },
+  { icon: "🧼", title: t("other.washing.title"), html: t.markup("other.washing.text", { bold: boldTag }) },
+  { icon: "👮", title: t("other.police.title"), html: t.markup("other.police.text", { bold: boldTag }) },
+  { icon: "⛺", title: t("other.camping.title"), html: t.markup("other.camping.text", { bold: boldTag }) },
+  {
+    icon: "💳",
+    title: t("other.bankTransfer.title"),
+    html: t.markup("other.bankTransfer.text", {
+      bold: boldTag,
+      link: linkTag(`${p}/billetterie/#payment`),
+    }),
+  },
   {
     icon: "📣",
     title: t("other.signal.title"),
     html: t.markup("other.signal.text", {
+      bold: boldTag,
       link: linkTag(
         "https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN",
       ),
     }),
   },
-  { icon: "⛑️", title: t("other.medic.title"), html: t("other.medic.text") },
-  { icon: "📸", title: t("other.cameras.title"), html: t("other.cameras.text") },
+  { icon: "⛑️", title: t("other.medic.title"), html: t.markup("other.medic.text", { bold: boldTag }) },
+  { icon: "📸", title: t("other.cameras.title"), html: t.markup("other.cameras.text", { bold: boldTag }) },
 ];
 ---
 
@@ -414,7 +423,12 @@ const otherBlocks: Array<{ icon: string; title: string; html: string }> = [
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
   @media (min-width: 1201px) {
-    .cards-grid--max-5 {
+  .card .text-strong {
+    color: var(--rose-dark);
+    font-weight: 900;
+  }
+
+  .cards-grid--max-5 {
       grid-template-columns: repeat(5, 1fr);
     }
   }

@@ -356,15 +356,15 @@
       "title": "Praktische info",
       "dogs": {
         "title": "Honden",
-        "text": "Honden zijn jammer genoeg niet toegelaten, omdat er andere dieren leven op het festivalterrein die helaas niet veilig zouden zijn met honden erbij."
+        "text": "Honden zijn jammer genoeg <bold>niet toegelaten</bold>, omdat er andere dieren leven op het festivalterrein die helaas niet veilig zouden zijn met honden erbij."
       },
       "cash": {
         "title": "Cash",
-        "text": "Breng cash geld mee — daarmee kan je onder andere genieten van de verfrissende drankjes aan de bar en 3 vegan maaltijden per dag."
+        "text": "<bold>Breng cash geld mee</bold> — daarmee kan je onder andere genieten van de verfrissende drankjes aan de bar en 3 vegan maaltijden per dag."
       },
       "glass": {
         "title": "Glazen flessen",
-        "text": "Neem geen glazen flessen mee op het terrein."
+        "text": "<bold>Neem geen glazen flessen mee</bold> op het terrein."
       },
       "heat": {
         "title": "Voorbereiding op de hitte",
@@ -376,11 +376,11 @@
       },
       "washing": {
         "title": "Plekken waar je je kunt wassen",
-        "text": "Er zijn plekken waar je je kunt wassen om je op te frissen. Neem alsjeblieft geen eigen zeep mee; wij zorgen voor zeep die geschikt is voor gebruik in de natuur."
+        "text": "Er zijn plekken waar je je kunt wassen om je op te frissen. Neem alsjeblieft <bold>geen eigen zeep mee</bold>; wij zorgen voor zeep die geschikt is voor gebruik in de natuur."
       },
       "police": {
         "title": "Politieaanwezigheid",
-        "text": "Aangezien BAF openstaat voor het brede publiek, zou het kunnen dat er politieagenten (in burger) tussen ons zullen zijn. Wees dus even oplettend als je overal elders zou zijn. Wees waakzaam met wie je welke info deelt."
+        "text": "Aangezien BAF openstaat voor het brede publiek, zou het kunnen dat er politieagenten (in burger) tussen ons zullen zijn. Wees dus <bold>even oplettend</bold> als je overal elders zou zijn. Wees waakzaam met wie je welke info deelt."
       },
       "camping": {
         "title": "Kampeermateriaal",
@@ -388,7 +388,7 @@
       },
       "bankTransfer": {
         "title": "Vooraf betalen",
-        "text": "Wil je liever op voorhand betalen via overschrijving in plaats van ter plaatse? Hier nog even de rekeninggegevens: Fondation Marius Jacob, BE12 8919 6407 1892 - Mededeling: BAF."
+        "text": "Wil je liever op voorhand betalen via overschrijving in plaats van ter plaatse? Bekijk de <link>betalingsgegevens op de ticketpagina</link>."
       },
       "signal": {
         "title": "Signal-groep",
@@ -400,7 +400,7 @@
       },
       "cameras": {
         "title": "Fotografie",
-        "text": "Het is over het algemeen verboden om foto's te nemen op het festivalterrein en kamp. Door het festival gecoördineerde fotografen zullen aanwezig zijn, en opt-in badges zijn beschikbaar bij de ingang."
+        "text": "Het is <bold>over het algemeen verboden om foto's te nemen</bold> op het festivalterrein en kamp. Door het festival gecoördineerde fotografen zullen aanwezig zijn, en opt-in badges zijn beschikbaar bij de ingang."
       }
     }
   },

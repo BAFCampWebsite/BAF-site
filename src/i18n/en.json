@@ -356,15 +356,15 @@
       "title": "Practical info",
       "dogs": {
         "title": "Dogs",
-        "text": "Dogs are unfortunately not allowed on site. The site is home to other animals, so we're not able to accommodate dogs on site."
+        "text": "Dogs are unfortunately <bold>not allowed on site</bold>. The site is home to other animals, so we're not able to accommodate dogs on site."
       },
       "cash": {
         "title": "Cash",
-        "text": "Bring cash — you'll need it to enjoy the refreshing drinks sold at our bar!"
+        "text": "<bold>Bring cash</bold> — you'll need it to enjoy the refreshing drinks sold at our bar!"
       },
       "glass": {
         "title": "Glass bottles",
-        "text": "Please don't bring glass bottles onto the site, to help us manage waste."
+        "text": "Please <bold>don't bring glass</bold> bottles onto the site, to help us manage waste."
       },
       "heat": {
         "title": "Prepare for the heat",
@@ -376,11 +376,11 @@
       },
       "washing": {
         "title": "Washing zones",
-        "text": "There will be washing zones to clean yourself and cool off. Please don't bring your own soap — we'll be providing soap that's suitable for use in nature."
+        "text": "There will be washing zones to clean yourself and cool off. Please <bold>don't bring your own soap</bold> — we'll be providing soap that's suitable for use in nature."
       },
       "police": {
         "title": "Police presence",
-        "text": "As BAF is open to the general public, we cannot guarantee that (undercovers) officers will not be among us. Please be as mindful as you would be anywhere else."
+        "text": "As BAF is open to the general public, we cannot guarantee that (undercovers) officers will not be among us. <bold>Please be as mindful</bold> as you would be anywhere else."
       },
       "camping": {
         "title": "Camping equipment",
@@ -388,11 +388,11 @@
       },
       "bankTransfer": {
         "title": "Pay in advance",
-        "text": "For anyone who'd like to pay in advance by bank transfer instead of on site, here's a reminder of the account details: Fondation Marius Jacob, BE12 8919 6407 1892, Communication: BAF."
+        "text": "For anyone who'd like to pay in advance by bank transfer instead of on site, check the <link>payment details on the tickets page.</link>"
       },
       "signal": {
         "title": "Signal chat",
-        "text": "To stay in the loop on everything else, we encourage you to join our Signal chat, where we'll be sharing all important updates and announcements in the lead-up to BAF Camp: <link>Join the Signal group</link>."
+        "text": "To stay in the loop on everything else, we encourage you to <link>Join the Signal group</link>, where we'll be sharing all important updates and announcements in the lead-up to BAF Camp."
       },
       "medic": {
         "title": "Medics",
@@ -400,7 +400,7 @@
       },
       "cameras": {
         "title": "Photography",
-        "text": "It is generally prohibited to take pictures at the festival site and camp. Festival-coordinated photographers will be on site, and opt-in badges will be available at the entrance."
+        "text": "It is <bold>prohibited to take pictures</bold> at the festival site and camp. Festival-coordinated photographers will be on site, and opt-in badges will be available at the entrance."
       }
     }
   },
