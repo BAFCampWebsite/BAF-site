@@ -461,6 +461,10 @@
       "btnText": "Schrijf ons",
       "emailSubject": "Vraag over tickets"
     },
+    "payment": {
+      "title": "Hoe betaal je je plaats?",
+      "text": "Betaal je plaats via een bankoverschrijving met de onderstaande gegevens.<br>Vergeet niet <strong>je naam</strong> en je <strong>plaatsnummer</strong> als mededeling te vermelden, zodat we je betaling aan je inschrijving kunnen koppelen."
+    },
     "popup": {
       "title": "Binnenkort beschikbaar!",
       "text": "Het inschrijvingsformulier is nog niet open. Het zal binnenkort beschikbaar zijn — kom snel terug!",
@@ -615,6 +619,21 @@
       "email": "contact@bafcamp.be",
       "subject": "Uitleen van materiaal",
       "subjectWarning": "Belangrijk: Graag <strong>“Uitleen van materiaal”</strong> in het onderwerp van je e-mail zetten."
+    }
+  },
+  "paymentOptions": {
+    "title": "Doe een donatie",
+    "text": "Omdat we een toegankelijke ruimte willen creëren, is er geen andere toegangsbeperking dan de beschikbare plaatsen op de kampplaats.<br>Toch blijven er, ondanks het werk van honderden vrijwilligers, bepaalde onvermijdelijke kosten bestaan.<br>Jouw gift, hoe bescheiden ook, helpt ons onafhankelijk te blijven en trouw te blijven aan onze waarden.",
+    "bankTransfer": {
+      "title": "Bankoverschrijving",
+      "text": "Doe een overschrijving naar de rekening van \"Stichting Marius Jacob\":",
+      "note": "Vermeld <strong>Donatie BAF</strong> als mededeling."
+    },
+    "qrCode": {
+      "title": "QR-code (overschrijving)",
+      "text": "Scan de QR-code met je bankapp:",
+      "note": "Compatibel met alle Belgische bankapps. Vergeet niet <strong>Donatie BAF</strong> als mededeling te vermelden.",
+      "alt": "QR-code BAF Kamptransfer"
     }
   },
   "autogestion": {

@@ -11,6 +11,7 @@ export type BilletterieMessages = Messages["billetterie"];
 export type InfosMessages = Messages["infos"];
 export type ProgrammeMessages = Messages["programme"];
 export type NousAiderMessages = Messages["nousAider"];
+export type PaymentOptionsMessages = Messages["paymentOptions"];
 export type AutogestionMessages = Messages["autogestion"];
 export type CharteMessages = Messages["charte"];
 export type FinancementsMessages = Messages["financements"];

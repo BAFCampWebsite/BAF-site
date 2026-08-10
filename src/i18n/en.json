@@ -461,6 +461,10 @@
       "btnText": "Write to us",
       "emailSubject": "Ticketing question"
     },
+    "payment": {
+      "title": "How to pay for your spot?",
+      "text": "Pay for your spot by bank transfer using the details below.<br>Don't forget to use <strong>Your name</strong> and your <strong>spot number</strong> as the payment reference so we can match your payment to your registration."
+    },
     "popup": {
       "title": "Coming soon!",
       "text": "The registration form isn't open yet. It will be available a bit later — check back soon!",
@@ -615,6 +619,21 @@
       "email": "contact@bafcamp.be",
       "subject": "Equipment loan",
       "subjectWarning": "Important: Please put <strong>“Equipment loan”</strong> in the subject of your email."
+    }
+  },
+  "paymentOptions": {
+    "title": "Make a donation",
+    "text": "Because we want to create an accessible space, there will be no restrictions on access other than the number of places available at the camp. However, despite the work of hundreds of volunteers, some expenses remain unavoidable. Your donation, no matter how small, helps us remain independent and stay true to our values.",
+    "bankTransfer": {
+      "title": "Bank transfer",
+      "text": "Make a bank transfer to the account of the \"Marius Jacob Foundation\":",
+      "note": "Please use <strong>BAF Donation</strong> as the payment reference."
+    },
+    "qrCode": {
+      "title": "QR Code (bank transfer)",
+      "text": "Scan the QR code with your banking app:",
+      "note": "Compatible with all Belgian banking apps. Please use <strong>BAF Donation</strong> as the payment reference.",
+      "alt": "QR code BAF Camp transfer"
     }
   },
   "autogestion": {

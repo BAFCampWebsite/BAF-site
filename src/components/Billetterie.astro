@@ -2,6 +2,7 @@
 import { getTranslations } from '../i18n/getTranslations';
 import { getLocale } from 'astro-intl';
 import type { BilletterieMessages } from '../i18n/types';
+import PaymentOptions from './PaymentOptions.astro';
 const t = getTranslations('billetterie');
 const lang = getLocale();
 const salesConditionsUrl = `/${lang}/sales-conditions`;
@@ -171,7 +172,16 @@ const pricingTiers = [
 
   <hr class="divider">
 
-  <!-- Section 5 — Contact -->
+  <!-- Section 5 — Payment -->
+  <div class="reveal">
+    <h2>{t('payment.title')}</h2>
+    <p class="section-lead section-lead--large" set:html={t('payment.text')}></p>
+    <PaymentOptions />
+  </div>
+
+  <hr class="divider">
+
+  <!-- Section 6 — Contact -->
   <div class="reveal">
     <h2>{t('contact.title')}</h2>
     <p class="contact-copy">
