@@ -6,7 +6,7 @@ import PaymentOptions from './PaymentOptions.astro';
 const lang = getLocale();
 const p = `/${lang}`;
 const t = getTranslations('nousAider');
-const pt = getTranslations('paymentOptions');
+
 
 const rejoindreCards = [
   { title: t('rejoindre.cards.i0.title'), text: t('rejoindre.cards.i0.text'), btnText: t('rejoindre.cards.i0.btnText') },
@@ -49,8 +49,8 @@ const partagerCards = [
   <hr class="divider">
 
   <div id="don" class="reveal">
-    <h2>{pt('title')}</h2>
-    <p class="section-lead section-lead--large" set:html={pt('text')}></p>
+    <h2>{t('don.title')}</h2>
+    <p class="section-lead section-lead--large" set:html={t('don.text')}></p>
     <PaymentOptions />
   </div>
 
