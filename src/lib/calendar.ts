@@ -23,25 +23,31 @@ export function buildCategoryMeta(t: (key: string) => string) {
 export type CategoryMeta = ReturnType<typeof buildCategoryMeta>;
 
 export const TENT_KEYS = [
-  "chapiteaux1",
-  "chapiteaux2",
-  "atelier",
-  "cine",
-  "autogestion",
+  "chezgeorges",
+  "lestaca",
+  "cinema",
+  "workshop",
+  "point",
   "jam",
-  "other",
+  "peoplepower",
+  // "moving",
+  // "chill",
+  // "other",
 ] as const;
 
 export type TentKey = (typeof TENT_KEYS)[number];
 
 export function getTentKey(location: string | undefined): TentKey {
   const loc = String(location || "").trim().toLowerCase();
-  if (loc.includes("chapiteau 1") || loc.includes("chapiteaux 1")) return "chapiteaux1";
-  if (loc.includes("chapiteau 2") || loc.includes("chapiteaux 2")) return "chapiteaux2";
-  if (loc.includes("atelier")) return "atelier";
-  if (loc.includes("ciné") || loc.includes("cine")) return "cine";
-  if (loc.includes("autogestion") || loc.includes("auto-gestion")) return "autogestion";
+  if (loc.includes("chez georges")) return "chezgeorges";
+  if (loc.includes("estaca")) return "lestaca";
+  if (loc.includes("cinema") || loc.includes("ciné")) return "cinema";
+  if (loc.includes("workshop") || loc.includes("atelier")) return "workshop";
+  if (loc.includes("point")) return "point";
   if (loc.includes("jam")) return "jam";
+  if (loc.includes("people power")) return "peoplepower";
+  // if (loc.includes("moving")) return "moving";
+  // if (loc.includes("chill")) return "chill";
   return "other";
 }
 
