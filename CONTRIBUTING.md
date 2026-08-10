@@ -79,6 +79,41 @@ This is very similar to the above, except you will need to define a key, and the
   - If you're on a page that has a namespace, use it already (see the example in this [chapter](#about-key-structure))
     - In the billetterie namespace, you would use e.g. `<p>{t('hero.subtitle')}</p>`
 
+### Links inside translated text
+
+Keep URLs and link markup **out of the translation files** and build the link in the component instead. `astro-intl` provides `t.markup(key, tags)` for this: put a custom tag (like `<link>...</link>`) around the link text in the JSON, then map that tag to a real `<a>` in the component.
+
+For example, given a translation:
+
+```jsonc
+{
+  "infos": {
+    "other": {
+      "carpool": {
+        "text": "...same cities: <link>hophub.xyz</link>. Please note..."
+      }
+    }
+  }
+}
+```
+
+Render it with a tags object that turns `<link>` into an anchor (hardcoding the URL here, not in the JSON):
+
+```astro
+---
+const t = getTranslations('infos');
+const linkTag = (href: string) => (chunks: string) =>
+  `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-link-accent">${chunks}</a>`;
+---
+<p set:html={t.markup('other.carpool.text', { link: linkTag('https://hophub.xyz/...') })} />
+```
+
+Notes:
+
+- The link text (what the user sees) stays translatable in each locale file; only the URL is hardcoded in the component.
+- Use `set:html` to render the result, since `t.markup` returns HTML.
+- Prefer `t.markup` over embedding `<a href=...>` markup directly in the translation strings.
+
 ### Adding languages
 
 If we decide to add more, there are a few things that will need to be added

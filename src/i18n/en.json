@@ -388,7 +388,7 @@
       },
       "carpool": {
         "title": "Carpooling & trains",
-        "text": "For anyone traveling from further away, we've put together a car-sharing platform to make it easier to organize rides with other participants heading to the festival from the same cities: <a href=\"https://hophub.xyz/e/baf-camp-2026-93cc4c\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-link-accent\">hophub.xyz</a>. Please note that there will be train disruptions on the way to Grupont over the weekend (Saturday and Sunday), so plan accordingly."
+        "text": "For anyone traveling from further away, we've put together a car-sharing platform to make it easier to organize rides with other participants heading to the festival from the same cities: <link>hophub.xyz</link>. Please note that there will be train disruptions on the way to Grupont over the weekend (Saturday and Sunday), so plan accordingly."
       },
       "bankTransfer": {
         "title": "Pay in advance",
@@ -396,7 +396,7 @@
       },
       "signal": {
         "title": "Signal chat",
-        "text": "To stay in the loop on everything else, we encourage you to join our Signal chat, where we'll be sharing all important updates and announcements in the lead-up to BAF Camp: <a href=\"https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-link-accent\">Join the Signal group</a>."
+        "text": "To stay in the loop on everything else, we encourage you to join our Signal chat, where we'll be sharing all important updates and announcements in the lead-up to BAF Camp: <link>Join the Signal group</link>."
       },
       "medic": {
         "title": "Medics",

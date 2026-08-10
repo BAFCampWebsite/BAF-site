@@ -388,7 +388,7 @@
       },
       "carpool": {
         "title": "Covoiturage & trains",
-        "text": "Pour celleux qui viennent de plus loin, nous avons mis en place une plateforme de covoiturage afin de faciliter l'organisation de trajets avec d'autres participants se rendant au festival depuis les mêmes villes : <a href=\"https://hophub.xyz/e/baf-camp-2026-93cc4c\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-link-accent\">hophub.xyz</a>. Sachez par ailleurs que des perturbations ferroviaires sont à prévoir sur le trajet jusqu'à Grupont durant le week-end (samedi et dimanche) ; pensez-y dans l'organisation de votre trajet."
+        "text": "Pour celleux qui viennent de plus loin, nous avons mis en place une plateforme de covoiturage afin de faciliter l'organisation de trajets avec d'autres participants se rendant au festival depuis les mêmes villes : <link>hophub.xyz</link>. Sachez par ailleurs que des perturbations ferroviaires sont à prévoir sur le trajet jusqu'à Grupont durant le week-end (samedi et dimanche) ; pensez-y dans l'organisation de votre trajet."
       },
       "bankTransfer": {
         "title": "Payer à l'avance",
@@ -396,7 +396,7 @@
       },
       "signal": {
         "title": "Groupe Signal",
-        "text": "Enfin, pour rester informé de tout le reste, nous vous invitons également à rejoindre notre groupe Signal, où nous partagerons toutes les mises à jour et annonces importantes à l'approche du BAF Camp : <a href=\"https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-link-accent\">Rejoindre le groupe Signal</a>."
+        "text": "Enfin, pour rester informé de tout le reste, nous vous invitons également à rejoindre notre groupe Signal, où nous partagerons toutes les mises à jour et annonces importantes à l'approche du BAF Camp : <link>Rejoindre le groupe Signal</link>."
       },
       "medic": {
         "title": "Médics",
