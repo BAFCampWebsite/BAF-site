@@ -225,8 +225,7 @@
           "i0Suffix": " avec du matériel pour construire jeux et activités, accompagné par des bénévoles expérimenté.es deux heures le matin et deux heures l'après-midi. Le reste du temps, l'espace restera accessible mais sans bénévoles d'accompagnement.",
           "i1": "Des activités accessibles aux enfants tout au long du festival (improvisation, ateliers potager, et plus).",
           "i2": "Des tables à langer disponibles dans ou à proximité des espaces de lavage.",
-          "i3": "Le frigo sera accessible pour la nourriture destinée aux nourrissons.",
-          "i4": "Les comptoirs du bar et de la cuisine seront abaissés par endroits, à hauteur d'enfant."
+          "i3": "Le frigo sera accessible pour la nourriture destinée aux nourrissons."
         }
       },
       "visual": {
@@ -261,9 +260,8 @@
         "planLabel": "Voir le plan",
         "items": {
           "i0": "Des places de stationnement PMR seront prévues près de l'entrée. Nous ne pouvons toutefois pas garantir qu'elles restent occupables en permanence : il pourra être nécessaire de déposer la personne au plus proche, puis de garer le véhicule dans le village afin de maintenir le passage des secours.",
-          "i1": "Toilettes et salles de lavage adaptées PMR (taille suffisante, barre d'appui, porte large).",
+          "i1": "Pas d'assurance qu'il y aura des toilettes et salles de lavage adaptées PMR (taille suffisante, barre d'appui, porte large).",
           "i2": "Les espaces accidentés (trous, rivière) seront signalés par de la rubalise ou des panneaux.",
-          "i3": "Comptoirs du bar et de la cuisine accessibles à hauteur de fauteuil ou pour les personnes de petite taille.",
           "i4": "La prise en compte des personnes PMR a été effectuée dans les plans d'évacuation d'urgence.",
           "i5": "Pas d'espaces « spécial PMR » dédiés dans les différents lieux. Nous veillerons cependant, sur demande, à placer les personnes à proximité de la scène et à réserver des sièges à cet effet.",
           "i6": "Nous ne pouvons pas garantir une variété de sièges partout, mais nous y travaillons.",
@@ -321,7 +319,7 @@
         },
         "clothes": {
           "label": "Vêtements",
-          "text": "de quoi tenir tout le séjour, y compris une tenue chaude pour la nuit : la prairie peut être humide et il peut faire froid. N'oublie pas ton maillot si tu veux profiter de la rivière."
+          "text": "de quoi tenir tout le séjour, y compris une tenue chaude pour la nuit : la prairie peut être humide et il peut faire froid."
         },
         "water": {
           "label": "Ta gourde",

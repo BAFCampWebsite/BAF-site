@@ -225,8 +225,7 @@
           "i0Suffix": " met materiaal om spellen en activiteiten te bouwen, begeleid door ervaren vrijwilligers twee uur 's ochtends en twee uur 's middags. Buiten deze momenten blijft de ruimte toegankelijk, maar zonder begeleiding.",
           "i1": "Activiteiten die toegankelijk zijn voor kinderen gedurende het hele festival (improvisatie, moestuinworkshops, en meer).",
           "i2": "Verschoontafels in of bij de wasruimtes.",
-          "i3": "De koelkast is toegankelijk voor voeding voor baby’s.",
-          "i4": "De balie van de bar en keuken wordt op sommige plaatsen verlaagd tot kinderhoogte."
+          "i3": "De koelkast is toegankelijk voor voeding voor baby's."
         }
       },
       "visual": {
@@ -261,9 +260,8 @@
         "planLabel": "Bekijk het plan",
         "items": {
           "i0": "Parkeerplaatsen voor PMR worden voorzien bij de ingang. We kunnen echter niet garanderen dat deze permanent beschikbaar blijven: het kan nodig zijn om de persoon eerst zo dicht mogelijk af te zetten en de wagen daarna in het dorp te parkeren om de doorgang voor hulpdiensten vrij te houden.",
-          "i1": "Toegankelijke toiletten en wasruimtes voor PMR-gebruikers (voldoende ruimte, handsteunen, brede deur).",
+          "i1": "Geen garantie dat er toegankelijke toiletten en wasruimtes voor PMR-gebruikers zullen zijn (voldoende ruimte, handsteunen, brede deur).",
           "i2": "Risicovolle gebieden (gaten, rivier) worden gemarkeerd met lint of borden.",
-          "i3": "Bar- en keukenbalies toegankelijk op rolstoelhoogte of voor kleine mensen.",
           "i4": "PMR-behoeften zijn meegenomen in de plannen voor nooduitgang.",
           "i5": "Geen speciale PMR-ruimtes in de verschillende locaties. Op verzoek zorgen we er wel voor dat personen dicht bij het podium kunnen plaatsnemen en reserveren we zitplaatsen hiervoor.",
           "i6": "We kunnen niet overal een variatie aan zitplaatsen garanderen, maar we werken eraan.",
@@ -321,7 +319,7 @@
         },
         "clothes": {
           "label": "Kleding",
-          "text": "voldoende voor het hele verblijf, inclusief warme kledij voor de nacht: de weide kan vochtig zijn en het kan 's nachts koud worden. Vergeet je zwemkleding niet als je van de rivier wil genieten."
+          "text": "voldoende voor het hele verblijf, inclusief warme kledij voor de nacht: de weide kan vochtig zijn en het kan's nachts koud worden."
         },
         "water": {
           "label": "Je fles",
