@@ -29,6 +29,40 @@ const espaceJeunesseBlocks = [
     suffix: t("espaceJeunesse.contact.suffix"),
   },
 ];
+const linkTag = (href: string) => (chunks: string) =>
+  `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-link-accent">${chunks}</a>`;
+const boldTag = (chunks: string) => `<span class="text-strong">${chunks}</span>`;
+
+const otherBlocks: Array<{ icon: string; title: string; html: string }> = [
+  { icon: "🐶", title: t("other.dogs.title"), html: t.markup("other.dogs.text", { bold: boldTag }) },
+  { icon: "💸", title: t("other.cash.title"), html: t.markup("other.cash.text", { bold: boldTag }) },
+  { icon: "🍾", title: t("other.glass.title"), html: t.markup("other.glass.text", { bold: boldTag }) },
+  { icon: "☀️", title: t("other.heat.title"), html: t.markup("other.heat.text", { bold: boldTag }) },
+  { icon: "🏊", title: t("other.swimming.title"), html: t.markup("other.swimming.text", { bold: boldTag }) },
+  { icon: "🧼", title: t("other.washing.title"), html: t.markup("other.washing.text", { bold: boldTag }) },
+  { icon: "👮", title: t("other.police.title"), html: t.markup("other.police.text", { bold: boldTag }) },
+  { icon: "⛺", title: t("other.camping.title"), html: t.markup("other.camping.text", { bold: boldTag }) },
+  {
+    icon: "💳",
+    title: t("other.bankTransfer.title"),
+    html: t.markup("other.bankTransfer.text", {
+      bold: boldTag,
+      link: linkTag(`${p}/billetterie/#payment`),
+    }),
+  },
+  {
+    icon: "📣",
+    title: t("other.signal.title"),
+    html: t.markup("other.signal.text", {
+      bold: boldTag,
+      link: linkTag(
+        "https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN",
+      ),
+    }),
+  },
+  { icon: "⛑️", title: t("other.medic.title"), html: t.markup("other.medic.text", { bold: boldTag }) },
+  { icon: "📸", title: t("other.cameras.title"), html: t.markup("other.cameras.text", { bold: boldTag }) },
+];
 ---
 
 <div class="page-hero anim">
@@ -168,8 +202,18 @@ const espaceJeunesseBlocks = [
   <section id="other">
     <p class="section-label">❓ {t("other.sectionLabel")}</p>
     <h2>{t("other.title")}</h2>
-    <h3>🐶 {t("other.dogs.title")}</h3>
-    <p>{t("other.dogs.text")}</p>
+
+    <div class="cards-grid cards-grid--max-5">
+      {
+        otherBlocks.map((block) => (
+          <div class="card">
+            <span class="card-icon">{block.icon}</span>
+            <div class="card-title">{block.title}</div>
+            <div class="card-text" set:html={block.html} />
+          </div>
+        ))
+      }
+    </div>
   </section>
 </div>
 
@@ -373,6 +417,20 @@ const espaceJeunesseBlocks = [
     line-height: 1.7;
     color: var(--gris-encre);
     margin-bottom: 0;
+  }
+
+  .cards-grid--max-5 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  @media (min-width: 1201px) {
+  .card .text-strong {
+    color: var(--rose-dark);
+    font-weight: 900;
+  }
+
+  .cards-grid--max-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
 
   .section-label {

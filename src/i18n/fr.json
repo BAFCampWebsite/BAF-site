@@ -21,7 +21,7 @@
       "nourrir": "Se nourrir",
       "camping": "Le camping",
       "espaceJeunesse": "Espace Jeunesse",
-      "other": "Autres infos",
+      "other": "Infos pratiques",
       "accessibilite": "Accessibilité",
       "conditionsVente": "Conditions de vente"
     },
@@ -352,11 +352,55 @@
       }
     },
     "other": {
-      "sectionLabel": "Autres informations",
-      "title": "Autres informations",
+      "sectionLabel": "Infos pratiques",
+      "title": "Infos pratiques",
       "dogs": {
         "title": "Chiens",
-        "text": "Les chiens ne sont malheureusement pas autorisés sur le site, car il s'agit d'une propriété privée avec plusieurs autres chiens et animaux."
+        "text": "La venue des chiens n'est malheureusement <bold>pas autorisée</bold> : le site accueille d'autres animaux et ne permet donc pas d'accueillir de chiens sur place."
+      },
+      "cash": {
+        "title": "Argent liquide",
+        "text": "<bold>Apportez de l'argent liquide</bold> ! Cela vous permettra notamment de profiter des boissons rafraîchissantes vendues à notre bar et de 3 repas vegan par jour."
+      },
+      "glass": {
+        "title": "Consignes en verre",
+        "text": "Merci de <bold>ne pas apporter de consignes en verre</bold> sur le site, afin de faciliter notre gestion des déchets."
+      },
+      "heat": {
+        "title": "Prépare-toi à la chaleur",
+        "text": "Il risque de faire assez chaud : n'oubliez surtout pas de vous munir d'un couvre-chef, de crème solaire en suffisance ainsi que de votre gourde !"
+      },
+      "swimming": {
+        "title": "Baignade",
+        "text": "Malheureusement, la baignade dans la rivière sera restreinte afin de protéger la biodiversité du site."
+      },
+      "washing": {
+        "title": "Espace pour se laver",
+        "text": "Des espaces pour se laver seront à votre disposition pour vous rafraîchir. Merci de <bold>ne pas apporter votre propre savon</bold> ; nous vous fournirons un savon adapté à une utilisation en pleine nature."
+      },
+      "police": {
+        "title": "Présence policière",
+        "text": "Le BAF étant ouvert au grand public, nous ne pouvons pas garantir qu'il n'y aura pas d'agents (en civil) parmi nous. Veuillez donc <bold>faire preuve de la même vigilance</bold> que partout ailleurs. Restez prudent·e·s quant à la manière et à qui vous partagez certaines informations."
+      },
+      "camping": {
+        "title": "Matériel de camping",
+        "text": "Si vous manquez de matériel de camping (tente, matelas, sac de couchage, etc.), n'hésitez pas à nous contacter directement pour nous le faire savoir : nous trouverons une solution ensemble."
+      },
+      "bankTransfer": {
+        "title": "Payer à l'avance",
+        "text": "Pour celleux qui souhaiteraient payer à l'avance par virement plutôt que sur place, consulte le <link>détail du paiement sur la page billetterie</link>."
+      },
+      "signal": {
+        "title": "Groupe Signal",
+        "text": "Enfin, pour rester informé de tout le reste, nous vous invitons également à rejoindre notre groupe Signal, où nous partagerons toutes les mises à jour et annonces importantes à l'approche du BAF Camp : <link>Rejoindre le groupe Signal</link>."
+      },
+      "medic": {
+        "title": "Médics",
+        "text": "Une équipe de médics entraînés sera présente pour l'aide médicale."
+      },
+      "cameras": {
+        "title": "Photographie",
+        "text": "Il est <bold>généralement interdit de prendre des photos</bold> sur le site du festival et le camp. Des photographes coordonnés par le festival seront présents, et des badges opt-in seront disponibles à l'entrée."
       }
     }
   },
