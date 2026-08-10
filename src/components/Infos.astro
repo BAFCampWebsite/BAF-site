@@ -193,16 +193,18 @@ const otherBlocks: Array<{ icon: string; title: string; html: string }> = [
   <section id="other">
     <p class="section-label">❓ {t("other.sectionLabel")}</p>
     <h2>{t("other.title")}</h2>
-    {
-      otherBlocks.map((block) => (
-        <div>
-          <h3>
-            {block.icon} {block.title}
-          </h3>
-          <p set:html={block.html} />
-        </div>
-      ))
-    }
+
+    <div class="cards-grid cards-grid--max-5">
+      {
+        otherBlocks.map((block) => (
+          <div class="card">
+            <span class="card-icon">{block.icon}</span>
+            <div class="card-title">{block.title}</div>
+            <div class="card-text" set:html={block.html} />
+          </div>
+        ))
+      }
+    </div>
   </section>
 </div>
 
@@ -406,6 +408,15 @@ const otherBlocks: Array<{ icon: string; title: string; html: string }> = [
     line-height: 1.7;
     color: var(--gris-encre);
     margin-bottom: 0;
+  }
+
+  .cards-grid--max-5 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  @media (min-width: 1201px) {
+    .cards-grid--max-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
 
   .section-label {
