@@ -371,8 +371,12 @@
         "text": "Il risque de faire assez chaud : n'oubliez surtout pas de vous munir d'un couvre-chef, de crème solaire en suffisance ainsi que de votre gourde !"
       },
       "swimming": {
-        "title": "Baignade & douches",
-        "text": "Malheureusement, la baignade dans la rivière sera restreinte afin de protéger la biodiversité du site, mais des douches seront à votre disposition pour vous rafraîchir. Merci de ne pas apporter votre propre savon ; nous vous fournirons un savon adapté à une utilisation en pleine nature."
+        "title": "Baignade",
+        "text": "Malheureusement, la baignade dans la rivière sera restreinte afin de protéger la biodiversité du site."
+      },
+      "washing": {
+        "title": "Espace pour se laver",
+        "text": "Des espaces pour se laver seront à votre disposition pour vous rafraîchir. Merci de ne pas apporter votre propre savon ; nous vous fournirons un savon adapté à une utilisation en pleine nature."
       },
       "police": {
         "title": "Présence policière",

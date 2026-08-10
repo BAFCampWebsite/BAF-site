@@ -371,8 +371,12 @@
         "text": "It might get quite hot, so don't forget to bring a hat, plenty of sunscreen, and your water bottle!"
       },
       "swimming": {
-        "title": "Swimming & showers",
-        "text": "Unfortunately, swimming in the river will be restricted so as to protect the biodiversity onsite, though there will be showers to clean yourself. Please don't bring your own soap — we'll be providing soap that's suitable for use in nature."
+        "title": "Swimming",
+        "text": "Unfortunately, swimming in the river will be restricted so as to protect the biodiversity onsite."
+      },
+      "washing": {
+        "title": "Washing zones",
+        "text": "There will be washing zones to clean yourself and cool off. Please don't bring your own soap — we'll be providing soap that's suitable for use in nature."
       },
       "police": {
         "title": "Police presence",
