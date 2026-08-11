@@ -11,6 +11,7 @@
     "informations": "Informations",
     "nousAider": "Nous aider",
     "tickets": "Billetterie prix libre →",
+    "fullyBooked": "Complet",
     "dropdownFonctionnement": {
       "financements": "Financements",
       "charte": "Notre charte",
@@ -43,6 +44,8 @@
     "objectifLabel": "Objectif",
     "objectifValue": "Tous.tes bénévoles pour faire tourner le camp",
     "btnBillets": "Prendre mes billets",
+    "fullyBooked": "COMPLET",
+    "fullyBookedMoreInfo": "en savoir plus",
     "btnProgramme": "Voir le programme →",
     "btnBenevolat": "Devenir bénévole"
   },
@@ -409,6 +412,11 @@
       "eyebrow": "Billetterie",
       "title": "Prix libre & conscient",
       "subtitle": "Pour que tu contribues à hauteur de tes moyens."
+    },
+    "fullyBookedBanner": {
+      "title": "C'est complet",
+      "text": "Nous n'avons plus de place. Inscris-toi sur la <link>liste d'attente</link> et on te préviendra peut-être si une place se libère.",
+      "doNotCome": "Il n'y aura pas de billets en vente sur place. Sauf si tu as reçu une confirmation de notre part par e-mail (vérifie tes spams) : ne viens pas stp! "
     },
     "intro": {
       "title": "C'est quoi le prix libre et conscient ?",

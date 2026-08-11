@@ -6,6 +6,8 @@ import PaymentOptions from './PaymentOptions.astro';
 const t = getTranslations('billetterie');
 const lang = getLocale();
 const salesConditionsUrl = `/${lang}/sales-conditions`;
+const fullyBookedLinkTag = (href: string) => (chunks: string) =>
+  `<a href="${href}" target="_blank" rel="noopener noreferrer" class="fullybooked-banner-link">${chunks}</a>`;
 
 const plusItems = [
   t('privilegeMeter.plusItems.i0'),
@@ -62,6 +64,14 @@ const pricingTiers = [
   <p class="page-hero-eyebrow">🎟️ {t('hero.eyebrow')}</p>
   <h1 class="page-hero-title">{t('hero.title')}</h1>
   <p class="page-hero-sub">{t('hero.subtitle')}</p>
+</div>
+
+<div class="fullybooked-banner anim" id="sold-out">
+  <p class="fullybooked-banner-title">❌ {t('fullyBookedBanner.title')} ❌</p>
+  <p class="fullybooked-banner-text" set:html={t.markup('fullyBookedBanner.text', {
+    link: fullyBookedLinkTag(t('registration.formUrl')),
+  })}></p>
+  <p class="fullybooked-banner-warning">{t('fullyBookedBanner.doNotCome')}</p>
 </div>
 
 <div class="page-content">
@@ -206,6 +216,60 @@ const pricingTiers = [
 </div> */}
 
 <style is:global>
+/* ── Sold out banner ── */
+.fullybooked-banner {
+  background: var(--rose);
+  border: var(--contour-lg);
+  border-radius: 16px;
+  box-shadow: var(--ombre-lg);
+  padding: 32px 30px;
+  margin: var(--space-7) auto 8px;
+  max-width: 980px;
+  text-align: center;
+  scroll-margin-top: calc(var(--nav-h) + env(safe-area-inset-top, 0px) + 16px);
+}
+.fullybooked-banner-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--creme);
+  text-shadow: 3px 3px 0 var(--encre);
+  margin: 0 0 12px;
+}
+.fullybooked-banner-text {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--encre);
+  max-width: 640px;
+  margin: 0 auto;
+}
+.fullybooked-banner-text strong { color: var(--rose-dark); }
+.fullybooked-banner-text em { font-weight: 700; }
+.fullybooked-banner-link {
+  color: var(--encre);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.fullybooked-banner-link:hover { color: var(--rose-dark); }
+.fullybooked-banner-warning {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.6;
+  color: var(--encre);
+  background: var(--creme);
+  border: 2px solid var(--encre);
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 var(--encre);
+  padding: 14px 22px;
+  max-width: 680px;
+  margin: var(--space-5) auto 0;
+}
+
 /* ── Intro sections ── */
 .section-intro { max-width: 720px; }
 .section-lead {
@@ -565,6 +629,7 @@ const pricingTiers = [
 /* ══ RESPONSIVE MOBILE ══ */
 @media (max-width: 600px) {
   .thuno-tool { padding: 20px 16px; }
+  .fullybooked-banner { margin-left: 20px; margin-right: 20px; }
   .thuno-item { font-size: .83rem; padding: 7px 6px; }
   .tarif-band { flex-direction: column; gap: 6px; }
   .tarif-camping-block { flex-direction: column; gap: 8px; }
