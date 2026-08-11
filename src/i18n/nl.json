@@ -11,7 +11,7 @@
     "informations": "Informatie",
     "nousAider": "Ons helpen",
     "tickets": "Tickets aan vrije bijdrage →",
-    "soldOut": "Uitverkocht",
+    "fullyBooked": "Volgeboekt",
     "dropdownFonctionnement": {
       "financements": "Financiering",
       "charte": "Ons charter",
@@ -44,8 +44,8 @@
     "objectifLabel": "Doel",
     "objectifValue": "Alle vrijwilligers helpen mee om het kamp draaiende te houden",
     "btnBillets": "Tickets kopen",
-    "soldOut": "UITVERKOCHT",
-    "soldOutMoreInfo": "meer info",
+    "fullyBooked": "VOLGEBOEKT",
+    "fullyBookedMoreInfo": "meer info",
     "btnProgramme": "Bekijk het programma →",
     "btnBenevolat": "Word vrijwilliger"
   },
@@ -413,8 +413,8 @@
       "title": "Vrije & bewuste prijs",
       "subtitle": "Zodat je bijdraagt naar jouw mogelijkheden."
     },
-    "soldOutBanner": {
-      "title": "Uitverkocht",
+    "fullyBookedBanner": {
+      "title": "We zijn volgeboekt",
       "text": "We hebben geen plaatsen meer. Schrijf je in op de <link>wachtlijst</link> en we laten je misschien weten als er een plaats vrijkomt.",
       "doNotCome": "Er zullen geen tickets aan de deur te koop zijn. Tenzij je een bevestiging van ons per e-mail hebt ontvangen (check je spam): kom dan aub niet!"
     },

@@ -11,7 +11,7 @@
     "informations": "Information",
     "nousAider": "Support us",
     "tickets": "Pay-what-you-can tickets →",
-    "soldOut": "Sold out",
+    "fullyBooked": "Fully booked",
     "dropdownFonctionnement": {
       "financements": "Funding",
       "charte": "Our charter",
@@ -44,8 +44,8 @@
     "objectifLabel": "Objective",
     "objectifValue": "Everyone contributes to make this camp happen",
     "btnBillets": "Get my tickets",
-    "soldOut": "SOLD OUT",
-    "soldOutMoreInfo": "more info",
+    "fullyBooked": "FULLY BOOKED",
+    "fullyBookedMoreInfo": "more info",
     "btnProgramme": "See the program →",
     "btnBenevolat": "Become a volunteer"
   },
@@ -413,8 +413,8 @@
       "title": "Pay-what-you-can",
       "subtitle": "So that you contribute according to your means."
     },
-    "soldOutBanner": {
-      "title": "We're sold out",
+    "fullyBookedBanner": {
+      "title": "We're fully booked",
       "text": "We have run out of spots. Add yourself to the <link>waiting list</link> and we might let you know if a spot frees up.",
       "doNotCome": "There will be no tickets for sale at the door. Unless you got a confirmation from us by email (check your spam): please don't come! "
     },

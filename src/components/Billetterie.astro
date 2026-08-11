@@ -6,8 +6,8 @@ import PaymentOptions from './PaymentOptions.astro';
 const t = getTranslations('billetterie');
 const lang = getLocale();
 const salesConditionsUrl = `/${lang}/sales-conditions`;
-const soldOutLinkTag = (href: string) => (chunks: string) =>
-  `<a href="${href}" target="_blank" rel="noopener noreferrer" class="soldout-banner-link">${chunks}</a>`;
+const fullyBookedLinkTag = (href: string) => (chunks: string) =>
+  `<a href="${href}" target="_blank" rel="noopener noreferrer" class="fullybooked-banner-link">${chunks}</a>`;
 
 const plusItems = [
   t('privilegeMeter.plusItems.i0'),
@@ -66,12 +66,12 @@ const pricingTiers = [
   <p class="page-hero-sub">{t('hero.subtitle')}</p>
 </div>
 
-<div class="soldout-banner anim" id="sold-out">
-  <p class="soldout-banner-title">❌ {t('soldOutBanner.title')} ❌</p>
-  <p class="soldout-banner-text" set:html={t.markup('soldOutBanner.text', {
-    link: soldOutLinkTag(t('registration.formUrl')),
+<div class="fullybooked-banner anim" id="sold-out">
+  <p class="fullybooked-banner-title">❌ {t('fullyBookedBanner.title')} ❌</p>
+  <p class="fullybooked-banner-text" set:html={t.markup('fullyBookedBanner.text', {
+    link: fullyBookedLinkTag(t('registration.formUrl')),
   })}></p>
-  <p class="soldout-banner-warning">{t('soldOutBanner.doNotCome')}</p>
+  <p class="fullybooked-banner-warning">{t('fullyBookedBanner.doNotCome')}</p>
 </div>
 
 <div class="page-content">
@@ -217,7 +217,7 @@ const pricingTiers = [
 
 <style is:global>
 /* ── Sold out banner ── */
-.soldout-banner {
+.fullybooked-banner {
   background: var(--rose);
   border: var(--contour-lg);
   border-radius: 16px;
@@ -228,7 +228,7 @@ const pricingTiers = [
   text-align: center;
   scroll-margin-top: calc(var(--nav-h) + env(safe-area-inset-top, 0px) + 16px);
 }
-.soldout-banner-title {
+.fullybooked-banner-title {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: 800;
@@ -238,7 +238,7 @@ const pricingTiers = [
   text-shadow: 3px 3px 0 var(--encre);
   margin: 0 0 12px;
 }
-.soldout-banner-text {
+.fullybooked-banner-text {
   font-family: var(--font-serif);
   font-size: 1.02rem;
   line-height: 1.75;
@@ -246,16 +246,16 @@ const pricingTiers = [
   max-width: 640px;
   margin: 0 auto;
 }
-.soldout-banner-text strong { color: var(--rose-dark); }
-.soldout-banner-text em { font-weight: 700; }
-.soldout-banner-link {
+.fullybooked-banner-text strong { color: var(--rose-dark); }
+.fullybooked-banner-text em { font-weight: 700; }
+.fullybooked-banner-link {
   color: var(--encre);
   font-weight: 800;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.soldout-banner-link:hover { color: var(--rose-dark); }
-.soldout-banner-warning {
+.fullybooked-banner-link:hover { color: var(--rose-dark); }
+.fullybooked-banner-warning {
   font-family: var(--font-serif);
   font-size: 1.05rem;
   font-weight: 800;
@@ -629,7 +629,7 @@ const pricingTiers = [
 /* ══ RESPONSIVE MOBILE ══ */
 @media (max-width: 600px) {
   .thuno-tool { padding: 20px 16px; }
-  .soldout-banner { margin-left: 20px; margin-right: 20px; }
+  .fullybooked-banner { margin-left: 20px; margin-right: 20px; }
   .thuno-item { font-size: .83rem; padding: 7px 6px; }
   .tarif-band { flex-direction: column; gap: 6px; }
   .tarif-camping-block { flex-direction: column; gap: 8px; }
