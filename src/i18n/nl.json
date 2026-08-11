@@ -11,7 +11,7 @@
     "informations": "Informatie",
     "nousAider": "Ons helpen",
     "tickets": "Tickets aan vrije bijdrage →",
-    "fullyBooked": "Volgeboekt",
+    "fullyBooked": "bboekt",
     "dropdownFonctionnement": {
       "financements": "Financiering",
       "charte": "Ons charter",
@@ -44,7 +44,7 @@
     "objectifLabel": "Doel",
     "objectifValue": "Alle vrijwilligers helpen mee om het kamp draaiende te houden",
     "btnBillets": "Tickets kopen",
-    "fullyBooked": "VOLGEBOEKT",
+    "fullyBooked": "VOLZET",
     "fullyBookedMoreInfo": "meer info",
     "btnProgramme": "Bekijk het programma →",
     "btnBenevolat": "Word vrijwilliger"
@@ -414,7 +414,7 @@
       "subtitle": "Zodat je bijdraagt naar jouw mogelijkheden."
     },
     "fullyBookedBanner": {
-      "title": "We zijn volgeboekt",
+      "title": "We zijn volzet",
       "text": "We hebben geen plaatsen meer. Schrijf je in op de <link>wachtlijst</link> en we laten je misschien weten als er een plaats vrijkomt.",
       "doNotCome": "Er zullen geen tickets aan de deur te koop zijn. Tenzij je een bevestiging van ons per e-mail hebt ontvangen (check je spam): kom dan aub niet!"
     },
