@@ -4,7 +4,7 @@ import { getTranslations } from '../i18n/getTranslations';
 const t = getTranslations('enBref');
 ---
 
-<section class="section-en-bref reveal" id="en-bref-section">
+<section class="section-en-bref" id="en-bref-section">
   <div class="section-header">
     <div>
       <p class="section-eyebrow">{t('eyebrow')}</p>
@@ -12,7 +12,7 @@ const t = getTranslations('enBref');
     </div>
   </div>
   <div class="cards-grid cards-grid--relaxed">
-    <div class="card">
+    <div class="card reveal">
       <span class="card-icon">🎤</span>
       <h3 class="card-title">{t('card1Title')}</h3>
       <p class="card-text">
@@ -25,12 +25,12 @@ const t = getTranslations('enBref');
         )}
       </p>
     </div>
-    <div class="card">
+    <div class="card reveal">
       <span class="card-icon">🏕️</span>
       <h3 class="card-title">{t('card2Title')}</h3>
       <p class="card-text">{t('card2Text')}</p>
     </div>
-    <div class="card">
+    <div class="card reveal">
       <span class="card-icon">🫵</span>
       <h3 class="card-title">{t('card3Title')}</h3>
       <p class="card-text">

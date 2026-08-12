@@ -20,7 +20,7 @@ const partagerCards = [
 ];
 ---
 
-<div class="page-hero anim">
+<div class="page-hero">
   <p class="page-hero-eyebrow">✦ {t('hero.eyebrow')}</p>
   <h1 class="page-hero-title">{t('hero.title')}</h1>
   <p class="page-hero-sub">{t('hero.subtitle')}</p>
@@ -28,13 +28,13 @@ const partagerCards = [
 
 <div class="page-content">
 
-  <div class="reveal" id="rejoindre">
+  <div id="rejoindre">
     <h2>{t('rejoindre.title')}</h2>
     <p set:html={t('rejoindre.text')}></p>
 
     <div class="cards-grid">
       {rejoindreCards.map((card) => (
-        <div class="card surface-card">
+        <div class="card surface-card reveal">
           <span class="card-icon">{['🤩', '⚒️', '👋'][rejoindreCards.indexOf(card)]}</span>
           <h3 class="card-title">{card.title}</h3>
           <p class="card-text">{card.text}</p>
@@ -48,7 +48,7 @@ const partagerCards = [
 
   <hr class="divider">
 
-  <div id="don" class="reveal">
+  <div id="don">
     <h2>{t('don.title')}</h2>
     <p class="section-lead section-lead--large" set:html={t('don.text')}></p>
     <PaymentOptions />
@@ -56,13 +56,13 @@ const partagerCards = [
 
   <hr class="divider">
 
-  <div class="reveal" id="partager">
+  <div id="partager">
     <h2>{t('partager.title')}</h2>
     <p>{t('partager.text')}</p>
 
     <div class="cards-grid">
       {partagerCards.map((card) => (
-        <div class="card surface-card">
+        <div class="card surface-card reveal">
           <span class="card-icon">{['📄', '📄', '🏷️'][partagerCards.indexOf(card)]}</span>
           <h3 class="card-title">{card.title}</h3>
           <p class="card-text">{card.text}</p>
@@ -74,7 +74,7 @@ const partagerCards = [
 
   <hr class="divider">
 
-  <div class="reveal" id="materiel">
+  <div id="materiel">
     <h2>{t('materiel.title')}</h2>
     <p>{t('materiel.text')}</p>
 

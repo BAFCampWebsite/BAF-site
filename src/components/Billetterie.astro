@@ -60,13 +60,13 @@ const pricingTiers = [
 ---
 
 <!-- Hero -->
-<div class="page-hero anim">
+<div class="page-hero">
   <p class="page-hero-eyebrow">🎟️ {t('hero.eyebrow')}</p>
   <h1 class="page-hero-title">{t('hero.title')}</h1>
   <p class="page-hero-sub">{t('hero.subtitle')}</p>
 </div>
 
-<div class="fullybooked-banner anim" id="sold-out">
+<div class="fullybooked-banner" id="sold-out">
   <p class="fullybooked-banner-title">❌ {t('fullyBookedBanner.title')} ❌</p>
   <p class="fullybooked-banner-text" set:html={t.markup('fullyBookedBanner.text', {
     link: fullyBookedLinkTag(t('registration.formUrl')),
@@ -77,7 +77,7 @@ const pricingTiers = [
 <div class="page-content">
 
   <!-- Section 1 — Intro -->
-  <div class="reveal section-intro">
+  <div class="section-intro">
     <h2>{t('intro.title')}</h2>
     <p class="section-lead" set:html={t('intro.p1')}></p>
     <p class="section-lead" set:html={t('intro.p2')}></p>
@@ -91,7 +91,7 @@ const pricingTiers = [
   <hr class="divider">
 
   <!-- Section 2 — Privilege Meter -->
-  <div class="reveal" id="thunometre-section">
+  <div id="thunometre-section">
     <h2>🌡️ {t('privilegeMeter.title')}</h2>
     <p class="section-lead">{t('privilegeMeter.description')}</p>
 
@@ -135,7 +135,7 @@ const pricingTiers = [
   <hr class="divider">
 
   <!-- Section 3 — Pricing -->
-  <div class="reveal">
+  <div>
     <h2>{t('pricing.title')}</h2>
 
     <div class="tarif-scale">
@@ -164,7 +164,7 @@ const pricingTiers = [
   <hr class="divider">
 
   <!-- Section 4 — Registration -->
-  <div class="reveal" id="inscription">
+  <div id="inscription">
     <h2>🎟️ {t('registration.title')}</h2>
     <p class="section-lead" set:html={t('registration.description').replace('{salesConditionsUrl}', salesConditionsUrl)}></p>
 
@@ -183,7 +183,7 @@ const pricingTiers = [
   <hr class="divider">
 
   <!-- Section 5 — Payment -->
-  <div class="reveal" id="payment">
+  <div id="payment">
     <h2>{t('payment.title')}</h2>
     <p class="section-lead section-lead--large" set:html={t('payment.text')}></p>
     <PaymentOptions />
@@ -192,7 +192,7 @@ const pricingTiers = [
   <hr class="divider">
 
   <!-- Section 6 — Contact -->
-  <div class="reveal">
+  <div>
     <h2>{t('contact.title')}</h2>
     <p class="contact-copy">
       {t('contact.text')}

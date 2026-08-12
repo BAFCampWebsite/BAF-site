@@ -16,7 +16,7 @@ const cadreItems = [ t('cadre.items.i0'), t('cadre.items.i1'), t('cadre.items.i2
 const accessibiliteItems = [ t('accessibilite.items.i0'), t('accessibilite.items.i1'), t('accessibilite.items.i2'), t('accessibilite.items.i3') ];
 ---
 
-<div class="page-hero anim">
+<div class="page-hero">
   <p class="page-hero-eyebrow">✦ {t('hero.eyebrow')}</p>
   <h1 class="page-hero-title">{t('hero.title')}</h1>
   <p class="page-hero-sub">{t('hero.subtitle')}</p>
@@ -24,17 +24,17 @@ const accessibiliteItems = [ t('accessibilite.items.i0'), t('accessibilite.items
 
 <div class="page-content">
 
-  <div class="reveal">
+  <div>
     <h2>{t('pourquoi.title')}</h2>
     <p>{t('pourquoi.p1')}</p>
     <p>{t('pourquoi.p2')}</p>
   </div>
 
-  <div class="reveal">
+  <div>
     <h2>{t('objectifs.title')}</h2>
     <div class="cards-grid">
       {objectifItems.map((item) => (
-        <div class="card">
+        <div class="card reveal">
           <span class="card-icon">{['🤝', '📢', '🧠'][objectifItems.indexOf(item)]}</span>
           <h3 class="card-title">{item.title}</h3>
           <p class="card-text">{item.text}</p>
@@ -43,7 +43,7 @@ const accessibiliteItems = [ t('accessibilite.items.i0'), t('accessibilite.items
     </div>
   </div>
 
-  <div class="reveal">
+  <div>
     <h2>{t('positionnement.title')}</h2>
     <p>{t('positionnement.text')}</p>
     <ul>
@@ -51,7 +51,7 @@ const accessibiliteItems = [ t('accessibilite.items.i0'), t('accessibilite.items
     </ul>
   </div>
 
-  <div class="reveal">
+  <div>
     <h2>{t('fonctionnement.title')}</h2>
     <p>{t('fonctionnement.text')}</p>
     <ul>
@@ -59,7 +59,7 @@ const accessibiliteItems = [ t('accessibilite.items.i0'), t('accessibilite.items
     </ul>
   </div>
 
-  <div class="reveal">
+  <div>
     <h2>{t('cadre.title')}</h2>
     <p>{t('cadre.text')}</p>
     <ul>
@@ -68,7 +68,7 @@ const accessibiliteItems = [ t('accessibilite.items.i0'), t('accessibilite.items
     <p>{t('cadre.note')}</p>
   </div>
 
-  <div class="reveal">
+  <div>
     <h2>{t('accessibilite.title')}</h2>
     <p>{t('accessibilite.text')}</p>
     <ul>
@@ -78,7 +78,7 @@ const accessibiliteItems = [ t('accessibilite.items.i0'), t('accessibilite.items
 
   <hr class="divider">
 
-  <div class="reveal">
+  <div>
     <h2>{t('charteComplete.title')}</h2>
     <p>{t('charteComplete.text')}</p>
 

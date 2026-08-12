@@ -21,7 +21,7 @@ const gtIcons = ['💚', '🗣️', '🫶', '⚒️', '🎤', '💰', '🔄'];
 const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.items.i2'), t('missions.items.i3'), t('missions.items.i4'), t('missions.items.i5'), t('missions.items.i6'), t('missions.items.i7'), t('missions.items.i8'), t('missions.items.i9') ];
 ---
 
-<div class="page-hero anim">
+<div class="page-hero">
   <p class="page-hero-eyebrow">✦ {t('hero.eyebrow')}</p>
   <h1 class="page-hero-title">{t('hero.title')}</h1>
   <p class="page-hero-sub">{t('hero.subtitle')}</p>
@@ -29,7 +29,7 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
 
 <div class="page-content">
 
-  <div class="reveal">
+  <div>
     <h2>{t('structure.title')}</h2>
     <p>{t('structure.text')}</p>
     <RoseCta>
@@ -39,12 +39,12 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
     </RoseCta>
   </div>
 
-  <div class="reveal gt-section">
+  <div class="gt-section">
     <h2>{t('gt.title')}</h2>
     <p>{t('gt.intro')}</p>
     <div class="cards-grid">
       {gtItems.map((item, i) => (
-        <div class="card surface-card">
+        <div class="card surface-card reveal">
           <span class="card-icon">{gtIcons[i]}</span>
           <h3 class="card-title">{item.title}</h3>
           <p class="card-text">{item.text}</p>
@@ -53,7 +53,7 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
     </div>
   </div>
 
-  <div class="reveal">
+  <div>
     <h2>{t('benevolat.title')}</h2>
     <p set:html={t('benevolat.text1')}></p>
     <p set:html={t('benevolat.text2')}></p>
@@ -63,14 +63,14 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
 
   <hr class="divider">
 
-  <div class="reveal">
+  <div>
     <h2>{t('missions.title')}</h2>
     <ul>
       {missions.map((m) => <li>{m}</li>)}
     </ul>
   </div>
 
-  <div class="reveal">
+  <div>
     <h2>{t('inscription.title')}</h2>
     <p>{t('inscription.text')}</p>
 
