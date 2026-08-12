@@ -32,7 +32,7 @@ export const TENT_KEYS = [
   "peoplepower",
   // "moving",
   // "chill",
-  // "other",
+  "other",
 ] as const;
 
 export type TentKey = (typeof TENT_KEYS)[number];
