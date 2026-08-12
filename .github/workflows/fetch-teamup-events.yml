@@ -2,7 +2,8 @@ name: Update Teamup events
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    # 10:00, 14:00, 18:00 and 00:00 Brussels time (UTC+2 in August 2026)
+    - cron: '0 8,12,16,22 * * *'
   workflow_dispatch:
 
 jobs:
@@ -18,6 +19,15 @@ jobs:
       END_DATE: 2026-08-25
       DEST_BRANCH: teamup_sync
     steps:
+      - name: Stop running after 2026-08-25
+        # GitHub Actions schedules have no end date, so fail loudly once we're past
+        # it to remind us to disable this workflow.
+        run: |
+          if [ "$(date -u +%Y%m%d)" -gt 20260825 ]; then
+            echo "::error::Disable me!"
+            exit 1
+          fi
+
       - name: Check out repository
         uses: actions/checkout@v4
         with:
@@ -40,7 +50,7 @@ jobs:
       - name: Fetch Teamup events
         run: npm run fetch:teamup
 
-      - name: Create or update PR if changes exist
+      - name: Create or update PR and enable auto-merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -57,16 +67,19 @@ jobs:
           git commit -m "chore: update Teamup events"
           git push --force-with-lease origin "$branch_name"
 
-          existing_pr="$(gh pr list --head "$branch_name" --base main --state open --json number --jq '.[0].number')"
+          pr_number="$(gh pr list --head "$branch_name" --base main --state open --json number --jq '.[0].number')"
 
-          if [ -n "$existing_pr" ]; then
-            echo "Pull request already exists: #$existing_pr"
-            exit 0
+          if [ -n "$pr_number" ]; then
+            echo "Pull request already exists: #$pr_number"
+          else
+            pr_url="$(gh pr create \
+              --base main \
+              --head "$branch_name" \
+              --title "chore: update Teamup events" \
+              --body "Automated update of Teamup events data.")"
+            echo "Created pull request: $pr_url"
+            pr_number="${pr_url##*/}"
           fi
 
-          gh pr create \
-            --base main \
-            --head "$branch_name" \
-            --title "chore: update Teamup events" \
-            --body "Automated update of Teamup events data." \
-            --reviewer "jvacek,junglegobs,BAFCampWebsite"
+          # Merges automatically once mergeable, unless a review requests changes.
+          gh pr merge --auto --squash --delete-branch "$pr_number"
