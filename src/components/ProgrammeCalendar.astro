@@ -917,6 +917,30 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   let activeSearch = "";
   let searchTimeout = null;
 
+  // Initialise state from URL params so views and filters are shareable.
+  const urlParams = new URLSearchParams(window.location.search);
+  const validViews = new Set(["timeline", "cards", "list"]);
+  const validDays = new Set(
+    Array.from(document.querySelectorAll('.calendar-filter[data-day]')).map((b) => b.dataset.day),
+  );
+  const validCategories = new Set(
+    Array.from(document.querySelectorAll('.calendar-filter[data-category]')).map((b) => b.dataset.category),
+  );
+  const validLocations = new Set(
+    Array.from(document.querySelectorAll('.calendar-filter[data-location]')).map((b) => b.dataset.location),
+  );
+
+  const urlView = urlParams.get("view");
+  if (urlView && validViews.has(urlView)) activeView = urlView;
+  const urlDay = urlParams.get("day");
+  if (urlDay && validDays.has(urlDay)) activeDay = urlDay;
+  const urlCategory = urlParams.get("category");
+  if (urlCategory && validCategories.has(urlCategory)) activeCategory = urlCategory;
+  const urlLocation = urlParams.get("location");
+  if (urlLocation && validLocations.has(urlLocation)) activeLocation = urlLocation;
+  const urlSearch = (urlParams.get("search") || "").trim();
+  if (urlSearch) activeSearch = urlSearch.toLowerCase();
+
   function downloadCalendarEvent(event) {
     if (!event) return;
     const url = createCalendarFile(event);
@@ -1037,6 +1061,18 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     }
   }
 
+  function syncUrl() {
+    const params = new URLSearchParams();
+    if (activeView !== "timeline") params.set("view", activeView);
+    if (activeDay !== "all") params.set("day", activeDay);
+    if (activeCategory !== "all") params.set("category", activeCategory);
+    if (activeLocation !== "all") params.set("location", activeLocation);
+    if (activeSearch) params.set("search", activeSearch);
+    const query = params.toString();
+    const url = query ? `${window.location.pathname}?${query}` : window.location.pathname;
+    history.replaceState(null, "", url);
+  }
+
   function updateClearButtons() {
     const dayClear = document.querySelector('[data-clear="day"]');
     const catClear = document.querySelector('[data-clear="category"]');
@@ -1071,6 +1107,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
         categoryButtons.forEach((item) => item.classList.toggle("active", item === button && activeCategory !== "all"));
       }
       updateClearButtons();
+      syncUrl();
       renderEvents();
     });
   });
@@ -1090,6 +1127,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
         document.querySelectorAll('.calendar-filter[data-location]').forEach((b) => b.classList.remove("active"));
       }
       updateClearButtons();
+      syncUrl();
       renderEvents();
     });
   });
@@ -1099,6 +1137,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     toggle.addEventListener("click", () => {
       activeView = toggle.dataset.view || "cards";
       viewToggles.forEach((item) => item.classList.toggle("active", item === toggle));
+      syncUrl();
       renderEvents();
     });
   });
@@ -1118,6 +1157,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(() => {
       activeSearch = (searchInput.value || "").toLowerCase().trim();
+      syncUrl();
       renderEvents();
     }, 250);
   });
@@ -1153,6 +1193,18 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
       closeModal();
     }
   });
+  // Reflect URL state in the UI controls.
+  viewToggles.forEach((toggle) => toggle.classList.toggle("active", toggle.dataset.view === activeView));
+  document.querySelectorAll('.calendar-filter[data-day]').forEach((b) => b.classList.toggle("active", b.dataset.day === activeDay));
+  document.querySelectorAll('.calendar-filter[data-category]').forEach((b) => b.classList.toggle("active", b.dataset.category === activeCategory));
+  document.querySelectorAll('.calendar-filter[data-location]').forEach((b) => b.classList.toggle("active", b.dataset.location === activeLocation));
+  if (searchInput && urlSearch) searchInput.value = urlSearch;
+
+  // Keep the filter panel open on mobile when the URL carries active filters,
+  // so the applied state stays visible.
+  const hasActiveFilters = activeDay !== "all" || activeCategory !== "all" || activeLocation !== "all" || Boolean(activeSearch);
+  if (hasActiveFilters && filterPanel) filterPanel.dataset.userOpened = "1";
+
   renderEvents();
   updateClearButtons();
 
