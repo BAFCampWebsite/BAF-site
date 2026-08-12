@@ -569,6 +569,7 @@
       "noEvents": "Nog geen evenementen voor deze selectie.",
       "addToCalendar": "Aan kalender toevoegen",
       "timelineOther": "Anders",
+      "jumpToNow": "Ga naar nu",
       "filters": {
         "conference": "Conferentie",
         "film": "Film",

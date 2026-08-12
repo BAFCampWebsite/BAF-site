@@ -768,10 +768,12 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   }
   .timeline-now {
     position: absolute;
-    left: 0;
+    left: var(--tl-gutter-width);
     right: 0;
     height: 0;
-    z-index: 4;
+    /* Below the sticky gutter (z-index 2) so the opaque gutter masks the
+       line's left end while the timeline scrolls horizontally. */
+    z-index: 1;
     pointer-events: none;
   }
   .timeline-now::before {
@@ -785,9 +787,10 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   }
   .timeline-now-time {
     position: absolute;
-    left: 4px;
+    right: 6px;
     top: 0;
     transform: translateY(-50%);
+    z-index: 1;
     font-family: var(--font-mono);
     font-size: 0.6rem;
     font-weight: 700;
@@ -946,6 +949,8 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   const closeButtons = Array.from(document.querySelectorAll("[data-close-modal]"));
   const filtersToggle = document.querySelector("[data-toggle-filters]");
   const filterPanel = document.querySelector("[data-filter-panel]");
+  const nowJumpWrap = document.querySelector("[data-now-jump-wrap]");
+  const nowJumpButton = document.querySelector("[data-jump-to-now]");
   let activeCategory = "all";
   let activeDay = "all";
   let activeLocation = "all";
@@ -1068,21 +1073,25 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
 
     if (!visibleEvents.length) {
       container.innerHTML = `<div class="calendar-empty">${noEventsMessage}</div>`;
+      syncNowButton();
       return;
     }
 
     if (activeView === "timeline") {
       container.innerHTML = renderTimeline(visibleEvents, activeDay, noLocationLabel, timelineOtherLabel, getNowInfo(new Date()));
+      syncNowButton();
       return;
     }
 
     if (activeView === "list") {
       container.innerHTML = renderList(visibleEvents, activeDay, addToCalendarLabel);
+      syncNowButton();
       return;
     }
 
     if (activeDay !== "all") {
       container.innerHTML = `<div class="calendar-day-grid">${visibleEvents.map(renderCard).join("")}</div>`;
+      syncNowButton();
     } else {
       const dayKeys = [...new Set(visibleEvents.map((e) => e.dayKey))];
       container.innerHTML = dayKeys.map((dayKey) => {
@@ -1095,6 +1104,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
           </div>
         `;
       }).join("");
+      syncNowButton();
     }
   }
 
@@ -1266,6 +1276,27 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   applyResponsiveFilters();
   mobileQuery.addEventListener?.("change", applyResponsiveFilters);
 
+  // "Jump to now" button under the hero: only visible while the timeline
+  // marker is shown, and it scrolls the line to the vertical centre.
+  function syncNowButton() {
+    if (!nowJumpWrap) return;
+    const hasLine = Boolean(container?.querySelector(".timeline-now:not([hidden])"));
+    if (hasLine) {
+      nowJumpWrap.removeAttribute("hidden");
+    } else {
+      nowJumpWrap.setAttribute("hidden", "");
+    }
+  }
+
+  function jumpToNow() {
+    const marker = container?.querySelector(".timeline-now:not([hidden])");
+    if (!marker) return;
+    const y = marker.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    window.scrollTo({ top: Math.max(y, 0), behavior: "smooth" });
+  }
+
+  nowJumpButton?.addEventListener("click", jumpToNow);
+
   // Keep the "now" marker on the timeline in sync with the visitor's clock.
   function updateNowMarkers() {
     const now = getNowInfo(new Date());
@@ -1274,18 +1305,23 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
       const dayKey = section.getAttribute("data-day-key");
       const dayStart = Number(section.getAttribute("data-day-start"));
       const dayEnd = Number(section.getAttribute("data-day-end"));
-      const marker = section.querySelector(".timeline-now");
-      if (!dayKey || !marker || Number.isNaN(dayStart) || Number.isNaN(dayEnd)) return;
+      if (!dayKey || Number.isNaN(dayStart) || Number.isNaN(dayEnd)) return;
       const { top, visible } = getNowPosition(now, dayKey, dayStart, dayEnd);
-      marker.setAttribute("style", `top:${top}px;`);
-      if (visible) {
-        marker.removeAttribute("hidden");
-      } else {
-        marker.setAttribute("hidden", "");
-      }
-      const time = marker.querySelector(".timeline-now-time");
-      if (time) time.textContent = now.timeLabel;
+      const topStyle = `top:${top}px;`;
+      const line = section.querySelector(".timeline-now");
+      const chip = section.querySelector(".timeline-now-time");
+      [line, chip].forEach((el) => {
+        if (!el) return;
+        el.setAttribute("style", topStyle);
+        if (visible) {
+          el.removeAttribute("hidden");
+        } else {
+          el.setAttribute("hidden", "");
+        }
+      });
+      if (visible && chip) chip.textContent = now.timeLabel;
     });
+    syncNowButton();
   }
 
   // Re-align to the start of each minute so the marker never lags behind.

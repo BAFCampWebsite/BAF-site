@@ -36,6 +36,13 @@ const spaceItems = [
   <p class="page-hero-sub">{t("hero.subtitle")}</p>
 </div>
 
+<div class="now-jump-wrap" data-now-jump-wrap hidden>
+  <button type="button" class="now-jump-button" data-jump-to-now>
+    <span class="now-jump-dot" aria-hidden="true"></span>
+    {t("calendar.jumpToNow")}
+  </button>
+</div>
+
 <div class="page-content">
   <!-- <div class="reveal reveal-spacing">
     <div class="construction-banner">
@@ -115,6 +122,43 @@ const spaceItems = [
     font-size: 20px;
     font-family: cursive;
     letter-spacing: 1px;
+  }
+  .now-jump-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 24px 20px 2px;
+  }
+  .now-jump-wrap[hidden] {
+    display: none;
+  }
+  .now-jump-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: var(--contour);
+    border-radius: 999px;
+    background: var(--vert);
+    box-shadow: var(--ombre-vert);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--creme);
+    padding: 14px 28px;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .now-jump-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 0 var(--vert-dark);
+  }
+  .now-jump-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--rose-dark);
+    box-shadow: 0 0 0 4px var(--rose-a20);
   }
   .bloc-fil {
     margin: 20px auto;

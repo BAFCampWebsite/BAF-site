@@ -569,6 +569,7 @@
       "noEvents": "No events for this selection yet.",
       "addToCalendar": "Add to calendar",
       "timelineOther": "Other",
+      "jumpToNow": "Jump to now",
       "filters": {
         "conference": "Conference",
         "film": "Film",

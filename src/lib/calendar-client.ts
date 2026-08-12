@@ -313,13 +313,17 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
   const nowMarkup = now
     ? (() => {
         const { top, visible } = getNowPosition(now, dayKey, dayStart, dayEnd);
-        return `
-        <div class="timeline-now" style="top:${top}px;" ${visible ? "" : "hidden"} aria-hidden="true">
-          <span class="timeline-now-time">${now.timeLabel}</span>
-        </div>
-      `;
+        const hiddenAttr = visible ? "" : "hidden";
+        const style = `top:${top}px;`;
+        return {
+          // Chip lives inside the sticky gutter so it stays pinned to the
+          // frozen column while the timeline scrolls horizontally.
+          chip: `<span class="timeline-now-time" style="${style}" ${hiddenAttr} aria-hidden="true">${now.timeLabel}</span>`,
+          // Line starts at the gutter's right edge, i.e. at the chip.
+          line: `<div class="timeline-now" style="${style}" ${hiddenAttr} aria-hidden="true"></div>`,
+        };
       })()
-    : "";
+    : { chip: "", line: "" };
 
   return `
     <div class="timeline-day-section" data-day-key="${dayKey}" data-day-start="${dayStart}" data-day-end="${dayEnd}">
@@ -331,9 +335,9 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
             ${headers}
           </div>
           <div class="timeline-body" style="height:${heightPx}px;">
-            <div class="timeline-gutter">${hourLabels.join("")}</div>
+            <div class="timeline-gutter">${hourLabels.join("")}${nowMarkup.chip}</div>
             ${tracks}
-            ${nowMarkup}
+            ${nowMarkup.line}
           </div>
         </div>
       </div>
