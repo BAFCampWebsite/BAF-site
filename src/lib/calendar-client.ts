@@ -336,8 +336,8 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
           </div>
           <div class="timeline-body" style="height:${heightPx}px;">
             <div class="timeline-gutter">${hourLabels.join("")}${nowMarkup.chip}</div>
-            ${tracks}
             ${nowMarkup.line}
+            ${tracks}
           </div>
         </div>
       </div>

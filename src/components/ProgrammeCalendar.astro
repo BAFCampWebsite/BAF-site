@@ -771,9 +771,9 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     left: var(--tl-gutter-width);
     right: 0;
     height: 0;
-    /* Below the sticky gutter (z-index 2) so the opaque gutter masks the
-       line's left end while the timeline scrolls horizontally. */
-    z-index: 1;
+    /* Painted before the tracks (DOM order, no z-index) so the event cards
+       sit on top of it, and below the sticky gutter (z-index 2) so the
+       opaque gutter masks the line's left end while scrolling. */
     pointer-events: none;
   }
   .timeline-now::before {
@@ -809,7 +809,9 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     border: 1px solid var(--sable);
     border-left: 4px solid var(--rose);
     border-radius: 8px;
-    background: var(--creme);
+    background: var(--creme-a65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     padding: 4px 6px;
     cursor: pointer;
     display: flex;
