@@ -1217,6 +1217,9 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
         filtersToggle.setAttribute("aria-expanded", "false");
         const label = filtersToggle.querySelector(".calendar-filters-toggle-label");
         if (label) label.textContent = showFiltersLabel;
+      } else if (filterPanel.hidden === false) {
+        // Panel kept open (e.g. filters applied via URL): reflect open state.
+        filtersToggle.setAttribute("aria-expanded", "true");
       }
     } else {
       filterPanel.hidden = false;
