@@ -552,7 +552,8 @@
       "title": "Programma-overzicht",
       "view": {
         "cards": "Kaarten",
-        "timeline": "Tijdlijn"
+        "timeline": "Tijdlijn",
+        "list": "Lijst"
       },
       "filterLabels": {
         "day": "Dag",

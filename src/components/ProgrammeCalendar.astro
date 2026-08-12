@@ -15,6 +15,7 @@ const addToCalendarLabel = t("calendar.addToCalendar");
 const searchPlaceholder = t("calendar.searchPlaceholder");
 const viewCardsLabel = t("calendar.view.cards");
 const viewTimelineLabel = t("calendar.view.timeline");
+const viewListLabel = t("calendar.view.list");
 const showFiltersLabel = t("calendar.showFilters");
 const hideFiltersLabel = t("calendar.hideFilters");
 const noLocationLabel = t("calendar.noLocation");
@@ -45,6 +46,9 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
       </button>
       <button class="calendar-view-toggle" type="button" data-view="cards">
         {viewCardsLabel}
+      </button>
+      <button class="calendar-view-toggle" type="button" data-view="list">
+        {viewListLabel}
       </button>
       <button class="calendar-filters-toggle" type="button" data-toggle-filters aria-expanded="false">
         <span class="calendar-filters-toggle-icon" aria-hidden="true"></span>
@@ -149,6 +153,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   }
   .calendar-toolbar {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     margin: 4px 0;
   }
@@ -164,6 +169,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   .calendar-card-category,
   .calendar-modal-meta-item strong,
   .calendar-modal-badge,
+  .calendar-list-badge,
   .calendar-filter {
     font-family: var(--font-mono);
     font-weight: 700;
@@ -182,6 +188,8 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   .calendar-card-preview,
   .calendar-modal-meta-item,
   .calendar-modal-notes,
+  .calendar-list-meta-item,
+  .calendar-list-notes,
   .calendar-empty {
     font-family: var(--font-serif);
     color: var(--encre);
@@ -475,6 +483,113 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     opacity: 0.8;
     padding-top: 2px;
   }
+  .calendar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .calendar-list-item {
+    background: var(--blanc-sale);
+    border: 1px solid var(--sable);
+    border-left: 6px solid var(--rose);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--ombre);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .calendar-list-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ombre-lg);
+  }
+  .calendar-list-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .calendar-list-head-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .calendar-list-time {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--gris-encre);
+    white-space: nowrap;
+  }
+  .calendar-list-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-left: auto;
+  }
+  .calendar-list-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.63rem;
+    color: white;
+    background: var(--rose);
+  }
+  .calendar-list-title {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+  .calendar-list-body {
+    display: grid;
+    grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+  .calendar-list-meta {
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--creme);
+    border: 1px solid var(--sable);
+  }
+  .calendar-list-meta-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .calendar-list-meta-item span:first-child {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    min-width: 1.1rem;
+  }
+  .calendar-list-language {
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+  .calendar-list-notes {
+    margin: 0;
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--creme);
+    border: 1px solid var(--sable);
+  }
+  .calendar-list-add {
+    padding: 6px 12px;
+    font-size: 0.6rem;
+    line-height: 1;
+  }
   .calendar-modal {
     position: fixed;
     inset: 0;
@@ -767,6 +882,9 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
       flex: 0 0 auto;
       padding-top: 0;
     }
+    .calendar-list-body {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
@@ -776,6 +894,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     createCalendarFile,
     renderCard,
     renderTimeline,
+    renderList,
   } from "../lib/calendar-client";
 
   const calendarData = JSON.parse(
@@ -896,6 +1015,11 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
       return;
     }
 
+    if (activeView === "list") {
+      container.innerHTML = renderList(visibleEvents, activeDay, addToCalendarLabel);
+      return;
+    }
+
     if (activeDay !== "all") {
       container.innerHTML = `<div class="calendar-day-grid">${visibleEvents.map(renderCard).join("")}</div>`;
     } else {
@@ -999,7 +1123,14 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   });
 
   container?.addEventListener("click", (event) => {
-    const card = event.target.closest(".calendar-card, .timeline-event");
+    const addButton = event.target.closest("[data-add-to-calendar]");
+    if (addButton) {
+      const row = addButton.closest("[data-event-id]");
+      const addToEvent = eventCards.find((item) => String(item.id) === row?.getAttribute("data-event-id"));
+      if (addToEvent) downloadCalendarEvent(addToEvent);
+      return;
+    }
+    const card = event.target.closest(".calendar-card, .timeline-event, .calendar-list-item");
     if (!card) return;
     const selectedEvent = eventCards.find((item) => String(item.id) === card.getAttribute("data-event-id"));
     if (selectedEvent) {

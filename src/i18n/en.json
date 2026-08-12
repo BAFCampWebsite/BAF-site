@@ -552,7 +552,8 @@
       "title": "Programme overview",
       "view": {
         "cards": "Cards",
-        "timeline": "Timeline"
+        "timeline": "Timeline",
+        "list": "List"
       },
       "filterLabels": {
         "day": "Day",

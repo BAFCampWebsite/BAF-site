@@ -552,7 +552,8 @@
       "title": "Aperçu du programme",
       "view": {
         "cards": "Cartes",
-        "timeline": "Frise"
+        "timeline": "Frise",
+        "list": "Liste"
       },
       "filterLabels": {
         "day": "Jour",

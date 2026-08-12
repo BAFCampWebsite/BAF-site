@@ -106,6 +106,62 @@ export function renderCard(event: TimelineEvent) {
   `;
 }
 
+export function renderListEvent(event: TimelineEvent, addToCalendarLabel: string) {
+  const title = escapeHtml(event.title || "Untitled event");
+  const timeLabel = escapeHtml(event.timeLabel || "");
+  const location = event.location ? escapeHtml(event.location) : "";
+  const who = event.who ? escapeHtml(event.who) : "";
+  const languageNote = event.languageNote ? escapeHtml(event.languageNote) : "";
+  const notes = event.notesText ? escapeHtml(event.notesText).replace(/\n/g, "<br>") : "";
+  const accent = (event.accents && event.accents[0]) || "var(--rose)";
+  const badges = (event.labels || [])
+    .map((label, i) => {
+      const bg = (event.accents && event.accents[i]) || "var(--rose)";
+      return `<span class="calendar-list-badge" style="background:${bg};">${escapeHtml(label)}</span>`;
+    })
+    .join("");
+
+  return `
+    <article class="calendar-list-item" data-event-id="${event.id}" style="border-left-color:${accent};">
+      <div class="calendar-list-head">
+        <div class="calendar-list-head-left">
+          <span class="calendar-list-time">${timeLabel}</span>
+          <button type="button" class="calendar-modal-action calendar-list-add" data-add-to-calendar>${escapeHtml(addToCalendarLabel)}</button>
+        </div>
+        <div class="calendar-list-badges">${badges}</div>
+      </div>
+      <h3 class="calendar-list-title">${title}</h3>
+      <div class="calendar-list-body">
+        <div class="calendar-list-meta">
+          ${location ? `<div class="calendar-list-meta-item"><span>🎪</span><span>${location}</span></div>` : ""}
+          ${who ? `<div class="calendar-list-meta-item"><span>👤</span><span>${who}</span></div>` : ""}
+          ${languageNote ? `<div class="calendar-list-meta-item"><span>💬</span><span class="calendar-list-language">${languageNote}</span></div>` : ""}
+        </div>
+        ${notes ? `<p class="calendar-list-notes">${notes}</p>` : ""}
+      </div>
+    </article>
+  `;
+}
+
+export function renderList(visibleEvents: TimelineEvent[], activeDay: string, addToCalendarLabel: string) {
+  if (activeDay !== "all") {
+    return `<div class="calendar-list">${visibleEvents.map((e) => renderListEvent(e, addToCalendarLabel)).join("")}</div>`;
+  }
+  const dayKeys = [...new Set(visibleEvents.map((e) => e.dayKey))];
+  return dayKeys
+    .map((dayKey) => {
+      const dayEvents = visibleEvents.filter((e) => e.dayKey === dayKey);
+      const dayLabel = escapeHtml(dayEvents[0].dayLabel || dayKey);
+      return `
+        <div class="calendar-day-section">
+          <h2 class="calendar-day-heading">${dayLabel}</h2>
+          <div class="calendar-list">${dayEvents.map((e) => renderListEvent(e, addToCalendarLabel)).join("")}</div>
+        </div>
+      `;
+    })
+    .join("");
+}
+
 export function getMinutes(value: string | Date) {
   const date = new Date(value);
   const brussels = new Intl.DateTimeFormat("en-GB", {
