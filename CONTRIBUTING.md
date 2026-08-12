@@ -222,7 +222,9 @@ This will call the Teamup API and write the JSON output to [public/teamup-events
 
 ### GitHub Actions Teamup sync
 
-The Teamup update workflow runs automatically on a schedule (6am UTC), but it can also be triggered manually from GitHub Actions if you don't want to wait.
+The Teamup update workflow runs automatically four times a day (10:00, 14:00, 18:00 and 00:00 Brussels time), but it can also be triggered manually from GitHub Actions if you don't want to wait.
+
+The workflow is only needed during the event period: after **25 August 2026** it fails on purpose with a `Disable me!` error, to remind us to turn the workflow off.
 
 #### Trigger the action manually
 
@@ -233,12 +235,10 @@ You can trigger the action manually like so:
 3. Click "Run workflow".
 4. Choose the branch you want to use (usually `main`) and confirm.
 
-The workflow will reset its state to the latest `main`, run the export script, and create a pull request if [public/teamup-events.json](public/teamup-events.json) changed.
+The workflow will reset its state to the latest `main`, run the export script, and, if [public/teamup-events.json](public/teamup-events.json) changed, create a pull request.
 
-#### Merge the resulting pull request
+#### Auto-merge
 
-1. Open the [pull request created by the workflow](https://github.com/BAFCampWebsite/BAF-site/pulls?q=is%3Apr+is%3Aopen+chore%3A+update+Teamup+events). (it'll be called `chore: update Teamup events`)
-2. Review the changes in [public/teamup-events.json](public/teamup-events.json) to confirm the update looks correct.
-3. When ready, merge the pull request into the `main` branch.
+The pull request merges on its own: the workflow enables auto-merge right after creating or updating it, so it merges (squash) as soon as it is mergeable and no review has requested changes. The branch is deleted once merged.
 
-A normal GitHub merge flow is fine here, but "Squash and merge" is often the cleanest option for this kind of automated update.
+If you need to prevent a merge, request changes on the pull request (this pauses auto-merge) or disable auto-merge from the pull request page.
