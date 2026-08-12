@@ -766,6 +766,38 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     background: var(--blanc-sale);
     padding: 0 4px;
   }
+  .timeline-now {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 4;
+    pointer-events: none;
+  }
+  .timeline-now::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    height: 2px;
+    background: var(--rose-dark);
+  }
+  .timeline-now-time {
+    position: absolute;
+    left: 4px;
+    top: 0;
+    transform: translateY(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+    background: var(--rose-dark);
+    border-radius: 999px;
+    padding: 2px 6px;
+    white-space: nowrap;
+  }
   .timeline-event {
     position: absolute;
     left: var(--tl-row-pad);
@@ -898,6 +930,8 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     renderCard,
     renderTimeline,
     renderList,
+    getNowInfo,
+    getNowPosition,
   } from "../lib/calendar-client";
 
   const calendarData = JSON.parse(
@@ -1038,7 +1072,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     }
 
     if (activeView === "timeline") {
-      container.innerHTML = renderTimeline(visibleEvents, activeDay, noLocationLabel, timelineOtherLabel);
+      container.innerHTML = renderTimeline(visibleEvents, activeDay, noLocationLabel, timelineOtherLabel, getNowInfo(new Date()));
       return;
     }
 
@@ -1231,5 +1265,35 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   }
   applyResponsiveFilters();
   mobileQuery.addEventListener?.("change", applyResponsiveFilters);
+
+  // Keep the "now" marker on the timeline in sync with the visitor's clock.
+  function updateNowMarkers() {
+    const now = getNowInfo(new Date());
+    const sections = container?.querySelectorAll(".timeline-day-section");
+    sections?.forEach((section) => {
+      const dayKey = section.getAttribute("data-day-key");
+      const dayStart = Number(section.getAttribute("data-day-start"));
+      const dayEnd = Number(section.getAttribute("data-day-end"));
+      const marker = section.querySelector(".timeline-now");
+      if (!dayKey || !marker || Number.isNaN(dayStart) || Number.isNaN(dayEnd)) return;
+      const { top, visible } = getNowPosition(now, dayKey, dayStart, dayEnd);
+      marker.setAttribute("style", `top:${top}px;`);
+      if (visible) {
+        marker.removeAttribute("hidden");
+      } else {
+        marker.setAttribute("hidden", "");
+      }
+      const time = marker.querySelector(".timeline-now-time");
+      if (time) time.textContent = now.timeLabel;
+    });
+  }
+
+  // Re-align to the start of each minute so the marker never lags behind.
+  function scheduleNowTick() {
+    updateNowMarkers();
+    const msToNextMinute = (60 - new Date().getSeconds()) * 1000 + 50;
+    setTimeout(scheduleNowTick, msToNextMinute);
+  }
+  scheduleNowTick();
 
 </script>

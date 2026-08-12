@@ -191,6 +191,44 @@ export function getDayMinutes(value: string | Date, dayKey: string) {
   return mins + diffDays * 24 * 60;
 }
 
+export type TimelineNow = {
+  brusselsDayKey: string;
+  minutes: number;
+  timeLabel: string;
+};
+
+// Current time (browser clock) expressed in the festival's Brussels time zone,
+// using the same "day" convention as the event day keys (events before 3am
+// belong to the previous festival day).
+export function getNowInfo(date: Date): TimelineNow {
+  const minutes = getMinutes(date);
+  const hh = String(Math.floor(minutes / 60) % 24).padStart(2, "0");
+  const mi = String(minutes % 60).padStart(2, "0");
+  return {
+    brusselsDayKey: new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Brussels",
+    }).format(date),
+    minutes,
+    timeLabel: `${hh}:${mi}`,
+  };
+}
+
+// Position of "now" on a given day's timeline, in the same minute-of-day
+// convention as getDayMinutes (minutes past midnight roll over into the next
+// day, e.g. 01:30 of the following calendar day maps to 1470).
+export function getNowPosition(
+  now: TimelineNow,
+  dayKey: string,
+  dayStart: number,
+  dayEnd: number,
+) {
+  const nowDay = new Date(now.brusselsDayKey + "T00:00:00Z").getTime();
+  const keyDay = new Date(dayKey + "T00:00:00Z").getTime();
+  const diffDays = Math.round((nowDay - keyDay) / 86400000);
+  const nowMin = now.minutes + diffDays * 24 * 60;
+  return { top: nowMin - dayStart, visible: nowMin >= dayStart && nowMin <= dayEnd };
+}
+
 import { getTentKey, TENT_KEYS } from "./calendar";
 
 export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, dayKey: string, showLocation = false) {
@@ -228,7 +266,7 @@ export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, d
   `;
 }
 
-export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], noLocationLabel: string, otherLabel: string) {
+export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], noLocationLabel: string, otherLabel: string, now: TimelineNow | null = null) {
   const startTimes = dayEvents.map((e) => getDayMinutes(e.start_dt, dayKey));
   const endTimes = dayEvents.map((e) => getDayMinutes(e.end_dt, dayKey));
   let dayStart = Math.floor(Math.min(...startTimes) / 60) * 60;
@@ -272,8 +310,19 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
   const dayLabel = escapeHtml(dayEvents[0].dayLabel || dayKey);
   const minWidth = Math.max(tents.length * 200 + 70, 520);
 
+  const nowMarkup = now
+    ? (() => {
+        const { top, visible } = getNowPosition(now, dayKey, dayStart, dayEnd);
+        return `
+        <div class="timeline-now" style="top:${top}px;" ${visible ? "" : "hidden"} aria-hidden="true">
+          <span class="timeline-now-time">${now.timeLabel}</span>
+        </div>
+      `;
+      })()
+    : "";
+
   return `
-    <div class="timeline-day-section">
+    <div class="timeline-day-section" data-day-key="${dayKey}" data-day-start="${dayStart}" data-day-end="${dayEnd}">
       <h2 class="calendar-day-heading">${dayLabel}</h2>
       <div class="timeline-scroll">
         <div class="timeline" style="min-width:${minWidth}px;">
@@ -284,6 +333,7 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
           <div class="timeline-body" style="height:${heightPx}px;">
             <div class="timeline-gutter">${hourLabels.join("")}</div>
             ${tracks}
+            ${nowMarkup}
           </div>
         </div>
       </div>
@@ -291,12 +341,12 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
   `;
 }
 
-export function renderTimeline(visibleEvents: TimelineEvent[], activeDay: string, noLocationLabel: string, otherLabel: string) {
+export function renderTimeline(visibleEvents: TimelineEvent[], activeDay: string, noLocationLabel: string, otherLabel: string, now: TimelineNow | null = null) {
   if (activeDay !== "all") {
-    return renderTimelineDay(activeDay, visibleEvents, noLocationLabel, otherLabel);
+    return renderTimelineDay(activeDay, visibleEvents, noLocationLabel, otherLabel, now);
   }
   const dayKeys = [...new Set(visibleEvents.map((e) => e.dayKey))];
   return dayKeys
-    .map((dayKey) => renderTimelineDay(dayKey, visibleEvents.filter((e) => e.dayKey === dayKey), noLocationLabel, otherLabel))
+    .map((dayKey) => renderTimelineDay(dayKey, visibleEvents.filter((e) => e.dayKey === dayKey), noLocationLabel, otherLabel, now))
     .join("");
 }
