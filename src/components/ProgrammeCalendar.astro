@@ -40,11 +40,11 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     </div>
 
     <div class="calendar-toolbar" aria-label="View switcher">
-      <button class="calendar-view-toggle active" type="button" data-view="cards">
-        {viewCardsLabel}
-      </button>
-      <button class="calendar-view-toggle" type="button" data-view="timeline">
+      <button class="calendar-view-toggle active" type="button" data-view="timeline">
         {viewTimelineLabel}
+      </button>
+      <button class="calendar-view-toggle" type="button" data-view="cards">
+        {viewCardsLabel}
       </button>
       <button class="calendar-filters-toggle" type="button" data-toggle-filters aria-expanded="false">
         <span class="calendar-filters-toggle-icon" aria-hidden="true"></span>
@@ -793,7 +793,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   let activeCategory = "all";
   let activeDay = "all";
   let activeLocation = "all";
-  let activeView = "cards";
+  let activeView = "timeline";
   let activeEvent = null;
   let activeSearch = "";
   let searchTimeout = null;
