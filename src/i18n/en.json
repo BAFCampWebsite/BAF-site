@@ -575,7 +575,14 @@
         "film": "Film",
         "music": "Music",
         "theatre": "Theatre",
-        "workshops": "Workshops"
+        "workshops": "Workshops",
+        "short": {
+          "conference": "conf",
+          "film": "film",
+          "music": "mus",
+          "theatre": "thea",
+          "workshops": "work"
+        }
       }
     },
     "dayContent": {

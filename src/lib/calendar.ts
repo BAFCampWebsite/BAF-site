@@ -12,11 +12,31 @@ const defaultCategory = "WORKSHOPS";
 
 export function buildCategoryMeta(t: (key: string) => string) {
   return {
-    CONFERENCE: { accent: "var(--rose)", label: t("calendar.filters.conference") },
-    FILM: { accent: "var(--bleu)", label: t("calendar.filters.film") },
-    MUSIC: { accent: "#9b4d4d", label: t("calendar.filters.music") },
-    THEATRE: { accent: "#3f6f4f", label: t("calendar.filters.theatre") },
-    WORKSHOPS: { accent: "#5e4b9b", label: t("calendar.filters.workshops") },
+    CONFERENCE: {
+      accent: "var(--rose)",
+      label: t("calendar.filters.conference"),
+      shortLabel: t("calendar.filters.short.conference"),
+    },
+    FILM: {
+      accent: "var(--bleu)",
+      label: t("calendar.filters.film"),
+      shortLabel: t("calendar.filters.short.film"),
+    },
+    MUSIC: {
+      accent: "#9b4d4d",
+      label: t("calendar.filters.music"),
+      shortLabel: t("calendar.filters.short.music"),
+    },
+    THEATRE: {
+      accent: "#3f6f4f",
+      label: t("calendar.filters.theatre"),
+      shortLabel: t("calendar.filters.short.theatre"),
+    },
+    WORKSHOPS: {
+      accent: "#5e4b9b",
+      label: t("calendar.filters.workshops"),
+      shortLabel: t("calendar.filters.short.workshops"),
+    },
   };
 }
 
@@ -158,6 +178,7 @@ export function buildCalendarEvents(
         categories: cats,
         accents: cats.map((c) => categoryMeta[c]?.accent ?? "var(--gris-encre)"),
         labels: cats.map((c) => categoryMeta[c]?.label ?? workshopsLabel),
+        shortLabels: cats.map((c) => categoryMeta[c]?.shortLabel ?? categoryMeta[c]?.label ?? workshopsLabel),
         locationKey: getTentKey(event.location as string),
         dayKey,
         dayLabel,

@@ -60,6 +60,7 @@ type TimelineEvent = {
   locationKey?: string;
   dayKey: string;
   labels?: string[];
+  shortLabels?: string[];
   accents?: string[];
   languageNote?: string;
   previewText?: string;
@@ -241,7 +242,9 @@ export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, d
   const timeLabel = escapeHtml(event.timeLabel || "");
   const location = event.location ? escapeHtml(String(event.location).trim()) : "";
   const languageNote = event.languageNote ? escapeHtml(event.languageNote) : "";
-  const badges = (event.labels || [])
+  const badgeLabels =
+    event.shortLabels && event.shortLabels.length ? event.shortLabels : event.labels || [];
+  const badges = badgeLabels
     .map((label, i) => {
       const bg = (event.accents && event.accents[i]) || "var(--rose)";
       return `<span class="timeline-event-badge" style="background:${bg};">${escapeHtml(label)}</span>`;
