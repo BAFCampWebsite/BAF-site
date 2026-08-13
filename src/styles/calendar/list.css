@@ -1,0 +1,125 @@
+/* List view styles for the programme calendar. */
+
+.calendar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.calendar-list-item {
+  background: var(--blanc-sale);
+  border: 1px solid var(--sable);
+  border-left: 6px solid var(--rose);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--ombre);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.calendar-list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ombre-lg);
+}
+.calendar-list-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.calendar-list-head-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.calendar-list-time {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gris-encre);
+  white-space: nowrap;
+}
+.calendar-list-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-left: auto;
+}
+/* Mono/uppercase convention, shared with the modal badges in base.css. */
+.calendar-list-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.63rem;
+  color: white;
+  background: var(--rose);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.calendar-list-title {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+.calendar-list-body {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.calendar-list-meta {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--creme);
+  border: 1px solid var(--sable);
+}
+.calendar-list-meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.calendar-list-meta-item span:first-child {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  min-width: 1.1rem;
+}
+.calendar-list-info {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+/* Serif convention, shared with the modal in base.css. */
+.calendar-list-meta-item,
+.calendar-list-notes {
+  font-family: var(--font-serif);
+  color: var(--encre);
+}
+.calendar-list-notes {
+  margin: 0;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--creme);
+  border: 1px solid var(--sable);
+}
+.calendar-list-add {
+  padding: 6px 12px;
+  font-size: 0.6rem;
+  line-height: 1;
+}
+@media (max-width: 640px) {
+  .calendar-list-body {
+    grid-template-columns: 1fr;
+  }
+}

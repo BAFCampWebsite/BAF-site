@@ -49,7 +49,24 @@ export function createCalendarFile(event: Record<string, unknown>) {
   return URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
 }
 
-type TimelineEvent = {
+export function downloadCalendarEvent(event: Record<string, unknown>) {
+  if (!event) return;
+  const url = createCalendarFile(event);
+  const link = document.createElement("a");
+  const filename = String(event.title || "event")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "") || "event";
+
+  link.href = url;
+  link.download = `${filename}.ics`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  setTimeout(() => URL.revokeObjectURL(url), 0);
+}
+
+export type TimelineEvent = {
   id: string | number;
   title?: string;
   start_dt: string;

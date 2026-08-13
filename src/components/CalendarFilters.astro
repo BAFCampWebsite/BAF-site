@@ -1,0 +1,77 @@
+---
+import { getTranslations } from "../i18n/getTranslations";
+
+interface Props {
+  dayFilters: { dayKey: string; label: string }[];
+  locationFilters: { locationKey: string; label: string }[];
+}
+
+const { dayFilters, locationFilters }: Props = Astro.props;
+const t = getTranslations("programme");
+const searchPlaceholder = t("calendar.searchPlaceholder");
+---
+
+<div class="calendar-filter-panel" data-filter-panel>
+  <div class="calendar-filter-row">
+    <span class="calendar-filter-label"><span class="calendar-filter-emoji">🗓️</span> {t("calendar.filterLabels.day")}</span>
+    <div class="calendar-filter-options">
+      {
+        dayFilters.map((day) => (
+          <button class="calendar-filter" data-day={day.dayKey}>
+            {day.label}
+          </button>
+        ))
+      }
+      <button class="calendar-filter-clear" type="button" data-clear="day" disabled>
+        ✕ {t("calendar.clear")}
+      </button>
+    </div>
+  </div>
+
+  <div class="calendar-filter-row">
+    <span class="calendar-filter-label"><span class="calendar-filter-emoji">🤨</span> {t("calendar.filterLabels.type")}</span>
+    <div class="calendar-filter-options">
+      <button class="calendar-filter" data-category="CONFERENCE">
+        {t("calendar.filters.conference")}
+      </button>
+      <button class="calendar-filter" data-category="FILM">
+        {t("calendar.filters.film")}
+      </button>
+      <button class="calendar-filter" data-category="MUSIC">
+        {t("calendar.filters.music")}
+      </button>
+      <button class="calendar-filter" data-category="THEATRE">
+        {t("calendar.filters.theatre")}
+      </button>
+      <button class="calendar-filter" data-category="WORKSHOPS">
+        {t("calendar.filters.workshops")}
+      </button>
+      <button class="calendar-filter-clear" type="button" data-clear="category" disabled>
+        ✕ {t("calendar.clear")}
+      </button>
+    </div>
+  </div>
+
+  <div class="calendar-filter-row">
+    <span class="calendar-filter-label"><span class="calendar-filter-emoji">🎪</span> {t("calendar.filterLabels.location")}</span>
+    <div class="calendar-filter-options">
+      {
+        locationFilters.map((loc) => (
+          <button class="calendar-filter" data-location={loc.locationKey}>
+            {loc.label}
+          </button>
+        ))
+      }
+      <button class="calendar-filter-clear" type="button" data-clear="location" disabled>
+        ✕ {t("calendar.clear")}
+      </button>
+    </div>
+  </div>
+
+  <div class="calendar-filter-row">
+    <span class="calendar-filter-label"><span class="calendar-filter-emoji">🔎</span> {t("calendar.filterLabels.search")}</span>
+    <div class="calendar-filter-options">
+      <input class="calendar-search-input" type="search" placeholder={searchPlaceholder} aria-label={searchPlaceholder}>
+    </div>
+  </div>
+</div>

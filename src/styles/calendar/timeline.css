@@ -1,0 +1,217 @@
+/* Timeline view styles for the programme calendar. */
+
+.timeline {
+  --tl-hour-height: 60px;
+  --tl-gutter-width: 56px;
+  --tl-row-pad: 6px;
+  background: var(--blanc-sale);
+}
+.timeline-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--sable);
+  background: var(--creme);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.63rem;
+  color: var(--gris-encre);
+}
+.timeline-corner {
+  flex: 0 0 var(--tl-gutter-width);
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background: var(--creme);
+  border-right: 1px solid var(--sable);
+}
+.timeline-loc-header {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 10px var(--tl-row-pad);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-left: 1px solid var(--sable);
+}
+.timeline-body {
+  display: flex;
+  position: relative;
+}
+.timeline-gutter,
+.timeline-track {
+  background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--tl-hour-height) - 1px),
+      var(--sable) calc(var(--tl-hour-height) - 1px),
+      var(--sable) var(--tl-hour-height)
+    );
+}
+.timeline-track {
+  flex: 1 1 0;
+  min-width: 0;
+  position: relative;
+  border-left: 1px solid var(--sable);
+}
+.timeline-gutter {
+  flex: 0 0 var(--tl-gutter-width);
+  position: relative;
+  border-right: 1px solid var(--sable);
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: var(--blanc-sale);
+}
+.timeline-hour {
+  position: absolute;
+  right: 6px;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--gris-encre);
+  white-space: nowrap;
+  background: var(--blanc-sale);
+  padding: 0 4px;
+}
+.timeline-now {
+  position: absolute;
+  left: var(--tl-gutter-width);
+  right: 0;
+  height: 0;
+  /* Painted before the tracks (DOM order, no z-index) so the event cards
+     sit on top of it, and below the sticky gutter (z-index 2) so the
+     opaque gutter masks the line's left end while scrolling. */
+  pointer-events: none;
+}
+.timeline-now::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 2px;
+  background: var(--rose-dark);
+}
+.timeline-now-time {
+  position: absolute;
+  right: 6px;
+  top: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: white;
+  background: var(--rose-dark);
+  border-radius: 999px;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+.timeline-event {
+  position: absolute;
+  left: var(--tl-row-pad);
+  right: var(--tl-row-pad);
+  overflow: hidden;
+  border: 1px solid var(--sable);
+  border-left: 4px solid var(--rose);
+  border-radius: 8px;
+  background: var(--creme-a65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 4px 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: var(--ombre);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.timeline-event:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--ombre-lg);
+  z-index: 2;
+}
+.timeline-event-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.timeline-event-time {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--gris-encre);
+  white-space: nowrap;
+}
+.timeline-event-badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-left: auto;
+}
+.timeline-event-badge {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 1px 6px;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: white;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.timeline-event-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--encre);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.timeline-event-info {
+  align-self: flex-start;
+  font-size: 0.55rem;
+  font-style: italic;
+  color: var(--gris-encre);
+  line-height: 1.5;
+  white-space: nowrap;
+  padding-right: 2px;
+}
+.timeline-event-location {
+  align-self: flex-start;
+  font-size: 0.55rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gris-encre);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.timeline-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: var(--contour);
+  border-radius: 16px;
+  background: var(--blanc-sale);
+  box-shadow: var(--ombre);
+}
+.timeline-day-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

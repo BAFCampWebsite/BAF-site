@@ -8,11 +8,16 @@ import {
   buildLocationFilters,
   buildCategoryMeta,
 } from "../lib/calendar";
+import CalendarFilters from "./CalendarFilters.astro";
+import EventModal from "./EventModal.astro";
+import "../styles/calendar/base.css";
+import "../styles/calendar/cards.css";
+import "../styles/calendar/list.css";
+import "../styles/calendar/timeline.css";
 
 const lang = getLocale();
 const t = getTranslations("programme");
 const addToCalendarLabel = t("calendar.addToCalendar");
-const searchPlaceholder = t("calendar.searchPlaceholder");
 const viewCardsLabel = t("calendar.view.cards");
 const viewTimelineLabel = t("calendar.view.timeline");
 const viewListLabel = t("calendar.view.list");
@@ -68,70 +73,8 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
       </button>
     </div>
 
-    <div class="calendar-filter-panel" data-filter-panel>
-      <div class="calendar-filter-row">
-        <span class="calendar-filter-label"><span class="calendar-filter-emoji">🗓️</span> {t("calendar.filterLabels.day")}</span>
-        <div class="calendar-filter-options">
-          {
-            dayFilters.map((day) => (
-              <button class="calendar-filter" data-day={day.dayKey}>
-                {day.label}
-              </button>
-            ))
-          }
-          <button class="calendar-filter-clear" type="button" data-clear="day" disabled>
-            ✕ {t("calendar.clear")}
-          </button>
-        </div>
-      </div>
+    <CalendarFilters dayFilters={dayFilters} locationFilters={locationFilters} />
 
-      <div class="calendar-filter-row">
-        <span class="calendar-filter-label"><span class="calendar-filter-emoji">🤨</span> {t("calendar.filterLabels.type")}</span>
-        <div class="calendar-filter-options">
-          <button class="calendar-filter" data-category="CONFERENCE">
-            {t("calendar.filters.conference")}
-          </button>
-          <button class="calendar-filter" data-category="FILM">
-            {t("calendar.filters.film")}
-          </button>
-          <button class="calendar-filter" data-category="MUSIC">
-            {t("calendar.filters.music")}
-          </button>
-          <button class="calendar-filter" data-category="THEATRE">
-            {t("calendar.filters.theatre")}
-          </button>
-          <button class="calendar-filter" data-category="WORKSHOPS">
-            {t("calendar.filters.workshops")}
-          </button>
-          <button class="calendar-filter-clear" type="button" data-clear="category" disabled>
-            ✕ {t("calendar.clear")}
-          </button>
-        </div>
-      </div>
-
-      <div class="calendar-filter-row">
-        <span class="calendar-filter-label"><span class="calendar-filter-emoji">🎪</span> {t("calendar.filterLabels.location")}</span>
-        <div class="calendar-filter-options">
-          {
-            locationFilters.map((loc) => (
-              <button class="calendar-filter" data-location={loc.locationKey}>
-                {loc.label}
-              </button>
-            ))
-          }
-          <button class="calendar-filter-clear" type="button" data-clear="location" disabled>
-            ✕ {t("calendar.clear")}
-          </button>
-        </div>
-      </div>
-
-      <div class="calendar-filter-row">
-        <span class="calendar-filter-label"><span class="calendar-filter-emoji">🔎</span> {t("calendar.filterLabels.search")}</span>
-        <div class="calendar-filter-options">
-          <input class="calendar-search-input" type="search" placeholder={searchPlaceholder} aria-label={searchPlaceholder}>
-        </div>
-      </div>
-    </div>
     <div class="construction-banner">⚠ {t("construction")}</div>
 
     <div id="calendarEvents" class="calendar-grid"></div>
@@ -148,806 +91,19 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   </div>
 </div>
 
-<div id="eventModal" class="calendar-modal" aria-hidden="true">
-  <div class="calendar-modal-backdrop" data-close-modal></div>
-  <div class="calendar-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="eventModalTitle">
-    <button class="calendar-modal-close" type="button" aria-label="Close" data-close-modal>
-      ×
-    </button>
-    <div id="eventModalContent"></div>
-  </div>
-</div>
-
-<style is:global>
-  .calendar-shell {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .calendar-toolbar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 4px 0;
-  }
-  .calendar-special-card {
-    background: var(--blanc-sale);
-    border: var(--contour-lg);
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: var(--ombre-lg);
-  }
-  .calendar-special-label,
-  .calendar-card-date,
-  .calendar-card-category,
-  .calendar-modal-meta-item strong,
-  .calendar-modal-badge,
-  .calendar-list-badge,
-  .calendar-filter {
-    font-family: var(--font-mono);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .calendar-special-label {
-    display: inline-block;
-    font-size: 0.68rem;
-    color: var(--gris-encre);
-    margin-bottom: 10px;
-    letter-spacing: 0.16em;
-  }
-  .calendar-special-content p,
-  .calendar-card-meta-item,
-  .calendar-card-preview,
-  .calendar-modal-meta-item,
-  .calendar-modal-notes,
-  .calendar-list-meta-item,
-  .calendar-list-notes,
-  .calendar-empty {
-    font-family: var(--font-serif);
-    color: var(--encre);
-  }
-  .calendar-special-content p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    margin: 0;
-  }
-  .calendar-filter-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: var(--contour);
-    border-radius: 16px;
-    padding: 16px;
-    background: var(--blanc-sale);
-    box-shadow: var(--ombre);
-  }
-  .calendar-filter-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--sable);
-  }
-  .calendar-filter-row:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-  .calendar-filter-label {
-    flex: 0 0 90px;
-    padding-top: 9px;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-size: 0.62rem;
-    color: var(--gris-encre);
-  }
-  .calendar-filter-emoji {
-    font-size: 1rem;
-    letter-spacing: 0;
-  }
-  .calendar-filter-options {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    min-width: 0;
-  }
-  .calendar-filter-clear {
-    border: var(--contour);
-    border-radius: 999px;
-    background: transparent;
-    color: var(--gris-encre);
-    padding: 8px 14px;
-    font-size: 0.66rem;
-    cursor: pointer;
-    opacity: 0.75;
-  }
-  .calendar-filter-clear:hover:not(:disabled) {
-    color: var(--encre);
-    opacity: 1;
-  }
-  .calendar-filter-clear:disabled {
-    cursor: default;
-    opacity: 0.3;
-  }
-  .calendar-filter {
-    border: var(--contour);
-    border-radius: 999px;
-    background: var(--blanc-sale);
-    color: var(--encre);
-    padding: 8px 14px;
-    font-size: 0.68rem;
-    cursor: pointer;
-    box-shadow: var(--ombre);
-  }
-  .calendar-filter[data-day] { background: var(--creme); }
-  .calendar-filter.active {
-    background: var(--rose);
-    color: white;
-    border-color: var(--rose);
-  }
-  .calendar-search-input {
-    border: var(--contour);
-    border-radius: 999px;
-    background: var(--blanc-sale);
-    color: var(--encre);
-    padding: 8px 14px;
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    outline: none;
-    max-width: 260px;
-    width: 100%;
-    box-shadow: var(--ombre);
-  }
-  .calendar-search-input:focus {
-    border-color: var(--rose);
-    box-shadow: var(--ombre), 0 0 0 2px color-mix(in srgb, var(--rose) 30%, transparent);
-  }
-  .calendar-view-toggle {
-    border: 2px solid var(--encre);
-    border-radius: 999px;
-    background: var(--blanc-sale);
-    color: var(--encre);
-    padding: 12px 24px;
-    font-size: 0.82rem;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    cursor: pointer;
-    box-shadow: var(--ombre);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
-  }
-  .calendar-filters-toggle {
-    display: none;
-    border: 2px solid var(--encre);
-    border-radius: 999px;
-    background: var(--creme);
-    color: var(--encre);
-    padding: 12px 18px;
-    font-size: 0.82rem;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    cursor: pointer;
-    box-shadow: var(--ombre);
-    align-items: center;
-    gap: 8px;
-    margin-left: auto;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
-  }
-  .calendar-filters-toggle-icon {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border: 2px solid var(--encre);
-    border-radius: 2px;
-    flex: 0 0 auto;
-    transition: transform 0.15s ease;
-  }
-  .calendar-filters-toggle[aria-expanded="true"] .calendar-filters-toggle-icon {
-    background: var(--rose);
-    transform: rotate(45deg);
-  }
-  .calendar-filters-toggle:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--ombre-lg);
-  }
-  .calendar-view-toggle:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--ombre-lg);
-  }
-  .calendar-view-toggle.active {
-    background: var(--rose);
-    color: white;
-    border-color: var(--rose);
-  }
-  .calendar-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  .calendar-day-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .calendar-day-heading {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--gris-encre);
-    padding-bottom: 4px;
-    border-bottom: 2px solid var(--sable);
-  }
-  .calendar-day-grid {
-    display: grid;
-    gap: 16px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-  .calendar-card {
-    background: var(--blanc-sale);
-    border: 1px solid var(--sable);
-    border-left: 6px solid var(--rose);
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: var(--ombre);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .calendar-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--ombre-lg);
-  }
-  .calendar-card-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .calendar-card-top-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-left: auto;
-  }
-  .calendar-card-time {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--gris-encre);
-    white-space: nowrap;
-  }
-  .calendar-card-categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .calendar-card-category {
-    display: inline-flex;
-    align-self: flex-start;
-    border-radius: 999px;
-    padding: 4px 10px;
-    font-size: 0.63rem;
-    color: white;
-    background: var(--rose);
-  }
-  .calendar-card-date {
-    font-size: 0.72rem;
-    color: var(--gris-encre);
-  }
-  .calendar-card h3 {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.4;
-  }
-  .calendar-card-meta-grid,
-  .calendar-modal-meta {
-    display: grid;
-    gap: 8px;
-    padding: 12px;
-    border-radius: 12px;
-    background: var(--creme);
-    border: 1px solid var(--sable);
-  }
-  .calendar-card-meta-item,
-  .calendar-modal-meta-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-  .calendar-card-info,
-  .calendar-modal-info {
-    font-size: 0.8rem;
-    font-style: italic;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
-  }
-  .calendar-card-meta-item span:first-child {
-    font-size: 0.95rem;
-    line-height: 1.2;
-    min-width: 1.1rem;
-  }
-  .calendar-card-preview {
-    margin: 0;
-    font-size: 0.92rem;
-    line-height: 1.6;
-  }
-  .calendar-card-preview.is-placeholder {
-    display: block;
-    text-align: center;
-    font-style: italic;
-    color: var(--gris-encre);
-    opacity: 0.8;
-    padding-top: 2px;
-  }
-  .calendar-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .calendar-list-item {
-    background: var(--blanc-sale);
-    border: 1px solid var(--sable);
-    border-left: 6px solid var(--rose);
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: var(--ombre);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .calendar-list-item:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--ombre-lg);
-  }
-  .calendar-list-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .calendar-list-head-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .calendar-list-time {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--gris-encre);
-    white-space: nowrap;
-  }
-  .calendar-list-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-left: auto;
-  }
-  .calendar-list-badge {
-    display: inline-flex;
-    align-self: flex-start;
-    border-radius: 999px;
-    padding: 4px 10px;
-    font-size: 0.63rem;
-    color: white;
-    background: var(--rose);
-  }
-  .calendar-list-title {
-    margin: 0;
-    font-size: 1.05rem;
-    line-height: 1.4;
-  }
-  .calendar-list-body {
-    display: grid;
-    grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
-    gap: 16px;
-    align-items: start;
-  }
-  .calendar-list-meta {
-    display: grid;
-    gap: 8px;
-    padding: 12px;
-    border-radius: 12px;
-    background: var(--creme);
-    border: 1px solid var(--sable);
-  }
-  .calendar-list-meta-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-  .calendar-list-meta-item span:first-child {
-    font-size: 0.95rem;
-    line-height: 1.2;
-    min-width: 1.1rem;
-  }
-  .calendar-list-info {
-    font-size: 0.8rem;
-    font-style: italic;
-  }
-  .calendar-list-notes {
-    margin: 0;
-    white-space: pre-wrap;
-    font-size: 0.95rem;
-    line-height: 1.8;
-    padding: 12px;
-    border-radius: 12px;
-    background: var(--creme);
-    border: 1px solid var(--sable);
-  }
-  .calendar-list-add {
-    padding: 6px 12px;
-    font-size: 0.6rem;
-    line-height: 1;
-  }
-  .calendar-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 10003;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-  }
-  .calendar-modal.is-open { display: flex; }
-  .calendar-modal-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(15, 15, 15, 0.62);
-    backdrop-filter: blur(3px);
-  }
-  .calendar-modal-dialog {
-    position: relative;
-    width: min(720px, 100%);
-    max-height: min(85vh, 900px);
-    overflow: auto;
-    background: var(--blanc-sale);
-    border: var(--contour-lg);
-    border-radius: 20px;
-    box-shadow: var(--ombre-lg);
-    padding: 28px;
-  }
-  .calendar-modal-close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    border: none;
-    background: transparent;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--gris-encre);
-  }
-  .calendar-modal-title {
-    margin: 0 0 12px;
-    font-size: 1.3rem;
-    line-height: 1.3;
-  }
-  .calendar-modal-body { display: grid; gap: 14px; }
-  .calendar-modal-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .calendar-modal-badge {
-    display: inline-flex;
-    align-self: flex-start;
-    border-radius: 999px;
-    padding: 4px 10px;
-    font-size: 0.63rem;
-    color: white;
-  }
-  .calendar-modal-meta-item strong {
-    font-size: 0.7rem;
-    color: var(--gris-encre);
-    min-width: 90px;
-  }
-  .calendar-modal-notes {
-    white-space: pre-wrap;
-    font-size: 0.95rem;
-    line-height: 1.8;
-    margin: 0;
-  }
-  .calendar-modal-action {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    padding: 10px 14px;
-    border: none;
-    border-radius: 999px;
-    background: var(--rose);
-    color: white;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    box-shadow: var(--ombre);
-  }
-  .calendar-modal-action:hover {
-    opacity: 0.92;
-  }
-  .calendar-empty {
-    border: 1px dashed var(--sable);
-    border-radius: 14px;
-    padding: 24px;
-    text-align: center;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-  .timeline {
-    --tl-hour-height: 60px;
-    --tl-gutter-width: 56px;
-    --tl-row-pad: 6px;
-    background: var(--blanc-sale);
-  }
-  .timeline-header {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--sable);
-    background: var(--creme);
-    font-family: var(--font-mono);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-size: 0.63rem;
-    color: var(--gris-encre);
-  }
-  .timeline-corner {
-    flex: 0 0 var(--tl-gutter-width);
-    position: sticky;
-    left: 0;
-    z-index: 3;
-    background: var(--creme);
-    border-right: 1px solid var(--sable);
-  }
-  .timeline-loc-header {
-    flex: 1 1 0;
-    min-width: 0;
-    padding: 10px var(--tl-row-pad);
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border-left: 1px solid var(--sable);
-  }
-  .timeline-body {
-    display: flex;
-    position: relative;
-  }
-  .timeline-gutter,
-  .timeline-track {
-    background-image: repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent calc(var(--tl-hour-height) - 1px),
-      var(--sable) calc(var(--tl-hour-height) - 1px),
-      var(--sable) var(--tl-hour-height)
-    );
-  }
-  .timeline-track {
-    flex: 1 1 0;
-    min-width: 0;
-    position: relative;
-    border-left: 1px solid var(--sable);
-  }
-  .timeline-gutter {
-    flex: 0 0 var(--tl-gutter-width);
-    position: relative;
-    border-right: 1px solid var(--sable);
-    position: sticky;
-    left: 0;
-    z-index: 2;
-    background: var(--blanc-sale);
-  }
-  .timeline-hour {
-    position: absolute;
-    right: 6px;
-    transform: translateY(-50%);
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    color: var(--gris-encre);
-    white-space: nowrap;
-    background: var(--blanc-sale);
-    padding: 0 4px;
-  }
-  .timeline-now {
-    position: absolute;
-    left: var(--tl-gutter-width);
-    right: 0;
-    height: 0;
-    /* Painted before the tracks (DOM order, no z-index) so the event cards
-       sit on top of it, and below the sticky gutter (z-index 2) so the
-       opaque gutter masks the line's left end while scrolling. */
-    pointer-events: none;
-  }
-  .timeline-now::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -1px;
-    height: 2px;
-    background: var(--rose-dark);
-  }
-  .timeline-now-time {
-    position: absolute;
-    right: 6px;
-    top: 0;
-    transform: translateY(-50%);
-    z-index: 1;
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    font-weight: 700;
-    line-height: 1;
-    color: white;
-    background: var(--rose-dark);
-    border-radius: 999px;
-    padding: 2px 6px;
-    white-space: nowrap;
-  }
-  .timeline-event {
-    position: absolute;
-    left: var(--tl-row-pad);
-    right: var(--tl-row-pad);
-    overflow: hidden;
-    border: 1px solid var(--sable);
-    border-left: 4px solid var(--rose);
-    border-radius: 8px;
-    background: var(--creme-a65);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    padding: 4px 6px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    box-shadow: var(--ombre);
-    transition: transform 0.12s ease, box-shadow 0.12s ease;
-  }
-  .timeline-event:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--ombre-lg);
-    z-index: 2;
-  }
-  .timeline-event-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .timeline-event-time {
-    font-family: var(--font-mono);
-    font-size: 0.58rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    color: var(--gris-encre);
-    white-space: nowrap;
-  }
-  .timeline-event-badges {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 3px;
-    margin-left: auto;
-  }
-  .timeline-event-badge {
-    display: inline-flex;
-    border-radius: 999px;
-    padding: 1px 6px;
-    font-family: var(--font-mono);
-    font-size: 0.5rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: white;
-    white-space: nowrap;
-    line-height: 1.4;
-  }
-  .timeline-event-title {
-    font-size: 0.78rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--encre);
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .timeline-event-info {
-    align-self: flex-start;
-    font-size: 0.55rem;
-    font-style: italic;
-    color: var(--gris-encre);
-    line-height: 1.5;
-    white-space: nowrap;
-    padding-right: 2px;
-  }
-  .timeline-event-location {
-    align-self: flex-start;
-    font-size: 0.55rem;
-    font-weight: 700;
-    font-family: var(--font-mono);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--gris-encre);
-    line-height: 1.4;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
-  }
-  .timeline-scroll {
-    overflow-x: auto;
-    overflow-y: hidden;
-    border: var(--contour);
-    border-radius: 16px;
-    background: var(--blanc-sale);
-    box-shadow: var(--ombre);
-  }
-  .timeline-day-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  @media (max-width: 1024px) { .calendar-day-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 640px) { .calendar-day-grid { grid-template-columns: 1fr; } }
-  @media (max-width: 640px) {
-    .calendar-filters-toggle {
-      display: inline-flex;
-    }
-    .calendar-filter-panel[hidden] {
-      display: none;
-    }
-    .calendar-filter-row {
-      flex-direction: column;
-      gap: 8px;
-    }
-    .calendar-filter-label {
-      flex: 0 0 auto;
-      padding-top: 0;
-    }
-    .calendar-list-body {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
+<EventModal />
 
 <script>
   import {
     escapeHtml,
-    createCalendarFile,
     renderCard,
     renderTimeline,
     renderList,
     getNowInfo,
-    getNowPosition,
+    downloadCalendarEvent,
   } from "../lib/calendar-client";
+  import { createEventModal } from "../lib/calendar-modal";
+  import { createTimelineNow } from "../lib/calendar-timeline";
 
   const calendarData = JSON.parse(
     document.querySelector("[data-calendar-data]")?.textContent || "{}"
@@ -957,18 +113,14 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   const eventCards = calendarEvents || [];
   const buttons = Array.from(document.querySelectorAll(".calendar-filter"));
   const container = document.getElementById("calendarEvents");
-  const modal = document.getElementById("eventModal");
-  const modalContent = document.getElementById("eventModalContent");
-  const closeButtons = Array.from(document.querySelectorAll("[data-close-modal]"));
   const filtersToggle = document.querySelector("[data-toggle-filters]");
   const filterPanel = document.querySelector("[data-filter-panel]");
-  const nowJumpWrap = document.querySelector("[data-now-jump-wrap]");
-  const nowJumpButton = document.querySelector("[data-jump-to-now]");
+  const modal = createEventModal({ addToCalendarLabel, labels });
+  const timelineNow = createTimelineNow({ container });
   let activeCategory = "all";
   let activeDay = "all";
   let activeLocation = "all";
   let activeView = "timeline";
-  let activeEvent = null;
   let activeSearch = "";
   let searchTimeout = null;
 
@@ -996,79 +148,6 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   const urlSearch = (urlParams.get("search") || "").trim();
   if (urlSearch) activeSearch = urlSearch.toLowerCase();
 
-  function downloadCalendarEvent(event) {
-    if (!event) return;
-    const url = createCalendarFile(event);
-    const link = document.createElement("a");
-    const filename = String(event.title || "event")
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-|-$/g, "") || "event";
-
-    link.href = url;
-    link.download = `${filename}.ics`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    setTimeout(() => URL.revokeObjectURL(url), 0);
-  }
-
-  function openModal(event) {
-    if (!modal || !modalContent) return;
-    activeEvent = event;
-    const title = escapeHtml(event.title || "Untitled event");
-    const dateLabel = escapeHtml(event.realDateLabel || event.dayLabel || event.dateLabel || "");
-    const timeLabel = escapeHtml(event.timeLabel || "");
-    const location = event.location ? escapeHtml(event.location) : "";
-    const who = event.who ? escapeHtml(event.who) : "";
-    const language = event.language ? escapeHtml(event.language) : "";
-    const childFriendly = event.childFriendly ? escapeHtml(event.childFriendly) : "";
-    const warnings = event.warnings ? escapeHtml(event.warnings) : "";
-    const notes = event.notesText ? escapeHtml(event.notesText).replace(/\n/g, "<br>") : "";
-    const modalBadges = (event.labels || [])
-      .map((label, i) => {
-        const bg = (event.accents && event.accents[i]) || "var(--rose)";
-        return `<span class="calendar-modal-badge" style="background:${bg};">${escapeHtml(label)}</span>`;
-      })
-      .join("") || `<span class="calendar-modal-badge" style="background:var(--rose);">Event</span>`;
-
-    modalContent.innerHTML = `
-      <div class="calendar-modal-body">
-        <div class="calendar-modal-badges">${modalBadges}</div>
-        <h3 id="eventModalTitle" class="calendar-modal-title">${title}</h3>
-        <div class="calendar-modal-meta">
-          <div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.date || "Date")}</strong><span>${dateLabel}</span></div>
-          <div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.time || "Time")}</strong><span>${timeLabel}</span></div>
-          ${language ? `<div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.language || "Language")}</strong><span class="calendar-modal-info">${language}</span></div>` : ""}
-          ${childFriendly ? `<div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.age || "Age")}</strong><span class="calendar-modal-info">${childFriendly}</span></div>` : ""}
-          ${warnings ? `<div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.warnings || "Warnings")}</strong><span class="calendar-modal-info">${warnings}</span></div>` : ""}
-          ${location ? `<div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.location || "Location")}</strong><span>${location}</span></div>` : ""}
-          ${who ? `<div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.hostedBy || "Hosted by")}</strong><span>${who}</span></div>` : ""}
-        </div>
-        ${notes ? `<p class="calendar-modal-notes">${notes}</p>` : ""}
-        <button type="button" class="calendar-modal-action" data-add-to-calendar>${addToCalendarLabel}</button>
-      </div>
-    `;
-
-    const addToCalendarButton = modalContent.querySelector("[data-add-to-calendar]");
-    addToCalendarButton?.addEventListener("click", (event) => {
-      event.preventDefault();
-      if (activeEvent) {
-        downloadCalendarEvent(activeEvent);
-      }
-    });
-
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-  }
-
-  function closeModal() {
-    if (!modal) return;
-    activeEvent = null;
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-  }
-
   function renderEvents() {
     const visibleEvents = eventCards.filter((event) => {
       const matchesCategory =
@@ -1092,25 +171,25 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
 
     if (!visibleEvents.length) {
       container.innerHTML = `<div class="calendar-empty">${noEventsMessage}</div>`;
-      syncNowButton();
+      timelineNow.syncNowButton();
       return;
     }
 
     if (activeView === "timeline") {
       container.innerHTML = renderTimeline(visibleEvents, activeDay, noLocationLabel, timelineOtherLabel, getNowInfo(new Date()));
-      syncNowButton();
+      timelineNow.syncNowButton();
       return;
     }
 
     if (activeView === "list") {
       container.innerHTML = renderList(visibleEvents, activeDay, addToCalendarLabel);
-      syncNowButton();
+      timelineNow.syncNowButton();
       return;
     }
 
     if (activeDay !== "all") {
       container.innerHTML = `<div class="calendar-day-grid">${visibleEvents.map(renderCard).join("")}</div>`;
-      syncNowButton();
+      timelineNow.syncNowButton();
     } else {
       const dayKeys = [...new Set(visibleEvents.map((e) => e.dayKey))];
       container.innerHTML = dayKeys.map((dayKey) => {
@@ -1123,7 +202,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
           </div>
         `;
       }).join("");
-      syncNowButton();
+      timelineNow.syncNowButton();
     }
   }
 
@@ -1240,25 +319,10 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     if (!card) return;
     const selectedEvent = eventCards.find((item) => String(item.id) === card.getAttribute("data-event-id"));
     if (selectedEvent) {
-      openModal(selectedEvent);
+      modal.openModal(selectedEvent);
     }
   });
 
-  closeButtons.forEach((button) => {
-    button.addEventListener("click", closeModal);
-  });
-
-  modal?.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeModal();
-    }
-  });
   // Reflect URL state in the UI controls.
   viewToggles.forEach((toggle) => toggle.classList.toggle("active", toggle.dataset.view === activeView));
   document.querySelectorAll('.calendar-filter[data-day]').forEach((b) => b.classList.toggle("active", b.dataset.day === activeDay));
@@ -1294,61 +358,4 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   }
   applyResponsiveFilters();
   mobileQuery.addEventListener?.("change", applyResponsiveFilters);
-
-  // "Jump to now" button under the hero: only visible while the timeline
-  // marker is shown, and it scrolls the line to the vertical centre.
-  function syncNowButton() {
-    if (!nowJumpWrap) return;
-    const hasLine = Boolean(container?.querySelector(".timeline-now:not([hidden])"));
-    if (hasLine) {
-      nowJumpWrap.removeAttribute("hidden");
-    } else {
-      nowJumpWrap.setAttribute("hidden", "");
-    }
-  }
-
-  function jumpToNow() {
-    const marker = container?.querySelector(".timeline-now:not([hidden])");
-    if (!marker) return;
-    const y = marker.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
-    window.scrollTo({ top: Math.max(y, 0), behavior: "smooth" });
-  }
-
-  nowJumpButton?.addEventListener("click", jumpToNow);
-
-  // Keep the "now" marker on the timeline in sync with the visitor's clock.
-  function updateNowMarkers() {
-    const now = getNowInfo(new Date());
-    const sections = container?.querySelectorAll(".timeline-day-section");
-    sections?.forEach((section) => {
-      const dayKey = section.getAttribute("data-day-key");
-      const dayStart = Number(section.getAttribute("data-day-start"));
-      const dayEnd = Number(section.getAttribute("data-day-end"));
-      if (!dayKey || Number.isNaN(dayStart) || Number.isNaN(dayEnd)) return;
-      const { top, visible } = getNowPosition(now, dayKey, dayStart, dayEnd);
-      const topStyle = `top:${top}px;`;
-      const line = section.querySelector(".timeline-now");
-      const chip = section.querySelector(".timeline-now-time");
-      [line, chip].forEach((el) => {
-        if (!el) return;
-        el.setAttribute("style", topStyle);
-        if (visible) {
-          el.removeAttribute("hidden");
-        } else {
-          el.setAttribute("hidden", "");
-        }
-      });
-      if (visible && chip) chip.textContent = now.timeLabel;
-    });
-    syncNowButton();
-  }
-
-  // Re-align to the start of each minute so the marker never lags behind.
-  function scheduleNowTick() {
-    updateNowMarkers();
-    const msToNextMinute = (60 - new Date().getSeconds()) * 1000 + 50;
-    setTimeout(scheduleNowTick, msToNextMinute);
-  }
-  scheduleNowTick();
-
 </script>

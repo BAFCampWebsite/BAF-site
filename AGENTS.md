@@ -12,6 +12,7 @@
 ## Architecture
 
 - Make separate components for highly repeatable items, or for very isolated parts which are better to keep out and organised separately.
+- The programme calendar is split across several components, lib modules and per-view stylesheets — see [CALENDAR.md](CALENDAR.md) before touching it.
 
 ## Design
 - There's a design system in [the css sheet](public/style.css), use it and avoid unnecessary inline styles.

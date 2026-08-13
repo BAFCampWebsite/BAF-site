@@ -1,0 +1,119 @@
+/* Card view styles for the programme calendar. */
+
+.calendar-card {
+  background: var(--blanc-sale);
+  border: 1px solid var(--sable);
+  border-left: 6px solid var(--rose);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--ombre);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.calendar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ombre-lg);
+}
+.calendar-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.calendar-card-top-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+.calendar-card-time {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gris-encre);
+  white-space: nowrap;
+}
+.calendar-card-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.calendar-card-category {
+  display: inline-flex;
+  align-self: flex-start;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.63rem;
+  color: white;
+  background: var(--rose);
+}
+/* Mono/uppercase convention, shared with the modal badges in base.css. */
+.calendar-card-date,
+.calendar-card-category {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.calendar-card-date {
+  font-size: 0.72rem;
+  color: var(--gris-encre);
+}
+.calendar-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+/* Mirrors the modal meta block (.calendar-modal-meta-*) in base.css. */
+.calendar-card-meta-grid {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--creme);
+  border: 1px solid var(--sable);
+}
+.calendar-card-meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.calendar-card-info {
+  font-size: 0.8rem;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.calendar-card-meta-item span:first-child {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  min-width: 1.1rem;
+}
+/* Serif convention, shared with the modal in base.css. */
+.calendar-card-meta-item,
+.calendar-card-preview {
+  font-family: var(--font-serif);
+  color: var(--encre);
+}
+.calendar-card-preview {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.calendar-card-preview.is-placeholder {
+  display: block;
+  text-align: center;
+  font-style: italic;
+  color: var(--gris-encre);
+  opacity: 0.8;
+  padding-top: 2px;
+}
