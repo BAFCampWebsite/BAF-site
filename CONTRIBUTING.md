@@ -193,6 +193,16 @@ The events themselves are edited in the teamup.com calendar. That is the source 
 
 These events get downloaded into the repo using the `npm run fetch:teamup` command, and there are two ways to run it. Locally, or using GitHub actions. The latter allows this process to run without a local machine.
 
+### Event comments
+
+Comments on events are parsed into structured fields on each event in [public/teamup-events.json](public/teamup-events.json) by [scripts/parse-teamup-comments.mjs](scripts/parse-teamup-comments.mjs):
+
+- **Language** — comment always starts with `NL`, `FR` or `EN`, e.g. `FR (interpreted to NL, EN)`. Stored as `language`.
+- **Child-friendly** — comment starts with 👶, e.g. `👶 8+`. Stored as `childFriendly`.
+- **Warnings** — comment starts with ⚠️, e.g. `⚠️ physical, violence`. Stored as `warnings`.
+
+Comments that match none of these prefixes are kept in a `comments` fallback array.
+
 ### Local fetch
 
 To fetch events from the Teamup calendar and save them as JSON on your machine locally, you need to configure a few environment variables first.

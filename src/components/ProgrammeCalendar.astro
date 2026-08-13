@@ -21,6 +21,15 @@ const hideFiltersLabel = t("calendar.hideFilters");
 const noLocationLabel = t("calendar.noLocation");
 const noEventsMessage = t("calendar.noEvents");
 const timelineOtherLabel = t("calendar.timelineOther");
+const modalLabels = {
+  date: t("calendar.modalLabels.date"),
+  time: t("calendar.modalLabels.time"),
+  language: t("calendar.modalLabels.language"),
+  location: t("calendar.modalLabels.location"),
+  hostedBy: t("calendar.modalLabels.hostedBy"),
+  age: t("calendar.modalLabels.age"),
+  warnings: t("calendar.modalLabels.warnings"),
+};
 
 const categoryMeta = buildCategoryMeta(t);
 const calendarEvents = buildCalendarEvents(
@@ -134,6 +143,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
       timelineOtherLabel,
       showFiltersLabel,
       hideFiltersLabel,
+      modalLabels,
     })}></script>
   </div>
 </div>
@@ -459,8 +469,8 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     font-size: 0.9rem;
     line-height: 1.5;
   }
-  .calendar-card-language,
-  .calendar-modal-language {
+  .calendar-card-info,
+  .calendar-modal-info {
     font-size: 0.8rem;
     font-style: italic;
     white-space: nowrap;
@@ -574,7 +584,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     line-height: 1.2;
     min-width: 1.1rem;
   }
-  .calendar-list-language {
+  .calendar-list-info {
     font-size: 0.8rem;
     font-style: italic;
   }
@@ -869,7 +879,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .timeline-event-language {
+  .timeline-event-info {
     align-self: flex-start;
     font-size: 0.55rem;
     font-style: italic;
@@ -942,7 +952,8 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   const calendarData = JSON.parse(
     document.querySelector("[data-calendar-data]")?.textContent || "{}"
   );
-  const { calendarEvents, addToCalendarLabel, noLocationLabel, noEventsMessage, timelineOtherLabel, showFiltersLabel, hideFiltersLabel } = calendarData;
+  const { calendarEvents, addToCalendarLabel, noLocationLabel, noEventsMessage, timelineOtherLabel, showFiltersLabel, hideFiltersLabel, modalLabels } = calendarData;
+  const labels = modalLabels || {};
   const eventCards = calendarEvents || [];
   const buttons = Array.from(document.querySelectorAll(".calendar-filter"));
   const container = document.getElementById("calendarEvents");
@@ -1010,7 +1021,9 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     const timeLabel = escapeHtml(event.timeLabel || "");
     const location = event.location ? escapeHtml(event.location) : "";
     const who = event.who ? escapeHtml(event.who) : "";
-    const languageNote = event.languageNote ? escapeHtml(event.languageNote) : "";
+    const language = event.language ? escapeHtml(event.language) : "";
+    const childFriendly = event.childFriendly ? escapeHtml(event.childFriendly) : "";
+    const warnings = event.warnings ? escapeHtml(event.warnings) : "";
     const notes = event.notesText ? escapeHtml(event.notesText).replace(/\n/g, "<br>") : "";
     const modalBadges = (event.labels || [])
       .map((label, i) => {
@@ -1024,11 +1037,13 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
         <div class="calendar-modal-badges">${modalBadges}</div>
         <h3 id="eventModalTitle" class="calendar-modal-title">${title}</h3>
         <div class="calendar-modal-meta">
-          <div class="calendar-modal-meta-item"><strong>Date</strong><span>${dateLabel}</span></div>
-          <div class="calendar-modal-meta-item"><strong>Time</strong><span>${timeLabel}</span></div>
-          ${languageNote ? `<div class="calendar-modal-meta-item"><strong>Language</strong><span class="calendar-modal-language">${languageNote}</span></div>` : ""}
-          ${location ? `<div class="calendar-modal-meta-item"><strong>Location</strong><span>${location}</span></div>` : ""}
-          ${who ? `<div class="calendar-modal-meta-item"><strong>Hosted by</strong><span>${who}</span></div>` : ""}
+          <div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.date || "Date")}</strong><span>${dateLabel}</span></div>
+          <div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.time || "Time")}</strong><span>${timeLabel}</span></div>
+          ${language ? `<div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.language || "Language")}</strong><span class="calendar-modal-info">${language}</span></div>` : ""}
+          ${childFriendly ? `<div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.age || "Age")}</strong><span class="calendar-modal-info">${childFriendly}</span></div>` : ""}
+          ${warnings ? `<div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.warnings || "Warnings")}</strong><span class="calendar-modal-info">${warnings}</span></div>` : ""}
+          ${location ? `<div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.location || "Location")}</strong><span>${location}</span></div>` : ""}
+          ${who ? `<div class="calendar-modal-meta-item"><strong>${escapeHtml(labels.hostedBy || "Hosted by")}</strong><span>${who}</span></div>` : ""}
         </div>
         ${notes ? `<p class="calendar-modal-notes">${notes}</p>` : ""}
         <button type="button" class="calendar-modal-action" data-add-to-calendar>${addToCalendarLabel}</button>
@@ -1066,7 +1081,9 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
         event.title || "",
         event.notesText || event.notes || "",
         event.who || "",
-        event.languageNote || "",
+        event.language || "",
+        event.childFriendly || "",
+        event.warnings || "",
       ].join(" ").toLowerCase();
       return matchesCategory && matchesDay && matchesLocation && haystack.includes(activeSearch);
     });

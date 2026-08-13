@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseComments } from './parse-teamup-comments.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -82,14 +83,6 @@ function overwriteWho(events) {
   }
 }
 
-function stripComments(events) {
-  for (const event of events) {
-    if (Array.isArray(event.comments)) {
-      event.comments = event.comments.map((comment) => ({ message: comment.message }));
-    }
-  }
-}
-
 async function main() {
   const { apiKey, calendarId, startDate, endDate } = loadConfig();
   const payload = await fetchEvents({ apiKey, calendarId, startDate, endDate });
@@ -103,7 +96,7 @@ async function main() {
     .sort((a, b) => a.id - b.id);
 
   overwriteWho(events);
-  stripComments(events);
+  parseComments(events);
 
   mkdirSync(dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, `${JSON.stringify({

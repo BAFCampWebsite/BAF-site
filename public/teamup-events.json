@@ -31,11 +31,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>EN (interpreted to FR, NL)</p>"
-        }
-      ]
+      "language": "EN (interpreted to FR, NL)"
     },
     {
       "id": "2128956605",
@@ -64,8 +60,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2128956803",
@@ -95,11 +90,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2128957005",
@@ -129,11 +120,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>EN (interpreted to NL, FR)</p>"
-        }
-      ]
+      "language": "EN (interpreted to NL, FR)"
     },
     {
       "id": "2130488005",
@@ -148,8 +135,8 @@
       "title": "Reprendre le pouvoir de notre alimentation sur notre territoire",
       "who": "",
       "location": "Chez Georges",
-      "notes": "",
-      "version": "9cf10570cfa2",
+      "notes": "<p>Discuter des différents moyens d’action pour se réapproprier nos systèmes alimentaires. Connaître ses acteurs, les rapports de force, les niveaux de pouvoir, les infrastructures qui les façonnent et les impactent au niveau local pour s’outiller afin de reprendre le pouvoir de notre alimentation sur notre territoire.</p>",
+      "version": "83be4e09e970",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -158,16 +145,12 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:14:37+02:00",
-      "update_dt": "2026-08-10T00:18:42+02:00",
+      "update_dt": "2026-08-13T19:04:21+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2130489616",
@@ -197,11 +180,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2130489719",
@@ -231,11 +210,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2130489882",
@@ -265,11 +240,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR/EN</p>"
-        }
-      ]
+      "language": "FR/EN"
     },
     {
       "id": "2130490667",
@@ -300,11 +271,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2130490724",
@@ -334,11 +301,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2130490812",
@@ -367,8 +330,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2130490903",
@@ -398,11 +360,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2130491694",
@@ -432,11 +390,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2130491819",
@@ -465,8 +419,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2130491931",
@@ -496,8 +449,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2130493424",
@@ -528,11 +480,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2130493467",
@@ -563,11 +511,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2130496137",
@@ -597,11 +541,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2130496707",
@@ -631,11 +571,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>EN</p>"
-        }
-      ]
+      "language": "EN"
     },
     {
       "id": "2130496872",
@@ -665,11 +601,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2130497038",
@@ -699,11 +631,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2130497247",
@@ -733,11 +661,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2130501600",
@@ -766,8 +690,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2130501839",
@@ -797,11 +720,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2130502927",
@@ -831,11 +750,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>EN and FR (interpreted to EN, NL, FR)</p>"
-        }
-      ]
+      "language": "EN and FR (interpreted to EN, NL, FR)"
     },
     {
       "id": "2130503130",
@@ -865,11 +780,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2130503196",
@@ -899,11 +810,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2130503333",
@@ -934,11 +841,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2130503685",
@@ -954,25 +857,21 @@
       "who": "",
       "location": "L'Estaca",
       "notes": "",
-      "version": "afb69b354ad7",
+      "version": "ce126a1a238e",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
-      "start_dt": "2026-08-22T17:30:00+02:00",
-      "end_dt": "2026-08-22T19:00:00+02:00",
+      "start_dt": "2026-08-22T17:00:00+02:00",
+      "end_dt": "2026-08-22T18:30:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T18:08:25+02:00",
-      "update_dt": "2026-08-10T00:47:34+02:00",
+      "update_dt": "2026-08-13T18:57:26+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to EN, NL)</p>"
-        }
-      ]
+      "language": "FR (interpreted to EN, NL)"
     },
     {
       "id": "2130504024",
@@ -1002,11 +901,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>EN</p>"
-        }
-      ]
+      "language": "EN"
     },
     {
       "id": "2130504197",
@@ -1036,11 +931,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2130508437",
@@ -1069,8 +960,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2130564486",
@@ -1100,11 +990,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>EN+FR (interpreted to EN, NL, FR)</p>"
-        }
-      ]
+      "language": "EN+FR (interpreted to EN, NL, FR)"
     },
     {
       "id": "2130565062",
@@ -1134,11 +1020,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>NL</p>"
-        }
-      ]
+      "language": "NL"
     },
     {
       "id": "2130565271",
@@ -1168,11 +1050,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>EN</p>"
-        }
-      ]
+      "language": "EN"
     },
     {
       "id": "2131477522",
@@ -1203,11 +1081,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR, NL, EN</p>"
-        }
-      ]
+      "language": "FR, NL, EN"
     },
     {
       "id": "2131949286",
@@ -1237,11 +1111,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2132546149",
@@ -1271,11 +1141,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>EN/FR</p>"
-        }
-      ]
+      "language": "EN/FR"
     },
     {
       "id": "2132547846",
@@ -1305,11 +1171,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2132573670",
@@ -1338,8 +1200,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2137152518",
@@ -1369,11 +1230,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2137153249",
@@ -1403,11 +1260,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2138293589",
@@ -1437,11 +1290,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2138432633",
@@ -1471,11 +1320,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2140661540",
@@ -1506,11 +1351,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2140889119",
@@ -1540,11 +1381,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2141284571",
@@ -1561,25 +1398,21 @@
       "who": "",
       "location": "L'Estaca",
       "notes": "<p><em>Performance drag king suivie d'un échange avec le public</em>. Comment être un homme déconstruit ? un allié féministe ? </p>\n<p>Edgar Atoi, “mec déconstruit” et fervant féministe, vient partager ses bonnes pratiques… ou mieux, les déconstruire ! À travers cette performance Drag King satirique, l’artiste queer Tara nous livre un regard acéré sur les contradictions et absurdités rencontrées dans ses relations avec ces hommes en quête de déconstruction. Préparez une bonne dose d’auto-dérision, promis, Tara ne vous veut pas de mal!</p>\n<p>Nous ouvrirons ensuite avec le public une réflexion sur les violences et rapports de<br>genre dans les milieux “de gauche”, militants et/ou féministes et pour offrir des pistes vers une posture juste d'allié.</p>\n<p>TW : Violence de genre</p>",
-      "version": "15fb4f4efb8d",
+      "version": "5c22af8d819d",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
-      "start_dt": "2026-08-22T20:00:00+02:00",
-      "end_dt": "2026-08-22T21:00:00+02:00",
+      "start_dt": "2026-08-22T19:30:00+02:00",
+      "end_dt": "2026-08-22T20:30:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-30T15:32:24+02:00",
-      "update_dt": "2026-08-10T01:24:00+02:00",
+      "update_dt": "2026-08-13T18:57:53+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2141287625",
@@ -1608,8 +1441,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2144523090",
@@ -1638,8 +1470,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2144529120",
@@ -1668,8 +1499,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2144529608",
@@ -1698,8 +1528,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2144535473",
@@ -1728,8 +1557,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2145393167",
@@ -1759,8 +1587,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2145393632",
@@ -1790,11 +1617,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2145394289",
@@ -1825,11 +1648,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>NL/FR</p>"
-        }
-      ]
+      "language": "NL/FR"
     },
     {
       "id": "2145397185",
@@ -1859,11 +1678,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR/EN (but mainly silent)</p>"
-        }
-      ]
+      "language": "FR/EN (but mainly silent)"
     },
     {
       "id": "2145399118",
@@ -1892,8 +1707,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2145403417",
@@ -1924,11 +1738,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2145405823",
@@ -1958,8 +1768,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2145406814",
@@ -1989,11 +1798,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>EN, FR, NL</p>"
-        }
-      ]
+      "language": "EN, FR, NL"
     },
     {
       "id": "2145409675",
@@ -2024,11 +1829,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2145482191",
@@ -2058,11 +1859,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>EN/NL</p>"
-        }
-      ]
+      "language": "EN/NL"
     },
     {
       "id": "2145742920",
@@ -2077,8 +1874,8 @@
       "title": "Abolir la police!?",
       "who": "",
       "location": "Cinema",
-      "notes": "",
-      "version": "ad9985b0e350",
+      "notes": "<p>Discussion autour de l'abolitionnisme de la police comme horizon de lutte à partir de stratégies et expériences  de terrain.</p>",
+      "version": "c2dfd8db2f64",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -2087,16 +1884,12 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-07T09:29:58+02:00",
-      "update_dt": "2026-08-10T15:37:04+02:00",
+      "update_dt": "2026-08-13T18:54:52+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2145868612",
@@ -2125,8 +1918,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2146367474",
@@ -2156,11 +1948,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2146367946",
@@ -2190,11 +1978,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2146435238",
@@ -2224,11 +2008,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>EN</p>"
-        }
-      ]
+      "language": "EN"
     },
     {
       "id": "2146437596",
@@ -2258,11 +2038,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2146506168",
@@ -2292,11 +2068,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (EN/ NL friendly) </p>"
-        }
-      ]
+      "language": "FR (EN/ NL friendly)"
     },
     {
       "id": "2146525670",
@@ -2326,11 +2098,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2146821981",
@@ -2360,11 +2128,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2146940815",
@@ -2394,11 +2158,9 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR, EN, NL</p>"
-        }
-      ]
+      "language": "FR, EN, NL",
+      "childFriendly": "8+",
+      "warnings": "Physical"
     },
     {
       "id": "2146942508",
@@ -2428,11 +2190,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2147297749",
@@ -2462,11 +2220,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2147466669",
@@ -2495,8 +2249,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2149327238",
@@ -2526,11 +2279,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2149328164",
@@ -2560,11 +2309,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2149331036",
@@ -2576,11 +2321,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "Plage libre/Free slot",
+      "title": "Plage libre/Vrij tijdslot/Free slot",
       "who": "",
       "location": "People Power",
-      "notes": "<p>Plage horaire libre pour atelier autogéré</p>",
-      "version": "b24b99fa98c8",
+      "notes": "<p>Plage horaire libre pour atelier autogéré<br>Vrij tijdslot voor een zelfgeorganiseerde workshop</p>",
+      "version": "878ca21dd224",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -2589,12 +2334,11 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-13T18:20:41+02:00",
-      "update_dt": "2026-08-13T18:22:06+02:00",
+      "update_dt": "2026-08-13T18:55:12+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2149332264",
@@ -2623,8 +2367,7 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     },
     {
       "id": "2149333428",
@@ -2636,11 +2379,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "Lutter contre l'utra-richesse",
+      "title": "« Rencontre avec les ultra-riches de Belgique »: qui sont-ils ? Pourquoi et comment mettre fin à l’extrême richesse?",
       "who": "",
       "location": "L'Estaca",
-      "notes": "",
-      "version": "8aef2980b987",
+      "notes": "<p>Qui sont les grandes fortunes belges? Quelles activités et industries leur ont-elles permis d’accumuler autant de richesses? Quels liens politiques, médiatiques et judiciaires leur permettent d’assurer leurs dominations économiques et symboliques, tout en défendant leurs intérêts de classe ? </p>\n<p>À travers un atelier mêlant informations théoriques, discussions participatives et jeux (fun garanti), explorez les multiples facettes des ultra-riches belges et découvrez les conséquences sociales, écologiques ou encore éthiques de cette accumulation extrême. </p>\n<p>Nous présenterons également le collectif « Stop The Rich » et notre revendication principale : l’instauration collective d’une « Richesse Maximale Autorisée (RMA) », définie démocratiquement, afin d’assurer une vie digne à toustes !</p>",
+      "version": "bae64b14dcf8",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -2649,16 +2392,12 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-13T18:24:52+02:00",
-      "update_dt": "2026-08-13T18:25:41+02:00",
+      "update_dt": "2026-08-13T19:33:01+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR (interpreted to NL, EN)</p>"
-        }
-      ]
+      "language": "FR (interpreted to NL, EN)"
     },
     {
       "id": "2149342049",
@@ -2688,11 +2427,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": [
-        {
-          "message": "<p>FR</p>"
-        }
-      ]
+      "language": "FR"
     },
     {
       "id": "2149348546",
@@ -2704,25 +2439,24 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "Petite histoire, grande histoire",
+      "title": "Conference - Palestine",
       "who": "",
       "location": "L'Estaca",
       "notes": "",
-      "version": "50db34de324c",
+      "version": "dc83ad5093be",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
-      "start_dt": "2026-08-21T17:00:00+02:00",
+      "start_dt": "2026-08-21T16:30:00+02:00",
       "end_dt": "2026-08-21T18:00:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-13T18:46:10+02:00",
-      "update_dt": null,
+      "update_dt": "2026-08-13T19:58:35+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "comments": []
+      "comments_visibility": "all_users"
     }
   ]
 }

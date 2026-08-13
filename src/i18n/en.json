@@ -568,6 +568,15 @@
       "noLocation": "No location set",
       "noEvents": "No events for this selection yet.",
       "addToCalendar": "Add to calendar",
+      "modalLabels": {
+        "date": "Date",
+        "time": "Time",
+        "language": "Language",
+        "location": "Location",
+        "hostedBy": "Hosted by",
+        "age": "Age",
+        "warnings": "Warnings"
+      },
       "timelineOther": "Other",
       "jumpToNow": "Jump to now",
       "filters": {

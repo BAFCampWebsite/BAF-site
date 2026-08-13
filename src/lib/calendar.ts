@@ -85,11 +85,6 @@ export function getNotesText(notes: unknown = "") {
   return normalized;
 }
 
-export function getFirstCommentText(comments: { message?: string }[] = []) {
-  if (!comments?.length) return "";
-  return getNotesText(comments[0].message || "");
-}
-
 export function buildCalendarEvents(
   rawEvents: Record<string, unknown>[],
   lang: string,
@@ -101,7 +96,9 @@ export function buildCalendarEvents(
       const start = new Date(event.start_dt as string);
       const end = new Date(event.end_dt as string);
       const notesText = getNotesText(event.notes);
-      const languageNote = getFirstCommentText(event.comments as { message?: string }[]);
+      const language = getNotesText(event.language);
+      const childFriendly = getNotesText(event.childFriendly);
+      const warnings = getNotesText(event.warnings);
       const previewText = notesText ? notesText.split(/\r?\n/)[0].trim() : "";
 
       const brusselsParts = new Intl.DateTimeFormat("en-CA", {
@@ -187,7 +184,9 @@ export function buildCalendarEvents(
         timeLabel,
         notesText,
         previewText,
-        languageNote,
+        language,
+        childFriendly,
+        warnings,
         isPlaceholder: !previewText,
       };
     })

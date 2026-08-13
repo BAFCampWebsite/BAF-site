@@ -62,7 +62,9 @@ type TimelineEvent = {
   labels?: string[];
   shortLabels?: string[];
   accents?: string[];
-  languageNote?: string;
+  language?: string;
+  childFriendly?: string;
+  warnings?: string;
   previewText?: string;
   isPlaceholder?: boolean;
   notesText?: string;
@@ -77,7 +79,9 @@ export function renderCard(event: TimelineEvent) {
   const timeLabel = escapeHtml(event.timeLabel || "");
   const location = event.location ? escapeHtml(event.location) : "";
   const who = event.who ? escapeHtml(event.who) : "";
-  const languageNote = event.languageNote ? escapeHtml(event.languageNote) : "";
+  const language = event.language ? escapeHtml(event.language) : "";
+  const childFriendly = event.childFriendly ? escapeHtml(event.childFriendly) : "";
+  const warnings = event.warnings ? escapeHtml(event.warnings) : "";
   const preview = event.previewText ? escapeHtml(event.previewText) : "";
   const previewClass = event.isPlaceholder ? "calendar-card-preview is-placeholder" : "calendar-card-preview";
   const accent = (event.accents && event.accents[0]) || "var(--rose)";
@@ -98,7 +102,9 @@ export function renderCard(event: TimelineEvent) {
       </div>
       <h3>${title}</h3>
       <div class="calendar-card-meta-grid">
-        ${languageNote ? `<div class="calendar-card-meta-item"><span>💬</span><span class="calendar-card-language">${languageNote}</span></div>` : ""}
+        ${language ? `<div class="calendar-card-meta-item"><span>💬</span><span class="calendar-card-info">${language}</span></div>` : ""}
+        ${childFriendly ? `<div class="calendar-card-meta-item"><span>👶</span><span class="calendar-card-info">${childFriendly}</span></div>` : ""}
+        ${warnings ? `<div class="calendar-card-meta-item"><span>⚠️</span><span class="calendar-card-info">${warnings}</span></div>` : ""}
         ${location ? `<div class="calendar-card-meta-item"><span>🎪</span><span>${location}</span></div>` : ""}
         ${who ? `<div class="calendar-card-meta-item"><span>👤</span><span>${who}</span></div>` : ""}
       </div>
@@ -112,7 +118,9 @@ export function renderListEvent(event: TimelineEvent, addToCalendarLabel: string
   const timeLabel = escapeHtml(event.timeLabel || "");
   const location = event.location ? escapeHtml(event.location) : "";
   const who = event.who ? escapeHtml(event.who) : "";
-  const languageNote = event.languageNote ? escapeHtml(event.languageNote) : "";
+  const language = event.language ? escapeHtml(event.language) : "";
+  const childFriendly = event.childFriendly ? escapeHtml(event.childFriendly) : "";
+  const warnings = event.warnings ? escapeHtml(event.warnings) : "";
   const notes = event.notesText ? escapeHtml(event.notesText).replace(/\n/g, "<br>") : "";
   const accent = (event.accents && event.accents[0]) || "var(--rose)";
   const badges = (event.labels || [])
@@ -134,9 +142,11 @@ export function renderListEvent(event: TimelineEvent, addToCalendarLabel: string
       <h3 class="calendar-list-title">${title}</h3>
       <div class="calendar-list-body">
         <div class="calendar-list-meta">
+          ${language ? `<div class="calendar-list-meta-item"><span>💬</span><span class="calendar-list-info">${language}</span></div>` : ""}
+          ${childFriendly ? `<div class="calendar-list-meta-item"><span>👶</span><span class="calendar-list-info">${childFriendly}</span></div>` : ""}
+          ${warnings ? `<div class="calendar-list-meta-item"><span>⚠️</span><span class="calendar-list-info">${warnings}</span></div>` : ""}
           ${location ? `<div class="calendar-list-meta-item"><span>🎪</span><span>${location}</span></div>` : ""}
           ${who ? `<div class="calendar-list-meta-item"><span>👤</span><span>${who}</span></div>` : ""}
-          ${languageNote ? `<div class="calendar-list-meta-item"><span>💬</span><span class="calendar-list-language">${languageNote}</span></div>` : ""}
         </div>
         ${notes ? `<p class="calendar-list-notes">${notes}</p>` : ""}
       </div>
@@ -241,7 +251,12 @@ export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, d
   const title = escapeHtml(event.title || "Untitled event");
   const timeLabel = escapeHtml(event.timeLabel || "");
   const location = event.location ? escapeHtml(String(event.location).trim()) : "";
-  const languageNote = event.languageNote ? escapeHtml(event.languageNote) : "";
+  const infoParts = [
+    event.language ? `💬 ${escapeHtml(event.language)}` : "",
+    event.childFriendly ? `👶 ${escapeHtml(event.childFriendly)}` : "",
+    event.warnings ? `⚠️ ${escapeHtml(event.warnings)}` : "",
+  ].filter(Boolean);
+  const infoLine = infoParts.length ? `<span class="timeline-event-info">${infoParts.join(" · ")}</span>` : "";
   const badgeLabels =
     event.shortLabels && event.shortLabels.length ? event.shortLabels : event.labels || [];
   const badges = badgeLabels
@@ -262,7 +277,7 @@ export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, d
         <span class="timeline-event-time">${timeLabel}</span>
         <span class="timeline-event-badges">${badges}</span>
       </div>
-      ${languageNote ? `<span class="timeline-event-language">💬 ${languageNote}</span>` : ""}
+      ${infoLine}
       ${showLocation && location ? `<span class="timeline-event-location">${location}</span>` : ""}
       <span class="timeline-event-title">${title}</span>
     </div>

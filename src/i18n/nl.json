@@ -568,6 +568,15 @@
       "noLocation": "Geen locatie ingesteld",
       "noEvents": "Nog geen evenementen voor deze selectie.",
       "addToCalendar": "Aan kalender toevoegen",
+      "modalLabels": {
+        "date": "Datum",
+        "time": "Tijd",
+        "language": "Taal",
+        "location": "Locatie",
+        "hostedBy": "Georganiseerd door",
+        "age": "Leeftijd",
+        "warnings": "Waarschuwingen"
+      },
       "timelineOther": "Anders",
       "jumpToNow": "Ga naar nu",
       "filters": {

@@ -568,6 +568,15 @@
       "noLocation": "Aucun lieu défini",
       "noEvents": "Aucun événement pour cette sélection pour le moment.",
       "addToCalendar": "Ajouter au calendrier",
+      "modalLabels": {
+        "date": "Date",
+        "time": "Heure",
+        "language": "Langue",
+        "location": "Lieu",
+        "hostedBy": "Organisé par",
+        "age": "Âge",
+        "warnings": "Avertissements"
+      },
       "timelineOther": "Autres",
       "jumpToNow": "Aller à maintenant",
       "filters": {
