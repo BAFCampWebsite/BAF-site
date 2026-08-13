@@ -5,12 +5,14 @@ The programme calendar is the most JS-heavy part of the site: the three views
 from string templates. The `.astro` components only provide the shell, the
 styles and the data.
 
+**ALWAYS KEEP THIS FILE UP TO DATE AND ADJUST IT IF SOMETHING MENTIONED CHANGES**
+
 ## File map
 
 | File | Role |
 |------|------|
 | `src/components/ProgrammeCalendar.astro` | Orchestrator. Builds the data in frontmatter, renders the shell (special card, toolbar, grid container + `data-calendar-data` JSON blob), imports **all** calendar styles, and holds the shared client state: filters, search, view switching, URL sync. |
-| `src/components/CalendarFilters.astro` | Filter panel markup (day / type / location / search rows). |
+| `src/components/CalendarFilters.astro` | Filter panel markup (day / type / children / location / search rows). |
 | `src/components/EventModal.astro` | Static event-detail dialog; its content is injected by `calendar-modal.ts`. |
 | `src/lib/calendar.ts` | Data prep shared by build and client code: event normalization, day/location filters, category meta, tent keys. |
 | `src/lib/calendar-client.ts` | Client-side view rendering: `renderCard`, `renderList`/`renderListEvent`, `renderTimeline`/`renderTimelineDay`, "now" position helpers, ICS download. |
@@ -39,4 +41,4 @@ styles and the data.
   render code, styles and `?view=list` handling are kept for re-enabling.
 - The client script reads its data from the
   `<script type="application/json" data-calendar-data>` blob and keeps state
-  shareable via URL params: `?view=&day=&category=&location=&search=`.
+  shareable via URL params: `?view=&day=&category=&children=&location=&search=`.

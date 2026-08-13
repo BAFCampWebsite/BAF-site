@@ -558,6 +558,7 @@
       "filterLabels": {
         "day": "Day",
         "type": "Type",
+        "children": "Children",
         "location": "Location",
         "search": "Search"
       },
@@ -585,6 +586,7 @@
         "music": "Music",
         "theatre": "Theatre",
         "workshops": "Workshops",
+        "childrenOk": "Children OK",
         "short": {
           "conference": "conf",
           "film": "film",

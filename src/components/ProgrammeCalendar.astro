@@ -120,6 +120,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   let activeCategory = "all";
   let activeDay = "all";
   let activeLocation = "all";
+  let activeChildren = false;
   let activeView = "timeline";
   let activeSearch = "";
   let searchTimeout = null;
@@ -145,6 +146,8 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   if (urlCategory && validCategories.has(urlCategory)) activeCategory = urlCategory;
   const urlLocation = urlParams.get("location");
   if (urlLocation && validLocations.has(urlLocation)) activeLocation = urlLocation;
+  const urlChildren = urlParams.get("children");
+  if (urlChildren === "1") activeChildren = true;
   const urlSearch = (urlParams.get("search") || "").trim();
   if (urlSearch) activeSearch = urlSearch.toLowerCase();
 
@@ -155,7 +158,8 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
       const matchesDay = activeDay === "all" ? true : event.dayKey === activeDay;
       const matchesLocation =
         activeLocation === "all" ? true : event.locationKey === activeLocation;
-      if (!activeSearch) return matchesCategory && matchesDay && matchesLocation;
+      const matchesChildren = activeChildren ? Boolean(event.childFriendly) : true;
+      if (!activeSearch) return matchesCategory && matchesDay && matchesLocation && matchesChildren;
       const haystack = [
         event.title || "",
         event.notesText || event.notes || "",
@@ -164,7 +168,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
         event.childFriendly || "",
         event.warnings || "",
       ].join(" ").toLowerCase();
-      return matchesCategory && matchesDay && matchesLocation && haystack.includes(activeSearch);
+      return matchesCategory && matchesDay && matchesLocation && matchesChildren && haystack.includes(activeSearch);
     });
 
     if (!container) return;
@@ -212,6 +216,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     if (activeDay !== "all") params.set("day", activeDay);
     if (activeCategory !== "all") params.set("category", activeCategory);
     if (activeLocation !== "all") params.set("location", activeLocation);
+    if (activeChildren) params.set("children", "1");
     if (activeSearch) params.set("search", activeSearch);
     const query = params.toString();
     const url = query ? `${window.location.pathname}?${query}` : window.location.pathname;
@@ -222,6 +227,7 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     const dayClear = document.querySelector('[data-clear="day"]');
     const catClear = document.querySelector('[data-clear="category"]');
     const locClear = document.querySelector('[data-clear="location"]');
+    const childrenClear = document.querySelector('[data-clear="children"]');
     if (dayClear) {
       dayClear.style.display = activeDay === "all" ? "none" : "";
       dayClear.disabled = activeDay === "all";
@@ -233,6 +239,10 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
     if (locClear) {
       locClear.style.display = activeLocation === "all" ? "none" : "";
       locClear.disabled = activeLocation === "all";
+    }
+    if (childrenClear) {
+      childrenClear.style.display = activeChildren ? "" : "none";
+      childrenClear.disabled = !activeChildren;
     }
   }
 
@@ -246,6 +256,9 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
         const locationButtons = Array.from(document.querySelectorAll('.calendar-filter[data-location]'));
         activeLocation = button.classList.contains("active") ? "all" : (button.dataset.location || "all");
         locationButtons.forEach((item) => item.classList.toggle("active", item === button && activeLocation !== "all"));
+      } else if (button.dataset.children) {
+        activeChildren = !activeChildren;
+        button.classList.toggle("active", activeChildren);
       } else {
         const categoryButtons = Array.from(document.querySelectorAll('.calendar-filter[data-category]'));
         activeCategory = button.classList.contains("active") ? "all" : (button.dataset.category || "all");
@@ -270,6 +283,9 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
       } else if (type === "location") {
         activeLocation = "all";
         document.querySelectorAll('.calendar-filter[data-location]').forEach((b) => b.classList.remove("active"));
+      } else if (type === "children") {
+        activeChildren = false;
+        document.querySelectorAll('.calendar-filter[data-children]').forEach((b) => b.classList.remove("active"));
       }
       updateClearButtons();
       syncUrl();
@@ -328,11 +344,12 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
   document.querySelectorAll('.calendar-filter[data-day]').forEach((b) => b.classList.toggle("active", b.dataset.day === activeDay));
   document.querySelectorAll('.calendar-filter[data-category]').forEach((b) => b.classList.toggle("active", b.dataset.category === activeCategory));
   document.querySelectorAll('.calendar-filter[data-location]').forEach((b) => b.classList.toggle("active", b.dataset.location === activeLocation));
+  document.querySelectorAll('.calendar-filter[data-children]').forEach((b) => b.classList.toggle("active", activeChildren));
   if (searchInput && urlSearch) searchInput.value = urlSearch;
 
   // Keep the filter panel open on mobile when the URL carries active filters,
   // so the applied state stays visible.
-  const hasActiveFilters = activeDay !== "all" || activeCategory !== "all" || activeLocation !== "all" || Boolean(activeSearch);
+  const hasActiveFilters = activeDay !== "all" || activeCategory !== "all" || activeLocation !== "all" || activeChildren || Boolean(activeSearch);
   if (hasActiveFilters && filterPanel) filterPanel.dataset.userOpened = "1";
 
   renderEvents();

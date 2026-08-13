@@ -558,6 +558,7 @@
       "filterLabels": {
         "day": "Dag",
         "type": "Type",
+        "children": "Kinderen",
         "location": "Locatie",
         "search": "Zoeken"
       },
@@ -585,6 +586,7 @@
         "music": "Muziek",
         "theatre": "Theater",
         "workshops": "Workshops",
+        "childrenOk": "Kinderen OK",
         "short": {
           "conference": "conf",
           "film": "film",
