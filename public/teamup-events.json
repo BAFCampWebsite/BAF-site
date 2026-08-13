@@ -934,7 +934,11 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "comments": []
+      "comments": [
+        {
+          "message": "<p>FR</p>"
+        }
+      ]
     },
     {
       "id": "2130503685",
@@ -1967,27 +1971,27 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "Climbing the trees / Grimpe dans les arbres",
+      "title": "Tree Climbing / Grimpe aux arbres / Klimbomen",
       "who": "",
       "location": "Point ✊",
       "notes": "",
-      "version": "fb48604b1c31",
+      "version": "83963a2a472b",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
       "start_dt": "2026-08-22T16:00:00+02:00",
-      "end_dt": "2026-08-22T17:30:00+02:00",
+      "end_dt": "2026-08-22T18:00:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-06T19:12:59+02:00",
-      "update_dt": "2026-08-10T01:38:35+02:00",
+      "update_dt": "2026-08-13T06:58:38+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
       "comments": [
         {
-          "message": "<p>EN / FR</p>"
+          "message": "<p>EN, FR, NL</p>"
         }
       ]
     },
@@ -2372,11 +2376,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "Climbing the trees / Grimpe dans les arbres",
+      "title": "Tree Climbing / Grimpe aux arbres / Klimbomen",
       "who": "",
       "location": "Point ✊",
       "notes": "",
-      "version": "6e8157e6c44a",
+      "version": "5d81bb59356c",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -2385,14 +2389,14 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-10T01:36:47+02:00",
-      "update_dt": "2026-08-10T01:39:11+02:00",
+      "update_dt": "2026-08-13T06:14:18+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
       "comments": [
         {
-          "message": "<p>FR / EN</p>"
+          "message": "<p>FR, EN, NL</p>"
         }
       ]
     },
