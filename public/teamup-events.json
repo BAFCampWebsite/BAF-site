@@ -1364,11 +1364,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "Spectacle d'impro",
+      "title": "Spectacle d'impro : le Freeform des ¡Yallah!",
       "who": "",
       "location": "L'Estaca",
       "notes": "",
-      "version": "ef6b704d7279",
+      "version": "b2342b98ed7e",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -1377,7 +1377,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-29T23:42:49+02:00",
-      "update_dt": "2026-08-10T01:02:11+02:00",
+      "update_dt": "2026-08-14T15:06:29+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -1930,7 +1930,12 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users"
+      "comments_visibility": "all_users",
+      "comments": [
+        {
+          "message": "Arabe (ENG/FR subtitles)"
+        }
+      ]
     },
     {
       "id": "2146367474",
@@ -2125,8 +2130,8 @@
       "title": "En finir avec la domination : ce que l’antispécisme apporte à la cohérence des luttes",
       "who": "",
       "location": "Cinema",
-      "notes": "<p></p>\n<p>La domination d’un groupe sur un autre selon des critères arbitraires, l’appropriation des corps et la spoliation de la force de travail, la chosification et l’exploitation, atteignent une ampleur incommensurable dans nos rapports systémiques aux animaux non humains. Pourtant, le spécisme reste encore bien souvent l’angle mort de nombreuses luttes sociales d’émancipation. Qu’est-ce que l’oppression des autres animaux nous révèle des procédés structurels de domination interhumaine ? En s’appuyant notamment sur le concept d’animalisation (développé par Kaoutar Harchi) cette intervention – proposée par la Ligue Internationale Antispéciste – montrera ce que l’antispécisme intersectionnel apporte à la cohérence des luttes sociales d’émancipation et l’intérêt de l’intégrer dans un front politique commun.</p>",
-      "version": "12a0c3e51889",
+      "notes": "<p>La domination d’un groupe sur un autre selon des critères arbitraires, l’appropriation des corps et la spoliation de la force de travail, la chosification et l’exploitation, atteignent une ampleur incommensurable dans nos rapports systémiques aux animaux non humains. Pourtant, le spécisme reste encore bien souvent l’angle mort de nombreuses luttes sociales d’émancipation. Qu’est-ce que l’oppression des autres animaux nous révèle des procédés structurels de domination interhumaine ? En s’appuyant notamment sur le concept d’animalisation (développé par Kaoutar Harchi) cette intervention montrera ce que l’antispécisme intersectionnel apporte à la cohérence des luttes sociales d’émancipation et l’intérêt de l’intégrer dans un front politique commun.</p>",
+      "version": "a90f07a13e70",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -2135,7 +2140,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-09T18:34:16+02:00",
-      "update_dt": "2026-08-10T00:59:50+02:00",
+      "update_dt": "2026-08-14T15:09:37+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -2513,22 +2518,23 @@
       "rrule": "",
       "title": "Politiser les semences : réflexions et récoltes",
       "who": "",
-      "location": "JAM + moving",
-      "notes": "<p>Un atelier donné pour réfléchir aux enjeux politiques des semences paysannes et les découvrir concrètement en les récoltant ensemble.<br><br>Les semences sont au cœur de notre autonomie alimentaire, de l'agriculture et des savoirs paysans. À partir de la situation en Belgique et de l’actualité autour des nouvelles techniques génomiques (NGT), nous prendrons un temps pour questionner collectivement la propriété, la réglementation et l’accès aux semences. La réflexion sera suivie d’un temps pratique de récolte et de découverte des semences sur le terrain, pour relier les enjeux politiques aux gestes concrets de leur conservation et de leur transmission.</p>",
-      "version": "9d025dae8470",
+      "location": "JAM",
+      "notes": "<p>Point de départ: espace JAM et ensuite mouvant.<br>Durée total: 2h</p>\n<p>Un atelier donné pour réfléchir aux enjeux politiques des semences paysannes et les découvrir concrètement en les récoltant ensemble. <br><br>Les semences sont au cœur de notre autonomie alimentaire, de l'agriculture et des savoirs paysans. À partir de la situation en Belgique et de l’actualité autour des nouvelles techniques génomiques (NGT), nous prendrons un temps pour questionner collectivement la propriété, la réglementation et l’accès aux semences. La réflexion sera suivie d’un temps pratique de récolte et de découverte des semences sur le terrain, pour relier les enjeux politiques aux gestes concrets de leur conservation et de leur transmission.</p>",
+      "version": "b9103aef5ac1",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
       "start_dt": "2026-08-21T10:00:00+02:00",
-      "end_dt": "2026-08-21T12:00:00+02:00",
+      "end_dt": "2026-08-21T11:30:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-14T14:17:23+02:00",
-      "update_dt": null,
+      "update_dt": "2026-08-14T16:38:24+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users"
+      "comments_visibility": "all_users",
+      "language": "FR"
     }
   ]
 }
