@@ -240,7 +240,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "language": "FR/NDLS"
+      "language": "FR/NL"
     },
     {
       "id": "2130490667",
@@ -330,7 +330,12 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users"
+      "comments_visibility": "all_users",
+      "comments": [
+        {
+          "message": "🧒 10+"
+        }
+      ]
     },
     {
       "id": "2130490903",
@@ -511,7 +516,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "language": "FR"
+      "language": "FR (EN subtitles)"
     },
     {
       "id": "2130496137",
@@ -676,17 +681,17 @@
       "title": "Rap concert and open mic",
       "who": "",
       "location": "Chez Georges",
-      "notes": "<p>Collectif Hip-Hop inclusif </p>",
-      "version": "a64069fc88ba",
+      "notes": "",
+      "version": "974fa48fb1a7",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
       "start_dt": "2026-08-22T22:30:00+02:00",
-      "end_dt": "2026-08-23T00:15:00+02:00",
+      "end_dt": "2026-08-23T00:00:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T17:57:38+02:00",
-      "update_dt": "2026-08-10T00:56:38+02:00",
+      "update_dt": "2026-08-14T20:25:19+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -735,8 +740,8 @@
       "title": "Building Autonomy",
       "who": "",
       "location": "Chez Georges",
-      "notes": "<p>In this workshop, we would like to invite you to explore the concept of building autonomy in the belgian context in more depth. What is autonomy ? Why do we think it is necessary ? How does it manifest itself in different contexts ? Taking inspiration from the revolution in Rojava, we briefly discuss how Defend Rojava Belgium has started to act and organise in the past few months. We will then discuss what we can learn from Kurdistan and the necessity and the concept of building autonomy based on collective work with different orgas from the Peoples Platform Europe. Our goal is to open a discussion, share experiences and get to know each other, with a view of possibly struggling together in the future.</p>",
-      "version": "1e349adec8cb",
+      "notes": "<p>In this workshop, we would like to invite you to explore the concept of building autonomy in the belgian context in more depth. What is autonomy ? Why do we think it is necessary ? How does it manifest itself in different contexts ? Taking inspiration from the revolution in Rojava, we will discuss what we can learn from Kurdistan and the necessity and the concept of building autonomy based on collective work with different organisations. This short seminar will begin with a theoretical presentation and continue with practical examples, introducing local initiatives. Understanding the situation and context in which we live (the threats and difficulties we face) will help us to imagine how we want to live and what we need to do. Our goal is to open a discussion, share experiences and get to know each other, with a view of possibly struggling together in the future.</p>",
+      "version": "9f4fe7c5108c",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -745,7 +750,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T18:02:14+02:00",
-      "update_dt": "2026-08-13T18:29:44+02:00",
+      "update_dt": "2026-08-14T19:59:57+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -853,11 +858,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "Arizona : bilan des mobilisations",
+      "title": "Mouvements sociaux contre les gouvernements de droite et extrême droite en Belgique : bilan et perspectives",
       "who": "",
       "location": "L'Estaca",
       "notes": "",
-      "version": "ce126a1a238e",
+      "version": "29118dc437c1",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -866,7 +871,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T18:08:25+02:00",
-      "update_dt": "2026-08-13T18:57:26+02:00",
+      "update_dt": "2026-08-14T22:10:59+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -913,11 +918,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "Habiter les fissures",
+      "title": "To live in the cracks",
       "who": "",
       "location": "Cinema",
       "notes": "<p>Film-chorale réalisé dans un des plus grands squat actuels de Bruxelles.</p>\n<p>Squatteur·ses et mauvaises herbes cohabitent entre les murs de brique de cette ancienne usine. Oscillant entre le politique et le poétique, entre le macroscopique et le microscopique, <em>Habiter les Fissures</em> se déploie en mélangeant images 16mm et super 8, récits d'anciennes ouvrières et d'occupant·es actuelles, ainsi qu'une composition sonore inspirée par le bâtiment et les plantes qui s'y trouvent. Un film comme un lieu, un lieu de dialogue, un lieu de cohabitation.</p>\n<p>La projection sera suivie d'une discussion avec la réalisatrice.</p>",
-      "version": "e4d5924941e2",
+      "version": "1c4e2558f3a8",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -926,12 +931,12 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T18:11:11+02:00",
-      "update_dt": "2026-08-11T21:04:25+02:00",
+      "update_dt": "2026-08-14T23:39:29+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "language": "FR"
+      "language": "EN"
     },
     {
       "id": "2130508437",
@@ -1006,8 +1011,8 @@
       "title": "Artivism & zines",
       "who": "",
       "location": "Workshop",
-      "notes": "<p>Pardon is een artistiek feministisch collectief uit Gent, dat sinds 2021 zines maakt, workshops begeleidt en evenementen organiseert. In deze workshop willen we samen onderzoeken hoe kunst politiek, activistisch, ongehoorzaam is, kan zijn en/of moet zijn.</p>\n<p>“<em>De functie van kunst is om meer te doen dan alleen te laten zien wat er is – kunst is er om je een voorstelling te maken van wat mogelijk is.</em>” (bell hooks)</p>",
-      "version": "7c82ddce31d0",
+      "notes": "<p>In deze workshop willen we samen onderzoeken hoe kunst politiek, activistisch, ongehoorzaam is, kan zijn en/of moet zijn.</p>\n<p>“<em>De functie van kunst is om meer te doen dan alleen te laten zien wat er is – kunst is er om je een voorstelling te maken van wat mogelijk is.</em>” (bell hooks)</p>",
+      "version": "d3614dba7a36",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -1016,7 +1021,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-12T22:25:00+02:00",
-      "update_dt": "2026-08-14T12:09:47+02:00",
+      "update_dt": "2026-08-14T20:45:39+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -1231,7 +1236,12 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "language": "FR"
+      "language": "FR",
+      "comments": [
+        {
+          "message": "🧒 8+"
+        }
+      ]
     },
     {
       "id": "2137153249",
@@ -1261,7 +1271,12 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "language": "FR"
+      "language": "FR",
+      "comments": [
+        {
+          "message": "🧒 8+"
+        }
+      ]
     },
     {
       "id": "2138293589",
@@ -1399,21 +1414,22 @@
       "who": "",
       "location": "L'Estaca",
       "notes": "<p><em>Performance drag king suivie d'un échange avec le public</em>. Comment être un homme déconstruit ? un allié féministe ? </p>\n<p>Edgar Atoi, “mec déconstruit” et fervant féministe, vient partager ses bonnes pratiques… ou mieux, les déconstruire ! À travers cette performance Drag King satirique, l’artiste queer Tara nous livre un regard acéré sur les contradictions et absurdités rencontrées dans ses relations avec ces hommes en quête de déconstruction. Préparez une bonne dose d’auto-dérision, promis, Tara ne vous veut pas de mal!</p>\n<p>Nous ouvrirons ensuite avec le public une réflexion sur les violences et rapports de<br>genre dans les milieux “de gauche”, militants et/ou féministes et pour offrir des pistes vers une posture juste d'allié.</p>\n<p>TW : Violence de genre</p>",
-      "version": "5c22af8d819d",
+      "version": "ca6e8575d3be",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
-      "start_dt": "2026-08-22T19:30:00+02:00",
-      "end_dt": "2026-08-22T20:30:00+02:00",
+      "start_dt": "2026-08-22T20:00:00+02:00",
+      "end_dt": "2026-08-22T21:00:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-07-30T15:32:24+02:00",
-      "update_dt": "2026-08-13T18:57:53+02:00",
+      "update_dt": "2026-08-14T20:36:54+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "language": "FR"
+      "language": "FR",
+      "warnings": "Violence de genre"
     },
     {
       "id": "2141287625",
@@ -1487,16 +1503,16 @@
       "who": "",
       "location": "L'Estaca",
       "notes": "<p>hakab is an autonomous party collective that emerged to create a new gabber and hardcore scene with an explicitly antifascist and anti-authoritarian outlook. we love distorted 909s, fat aggressive kicks, hoovers, breakbeats and rage, and we believe that the aggression, passion and subcultural energy of gabber doesn’t belong to fascists, nationalists or reactionary losers. all our parties raise money for anti-repression causes</p>\n<p></p>\n<p>need antirep help? email us at hakab909@proton.com</p>",
-      "version": "32abf23f9391",
+      "version": "125955939ded",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
-      "start_dt": "2026-08-23T01:30:00+02:00",
-      "end_dt": "2026-08-23T02:30:00+02:00",
+      "start_dt": "2026-08-23T01:00:00+02:00",
+      "end_dt": "2026-08-23T02:00:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-05T12:37:18+02:00",
-      "update_dt": "2026-08-12T12:04:00+02:00",
+      "update_dt": "2026-08-14T20:25:41+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -1516,16 +1532,16 @@
       "who": "",
       "location": "Chez Georges",
       "notes": "<p>Membre du collectif Antyciclone, BlazzedGirl peut mixer de l’electro, de l'hyperpop, rap, mais aussi du jersey, afrobeats, commercial, techno,...</p>",
-      "version": "bddb0a689b2f",
+      "version": "ba41c07a2022",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
-      "start_dt": "2026-08-23T00:15:00+02:00",
-      "end_dt": "2026-08-23T01:30:00+02:00",
+      "start_dt": "2026-08-23T00:00:00+02:00",
+      "end_dt": "2026-08-23T01:00:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-05T12:39:32+02:00",
-      "update_dt": "2026-08-12T12:04:05+02:00",
+      "update_dt": "2026-08-14T20:25:31+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -1618,7 +1634,12 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "language": "FR"
+      "language": "FR",
+      "comments": [
+        {
+          "message": "🧒 12+"
+        }
+      ]
     },
     {
       "id": "2145394289",
@@ -1679,7 +1700,12 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "language": "FR/EN (but mainly silent)"
+      "language": "FR/EN (but mainly silent)",
+      "comments": [
+        {
+          "message": "🧒 10+"
+        }
+      ]
     },
     {
       "id": "2145399118",
@@ -1756,20 +1782,21 @@
       "who": "",
       "location": "Cinema",
       "notes": "<p>Film et conférence sur la résistance en Ukraine.</p>\n<p>Film de 57 min par Pierre Chamechaude et Christophe Cordier sur les militantes et militants féministes, écologistes, syndicalistes, anarchistes, libertaires engagés dans la résistance en Ukraine. La projection sera suivi d'une discussion avec des collectifs de soutiens à l'Ukraine.</p>",
-      "version": "544921d59333",
+      "version": "84b1ddbf156a",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
       "start_dt": "2026-08-20T20:30:00+02:00",
-      "end_dt": "2026-08-20T22:00:00+02:00",
+      "end_dt": "2026-08-20T22:30:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-06T19:10:14+02:00",
-      "update_dt": "2026-08-10T00:19:08+02:00",
+      "update_dt": "2026-08-14T20:13:47+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users"
+      "comments_visibility": "all_users",
+      "language": "FR, UKR (sous-titres FR)"
     },
     {
       "id": "2145406814",
@@ -1785,21 +1812,26 @@
       "who": "",
       "location": "Point ✊",
       "notes": "",
-      "version": "18b89a400127",
+      "version": "08d78493dbae",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
-      "start_dt": "2026-08-22T16:00:00+02:00",
-      "end_dt": "2026-08-22T18:00:00+02:00",
+      "start_dt": "2026-08-22T14:00:00+02:00",
+      "end_dt": "2026-08-22T15:30:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-06T19:12:59+02:00",
-      "update_dt": "2026-08-14T10:55:01+02:00",
+      "update_dt": "2026-08-14T19:01:26+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "language": "EN, FR, NL"
+      "language": "EN, FR, NL",
+      "comments": [
+        {
+          "message": "🧒 8+"
+        }
+      ]
     },
     {
       "id": "2145409675",
@@ -2161,23 +2193,27 @@
       "who": "",
       "location": "Point ✊",
       "notes": "",
-      "version": "aa77b729c94c",
+      "version": "a712c3a93db7",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
-      "start_dt": "2026-08-21T18:00:00+02:00",
-      "end_dt": "2026-08-21T19:30:00+02:00",
+      "start_dt": "2026-08-21T16:00:00+02:00",
+      "end_dt": "2026-08-21T18:00:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-10T01:36:47+02:00",
-      "update_dt": "2026-08-14T10:54:52+02:00",
+      "update_dt": "2026-08-14T19:26:50+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
       "language": "FR, EN, NL",
-      "childFriendly": "8+",
-      "warnings": "Physical"
+      "warnings": "Physical",
+      "comments": [
+        {
+          "message": "🧒 8+"
+        }
+      ]
     },
     {
       "id": "2146942508",
@@ -2267,7 +2303,12 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "language": "FR-EN"
+      "language": "FR-EN",
+      "comments": [
+        {
+          "message": "🧒 10+"
+        }
+      ]
     },
     {
       "id": "2149327238",
@@ -2490,16 +2531,16 @@
       "who": "",
       "location": "Cinema",
       "notes": "",
-      "version": "77a1acdfdd66",
+      "version": "c01fa216655c",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
-      "start_dt": "2026-08-22T13:30:00+02:00",
-      "end_dt": "2026-08-22T15:00:00+02:00",
+      "start_dt": "2026-08-22T14:00:00+02:00",
+      "end_dt": "2026-08-22T16:00:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-14T12:35:46+02:00",
-      "update_dt": "2026-08-14T12:40:42+02:00",
+      "update_dt": "2026-08-14T20:40:36+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
@@ -2520,21 +2561,90 @@
       "who": "",
       "location": "JAM",
       "notes": "<p>Point de départ: espace JAM et ensuite mouvant.<br>Durée total: 2h</p>\n<p>Un atelier donné pour réfléchir aux enjeux politiques des semences paysannes et les découvrir concrètement en les récoltant ensemble. <br><br>Les semences sont au cœur de notre autonomie alimentaire, de l'agriculture et des savoirs paysans. À partir de la situation en Belgique et de l’actualité autour des nouvelles techniques génomiques (NGT), nous prendrons un temps pour questionner collectivement la propriété, la réglementation et l’accès aux semences. La réflexion sera suivie d’un temps pratique de récolte et de découverte des semences sur le terrain, pour relier les enjeux politiques aux gestes concrets de leur conservation et de leur transmission.</p>",
-      "version": "b9103aef5ac1",
+      "version": "d2d8051fb75f",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
-      "start_dt": "2026-08-21T10:00:00+02:00",
+      "start_dt": "2026-08-21T09:30:00+02:00",
       "end_dt": "2026-08-21T11:30:00+02:00",
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-14T14:17:23+02:00",
-      "update_dt": "2026-08-14T16:38:24+02:00",
+      "update_dt": "2026-08-14T23:33:28+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
       "language": "FR"
+    },
+    {
+      "id": "2149958601",
+      "series_id": null,
+      "remote_id": null,
+      "subcalendar_id": 15766558,
+      "subcalendar_ids": [
+        15766558
+      ],
+      "all_day": false,
+      "rrule": "",
+      "title": "Initiation au cirque",
+      "who": "",
+      "location": "JAM",
+      "notes": "",
+      "version": "1971233b6343",
+      "readonly": true,
+      "tz": "Europe/Brussels",
+      "attachments": [],
+      "start_dt": "2026-08-22T16:00:00+02:00",
+      "end_dt": "2026-08-22T18:00:00+02:00",
+      "ristart_dt": null,
+      "rsstart_dt": null,
+      "creation_dt": "2026-08-14T19:23:22+02:00",
+      "update_dt": "2026-08-14T19:24:43+02:00",
+      "delete_dt": null,
+      "signup_enabled": false,
+      "comments_enabled": true,
+      "comments_visibility": "all_users",
+      "language": "FR, EN",
+      "comments": [
+        {
+          "message": "🧒 6+"
+        }
+      ]
+    },
+    {
+      "id": "2149968270",
+      "series_id": null,
+      "remote_id": null,
+      "subcalendar_id": 15766558,
+      "subcalendar_ids": [
+        15766558
+      ],
+      "all_day": false,
+      "rrule": "",
+      "title": "Jeu naturaliste",
+      "who": "",
+      "location": "JAM",
+      "notes": "<p>Jeu sur l'interaction entre les écosystèmes, à destination des enfants (à partir de 10 ans) et aux adolescents, ainsi qu'à leur famille.</p>",
+      "version": "cc32bbf48ef4",
+      "readonly": true,
+      "tz": "Europe/Brussels",
+      "attachments": [],
+      "start_dt": "2026-08-22T11:30:00+02:00",
+      "end_dt": "2026-08-22T13:00:00+02:00",
+      "ristart_dt": null,
+      "rsstart_dt": null,
+      "creation_dt": "2026-08-14T19:40:09+02:00",
+      "update_dt": null,
+      "delete_dt": null,
+      "signup_enabled": false,
+      "comments_enabled": true,
+      "comments_visibility": "all_users",
+      "comments": [
+        {
+          "message": "🧒 10+"
+        }
+      ]
     }
   ]
 }
