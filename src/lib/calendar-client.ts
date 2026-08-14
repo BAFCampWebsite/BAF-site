@@ -258,6 +258,49 @@ export function getNowPosition(
 }
 
 import { getTentKey, TENT_KEYS } from "./calendar";
+import type { TentKey } from "./calendar";
+
+export type TimelineDayMetrics = {
+  dayStart: number;
+  dayEnd: number;
+  tents: TentKey[];
+  minWidth: number;
+  height: number;
+};
+
+// Time-span and layout metrics of one day's timeline, shared by the on-screen
+// renderer and the print export (which needs the natural size to scale the day
+// onto one A4 sheet).
+export function getTimelineDayMetrics(dayKey: string, dayEvents: TimelineEvent[]): TimelineDayMetrics {
+  const startTimes = dayEvents.map((e) => getDayMinutes(e.start_dt, dayKey));
+  const endTimes = dayEvents.map((e) => getDayMinutes(e.end_dt, dayKey));
+  let dayStart = Math.floor(Math.min(...startTimes) / 60) * 60;
+  let dayEnd = Math.max(Math.ceil(Math.max(...endTimes) / 60) * 60, Math.max(...endTimes) + 30);
+  if (dayEnd <= dayStart) dayEnd = dayStart + 24 * 60;
+
+  const presentTents = Array.from(
+    new Set(dayEvents.map((e) => getTentKey(e.location)))
+  );
+  const tents = TENT_KEYS.filter((key) => presentTents.includes(key));
+  if (tents.length === 0) tents.push("other");
+
+  return {
+    dayStart,
+    dayEnd,
+    tents,
+    minWidth: Math.max(tents.length * 200 + 70, 520),
+    height: dayEnd - dayStart,
+  };
+}
+
+// Print-only option: scales a day's timeline down so the whole day fits one
+// A4 sheet (used by src/pages/[locale]/programme-print.astro). The wrap
+// reserves the scaled box, since transform doesn't affect layout.
+export type TimelineFit = {
+  width: number;
+  height: number;
+  scale: number;
+};
 
 export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, dayKey: string, showLocation = false) {
   const startMin = getDayMinutes(event.start_dt, dayKey);
@@ -301,24 +344,14 @@ export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, d
   `;
 }
 
-export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], noLocationLabel: string, otherLabel: string, now: TimelineNow | null = null) {
-  const startTimes = dayEvents.map((e) => getDayMinutes(e.start_dt, dayKey));
-  const endTimes = dayEvents.map((e) => getDayMinutes(e.end_dt, dayKey));
-  let dayStart = Math.floor(Math.min(...startTimes) / 60) * 60;
-  let dayEnd = Math.max(Math.ceil(Math.max(...endTimes) / 60) * 60, Math.max(...endTimes) + 30);
-  if (dayEnd <= dayStart) dayEnd = dayStart + 24 * 60;
+export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], noLocationLabel: string, otherLabel: string, now: TimelineNow | null = null, fit: TimelineFit | null = null) {
+  const { dayStart, dayEnd, tents, minWidth } = getTimelineDayMetrics(dayKey, dayEvents);
 
   const hourLabels = [];
   for (let m = dayStart; m <= dayEnd; m += 60) {
     const hh = String((Math.floor(m / 60) % 24)).padStart(2, "0");
     hourLabels.push(`<span class="timeline-hour" style="top:${m - dayStart}px;">${hh}:00</span>`);
   }
-
-  const presentTents = Array.from(
-    new Set(dayEvents.map((e) => getTentKey(e.location)))
-  );
-  const tents = TENT_KEYS.filter((key) => presentTents.includes(key));
-  if (tents.length === 0) tents.push("other");
 
   const headers = tents
     .map((tentKey) => {
@@ -343,7 +376,6 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
 
   const heightPx = dayEnd - dayStart;
   const dayLabel = escapeHtml(dayEvents[0].dayLabel || dayKey);
-  const minWidth = Math.max(tents.length * 200 + 70, 520);
 
   const nowMarkup = now
     ? (() => {
@@ -360,11 +392,21 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
       })()
     : { chip: "", line: "" };
 
+  // Print export: scale the whole timeline (min-width and all) down to fit
+  // one A4 sheet, and reserve the scaled box with a wrapper so each day
+  // still occupies exactly one page. The wrap's static styles (overflow,
+  // centering) live in print.css; only the dynamic size is inlined.
+  const fitWrap = fit
+    ? `<div class="timeline-print-wrap" style="width:${fit.width}px;height:${fit.height}px;">`
+    : "";
+  const fitStyle = fit ? `transform:scale(${fit.scale});transform-origin:top left;` : "";
+
   return `
     <div class="timeline-day-section" data-day-key="${dayKey}" data-day-start="${dayStart}" data-day-end="${dayEnd}">
       <h2 class="calendar-day-heading">${dayLabel}</h2>
       <div class="timeline-scroll">
-        <div class="timeline" style="min-width:${minWidth}px;">
+        ${fitWrap}
+        <div class="timeline" style="min-width:${minWidth}px;${fitStyle}">
           <div class="timeline-header">
             <div class="timeline-corner"></div>
             ${headers}
@@ -375,6 +417,7 @@ export function renderTimelineDay(dayKey: string, dayEvents: TimelineEvent[], no
             ${tracks}
           </div>
         </div>
+        ${fit ? "</div>" : ""}
       </div>
     </div>
   `;

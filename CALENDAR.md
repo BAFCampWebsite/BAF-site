@@ -14,12 +14,14 @@ styles and the data.
 | `src/components/ProgrammeCalendar.astro` | Orchestrator. Builds the data in frontmatter, renders the shell (special card, toolbar, grid container + `data-calendar-data` JSON blob), imports **all** calendar styles, and holds the shared client state: filters, search, view switching, URL sync. |
 | `src/components/CalendarFilters.astro` | Filter panel markup (day / type / children / location / search rows). |
 | `src/components/EventModal.astro` | Static event-detail dialog; its content is injected by `calendar-modal.ts`. |
+| `src/pages/[locale]/programme-print.astro` | Print-only page: the full timeline, server-rendered at build time with all CSS inlined (no client JS, no external assets) so it can be converted to PDF straight from `file://`. Excluded from the sitemap. |
 | `src/lib/calendar.ts` | Data prep shared by build and client code: event normalization, day/location filters, category meta, tent keys. |
-| `src/lib/calendar-client.ts` | Client-side view rendering: `renderCard`, `renderList`/`renderListEvent`, `renderTimeline`/`renderTimelineDay`, "now" position helpers, ICS download. |
+| `src/lib/calendar-client.ts` | Client-side view rendering: `renderCard`, `renderList`/`renderListEvent`, `renderTimeline`/`renderTimelineDay`, `getTimelineDayMetrics`, "now" position helpers, ICS download. |
 | `src/lib/calendar-modal.ts` | `createEventModal()` — opens/closes the event modal, wires the add-to-calendar action. |
 | `src/lib/calendar-timeline.ts` | `createTimelineNow()` — keeps the timeline's "now" marker in sync and drives the jump-to-now button. |
 | `src/styles/calendar/base.css` | Shared styles: shell, toolbar, special card, filter panel, search, view toggles, day scaffolding, modal, empty state, media queries. |
 | `src/styles/calendar/cards.css` · `list.css` · `timeline.css` | One file per view, each self-contained. |
+| `src/styles/calendar/print.css` | Print stylesheet: A4 landscape `@page`, one day per sheet, hides the site chrome. Its sheet rules (white paper, grey gridlines, clean day boxes) are re-served on screen by the print page so browser ≈ PDF. Its 10mm `@page` margin must stay in sync with the size constants in `src/pages/[locale]/programme-print.astro`. |
 
 ## Gotchas
 
@@ -34,7 +36,7 @@ styles and the data.
   (`base.css`) and the card/list views (the meta block, badge typography).
   Each view file repeats the few rules it needs and comments mark the pairs —
   keep them in sync.
-- **All four stylesheets are always loaded** (`ProgrammeCalendar.astro`
+- **All five stylesheets are always loaded** (`ProgrammeCalendar.astro`
   imports them unconditionally); the view toggle only switches what gets
   injected, so don't rely on per-view CSS being tree-shaken.
 - **The list view is disabled** in the toolbar (commented-out button), but its
@@ -42,3 +44,25 @@ styles and the data.
 - The client script reads its data from the
   `<script type="application/json" data-calendar-data>` blob and keeps state
   shareable via URL params: `?view=&day=&category=&children=&location=&search=`.
+
+## Print / PDF export
+
+- The programme can be printed directly from the browser: open
+  `/fr/programme-print` (or `/en/…`, `/nl/…`) and use Print → Save as PDF
+  (⌘P). The page is A4 landscape with one festival day per sheet.
+- The page is server-rendered at build time (`src/pages/[locale]/programme-print.astro`)
+  from the same `renderTimelineDay` functions as the on-screen calendar, with
+  all CSS inlined (calendar styles + `print.css`) and the Google Fonts
+  embedded as base64 `@font-face` rules (fetched at build time, so the
+  printout doesn't need network — see `src/lib/embed-google-fonts.ts`).
+- Each day is scaled at build time to fit its sheet (via `getTimelineDayMetrics`
+  and the `fit` option of `renderTimelineDay`); `print.css` forces one day per
+  page with `break-after: page` and A4 landscape via `@page { size: A4 landscape }`.
+- The print page re-serves the sheet rules of `print.css` on screen (see the
+  `screenSheetRules` copy in `programme-print.astro`), so the browser view of
+  the page is a faithful preview of the PDF: white sheets, grey gridlines,
+  clean day boxes and the sans font, instead of the site's cream-on-screen
+  styling.
+- Chrome honors the CSS `@page` size, so the print dialog is already set to
+  A4 Landscape. Firefox ignores `@page` size — pick A4 landscape manually there.
+- The print pages are excluded from the sitemap.

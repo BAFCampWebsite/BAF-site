@@ -1,0 +1,173 @@
+/* Print styles for the programme calendar.
+   Used by the browser-print flow (open /…/programme-print and Print → Save
+   as PDF, see CALENDAR.md → “Print / PDF export”) and by printing the live
+   programme page.
+
+   The programme-print page re-serves this sheet (i.e. “what the paper looks
+   like”) part of the stylesheet on screen too, so the browser view matches
+   the PDF — see the screen copy built in programme-print.astro. Keep the
+   rules below limited to the sheet look: no `@page`, no page-break hacks.
+
+   The per-day fit-scaling in src/pages/[locale]/programme-print.astro
+   assumes the printable area of the @page rule below: A4 landscape
+   (297×210mm) with 10mm margins → 277×190mm of usable space.
+*/
+
+@media print {
+  /* A4 landscape with 10mm margins. The per-day fit-scaling in
+     src/pages/[locale]/programme-print.astro assumes exactly this printable
+     area — keep the explicit A4 size (a bare `size: landscape` would use the
+     browser's default paper size instead). */
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+  /* Strip the site chrome: navigation, hero, footer, toolbar, filters,
+     special card, banner, modal and the intro/spaces sections. */
+  nav,
+  footer,
+  .page-hero,
+  .now-jump-wrap,
+  #mobileMenu,
+  .mobile-menu,
+  .burger,
+  .lang-switcher,
+  .calendar-toolbar,
+  .calendar-filter-panel,
+  .calendar-special-card,
+  .construction-banner,
+  .calendar-modal,
+  .divider,
+  .cards-grid,
+  .page-content > div > h2,
+  .page-content > div > p {
+    display: none !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    /* The print page inlines :root but not the style.css body rule, so the
+       site's sans font must be applied here. */
+    font-family: var(--font-sans);
+    color: var(--encre);
+  }
+  .calendar-wrap {
+    margin-top: 0 !important;
+  }
+  .calendar-grid {
+    gap: 0;
+  }
+
+  /* White sheets: the festival palette is cream/beige, which reads muddy on
+     paper. Gridlines and borders switch to a light grey, and the hour lines
+     are 2px so they stay visible after each day is scaled down to its sheet. */
+  .timeline,
+  .timeline-scroll,
+  .timeline-header,
+  .timeline-corner,
+  .timeline-gutter,
+  .timeline-loc-header,
+  .timeline-event,
+  .timeline-hour,
+  .calendar-day-heading {
+    background: #fff;
+  }
+  .timeline-track,
+  .timeline-gutter {
+    background-color: #fff;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--tl-hour-height) - 2px),
+      #e2e2e2 calc(var(--tl-hour-height) - 2px),
+      #e2e2e2 var(--tl-hour-height)
+    );
+  }
+  .timeline-header {
+    border-bottom-color: #e2e2e2;
+  }
+  .timeline-corner {
+    border-right-color: #e2e2e2;
+  }
+  .timeline-gutter {
+    border-right-color: #e2e2e2;
+  }
+  .timeline-loc-header,
+  .timeline-track {
+    border-left-color: #e2e2e2;
+  }
+  .timeline-event {
+    border-color: #e2e2e2;
+  }
+  .calendar-day-heading {
+    border-bottom-color: #e2e2e2;
+  }
+
+  /* One festival day per sheet. The print page wraps each day in an explicit
+     .print-page; the live programme page relies on the day sections directly.
+     break-inside: avoid guarantees a day never splits mid-timeline. */
+  .print-page,
+  .timeline-day-section {
+    break-after: page;
+    page-break-after: always;
+  }
+  .print-page:last-child,
+  .timeline-day-section:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+  .print-page {
+    break-inside: avoid;
+  }
+
+  .calendar-day-heading {
+    font-size: 1.25rem;
+    margin: 0 0 12px;
+  }
+
+  /* The on-screen "now" marker must not appear on printouts. */
+  .timeline-now,
+  .timeline-now-time {
+    display: none !important;
+  }
+
+  /* Un-clip the timeline and drop screen-only decoration. The per-day
+     scale wrapper added by the export callback does the clipping. */
+  .timeline-scroll {
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  /* Wrapper added around each scaled day in renderTimelineDay: reserves the
+     scaled box (transform doesn't affect layout) and centres it on its
+     sheet. Its width/height are set inline from the fit metrics. */
+  .timeline-print-wrap {
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .timeline-corner {
+    position: static;
+  }
+  /* The gutter must stay positioned so the absolutely-positioned hour
+     labels keep it as their containing block — with a static gutter they
+     fall back to the full-width timeline body and land on the right of the
+     day. A plain relative box does the job (no sticky: the print timeline
+     never scrolls). */
+  .timeline-gutter {
+    position: relative;
+  }
+  .timeline-event {
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  /* Keep the festival colours (gridlines, badges, tent headers) on paper. */
+  #calendarEvents * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

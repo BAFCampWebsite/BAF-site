@@ -14,6 +14,7 @@ import "../styles/calendar/base.css";
 import "../styles/calendar/cards.css";
 import "../styles/calendar/list.css";
 import "../styles/calendar/timeline.css";
+import "../styles/calendar/print.css";
 
 const lang = getLocale();
 const t = getTranslations("programme");
@@ -47,7 +48,7 @@ const dayFilters = buildDayFilters(calendarEvents, lang);
 const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, timelineOtherLabel);
 ---
 
-<div style="margin-top:40px;">
+<div class="calendar-wrap" style="margin-top:40px;">
   <div class="calendar-shell">
     <div class="calendar-special-card">
       <span class="calendar-special-label">{t("calendar.title")}</span>

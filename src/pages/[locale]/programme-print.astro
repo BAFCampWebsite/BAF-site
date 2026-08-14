@@ -1,0 +1,108 @@
+---
+// Print-only page: the full programme timeline, server-rendered at build time
+// into a self-contained HTML file (all CSS inlined, no client JS, no external
+// assets) so it prints correctly from any browser via Print → Save as PDF
+// (⌘P) — see CALENDAR.md → “Print / PDF export”.
+export { getLocaleStaticPaths as getStaticPaths } from "../../i18n/getStaticPaths";
+
+import { setRequestLocale } from 'astro-intl';
+import { getLocale } from "astro-intl";
+import { readFileSync } from 'node:fs';
+import { getTranslations } from "../../i18n/getTranslations";
+import teamupEvents from "../../../public/teamup-events.json";
+import {
+  buildCalendarEvents,
+  buildCategoryMeta,
+} from "../../lib/calendar";
+import {
+  getTimelineDayMetrics,
+  renderTimelineDay,
+} from "../../lib/calendar-client";
+import type { TimelineEvent } from "../../lib/calendar-client";
+import { getEmbeddedFontsCss } from "../../lib/embed-google-fonts";
+
+await setRequestLocale(Astro.url);
+const lang = getLocale();
+const t = getTranslations("programme");
+
+const categoryMeta = buildCategoryMeta(t as unknown as (key: string) => string);
+const calendarEvents = buildCalendarEvents(
+  (teamupEvents?.events ?? []) as Record<string, unknown>[],
+  lang,
+  categoryMeta,
+  t("calendar.filters.workshops"),
+) as unknown as TimelineEvent[];
+const noLocationLabel = t("calendar.noLocation");
+const timelineOtherLabel = t("calendar.timelineOther");
+
+// Printable area of one A4 landscape sheet (297×210mm) with the 10mm margins
+// declared in print.css, at 96dpi. The estimates below cover the day heading
+// (+ section gap) and the location-header row; the 0.96 factor is a safety
+// margin for rounding and font metrics.
+const mmToPx = (mm: number) => (mm / 25.4) * 96;
+const pageW = Math.round(mmToPx(297) - 2 * mmToPx(10));
+const pageH = Math.round(mmToPx(210) - 2 * mmToPx(10));
+const headingEstimate = 44;
+const headerEstimate = 36;
+
+const dayKeys = [...new Set(calendarEvents.map((e) => e.dayKey))];
+const pages = dayKeys.map((dayKey) => {
+  const dayEvents = calendarEvents.filter((e) => e.dayKey === dayKey);
+  const { minWidth, height } = getTimelineDayMetrics(dayKey, dayEvents);
+  const scale =
+    Math.min(pageW / minWidth, (pageH - headingEstimate) / (headerEstimate + height), 1) * 0.96;
+  const fit =
+    scale < 1
+      ? {
+          width: Math.round(minWidth * scale),
+          height: Math.round((headerEstimate + height) * scale),
+          scale,
+        }
+      : null;
+  // One .print-page per day: print.css forces a page break after each one.
+  const section = renderTimelineDay(dayKey, dayEvents, noLocationLabel, timelineOtherLabel, null, fit);
+  return `<div class="print-page">${section}</div>`;
+});
+
+// Inline stylesheet: the Google-font import and :root palette from
+// style.css, the calendar styles, then the print rules. Kept inline so the
+// page works from file:// (no absolute paths, no network).
+const styleSheet = readFileSync("public/style.css", "utf-8");
+// Prefer base64-embedded fonts (works without network at print time); fall
+// back to the Google-Fonts @import when the fetch fails (e.g. offline build).
+// The Google-Fonts URL contains semicolons, so match the whole @import line.
+const fontsImport = styleSheet.match(/^@import[^\n]*/m)?.[0] ?? "";
+const embeddedFonts = await getEmbeddedFontsCss();
+const rootVars = styleSheet.match(/:root\s*\{[^}]*\}/)?.[0] ?? "";
+const printRules = readFileSync("src/styles/calendar/print.css", "utf-8");
+// The browser view should be a faithful preview of the PDF, so the sheet
+// rules (white paper, grey gridlines, clean day boxes, sans fonts) are
+// re-served for screen as well. @page stays print-only: it's paged-media
+// CSS and has no meaning on screen.
+const screenSheetRules = printRules
+  .replace(/@media print\s*\{/, "@media screen {")
+  .replace(/@page\s*\{[^}]*\}/, "");
+const printStyleSheet = [
+  embeddedFonts || fontsImport,
+  rootVars,
+  readFileSync("src/styles/calendar/base.css", "utf-8"),
+  readFileSync("src/styles/calendar/timeline.css", "utf-8"),
+  printRules, // print time: A4 @page, one day per sheet, sheet look
+  screenSheetRules, // screen: same sheet look, so browser ≈ PDF
+].join("\n");
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{t("hero.title")}</title>
+    <style is:inline set:html={printStyleSheet}></style>
+  </head>
+  <body>
+    <main id="calendarEvents" class="calendar-grid">
+      {pages.map((page) => <Fragment set:html={page} />)}
+    </main>
+  </body>
+</html>
