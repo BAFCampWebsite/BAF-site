@@ -1,6 +1,9 @@
 ---
+import { getLocale } from 'astro-intl';
 import { getTranslations } from '../i18n/getTranslations';
 
+const lang = getLocale();
+const p = `/${lang}`;
 const t = getTranslations('enBref');
 ---
 
@@ -20,7 +23,7 @@ const t = getTranslations('enBref');
         {t('card1Link') && (
           <>
             <br>
-            <a href={t('card1LinkUrl')}>{t('card1Link')}</a> {t('card1LinkSuffix')}
+            <a href={`${p}/programme`}>{t('card1Link')}</a>
           </>
         )}
       </p>
