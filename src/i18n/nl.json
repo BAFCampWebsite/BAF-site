@@ -596,6 +596,12 @@
           "theatre": "thea",
           "workshops": "work"
         }
+      },
+      "printInstructions": {
+        "title": "Deze pagina afdrukken",
+        "step1": "Open deze pagina in Google Chrome (of een andere Chromium-browser) en druk op ⌘P / Ctrl+P.",
+        "step2": "Schakel in het afdrukvenster onder 'Meer instellingen' de optie 'Kop- en voetteksten' uit.",
+        "step3": "Het papierformaat staat vooraf ingesteld op A4 liggend, met één dag per pagina — sla op als PDF of druk af."
       }
     },
     "dayContent": {

@@ -89,6 +89,44 @@ const printStyleSheet = [
   readFileSync("src/styles/calendar/timeline.css", "utf-8"),
   printRules, // print time: A4 @page, one day per sheet, sheet look
   screenSheetRules, // screen: same sheet look, so browser ≈ PDF
+  // The “how to print” callout is page chrome: styled here and kept off the
+  // sheets by a real @media print rule (the screenSheetRules copy above
+  // must not hide it on screen).
+  `
+    .print-instructions {
+      max-width: 1047px; /* printable width of one A4 landscape sheet */
+      margin: 24px auto;
+      padding: 14px 20px;
+      border: 1px solid var(--sable);
+      border-radius: 12px;
+      background: var(--creme);
+      color: var(--encre);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .print-instructions-title {
+      margin: 0 0 6px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gris-encre);
+    }
+    .print-instructions ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .print-instructions li {
+      margin: 2px 0;
+    }
+    @media print {
+      .print-instructions {
+        display: none !important;
+      }
+    }
+  `,
 ].join("\n");
 ---
 
@@ -101,6 +139,14 @@ const printStyleSheet = [
     <style is:inline set:html={printStyleSheet}></style>
   </head>
   <body>
+    <div class="print-instructions" role="note">
+      <p class="print-instructions-title">{t("calendar.printInstructions.title")}</p>
+      <ol>
+        <li>{t("calendar.printInstructions.step1")}</li>
+        <li>{t("calendar.printInstructions.step2")}</li>
+        <li>{t("calendar.printInstructions.step3")}</li>
+      </ol>
+    </div>
     <main id="calendarEvents" class="calendar-grid">
       {pages.map((page) => <Fragment set:html={page} />)}
     </main>

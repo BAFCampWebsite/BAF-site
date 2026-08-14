@@ -596,6 +596,12 @@
           "theatre": "thea",
           "workshops": "work"
         }
+      },
+      "printInstructions": {
+        "title": "Printing this page",
+        "step1": "Open this page in Google Chrome (or any Chromium-based browser) and press ⌘P / Ctrl+P.",
+        "step2": "In the print dialog, untick “Headers and footers” under More settings.",
+        "step3": "Paper size and margins are preset to A4 landscape, with one day per sheet — save as PDF or print."
       }
     },
     "dayContent": {
