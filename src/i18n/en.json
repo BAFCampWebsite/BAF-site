@@ -404,6 +404,10 @@
       "cameras": {
         "title": "Photography",
         "text": "It is <bold>prohibited to take pictures</bold> at the festival site and camp. Festival-coordinated photographers will be on site, and opt-in badges will be available at the entrance."
+      },
+      "chansonnier": {
+        "title": "Song book",
+        "text": "The BAF Camp has an official song book! Download the <link>song book (PDF)</link> and start rehearsing before the festival."
       }
     }
   },

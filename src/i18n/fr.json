@@ -404,6 +404,10 @@
       "cameras": {
         "title": "Photographie",
         "text": "Il est <bold>généralement interdit de prendre des photos</bold> sur le site du festival et le camp. Des photographes coordonnés par le festival seront présents, et des badges opt-in seront disponibles à l'entrée."
+      },
+      "chansonnier": {
+        "title": "Chansonnier",
+        "text": "Le BAF Camp a son chansonnier officiel ! Téléchargez le <link>chansonnier (PDF)</link> et commencez à répéter avant le festival."
       }
     }
   },
