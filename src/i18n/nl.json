@@ -601,9 +601,14 @@
         "title": "Deze pagina afdrukken",
         "step1": "Open deze pagina in Google Chrome (of een andere Chromium-browser) en druk op ⌘P / Ctrl+P.",
         "step2": "Schakel in het afdrukvenster onder 'Meer instellingen' de optie 'Kop- en voetteksten' uit.",
-        "step3": "Het papierformaat staat vooraf ingesteld op A4 liggend, met één dag per pagina — sla op als PDF of druk af."
+        "step3": "Het papierformaat staat vooraf ingesteld op A4 liggend, met één dag per pagina — sla op als PDF of druk af.",
+        "step3List": "Het papierformaat staat vooraf ingesteld op A4 staand, en evenementen worden nooit over twee pagina's verdeeld — sla op als PDF of druk af."
       },
-      "printLink": "Afdrukversie"
+      "printLink": "Afdrukversie",
+      "printLinkList": "Afdrukbare lijst",
+      "printCover": {
+        "title": "Festivalprogramma"
+      }
     },
     "dayContent": {
       "i1": "De twee belangrijkste dagen van ons kamp staan in het teken van uitwisseling, discussie en workshops rond de vraag: “Hoe kunnen we samen strijden?” door iedereen voor iedereen!<br>Om inclusief te zijn, zullen alle activiteiten in de tenten <strong>in ten minste drie talen worden vertolkt</strong>: Engels, Frans en Nederlands."

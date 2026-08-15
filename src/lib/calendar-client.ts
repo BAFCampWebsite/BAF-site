@@ -432,3 +432,82 @@ export function renderTimeline(visibleEvents: TimelineEvent[], activeDay: string
     .map((dayKey) => renderTimelineDay(dayKey, visibleEvents.filter((e) => e.dayKey === dayKey), noLocationLabel, otherLabel, now))
     .join("");
 }
+
+// Print-list export: the full programme as a portrait-A4 list (used by
+// src/pages/[locale]/programme-print-list.astro). Events are grouped by day
+// and then by place, so the individual items never carry a date or a
+// location — the group headers provide both. The one exception is the
+// catch-all "other" group, whose header is generic: there the location is
+// shown inline, the same rule as the timeline tracks.
+export function renderPrintListEvent(event: TimelineEvent, showLocation = false) {
+  const title = escapeHtml(event.title || "Untitled event");
+  const timeLabel = escapeHtml(event.timeLabel || "");
+  const location = event.location ? escapeHtml(String(event.location).trim()) : "";
+  const who = event.who ? escapeHtml(event.who) : "";
+  const language = event.language ? escapeHtml(event.language) : "";
+  const childFriendly = event.childFriendly ? escapeHtml(event.childFriendly) : "";
+  const warnings = event.warnings ? escapeHtml(event.warnings) : "";
+  const notes = event.notesText ? escapeHtml(event.notesText).replace(/\n/g, "<br>") : "";
+  const accent = (event.accents && event.accents[0]) || "var(--rose)";
+  const badges = (event.labels || [])
+    .map((label, i) => {
+      const bg = (event.accents && event.accents[i]) || "var(--rose)";
+      return `<span class="print-list-badge" style="background:${bg};">${escapeHtml(label)}</span>`;
+    })
+    .join("");
+  // Emojis sit in an upright span so the italic meta line doesn't slant
+  // them (mirrors .calendar-list-info, where only the text is italic).
+  const metaParts = [
+    language ? `<span class="print-list-meta-icon">💬</span> ${language}` : "",
+    childFriendly ? `<span class="print-list-meta-icon">🧒</span> ${childFriendly}` : "",
+    warnings ? `<span class="print-list-meta-icon">⚠️</span> ${warnings}` : "",
+    showLocation && location ? `<span class="print-list-meta-icon">🎪</span> ${location}` : "",
+    who ? `<span class="print-list-meta-icon">👤</span> ${who}` : "",
+  ].filter(Boolean);
+  const metaLine = metaParts.length ? `<p class="print-list-meta">${metaParts.join(" · ")}</p>` : "";
+
+  return `
+    <article class="print-list-item" data-event-id="${event.id}" style="border-left-color:${accent};">
+      <div class="print-list-item-head">
+        <span class="print-list-time">${timeLabel}</span>
+        <span class="print-list-badges">${badges}</span>
+      </div>
+      <h4 class="print-list-title">${title}</h4>
+      ${metaLine}
+      ${notes ? `<p class="print-list-notes">${notes}</p>` : ""}
+    </article>
+  `;
+}
+
+export function renderPrintListDay(dayKey: string, dayEvents: TimelineEvent[], noLocationLabel: string, otherLabel: string) {
+  const dayLabel = escapeHtml(dayEvents[0].dayLabel || dayKey);
+  const presentTents = Array.from(
+    new Set(dayEvents.map((e) => getTentKey(e.location)))
+  );
+  const tents = TENT_KEYS.filter((key) => presentTents.includes(key));
+  if (tents.length === 0) tents.push("other");
+
+  const places = tents
+    .map((tentKey) => {
+      const events = dayEvents.filter((e) => getTentKey(e.location) === tentKey);
+      const showLocation = tentKey === "other";
+      const headingLabel =
+        tentKey === "other"
+          ? escapeHtml(otherLabel)
+          : escapeHtml(getLocationLabel(events[0], noLocationLabel));
+      return `
+        <section class="print-list-place">
+          <h3 class="print-list-place-heading">${headingLabel}</h3>
+          ${events.map((e) => renderPrintListEvent(e, showLocation)).join("")}
+        </section>
+      `;
+    })
+    .join("");
+
+  return `
+    <section class="print-list-day" data-day-key="${dayKey}">
+      <h2 class="calendar-day-heading">${dayLabel}</h2>
+      ${places}
+    </section>
+  `;
+}

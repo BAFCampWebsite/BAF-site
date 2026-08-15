@@ -76,6 +76,9 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
       <a class="calendar-print-link" href={`${p}/programme-print`}>
         <span aria-hidden="true">🖨️</span> {t("calendar.printLink")}
       </a>
+      <a class="calendar-print-link" href={`${p}/programme-print-list`}>
+        <span aria-hidden="true">📄</span> {t("calendar.printLinkList")}
+      </a>
     </div>
 
     <CalendarFilters dayFilters={dayFilters} locationFilters={locationFilters} />

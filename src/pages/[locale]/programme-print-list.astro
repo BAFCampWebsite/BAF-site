@@ -1,0 +1,78 @@
+---
+// Print-only page: the full programme as a portrait-A4 list, server-rendered
+// at build time into a self-contained HTML file (all CSS inlined, no client
+// JS, no external assets) so it prints correctly from any browser via
+// Print → Save as PDF (⌘P) — see CALENDAR.md → “Print / PDF export”.
+// The print shell (HTML skeleton + inlined stylesheet) lives in
+// src/layouts/PrintLayout.astro and the shared “how to print” callout in
+// src/components/PrintInstructions.astro.
+export { getLocaleStaticPaths as getStaticPaths } from "../../i18n/getStaticPaths";
+
+import { setRequestLocale } from 'astro-intl';
+import { getLocale } from "astro-intl";
+import { getTranslations } from "../../i18n/getTranslations";
+import teamupEvents from "../../../public/teamup-events.json";
+import {
+  buildCalendarEvents,
+  buildCategoryMeta,
+} from "../../lib/calendar";
+import { renderPrintListDay } from "../../lib/calendar-client";
+import type { TimelineEvent } from "../../lib/calendar-client";
+import PrintLayout from "../../layouts/PrintLayout.astro";
+import PrintInstructions from "../../components/PrintInstructions.astro";
+import PrintCover from "../../components/PrintCover.astro";
+
+await setRequestLocale(Astro.url);
+const lang = getLocale();
+const t = getTranslations("programme");
+
+const categoryMeta = buildCategoryMeta(t as unknown as (key: string) => string);
+const calendarEvents = buildCalendarEvents(
+  (teamupEvents?.events ?? []) as Record<string, unknown>[],
+  lang,
+  categoryMeta,
+  t("calendar.filters.workshops"),
+) as unknown as TimelineEvent[];
+const noLocationLabel = t("calendar.noLocation");
+const timelineOtherLabel = t("calendar.timelineOther");
+
+// Portrait A4: unlike the timeline export (one day per sheet), the days flow
+// one after another and only the individual events are kept whole
+// (break-inside: avoid in print-list.css), so the day sections are rendered
+// as one continuous list instead of being wrapped in .print-page blocks.
+const dayKeys = [...new Set(calendarEvents.map((e) => e.dayKey))];
+const sections = dayKeys.map((dayKey) =>
+  renderPrintListDay(dayKey, calendarEvents.filter((e) => e.dayKey === dayKey), noLocationLabel, timelineOtherLabel),
+);
+
+// Localized date range for the cover title page, e.g. “20–23 August 2026”.
+// The day keys are in chronological order (the events are sorted by start
+// time), so the first and last keys bound the festival.
+function formatDateRange(firstKey: string, lastKey: string) {
+  const first = new Date(`${firstKey}T00:00:00Z`);
+  const last = new Date(`${lastKey}T00:00:00Z`);
+  const dayFmt = new Intl.DateTimeFormat(lang, { day: "numeric", timeZone: "UTC" });
+  const monthFmt = new Intl.DateTimeFormat(lang, { month: "long", timeZone: "UTC" });
+  const yearFmt = new Intl.DateTimeFormat(lang, { year: "numeric", timeZone: "UTC" });
+  if (first.getUTCMonth() === last.getUTCMonth() && first.getUTCFullYear() === last.getUTCFullYear()) {
+    return `${dayFmt.format(first)}–${dayFmt.format(last)} ${monthFmt.format(last)} ${yearFmt.format(last)}`;
+  }
+  return `${dayFmt.format(first)} ${monthFmt.format(first)} – ${dayFmt.format(last)} ${monthFmt.format(last)} ${yearFmt.format(last)}`;
+}
+
+const heroTitle = t("hero.title");
+const coverDates = dayKeys.length
+  ? formatDateRange(dayKeys[0], dayKeys[dayKeys.length - 1])
+  : "";
+---
+
+<PrintLayout
+  title="BAF26-Booklet"
+  printStylesheet="src/styles/calendar/print-list.css"
+  mainId="calendarEvents"
+  mainClass="calendar-grid"
+>
+  <PrintInstructions slot="instructions" portrait />
+  <PrintCover title={heroTitle} dates={coverDates} />
+  {sections.map((section) => <Fragment set:html={section} />)}
+</PrintLayout>

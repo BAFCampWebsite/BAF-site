@@ -1,0 +1,36 @@
+---
+// PrintCover.astro — full-page title page for the calendar print exports:
+// the BAF logo, a “Festival Programme” label, the programme title and the
+// festival dates. Rendered before the day sections in
+// programme-print-list.astro; print-list.css makes it fill one A4 sheet
+// (min-height: 277mm) and forces a page break after it, so the list starts
+// on page two.
+//
+// The logo is inlined as base64 so the print page stays self-contained
+// (works straight from file://, no network) — same trick as the embedded
+// Google Fonts in PrintLayout.astro.
+import { readFileSync } from "node:fs";
+import { getTranslations } from "../i18n/getTranslations";
+
+interface Props {
+  title: string;
+  dates: string;
+}
+
+const { title, dates } = Astro.props;
+const t = getTranslations("programme");
+const logoBase64 = readFileSync("public/BAF Logo.png").toString("base64");
+---
+
+<section class="print-cover">
+  <img
+    class="print-cover-logo"
+    src={`data:image/png;base64,${logoBase64}`}
+    alt=""
+    width="1950"
+    height="1015"
+  />
+  <p class="print-cover-eyebrow">{t("calendar.printCover.title")}</p>
+  <h1 class="print-cover-title">{title}</h1>
+  <p class="print-cover-dates">{dates}</p>
+</section>

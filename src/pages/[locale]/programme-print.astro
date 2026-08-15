@@ -20,6 +20,7 @@ import {
 } from "../../lib/calendar-client";
 import type { TimelineEvent } from "../../lib/calendar-client";
 import PrintLayout from "../../layouts/PrintLayout.astro";
+import PrintInstructions from "../../components/PrintInstructions.astro";
 
 await setRequestLocale(Astro.url);
 const lang = getLocale();
@@ -75,13 +76,6 @@ const pages = dayKeys.map((dayKey) => {
   mainId="calendarEvents"
   mainClass="calendar-grid"
 >
-  <Fragment slot="instructions">
-    <p class="print-instructions-title">{t("calendar.printInstructions.title")}</p>
-    <ol>
-      <li>{t("calendar.printInstructions.step1")}</li>
-      <li>{t("calendar.printInstructions.step2")}</li>
-      <li>{t("calendar.printInstructions.step3")}</li>
-    </ol>
-  </Fragment>
+  <PrintInstructions slot="instructions" />
   {pages.map((page) => <Fragment set:html={page} />)}
 </PrintLayout>

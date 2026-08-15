@@ -1,0 +1,27 @@
+---
+// Shared “how to print this page” callout, rendered into the
+// `instructions` slot of PrintLayout.astro. Used by the timeline print page
+// (default) and the list print page (pass `portrait` so the paper note
+// describes A4 portrait instead of landscape).
+//
+// Usage:
+//   <PrintLayout>
+//     <PrintInstructions slot="instructions" />
+//     ...
+//   </PrintLayout>
+import { getTranslations } from "../i18n/getTranslations";
+
+interface Props {
+  portrait?: boolean;
+}
+
+const { portrait = false } = Astro.props;
+const t = getTranslations("programme");
+---
+
+<p class="print-instructions-title">{t("calendar.printInstructions.title")}</p>
+<ol>
+  <li>{t("calendar.printInstructions.step1")}</li>
+  <li>{t("calendar.printInstructions.step2")}</li>
+  <li>{portrait ? t("calendar.printInstructions.step3List") : t("calendar.printInstructions.step3")}</li>
+</ol>
