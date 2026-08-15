@@ -14,7 +14,8 @@ styles and the data.
 | `src/components/ProgrammeCalendar.astro` | Orchestrator. Builds the data in frontmatter, renders the shell (special card, toolbar, grid container + `data-calendar-data` JSON blob), imports **all** calendar styles, and holds the shared client state: filters, search, view switching, URL sync. |
 | `src/components/CalendarFilters.astro` | Filter panel markup (day / type / children / location / search rows). |
 | `src/components/EventModal.astro` | Static event-detail dialog; its content is injected by `calendar-modal.ts`. |
-| `src/pages/[locale]/programme-print.astro` | Print-only page: the full timeline, server-rendered at build time with all CSS inlined (no client JS, no external assets) so it can be converted to PDF straight from `file://`. Excluded from the sitemap. |
+| `src/pages/[locale]/programme-print.astro` | Print-only page: the full timeline, server-rendered at build time with all CSS inlined (no client JS, no external assets) so it can be converted to PDF straight from `file://`. Uses the `PrintLayout.astro` shell. Excluded from the sitemap. |
+| `src/layouts/PrintLayout.astro` | Reusable shell for print-first pages: emits a self-contained HTML document (inlined stylesheet: site `:root`/fonts + the page's stylesheets, `print.css` rules, and their screen copy so browser ≈ PDF) plus an optional “how to print” callout. See its header comment for the props and slots. |
 | `src/lib/calendar.ts` | Data prep shared by build and client code: event normalization, day/location filters, category meta, tent keys. |
 | `src/lib/calendar-client.ts` | Client-side view rendering: `renderCard`, `renderList`/`renderListEvent`, `renderTimeline`/`renderTimelineDay`, `getTimelineDayMetrics`, "now" position helpers, ICS download. |
 | `src/lib/calendar-modal.ts` | `createEventModal()` — opens/closes the event modal, wires the add-to-calendar action. |
@@ -51,18 +52,19 @@ styles and the data.
   `/fr/programme-print` (or `/en/…`, `/nl/…`) and use Print → Save as PDF
   (⌘P). The page is A4 landscape with one festival day per sheet.
 - The page is server-rendered at build time (`src/pages/[locale]/programme-print.astro`)
-  from the same `renderTimelineDay` functions as the on-screen calendar, with
-  all CSS inlined (calendar styles + `print.css`) and the Google Fonts
-  embedded as base64 `@font-face` rules (fetched at build time, so the
-  printout doesn't need network — see `src/lib/embed-google-fonts.ts`).
+  from the same `renderTimelineDay` functions as the on-screen calendar, wrapped
+  in the `PrintLayout.astro` shell, which inlines all CSS (calendar styles +
+  `print.css`) and embeds the Google Fonts as base64 `@font-face` rules
+  (fetched at build time, so the printout doesn't need network — see
+  `src/lib/embed-google-fonts.ts`).
 - Each day is scaled at build time to fit its sheet (via `getTimelineDayMetrics`
   and the `fit` option of `renderTimelineDay`); `print.css` forces one day per
   page with `break-after: page` and A4 landscape via `@page { size: A4 landscape }`.
 - The print page re-serves the sheet rules of `print.css` on screen (see the
-  `screenSheetRules` copy in `programme-print.astro`), so the browser view of
-  the page is a faithful preview of the PDF: white sheets, grey gridlines,
-  clean day boxes and the sans font, instead of the site's cream-on-screen
-  styling.
+  `screenSheetRules` copy in `src/layouts/PrintLayout.astro`), so the browser
+  view of the page is a faithful preview of the PDF: white sheets, grey
+  gridlines, clean day boxes and the sans font, instead of the site's
+  cream-on-screen styling.
 - Chrome honors the CSS `@page` size, so the print dialog is already set to
   A4 Landscape. Firefox ignores `@page` size — pick A4 landscape manually there.
-- The print pages are excluded from the sitemap.
+- The print pages are excluded from the sitemap (any slug ending in `-print`).

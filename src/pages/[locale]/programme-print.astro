@@ -2,12 +2,12 @@
 // Print-only page: the full programme timeline, server-rendered at build time
 // into a self-contained HTML file (all CSS inlined, no client JS, no external
 // assets) so it prints correctly from any browser via Print → Save as PDF
-// (⌘P) — see CALENDAR.md → “Print / PDF export”.
+// (⌘P) — see CALENDAR.md → “Print / PDF export”. The print shell (HTML
+// skeleton + inlined stylesheet) lives in src/layouts/PrintLayout.astro.
 export { getLocaleStaticPaths as getStaticPaths } from "../../i18n/getStaticPaths";
 
 import { setRequestLocale } from 'astro-intl';
 import { getLocale } from "astro-intl";
-import { readFileSync } from 'node:fs';
 import { getTranslations } from "../../i18n/getTranslations";
 import teamupEvents from "../../../public/teamup-events.json";
 import {
@@ -19,7 +19,7 @@ import {
   renderTimelineDay,
 } from "../../lib/calendar-client";
 import type { TimelineEvent } from "../../lib/calendar-client";
-import { getEmbeddedFontsCss } from "../../lib/embed-google-fonts";
+import PrintLayout from "../../layouts/PrintLayout.astro";
 
 await setRequestLocale(Astro.url);
 const lang = getLocale();
@@ -63,92 +63,25 @@ const pages = dayKeys.map((dayKey) => {
   const section = renderTimelineDay(dayKey, dayEvents, noLocationLabel, timelineOtherLabel, null, fit);
   return `<div class="print-page">${section}</div>`;
 });
-
-// Inline stylesheet: the Google-font import and :root palette from
-// style.css, the calendar styles, then the print rules. Kept inline so the
-// page works from file:// (no absolute paths, no network).
-const styleSheet = readFileSync("public/style.css", "utf-8");
-// Prefer base64-embedded fonts (works without network at print time); fall
-// back to the Google-Fonts @import when the fetch fails (e.g. offline build).
-// The Google-Fonts URL contains semicolons, so match the whole @import line.
-const fontsImport = styleSheet.match(/^@import[^\n]*/m)?.[0] ?? "";
-const embeddedFonts = await getEmbeddedFontsCss();
-const rootVars = styleSheet.match(/:root\s*\{[^}]*\}/)?.[0] ?? "";
-const printRules = readFileSync("src/styles/calendar/print.css", "utf-8");
-// The browser view should be a faithful preview of the PDF, so the sheet
-// rules (white paper, grey gridlines, clean day boxes, sans fonts) are
-// re-served for screen as well. @page stays print-only: it's paged-media
-// CSS and has no meaning on screen.
-const screenSheetRules = printRules
-  .replace(/@media print\s*\{/, "@media screen {")
-  .replace(/@page\s*\{[^}]*\}/, "");
-const printStyleSheet = [
-  embeddedFonts || fontsImport,
-  rootVars,
-  readFileSync("src/styles/calendar/base.css", "utf-8"),
-  readFileSync("src/styles/calendar/timeline.css", "utf-8"),
-  printRules, // print time: A4 @page, one day per sheet, sheet look
-  screenSheetRules, // screen: same sheet look, so browser ≈ PDF
-  // The “how to print” callout is page chrome: styled here and kept off the
-  // sheets by a real @media print rule (the screenSheetRules copy above
-  // must not hide it on screen).
-  `
-    .print-instructions {
-      max-width: 1047px; /* printable width of one A4 landscape sheet */
-      margin: 24px auto;
-      padding: 14px 20px;
-      border: 1px solid var(--sable);
-      border-radius: 12px;
-      background: var(--creme);
-      color: var(--encre);
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      line-height: 1.6;
-    }
-    .print-instructions-title {
-      margin: 0 0 6px;
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gris-encre);
-    }
-    .print-instructions ol {
-      margin: 0;
-      padding-left: 20px;
-    }
-    .print-instructions li {
-      margin: 2px 0;
-    }
-    @media print {
-      .print-instructions {
-        display: none !important;
-      }
-    }
-  `,
-].join("\n");
 ---
 
-<!DOCTYPE html>
-<html lang={lang}>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{t("hero.title")}</title>
-    <style is:inline set:html={printStyleSheet}></style>
-  </head>
-  <body>
-    <div class="print-instructions" role="note">
-      <p class="print-instructions-title">{t("calendar.printInstructions.title")}</p>
-      <ol>
-        <li>{t("calendar.printInstructions.step1")}</li>
-        <li>{t("calendar.printInstructions.step2")}</li>
-        <li>{t("calendar.printInstructions.step3")}</li>
-      </ol>
-    </div>
-    <main id="calendarEvents" class="calendar-grid">
-      {pages.map((page) => <Fragment set:html={page} />)}
-    </main>
-  </body>
-</html>
+<PrintLayout
+  title={t("hero.title")}
+  stylesheets={[
+    "src/styles/calendar/base.css",
+    "src/styles/calendar/timeline.css",
+  ]}
+  printStylesheet="src/styles/calendar/print.css"
+  mainId="calendarEvents"
+  mainClass="calendar-grid"
+>
+  <Fragment slot="instructions">
+    <p class="print-instructions-title">{t("calendar.printInstructions.title")}</p>
+    <ol>
+      <li>{t("calendar.printInstructions.step1")}</li>
+      <li>{t("calendar.printInstructions.step2")}</li>
+      <li>{t("calendar.printInstructions.step3")}</li>
+    </ol>
+  </Fragment>
+  {pages.map((page) => <Fragment set:html={page} />)}
+</PrintLayout>

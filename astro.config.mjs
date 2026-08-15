@@ -29,8 +29,9 @@ export default defineConfig({
           fr: 'fr-BE',
         },
       },
-    // The print-only pages don't belong in the sitemap.
-    filter: (page) => !/\/programme-print\/?$/.test(page),
+    // Print-only pages (e.g. /fr/programme-print) don't belong in the
+    // sitemap. Any page whose slug ends in `-print` is treated as one.
+    filter: (page) => !/\/[^/]+-print\/?$/.test(page),
     xslURL: 'https://gitcdn.xyz/repo/pedroborges/xml-sitemap-stylesheet/master/sitemap.xsl'
     })],
   vite: {

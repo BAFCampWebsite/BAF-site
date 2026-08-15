@@ -1,0 +1,142 @@
+---
+// PrintLayout.astro — shared shell for print-first pages.
+//
+// Pages that are meant to be opened in a browser and printed (Print → Save
+// as PDF, ⌘P) wrap their content in this layout. It emits a self-contained
+// HTML file: every stylesheet is inlined into one <style> block (with the
+// Google Fonts base64-embedded when the build has network), and there is no
+// client JS or external asset — so the page prints correctly straight from
+// file://. See src/pages/[locale]/programme-print.astro for a usage example.
+//
+// Props:
+//   title            <title> of the page.
+//   stylesheets      Project-relative CSS files to inline, in order, before
+//                    the print rules (e.g. ["src/styles/calendar/base.css"]).
+//   printStylesheet  Project-relative CSS file describing the paper output
+//                    (its @media print rules). It is inlined as-is, and its
+//                    sheet rules are re-served on screen so the browser view
+//                    matches the PDF (see below).
+//   extraCss         Raw CSS appended after everything else.
+//   mainId, mainClass  Attributes for the <main> wrapper around the slot.
+//
+// Slots:
+//   default        Page content, rendered inside <main>.
+//   instructions   Optional callout rendered above <main>. It is shown on
+//                  screen (its styles are included too) and hidden when
+//                  printing, so it can carry “how to print this page” steps
+//                  without ending up in the PDF.
+
+import { readFileSync } from 'node:fs';
+import { getLocale, setRequestLocale } from 'astro-intl';
+import { getEmbeddedFontsCss } from '../lib/embed-google-fonts';
+
+interface Props {
+  title: string;
+  stylesheets?: string[];
+  printStylesheet?: string;
+  extraCss?: string;
+  mainId?: string;
+  mainClass?: string;
+}
+
+await setRequestLocale(Astro.url);
+const lang = getLocale();
+
+const { title, stylesheets = [], printStylesheet, extraCss = '', mainId, mainClass } = Astro.props;
+const hasInstructions = Astro.slots.has('instructions');
+
+// Inline stylesheet: the Google-font import and :root palette from
+// style.css, the page's own sheets, then the print rules. Kept inline so the
+// page works from file:// (no absolute paths, no network).
+const styleSheet = readFileSync("public/style.css", "utf-8");
+// Prefer base64-embedded fonts (works without network at print time); fall
+// back to the Google-Fonts @import when the fetch fails (e.g. offline build).
+// The Google-Fonts URL contains semicolons, so match the whole @import line.
+const fontsImport = styleSheet.match(/^@import[^\n]*/m)?.[0] ?? "";
+const embeddedFonts = await getEmbeddedFontsCss();
+const rootVars = styleSheet.match(/:root\s*\{[^}]*\}/)?.[0] ?? "";
+
+let printRules = "";
+let screenSheetRules = "";
+if (printStylesheet) {
+  printRules = readFileSync(printStylesheet, "utf-8");
+  // The browser view should be a faithful preview of the PDF, so the sheet
+  // rules (white paper, grey gridlines, clean boxes, sans fonts) are
+  // re-served for screen as well. @page stays print-only: it's paged-media
+  // CSS and has no meaning on screen.
+  screenSheetRules = printRules
+    .replace(/@media print\s*\{/, "@media screen {")
+    .replace(/@page\s*\{[^}]*\}/, "");
+}
+
+// The “how to print” callout is page chrome: styled here and kept off the
+// sheets by a real @media print rule (the screenSheetRules copy above must
+// not hide it on screen).
+const instructionsCss = hasInstructions
+  ? `
+    .print-instructions {
+      max-width: 1047px; /* printable width of one A4 landscape sheet */
+      margin: 24px auto;
+      padding: 14px 20px;
+      border: 1px solid var(--sable);
+      border-radius: 12px;
+      background: var(--creme);
+      color: var(--encre);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .print-instructions-title {
+      margin: 0 0 6px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gris-encre);
+    }
+    .print-instructions ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .print-instructions li {
+      margin: 2px 0;
+    }
+    @media print {
+      .print-instructions {
+        display: none !important;
+      }
+    }
+  `
+  : "";
+
+const printStyleSheet = [
+  embeddedFonts || fontsImport,
+  rootVars,
+  ...stylesheets.map((path) => readFileSync(path, "utf-8")),
+  printRules, // print time: e.g. A4 @page, one sheet per block
+  screenSheetRules, // screen: same sheet look, so browser ≈ PDF
+  instructionsCss,
+  extraCss,
+].join("\n");
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{title}</title>
+    <style is:inline set:html={printStyleSheet}></style>
+  </head>
+  <body>
+    {hasInstructions && (
+      <div class="print-instructions" role="note">
+        <slot name="instructions" />
+      </div>
+    )}
+    <main id={mainId} class={mainClass}>
+      <slot />
+    </main>
+  </body>
+</html>
