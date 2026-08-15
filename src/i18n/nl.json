@@ -502,12 +502,12 @@
     },
     "registration": {
       "title": "Hoe inschrijven?",
-      "description": "Inschrijving gebeurt via het online inschrijvingsformulier. Je kan onze verkoopsvoorwaarden <a href=\"{salesConditionsUrl}\">hier</a> vinden.",
+      "description": "Je kunt je niet meer inschrijven voor het festival. Je kunt je echter via het onderstaande formulier aanmelden voor onze mailinglijst, zodat we je op de hoogte houden van toekomstige activiteiten, waaronder de organisatie van de editie van volgend jaar!",
       "stepNum": "1",
       "stepTitle": "Vul het inschrijvingsformulier in",
       "stepText": "Vul het inschrijvingsformulier in om ons te laten weten dat je naar het kamp komt, via deze link: https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306.",
       "formUrl": "https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306",
-      "btnForm": "Inschrijvingsformulier invullen →"
+      "btnForm": "Schrijf je in voor onze nieuwsbrief →"
     },
     "contact": {
       "title": "Een vraag?",

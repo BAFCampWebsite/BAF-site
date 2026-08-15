@@ -502,12 +502,12 @@
     },
     "registration": {
       "title": "How to register?",
-      "description": "Registration is done via the online registration form. You can find our sales conditions <a href=\"{salesConditionsUrl}\">here</a>.",
+      "description": "It is not possible to register for the festival anymore. However, you can use the form below to sign up to our mailing list and we'll keep you up to date with future activities, including organising next year's edition!",
       "stepNum": "1",
       "stepTitle": "Fill in the registration form",
       "stepText": "Fill in the registration form to let us know you're coming to the camp.",
       "formUrl": "https://framaforms.org/baf-camp-registration-volunteering-1782682708",
-      "btnForm": "Fill in the registration form →"
+      "btnForm": "Sign up to our mailing list →"
     },
     "contact": {
       "title": "A question?",

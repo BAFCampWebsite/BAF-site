@@ -502,12 +502,12 @@
     },
     "registration": {
       "title": "Comment s'inscrire ?",
-      "description": "L'inscription se fait via le formulaire d'inscription en ligne. Vous pouvez trouver nos conditions de ventes <a href=\"{salesConditionsUrl}\">ici.</a>",
+      "description": "Il n'est plus possible de s'inscrire au festival. Vous pouvez toutefois utiliser le formulaire ci-dessous pour vous inscrire à notre liste de diffusion ; nous vous tiendrons ainsi informés de nos prochaines activités, notamment de l'organisation de l'édition de l'année prochaine !",
       "stepNum": "1",
       "stepTitle": "Remplir le formulaire d'inscription",
       "stepText": "Remplis le formulaire d'inscription pour t'annoncer au camp.",
       "formUrl": "https://framaforms.org/inscription-benevolat-baf-camp-1780562822",
-      "btnForm": "Remplir le formulaire d'inscription →"
+      "btnForm": "Inscrit toi à notre liste de diffusion →"
     },
     "contact": {
       "title": "Une question ?",
