@@ -602,7 +602,8 @@
         "step1": "Ouvrez cette page dans Google Chrome (ou tout autre navigateur basé sur Chromium) et appuyez sur ⌘P / Ctrl+P.",
         "step2": "Dans la boîte de dialogue d'impression, décochez « En-têtes et pieds de page » sous Plus de réglages.",
         "step3": "Le format est préréglé en A4 paysage, avec une journée par page — enregistrez en PDF ou imprimez."
-      }
+      },
+      "printLink": "Version imprimable"
     },
     "dayContent": {
       "i1": "Les deux journées du coeur de notre camp sont des espaces de partage, de discussion et d'ateliers autour du questionnement : \"Comment lutter ensemble ?\" par tou.te.s pour tou.te.s! <br> Pour être inclusif, tout les activités dans les chapiteaux seront <strong>interprété en au moins trois langues</strong>: anglais, français et néerlandais."

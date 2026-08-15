@@ -602,7 +602,8 @@
         "step1": "Open this page in Google Chrome (or any Chromium-based browser) and press ⌘P / Ctrl+P.",
         "step2": "In the print dialog, untick “Headers and footers” under More settings.",
         "step3": "Paper size and margins are preset to A4 landscape, with one day per sheet — save as PDF or print."
-      }
+      },
+      "printLink": "Print version"
     },
     "dayContent": {
       "i1": "The two main days of our camp are opportunities for sharing, discussion and workshops centred on the question: ‘How can we fight together?’ – by everyone, for everyone!<br>"

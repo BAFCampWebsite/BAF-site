@@ -17,6 +17,7 @@ import "../styles/calendar/timeline.css";
 import "../styles/calendar/print.css";
 
 const lang = getLocale();
+const p = `/${lang}`;
 const t = getTranslations("programme");
 const addToCalendarLabel = t("calendar.addToCalendar");
 const viewCardsLabel = t("calendar.view.cards");
@@ -72,6 +73,9 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
         <span class="calendar-filters-toggle-icon" aria-hidden="true"></span>
         <span class="calendar-filters-toggle-label">{showFiltersLabel}</span>
       </button>
+      <a class="calendar-print-link" href={`${p}/programme-print`}>
+        <span aria-hidden="true">🖨️</span> {t("calendar.printLink")}
+      </a>
     </div>
 
     <CalendarFilters dayFilters={dayFilters} locationFilters={locationFilters} />
