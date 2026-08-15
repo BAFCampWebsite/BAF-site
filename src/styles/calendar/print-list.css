@@ -17,6 +17,28 @@
     size: A4 portrait;
     margin: 10mm;
   }
+  /* Custom page numbers, printed in the bottom margin of every sheet in the
+     “2 / 12” (page / total) style. Margin boxes are generated content that
+     only exists in paged media, so browsers ignore these rules on screen
+     (PrintLayout only strips the first @page block when deriving its screen
+     copy). The cover is left unnumbered and the page counter is reset on it
+     (see @page :first below), so the first programme page reads “1”. */
+  @page {
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: 'Space Mono', monospace;
+      font-size: 8pt;
+      color: #6b5a4a;
+    }
+  }
+  @page :first {
+    /* The cover is the unnumbered sheet: reset the page counter so the
+       first programme page reads “1” instead of “2”. */
+    counter-reset: page 0;
+    @bottom-center {
+      content: none;
+    }
+  }
   /* Strip the site chrome: navigation, hero, footer, toolbar, filters,
      special card, banner, modal and the intro/spaces sections. */
   nav,
