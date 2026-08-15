@@ -18,7 +18,60 @@ const gtItems = [
 ];
 const gtIcons = ['💚', '🗣️', '🫶', '⚒️', '🎤', '💰', '🔄'];
 
-const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.items.i2'), t('missions.items.i3'), t('missions.items.i4'), t('missions.items.i5'), t('missions.items.i6'), t('missions.items.i7'), t('missions.items.i8'), t('missions.items.i9') ];
+const missions = [
+  {
+    title: 'Volunteer Runner',
+    points: [ t('missions.items.volunteer-runner.i0'), t('missions.items.volunteer-runner.i1'), t('missions.items.volunteer-runner.i2') ]
+  },
+  {
+    title: 'Entrance',
+    points: [ t('missions.items.entrance.i0'), t('missions.items.entrance.i1'), t('missions.items.entrance.i2') ]
+  },
+  {
+    title: 'Parking Steward',
+    points: [ t('missions.items.parking.i0'), t('missions.items.parking.i1'), t('missions.items.parking.i2') ]
+  },
+  {
+    title: 'Bartender',
+    points: [ t('missions.items.bartender.i0'), t('missions.items.bartender.i1'), t('missions.items.bartender.i2') ]
+  },
+  {
+    title: 'Token Distribution',
+    points: [ t('missions.items.token.i0'), t('missions.items.token.i1'), t('missions.items.token.i2') ]
+  },
+  {
+    title: 'Awareness Team',
+    points: [ t('missions.items.awareness.i0'), t('missions.items.awareness.i1'), t('missions.items.awareness.i2') ]
+  },
+  {
+    title: 'Night Security',
+    points: [ t('missions.items.night-security.i0'), t('missions.items.night-security.i1'), t('missions.items.night-security.i2') ]
+  },
+  {
+    title: 'Kitchen Cook',
+    points: [ t('missions.items.cook.i0'), t('missions.items.cook.i1'), t('missions.items.cook.i2') ]
+  },
+  {
+    title: 'Food Server',
+    points: [ t('missions.items.server.i0'), t('missions.items.server.i1'), t('missions.items.server.i2') ]
+  },
+  {
+    title: 'Kitchen Cleanup',
+    points: [ t('missions.items.kitchen-cleanup.i0'), t('missions.items.kitchen-cleanup.i1'), t('missions.items.kitchen-cleanup.i2') ]
+  },
+  {
+    title: 'Waste Collection',
+    points: [ t('missions.items.waste.i0'), t('missions.items.waste.i1'), t('missions.items.waste.i2') ]
+  },
+  {
+    title: 'Hygiene Shifts',
+    points: [ t('missions.items.hygiene.i0'), t('missions.items.hygiene.i1'), t('missions.items.hygiene.i2') ]
+  },
+  {
+    title: 'Stage Runner',
+    points: [ t('missions.items.stage-runner.i0'), t('missions.items.stage-runner.i1'), t('missions.items.stage-runner.i2') ]
+  }
+];
 ---
 
 <div class="page-hero">
@@ -30,6 +83,31 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
 <div class="page-content">
 
   <div>
+    <h2>{t('benevolat.title')}</h2>
+    <p set:html={t('benevolat.text1')}></p>
+    <!-- <p set:html={t('benevolat.text2')}></p> -->
+    <p set:html={t('benevolat.text3')}></p>
+    <!-- <p set:html={t('benevolat.text4')}></p> -->
+  </div>
+
+
+  <div class="missions-grid">
+    <h2>{t('missions.title')}</h2>
+    <div class="cards-grid cards-grid--max-4">
+      {missions.map((m) => (
+        <div class="card surface-card reveal">
+          <h3 class="card-title">{m.title}</h3>
+          <ul class="card-list">
+            {m.points.map((point) => <li>{point}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div>
     <h2>{t('structure.title')}</h2>
     <p>{t('structure.text')}</p>
     <RoseCta>
@@ -39,10 +117,10 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
     </RoseCta>
   </div>
 
-  <div class="gt-section">
+  <div>
     <h2>{t('gt.title')}</h2>
     <p>{t('gt.intro')}</p>
-    <div class="cards-grid">
+    <div class="cards-grid cards-grid--max-4">
       {gtItems.map((item, i) => (
         <div class="card surface-card reveal">
           <span class="card-icon">{gtIcons[i]}</span>
@@ -53,48 +131,39 @@ const missions = [ t('missions.items.i0'), t('missions.items.i1'), t('missions.i
     </div>
   </div>
 
-  <div>
-    <h2>{t('benevolat.title')}</h2>
-    <p set:html={t('benevolat.text1')}></p>
-    <p set:html={t('benevolat.text2')}></p>
-    <p set:html={t('benevolat.text3')}></p>
-    <p set:html={t('benevolat.text4')}></p>
-  </div>
-
-  <hr class="divider">
-
-  <div>
-    <h2>{t('missions.title')}</h2>
-    <ul>
-      {missions.map((m) => <li>{m}</li>)}
-    </ul>
-  </div>
-
-  <div>
-    <h2>{t('inscription.title')}</h2>
-    <p>{t('inscription.text')}</p>
-
-    <RoseCta>
-      <a href={t('inscription.formUrl')} class="text-display-link">
-        {t('inscription.btnText')}
-      </a>
-      <div class="inline-note">
-        {t('inscription.deadline')}
-      </div>
-    </RoseCta>
-  </div>
-
 </div>
 
 <style is:global>
-  .gt-section .cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .gt-section .cards-grid .card:nth-child(5) { grid-column: 2; }
-  .gt-section .cards-grid .card:nth-child(6) { grid-column: 3; }
-  .gt-section .cards-grid .card:nth-child(7) { grid-column: 4; }
-  @media(max-width: 900px) {
-    .gt-section .cards-grid { grid-template-columns: 1fr !important; }
-    .gt-section .cards-grid .card:nth-child(5),
-    .gt-section .cards-grid .card:nth-child(6),
-    .gt-section .cards-grid .card:nth-child(7) { grid-column: auto !important; }
+  .cards-grid--max-4 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  @media (min-width: 1181px) {
+    .cards-grid--max-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .missions-grid .card-list { list-style: none; margin: 0; padding: 0; }
+  .missions-grid .card-list li {
+    display: block;
+    background: none;
+    border: 0;
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: .84rem;
+    line-height: 1.6;
+    color: var(--gris-encre);
+    padding: 3px 0 3px 16px;
+    position: relative;
+  }
+  .missions-grid .card-list li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rose);
+    position: absolute;
+    left: 2px;
+    top: 10px;
   }
 </style>

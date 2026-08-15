@@ -17,5 +17,6 @@
         "billetterie",
         "thuno",
         "thunometre"
-    ]
+    ],
+    "i18n-ally.editor.preferEditor": true
 }

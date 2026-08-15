@@ -766,24 +766,72 @@
     "missions": {
       "title": "Missions available",
       "items": {
-        "i0": "Come from August 16 to help set up camp",
-        "i1": "Home & volunteer registration",
-        "i2": "Tending the bar",
-        "i3": "Cooking for 500 people",
-        "i4": "Image capture and communication",
-        "i5": "Care and active listening (training will be given)",
-        "i6": "Hygiene",
-        "i7": "Parking",
-        "i8": "Medic (experience required)",
-        "i9": "Interpreter (experience desirable)"
+        "volunteer-runner": {
+          "i0": "Fill gaps wherever extra hands are needed",
+          "i1": "Run errands and deliver supplies between teams",
+          "i2": "Step in for crews that are short-staffed"
+        },
+        "entrance": {
+          "i0": "Welcome arrivals and check them in against the registration list",
+          "i1": "Hand out the map, programme and practical info",
+          "i2": "Point people to parking, camping and the info desk"
+        },
+        "parking": {
+          "i0": "Direct vehicles to parking spots and keep access roads clear",
+          "i1": "Help arrivals unload and guide them to the entrance",
+          "i2": "Watch over the parking area and report issues"
+        },
+        "bartender": {
+          "i0": "Serve drinks at the bar",
+          "i1": "Receive tokens for payment",
+          "i2": "Keep the bar stocked and the counter clean"
+        },
+        "token": {
+          "i0": "Exchange money for tokens at the token desk",
+          "i1": "Track token stock and do end-of-shift counts",
+          "i2": "Explain how tokens work to newcomers"
+        },
+        "awareness": {
+          "i0": "Be a visible, approachable point of contact during events",
+          "i1": "Listen non-judgmentally to people who feel unsafe or harassed",
+          "i2": "Escalate serious situations to care or security contacts"
+        },
+        "night-security": {
+          "i0": "Keep watch overnight while the camp sleeps",
+          "i1": "Do regular rounds of the site and check entry points",
+          "i2": "Wake the right people quickly in case of emergency"
+        },
+        "cook": {
+          "i0": "Help prepare meals for the whole camp",
+          "i1": "Follow the menu and portion plan",
+          "i2": "Keep the kitchen and your station clean and safe"
+        },
+        "server": {
+          "i0": "Serve meals during service hours",
+          "i1": "Keep the serving line stocked and moving",
+          "i2": "Tidy the serving area between services"
+        },
+        "kitchen-cleanup": {
+          "i0": "Wipe down surfaces and mop the kitchen floors",
+          "i1": "Clear and tidy the kitchen after each service",
+          "i2": "Help pack down the kitchen at the end of the day"
+        },
+        "waste": {
+          "i0": "Empty the bins across the festival site",
+          "i1": "Sort waste into compost, recycling and landfill",
+          "i2": "Keep the site tidy as you go"
+        },
+        "hygiene": {
+          "i0": "Clean and restock the toilets and wash areas",
+          "i1": "Top up soap, paper and hand sanitizer",
+          "i2": "Note anything broken or running low"
+        },
+        "stage-runner": {
+          "i0": "Help performers and workshop hosts get to and from the stage on time",
+          "i1": "Carry equipment and supplies to and from the stage",
+          "i2": "Be the link between artists and the stage crew"
+        }
       }
-    },
-    "inscription": {
-      "title": "Registration for setup/teardown",
-      "text": "Do you already feel like getting involved in the camp and helping make this event happen? It would be super valuable for us if you filled out the form below, so we can already get an idea of our numbers. We’ll get back to you in August once we’ve received your message.",
-      "btnText": "Registration for setup/teardown",
-      "formUrl": "https://cryptpad.fr/form/#/2/form/view/YdirsY9Ambvl-431q9Kai-8+DISFR6298-euON69DMk/",
-      "deadline": "Registration deadline via the form: July 31st."
     }
   },
   "charte": {

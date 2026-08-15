@@ -766,24 +766,72 @@
     "missions": {
       "title": "Missies beschikbaar",
       "items": {
-        "i0": "Kom vanaf 16 augustus helpen met het opzetten van het kamp",
-        "i1": "Onthaal & vrijwilligersregistratie",
-        "i2": "de bar verzorgen",
-        "i3": "Koken voor 500 personen",
-        "i4": "Beeldmateriaal en communicatie",
-        "i5": "Zorg en actief luisteren (er wordt training gegeven)",
-        "i6": "Hygiëne",
-        "i7": "Parkeren",
-        "i8": "Medic (ervaring vereist)",
-        "i9": "Interpretatie (ervaring wenselijk)"
+        "awareness": {
+          "i0": "Wees een zichtbaar en aanspreekbaar aanspreekpunt tijdens evenementen",
+          "i1": "Luister onbevooroordeeld naar mensen die zich onveilig of lastiggevallen voelen",
+          "i2": "Escaleer ernstige situaties naar zorg- of beveiligingscontacten"
+        },
+        "bartender": {
+          "i0": "Serveer drankjes aan de bar",
+          "i1": "Betalingen afhandelen en de kassa op orde houden",
+          "i2": "Houd de bar gevuld en de toonbank schoon"
+        },
+        "cook": {
+          "i0": "Help mee met het bereiden van maaltijden voor het hele kamp",
+          "i1": "Volg het menu en portieplan",
+          "i2": "Houd de keuken en uw werkplek schoon en veilig"
+        },
+        "entrance": {
+          "i0": "Verwelkom aankomsten en meld ze aan op de registratielijst",
+          "i1": "Deel de kaart, het programma en praktische info uit",
+          "i2": "Wijs mensen op parkeren, kamperen en de infobalie"
+        },
+        "hygiene": {
+          "i0": "De toiletten en wasruimtes schoonmaken en aanvullen",
+          "i1": "Vul zeep, papier en handdesinfecterend middel bij",
+          "i2": "Let op alles wat kapot is of bijna leeg is"
+        },
+        "night-security": {
+          "i0": "Houd de wacht 's nachts terwijl het kamp slaapt",
+          "i1": "Loop regelmatig rond op het terrein en controleer de toegangspunten",
+          "i2": "Maak in geval van nood snel de juiste mensen wakker"
+        },
+        "parking": {
+          "i0": "Stuur voertuigen naar parkeerplaatsen en houd toegangswegen vrij",
+          "i1": "Help aankomsten met uitladen en begeleid ze naar de ingang",
+          "i2": "Houd toezicht op de parkeerplaats en meld problemen"
+        },
+        "server": {
+          "i0": "Serveer maaltijden tijdens de service-uren",
+          "i1": "Houd de serveerlijn gevuld en in beweging",
+          "i2": "Tussen de diensten door de serveerruimte opruimen"
+        },
+        "stage-runner": {
+          "i0": "Help artiesten en workshopgevers om op tijd van en naar het podium te komen",
+          "i1": "Draag apparatuur en benodigdheden van en naar het podium",
+          "i2": "Wees de schakel tussen artiesten en de podiumploeg"
+        },
+        "token": {
+          "i0": "Wissel geld in voor tokens bij de tokenbalie",
+          "i1": "Houd de symbolische voorraad bij en voer tellingen uit aan het einde van de dienst",
+          "i2": "Leg uit hoe tokens werken voor nieuwkomers"
+        },
+        "volunteer-runner": {
+          "i0": "Vul gaten op waar extra handen nodig zijn",
+          "i1": "Boodschappen doen en benodigdheden bezorgen tussen teams",
+          "i2": "Kom in actie voor bemanningen met een tekort aan personeel"
+        },
+        "waste": {
+          "i0": "Leeg de bakken verspreid over het festivalterrein",
+          "i1": "Sorteer afval in compost, recycling en stortplaats",
+          "i2": "Houd de site onderweg netjes"
+        },
+        "kitchen-cleanup": {
+          "i0": "Veeg oppervlakken af ​​en dweil de keukenvloeren",
+          "i1": "Na elke dienst de keuken opruimen en opruimen",
+          "i2": "Help aan het eind van de dag mee met het inpakken van de keuken"
+        }
       }
-    },
-    "inscription": {
-      "title": "Inschrijving voor opbouw/afbraak",
-      "text": "Heb je nu al zin om je in te zetten voor het kamp en te helpen om dit evenement te laten plaatsvinden? Het zou heel waardevol voor ons zijn als je onderstaand formulier invult, zodat we al een idee hebben van onze krachten. We nemen in augustus contact met je op zodra we je bericht ontvangen hebben.",
-      "btnText": "Inschrijving voor opbouw/afbraak",
-      "formUrl": "https://cryptpad.fr/form/#/2/form/view/YdirsY9Ambvl-431q9Kai-8+DISFR6298-euON69DMk/",
-      "deadline": "Deadline voor inschrijvingen via het formulier: 31 juli."
     }
   },
   "charte": {

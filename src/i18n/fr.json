@@ -766,24 +766,72 @@
     "missions": {
       "title": "Missions disponibles",
       "items": {
-        "i0": "Venir dès le 16 août pour venir aider à monter le camp",
-        "i1": "Accueil & inscription des bénévoles",
-        "i2": "Tenir le bar",
-        "i3": "Cuisiner pour 500 personnes",
-        "i4": "Prise d'image et communication",
-        "i5": "Care et écoute active (une formation sera donnée)",
-        "i6": "Hygiène",
-        "i7": "Parking",
-        "i8": "Médic (expérience requise)",
-        "i9": "Interpretation (expérience désirable)"
+        "awareness": {
+          "i0": "Être un point de contact visible et accessible lors des événements",
+          "i1": "Écoutez sans jugement les personnes qui ne se sentent pas en sécurité ou qui sont harcelées",
+          "i2": "Signaler les situations graves aux contacts de soins ou de sécurité"
+        },
+        "bartender": {
+          "i0": "Servir des boissons au bar",
+          "i1": "Gérer les paiements et garder la caisse en ordre",
+          "i2": "Gardez le bar approvisionné et le comptoir propre"
+        },
+        "cook": {
+          "i0": "Aidez à préparer les repas pour tout le camp",
+          "i1": "Suivez le menu et le plan des portions",
+          "i2": "Gardez la cuisine et votre poste propres et sûrs"
+        },
+        "entrance": {
+          "i0": "Accueillir les arrivées et les enregistrer par rapport à la liste d'inscription",
+          "i1": "Distribuez le plan, le programme et les infos pratiques",
+          "i2": "Dirigez les gens vers le stationnement, le camping et le bureau d'information"
+        },
+        "hygiene": {
+          "i0": "Nettoyer et réapprovisionner les toilettes et les zones de lavage",
+          "i1": "Remplissez de savon, de papier et de désinfectant pour les mains",
+          "i2": "Notez tout ce qui est cassé ou faible"
+        },
+        "night-security": {
+          "i0": "Surveillez la nuit pendant que le camp dort",
+          "i1": "Faire des tournées régulières sur le site et vérifier les points d'entrée",
+          "i2": "Réveillez rapidement les bonnes personnes en cas d’urgence"
+        },
+        "parking": {
+          "i0": "Diriger les véhicules vers les places de stationnement et garder les routes d'accès dégagées",
+          "i1": "Aider les arrivants à débarquer et les guider jusqu'à l'entrée",
+          "i2": "Surveillez le parking et signalez les problèmes"
+        },
+        "server": {
+          "i0": "Servir les repas pendant les heures de service",
+          "i1": "Gardez la ligne de service approvisionnée et en mouvement",
+          "i2": "Ranger la zone de desserte entre les services"
+        },
+        "stage-runner": {
+          "i0": "Aider les artistes et les animateurs d'ateliers à se rendre sur scène et à en revenir à l'heure",
+          "i1": "Transporter l'équipement et les fournitures vers et depuis la scène",
+          "i2": "Être le lien entre les artistes et l'équipe de scène"
+        },
+        "token": {
+          "i0": "Échangez de l'argent contre des jetons au bureau des jetons",
+          "i1": "Suivez le stock de jetons et effectuez les décomptes de fin de quart de travail",
+          "i2": "Expliquez le fonctionnement des jetons aux nouveaux arrivants"
+        },
+        "volunteer-runner": {
+          "i0": "Comblez les lacunes là où des mains supplémentaires sont nécessaires",
+          "i1": "Faire les courses et livrer les fournitures entre les équipes",
+          "i2": "Intervenez pour les équipages en pénurie de personnel"
+        },
+        "waste": {
+          "i0": "Videz les poubelles sur tout le site du festival",
+          "i1": "Trier les déchets vers le compost, le recyclage et la mise en décharge",
+          "i2": "Gardez le site bien rangé au fur et à mesure"
+        },
+        "kitchen-cleanup": {
+          "i0": "Essuyer les surfaces et nettoyer les sols de la cuisine",
+          "i1": "Nettoyer et ranger la cuisine après chaque service",
+          "i2": "Aidez à ranger la cuisine à la fin de la journée"
+        }
       }
-    },
-    "inscription": {
-      "title": "Inscription au montage/démontage",
-      "text": "Tu as déjà envie de t'engager pour le camp et d'aider à ce que cet évènement ait lieu ? Ce serait super précieux pour nous que tu remplisse le formulaire ci-dessous pour qu'on puisse déjà compter nos forces. On te recontactera en août une fois ton message reçu.",
-      "btnText": "Inscription au montage/démontage",
-      "formUrl": "https://cryptpad.fr/form/#/2/form/view/YdirsY9Ambvl-431q9Kai-8+DISFR6298-euON69DMk/",
-      "deadline": "Deadline des inscriptions via le form le 31 Juillet."
     }
   },
   "charte": {
