@@ -198,7 +198,7 @@ These events get downloaded into the repo using the `npm run fetch:teamup` comma
 Comments on events are parsed into structured fields on each event in [public/teamup-events.json](public/teamup-events.json) by [scripts/parse-teamup-comments.mjs](scripts/parse-teamup-comments.mjs):
 
 - **Language** — comment always starts with `NL`, `FR` or `EN`, e.g. `FR (interpreted to NL, EN)`. Stored as `language`.
-- **Child-friendly** — comment starts with 👶, e.g. `👶 8+`. Stored as `childFriendly`.
+- **Child-friendly** — comment starts with 🧒, e.g. `🧒 8+`. Stored as `childFriendly`.
 - **Warnings** — comment starts with ⚠️, e.g. `⚠️ physical, violence`. Stored as `warnings`.
 
 Comments that match none of these prefixes are kept in a `comments` fallback array.

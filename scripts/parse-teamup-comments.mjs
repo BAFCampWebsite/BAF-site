@@ -2,14 +2,14 @@
 //
 // Convention (set on the teamup.com calendar):
 //   - Language comment : always starts with NL/FR/EN, e.g. "FR (interpreted to NL, EN)"
-//   - Child-friendly   : starts with 👶, e.g. "👶 8+"
+//   - Child-friendly   : starts with 🧒, e.g. "🧒 8+" (legacy 👶 prefix also accepted)
 //   - Warnings         : starts with ⚠️, e.g. "⚠️ physical, violence"
 //
 // Comments that match none of these prefixes are kept in a `comments` fallback
 // array so no data is silently dropped.
 
 const LANGUAGE_RE = /^(NL|FR|EN)\b/i;
-const CHILD_RE = /^👶/u;
+const CHILD_RE = /^[👶🧒]/u; // 🧒 current convention; legacy 👶 accepted
 const WARNING_RE = /^⚠\uFE0F?/u; // ⚠ with optional variation selector
 
 export function stripHtml(value) {

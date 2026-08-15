@@ -120,7 +120,7 @@ export function renderCard(event: TimelineEvent) {
       <h3>${title}</h3>
       <div class="calendar-card-meta-grid">
         ${language ? `<div class="calendar-card-meta-item"><span>💬</span><span class="calendar-card-info">${language}</span></div>` : ""}
-        ${childFriendly ? `<div class="calendar-card-meta-item"><span>👶</span><span class="calendar-card-info">${childFriendly}</span></div>` : ""}
+        ${childFriendly ? `<div class="calendar-card-meta-item"><span>🧒</span><span class="calendar-card-info">${childFriendly}</span></div>` : ""}
         ${warnings ? `<div class="calendar-card-meta-item"><span>⚠️</span><span class="calendar-card-info">${warnings}</span></div>` : ""}
         ${location ? `<div class="calendar-card-meta-item"><span>🎪</span><span>${location}</span></div>` : ""}
         ${who ? `<div class="calendar-card-meta-item"><span>👤</span><span>${who}</span></div>` : ""}
@@ -160,7 +160,7 @@ export function renderListEvent(event: TimelineEvent, addToCalendarLabel: string
       <div class="calendar-list-body">
         <div class="calendar-list-meta">
           ${language ? `<div class="calendar-list-meta-item"><span>💬</span><span class="calendar-list-info">${language}</span></div>` : ""}
-          ${childFriendly ? `<div class="calendar-list-meta-item"><span>👶</span><span class="calendar-list-info">${childFriendly}</span></div>` : ""}
+          ${childFriendly ? `<div class="calendar-list-meta-item"><span>🧒</span><span class="calendar-list-info">${childFriendly}</span></div>` : ""}
           ${warnings ? `<div class="calendar-list-meta-item"><span>⚠️</span><span class="calendar-list-info">${warnings}</span></div>` : ""}
           ${location ? `<div class="calendar-list-meta-item"><span>🎪</span><span>${location}</span></div>` : ""}
           ${who ? `<div class="calendar-list-meta-item"><span>👤</span><span>${who}</span></div>` : ""}
@@ -313,7 +313,7 @@ export function renderTimelineEvent(event: TimelineEvent, dayStartMin: number, d
   const location = event.location ? escapeHtml(String(event.location).trim()) : "";
   const infoParts = [
     event.language ? `💬 ${escapeHtml(event.language)}` : "",
-    event.childFriendly ? `👶 ${escapeHtml(event.childFriendly)}` : "",
+    event.childFriendly ? `🧒 ${escapeHtml(event.childFriendly)}` : "",
     event.warnings ? `⚠️ ${escapeHtml(event.warnings)}` : "",
   ].filter(Boolean);
   const infoLine = infoParts.length ? `<span class="timeline-event-info">${infoParts.join(" · ")}</span>` : "";
