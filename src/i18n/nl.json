@@ -767,6 +767,14 @@
     },
     "missions": {
       "title": "Missies beschikbaar",
+      "how": {
+        "title": "Hoe werkt het in detail",
+        "i0": "Iedereen kan zich vanaf dag 1 voor het hele festival inschrijven voor shifts",
+        "i1": "Shifts duren 2 uur",
+        "i2": "De inschrijvingen gebeuren aan de vrijwilligerstafel in het kamp",
+        "i3": "Als je je shift niet kunt halen, laat het weten aan de vrijwilligerstafel",
+        "i4": "Elke shift wordt toegelicht aan de vrijwilligerstafel en ook uitgeprint op de plek waar de shift plaatsvindt"
+      },
       "items": {
         "awareness": {
           "i0": "Wees een zichtbaar en aanspreekbaar aanspreekpunt tijdens evenementen",
@@ -775,7 +783,7 @@
         },
         "bartender": {
           "i0": "Serveer drankjes aan de bar",
-          "i1": "Betalingen afhandelen en de kassa op orde houden",
+          "i1": "Ontvang tokens voor betaling",
           "i2": "Houd de bar gevuld en de toonbank schoon"
         },
         "cook": {
@@ -784,17 +792,17 @@
           "i2": "Houd de keuken en uw werkplek schoon en veilig"
         },
         "entrance": {
-          "i0": "Verwelkom aankomsten en meld ze aan op de registratielijst",
-          "i1": "Deel de kaart, het programma en praktische info uit",
+          "i0": "Verwelkom aankomsten en check ze in op de registratielijst, waarbij armbandjes worden uitgedeeld voor de dagen waarvoor ze zich hebben aangemeld",
+          "i1": "Laat mensen kennismaken met het charter van het festival en deel de halskettingen uit voor fotografie-opt-in",
           "i2": "Wijs mensen op parkeren, kamperen en de infobalie"
         },
         "hygiene": {
           "i0": "De toiletten en wasruimtes schoonmaken en aanvullen",
           "i1": "Vul zeep, papier en handdesinfecterend middel bij",
-          "i2": "Let op alles wat kapot is of bijna leeg is"
+          "i2": "Leeg de toiletreservoirs (beschermende sanitairuitrusting aanwezig). <strong>Je mag gedurende 24 uur geen voedselgerelateerde dienst draaien</strong>"
         },
         "night-security": {
-          "i0": "Houd de wacht 's nachts terwijl het kamp slaapt",
+          "i0": "Houd het festivalterrein 's nachts in de gaten terwijl het kamp slaapt, samen met een verantwoordelijke van de organisatie",
           "i1": "Loop regelmatig rond op het terrein en controleer de toegangspunten",
           "i2": "Maak in geval van nood snel de juiste mensen wakker"
         },
@@ -804,19 +812,19 @@
           "i2": "Houd toezicht op de parkeerplaats en meld problemen"
         },
         "server": {
-          "i0": "Serveer maaltijden tijdens de service-uren",
+          "i0": "Verdeel porties voedsel onder de mensen die in de rij staan ​​en voorkom voedselverspilling",
           "i1": "Houd de serveerlijn gevuld en in beweging",
           "i2": "Tussen de diensten door de serveerruimte opruimen"
         },
         "stage-runner": {
-          "i0": "Help artiesten en workshopgevers om op tijd van en naar het podium te komen",
+          "i0": "Helpende hand van de podiumkribbe, helpen bij het opzetten van het podium tussen de optredens door",
           "i1": "Draag apparatuur en benodigdheden van en naar het podium",
-          "i2": "Wees de schakel tussen artiesten en de podiumploeg"
+          "i2": "Stuur berichten door tussen de toneelmanager en iedereen die ze moeten bereiken terwijl ze op het podium blijven"
         },
         "token": {
-          "i0": "Wissel geld in voor tokens bij de tokenbalie",
-          "i1": "Houd de symbolische voorraad bij en voer tellingen uit aan het einde van de dienst",
-          "i2": "Leg uit hoe tokens werken voor nieuwkomers"
+          "i0": "Leg uit dat de fiches alleen voor de balk worden gebruikt",
+          "i1": "Wissel geld in voor tokens bij de tokenbalie, onder toezicht van één van de organisatoren",
+          "i2": "Houd de symbolische voorraad bij en voer tellingen uit aan het einde van de dienst"
         },
         "volunteer-runner": {
           "i0": "Vul gaten op waar extra handen nodig zijn",
@@ -829,8 +837,8 @@
           "i2": "Houd de site onderweg netjes"
         },
         "kitchen-cleanup": {
-          "i0": "Veeg oppervlakken af ​​en dweil de keukenvloeren",
-          "i1": "Na elke dienst de keuken opruimen en opruimen",
+          "i0": "Veeg oppervlakken af",
+          "i1": "Reinig keukengerei zoals potten, pannen, messen, planken, enz.",
           "i2": "Help aan het eind van de dag mee met het inpakken van de keuken"
         }
       }

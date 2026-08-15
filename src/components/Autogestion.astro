@@ -72,6 +72,13 @@ const missions = [
     points: [ t('missions.items.stage-runner.i0'), t('missions.items.stage-runner.i1'), t('missions.items.stage-runner.i2') ]
   }
 ];
+const missionsHow = [
+  t('missions.how.i0'),
+  t('missions.how.i1'),
+  t('missions.how.i2'),
+  t('missions.how.i3'),
+  t('missions.how.i4')
+];
 ---
 
 <div class="page-hero">
@@ -102,6 +109,13 @@ const missions = [
   </div>
 
 
+  <div class="missions-how">
+    <h2>{t('missions.how.title')}</h2>
+    <ul>
+      {missionsHow.map((item) => <li set:html={item}></li>)}
+    </ul>
+  </div>
+
   <div class="missions-grid">
     <h2>{t('missions.title')}</h2>
     <div class="cards-grid cards-grid--max-4">
@@ -109,7 +123,7 @@ const missions = [
         <div class="card surface-card reveal">
           <h3 class="card-title">{m.title}</h3>
           <ul class="card-list">
-            {m.points.map((point) => <li>{point}</li>)}
+            {m.points.map((point) => <li set:html={point}></li>)}
           </ul>
         </div>
       ))}
@@ -275,5 +289,9 @@ const missions = [
       height: 44px;
       font-size: 1.6rem;
     }
+  }
+  .missions-how ul li {
+    font-size: .95rem;
+    line-height: 1.7;
   }
 </style>

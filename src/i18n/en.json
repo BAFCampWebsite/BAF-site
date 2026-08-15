@@ -767,6 +767,14 @@
     },
     "missions": {
       "title": "Missions available",
+      "how": {
+        "title": "How it works in detail",
+        "i0": "Everyone will be able to sign up for shifts for the entire festival from day 1",
+        "i1": "Shifts will be 2 hours long",
+        "i2": "The signups will be at the volunteering table inside of the camp",
+        "i3": "If you can't make it for your shift, let the volunteering table know",
+        "i4": "All shifts will have an adequate briefing at the volunteering table and also printed out at the place where the shift is taking place"
+      },
       "items": {
         "volunteer-runner": {
           "i0": "Fill gaps wherever extra hands are needed",
@@ -774,9 +782,9 @@
           "i2": "Step in for crews that are short-staffed"
         },
         "entrance": {
-          "i0": "Welcome arrivals and check them in against the registration list",
-          "i1": "Hand out the map, programme and practical info",
-          "i2": "Point people to parking, camping and the info desk"
+          "i0": "Welcome arrivals and check them in against the registration list, handing out bracelets for the days they signed up for",
+          "i1": "Introduce people to the charter of the festival, and handing out the necklases for photography opt-in",
+          "i2": "Tell people about the volunteering situation and where they should go to sign up"
         },
         "parking": {
           "i0": "Direct vehicles to parking spots and keep access roads clear",
@@ -789,17 +797,17 @@
           "i2": "Keep the bar stocked and the counter clean"
         },
         "token": {
-          "i0": "Exchange money for tokens at the token desk",
-          "i1": "Track token stock and do end-of-shift counts",
-          "i2": "Explain how tokens work to newcomers"
+          "i0": "Explain that the tokens are only used for the bar",
+          "i1": "Exchange money for tokens at the token desk, under supervision of one of the organisers",
+          "i2": "Track token stock and do end-of-shift counts"
         },
         "awareness": {
           "i0": "Be a visible, approachable point of contact during events",
           "i1": "Listen non-judgmentally to people who feel unsafe or harassed",
-          "i2": "Escalate serious situations to care or security contacts"
+          "i2": "Escalate serious situations to the care team"
         },
         "night-security": {
-          "i0": "Keep watch overnight while the camp sleeps",
+          "i0": "Keep watch of the festival ground overnight while the camp sleeps, together with a responsable from the organisation",
           "i1": "Do regular rounds of the site and check entry points",
           "i2": "Wake the right people quickly in case of emergency"
         },
@@ -809,13 +817,13 @@
           "i2": "Keep the kitchen and your station clean and safe"
         },
         "server": {
-          "i0": "Serve meals during service hours",
+          "i0": "Distribute portions of food to the people queuing, preventing food waste",
           "i1": "Keep the serving line stocked and moving",
           "i2": "Tidy the serving area between services"
         },
         "kitchen-cleanup": {
-          "i0": "Wipe down surfaces and mop the kitchen floors",
-          "i1": "Clear and tidy the kitchen after each service",
+          "i0": "Wipe down surfaces",
+          "i1": "Clean utensils like pots, pans, knives, boards, etc.",
           "i2": "Help pack down the kitchen at the end of the day"
         },
         "waste": {
@@ -826,12 +834,12 @@
         "hygiene": {
           "i0": "Clean and restock the toilets and wash areas",
           "i1": "Top up soap, paper and hand sanitizer",
-          "i2": "Note anything broken or running low"
+          "i2": "Empty out the toilet reservoirs (protective sanitary gear provided). <strong>You will not be allowed to work a food-related shift for 24 hours</strong>"
         },
         "stage-runner": {
-          "i0": "Help performers and workshop hosts get to and from the stage on time",
+          "i0": "Helping hand of the stage manger, helping setting it up the stage between performances",
           "i1": "Carry equipment and supplies to and from the stage",
-          "i2": "Be the link between artists and the stage crew"
+          "i2": "Relay messages between the stage manager and anyone they need to reach while they stay at the stage"
         }
       }
     }

@@ -767,6 +767,14 @@
     },
     "missions": {
       "title": "Missions disponibles",
+      "how": {
+        "title": "Comment ça marche en détail",
+        "i0": "Tout le monde pourra s'inscrire à des shifts pour tout le festival dès le premier jour",
+        "i1": "Les shifts dureront 2 heures",
+        "i2": "Les inscriptions se feront à la table de bénévolat à l'intérieur du camp",
+        "i3": "Si tu ne peux pas assurer ton shift, préviens la table de bénévolat",
+        "i4": "Chaque shift sera expliqué à la table de bénévolat, et les consignes seront aussi imprimées sur le lieu du shift"
+      },
       "items": {
         "awareness": {
           "i0": "Être un point de contact visible et accessible lors des événements",
@@ -775,7 +783,7 @@
         },
         "bartender": {
           "i0": "Servir des boissons au bar",
-          "i1": "Gérer les paiements et garder la caisse en ordre",
+          "i1": "Recevez des jetons pour le paiement",
           "i2": "Gardez le bar approvisionné et le comptoir propre"
         },
         "cook": {
@@ -784,17 +792,17 @@
           "i2": "Gardez la cuisine et votre poste propres et sûrs"
         },
         "entrance": {
-          "i0": "Accueillir les arrivées et les enregistrer par rapport à la liste d'inscription",
-          "i1": "Distribuez le plan, le programme et les infos pratiques",
+          "i0": "Accueillir les arrivées et les enregistrer sur la liste d'inscription, en leur distribuant des bracelets pour les jours pour lesquels ils se sont inscrits",
+          "i1": "Présenter la charte du festival et distribuer les colliers pour l'inscription à la photographie",
           "i2": "Dirigez les gens vers le stationnement, le camping et le bureau d'information"
         },
         "hygiene": {
           "i0": "Nettoyer et réapprovisionner les toilettes et les zones de lavage",
           "i1": "Remplissez de savon, de papier et de désinfectant pour les mains",
-          "i2": "Notez tout ce qui est cassé ou faible"
+          "i2": "Videz les réservoirs des toilettes (équipements sanitaires de protection fournis). <strong>Vous ne serez pas autorisé à effectuer un quart de travail lié à l'alimentation pendant 24 heures</strong>"
         },
         "night-security": {
-          "i0": "Surveillez la nuit pendant que le camp dort",
+          "i0": "Surveiller le terrain du festival pendant la nuit pendant que le camp dort, en compagnie d'un responsable de l'organisation.",
           "i1": "Faire des tournées régulières sur le site et vérifier les points d'entrée",
           "i2": "Réveillez rapidement les bonnes personnes en cas d’urgence"
         },
@@ -804,19 +812,19 @@
           "i2": "Surveillez le parking et signalez les problèmes"
         },
         "server": {
-          "i0": "Servir les repas pendant les heures de service",
+          "i0": "Distribuez des portions de nourriture aux personnes qui font la queue, évitant ainsi le gaspillage alimentaire",
           "i1": "Gardez la ligne de service approvisionnée et en mouvement",
           "i2": "Ranger la zone de desserte entre les services"
         },
         "stage-runner": {
-          "i0": "Aider les artistes et les animateurs d'ateliers à se rendre sur scène et à en revenir à l'heure",
+          "i0": "Coup de main du régisseur, aidant à la mise en scène entre les représentations",
           "i1": "Transporter l'équipement et les fournitures vers et depuis la scène",
-          "i2": "Être le lien entre les artistes et l'équipe de scène"
+          "i2": "Relayer les messages entre le régisseur et toute personne à joindre pendant qu'il reste sur scène"
         },
         "token": {
-          "i0": "Échangez de l'argent contre des jetons au bureau des jetons",
-          "i1": "Suivez le stock de jetons et effectuez les décomptes de fin de quart de travail",
-          "i2": "Expliquez le fonctionnement des jetons aux nouveaux arrivants"
+          "i0": "Expliquez que les jetons ne sont utilisés que pour le bar",
+          "i1": "Échangez de l'argent contre des jetons au guichet des jetons, sous la supervision de l'un des organisateurs.",
+          "i2": "Suivez le stock de jetons et effectuez les décomptes de fin de quart de travail"
         },
         "volunteer-runner": {
           "i0": "Comblez les lacunes là où des mains supplémentaires sont nécessaires",
@@ -829,8 +837,8 @@
           "i2": "Gardez le site bien rangé au fur et à mesure"
         },
         "kitchen-cleanup": {
-          "i0": "Essuyer les surfaces et nettoyer les sols de la cuisine",
-          "i1": "Nettoyer et ranger la cuisine après chaque service",
+          "i0": "Essuyer les surfaces",
+          "i1": "Nettoyer les ustensiles comme les casseroles, poêles, couteaux, planches, etc.",
           "i2": "Aidez à ranger la cuisine à la fin de la journée"
         }
       }
