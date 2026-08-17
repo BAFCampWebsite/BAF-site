@@ -31,7 +31,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "language": "EN (interpreted to FR, NL)"
+      "language": "FR, EN, NL (interpretated)"
     },
     {
       "id": "2128956605",
@@ -2561,8 +2561,8 @@
       "title": "Initiation au cirque",
       "who": "",
       "location": "JAM",
-      "notes": "",
-      "version": "1971233b6343",
+      "notes": "<p>Construire ensemble des pyramides avec nos corps.<br>Communiquer et s'écouter en s'amusant !</p>",
+      "version": "26908e8e554e",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -2571,7 +2571,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-14T19:23:22+02:00",
-      "update_dt": "2026-08-14T19:24:43+02:00",
+      "update_dt": "2026-08-17T10:01:00+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
