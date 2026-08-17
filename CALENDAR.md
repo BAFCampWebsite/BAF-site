@@ -26,7 +26,7 @@ styles and the data.
 | `src/styles/calendar/base.css` | Shared styles: shell, toolbar, special card, filter panel, search, view toggles, day scaffolding, modal, empty state, media queries. |
 | `src/styles/calendar/cards.css` · `list.css` · `timeline.css` | One file per view, each self-contained. |
 | `src/styles/calendar/print.css` | Print stylesheet: A4 landscape `@page`, one day per sheet, hides the site chrome. Its sheet rules (white paper, grey gridlines, clean day boxes) are re-served on screen by the print page so browser ≈ PDF. Its 10mm `@page` margin must stay in sync with the size constants in `src/pages/[locale]/programme-print.astro`. |
-| `src/styles/calendar/print-list.css` | Print stylesheet for the list export: A4 portrait `@page`, days flow across pages, `break-inside: avoid` keeps individual events whole. Also styles the `PrintCover.astro` title page (one full sheet + page break). Mirrors the shared chrome-hiding rules of `print.css`. |
+| `src/styles/calendar/print-list.css` | Print stylesheet for the list export: A4 portrait `@page`, days flow across pages, `break-inside: avoid` keeps individual events whole. Also styles the `PrintCover.astro` title page (one full sheet + page break) and prints “page / total” in the bottom margin of every sheet via `@page` margin boxes (`counter(page)` / `counter(pages)`, unnumbered cover via `@page :first`). Mirrors the shared chrome-hiding rules of `print.css`. |
 
 ## Gotchas
 
@@ -69,10 +69,15 @@ styles and the data.
   `getTimelineDayMetrics` and the `fit` option of `renderTimelineDay`);
   `print.css` forces one day per page with `break-after: page` and A4
   landscape via `@page { size: A4 landscape }`. The list export opens with a
+  - The list export opens with a
   full title page (`PrintCover.astro` — logo, “Festival Programme”, hero
   title, festival dates computed from the event day keys) and lets the days
   flow naturally after it, relying on `break-inside: avoid` on the items
-  (`print-list.css`) so an event is never split across pages.
+  (`print-list.css`) so an event is never split across pages. It also prints
+  custom page numbers (`page / total`) in the bottom margin of each sheet
+  through `@page` margin boxes, with the cover unnumbered and the counter
+  reset on it — Chrome 131+ only (Firefox ignores margin boxes), which is
+  the site's supported print flow.
 - The print pages re-serve the sheet rules of their stylesheet on screen
   (see the `screenSheetRules` copy in `src/layouts/PrintLayout.astro`), so
   the browser view of the page is a faithful preview of the PDF: white
