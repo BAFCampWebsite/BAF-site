@@ -1,10 +1,11 @@
 /* Print styles for the per-tent programme export
    (src/pages/[locale]/programme-print-tents.astro).
 
-   Portrait A4: one sheet per tent-day, each carrying a day + place heading
-   and a plain time → title list. The print page re-serves this sheet on
-   screen (see the screen copy built in PrintLayout.astro) so the browser
-   view matches the PDF.
+   Portrait A4: one sheet per tent, each carrying a place heading and a
+   bare time → title list per day, with the dates as section headings that
+   separate the lists. The print page re-serves this sheet on screen (see
+   the screen copy built in PrintLayout.astro) so the browser view matches
+   the PDF.
 
    Mirrors print.css / print-list.css for the shared parts (chrome hiding,
    body font, colour adjustment) — keep them in sync. All rules live in the
@@ -56,9 +57,9 @@
     gap: 0;
   }
 
-  /* One tent-day per sheet. */
+  /* One tent per sheet. A long tent flows onto extra pages rather than
+     being forced whole onto a single (overflowing) sheet. */
   .print-tent-page {
-    break-inside: avoid;
     break-after: page;
     page-break-after: always;
   }
@@ -67,29 +68,14 @@
     page-break-after: auto;
   }
 
-  /* Day on the left, tent name on the right, on the same line. The divider
-     spans the whole row. margin-left: auto keeps the tent right-aligned even
-     if a long name wraps onto its own line. Explicit line-heights keep the
-     two text boxes compact so they centre against each other. */
+  /* Tent name as the page heading, with a full-width divider under it. */
   .print-tent-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
     margin: 0 0 16px;
     padding-bottom: 10px;
     border-bottom: 3px solid #e2e2e2;
   }
-  .print-tent-day-heading {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: 2.25rem;
-    font-weight: 400;
-    line-height: 1.1;
-    color: var(--encre);
-  }
   .print-tent-place-heading {
-    margin: 0 0 0 auto;
+    margin: 0;
     font-family: var(--font-mono);
     font-size: 3rem;
     font-weight: 700;
@@ -97,6 +83,26 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--gris-encre);
+  }
+
+  /* Each day is its own block; the date heading separates the lists. A day
+     stays on one page when it fits (heading never left alone at the bottom
+     of a page). */
+  .print-tent-day {
+    margin-bottom: 20px;
+    break-inside: avoid;
+  }
+  .print-tent-day-heading {
+    margin: 0 0 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e2e2e2;
+    /* Display typeface for the date titles; Boogaloo only has the 400
+       weight. */
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--encre);
   }
   .print-tent-list {
     margin: 0;
@@ -135,12 +141,12 @@
 }
 
 /* On-screen preview only: PrintLayout re-serves the print rules on screen so
-   the browser view matches the PDF. These rules make each tent-day read as
+   the browser view matches the PDF. These rules make each tent read as
    its own white sheet — the @page margins themselves only exist in paged
    media, so the sheet boundaries need an explicit screen rule. At print time
    this block is inert.
 
-    max-width matches the printable width of one A4 portrait sheet
+   max-width matches the printable width of one A4 portrait sheet
    (210mm − 2×10mm margins ≈ 718px at 96dpi). */
 @media screen {
   .print-tent-page {

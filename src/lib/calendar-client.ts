@@ -512,38 +512,53 @@ export function renderPrintListDay(dayKey: string, dayEvents: TimelineEvent[], n
   `;
 }
 
-// Print-tents export: one page per tent-day (used by
+// Print-tents export: one page per tent (used by
 // src/pages/[locale]/programme-print-tents.astro). Each page is deliberately
-// minimal — a day heading, the tent name and a plain time → title list — so
-// the sheets stay scannable. The caller groups the events by day and tent
-// (in TENT_KEYS order) and wraps each result in its own sheet via
-// break-after: page in print-tents.css.
-export function renderPrintTentPage(dayKey: string, tentKey: TentKey, tentEvents: TimelineEvent[], noLocationLabel: string, otherLabel: string) {
-  const dayLabel = escapeHtml(tentEvents[0]?.dayLabel || dayKey);
+// minimal — the tent name and, per day, a date heading separating a plain
+// time → title list — so the sheets stay scannable. The caller groups the
+// events by tent (in TENT_KEYS order) and by day within each tent and wraps
+// each result in its own sheet via break-after: page in print-tents.css.
+export type PrintTentDayGroup = {
+  dayKey: string;
+  dayLabel: string;
+  events: TimelineEvent[];
+};
+
+export function renderPrintTentPage(tentKey: TentKey, dayGroups: PrintTentDayGroup[], noLocationLabel: string, otherLabel: string) {
   const placeLabel =
     tentKey === "other"
       ? escapeHtml(otherLabel)
-      : escapeHtml(getLocationLabel(tentEvents[0], noLocationLabel));
-  const items = tentEvents
-    .map((event) => {
-      const time = escapeHtml(event.timeLabel || "");
-      const title = escapeHtml(event.title || "Untitled event");
-      return `
+      : escapeHtml(getLocationLabel(dayGroups[0]?.events[0], noLocationLabel));
+  const days = dayGroups
+    .map((group) => {
+      const dayLabel = escapeHtml(group.dayLabel || group.dayKey);
+      const items = group.events
+        .map((event) => {
+          const time = escapeHtml(event.timeLabel || "");
+          const title = escapeHtml(event.title || "Untitled event");
+          return `
         <li class="print-tent-item">
           <span class="print-tent-time">${time}</span>
           <span class="print-tent-title">${title}</span>
         </li>
       `;
+        })
+        .join("");
+      return `
+        <section class="print-tent-day" data-day-key="${group.dayKey}">
+          <h3 class="print-tent-day-heading">${dayLabel}</h3>
+          <ul class="print-tent-list">${items}</ul>
+        </section>
+      `;
     })
     .join("");
 
   return `
-    <section class="print-tent-page" data-day-key="${dayKey}" data-tent-key="${tentKey}">
+    <section class="print-tent-page" data-tent-key="${tentKey}">
       <div class="print-tent-header">
-        <h2 class="print-tent-day-heading">${dayLabel}</h2>
-        <h3 class="print-tent-place-heading">${placeLabel}</h3>
+        <h2 class="print-tent-place-heading">${placeLabel}</h2>
       </div>
-      <ul class="print-tent-list">${items}</ul>
+      ${days}
     </section>
   `;
 }

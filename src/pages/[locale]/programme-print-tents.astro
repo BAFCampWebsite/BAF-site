@@ -1,11 +1,11 @@
 ---
-// Print-only page: the full programme as one A4 page per tent-day,
+// Print-only page: the full programme as one A4 page per tent,
 // server-rendered at build time into a self-contained HTML file (all CSS
 // inlined, no client JS, no external assets) so it prints correctly from any
 // browser via Print → Save as PDF (⌘P) — see CALENDAR.md → “Print / PDF
-// export”. Days are grouped chronologically, then by tent (in TENT_KEYS
-// order); each tent-day gets its own sheet with a day + place heading and a
-// minimal time → title list. No title page.
+// export”. Tents in TENT_KEYS order, each with its days chronological and
+// the dates separating the lists; each page shows just times + event names.
+// No title page.
 export { getLocaleStaticPaths as getStaticPaths } from "../../i18n/getStaticPaths";
 
 import { setRequestLocale } from 'astro-intl';
@@ -19,7 +19,7 @@ import {
   TENT_KEYS,
 } from "../../lib/calendar";
 import { renderPrintTentPage } from "../../lib/calendar-client";
-import type { TimelineEvent } from "../../lib/calendar-client";
+import type { PrintTentDayGroup, TimelineEvent } from "../../lib/calendar-client";
 import PrintLayout from "../../layouts/PrintLayout.astro";
 import PrintInstructions from "../../components/PrintInstructions.astro";
 
@@ -37,25 +37,24 @@ const calendarEvents = buildCalendarEvents(
 const noLocationLabel = t("calendar.noLocation");
 const timelineOtherLabel = t("calendar.timelineOther");
 
-// One page per tent-day: days first (chronological, the events are sorted by
-// start time), then the tents present that day in TENT_KEYS order. Each page
-// is wrapped in its own .print-tent-page, which print-tents.css turns into
-// exactly one A4 sheet (break-after: page).
-const dayKeys = [...new Set(calendarEvents.map((e) => e.dayKey))];
-const pages = dayKeys.flatMap((dayKey) => {
-  const dayEvents = calendarEvents.filter((e) => e.dayKey === dayKey);
-  const presentTents = Array.from(new Set(dayEvents.map((e) => getTentKey(e.location))));
-  const tents = TENT_KEYS.filter((key) => presentTents.includes(key));
-  if (tents.length === 0) tents.push("other");
-  return tents.map((tentKey) =>
-    renderPrintTentPage(
-      dayKey,
-      tentKey,
-      dayEvents.filter((e) => getTentKey(e.location) === tentKey),
-      noLocationLabel,
-      timelineOtherLabel,
-    ),
-  );
+// One page per tent: tents in TENT_KEYS order, then each tent's days
+// chronological (the events are sorted by start time), with the dates
+// separating the lists on the page. Each page is wrapped in its own
+// .print-tent-page, which print-tents.css turns into exactly one A4 sheet
+// (break-after: page).
+const presentTents = Array.from(new Set(calendarEvents.map((e) => getTentKey(e.location))));
+const tents = TENT_KEYS.filter((key) => presentTents.includes(key));
+if (tents.length === 0) tents.push("other");
+
+const pages = tents.map((tentKey) => {
+  const tentEvents = calendarEvents.filter((e) => getTentKey(e.location) === tentKey);
+  const dayGroups: PrintTentDayGroup[] = [
+    ...new Set(tentEvents.map((e) => e.dayKey)),
+  ].map((dayKey) => {
+    const dayEvents = tentEvents.filter((e) => e.dayKey === dayKey);
+    return { dayKey, dayLabel: dayEvents[0]?.dayLabel || dayKey, events: dayEvents };
+  });
+  return renderPrintTentPage(tentKey, dayGroups, noLocationLabel, timelineOtherLabel);
 });
 ---
 
