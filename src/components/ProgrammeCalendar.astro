@@ -94,8 +94,6 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
 
     <CalendarFilters dayFilters={dayFilters} locationFilters={locationFilters} />
 
-    <div class="construction-banner">⚠ {t("construction")}</div>
-
     <div id="calendarEvents" class="calendar-grid"></div>
     <script type="application/json" data-calendar-data set:html={JSON.stringify({
       calendarEvents,
