@@ -73,12 +73,23 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
         <span class="calendar-filters-toggle-icon" aria-hidden="true"></span>
         <span class="calendar-filters-toggle-label">{showFiltersLabel}</span>
       </button>
-      <a class="calendar-print-link" href={`${p}/programme-print`}>
-        <span aria-hidden="true">🖨️</span> {t("calendar.printLink")}
-      </a>
-      <a class="calendar-print-link" href={`${p}/programme-print-list`}>
-        <span aria-hidden="true">📄</span> {t("calendar.printLinkList")}
-      </a>
+      <details class="calendar-print-dropdown">
+        <summary class="calendar-print-trigger" aria-label={t("calendar.printMenu")}>
+          <span aria-hidden="true">🖨️</span>
+          <span class="calendar-print-caret" aria-hidden="true">▾</span>
+        </summary>
+        <div class="calendar-print-menu">
+          <a href={`${p}/programme-print`}>
+            <span aria-hidden="true">🖨️</span> {t("calendar.printLink")}
+          </a>
+          <a href={`${p}/programme-print-list`}>
+            <span aria-hidden="true">📄</span> {t("calendar.printLinkList")}
+          </a>
+          <a href={`${p}/programme-print-tents`}>
+            <span aria-hidden="true">🎪</span> {t("calendar.printLinkTents")}
+          </a>
+        </div>
+      </details>
     </div>
 
     <CalendarFilters dayFilters={dayFilters} locationFilters={locationFilters} />
@@ -330,6 +341,23 @@ const locationFilters = buildLocationFilters(calendarEvents, noLocationLabel, ti
       renderEvents();
     }, 250);
   });
+
+  // The print dropdown is a native <details>, which only closes via its own
+  // summary — also close it on outside click or Escape.
+  const printDropdown = document.querySelector(".calendar-print-dropdown");
+  if (printDropdown) {
+    document.addEventListener("click", (event) => {
+      if (printDropdown.open && !printDropdown.contains(event.target)) {
+        printDropdown.open = false;
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && printDropdown.open) {
+        printDropdown.open = false;
+        printDropdown.querySelector("summary")?.focus();
+      }
+    });
+  }
 
   container?.addEventListener("click", (event) => {
     const addButton = event.target.closest("[data-add-to-calendar]");

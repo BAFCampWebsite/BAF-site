@@ -29,7 +29,7 @@
   .burger,
   .lang-switcher,
   .calendar-toolbar,
-  .calendar-print-link,
+  .calendar-print-dropdown,
   .calendar-filter-panel,
   .calendar-special-card,
   .construction-banner,
@@ -69,10 +69,11 @@
 
   /* Day on the left, tent name on the right, on the same line. The divider
      spans the whole row. margin-left: auto keeps the tent right-aligned even
-     if a long name wraps onto its own line. */
+     if a long name wraps onto its own line. Explicit line-heights keep the
+     two text boxes compact so they centre against each other. */
   .print-tent-header {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 16px;
     flex-wrap: wrap;
     margin: 0 0 16px;
@@ -92,6 +93,7 @@
     font-family: var(--font-mono);
     font-size: 3rem;
     font-weight: 700;
+    line-height: 1.15;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--gris-encre);

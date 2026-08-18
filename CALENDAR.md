@@ -60,7 +60,9 @@ styles and the data.
   version exists at `/fr/programme-print-list` (A4 portrait, days flowing,
   events grouped by day then by place) and a per-tent version at
   `/fr/programme-print-tents` (A4 portrait, one page per tent-day with just
-  times and event names) — all three are linked from the calendar toolbar.
+  times and event names) — all three are reachable from the printer-icon
+  dropdown in the calendar toolbar (`ProgrammeCalendar.astro`,
+  `base.css`).
 - Both print pages are server-rendered at build time from the same
   `renderTimelineDay` / `renderPrintListDay` / `renderPrintTentPage`
   functions as the on-screen calendar, wrapped in the `PrintLayout.astro`

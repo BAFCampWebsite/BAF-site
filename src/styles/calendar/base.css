@@ -17,25 +17,78 @@
   gap: 10px;
   margin: 4px 0;
 }
-.calendar-print-link {
+/* Print export dropdown: a single printer-icon trigger opening the three
+   print pages (timeline / list / per-tent). Native <details> toggle, so it
+   works without JS; the script only adds outside-click and Escape close. */
+.calendar-print-dropdown {
+  position: relative;
   align-self: center;
+}
+.calendar-print-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
+  padding: 6px 12px;
+  border: 1px solid var(--sable);
+  border-radius: 999px;
+  background: var(--creme);
+  color: var(--gris-encre);
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  list-style: none; /* hide the native disclosure triangle (Firefox) */
+  transition: color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.calendar-print-trigger::-webkit-details-marker {
+  display: none; /* …and Chrome/Safari */
+}
+.calendar-print-trigger:hover,
+.calendar-print-dropdown[open] > .calendar-print-trigger {
+  color: var(--rose-dark);
+  border-color: var(--rose-dark);
+  box-shadow: var(--ombre);
+}
+.calendar-print-caret {
+  font-size: 0.55rem;
+  transition: transform 0.15s ease;
+}
+.calendar-print-dropdown[open] > .calendar-print-trigger .calendar-print-caret {
+  transform: rotate(180deg);
+}
+.calendar-print-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 230px;
+  padding: 8px;
+  background: var(--creme);
+  border: var(--contour);
+  border-radius: 14px;
+  box-shadow: var(--ombre-lg);
+}
+.calendar-print-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gris-encre);
+  color: var(--encre);
   text-decoration: none;
-  border-bottom: 1px solid var(--sable);
-  padding-bottom: 2px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease;
 }
-.calendar-print-link:hover {
+.calendar-print-menu a:hover,
+.calendar-print-menu a:focus-visible {
+  background: var(--blanc-sale);
   color: var(--rose-dark);
-  border-color: var(--rose-dark);
 }
 .calendar-special-card {
   background: var(--blanc-sale);
