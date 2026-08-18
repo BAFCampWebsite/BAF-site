@@ -511,3 +511,39 @@ export function renderPrintListDay(dayKey: string, dayEvents: TimelineEvent[], n
     </section>
   `;
 }
+
+// Print-tents export: one page per tent-day (used by
+// src/pages/[locale]/programme-print-tents.astro). Each page is deliberately
+// minimal — a day heading, the tent name and a plain time → title list — so
+// the sheets stay scannable. The caller groups the events by day and tent
+// (in TENT_KEYS order) and wraps each result in its own sheet via
+// break-after: page in print-tents.css.
+export function renderPrintTentPage(dayKey: string, tentKey: TentKey, tentEvents: TimelineEvent[], noLocationLabel: string, otherLabel: string) {
+  const dayLabel = escapeHtml(tentEvents[0]?.dayLabel || dayKey);
+  const placeLabel =
+    tentKey === "other"
+      ? escapeHtml(otherLabel)
+      : escapeHtml(getLocationLabel(tentEvents[0], noLocationLabel));
+  const items = tentEvents
+    .map((event) => {
+      const time = escapeHtml(event.timeLabel || "");
+      const title = escapeHtml(event.title || "Untitled event");
+      return `
+        <li class="print-tent-item">
+          <span class="print-tent-time">${time}</span>
+          <span class="print-tent-title">${title}</span>
+        </li>
+      `;
+    })
+    .join("");
+
+  return `
+    <section class="print-tent-page" data-day-key="${dayKey}" data-tent-key="${tentKey}">
+      <div class="print-tent-header">
+        <h2 class="print-tent-day-heading">${dayLabel}</h2>
+        <h3 class="print-tent-place-heading">${placeLabel}</h3>
+      </div>
+      <ul class="print-tent-list">${items}</ul>
+    </section>
+  `;
+}

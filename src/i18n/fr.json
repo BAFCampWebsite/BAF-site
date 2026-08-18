@@ -606,6 +606,7 @@
       },
       "printLink": "Version imprimable",
       "printLinkList": "Liste imprimable",
+      "printLinkTents": "Imprimer par tente",
       "printCover": {
         "title": "Programme du festival"
       }

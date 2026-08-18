@@ -18,15 +18,17 @@ styles and the data.
 | `src/components/PrintCover.astro` | Full-page title page for the list print export: BAF logo (base64-inlined), “Festival Programme” label, programme title and festival dates. Rendered first on the cover sheet; `print-list.css` gives it `min-height: 277mm` and a page break after. |
 | `src/pages/[locale]/programme-print.astro` | Print-only page: the full timeline, server-rendered at build time with all CSS inlined (no client JS, no external assets) so it can be converted to PDF straight from `file://`. Uses the `PrintLayout.astro` shell. Excluded from the sitemap. |
 | `src/pages/[locale]/programme-print-list.astro` | Print-only page: the full programme as a portrait-A4 list (days flow one after another, events grouped by day then by place, full descriptions). Same shell as the timeline export; excluded from the sitemap. |
+| `src/pages/[locale]/programme-print-tents.astro` | Print-only page: the full programme as one A4 page per tent-day (days chronological, then tents in `TENT_KEYS` order; each page shows just times + event names). No title page. Same shell; excluded from the sitemap. |
 | `src/layouts/PrintLayout.astro` | Reusable shell for print-first pages: emits a self-contained HTML document (inlined stylesheet: site `:root`/fonts + the page's stylesheets, `print.css` rules, and their screen copy so browser ≈ PDF) plus an optional “how to print” callout. See its header comment for the props and slots. |
 | `src/lib/calendar.ts` | Data prep shared by build and client code: event normalization, day/location filters, category meta, tent keys. |
-| `src/lib/calendar-client.ts` | Client-side view rendering: `renderCard`, `renderList`/`renderListEvent`, `renderTimeline`/`renderTimelineDay`, `getTimelineDayMetrics`, "now" position helpers, ICS download. |
+| `src/lib/calendar-client.ts` | Client-side view rendering: `renderCard`, `renderList`/`renderListEvent`, `renderTimeline`/`renderTimelineDay`, `getTimelineDayMetrics`, `renderPrintListDay`/`renderPrintListEvent`, `renderPrintTentPage`, "now" position helpers, ICS download. |
 | `src/lib/calendar-modal.ts` | `createEventModal()` — opens/closes the event modal, wires the add-to-calendar action. |
 | `src/lib/calendar-timeline.ts` | `createTimelineNow()` — keeps the timeline's "now" marker in sync and drives the jump-to-now button. |
 | `src/styles/calendar/base.css` | Shared styles: shell, toolbar, special card, filter panel, search, view toggles, day scaffolding, modal, empty state, media queries. |
 | `src/styles/calendar/cards.css` · `list.css` · `timeline.css` | One file per view, each self-contained. |
 | `src/styles/calendar/print.css` | Print stylesheet: A4 landscape `@page`, one day per sheet, hides the site chrome. Its sheet rules (white paper, grey gridlines, clean day boxes) are re-served on screen by the print page so browser ≈ PDF. Its 10mm `@page` margin must stay in sync with the size constants in `src/pages/[locale]/programme-print.astro`. |
 | `src/styles/calendar/print-list.css` | Print stylesheet for the list export: A4 portrait `@page`, days flow across pages, `break-inside: avoid` keeps individual events whole. Also styles the `PrintCover.astro` title page (one full sheet + page break) and prints “page / total” in the bottom margin of every sheet via `@page` margin boxes (`counter(page)` / `counter(pages)`, unnumbered cover via `@page :first`). Mirrors the shared chrome-hiding rules of `print.css`. |
+| `src/styles/calendar/print-tents.css` | Print stylesheet for the per-tent export: A4 portrait `@page`, one tent-day per sheet via `break-after: page`. Minimal time → title rows. Mirrors the shared chrome-hiding rules of `print.css`/`print-list.css`. |
 
 ## Gotchas
 
@@ -56,20 +58,21 @@ styles and the data.
   `/fr/programme-print` (or `/en/…`, `/nl/…`) and use Print → Save as PDF
   (⌘P). The page is A4 landscape with one festival day per sheet. A list
   version exists at `/fr/programme-print-list` (A4 portrait, days flowing,
-  events grouped by day then by place) — both are linked from the calendar
-  toolbar.
+  events grouped by day then by place) and a per-tent version at
+  `/fr/programme-print-tents` (A4 portrait, one page per tent-day with just
+  times and event names) — all three are linked from the calendar toolbar.
 - Both print pages are server-rendered at build time from the same
-  `renderTimelineDay` / `renderPrintListDay` functions as the on-screen
-  calendar, wrapped in the `PrintLayout.astro` shell, which inlines all CSS
-  (calendar styles + the print stylesheet) and embeds the Google Fonts as
-  base64 `@font-face` rules (fetched at build time, so the printout doesn't
-  need network — see `src/lib/embed-google-fonts.ts`). The “how to print”
-  callout is shared via `src/components/PrintInstructions.astro`.
+  `renderTimelineDay` / `renderPrintListDay` / `renderPrintTentPage`
+  functions as the on-screen calendar, wrapped in the `PrintLayout.astro`
+  shell, which inlines all CSS (calendar styles + the print stylesheet) and
+  embeds the Google Fonts as base64 `@font-face` rules (fetched at build
+  time, so the printout doesn't need network — see
+  `src/lib/embed-google-fonts.ts`). The “how to print” callout is shared via
+  `src/components/PrintInstructions.astro`.
 - The timeline export scales each day at build time to fit its sheet (via
   `getTimelineDayMetrics` and the `fit` option of `renderTimelineDay`);
   `print.css` forces one day per page with `break-after: page` and A4
   landscape via `@page { size: A4 landscape }`. The list export opens with a
-  - The list export opens with a
   full title page (`PrintCover.astro` — logo, “Festival Programme”, hero
   title, festival dates computed from the event day keys) and lets the days
   flow naturally after it, relying on `break-inside: avoid` on the items
@@ -78,6 +81,10 @@ styles and the data.
   through `@page` margin boxes, with the cover unnumbered and the counter
   reset on it — Chrome 131+ only (Firefox ignores margin boxes), which is
   the site's supported print flow.
+- The per-tent export (`programme-print-tents`) is the minimal one: no title
+  page, no page numbers, no descriptions — each tent-day sheet is a day +
+  place heading and a bare time → title list (`print-tents.css`, one sheet
+  per page via `break-after: page`, A4 portrait).
 - The print pages re-serve the sheet rules of their stylesheet on screen
   (see the `screenSheetRules` copy in `src/layouts/PrintLayout.astro`), so
   the browser view of the page is a faithful preview of the PDF: white

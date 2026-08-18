@@ -1,0 +1,153 @@
+/* Print styles for the per-tent programme export
+   (src/pages/[locale]/programme-print-tents.astro).
+
+   Portrait A4: one sheet per tent-day, each carrying a day + place heading
+   and a plain time → title list. The print page re-serves this sheet on
+   screen (see the screen copy built in PrintLayout.astro) so the browser
+   view matches the PDF.
+
+   Mirrors print.css / print-list.css for the shared parts (chrome hiding,
+   body font, colour adjustment) — keep them in sync. All rules live in the
+   single @media print block because PrintLayout derives the screen copy
+   from it.
+*/
+
+@media print {
+  /* Portrait A4 with 10mm margins. */
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+  /* Strip the site chrome: navigation, hero, footer, toolbar, filters,
+     special card, banner, modal and the intro/spaces sections. */
+  nav,
+  footer,
+  .page-hero,
+  .now-jump-wrap,
+  #mobileMenu,
+  .mobile-menu,
+  .burger,
+  .lang-switcher,
+  .calendar-toolbar,
+  .calendar-print-link,
+  .calendar-filter-panel,
+  .calendar-special-card,
+  .construction-banner,
+  .calendar-modal,
+  .divider,
+  .cards-grid,
+  .page-content > div > h2,
+  .page-content > div > p {
+    display: none !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    /* The print page inlines :root but not the style.css body rule, so the
+       site's sans font must be applied here. */
+    font-family: var(--font-sans);
+    color: var(--encre);
+  }
+  .calendar-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* One tent-day per sheet. */
+  .print-tent-page {
+    break-inside: avoid;
+    break-after: page;
+    page-break-after: always;
+  }
+  .print-tent-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  /* Day on the left, tent name on the right, on the same line. The divider
+     spans the whole row. margin-left: auto keeps the tent right-aligned even
+     if a long name wraps onto its own line. */
+  .print-tent-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #e2e2e2;
+  }
+  .print-tent-day-heading {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--encre);
+  }
+  .print-tent-place-heading {
+    margin: 0 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gris-encre);
+  }
+  .print-tent-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .print-tent-item {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e2e2;
+    break-inside: avoid;
+  }
+  .print-tent-time {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--gris-encre);
+    white-space: nowrap;
+  }
+  .print-tent-title {
+    font-size: 1.65rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--encre);
+  }
+
+  /* Keep the festival colours on paper. */
+  #calendarEvents * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* On-screen preview only: PrintLayout re-serves the print rules on screen so
+   the browser view matches the PDF. These rules make each tent-day read as
+   its own white sheet — the @page margins themselves only exist in paged
+   media, so the sheet boundaries need an explicit screen rule. At print time
+   this block is inert.
+
+    max-width matches the printable width of one A4 portrait sheet
+   (210mm − 2×10mm margins ≈ 718px at 96dpi). */
+@media screen {
+  .print-tent-page {
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    background: #fff;
+    padding: 24px 28px;
+    margin: 0 auto 24px;
+    max-width: 718px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  }
+}

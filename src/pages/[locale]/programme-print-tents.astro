@@ -1,0 +1,70 @@
+---
+// Print-only page: the full programme as one A4 page per tent-day,
+// server-rendered at build time into a self-contained HTML file (all CSS
+// inlined, no client JS, no external assets) so it prints correctly from any
+// browser via Print → Save as PDF (⌘P) — see CALENDAR.md → “Print / PDF
+// export”. Days are grouped chronologically, then by tent (in TENT_KEYS
+// order); each tent-day gets its own sheet with a day + place heading and a
+// minimal time → title list. No title page.
+export { getLocaleStaticPaths as getStaticPaths } from "../../i18n/getStaticPaths";
+
+import { setRequestLocale } from 'astro-intl';
+import { getLocale } from "astro-intl";
+import { getTranslations } from "../../i18n/getTranslations";
+import teamupEvents from "../../../public/teamup-events.json";
+import {
+  buildCalendarEvents,
+  buildCategoryMeta,
+  getTentKey,
+  TENT_KEYS,
+} from "../../lib/calendar";
+import { renderPrintTentPage } from "../../lib/calendar-client";
+import type { TimelineEvent } from "../../lib/calendar-client";
+import PrintLayout from "../../layouts/PrintLayout.astro";
+import PrintInstructions from "../../components/PrintInstructions.astro";
+
+await setRequestLocale(Astro.url);
+const lang = getLocale();
+const t = getTranslations("programme");
+
+const categoryMeta = buildCategoryMeta(t as unknown as (key: string) => string);
+const calendarEvents = buildCalendarEvents(
+  (teamupEvents?.events ?? []) as Record<string, unknown>[],
+  lang,
+  categoryMeta,
+  t("calendar.filters.workshops"),
+) as unknown as TimelineEvent[];
+const noLocationLabel = t("calendar.noLocation");
+const timelineOtherLabel = t("calendar.timelineOther");
+
+// One page per tent-day: days first (chronological, the events are sorted by
+// start time), then the tents present that day in TENT_KEYS order. Each page
+// is wrapped in its own .print-tent-page, which print-tents.css turns into
+// exactly one A4 sheet (break-after: page).
+const dayKeys = [...new Set(calendarEvents.map((e) => e.dayKey))];
+const pages = dayKeys.flatMap((dayKey) => {
+  const dayEvents = calendarEvents.filter((e) => e.dayKey === dayKey);
+  const presentTents = Array.from(new Set(dayEvents.map((e) => getTentKey(e.location))));
+  const tents = TENT_KEYS.filter((key) => presentTents.includes(key));
+  if (tents.length === 0) tents.push("other");
+  return tents.map((tentKey) =>
+    renderPrintTentPage(
+      dayKey,
+      tentKey,
+      dayEvents.filter((e) => getTentKey(e.location) === tentKey),
+      noLocationLabel,
+      timelineOtherLabel,
+    ),
+  );
+});
+---
+
+<PrintLayout
+  title={t("hero.title")}
+  printStylesheet="src/styles/calendar/print-tents.css"
+  mainId="calendarEvents"
+  mainClass="calendar-grid"
+>
+  <PrintInstructions slot="instructions" portrait />
+  {pages.map((page) => <Fragment set:html={page} />)}
+</PrintLayout>
