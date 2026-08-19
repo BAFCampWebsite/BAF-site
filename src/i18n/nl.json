@@ -122,7 +122,12 @@
     "restauration": {
       "sectionLabel": "Eten & drankjes",
       "title": "Keuken",
-      "html": "De Kokkerellen-cantine zal ter plaatse zijn om drie keer per dag vegan gerechten te bereiden! Ze wordt begeleid door een anarchistische bakkersbrigade voor vers brood 24 uur per dag!"
+      "html": "De Kokkerellen-cantine zal ter plaatse zijn om drie keer per dag vegan gerechten te bereiden! Ze wordt begeleid door een anarchistische bakkersbrigade voor vers brood 24 uur per dag!",
+      "breakfast": "Het ontbijt wordt geserveerd om <strong>9:00 uur</strong> (vrijdag, zaterdag",
+      "dietaryNote": "Als u <strong>dieetbeperkingen</strong> heeft, kom dan buiten de openingstijden naar de keuken, dan regelen wij het voor u.",
+      "dinner": "Het diner wordt geserveerd om <strong>18.30 uur</strong> (do, vr",
+      "lunch": "De lunch wordt geserveerd om <strong>12:00 uur</strong> (vrijdag, zaterdag",
+      "mealsTitle": "Maaltijden"
     },
     "camping": {
       "sectionLabel": "Slapen ter plekke",

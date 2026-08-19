@@ -122,7 +122,12 @@
     "restauration": {
       "sectionLabel": "Eat & drink",
       "title": "Catering",
-      "html": "The Kokkerellen canteen will be on site to cook vegan dishes three times a day! It will be joined by an anarchist bakers' brigade for fresh bread 24 hours a day!"
+      "html": "The Kokkerellen canteen will be on site to cook vegan dishes three times a day! It will be joined by an anarchist bakers' brigade for fresh bread 24 hours a day!",
+      "mealsTitle": "Meal times",
+      "breakfast": "Breakfast is served at <strong>9:00 am</strong> (Fri, Sat &amp; Sun)",
+      "lunch": "Lunch is served at <strong>12:00 pm</strong> (Fri, Sat &amp; Sun)",
+      "dinner": "Dinner is served at <strong>6:30 pm</strong> (Thu, Fri &amp; Sat)",
+      "dietaryNote": "If you have <strong>dietary restrictions</strong>, come to the kitchen outside of serving hours and we'll sort you out."
     },
     "camping": {
       "sectionLabel": "Sleep on site",

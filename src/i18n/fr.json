@@ -122,7 +122,12 @@
     "restauration": {
       "sectionLabel": "Manger & boire",
       "title": "Restauration",
-      "html": "La cantine Kokkerellen sera sur place pour cuisiner des plats végan 3 fois par jour ! Elle sera accompagnée par une brigade de boulangers anarchistes pour du pain frais 24h/24 !"
+      "html": "La cantine Kokkerellen sera sur place pour cuisiner des plats végan 3 fois par jour ! Elle sera accompagnée par une brigade de boulangers anarchistes pour du pain frais 24h/24 !",
+      "breakfast": "Le petit-déjeuner est servi à <strong>9h00</strong> (vendredi, samedi).",
+      "dietaryNote": "Si vous avez des <strong>restrictions alimentaires</strong>, venez à la cuisine en dehors des heures de service et nous nous occuperons de vous.",
+      "dinner": "Le dîner est servi à <strong>18h30</strong> (jeudi, vendredi",
+      "lunch": "Le déjeuner est servi à <strong>12h00</strong> (vendredi, samedi",
+      "mealsTitle": "Horaires des repas"
     },
     "camping": {
       "sectionLabel": "Dormir sur place",

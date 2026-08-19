@@ -33,6 +33,12 @@ const linkTag = (href: string) => (chunks: string) =>
   `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-link-accent">${chunks}</a>`;
 const boldTag = (chunks: string) => `<span class="text-strong">${chunks}</span>`;
 
+const mealBlocks = [
+  { icon: "🥞", html: t("restauration.breakfast") },
+  { icon: "🥗", html: t("restauration.lunch") },
+  { icon: "🍽️", html: t("restauration.dinner") },
+];
+
 const otherBlocks: Array<{ icon: string; title: string; html: string }> = [
   { icon: "🐶", title: t("other.dogs.title"), html: t.markup("other.dogs.text", { bold: boldTag }) },
   { icon: "💸", title: t("other.cash.title"), html: t.markup("other.cash.text", { bold: boldTag }) },
@@ -142,7 +148,21 @@ const otherBlocks: Array<{ icon: string; title: string; html: string }> = [
       <div class="section-alt">
         <p class="section-label">🍴 {t("restauration.sectionLabel")}</p>
         <h2 class="section-contrast-title">{t("restauration.title")}</h2>
+        <!-- TODO: Food serving times (Breakfast, lunch, dinner) -->
         <p class="section-contrast-content" set:html={t("restauration.html")} />
+
+        <h3 class="meals-title">{t("restauration.mealsTitle")}</h3>
+        <div class="meals-grid">
+          {
+            mealBlocks.map((meal) => (
+              <div class="meal-block">
+                <span class="meal-icon">{meal.icon}</span>
+                <p set:html={meal.html} />
+              </div>
+            ))
+          }
+        </div>
+        <p class="section-contrast-content dietary-note" set:html={t("restauration.dietaryNote")} />
       </div>
     </div>
   </section>
@@ -373,6 +393,44 @@ const otherBlocks: Array<{ icon: string; title: string; html: string }> = [
   }
   .section-alt h2 {
     color: var(--creme) !important;
+  }
+  .meals-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+    color: var(--creme);
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+  .meals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .meal-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+  }
+  .meal-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .meal-block p {
+    font-family: var(--font-serif);
+    font-size: 0.84rem;
+    line-height: 1.7;
+    color: var(--creme);
+    margin: 0;
+  }
+  .dietary-note {
+    margin-top: 16px;
+    font-style: italic;
   }
   .section-alt .info-card-title {
     color: var(--rose);
