@@ -1331,37 +1331,6 @@
       "language": "FR (interpreted to NL, EN)"
     },
     {
-      "id": "2140661540",
-      "series_id": null,
-      "remote_id": null,
-      "subcalendar_id": 15782183,
-      "subcalendar_ids": [
-        15782183,
-        15782184
-      ],
-      "all_day": false,
-      "rrule": "",
-      "title": "Amnésie coloniale, la fabrique des dominations",
-      "who": "",
-      "location": "L'Estaca",
-      "notes": "<p>Conférence gesticulée qui explore comment l'oubli ou la négation du passé colonial sert à construire et maintenir les rapports de force et les injustices actuelles.</p>",
-      "version": "1b661339a5ea",
-      "readonly": true,
-      "tz": "Europe/Brussels",
-      "attachments": [],
-      "start_dt": "2026-08-20T18:00:00+02:00",
-      "end_dt": "2026-08-20T19:30:00+02:00",
-      "ristart_dt": null,
-      "rsstart_dt": null,
-      "creation_dt": "2026-07-29T17:25:03+02:00",
-      "update_dt": "2026-08-13T21:01:45+02:00",
-      "delete_dt": null,
-      "signup_enabled": false,
-      "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "language": "FR"
-    },
-    {
       "id": "2140889119",
       "series_id": null,
       "remote_id": null,
