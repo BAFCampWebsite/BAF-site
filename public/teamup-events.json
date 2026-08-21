@@ -304,36 +304,6 @@
       "language": "FR"
     },
     {
-      "id": "2130490812",
-      "series_id": null,
-      "remote_id": null,
-      "subcalendar_id": 15766558,
-      "subcalendar_ids": [
-        15766558
-      ],
-      "all_day": false,
-      "rrule": "",
-      "title": "Plantation de fruitiers dans le village",
-      "who": "",
-      "location": "Point ✊",
-      "notes": "",
-      "version": "6de4d1365296",
-      "readonly": true,
-      "tz": "Europe/Brussels",
-      "attachments": [],
-      "start_dt": "2026-08-21T14:30:00+02:00",
-      "end_dt": "2026-08-21T16:00:00+02:00",
-      "ristart_dt": null,
-      "rsstart_dt": null,
-      "creation_dt": "2026-07-12T17:26:04+02:00",
-      "update_dt": "2026-08-10T00:25:35+02:00",
-      "delete_dt": null,
-      "signup_enabled": false,
-      "comments_enabled": true,
-      "comments_visibility": "all_users",
-      "childFriendly": "10+"
-    },
-    {
       "id": "2130490903",
       "series_id": null,
       "remote_id": null,
@@ -452,7 +422,7 @@
       "comments_enabled": true,
       "comments_visibility": "all_users",
       "language": "FR",
-      "warnings": "Nudité partielle"
+      "warnings": "Nudité"
     },
     {
       "id": "2130493424",
@@ -1431,11 +1401,11 @@
       ],
       "all_day": false,
       "rrule": "",
-      "title": "DJ PEMBA",
+      "title": "PEMBA",
       "who": "",
       "location": "Chez Georges",
       "notes": "<p>Pemba est une DJ bruxelloise d’origine congolaise dont les sets puisent profondément leurs racines dans l’Afrohouse mais elle n’est pas limitée à ce style. Elle a commencé à mixer en Amérique Centrale où elle a ouvert une des scènes du Festival Tribal Gathering (Panama). Pemba a une énergie unique et une intention claire : transformer la piste de danse en un espace sécure et bienveillant où chaque rythme vous invite à libérer vos émotions, vous reconnecter à vous-même et à l’instant présent.</p>\n<p></p>",
-      "version": "dcda770417e0",
+      "version": "7adf70547090",
       "readonly": true,
       "tz": "Europe/Brussels",
       "attachments": [],
@@ -1444,7 +1414,7 @@
       "ristart_dt": null,
       "rsstart_dt": null,
       "creation_dt": "2026-08-05T12:31:35+02:00",
-      "update_dt": "2026-08-17T15:29:19+02:00",
+      "update_dt": "2026-08-21T14:31:09+02:00",
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
