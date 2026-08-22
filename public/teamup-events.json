@@ -1748,8 +1748,7 @@
       "signup_enabled": false,
       "comments_enabled": true,
       "comments_visibility": "all_users",
-      "language": "EN, FR, NL",
-      "childFriendly": "8+"
+      "language": "EN, FR, NL"
     },
     {
       "id": "2145409675",
@@ -2750,7 +2749,8 @@
       "delete_dt": null,
       "signup_enabled": false,
       "comments_enabled": true,
-      "comments_visibility": "all_users"
+      "comments_visibility": "all_users",
+      "language": "EN/NL/FR"
     }
   ]
 }
