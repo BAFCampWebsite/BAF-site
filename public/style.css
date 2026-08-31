@@ -549,13 +549,13 @@ nav {
   cursor: pointer; animation: fadeUp .85s ease .15s both;
 }
 .hero-logo { position: relative; }
-.hero-fullybooked {
+.hero-nextyear {
   position: absolute;
   top: -2px; left: 50%;
   transform: translateX(-50%) rotate(-8deg);
   background: var(--encre); color: var(--creme);
   font-family: var(--font-display); font-weight: 800;
-  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-size: clamp(1.5rem, 2vw, 3rem);
   letter-spacing: .1em; text-transform: uppercase;
   padding: 6px 34px;
   border: 4px solid var(--creme);
@@ -565,7 +565,7 @@ nav {
   text-align: center;
   white-space: nowrap;
 }
-.hero-fullybooked-link {
+.hero-nextyear-link {
   display: block;
   margin-top: 4px;
   font-family: var(--font-mono);
@@ -577,7 +577,7 @@ nav {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.hero-fullybooked-link:hover { color: var(--vert); }
+.hero-nextyear-link:hover { color: var(--vert); }
 
 /* ══ EN BREF ══ */
 .section-en-bref { padding: 80px; background: var(--creme); border-bottom: 3px solid var(--encre); position: relative; }
@@ -1418,7 +1418,7 @@ footer {
     max-height: 260px;
   }
 
-  .hero-fullybooked {
+  .hero-nextyear {
     top: 6px;
     font-size: clamp(1.3rem, 7vw, 2rem);
     letter-spacing: .06em;
@@ -1428,7 +1428,7 @@ footer {
     white-space: normal;
     max-width: calc(100vw - 60px);
   }
-  .hero-fullybooked-link { font-size: .42em; margin-top: 2px; }
+  .hero-nextyear-link { font-size: .42em; margin-top: 2px; }
 
   .hero-eyebrow {
     font-size: 1.1rem;

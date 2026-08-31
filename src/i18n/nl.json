@@ -11,7 +11,6 @@
     "informations": "Informatie",
     "nousAider": "Ons helpen",
     "tickets": "Tickets aan vrije bijdrage →",
-    "fullyBooked": "volzet",
     "nextYear": "Tot de volgende editie!",
     "dropdownFonctionnement": {
       "financements": "Financiering",
@@ -45,8 +44,7 @@
     "objectifLabel": "Doel",
     "objectifValue": "Alle vrijwilligers helpen mee om het kamp draaiende te houden",
     "btnBillets": "Tickets kopen",
-    "fullyBooked": "VOLZET",
-    "fullyBookedMoreInfo": "meer info",
+    "nextYear": "Tot de volgende editie!",
     "btnProgramme": "Bekijk het programma →",
     "btnBenevolat": "Word vrijwilliger"
   },
@@ -417,7 +415,7 @@
       "title": "Vrije & bewuste prijs",
       "subtitle": "Zodat je bijdraagt naar jouw mogelijkheden."
     },
-    "fullyBookedBanner": {
+    "nextYearBanner": {
       "title": "We zijn volzet",
       "text": "We hebben geen plaatsen meer. Schrijf je in op de <link>wachtlijst</link> en we laten je misschien weten als er een plaats vrijkomt.",
       "doNotCome": "Er zullen geen tickets aan de deur te koop zijn. Tenzij je een bevestiging van ons per e-mail hebt ontvangen (check je spam): kom dan aub niet!"
