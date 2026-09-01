@@ -46,7 +46,11 @@
     "btnBillets": "Prendre mes billets",
     "nextYear": "Rendez-vous à la prochaine édition !",
     "btnProgramme": "Voir le programme →",
-    "btnBenevolat": "Devenir bénévole"
+    "btnBenevolat": "Devenir bénévole",
+    "thankYouStayInTouch": "Merci à tous ceux qui ont participé à cette formidable première édition du camp BAF ! Si vous souhaitez rester informés, rejoignez notre groupe Signal ou notre liste de diffusion.",
+    "btnSignal": "Rejoins la chat Signal",
+    "saveTheDate2026GetInvolved": "Vous souhaitez participer ? Réservez le dimanche 4 octobre, de 13 h à 17 h, dans votre agenda. Nous vous communiquerons plus d'informations via le chat Signal et notre liste de diffusion.",
+    "btnMailingList": "Inscrivez-vous à notre liste de diffusion"
   },
   "enBref": {
     "eyebrow": "Le BAF Camp",
