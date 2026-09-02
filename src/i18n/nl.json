@@ -11,7 +11,7 @@
     "informations": "Informatie",
     "nousAider": "Ons helpen",
     "tickets": "Tickets aan vrije bijdrage →",
-    "fullyBooked": "volzet",
+    "nextYear": "Tot de volgende editie!",
     "dropdownFonctionnement": {
       "financements": "Financiering",
       "charte": "Ons charter",
@@ -44,10 +44,13 @@
     "objectifLabel": "Doel",
     "objectifValue": "Alle vrijwilligers helpen mee om het kamp draaiende te houden",
     "btnBillets": "Tickets kopen",
-    "fullyBooked": "VOLZET",
-    "fullyBookedMoreInfo": "meer info",
+    "nextYear": "Tot de volgende editie!",
     "btnProgramme": "Bekijk het programma →",
-    "btnBenevolat": "Word vrijwilliger"
+    "btnBenevolat": "Word vrijwilliger",
+    "thankYouStayInTouch": "Hartelijk dank aan iedereen die heeft deelgenomen aan deze geweldige eerste editie van het BAF-kamp! Als je op de hoogte wilt blijven, sluit je dan aan bij onze Signal-groep of schrijf je in voor onze mailinglijst.",
+    "saveTheDate2026GetInvolved": "Wil je meedoen? Noteer dan zondag 4 oktober van 13.00 tot 17.00 uur in je agenda; we zullen meer informatie verstrekken via de Signal-chat en onze mailinglijst.",
+    "btnSignal": "Word lid van de Signal-groep",
+    "btnMailingList": "Schrijf je in voor onze nieuwsbrief"
   },
   "enBref": {
     "eyebrow": "Het BAF Camp",
@@ -416,7 +419,7 @@
       "title": "Vrije & bewuste prijs",
       "subtitle": "Zodat je bijdraagt naar jouw mogelijkheden."
     },
-    "fullyBookedBanner": {
+    "nextYearBanner": {
       "title": "We zijn volzet",
       "text": "We hebben geen plaatsen meer. Schrijf je in op de <link>wachtlijst</link> en we laten je misschien weten als er een plaats vrijkomt.",
       "doNotCome": "Er zullen geen tickets aan de deur te koop zijn. Tenzij je een bevestiging van ons per e-mail hebt ontvangen (check je spam): kom dan aub niet!"
@@ -507,7 +510,7 @@
       "stepNum": "1",
       "stepTitle": "Vul het inschrijvingsformulier in",
       "stepText": "Vul het inschrijvingsformulier in om ons te laten weten dat je naar het kamp komt, via deze link: https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306.",
-      "formUrl": "https://framaforms.org/inschrijving-vrijwilligerswerk-baf-camp-1782681306",
+      "formUrl": "https://stats.sender.net/forms/b82Jlr/view",
       "btnForm": "Schrijf je in voor onze nieuwsbrief →"
     },
     "contact": {

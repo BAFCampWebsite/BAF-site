@@ -11,7 +11,7 @@
     "informations": "Information",
     "nousAider": "Support us",
     "tickets": "Pay-what-you-can tickets →",
-    "fullyBooked": "Fully booked",
+    "nextYear": "See you next year!",
     "dropdownFonctionnement": {
       "financements": "Funding",
       "charte": "Our charter",
@@ -44,8 +44,11 @@
     "objectifLabel": "Objective",
     "objectifValue": "Everyone contributes to make this camp happen",
     "btnBillets": "Get my tickets",
-    "fullyBooked": "FULLY BOOKED",
-    "fullyBookedMoreInfo": "more info",
+    "nextYear": "See you next year!",
+    "thankYouStayInTouch": "Thank you to everyone who joined for this amazing first version of the BAF camp! If you want to stay up to date, join our Signal group our mailing list.",
+    "btnSignal": "Join the Signal group",
+    "btnMailingList": "Subscribe to our mailing list",
+    "saveTheDate2026GetInvolved": "Want to get involved? Save Sunday the 4th of October from 13:00 - 17:00 in your calendar, we will provide more information via the Signal chat and our mailing list.",
     "btnProgramme": "See the program →",
     "btnBenevolat": "Become a volunteer"
   },
@@ -416,7 +419,7 @@
       "title": "Pay-what-you-can",
       "subtitle": "So that you contribute according to your means."
     },
-    "fullyBookedBanner": {
+    "nextYearBanner": {
       "title": "We're fully booked",
       "text": "We have run out of spots. Add yourself to the <link>waiting list</link> and we might let you know if a spot frees up.",
       "doNotCome": "There will be no tickets for sale at the door. Unless you got a confirmation from us by email (check your spam): please don't come! "
@@ -507,7 +510,7 @@
       "stepNum": "1",
       "stepTitle": "Fill in the registration form",
       "stepText": "Fill in the registration form to let us know you're coming to the camp.",
-      "formUrl": "https://framaforms.org/baf-camp-registration-volunteering-1782682708",
+      "formUrl": "https://stats.sender.net/forms/b82Jlr/view",
       "btnForm": "Sign up to our mailing list →"
     },
     "contact": {

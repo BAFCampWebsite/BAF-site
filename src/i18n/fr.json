@@ -11,7 +11,7 @@
     "informations": "Informations",
     "nousAider": "Nous aider",
     "tickets": "Billetterie prix libre →",
-    "fullyBooked": "Complet",
+    "nextYear": "Rendez-vous à la prochaine édition !",
     "dropdownFonctionnement": {
       "financements": "Financements",
       "charte": "Notre charte",
@@ -44,10 +44,13 @@
     "objectifLabel": "Objectif",
     "objectifValue": "Tous.tes bénévoles pour faire tourner le camp",
     "btnBillets": "Prendre mes billets",
-    "fullyBooked": "COMPLET",
-    "fullyBookedMoreInfo": "en savoir plus",
+    "nextYear": "Rendez-vous à la prochaine édition !",
     "btnProgramme": "Voir le programme →",
-    "btnBenevolat": "Devenir bénévole"
+    "btnBenevolat": "Devenir bénévole",
+    "thankYouStayInTouch": "Merci à tous ceux qui ont participé à cette formidable première édition du camp BAF ! Si vous souhaitez rester informés, rejoignez notre groupe Signal ou notre liste de diffusion.",
+    "btnSignal": "Rejoins la chat Signal",
+    "saveTheDate2026GetInvolved": "Vous souhaitez participer ? Réservez le dimanche 4 octobre, de 13 h à 17 h, dans votre agenda. Nous vous communiquerons plus d'informations via le chat Signal et notre liste de diffusion.",
+    "btnMailingList": "Inscrivez-vous à notre liste de diffusion"
   },
   "enBref": {
     "eyebrow": "Le BAF Camp",
@@ -416,7 +419,7 @@
       "title": "Prix libre & conscient",
       "subtitle": "Pour que tu contribues à hauteur de tes moyens."
     },
-    "fullyBookedBanner": {
+    "nextYearBanner": {
       "title": "C'est complet",
       "text": "Nous n'avons plus de place. Inscris-toi sur la <link>liste d'attente</link> et on te préviendra peut-être si une place se libère.",
       "doNotCome": "Il n'y aura pas de billets en vente sur place. Sauf si tu as reçu une confirmation de notre part par e-mail (vérifie tes spams) : ne viens pas stp! "
@@ -507,7 +510,7 @@
       "stepNum": "1",
       "stepTitle": "Remplir le formulaire d'inscription",
       "stepText": "Remplis le formulaire d'inscription pour t'annoncer au camp.",
-      "formUrl": "https://framaforms.org/inscription-benevolat-baf-camp-1780562822",
+      "formUrl": "https://stats.sender.net/forms/b82Jlr/view",
       "btnForm": "Inscrit toi à notre liste de diffusion →"
     },
     "contact": {

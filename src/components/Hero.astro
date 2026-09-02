@@ -17,42 +17,18 @@ const t = getTranslations('hero');
 
   <div class="hero-inner">
       <div class="hero-content">
-      <div class="hero-eyebrow">✮ {t('eyebrow')} ✮</div>
       <div class="hero-logo">
         <img src="/BAF%20Logo.png" alt="BAF Camp" id="heroLogoImg">
-        <div class="hero-fullybooked">{t('fullyBooked')}<a href={`${p}/billetterie#sold-out`} class="hero-fullybooked-link">{t('fullyBookedMoreInfo')}</a></div>
+        <div class="hero-nextyear">{t('nextYear')}</div>
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-meta-grid">
-        <div class="meta-item">
-          <span class="meta-label">{t('dateLabel')}</span>
-          <span class="meta-value">{t('dateValue')}</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">{t('lieuLabel')}</span>
-          <span class="meta-value">
-            <a href={p + '/infos'} class="meta-link">{t('lieuValue')}</a>
-          </span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">{t('programmeLabel')}</span>
-          <a href={p + '/programme'} class="meta-link">
-            <span class="meta-value">{t('programmeValue')}</span>
-          </a>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">{t('objectifLabel')}</span>
-          <span class="meta-value">
-            <a href={p + '/infos'} class="meta-link">{t('objectifValue')}</a>
-          </span>
-        </div>
-      </div>
+      <p class="page-hero-sub">{t('thankYouStayInTouch')}</p>
       <div class="hero-actions">
-        <a href={p + '/billetterie'} class="btn btn-primary">{t('btnBillets')}</a>
-        <a href={p + '/programme'} class="btn btn-outline-hero">{t('btnProgramme')}</a>
-        <a href={p + '/autogestion'} class="btn btn-primary">{t('btnBenevolat')}</a>
+        <a href="https://signal.group/#CjQKIG9fN5pPDbZpGm_gIZgsASV_4XidkI_wgNJ7lwBc8caaEhCAU3Kp2wWLrEnBIKp9bXQN" class="btn btn-primary">{t('btnSignal')}</a>
+        <a href="https://stats.sender.net/forms/b82Jlr/view" class="btn btn-outline-hero">{t('btnMailingList')}</a>
       </div>
+      <p class="page-hero-sub">{t('saveTheDate2026GetInvolved')}</p>
     </div>
   </div>
 </section>
